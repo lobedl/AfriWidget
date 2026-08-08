@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-  <!-- Analytics loads after the initial page becomes interactive. -->
+  <!-- Deferred Google Analytics & AdSense -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    window.addEventListener('load', function () {
-      var loadAnalytics = function () {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0';
-        document.head.appendChild(script);
-        gtag('js', new Date());
-        gtag('config', 'G-6V491CW7H0');
-      };
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 2000 });
-      } else {
-        setTimeout(loadAnalytics, 1500);
+    (function() {
+      var loaded = false;
+      function loadThirdPartyScripts() {
+        if (loaded) return;
+        loaded = true;
+        
+        // Load Google Analytics (gtag.js)
+        var gtagScript = document.createElement("script");
+        gtagScript.async = true;
+        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        document.head.appendChild(gtagScript);
+        gtag("js", new Date());
+        gtag("config", "G-6V491CW7H0");
+
+        // Load Google AdSense (adsbygoogle.js)
+        var adsScript = document.createElement("script");
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        adsScript.setAttribute("crossorigin", "anonymous");
+        document.head.appendChild(adsScript);
       }
-    });
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click"];
+      function triggerLoad() {
+        loadThirdPartyScripts();
+        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
+      }
+
+      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
+
+      window.addEventListener("load", function() {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadThirdPartyScripts, { timeout: 3500 });
+        } else {
+          setTimeout(loadThirdPartyScripts, 2500);
+        }
+      });
+    })();
   </script>
+  
+  <link rel="stylesheet" href="branding.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="branding.css" /></noscript>
+    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AfriWidget | Free Health, Finance &amp; Education Tools</title>
@@ -211,29 +234,30 @@
     }
   ]
 }</script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="cards.css" />
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { brand: { teal: '#0F766E', emerald: '#10B981', dark: '#0F172A' } } } }
-    }
-  </script>
+  <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="cards.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="cards.css" /></noscript>
+  
   <style>
+    @font-face { font-display: swap; }
+    html, body { font-display: swap; }
+    /* Above-the-fold critical layout and hero styles */
     .accordion-content { display: none; }
     .accordion-content.open { display: block; }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: block; }
     :root { --ink: #111827; --yellow: #facc15; --paper: #f8fafc; }
-    body { background: var(--paper); }
+    body { background: var(--paper); margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     body.home-layout { display: flex; flex-direction: column; }
-    body.home-layout > nav { order: 0; }
-    body.home-layout > #hero { order: 1; }
+    body.home-layout > nav { order: 0; position: sticky; top: 0; z-index: 50; background-color: #0f172a; color: #ffffff; }
+    body.home-layout > #hero { order: 1; position: relative; overflow: hidden; background-color: #020617; color: #ffffff; }
     body.home-layout > #toolsMatrix { order: 2; }
     body.home-layout > #aboutSection { order: 3; }
     body.home-layout > #missionSection { order: 4; }
     body.home-layout > #categoriesSection { order: 5; }
     body.home-layout > #faqSection { order: 6; }
     body.home-layout > #finalCta { order: 7; }
+    body.home-layout > #hero h1 { content-visibility: auto; contain-intrinsic-size: 1px 120px; }
     body.home-layout > footer { order: 8; }
     body.home-layout > #cookieBanner { order: 9; }
     .tool-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
@@ -251,7 +275,7 @@
     .home-layout .text-emerald-400, .home-layout .text-emerald-600 { color: #ca8a04 !important; }
     .home-layout .bg-emerald-500 { background-color: #facc15 !important; }
     .home-layout .border-emerald-300, .home-layout .border-emerald-200 { border-color: #fde68a !important; }
-     .home-layout nav .site-brand-wordmark .text-emerald-400 { color: #FACC15 !important; }
+    .home-layout nav .site-brand-wordmark .text-emerald-400 { color: #FACC15 !important; }
     .legacy-showcase { display: none; }
   </style>
 </head>

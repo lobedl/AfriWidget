@@ -1,8 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Deferred Google Analytics & AdSense -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var loaded = false;
+      function loadThirdPartyScripts() {
+        if (loaded) return;
+        loaded = true;
+        
+        // Load Google Analytics (gtag.js)
+        var gtagScript = document.createElement("script");
+        gtagScript.async = true;
+        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        document.head.appendChild(gtagScript);
+        gtag("js", new Date());
+        gtag("config", "G-6V491CW7H0");
+
+        // Load Google AdSense (adsbygoogle.js)
+        var adsScript = document.createElement("script");
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        adsScript.setAttribute("crossorigin", "anonymous");
+        document.head.appendChild(adsScript);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click"];
+      function triggerLoad() {
+        loadThirdPartyScripts();
+        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
+      }
+
+      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
+
+      window.addEventListener("load", function() {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadThirdPartyScripts, { timeout: 3500 });
+        } else {
+          setTimeout(loadThirdPartyScripts, 2500);
+        }
+      });
+    })();
+  </script>
+  
   <link rel="stylesheet" href="branding.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
@@ -47,7 +89,7 @@
   }</script>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/dist/styles.css" />
   <link rel="stylesheet" href="cards.css" />
   <script src="footer.js" defer></script>
   <script src="nav.js" defer></script>

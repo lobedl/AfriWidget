@@ -1,8 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Deferred Google Analytics & AdSense -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var loaded = false;
+      function loadThirdPartyScripts() {
+        if (loaded) return;
+        loaded = true;
+        
+        // Load Google Analytics (gtag.js)
+        var gtagScript = document.createElement("script");
+        gtagScript.async = true;
+        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        document.head.appendChild(gtagScript);
+        gtag("js", new Date());
+        gtag("config", "G-6V491CW7H0");
+
+        // Load Google AdSense (adsbygoogle.js)
+        var adsScript = document.createElement("script");
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        adsScript.setAttribute("crossorigin", "anonymous");
+        document.head.appendChild(adsScript);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click"];
+      function triggerLoad() {
+        loadThirdPartyScripts();
+        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
+      }
+
+      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
+
+      window.addEventListener("load", function() {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadThirdPartyScripts, { timeout: 3500 });
+        } else {
+          setTimeout(loadThirdPartyScripts, 2500);
+        }
+      });
+    })();
+  </script>
+  
   <link rel="stylesheet" href="branding.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
@@ -13,7 +55,7 @@
   <meta property="og:type" content="website"><meta property="og:url" content="https://afriwidget.com/work-experience-resume-duration-calculator"><meta property="og:title" content="Work Experience &amp; Resume Duration Calculator | AfriWidget"><meta property="og:description" content="Add job dates to calculate total work experience in years, months, and days for your resume or application."><meta property="og:image" content="https://afriwidget.com/og-image.png"><meta property="og:site_name" content="AfriWidget">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Work Experience &amp; Resume Duration Calculator | AfriWidget"><meta name="twitter:description" content="Add job dates to calculate total work experience in years, months, and days for your resume or application."><meta name="twitter:image" content="https://afriwidget.com/og-image.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Work Experience and Resume Duration Calculator","url":"https://afriwidget.com/work-experience-resume-duration-calculator","description":"Calculate total employment duration from job start and end dates.","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isAccessibleForFree":true}</script>
-  <script src="https://cdn.tailwindcss.com"></script><script src="footer.js" defer></script><script src="nav.js" defer></script><script src="universal-ai.js" defer></script><script src="new-tools.js" defer></script>
+  <link rel="stylesheet" href="/dist/styles.css" /><script src="footer.js" defer></script><script src="nav.js" defer></script><script src="universal-ai.js" defer></script><script src="new-tools.js" defer></script>
   <style>.mobile-menu{display:none}.mobile-menu.open{display:block}</style>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />

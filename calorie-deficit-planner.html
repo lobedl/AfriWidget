@@ -1,8 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Deferred Google Analytics & AdSense -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var loaded = false;
+      function loadThirdPartyScripts() {
+        if (loaded) return;
+        loaded = true;
+        
+        // Load Google Analytics (gtag.js)
+        var gtagScript = document.createElement("script");
+        gtagScript.async = true;
+        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        document.head.appendChild(gtagScript);
+        gtag("js", new Date());
+        gtag("config", "G-6V491CW7H0");
+
+        // Load Google AdSense (adsbygoogle.js)
+        var adsScript = document.createElement("script");
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        adsScript.setAttribute("crossorigin", "anonymous");
+        document.head.appendChild(adsScript);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click"];
+      function triggerLoad() {
+        loadThirdPartyScripts();
+        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
+      }
+
+      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
+
+      window.addEventListener("load", function() {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadThirdPartyScripts, { timeout: 3500 });
+        } else {
+          setTimeout(loadThirdPartyScripts, 2500);
+        }
+      });
+    })();
+  </script>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
@@ -14,7 +56,7 @@
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@afriwidget"><meta name="twitter:title" content="Calorie Deficit Planner &amp; TDEE Target — 100% Free, No Signup Required | AfriWidget"><meta name="twitter:description" content="Plan maintenance and calorie-deficit targets instantly with our 100% free tool. No signup, no email required, and no hidden paywalls."><meta name="twitter:image" content="https://afriwidget.com/og-image.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Deficit Planner and TDEE Target","url":"https://afriwidget.com/calorie-deficit-planner.html","description":"Estimate BMR, TDEE, maintenance calories, and a conservative calorie-deficit planning target.","applicationCategory":"HealthApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"AfriWidget","url":"https://afriwidget.com/"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://afriwidget.com/"},{"@type":"ListItem","position":2,"name":"Health & Wellness","item":"https://afriwidget.com/health.html"},{"@type":"ListItem","position":3,"name":"Calorie Deficit Planner","item":"https://afriwidget.com/calorie-deficit-planner.html"}]}</script>
-  <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="cards.css"><script src="footer.js" defer></script><script src="nav.js" defer></script><script src="health-tools.js" defer></script>
+  <link rel="stylesheet" href="/dist/styles.css" /><link rel="stylesheet" href="cards.css"><script src="footer.js" defer></script><script src="nav.js" defer></script><script src="health-tools.js" defer></script>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
