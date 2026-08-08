@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "./**/*.html";
+@source "./**/*.js";
 
 @theme {
   --color-brand-teal: #0F766E;
