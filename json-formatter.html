@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Formatter &amp; Validator | AfriWidget</title>
+  <meta name="description" content="Format, validate, and minify JSON instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <link rel="canonical" href="https://afriwidget.com/json-formatter" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/json-formatter" />
+  <meta property="og:title" content="JSON Formatter &amp; Validator | AfriWidget" />
+  <meta property="og:description" content="Format, validate, and minify JSON instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="JSON Formatter &amp; Validator | AfriWidget" />
+  <meta name="twitter:description" content="Format, validate, and minify JSON instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Formatter, Validator & Minifier",
+  "url": "https://afriwidget.com/json-formatter",
+  "description": "Free online JSON formatter, validator, and minifier. Paste JSON to instantly format with syntax highlighting or validate and get precise error messages. No sign-up.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tech & Dev Tools",
+      "item": "https://afriwidget.com/productivity"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "JSON Formatter",
+      "item": "https://afriwidget.com/json-formatter"
+    }
+  ]
+}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <style>
+    .mobile-menu{display:none;}.mobile-menu.open{display:block;}
+    #output{display:none;}
+    .json-key{color:#3b82f6;}
+    .json-str{color:#16a34a;}
+    .json-num{color:#ea580c;}
+    .json-bool{color:#dc2626;}
+    .json-null{color:#dc2626;}
+    .json-punct{color:#64748b;}
+    #formatted{white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:13px;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;overflow-x:hidden;}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-5 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="json-formatter" class="text-sky-400 font-bold">JSON</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="word-counter" class="block py-2 hover:text-emerald-400">Word Counter</a>
+      <a href="json-formatter" class="block py-2 text-sky-400 font-bold">JSON Formatter</a>
+      <a href="password-generator" class="block py-2 hover:text-emerald-400">Password Generator</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-br from-slate-900 via-sky-900 to-slate-900 text-white py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-sky-500 bg-opacity-20 text-sky-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-sky-500 border-opacity-30">Free Tech Tool</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">JSON Formatter &amp; Validator</h1>
+       <p class="text-slate-300 text-lg">Paste raw or minified JSON to instantly format, validate, and syntax-highlight — or minify back to compact form.</p>
+       <span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+    </div>
+  </section>
+
+  <main class="max-w-5xl mx-auto px-4 py-12">
+
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <!-- INPUT -->
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-base font-bold text-slate-800">Input JSON</h2>
+          <button id="clearBtn" class="text-xs text-slate-400 hover:text-red-500 transition-colors font-medium">Clear</button>
+        </div>
+        <textarea id="jsonInput" rows="18" placeholder='Paste your JSON here…&#10;&#10;Example:&#10;{"name":"AfriWidget","version":1,"tools":["word-counter","json-formatter"]}' class="flex-1 bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-medium shadow-sm transition-all outline-none resize-none text-sm font-mono leading-relaxed"></textarea>
+        <div class="flex gap-3 mt-4">
+           <button id="formatBtn" class="flex-1 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-95 text-sm">Format</button>
+           <button id="minifyBtn" class="flex-1 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-2.5 rounded-xl shadow-md transition-all active:scale-95 text-sm">Minify</button>
+        </div>
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-base font-bold text-slate-800">Output</h2>
+          <button id="copyBtn" class="text-xs text-sky-600 hover:text-sky-500 transition-colors font-semibold hidden">Copy</button>
+        </div>
+
+        <!-- Placeholder state -->
+        <div id="placeholder" class="flex-1 flex items-center justify-center text-slate-400 text-sm text-center py-8">
+          <div>
+            <svg class="w-12 h-12 mx-auto mb-3 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            <p>Paste JSON on the left and click<br><strong>Format &amp; Validate</strong> or <strong>Minify</strong></p>
+          </div>
+        </div>
+
+        <!-- Error state -->
+        <div id="errorBlock" class="hidden flex-1">
+          <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span class="font-bold text-red-700 text-sm">Invalid JSON</span>
+            </div>
+            <p id="errorMsg" class="text-red-600 text-sm leading-relaxed font-mono"></p>
+          </div>
+          <div class="mt-4 bg-slate-50 rounded-xl p-4 text-xs text-slate-500 leading-relaxed">
+            <strong class="text-slate-700">Common JSON mistakes:</strong><br/>
+            • Missing or trailing comma in objects/arrays<br/>
+            • Keys must be double-quoted strings<br/>
+            • String values must use double quotes (not single quotes)<br/>
+            • No comments allowed in JSON<br/>
+            • No trailing commas after last item
+          </div>
+        </div>
+
+        <!-- Success state -->
+        <div id="successBlock" class="hidden flex-1 flex flex-col">
+          <div id="validBadge" class="flex items-center gap-2 mb-3 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm font-semibold" id="validMsg">Valid JSON</span>
+          </div>
+          <div class="flex-1 bg-slate-900 rounded-xl p-4 overflow-auto max-h-96">
+            <div id="formatted"></div>
+          </div>
+           <button id="copyBtn2" class="mt-3 w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-2 rounded-xl transition-colors text-sm">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats row (shown after success) -->
+    <div id="statsRow" class="hidden grid grid-cols-3 gap-4 mt-4">
+      <div class="bg-white rounded-xl border border-slate-100 p-4 text-center shadow-sm">
+        <div class="text-xl font-bold text-sky-600" id="statKeys">—</div>
+        <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Keys</div>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-100 p-4 text-center shadow-sm">
+        <div class="text-xl font-bold text-slate-700" id="statSize">—</div>
+        <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Minified Size</div>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-100 p-4 text-center shadow-sm">
+        <div class="text-xl font-bold text-emerald-600" id="statDepth">—</div>
+        <div class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Max Depth</div>
+      </div>
+    </div>
+
+    <!-- EDUCATIONAL CONTENT -->
+    <article class="mt-16 space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">About This JSON Formatter</h2>
+      <p class="text-slate-600 leading-relaxed">This browser-based utility validates JSON and displays it in a readable or compact form. It is useful when reviewing API responses, configuration files, fixtures, webhook payloads, or data copied from developer tools. It reports syntax problems, but it cannot decide whether a valid JSON document has the correct fields for a particular service.</p>
+      <h2 class="text-2xl font-bold text-slate-900">How to Use the JSON Formatter</h2>
+      <p class="text-slate-600 leading-relaxed">Paste one complete JSON value into the input panel, then choose Format &amp; Validate or Minify. If parsing fails, read the error message and inspect the nearest quote, comma, bracket, or brace. After correcting the source, run the validator again before copying the output into an application or request.</p>
+      <h3 class="text-xl font-bold text-slate-900">Example: Fixing a Small JSON Error</h3>
+      <p class="text-slate-600 leading-relaxed">The text <code class="text-sky-700 bg-sky-50 px-1 rounded">{&quot;name&quot;: &quot;Amina&quot;,}</code> is invalid because of its trailing comma. Removing that comma produces valid JSON, which the formatter can then indent for review or minify for compact transport.</p>
+      <h2 class="text-2xl font-bold text-slate-900">JSON: The Universal Data Format</h2>
+      <p class="text-slate-600 leading-relaxed">JSON (JavaScript Object Notation) is a lightweight, human-readable data interchange format that has become the standard for APIs, configuration files, and data storage across the modern software stack. Originally derived from JavaScript object syntax, JSON is now language-agnostic and supported natively by virtually every programming language and platform. If you are building or consuming any web API in 2025, you are almost certainly working with JSON.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">JSON Structure: A Quick Reference</h3>
+      <p class="text-slate-600 leading-relaxed">JSON has six value types: strings (in double quotes), numbers, booleans (true or false), null, arrays (ordered lists in square brackets), and objects (key-value pairs in curly braces). Keys must always be strings. Values can be any of the six types, including nested objects and arrays. JSON does not support comments, trailing commas, single-quoted strings, or undefined — all common sources of parse errors when developers copy JavaScript object literals into a JSON context.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">When to Format vs. Minify</h3>
+      <p class="text-slate-600 leading-relaxed">Formatted JSON uses indentation and newlines to make the structure human-readable — ideal for debugging, documentation, configuration files checked into version control, and any context where a human will read the JSON directly. Minified JSON removes all whitespace, reducing file size — important for API responses in production where bandwidth and parse time matter. A typical JSON payload can be 20–40% smaller when minified, which at scale translates to meaningful reductions in data transfer costs and latency.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Reading JSON Error Messages</h3>
+      <p class="text-slate-600 leading-relaxed">The most common JSON parse errors are: unexpected token (usually a single quote, comment, or trailing comma), unexpected end of input (usually a missing closing bracket or brace), and value expected (usually a missing value after a colon). Browser and runtime error messages include a position indicator — the character number at which parsing failed. Working backwards from that position to find the actual error (which is often a few characters earlier) is the standard debugging approach. This tool shows you the browser's raw error message alongside a plain-English tip.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">A Practical JSON Debugging Workflow</h3>
+      <p class="text-slate-600 leading-relaxed">Start by pasting the complete payload into the input panel and choose Format &amp; Validate. If the document is valid, the tool displays an indented version that makes nested objects and arrays easier to inspect. If it is invalid, read the error location and check the nearest opening and closing brackets, the property before the reported position, and whether every string uses double quotes. A formatter can locate syntax problems, but it cannot determine whether a valid payload has the correct fields for a particular API.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Formatting, Minifying, and API Safety</h3>
+      <p class="text-slate-600 leading-relaxed">Use formatted JSON while developing or reviewing data because indentation exposes structure and makes code review easier. Use Minify when a compact payload is useful for a request, fixture, or stored file. Formatting changes whitespace, not the underlying values. This tool processes the text in your browser, but you should still avoid pasting passwords, access tokens, private keys, or confidential customer data into any online utility unless your organisation permits it.</p>
+
+      <div class="bg-sky-50 rounded-xl border border-sky-100 p-6">
+        <h3 class="font-bold text-sky-800 mb-2">Common Mistakes to Check</h3>
+        <p class="text-slate-700 leading-relaxed">JSON keys and text values require double quotation marks. Objects use curly braces, arrays use square brackets, and each property is separated by a comma except the final property. JSON does not accept comments, trailing commas, undefined, or JavaScript expressions. A valid document must have one complete top-level value, so remove accidental text before or after the object if the parser reports an unexpected character.</p>
+      </div>
+
+      <div class="pt-2">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">JSON Formatter Questions</h2>
+        <div class="space-y-3 text-sm">
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Does formatting change my JSON data?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">No. Formatting changes indentation and whitespace so the same data is easier to read. Minifying removes unnecessary whitespace for a compact representation.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Can this tool repair invalid JSON automatically?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">It identifies parsing errors and displays the browser’s error message, but you should review and correct the source yourself so values are not changed unexpectedly.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Is my JSON uploaded?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">The formatter runs in the browser and does not need a server request to parse the input. Always follow your organisation’s data-handling policy for sensitive information.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/></svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400">Free tools for health, finance, real estate, business, education, and tech.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+          <li><a href="finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+          <li><a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a></li>
+          <li><a href="business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+          <li><a href="education" class="hover:text-emerald-400 transition-colors">Education</a></li>
+          <li><a href="productivity" class="hover:text-emerald-400 transition-colors">Tech &amp; Developer Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Tech Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+          <li><a href="json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+          <li><a href="password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+          <li><a href="cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+      <p>© 2025 AfriWidget · Free forever · Local JSON processing · Built for Africa and the world 🌍</p>
+    </div>
+  </footer>
+
+  <script>
+    let lastOutput = '';
+
+    function syntaxHighlight(json) {
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?|[{}\[\],:])/g, match => {
+        if (/^"/.test(match)) {
+          return /:$/.test(match)
+            ? `<span class="json-key">${match}</span>`
+            : `<span class="json-str">${match}</span>`;
+        }
+        if (/true|false/.test(match)) return `<span class="json-bool">${match}</span>`;
+        if (/null/.test(match)) return `<span class="json-null">${match}</span>`;
+        if (/[{}\[\]]/.test(match)) return `<span class="json-punct">${match}</span>`;
+        if (/,|:/.test(match)) return `<span class="json-punct">${match}</span>`;
+        return `<span class="json-num">${match}</span>`;
+      });
+    }
+
+    function countKeys(obj, depth = 0) {
+      let keys = 0, maxDepth = depth;
+      if (typeof obj === 'object' && obj !== null) {
+        Object.keys(obj).forEach(k => {
+          keys++;
+          const { keys: k2, depth: d2 } = countKeys(obj[k], depth + 1);
+          keys += k2; maxDepth = Math.max(maxDepth, d2);
+        });
+        if (Array.isArray(obj)) obj.forEach(item => {
+          const { keys: k2, depth: d2 } = countKeys(item, depth + 1);
+          keys += k2; maxDepth = Math.max(maxDepth, d2);
+        });
+      }
+      return { keys, depth: maxDepth };
+    }
+
+    function showResult(parsed, formatted, minified) {
+      document.getElementById('placeholder').style.display = 'none';
+      document.getElementById('errorBlock').classList.add('hidden');
+      document.getElementById('successBlock').classList.remove('hidden');
+      document.getElementById('statsRow').classList.remove('hidden');
+      document.getElementById('statsRow').classList.add('grid');
+      document.getElementById('formatted').innerHTML = syntaxHighlight(escapeHtml(formatted));
+      document.getElementById('validMsg').textContent = `Valid JSON · ${formatted.split('\n').length} lines`;
+      lastOutput = formatted;
+
+      const minSize = new Blob([minified]).size;
+      document.getElementById('statSize').textContent = minSize < 1024 ? minSize + ' B' : (minSize / 1024).toFixed(1) + ' KB';
+      try {
+        const { keys, depth } = countKeys(parsed);
+        document.getElementById('statKeys').textContent = keys.toLocaleString();
+        document.getElementById('statDepth').textContent = depth;
+      } catch(e) {}
+    }
+
+    function showError(msg) {
+      document.getElementById('placeholder').style.display = 'none';
+      document.getElementById('successBlock').classList.add('hidden');
+      document.getElementById('statsRow').classList.add('hidden');
+      document.getElementById('errorBlock').classList.remove('hidden');
+      document.getElementById('errorMsg').textContent = msg;
+      lastOutput = '';
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    document.getElementById('formatBtn').addEventListener('click', () => {
+      const raw = document.getElementById('jsonInput').value.trim();
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        const formatted = JSON.stringify(parsed, null, 2);
+        const minified = JSON.stringify(parsed);
+        showResult(parsed, formatted, minified);
+      } catch(e) { showError(e.message); }
+    });
+
+    document.getElementById('jsonInput').addEventListener('input', () => {
+      const raw = document.getElementById('jsonInput').value.trim();
+      if (!raw) {
+        document.getElementById('placeholder').style.display = 'flex';
+        document.getElementById('errorBlock').classList.add('hidden');
+        document.getElementById('successBlock').classList.add('hidden');
+        document.getElementById('statsRow').classList.add('hidden');
+        lastOutput = '';
+        return;
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        showResult(parsed, JSON.stringify(parsed, null, 2), JSON.stringify(parsed));
+      } catch(e) {
+        document.getElementById('errorMsg').textContent = e.message;
+      }
+    });
+
+    document.getElementById('minifyBtn').addEventListener('click', () => {
+      const raw = document.getElementById('jsonInput').value.trim();
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        const minified = JSON.stringify(parsed);
+        document.getElementById('placeholder').style.display = 'none';
+        document.getElementById('errorBlock').classList.add('hidden');
+        document.getElementById('statsRow').classList.add('hidden');
+        document.getElementById('successBlock').classList.remove('hidden');
+        document.getElementById('formatted').textContent = minified;
+        document.getElementById('formatted').innerHTML = escapeHtml(minified);
+        document.getElementById('validMsg').textContent = `Minified · ${new Blob([minified]).size} bytes`;
+        lastOutput = minified;
+      } catch(e) { showError(e.message); }
+    });
+
+    document.getElementById('copyBtn2').addEventListener('click', () => {
+      if (!lastOutput) return;
+      navigator.clipboard.writeText(lastOutput).then(() => {
+        const btn = document.getElementById('copyBtn2');
+        btn.textContent = 'Copied!';
+        btn.classList.add('bg-emerald-100','text-emerald-700');
+         setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('bg-emerald-100','text-emerald-700'); }, 2000);
+      });
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      document.getElementById('jsonInput').value = '';
+      document.getElementById('placeholder').style.display = 'flex';
+      document.getElementById('errorBlock').classList.add('hidden');
+      document.getElementById('successBlock').classList.add('hidden');
+      document.getElementById('statsRow').classList.add('hidden');
+      lastOutput = '';
+    });
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

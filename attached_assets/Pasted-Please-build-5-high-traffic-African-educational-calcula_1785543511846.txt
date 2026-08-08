@@ -1,0 +1,46 @@
+Please build 5 high-traffic African educational calculators on the site:
+
+---
+### 1. JAMB UTME AGGREGATE CALCULATOR (NIGERIA)
+PROBLEM & GOAL: Candidates need to compute their combined screening score (50/50 ratio) for university admissions (UNILAG, UI, OAU).
+LOGIC:
+- Input: JAMB UTME Score (out of 400) + 5 O'Level Subject Grades (A1 to C6).
+- Grade-to-Points Scale: A1 = 4.0 pts, B2 = 3.6 pts, B3 = 3.2 pts, C4 = 2.8 pts, C5 = 2.4 pts, C6 = 2.0 pts (Max O'Level = 20 pts).
+- Formula: (JAMB Score / 8) + (Sum of 5 O'Level Subject Points) = Final Aggregate % (Out of 100).
+
+---
+### 2. TERTIARY GPA & CGPA CALCULATOR (PAN-AFRICAN)
+PROBLEM & GOAL: University and polytechnic students need to calculate semester GPA and overall cumulative CGPA across 4.0 and 5.0 scales.
+LOGIC:
+- Input: Dynamic course rows (Course Name, Credit Units/Hours, Grade dropdown: A, B, C, D, F).
+- Scale Options: Support 4.0 Scale (A=4, B=3, C=2, D=1, F=0) and 5.0 Scale (A=5, B=4, C=3, D=2, E=1, F=0).
+- Formula: GPA = (Sum of Grade Points × Credit Units) / (Total Credit Units).
+
+---
+### 3. SOUTH AFRICAN APS CALCULATOR (MATRIC / NSC)
+PROBLEM & GOAL: Matriculants need to compute their Admission Point Score (APS) for university applications (Wits, UCT, Stellenbosch).
+LOGIC:
+- Input: 6 Subject Percentages (0–100%) + Life Orientation percentage.
+- Conversion Scale: 80-100% = 7 pts | 70-79% = 6 pts | 60-69% = 5 pts | 50-59% = 4 pts | 40-49% = 3 pts | 30-39% = 2 pts | 0-29% = 1 pt.
+- Formula: Total APS = Sum of best 6 main subjects (Max = 42 points). Include a checkbox option to add/exclude Life Orientation based on specific university rules.
+
+---
+### 4. KCSE GRADE & KUCCPS CLUSTER CALCULATOR (KENYA)
+PROBLEM & GOAL: High school graduates in Kenya need to compute their mean KCSE grade and weighted KUCCPS cluster points for degree placement.
+LOGIC:
+- Input: 7 KCSE Subject Grades (A through E).
+- Points Mapping: A=12, A-=11, B+=10, B=9, B-=8, C+=7, C=6, C-=5, D+=4, D=3, D-=2, E=1.
+- Formula: Total Aggregate = Sum of best 7 subjects (Max 84 points). Display overall Mean Grade (e.g., Aggregate ≥ 81 = Grade A).
+
+---
+### 5. UNIVERSITY CUT-OFF POINT & ELIGIBILITY CHECKER
+PROBLEM & GOAL: Students need a tool to check if their WASSCE/JAMB score meets baseline university entry requirements.
+LOGIC:
+- Input: Aggregate score + Selected University & Course (e.g., Medicine, Law, Business).
+- Logic: Compare user score against course baseline thresholds and output an Eligibility Card ("High Chance", "Competitive", or "Below Threshold") with advice.
+
+---
+### UI & TECHNICAL REQUIREMENTS FOR ALL TOOLS:
+1. Apply the active site design: light slate background, subtle borders, and vibrant yellow accent buttons ("Calculate Now").
+2. Perform all calculations in real-time via Vanilla JavaScript without reloading the page.
+3. Follow all SEO_RULES.md guidelines (canonical tags, meta descriptions, and WebApplication JSON-LD schema).

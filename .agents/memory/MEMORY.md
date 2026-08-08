@@ -1,0 +1,21 @@
+- [AfriWidget architecture mandates](afriwidget-rules.md) — pure static HTML site; read REPLIT_RULES.md before any code change
+- [Mobile navigation state](mobile-navigation-state.md) — keep static menus closed by default; page-level navigation markup varies, so shared safeguards must win
+- [Static preview URL behavior](static-preview-url-behavior.md) — the static server redirects .html paths to clean extensionless URLs; verify content through the root or redirected response
+- [AI deployment boundary](education-ai-netlify-boundary.md) — Education and Finance AI are optional in Replit preview and activate only through the shared Netlify proxy
+- [Validated Replit configuration](validated-replit-config.md) — preserve full .replit metadata and use validated replacement when restoring the static workflow
+- [Compressed legacy HTML editing](compressed-legacy-html.md) — preserve the leading doctype when adding content to one-line tool pages; verify raw structure after exact replacements
+- [Homepage performance boundary](homepage-performance-boundary.md) — keep homepage navigation/footer raw HTML, defer analytics, and use clean URLs to avoid crawler and redirect costs
+- [Productivity category ownership](productivity-category-ownership.md) — the yellow productivity hub owns developer and productivity utilities; old tech routes redirect there
+- [Native browser back behavior](back-navigation.md) — rely on device/browser history and native scroll restoration; do not add custom Back controls or scroll stores
+- [Responsive output safety](responsive-output-safety.md) — wrap unpredictable generated values globally so long results never widen mobile pages
+- [Netlify clean URL assets](netlify-clean-url-assets.md) — clean URLs may resolve relative assets under a trailing-slash path; keep shared static assets root-safe
+- [Groq Netlify key handling](groq-netlify-key-handling.md) — use process.env.GROQ_API_KEY first; the static Replit preview cannot execute Netlify Functions
+- [Google favicon consistency](google-favicon-consistency.md) — use one crawlable square ICO/PNG favicon set across every HTML page; avoid inline data-URI competitors
+- [New-tool homepage branding](homepage-branding-for-new-tools.md) — new generator pages must copy the homepage gold/yellow logo treatment instead of older emerald internal-page markup
+- [Light generator page consistency](light-generator-page-consistency.md) — new homepage-branded generators keep dark brand chrome but use the shared light internal-page surface
+- [New page SEO checklist](new-page-seo-checklist.md) — verify metadata lengths, raw navigation, JSON-LD, 800+ words, sitemap, and scroll-to-top before publishing
+- [AI writing tools boundary](ai-writing-tools-boundary.md) — all writing pages use local drafts first and the shared server-side proxy when production AI is available
+- [Browser PDF export boundary](pdf-export-boundary.md) — stage client-side PDF content in a fixed A4 document; do not capture responsive cards or far off-screen nodes
+- [Generator variety boundary](generator-variety-boundary.md) — shared random-generation logic must own form events so legacy inline handlers cannot overwrite varied results
+- [Editable resume preview boundary](editable-resume-preview.md) — render resume drafts as a structured paper preview while preserving plain text for copy and PDF export
+- [Developer utility batch pattern](developer-utility-batch-pattern.md) — audit existing routes first, standardize canonical tools in place, and add new client-side utilities only when concepts are missing

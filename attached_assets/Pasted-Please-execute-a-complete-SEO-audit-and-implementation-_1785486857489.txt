@@ -1,0 +1,30 @@
+Please execute a complete SEO audit and implementation on all .html files in the root directory to reach a 100% SEO score (Google & AdSense compliant), and save the rules for future tools.
+
+1. CRITICAL AD SENSE & GOOGLE INDEXING RULES (NO REDIRECTS / NO DUPLICATES):
+   - ABSOLUTELY NO DUPLICATE CANONICAL TAGS. Every page must have exactly ONE `<link rel="canonical">` tag in its `<head>`.
+   - Ensure the canonical URL uses the EXACT final published URL format (e.g., `https://afriwidget.com/bmi-calculator.html` or without `.html` depending on hosting setup) to avoid redirect loops, chains, or canonical mismatch penalties.
+   - DO NOT set `noindex` or `nofollow` on any tool or calculator page. ALL 50+ tools must be 100% indexable by Google crawlers.
+   - Remove any JavaScript redirects or meta refreshes that automatically redirect search engine crawlers.
+
+2. COMPLETE META TAGS FOR EVERY PAGE:
+   - Add unique, highly descriptive `<title>` (50–60 characters) and `<meta name="description">` (120–160 characters) to every single `.html` page based on its specific tool/content.
+   - Add full Open Graph and Twitter Card tags (`og:title`, `og:description`, `og:type`, `og:image`, `og:url`) using matching canonical URLs.
+
+3. JSON-LD STRUCTURED DATA SCHEMA:
+   - Add unique JSON-LD structured data inside the `<head>` of every page.
+   - Use `WebApplication` or `SoftwareApplication` schema for tool/calculator pages (BMI, GPA, Compound Interest, etc.).
+   - Use `WebPage` or `Article` schema for category and informational pages.
+   - Include `BreadcrumbList` schema across all pages for enhanced search snippets.
+
+4. CRAWLER CONTROL FILES (`sitemap.xml` & `robots.txt`):
+   - Generate a clean `sitemap.xml` file in the root folder listing EVERY SINGLE public `.html` page with correct `<loc>`, `<lastmod>`, and `<priority>` tags.
+   - Create a clean `robots.txt` file in the root folder that explicitly allows all user-agents to crawl everything, pointing directly to the sitemap:
+     User-agent: *
+     Allow: /
+     Sitemap: https://afriwidget.com/sitemap.xml
+
+5. SAVE PERMANENT RULES TO `SEO_RULES.md`:
+   - Create a new file in the root directory named `SEO_RULES.md`.
+   - Document all these strict SEO rules, metadata templates, and schema structures inside `SEO_RULES.md` so that whenever a new tool or page is generated in the future, these rules are applied automatically without duplicating canonicals or triggering redirect errors.
+
+Inspect and update all .html files and generate `SEO_RULES.md` now!

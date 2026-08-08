@@ -1,0 +1,85 @@
+/* Shared app-like treatment for interactive tool and calculator cards. */
+.app-card,
+.tool-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f8fafc 0%, rgba(240, 253, 250, 0.92) 100%) !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.08) !important;
+  transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.app-card::before,
+.tool-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: #fbbf24;
+  pointer-events: none;
+}
+
+.app-card:hover,
+.tool-card:hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 18px 34px rgba(15, 118, 110, 0.16) !important;
+  transform: translateY(-5px);
+}
+
+.app-card:focus-visible,
+.tool-card:focus-visible {
+  outline: 3px solid rgba(245, 158, 11, 0.5);
+  outline-offset: 3px;
+}
+
+.app-card > span:last-child,
+.app-card > a:last-child,
+.app-card > div:last-child > span:last-child,
+.tool-card > div:last-child > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  background: #fbbf24;
+  color: #172554 !important;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.7rem;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.22);
+  transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.app-card:hover > span:last-child,
+.app-card:hover > a:last-child,
+.app-card:hover > div:last-child > span:last-child,
+.tool-card:hover > div:last-child > span:last-child {
+  background: #f59e0b;
+  box-shadow: 0 6px 14px rgba(245, 158, 11, 0.3);
+  transform: translateX(2px);
+}
+
+.tool-card > div:first-child > span {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-card,
+  .tool-card,
+  .app-card > span:last-child,
+  .app-card > a:last-child,
+  .app-card > div:last-child > span:last-child,
+  .tool-card > div:last-child > span:last-child {
+    transition: none;
+  }
+
+  .app-card:hover,
+  .tool-card:hover,
+  .app-card:hover > span:last-child,
+  .app-card:hover > a:last-child,
+  .app-card:hover > div:last-child > span:last-child,
+  .tool-card:hover > div:last-child > span:last-child {
+    transform: none;
+  }
+}

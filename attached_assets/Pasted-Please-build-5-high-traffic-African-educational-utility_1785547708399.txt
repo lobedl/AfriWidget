@@ -1,0 +1,46 @@
+Please build 5 high-traffic African educational utility tools to expand the site's academic tools collection:
+
+---
+### 1. WAEC / NECO O'LEVEL SUBJECT COMBINATION CHECKER
+LOGIC:
+- Input: User selects a Target University Course (e.g., Medicine, Law, Computer Science, Accounting, Nursing).
+- Output: Displays mandatory core subjects + mandatory electives required for admission eligibility across West African universities, highlighting critical required subjects (e.g., "Mathematics & Chemistry are MANDATORY for Medicine").
+
+---
+### 2. KCSE ELIGIBILITY TIER CHECKER (KENYA)
+LOGIC:
+- Input: User selects their KCSE Mean Grade (A, A-, B+, B, B-, C+, C, C-, D+, D, D-, E).
+- Logic & Output:
+  * Grade C+ to A: High Chance for Public/Private University Degree Placement (KUCCPS).
+  * Grade C to C-: Qualified for Diploma Programs in TVET Colleges.
+  * Grade D to D+: Qualified for Craft Certificate Programs.
+  * Grade E to D-: Qualified for Artisan Certificate Programs.
+
+---
+### 3. SOUTH AFRICAN TVET NATED PASS CALCULATOR
+LOGIC:
+- Input: Internal ICASS Mark % (weighted at 40%) + Final Exam Mark % (weighted at 60%).
+- Formula: Final Mark = (ICASS * 0.40) + (Exam * 0.60).
+- Pass Criteria: Total Mark must be ≥ 40% AND Exam Mark must be ≥ 40% (sub-minimum requirement).
+
+---
+### 4. BECE CSSPS SCHOOL PLACEMENT ESTIMATOR (GHANA)
+LOGIC:
+- Input: BECE Aggregate (6 to 54) + Selected Senior High School Category (Category A, Category B, Category C).
+- Logic:
+  * Category A Schools: Aggregate 6 – 10 = High Chance | Aggregate 11 – 14 = Borderline | Aggregate 15+ = Low Chance.
+  * Category B Schools: Aggregate 6 – 18 = High Chance | Aggregate 19 – 24 = Borderline.
+  * Output: Displays Placement Probability Card with suggested alternative backup school tiers.
+
+---
+### 5. IGCSE / A-LEVEL TO US GPA CONVERTER
+LOGIC:
+- Input: Dynamic row inputs for Subject Name, Level (A-Level, AS-Level, IGCSE), and Grade (A*, A, B, C, D, E).
+- Conversion Scale: A* = 4.0, A = 4.0, B = 3.0, C = 2.0, D = 1.0, E = 0.0 (A-Levels add +0.5 weight for AP equivalent).
+- Formula: GPA = (Sum of Weighted Grade Points) / (Total Subjects Count).
+
+---
+### TECHNICAL REQUIREMENTS:
+1. Match existing site theme (slate/teal-tint background, crisp borders, bright yellow CTA buttons).
+2. Perform all calculations and logic filters in real time using Vanilla JavaScript without page reloads.
+3. Follow all SEO rules from SEO_RULES.md (meta descriptions, canonical links, and WebApplication JSON-LD schema).

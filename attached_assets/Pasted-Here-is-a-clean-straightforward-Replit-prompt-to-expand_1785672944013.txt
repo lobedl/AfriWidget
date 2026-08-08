@@ -1,0 +1,26 @@
+Here is a clean, straightforward Replit prompt to expand your Groq AI integration across **all remaining tools** on AfriWidget (including Health, Education, Productivity, and any other tools) following your established standard.
+### 📋 Replit Prompt: Universal AI Rollout
+```text
+Please expand our Groq AI real-time insights and Q&A integration across ALL remaining tools on AfriWidget, strictly referring to the rules and setup defined in GROQ_AI_INTEGRATION.md:
+
+1. TARGET ALL REMAINING TOOLS:
+   - Apply the AI panel integration across all remaining categories (Health, Education, Productivity, Webmaster/SEO Tools, etc.).
+
+2. AUTOMATIC REAL-TIME INSIGHT (UNLIMITED):
+   - Whenever a user calculates or runs any tool, automatically generate a 2-sentence AI insight in `#ai-live-insight` right below the result.
+   - This automatic insight must be 100% UNLIMITED and must NOT deduct from the user's daily Q&A limit.
+   - UI UX RULE: Keep the AI insight and Q&A panel completely HIDDEN on page load. It must only reveal itself after a valid calculation output is generated.
+
+3. CUSTOM USER QUESTIONS (5 QUESTIONS PER 24 HOURS):
+   - Provide the chat input beneath the insight area for follow-up questions.
+   - Track usage in local storage using the 5-question limit per 24-hour rolling window across all tools.
+   - Display the status counter ("X / 5 questions left") and dynamic reset timer, automatically disabling the input when the quota is reached.
+
+4. SERVERLESS ROUTING & SYSTEM PROMPTS:
+   - Route all requests through our existing `netlify/functions/groq-proxy.js` serverless function using the 5 fallback keys (`GROQ_KEY_1` through `GROQ_KEY_5`) with `llama-3.3-70b-versatile`.
+   - Dynamically adjust the system prompt context based on the tool's category (e.g., "AfriWidget AI Health Assistant", "AfriWidget AI Productivity Assistant").
+
+5. DOCUMENTATION UPDATE:
+   - Update GROQ_AI_INTEGRATION.md to reflect that the AI integration is now active site-wide across all categories and tools.
+
+```

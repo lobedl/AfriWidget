@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPal &amp; Payment Fee Calculator | AfriWidget</title>
+  <meta name="description" content="Calculate PayPal, Stripe, and Square fees instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <link rel="canonical" href="https://afriwidget.com/paypal-fee-calculator" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/paypal-fee-calculator" />
+  <meta property="og:title" content="PayPal &amp; Payment Fee Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate PayPal, Stripe, and Square fees instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="PayPal &amp; Payment Fee Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate PayPal, Stripe, and Square fees instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Payment Processor Fee Calculator",
+  "url": "https://afriwidget.com/paypal-fee-calculator",
+  "description": "Free payment processor fee calculator. Instantly compute PayPal, Stripe, and Square fees and see exactly how much you receive from every transaction.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Tools",
+      "item": "https://afriwidget.com/business"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Payment Processor Fee Calculator",
+      "item": "https://afriwidget.com/paypal-fee-calculator"
+    }
+  ]
+}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="paypal-fee-calculator" class="text-violet-400 font-bold">Fee Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="paypal-fee-calculator" class="block py-2 text-violet-400 font-bold">Payment Fee Calculator</a>
+      <a href="profit-margin-calculator" class="block py-2 hover:text-emerald-400">Profit Margin</a>
+      <a href="hourly-to-salary" class="block py-2 hover:text-emerald-400">Hourly to Salary</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-br from-slate-900 via-violet-900 to-slate-900 text-white py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-violet-500 bg-opacity-20 text-violet-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-violet-500 border-opacity-30">Free Business Tool</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Payment Processor Fee Calculator</h1>
+      <p class="text-slate-300 text-lg">See exactly how much PayPal, Stripe, or Square takes from every transaction — and what you actually receive.</p>
+    </div>
+  </section>
+
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Transaction Details</h2>
+      <form id="feeForm" class="space-y-5">
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Calculation Mode</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="mode" value="standard" checked class="sr-only peer" />
+              <div class="flex items-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                I charge X, receive?
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="mode" value="reverse" class="sr-only peer" />
+              <div class="flex items-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+                I receive X, charge?
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1" id="amountLabel">Sale / Invoice Amount</label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="amount" placeholder="100.00" min="0.01" step="0.01" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Payment Processor</label>
+          <div class="space-y-2">
+            <label class="relative cursor-pointer block">
+              <input type="radio" name="processor" value="paypal_gs" checked class="sr-only peer" />
+              <div class="flex items-center gap-3 p-3.5 border-2 border-slate-200 bg-slate-50 rounded-xl transition-all peer-checked:border-[#10B981] peer-checked:bg-[#0F766E]/5 hover:border-[#0F766E]/40 cursor-pointer">
+                <div class="w-4 h-4 rounded-full border-2 border-slate-300 peer-checked:border-[#0F766E] flex items-center justify-center flex-shrink-0 transition-all" style="border-color: inherit;"><div class="w-2 h-2 rounded-full bg-[#0F766E] hidden peer-checked:block"></div></div>
+                <div><span class="font-semibold text-sm text-slate-800">PayPal – Goods &amp; Services</span><span class="text-xs text-slate-500 block">3.49% + $0.49 per transaction</span></div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer block">
+              <input type="radio" name="processor" value="stripe_standard" class="sr-only peer" />
+              <div class="flex items-center gap-3 p-3.5 border-2 border-slate-200 bg-slate-50 rounded-xl transition-all peer-checked:border-[#10B981] peer-checked:bg-[#0F766E]/5 hover:border-[#0F766E]/40 cursor-pointer">
+                <div><span class="font-semibold text-sm text-slate-800">Stripe – Standard Card</span><span class="text-xs text-slate-500 block">2.9% + $0.30 per transaction</span></div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer block">
+              <input type="radio" name="processor" value="stripe_intl" class="sr-only peer" />
+              <div class="flex items-center gap-3 p-3.5 border-2 border-slate-200 bg-slate-50 rounded-xl transition-all peer-checked:border-[#10B981] peer-checked:bg-[#0F766E]/5 hover:border-[#0F766E]/40 cursor-pointer">
+                <div><span class="font-semibold text-sm text-slate-800">Stripe – International Card</span><span class="text-xs text-slate-500 block">3.9% + $0.30 per transaction (cross-border)</span></div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer block">
+              <input type="radio" name="processor" value="square_online" class="sr-only peer" />
+              <div class="flex items-center gap-3 p-3.5 border-2 border-slate-200 bg-slate-50 rounded-xl transition-all peer-checked:border-[#10B981] peer-checked:bg-[#0F766E]/5 hover:border-[#0F766E]/40 cursor-pointer">
+                <div><span class="font-semibold text-sm text-slate-800">Square – Online Checkout</span><span class="text-xs text-slate-500 block">2.9% + $0.30 per transaction</span></div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer block">
+              <input type="radio" name="processor" value="square_inperson" class="sr-only peer" />
+              <div class="flex items-center gap-3 p-3.5 border-2 border-slate-200 bg-slate-50 rounded-xl transition-all peer-checked:border-[#10B981] peer-checked:bg-[#0F766E]/5 hover:border-[#0F766E]/40 cursor-pointer">
+                <div><span class="font-semibold text-sm text-slate-800">Square – In-Person (tap/dip/swipe)</span><span class="text-xs text-slate-500 block">2.6% + $0.10 per transaction</span></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-[#0F766E] to-[#0D6E66] hover:from-[#0D6E66] hover:to-[#0B6560] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 text-lg tracking-wide mt-2">Calculate Fees →</button>
+      </form>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="mt-8 space-y-6">
+
+      <div class="bg-gradient-to-br from-slate-900 to-violet-900 text-white rounded-2xl p-8 text-center shadow-xl">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-2">You Receive</p>
+        <div class="text-6xl font-extrabold mb-1">$<span id="netAmount">—</span></div>
+        <p class="text-slate-300 text-sm">After processor fees are deducted</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Charge / Invoice</p>
+          <p class="text-2xl font-bold text-slate-800">$<span id="chargeAmount">—</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Total Fee</p>
+          <p class="text-2xl font-bold text-red-500">$<span id="feeAmount">—</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Effective Rate</p>
+          <p class="text-2xl font-bold text-slate-800"><span id="effectiveRate">—</span>%</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Processor</p>
+          <p class="text-lg font-bold text-violet-700"><span id="processorName">—</span></p>
+        </div>
+      </div>
+
+      <!-- Monthly projection -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-slate-100">
+          <h3 class="font-bold text-slate-900">Monthly &amp; Annual Fee Projection</h3>
+          <p class="text-slate-500 text-xs mt-1">Based on this transaction size processed repeatedly</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Transactions / Month</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Monthly Fees</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Annual Fees</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Annual Revenue</th>
+              </tr>
+            </thead>
+            <tbody id="projectionBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATIONAL CONTENT -->
+    <article class="mt-16 space-y-8">
+      <h2 class="text-2xl font-bold text-slate-900">Understanding Payment Processor Fees</h2>
+      <p class="text-slate-600 leading-relaxed">Payment processors like PayPal, Stripe, and Square charge a percentage of every transaction plus a fixed fee. These charges cover fraud protection, payment network costs, and the infrastructure that makes digital payments possible. While individually small, these fees compound significantly at scale — making it essential for any business owner to account for them in their pricing strategy.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">PayPal Fees Explained</h3>
+      <p class="text-slate-600 leading-relaxed">PayPal charges 3.49% + a fixed fee (typically $0.49 USD) for Goods and Services transactions. This applies when buyers use the protected payment option. Friends and Family transfers within the same country are free, but this method offers no buyer or seller protection and is intended for personal use only — not for business sales. PayPal may also charge currency conversion fees and additional fees for international transactions depending on the sender's country.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Stripe Fees Explained</h3>
+      <p class="text-slate-600 leading-relaxed">Stripe charges 2.9% + $0.30 for standard domestic card transactions. For international cards (cards issued outside your country), an additional 1.5% surcharge applies, bringing the total to 4.4% + $0.30. Stripe offers volume discounts for high-revenue businesses. Its developer-friendly API, robust global coverage, and wide range of payment methods make it the preferred choice for most online businesses and SaaS companies.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Square Fees Explained</h3>
+      <p class="text-slate-600 leading-relaxed">Square's fee structure varies by how the payment is taken. In-person payments via tap, dip, or swipe cost 2.6% + $0.10 — the lowest per-transaction rate of the three major processors, making it ideal for physical retailers and market vendors. Online checkout through Square matches Stripe at 2.9% + $0.30. Square is particularly popular with small and medium businesses in the retail, food service, and personal services sectors.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">How to Use the Reverse Fee Calculator</h3>
+      <p class="text-slate-600 leading-relaxed">If you need to receive a specific net amount after fees — for example, you want to receive exactly $100 from a client — you can use the reverse calculation mode. Instead of entering the amount you charge, enter the amount you want to receive, and the calculator will tell you what to invoice. This is particularly useful for freelancers quoting project prices and for businesses pricing products to achieve a specific margin after payment processor costs.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">How to Read the Fee Result</h3>
+      <p class="text-slate-600 leading-relaxed">In standard mode, enter the amount shown to the customer and choose the processor and transaction type that best matches your account. The result separates the original charge, the estimated fee, the effective rate, and the amount left after the deduction. In reverse mode, enter the amount you want to receive. The calculator works backward from the percentage and fixed fee so you can estimate a suitable invoice amount before sending a quote.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Why Small Transactions Can Be Expensive</h3>
+      <p class="text-slate-600 leading-relaxed">A percentage fee scales with the sale, but the fixed charge does not. For example, a $0.30 fixed fee is a much larger share of a $10 transaction than of a $500 transaction. This is why the effective rate shown by the calculator may be higher than the advertised percentage. Businesses can use the monthly projection to estimate the effect of repeated transactions and decide whether pricing, bundling, or another payment method deserves consideration.</p>
+
+      <div class="bg-amber-50 rounded-xl border border-amber-100 p-6">
+        <h3 class="font-bold text-amber-800 mb-2">Rates, Countries, and Limitations</h3>
+        <p class="text-slate-700 leading-relaxed">Payment rates vary by country, currency, account agreement, card type, transaction channel, tax treatment, refunds, chargebacks, and changes made by the provider. The rates displayed here are illustrative estimates and may not match your current merchant contract. Confirm the latest PayPal, Stripe, or Square pricing before setting a final price or promising a net amount to a customer.</p>
+      </div>
+
+      <div class="pt-2">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Payment Fee Calculator Questions</h2>
+        <div class="space-y-3 text-sm">
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Does the calculator include taxes?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">No. Tax, VAT, withholding, refunds, disputes, currency conversion, and other account-specific adjustments should be checked separately.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Why is the effective rate different from the advertised rate?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">The effective rate includes the fixed per-transaction charge. That fixed amount represents a larger percentage of small payments.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Can I use this for my official processor invoice?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">Use it for estimates and pricing scenarios. The provider’s current statement and merchant agreement are authoritative for an actual transaction.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/></svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400">Free browser-based tools with Groq-powered Finance and Education insights where enabled.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+          <li><a href="finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+          <li><a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+          <li><a href="business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+          <li><a href="education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Business Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+          <li><a href="profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin Calculator</a></li>
+          <li><a href="hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+          <li><a href="cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+      <p>© 2025 AfriWidget · Free forever · No calculator submissions stored · No sign-up required · Built for Africa and the world 🌍</p>
+    </div>
+  </footer>
+
+  <script>
+    const PROCESSORS = {
+      paypal_gs:      { name: 'PayPal G&S',       pct: 0.0349, fixed: 0.49 },
+      stripe_standard:{ name: 'Stripe Standard',  pct: 0.029,  fixed: 0.30 },
+      stripe_intl:    { name: 'Stripe Intl',       pct: 0.039,  fixed: 0.30 },
+      square_online:  { name: 'Square Online',     pct: 0.029,  fixed: 0.30 },
+      square_inperson:{ name: 'Square In-Person',  pct: 0.026,  fixed: 0.10 },
+    };
+
+    document.querySelectorAll('input[name="mode"]').forEach(r => {
+      r.addEventListener('change', () => {
+        document.getElementById('amountLabel').textContent =
+          r.value === 'reverse' ? 'Amount You Want to Receive' : 'Sale / Invoice Amount';
+      });
+    });
+
+    document.getElementById('feeForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const amount = parseFloat(document.getElementById('amount').value);
+      if (!amount || amount <= 0) return;
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+      const proc = PROCESSORS[document.querySelector('input[name="processor"]:checked').value];
+
+      let charge, fee, net;
+      if (mode === 'standard') {
+        charge = amount;
+        fee = +(charge * proc.pct + proc.fixed).toFixed(2);
+        net = +(charge - fee).toFixed(2);
+      } else {
+        // reverse: net = charge*(1-pct) - fixed  =>  charge = (net + fixed)/(1-pct)
+        net = amount;
+        charge = +((net + proc.fixed) / (1 - proc.pct)).toFixed(2);
+        fee = +(charge - net).toFixed(2);
+      }
+
+      const effectiveRate = ((fee / charge) * 100).toFixed(2);
+
+      document.getElementById('chargeAmount').textContent = charge.toFixed(2);
+      document.getElementById('feeAmount').textContent = fee.toFixed(2);
+      document.getElementById('netAmount').textContent = net.toFixed(2);
+      document.getElementById('effectiveRate').textContent = effectiveRate;
+      document.getElementById('processorName').textContent = proc.name;
+
+      // Projection table
+      const rows = [10, 50, 100, 500, 1000];
+      document.getElementById('projectionBody').innerHTML = rows.map(n => {
+        const mFee = (fee * n).toFixed(2);
+        const aFee = (fee * n * 12).toFixed(2);
+        const aRev = (charge * n * 12).toFixed(2);
+        return `<tr class="hover:bg-slate-50">
+          <td class="px-6 py-3 text-slate-700">${n.toLocaleString()}</td>
+          <td class="px-6 py-3 text-right text-red-500 font-medium">$${parseFloat(mFee).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+          <td class="px-6 py-3 text-right text-red-600 font-bold">$${parseFloat(aFee).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+          <td class="px-6 py-3 text-right text-slate-700">$${parseFloat(aRev).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+        </tr>`;
+      }).join('');
+
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

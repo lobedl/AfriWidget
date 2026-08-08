@@ -1,0 +1,48 @@
+Act as a Senior Web Developer. I want you to build a complete, production-ready static website called "AfriWidget" using ONLY PURE HTML5, TAILWIND CSS (via CDN or standalone build), and VANILLA JAVASCRIPT.
+
+STRICT TECH STACK MANDATES:
+1. Pure Static Files: Use plain .html files, standard CSS/Tailwind, and plain JavaScript (.js). 
+2. ABSOLUTELY NO FRAMEWORKS: Do NOT use React, Next.js, Vue, Vite, or any JavaScript framework/bundler. Every page must be an independent, fully rendered .html file so all text is 100% visible in the raw HTML source code.
+3. Modern UI/UX: Fully responsive, clean layout styled with Tailwind CSS.
+
+BRAND COLOR PALETTE (Max 3 Colors):
+- Primary (Deep Tech Teal): #0F766E
+- Accent (Electric Emerald): #10B981
+- Base Neutral: #0F172A (Dark Slate) & #F8FAFC (Light Background)
+
+LOGO & FAVICON:
+1. Inline SVG Logo: Design an SVG logo with an emerald AI spark icon and bold text reading "AfriWidget" using #0F766E and #10B981.
+2. Favicon: Include an SVG/ICO favicon linked in the <head> of every HTML file.
+
+AUTOMATIC SCROLL-TO-TOP BEHAVIOR:
+- Add a lightweight vanilla JS script on every page:
+  window.addEventListener('DOMContentLoaded', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+FILE & CONTENT STRUCTURE:
+Create a multi-page file layout with full long-form text (800 to 1200+ words per page):
+
+1. index.html (Home Page - 1,200+ Words):
+   - Full intro to AfriWidget AI tools, mission, privacy guarantees, core categories, and FAQ accordion.
+
+2. CATEGORY PAGES (800+ Words Each):
+   - health.html (Health & Wellness)
+   - finance.html (Finance & Wealth)
+   - education.html (Education & Academics)
+
+3. INTERACTIVE CALCULATOR PAGES (Vanilla JS Driven):
+   - bmi-calculator.html (BMI, BMR & TDEE Calculator with real-time vanilla JS calculation and AI insight cards)
+   - compound-interest.html (Compound Interest Growth Calculator with dynamic JS outputs)
+   - gpa-calculator.html (Cumulative GPA Calculator with dynamic row adding in JS)
+
+4. MANDATORY ADSENSE & POLICY PAGES (800+ Words Each):
+   - privacy-policy.html
+   - terms.html
+   - about.html
+   - contact.html (with clean HTML form)
+   - adsense-disclaimer.html
+   - cookie-policy.html (plus a simple sticky cookie consent banner at bottom)
+
+NAVIGATION & LAYOUT:
+- Every page must share a consistent Navigation Bar and Multi-Column Footer linking to all categories, calculators, and legal policy pages.
+
+Please write clean, well-structured, semantic HTML5 code for every page so that it can be served instantly without any build or compile step!

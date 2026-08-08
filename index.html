@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <!-- Analytics loads after the initial page becomes interactive. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.addEventListener('load', function () {
+      var loadAnalytics = function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-6V491CW7H0');
+      };
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 2000 });
+      } else {
+        setTimeout(loadAnalytics, 1500);
+      }
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfriWidget | Free Health, Finance &amp; Education Tools</title>
+  <meta name="description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <link rel="canonical" href="https://afriwidget.com/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/" />
+  <meta property="og:title" content="AfriWidget | Free Health, Finance &amp; Education Tools" />
+  <meta property="og:description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="AfriWidget | Free Health, Finance &amp; Education Tools" />
+  <meta name="twitter:description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://afriwidget.com/#website",
+  "name": "AfriWidget",
+  "url": "https://afriwidget.com/",
+  "description": "AfriWidget offers free browser-based calculators and tools for health, finance, and education, with optional Groq-powered insights for Finance and Education. Designed for Africa and the world.",
+  "publisher": {
+    "@id": "https://afriwidget.com/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://afriwidget.com/widgets?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://afriwidget.com/#organization",
+  "name": "AfriWidget",
+  "url": "https://afriwidget.com/",
+  "logo": "https://afriwidget.com/og-image.png",
+  "sameAs": [
+    "https://x.com/afriwidget"
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AfriWidget Site Navigation",
+  "description": "Primary categories and calculators available on AfriWidget.",
+  "itemListElement": [
+    {
+      "@type": "SiteNavigationElement",
+      "position": 1,
+      "name": "Health & Wellness Tools",
+      "description": "BMI, BMR, TDEE and other health calculators and guides.",
+      "url": "https://afriwidget.com/health"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 2,
+      "name": "Finance & Wealth Tools",
+      "description": "Compound interest, savings and investment calculators.",
+      "url": "https://afriwidget.com/finance"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 3,
+      "name": "Real Estate & Housing Tools",
+      "description": "Mortgage and rent affordability calculators.",
+      "url": "https://afriwidget.com/real-estate"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 4,
+      "name": "Business & Freelance Tools",
+      "description": "Payment fee, profit margin and salary conversion calculators.",
+      "url": "https://afriwidget.com/business"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 5,
+      "name": "Education & Academic Tools",
+      "description": "GPA calculators and academic planning resources.",
+      "url": "https://afriwidget.com/education"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 6,
+      "name": "Productivity & Developer Tools",
+      "description": "Writing, business, SEO, JSON, password and other browser utilities.",
+      "url": "https://afriwidget.com/productivity"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 7,
+      "name": "All Tools & Widgets",
+      "description": "Browse every AfriWidget calculator and utility.",
+      "url": "https://afriwidget.com/widgets"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 8,
+      "name": "BMI Calculator",
+      "description": "Calculate BMI, BMR and TDEE.",
+      "url": "https://afriwidget.com/bmi-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 9,
+      "name": "Compound Interest Calculator",
+      "description": "Model investment and savings growth over time.",
+      "url": "https://afriwidget.com/compound-interest"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 10,
+      "name": "Cumulative GPA Calculator",
+      "description": "Calculate weighted GPA on the standard 4.0 scale.",
+      "url": "https://afriwidget.com/gpa-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 11,
+      "name": "African Admissions & Academic Tools",
+      "description": "Plan WASSCE, BECE, GPA and aggregate decisions with free academic tools.",
+      "url": "https://afriwidget.com/admissions"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 12,
+      "name": "JAMB UTME Aggregate Calculator",
+      "description": "Combine a Nigerian JAMB score with five O'Level grades.",
+      "url": "https://afriwidget.com/jamb-utme-aggregate-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 13,
+      "name": "Tertiary GPA & CGPA Calculator",
+      "description": "Calculate university GPA and CGPA on 4.0 or 5.0 scales.",
+      "url": "https://afriwidget.com/tertiary-gpa-cgpa-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 14,
+      "name": "South African APS Calculator",
+      "description": "Convert Matric and NSC percentages into APS points.",
+      "url": "https://afriwidget.com/south-african-aps-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 15,
+      "name": "KCSE & KUCCPS Cluster Calculator",
+      "description": "Estimate Kenyan KCSE aggregate points and mean grade.",
+      "url": "https://afriwidget.com/kcse-kuccps-cluster-calculator"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 16,
+      "name": "University Cut-Off & Eligibility Checker",
+      "description": "Compare JAMB or WASSCE scores with course planning baselines.",
+      "url": "https://afriwidget.com/university-cutoff-eligibility-checker"
+    }
+  ]
+}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="cards.css" />
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { brand: { teal: '#0F766E', emerald: '#10B981', dark: '#0F172A' } } } }
+    }
+  </script>
+  <style>
+    .accordion-content { display: none; }
+    .accordion-content.open { display: block; }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+    :root { --ink: #111827; --yellow: #facc15; --paper: #f8fafc; }
+    body { background: var(--paper); }
+    body.home-layout { display: flex; flex-direction: column; }
+    body.home-layout > nav { order: 0; }
+    body.home-layout > #hero { order: 1; }
+    body.home-layout > #toolsMatrix { order: 2; }
+    body.home-layout > #aboutSection { order: 3; }
+    body.home-layout > #missionSection { order: 4; }
+    body.home-layout > #categoriesSection { order: 5; }
+    body.home-layout > #faqSection { order: 6; }
+    body.home-layout > #finalCta { order: 7; }
+    body.home-layout > footer { order: 8; }
+    body.home-layout > #cookieBanner { order: 9; }
+    .tool-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(15,23,42,.09); }
+    .tool-card[hidden] { display: none; }
+    .category-section[hidden] { display: none; }
+    .search-ring:focus-within { box-shadow: 0 0 0 4px rgba(250,204,21,.25); }
+    .yellow-grid { background-image: linear-gradient(rgba(250,204,21,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(250,204,21,.1) 1px, transparent 1px); background-size: 32px 32px; }
+    .legacy-showcase { display: none; }
+    .home-layout footer .text-emerald-400, .home-layout footer a:hover { color: #facc15 !important; }
+    .home-layout #cookieBanner .text-emerald-400 { color: #facc15 !important; }
+    .home-layout nav a:hover, .home-layout nav summary:hover { color: #facc15 !important; }
+    .home-layout nav .text-emerald-400 { color: #facc15 !important; }
+    .home-layout nav .bg-teal-700, .home-layout nav .hover\:bg-teal-600:hover { background-color: #facc15 !important; color: #111827 !important; }
+    .home-layout .text-emerald-400, .home-layout .text-emerald-600 { color: #ca8a04 !important; }
+    .home-layout .bg-emerald-500 { background-color: #facc15 !important; }
+    .home-layout .border-emerald-300, .home-layout .border-emerald-200 { border-color: #fde68a !important; }
+     .home-layout nav .site-brand-wordmark .text-emerald-400 { color: #FACC15 !important; }
+    .legacy-showcase { display: none; }
+  </style>
+</head>
+<body class="home-layout bg-slate-50 text-slate-800 font-sans">
+
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="site-brand-wordmark text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="/" class="text-yellow-300 font-bold">Home</a>
+          <a href="education" class="hover:text-yellow-300 transition-colors">Education Tools</a>
+          <a href="finance" class="hover:text-yellow-300 transition-colors">Finance Tools</a>
+          <a href="health" class="hover:text-yellow-300 transition-colors">Health Tools</a>
+          <a href="productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          <a href="widgets" class="hover:text-yellow-300 transition-colors">All Tools Directory</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700 transition-colors" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="/" class="block py-2 text-yellow-300 font-bold">Home</a>
+      <a href="education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+      <a href="finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+      <a href="health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+      <a href="productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+      <a href="widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative overflow-hidden bg-slate-950 text-white px-4 py-20 sm:py-28">
+    <div class="absolute inset-0 yellow-grid opacity-60 pointer-events-none"></div>
+    <div class="absolute -right-24 -top-32 h-80 w-80 rounded-full bg-yellow-300/20 blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-yellow-300/40 bg-yellow-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[.18em] text-yellow-200">
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l4 4L19 6"/></svg>
+          Free tools. Private by design.
+        </div>
+        <h1 class="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">Make the next decision <span class="text-yellow-300">clearer.</span></h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">Practical calculators and utilities for health, money, school, work, and everyday life — ready when you are.</p>
+        <form id="toolSearchForm" class="search-ring mt-9 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/15 bg-white p-2 shadow-2xl" role="search">
+          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/></svg>
+          <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base" placeholder="Search BMI, GPA, invoice, mortgage..." aria-label="Search all AfriWidget tools" autocomplete="off">
+          <button type="submit" class="rounded-xl bg-yellow-300 px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:bg-yellow-200">Find a tool</button>
+        </form>
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18m9-9H3"/></svg>No signup</span>
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Zm-7 9a7 7 0 0 1 14 0"/></svg>Runs in your browser</span>
+          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 3 7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z"/></svg>Privacy-first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL TOOLS MATRIX -->
+  <section id="toolsMatrix" class="bg-slate-50 px-4 py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-extrabold uppercase tracking-[.2em] text-slate-500">The complete toolkit</p>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Find the right tool, fast.</h2>
+          <p class="mt-3 max-w-2xl text-slate-600">Every AfriWidget calculator and utility is organized below, with a clear starting point for whatever you are working on.</p>
+        </div>
+        <a href="widgets" class="inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 hover:text-yellow-700">View directory <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-2" id="categoryFilters" aria-label="Filter tools by category">
+        <button type="button" data-filter="all" class="category-filter rounded-full border border-slate-950 bg-slate-950 px-4 py-2 text-sm font-bold text-white">All tools</button>
+        <button type="button" data-filter="education" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Education</button>
+        <button type="button" data-filter="finance" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Finance</button>
+        <button type="button" data-filter="business" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Business</button>
+        <button type="button" data-filter="health" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Health</button>
+        <button type="button" data-filter="productivity" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Productivity &amp; business</button>
+        <button type="button" data-filter="everyday" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Everyday</button>
+      </div>
+      <p id="toolSearchStatus" class="mt-5 hidden text-sm font-semibold text-slate-600" aria-live="polite"></p>
+
+      <div class="mt-10 space-y-14" id="toolSections">
+        <div class="category-section" data-category-section="education">
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
+            <div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">01 / Learn &amp; qualify</p><h3 class="mt-1 text-2xl font-black text-slate-950">Education &amp; admissions</h3></div>
+            <a href="education" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore education hub →</a>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="gpa cumulative grade point average academic" href="gpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19V5m0 14h16M8 16v-4m4 4V8m4 8V6"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">Cumulative GPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Track weighted semester grades and see your cumulative GPA instantly.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="wassce aggregate west african senior school certificate" href="wassce-aggregate-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">WASSCE Aggregate Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate a tertiary admission aggregate from core subjects and electives.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="bece aggregate basic education certificate ghana" href="bece-aggregate-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 9h6M9 13h4"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">BECE Aggregate Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate Senior High School placement aggregate from BECE results.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="bece cssps placement estimator school ghana" href="bece-cssps-placement-estimator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 20h16M6 17V8l6-4 6 4v9M9 17v-4h6v4"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">BECE CSSPS Placement Estimator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Explore a planning estimate for BECE school placement pathways.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="jamb utme aggregate nigeria o level admission" href="jamb-utme-aggregate-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">JAMB UTME Aggregate Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Combine a Nigerian UTME score and O’Level grades for admission planning.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="tertiary gpa cgpa university grade point 4 5 scale" href="tertiary-gpa-cgpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 17V7l6-4 6 4v10M9 10h6"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">Tertiary GPA &amp; CGPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Track weighted university GPA across 4.0 and 5.0 grading scales.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="south africa aps matric nsc score" href="south-african-aps-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 19h12M8 16V5h8v11M10 9h4"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">South African APS Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert six Matric or NSC percentages into an APS planning estimate.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="kcse kuccps cluster kenya aggregate points mean grade" href="kcse-kuccps-cluster-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m4 17 5-5 4 3 7-8M4 20h16"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">KCSE &amp; KUCCPS Cluster Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate Kenyan subject points, aggregate, and mean grade for planning.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="university cutoff eligibility jamb wassce course" href="university-cutoff-eligibility-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m7 12 3 3 7-7M5 4h14v16H5z"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">University Eligibility Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare JAMB or WASSCE scores with course planning baselines.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="waec neco o level subject combination checker" href="olevel-subject-combination-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h10"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">WAEC / NECO Subject Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Review O’Level subject combinations for selected university courses.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="kcse eligibility tier checker kenya" href="kcse-eligibility-tier-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3 5 6v5c0 4 2.5 7.1 7 9 4.5-1.9 7-5 7-9V6l-7-3Z"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">KCSE Eligibility Tier Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Identify a KCSE planning tier from your overall performance.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="south african tvet nated pass calculator" href="south-african-tvet-nated-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h6"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">TVET NATED Pass Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Check a South African NATED subject pass estimate and average.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="icass calculator tvet south africa internal continuous assessment" href="icass-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h6"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">ICASS Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate weighted Internal Continuous Assessment for TVET planning.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate ICASS <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="igcse a level gpa converter international" href="igcse-alevel-gpa-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">IGCSE / A-Level GPA Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Translate IGCSE or A-Level grades into an indicative GPA range.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="finance">
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">02 / Plan ahead</p><h3 class="mt-1 text-2xl font-black text-slate-950">Finance &amp; housing</h3></div><a href="finance" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore finance hub →</a></div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="compound interest investment savings growth" href="compound-interest"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 18 9 13l3 3 7-9M15 7h4v4"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Compound Interest Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Model savings and investment growth across time, rates, and contributions.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="percentage discount markup change everyday" href="percentage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">%</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Percentage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate percentages, discounts, markups, and percentage change quickly.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="mortgage home loan payment interest property" href="mortgage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m4 11 8-7 8 7M6 10v9h12v-9M10 19v-5h4v5"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Mortgage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly home-loan payments, interest, and total borrowing cost.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="rent affordability housing 30 percent income" href="rent-affordability"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M3 11h18M5 11V8l7-5 7 5v3M6 11v8h12v-8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Rent Affordability Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare a target rent with income using practical affordability guidelines.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="paypal fee payment processor transaction" href="paypal-fee-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 7h14v10H5zM8 11h8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">PayPal Fee Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate transaction fees and the amount to request or receive.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="profit margin markup business sales cost" href="profit-margin-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 19V9m4 10V5m4 14v-7m4 7V3"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Profit Margin Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Work out gross profit, margin, markup, and selling price from your costs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="hourly salary annual income freelance rate" href="hourly-to-salary"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Hourly to Salary Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Translate an hourly rate into weekly, monthly, and annual salary estimates.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="finance">
+          <div class="sr-only">More finance tools</div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="savings goal timeline target monthly contribution interest" href="savings-goal-timeline-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Savings Goal Timeline Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate when regular contributions may reach a savings target.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan a goal <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="loan calculator repayment monthly payment interest amortization borrowing" href="loan-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">%</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Loan Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly payments, total interest, and an amortization preview.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate a loan <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="savings calculator compound interest deposits projected growth investment" href="savings-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↗</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Savings Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Project compound growth from a starting balance and monthly deposits.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Project savings <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="currency converter exchange rates African global currencies real time" href="currency-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↔</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Real-Time Currency Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert global and African currencies using live or fallback reference rates.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert currency <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="health">
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">03 / Know your numbers</p><h3 class="mt-1 text-2xl font-black text-slate-950">Health &amp; wellness</h3></div><a href="health" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore health hub →</a></div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="bmi bmr tdee body mass index health" href="bmi-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">BMI / BMR / TDEE Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Understand body mass index, basal metabolism, and daily energy needs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="body fat percentage navy circumference waist neck hips health composition" href="body-fat-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">%</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Body Fat Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate body fat percentage from simple tape measurements in your browser.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate body fat <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="daily calorie needs maintenance calories bmr tdee energy nutrition" href="daily-calorie-needs-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xs font-black">kcal</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Daily Calorie Needs Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate resting and maintenance calories from body size and usual activity.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate needs <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="calorie burn exercise activity met walking running cycling sports energy" href="calorie-burn-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🔥</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Calorie Burn Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate energy used during common activities with a MET-based formula.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Estimate burn <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="ideal weight healthy weight range devine robinson miller hamwi height" href="ideal-weight-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↔</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Ideal Weight Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare several height-based reference weight formulas and their range.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate range <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="healthy weight range bmi height adult reference weight" href="healthy-weight-range-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">✓</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Healthy Weight Range Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate an adult height-based reference range using BMI thresholds.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate range <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="pediatric dosage medicine child paracetamol ibuprofen" href="pediatric-dosage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M8 3v18M4 7h8M16 5v14M13 9h6"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Pediatric Dosage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate a weight-based liquid paracetamol or ibuprofen dose in millilitres.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="ovulation cycle fertile window period" href="ovulation-cycle-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 3v4M16 3v4M4 10h16"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Ovulation &amp; Cycle Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate cycle dates, fertile window, and ovulation peak privately.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="water intake hydration weight exercise climate" href="water-intake-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3s6.2 6 6 11a6 6 0 1 1-12 0c0-4.8 6-11 6-11Z"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Water Intake Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Build a daily hydration goal from body weight, exercise, and climate.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="hydration reminder water schedule drinking wake bedtime interval" href="hydration-reminder-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">⏱</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Hydration Reminder Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn a daily water target into a flexible schedule across waking hours.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Set schedule <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="calorie deficit planner weight loss maintenance calories" href="calorie-deficit-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m5 6 7-3 7 3-7 3-7-3Zm0 6 7 3 7-3M5 18l7 3 7-3"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Calorie Deficit Planner</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare estimated maintenance calories with a measured weight-loss target.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="blood donation eligibility donor health" href="blood-donation-eligibility-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M12 3s5 5.2 5 9a5 5 0 1 1-10 0c0-3.8 5-9 5-9Z"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Blood Donation Eligibility</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Check a basic donation eligibility screen and earliest re-donation date.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="productivity">
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">04 / Get things done</p><h3 class="mt-1 text-2xl font-black text-slate-950">Productivity tools</h3></div><a href="productivity" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore productivity hub →</a></div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="invoice receipt pdf generator business tax" href="invoice-receipt-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Invoice &amp; Receipt PDF Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create a polished invoice with line items, tax, discount, currency, and PDF export.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="reading time speech presentation words" href="reading-time-speech-estimator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h6"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">Reading Time &amp; Speech Estimator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate silent reading and spoken presentation duration from your text.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="text case converter cleanup uppercase lowercase html" href="text-case-converter-cleanup"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">Aa</span></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">Text Case &amp; Cleanup</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert case, clean lines, strip HTML, and copy polished text.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="image resizer webp converter canvas compress" href="image-resizer-webp-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2" stroke-width="1.8"/><circle cx="9" cy="10" r="1.5" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="m6 17 4-4 3 3 2-2 3 3"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">Image Resizer &amp; WebP Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Resize and convert images privately with browser-based Canvas tools.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="whatsapp direct link qr code generator chat" href="whatsapp-direct-link-qr-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">WhatsApp Link &amp; QR Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate a click-to-chat link and downloadable QR code in seconds.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="qr code generator URL text wifi credentials canvas download" href="qr-code-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5zM12 5v4m-3 3h3m0 0v3m3-3h4"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">QR Code Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create downloadable QR codes for website URLs, plain text, and Wi-Fi credentials.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate QR <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random email generator mock testing qa bulk email" href="random-email-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="m4 7 8 6 8-6"/></svg></span><span class="text-xs font-bold text-slate-400">Testing</span></div><h4 class="text-lg font-extrabold text-slate-950">100+ Random Email Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create private mock email lists for demos, QA, prototypes, and seed data.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random username generator gaming social professional custom handle" href="random-username-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M5 20c.8-3.2 3-5 7-5s6.2 1.8 7 5"/></svg></span><span class="text-xs font-bold text-slate-400">Identity</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Username Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Brainstorm gaming, social, professional, and custom username ideas.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random business name generator industry startup brand prefix suffix" href="random-business-name-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 20h16M6 20V9l6-4 6 4v11M9 20v-5h6v5"/></svg></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Business Name Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Explore industry-based prefixes, suffixes, and brand name combinations.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random team name generator sports gaming office school club" href="random-team-name-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" stroke-width="1.8"/><circle cx="17" cy="9" r="2.5" stroke-width="1.8"/></svg></span><span class="text-xs font-bold text-slate-400">Teams</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Team Name Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create sports, gaming, office, school, and club team name ideas.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+               <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random nickname generator fantasy cool cute funny aliases" href="random-nickname-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 3 14 9l6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/></svg></span><span class="text-xs font-bold text-slate-400">Creative</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Nickname Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate fantasy, cool, cute, and funny aliases for any project.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random address generator street city state zip postal testing" href="random-address-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 20h16M6 20V9l6-4 6 4v11M9 20v-5h6"/></svg></span><span class="text-xs font-bold text-slate-400">Testing</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Address Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create mock street, city, state, and postal code testing data.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate addresses <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random phone number generator country region code testing" href="random-phone-number-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 4h4l2 5-2 2a16 16 0 0 0 3 3l2-2 5 2v4c-8 1-15-6-14-14Z"/></svg></span><span class="text-xs font-bold text-slate-400">Testing</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Phone Number Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create sample formatted numbers by country and region code.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate numbers <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random date generator range format testing dates" href="random-date-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path stroke-linecap="round" stroke-width="1.8" d="M8 3v4m8-4v4M4 10h16"/></svg></span><span class="text-xs font-bold text-slate-400">Testing</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Date Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate random dates within custom ranges and formats.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate dates <span aria-hidden="true">→</span></span></a>
+              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="random color generator hex rgb hsl swatches design" href="random-color-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M12 4v16M4 12h16"/></svg></span><span class="text-xs font-bold text-slate-400">Design</span></div><h4 class="text-lg font-extrabold text-slate-950">Random Color Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate HEX, RGB, HSL codes with visual color swatches.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate colors <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="productivity">
+          <div class="sr-only">SEO and webmaster tools</div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="robots txt generator crawler ai bot seo webmaster" href="robots-txt-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5M8 17h3"/></svg></span><span class="text-xs font-bold text-slate-400">SEO</span></div><h4 class="text-lg font-extrabold text-slate-950">Robots.txt Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create crawler rules, exclusions, AI bot controls, and sitemap declarations.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="xml sitemap builder static site seo urls" href="xml-sitemap-builder"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4"/></svg></span><span class="text-xs font-bold text-slate-400">SEO</span></div><h4 class="text-lg font-extrabold text-slate-950">Static Site XML Sitemap Builder</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Build a downloadable sitemap.xml from full page URLs in your browser.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="meta title description pixel checker serp google truncation" href="meta-pixel-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 6h16M4 12h11M4 18h7M18 15v6m-3-3h6"/></svg></span><span class="text-xs font-bold text-slate-400">SEO</span></div><h4 class="text-lg font-extrabold text-slate-950">Meta Title &amp; Description Pixel Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Measure metadata width and preview Google-style title and description truncation.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="url slug generator permalink seo title url rewrite" href="url-slug-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↗</span></span><span class="text-xs font-bold text-slate-400">SEO</span></div><h4 class="text-lg font-extrabold text-slate-950">URL Slug Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn page titles into clean, readable, copy-ready URL slugs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate a slug <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="json formatter validator minifier developer api data" href="json-formatter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">{ }</span></span><span class="text-xs font-bold text-slate-400">Developer</span></div><h4 class="text-lg font-extrabold text-slate-950">JSON Formatter &amp; Validator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Format, validate, and minify structured JSON privately in your browser.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Format JSON <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="markdown html converter documentation blog readme" href="markdown-to-html-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">MD</span></span><span class="text-xs font-bold text-slate-400">Developer</span></div><h4 class="text-lg font-extrabold text-slate-950">Markdown to HTML Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn readable Markdown into previewable, copy-ready HTML.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert Markdown <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="html minifier minify whitespace comments optimize code" href="html-minifier"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">&lt;/&gt;</span></span><span class="text-xs font-bold text-slate-400">Developer</span></div><h4 class="text-lg font-extrabold text-slate-950">HTML Minifier</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Remove unnecessary markup whitespace and comments from HTML.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Minify HTML <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="base64 encoder decoder unicode bytes api developer" href="base64-encoder-decoder"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">64</span></span><span class="text-xs font-bold text-slate-400">Developer</span></div><h4 class="text-lg font-extrabold text-slate-950">Base64 Encoder &amp; Decoder</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Encode text or decode Base64 values with Unicode support.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Encode or decode <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="productivity">
+          <div class="sr-only">New productivity tools</div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="data file storage bytes bits gigabyte megabyte binary converter" href="data-file-unit-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 7h14v10H5zM8 10h8M8 14h5"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">Data &amp; File Unit Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert bits, bytes, decimal storage, and binary file-size units.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert file sizes <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="work experience resume duration employment dates years months days" href="work-experience-resume-duration-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M6 5h12v14H6zM9 9h6M9 13h4"/></svg></span><span class="text-xs font-bold text-slate-400">Productivity</span></div><h4 class="text-lg font-extrabold text-slate-950">Work Experience &amp; Resume Duration</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Add job dates and total your career experience in years and months.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Total experience <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai resume builder career application cv experience skills" href="ai-resume-builder"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">CV</span></span><span class="text-xs font-bold text-slate-400">Career</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Resume Builder</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn real experience, skills, and achievements into an editable resume draft.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Build a resume <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai cover letter job application career writing" href="ai-cover-letter-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">✉</span></span><span class="text-xs font-bold text-slate-400">Career</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Cover Letter Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Connect your real evidence to a specific job with a focused draft.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write a letter <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai linkedin headline profile career personal brand" href="ai-linkedin-headline-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">in</span></span><span class="text-xs font-bold text-slate-400">Career</span></div><h4 class="text-lg font-extrabold text-slate-950">AI LinkedIn Headline Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create concise headline ideas from your role, specialty, and value.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Create a headline <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai professional bio website portfolio speaker profile" href="ai-bio-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xs font-black">Bio</span></span><span class="text-xs font-bold text-slate-400">Career</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Professional Bio Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Shape your experience into a polished bio for a website or profile.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write a bio <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai email writer professional workplace message communication" href="ai-email-writer"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">@</span></span><span class="text-xs font-bold text-slate-400">Career</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Email Writer</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn a rough purpose into a clear, professional email draft.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write an email <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai social media caption generator instagram facebook twitter post caption content" href="ai-social-media-caption-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">✦</span></span><span class="text-xs font-bold text-slate-400">Social</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Social Media Caption Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create engaging captions for Instagram, Facebook, and Twitter from your post idea.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write a caption <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai hashtag generator social media topic niche instagram facebook tiktok" href="ai-hashtag-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">#</span></span><span class="text-xs font-bold text-slate-400">Social</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Hashtag Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Build relevant hashtag sets from your post topic, niche, and community.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate hashtags <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai youtube title generator video title keywords ctr click through rate" href="ai-youtube-title-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">YT</span></span><span class="text-xs font-bold text-slate-400">Video</span></div><h4 class="text-lg font-extrabold text-slate-950">AI YouTube Title Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate accurate, engaging video title ideas from topics and keywords.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Create titles <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai youtube description generator chapters timestamps links call to action" href="ai-youtube-description-generator"><div class="mb-5 flex items-start justify-between rounded-xl"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">☷</span></span><span class="text-xs font-bold text-slate-400">Video</span></div><h4 class="text-lg font-extrabold text-slate-950">AI YouTube Description Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Structure descriptions with chapters, links, takeaways, and calls to action.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write a description <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="ai blog title generator blog headline post ideas seed keyword content marketing" href="ai-blog-title-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">Aa</span></span><span class="text-xs font-bold text-slate-400">Blogging</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Blog Title Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn seed keywords into useful blog headlines and post angles.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate titles <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="productivity" data-search="keyword density checker seo content word phrase frequency percentage writing" href="keyword-density-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">%</span></span><span class="text-xs font-bold text-slate-400">SEO</span></div><h4 class="text-lg font-extrabold text-slate-950">Keyword Density Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Review word and phrase frequency in a draft without uploading your content.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Check density <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="business">
+          <div class="sr-only">Freelance pricing tools</div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="freelance hourly rate project pricing quote income overhead tax" href="freelance-hourly-rate-pricing-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Freelance Hourly Rate &amp; Project Pricing</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Set a sustainable rate and project quote from income, billable hours, tax, and overhead.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Price freelance work <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai business company brand name generator industry audience style startup" href="ai-business-name-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">Aa</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Business Name Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Explore creative company and brand name directions by industry, audience, and style.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate names <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai product description generator ecommerce shop marketplace product copy features benefits" href="ai-product-description-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">✦</span></span><span class="text-xs font-bold text-slate-400">E-commerce</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Product Description Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn accurate product features into clear, persuasive copy for online stores and marketplaces.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write product copy <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai freelance gig service description generator fiverr upwork deliverables buyer niche" href="ai-gig-description-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xs font-black">Gig</span></span><span class="text-xs font-bold text-slate-400">Freelance</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Gig Description Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Create a clear freelance marketplace service description with scope and timelines.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Describe a gig <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai paraphrasing tool rewrite text sentence paragraph clarity tone reading level" href="ai-paraphrasing-tool"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">↻</span></span><span class="text-xs font-bold text-slate-400">Writing</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Paraphrasing Tool</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Rewrite sentences and paragraphs for clarity, tone, and a specific audience.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Rewrite text <span aria-hidden="true">→</span></span></a>
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai text summarizer articles reports notes key points briefing action items" href="ai-text-summarizer"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">≡</span></span><span class="text-xs font-bold text-slate-400">Writing</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Text Summarizer</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Condense articles, reports, and notes into accurate key points and action items.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Summarize text <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+
+        <div class="category-section" data-category-section="everyday">
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">06 / Everyday answers</p><h3 class="mt-1 text-2xl font-black text-slate-950">Everyday utilities</h3></div><a href="widgets" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">See all widgets →</a></div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="everyday" data-search="age birthday date calculator years months days" href="age-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 3v4M16 3v4M4 10h16M9 14h6"/></svg></span><span class="text-xs font-bold text-slate-400">Everyday</span></div><h4 class="text-lg font-extrabold text-slate-950">Age Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Find your exact age in years, months, and days, plus your next birthday.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="everyday" data-search="unit converter length weight temperature area volume" href="unit-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M7 4v16M4 7h6M17 4v16M14 17h6"/></svg></span><span class="text-xs font-bold text-slate-400">Everyday</span></div><h4 class="text-lg font-extrabold text-slate-950">Unit Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert length, weight, temperature, area, and volume units instantly.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="everyday" data-search="word counter words characters sentences reading writing" href="word-counter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 6h14M5 10h14M5 14h9M5 18h6"/></svg></span><span class="text-xs font-bold text-slate-400">Everyday</span></div><h4 class="text-lg font-extrabold text-slate-950">Word Counter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Count words, characters, sentences, and reading time as you write.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT AFRIWIDGET -->
+  <section id="aboutSection" class="py-20 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">What Is AfriWidget?</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-8 rounded"></div>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-slate-700 text-lg leading-relaxed mb-4">
+            AfriWidget is a free, browser-based platform that puts practical calculations and intelligent explanations directly into your hands — with no app downloads, no sign-ups, and absolutely no hidden fees. We believe that access to high-quality information and useful tools should not be a privilege reserved for a few.
+          </p>
+          <p class="text-slate-700 text-lg leading-relaxed mb-4">
+            Whether you are planning a WASSCE or BECE aggregate, calculating your cumulative GPA, understanding your child's body mass index, or planning a savings strategy, AfriWidget provides the calculations, explanations, and insights you need to make confident, data-informed decisions.
+          </p>
+          <p class="text-slate-700 text-lg leading-relaxed">
+            Our platform was born from the recognition that millions of Africans — and people worldwide — lack access to the personalized financial advisors, nutrition coaches, and academic counselors that wealthier demographics take for granted. AfriWidget closes that gap, one smart widget at a time.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
+            <div class="text-4xl font-extrabold text-teal-700 mb-1">100%</div>
+            <div class="text-sm text-slate-600 font-medium">Free Forever</div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center">
+            <div class="text-4xl font-extrabold text-emerald-600 mb-1">0</div>
+            <div class="text-sm text-slate-600 font-medium">Data Sold</div>
+          </div>
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+             <div class="text-4xl font-extrabold text-slate-700 mb-1">65</div>
+            <div class="text-sm text-slate-600 font-medium">Smart Tools</div>
+          </div>
+          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
+             <div class="text-4xl font-extrabold text-teal-700 mb-1">6</div>
+            <div class="text-sm text-slate-600 font-medium">Core Categories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & PRIVACY -->
+  <section id="missionSection" class="py-20 px-4 bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center">Our Mission &amp; Privacy Promise</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-10 rounded"></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 rounded-2xl p-8">
+          <div class="w-12 h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-emerald-400 mb-3">Privacy First</h3>
+          <p class="text-slate-300 leading-relaxed">Most calculations stay in your browser. Finance and Education tools may send limited calculation context through our secure Groq proxy for an AI insight, but we have no user accounts or calculator-submission database and do not use calculator inputs for advertising targeting.</p>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-8">
+          <div class="w-12 h-12 bg-teal-600 bg-opacity-30 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-teal-400 mb-3">Accessible to All</h3>
+          <p class="text-slate-300 leading-relaxed">AfriWidget is built for users across Africa and the developing world. Our tools work on low-bandwidth connections and older devices. No app store. No premium tier. No paywalls. Just knowledge, freely accessible.</p>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-8">
+          <div class="w-12 h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-emerald-400 mb-3">AI-Powered Insights</h3>
+          <p class="text-slate-300 leading-relaxed">Our tools go beyond simple math. Local logic and Groq-powered Finance and Education insights explain what your results mean, why they matter, and what steps you can take next — translating numbers into real-world guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE CATEGORIES -->
+  <section id="categoriesSection" class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Explore Our Core Categories</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-4 rounded"></div>
+      <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">AfriWidget organizes its tools into six powerful domains, each packed with calculators, guides, and optional realtime AI guidance designed to move you forward.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <a href="health" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Health &amp; Wellness</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Understand your body metrics with clinical-grade calculators. Track BMI, compute your BMR, find your ideal caloric intake, and receive browser-based health guidance based on WHO standards.</p>
+          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Health Tools →</span>
+        </a>
+        <a href="finance" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-teal-100 transition-colors">
+            <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Finance &amp; Wealth</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Plan your financial future with precision. Compute compound interest, model investment growth, analyze savings milestones, and unlock optional Groq-powered strategies for building wealth at any income level.</p>
+          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Finance Tools →</span>
+        </a>
+        <a href="real-estate" class="app-card group block bg-white border-2 border-slate-100 hover:border-amber-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Real Estate &amp; Housing</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Calculate mortgage payments, estimate rent affordability using the 30% rule and 50/30/20 framework, and receive AI-powered insights on housing costs, debt-to-income ratios, and smart home-buying decisions.</p>
+          <span class="text-amber-600 font-semibold text-sm group-hover:text-amber-500 transition-colors">Explore Housing Tools →</span>
+        </a>
+        <a href="business" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Business &amp; Freelance</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Calculate payment processor fees for PayPal, Stripe, and Square. Compute profit margins and markups. Convert hourly rates to annual salary equivalents — essential tools for entrepreneurs, freelancers, and e-commerce sellers.</p>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Explore Business Tools →</span>
+        </a>
+        <a href="invoice-receipt-generator" class="app-card group block bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+           <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5 text-amber-700"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Free Invoice &amp; Receipt PDF</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Create a polished invoice with line items, tax, discount, currency, and a browser-generated PDF.</p>
+          <span class="text-amber-700 font-semibold text-sm group-hover:text-amber-600 transition-colors">Create an Invoice →</span>
+        </a>
+        <a href="education" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Education &amp; Academics</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Empower your academic journey with our cumulative GPA calculator, course-load optimizer, and study planning tools. Receive personalized AI suggestions to maintain scholarship eligibility and achieve your goals.</p>
+          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Education Tools →</span>
+        </a>
+        <a href="admissions" class="app-card group block bg-gradient-to-br from-amber-50 to-indigo-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+           <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-200 transition-colors"><svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m3 10 9-5 9 5-9 5-9-5Zm3 2v4c3 2 9 2 12 0v-4M12 15v5"/></svg></div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Admissions &amp; Aggregate Planning</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Plan WASSCE tertiary admission, BECE placement, KCSE pathways, O’Level subjects, NATED passes, and international GPA decisions with focused academic tools.</p>
+          <span class="text-amber-700 font-semibold text-sm group-hover:text-amber-600 transition-colors">Explore Admissions Tools →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATORS SHOWCASE -->
+  <section class="legacy-showcase py-20 px-4 bg-slate-50" aria-hidden="true">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Interactive AI Calculators</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-4 rounded"></div>
+      <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">Our calculators do more than crunch numbers. After a result is calculated, the realtime AI assistant can explain it in plain language and suggest a practical next step.</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <a href="bmi-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 12h4l2-6 4 12 2-6h4"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">BMI, BMR &amp; TDEE</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Real-time body metrics with AI-powered health insight cards based on your personal data.</p>
+        </a>
+        <a href="compound-interest" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">Compound Interest</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Visualize your investment growth over time with dynamic outputs and wealth-building insights.</p>
+        </a>
+        <a href="gpa-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="m4 7 8-4 8 4-8 4-8-4Zm3 3v5c3 2 7 2 10 0v-5M12 14v7"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">GPA Calculator</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Add courses dynamically and track your cumulative GPA with optional realtime academic AI guidance.</p>
+        </a>
+        <a href="pediatric-dosage-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M9 4h6M10 4v4l-3 5a5 5 0 0 0 4.5 7h1A5 5 0 0 0 17 13l-3-5V4"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">Pediatric Dosage</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate a weight-based liquid paracetamol or ibuprofen dose in millilitres.</p>
+        </a>
+        <a href="ovulation-cycle-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 3v4m8-4v4M4 10h16"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">Ovulation &amp; Cycle</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate cycle dates, fertile window, and ovulation peak privately in your browser.</p>
+        </a>
+        <a href="water-intake-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M12 3s5 5 5 10a5 5 0 1 1-10 0c0-5 5-10 5-10Z"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">Water Intake</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Build a daily hydration goal from body weight, exercise, and climate.</p>
+        </a>
+        <a href="calorie-deficit-planner" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M7 15l3-3 3 2 5-6"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">Calorie Deficit Planner</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Compare estimated maintenance calories with a measured weight-loss target.</p>
+        </a>
+        <a href="blood-donation-eligibility-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M12 3s5 5 5 10a5 5 0 1 1-10 0c0-5 5-10 5-10Z"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">Blood Donation Eligibility</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Check a basic donation eligibility screen and earliest re-donation date.</p>
+        </a>
+        <a href="wassce-aggregate-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-indigo-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm0 0v13a3 3 0 0 0 3 3M9 8h6M9 12h5"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-indigo-700 transition-colors">WASSCE Aggregate</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate tertiary admission aggregate using core subjects and the best three electives.</p>
+        </a>
+        <a href="bece-aggregate-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-indigo-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="m4 7 8-4 8 4-8 4-8-4Zm3 3v5c3 2 7 2 10 0v-5M12 14v7"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-indigo-700 transition-colors">BECE Aggregate</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate Senior High School placement aggregate using four cores and two best optionals.</p>
+        </a>
+        <a href="jamb-utme-aggregate-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-amber-300 transition-all group">
+          <div class="text-3xl mb-4">🇳🇬</div><h3 class="font-bold text-lg text-slate-800 group-hover:text-amber-700 transition-colors">JAMB UTME Aggregate</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Combine a Nigerian UTME score and five O’Level grades for admission planning.</p>
+        </a>
+        <a href="tertiary-gpa-cgpa-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-amber-300 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm0 0v13a3 3 0 0 0 3 3M9 8h6M9 12h5"/></svg></div><h3 class="font-bold text-lg text-slate-800 group-hover:text-amber-700 transition-colors">Tertiary GPA &amp; CGPA</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Track weighted university GPA across 4.0 and 5.0 grading scales.</p>
+        </a>
+        <a href="south-african-aps-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-amber-300 transition-all group">
+          <div class="text-3xl mb-4">🇿🇦</div><h3 class="font-bold text-lg text-slate-800 group-hover:text-amber-700 transition-colors">South African APS</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Convert six Matric or NSC percentages into an APS estimate.</p>
+        </a>
+        <a href="kcse-kuccps-cluster-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-amber-300 transition-all group">
+          <div class="text-3xl mb-4">🇰🇪</div><h3 class="font-bold text-lg text-slate-800 group-hover:text-amber-700 transition-colors">KCSE &amp; KUCCPS</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate Kenyan seven-subject aggregate points and mean grade.</p>
+        </a>
+        <a href="university-cutoff-eligibility-checker" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-amber-300 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m5 12 4 4L19 6"/></svg></div><h3 class="font-bold text-lg text-slate-800 group-hover:text-amber-700 transition-colors">University Eligibility Checker</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Compare JAMB or WASSCE scores with course planning baselines.</p>
+        </a>
+        <a href="seo-meta-generator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-sky-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-sky-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="m15 15 5 5M8 10h5"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-sky-700 transition-colors">SEO Meta Tag Generator</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Create search and social metadata with title checks, SERP preview, and copy-ready HTML tags.</p>
+        </a>
+        <a href="percentage-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="text-3xl mb-4">%</div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">Percentage Calculator</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Calculate percentages, discounts, markups, and percentage change for everyday decisions.</p>
+        </a>
+        <a href="age-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 12h8M12 8v8"/></svg></div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">Age Calculator</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Find your exact age in years, months, and days and count down to your next birthday.</p>
+        </a>
+        <a href="unit-converter" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-cyan-200 transition-all group">
+          <div class="text-3xl mb-4">↔</div>
+          <h3 class="font-bold text-lg text-slate-800 group-hover:text-cyan-700 transition-colors">Unit Converter</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed">Convert length, weight, temperature, area, and volume units instantly.</p>
+        </a>
+        <a href="reading-time-speech-estimator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
+          <div class="text-3xl mb-4">⏱️</div><h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">Reading Time &amp; Speech</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Estimate silent reading and spoken presentation duration.</p>
+        </a>
+        <a href="text-case-converter-cleanup" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-sky-200 transition-all group">
+          <div class="text-3xl mb-4">Aa</div><h3 class="font-bold text-lg text-slate-800 group-hover:text-sky-700 transition-colors">Text Case &amp; Cleanup</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Convert case, clean lines, strip HTML, and copy text.</p>
+        </a>
+        <a href="image-resizer-webp-converter" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-cyan-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-cyan-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.8"/><circle cx="9" cy="9" r="1.5" stroke-width="1.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m4 16 4-4 3 3 2-2 7 6"/></svg></div><h3 class="font-bold text-lg text-slate-800 group-hover:text-cyan-700 transition-colors">Image Resizer &amp; WebP</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Resize and convert images privately with Canvas.</p>
+        </a>
+        <a href="whatsapp-direct-link-qr-generator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all group">
+          <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"/></svg></div><h3 class="font-bold text-lg text-slate-800 group-hover:text-emerald-700 transition-colors">WhatsApp Link &amp; QR</h3><p class="text-slate-500 text-sm mt-2 leading-relaxed">Generate a click-to-chat link and downloadable QR code.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section id="faqSection" class="py-20 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-12 rounded"></div>
+      <div class="space-y-4" id="faqContainer">
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>Is AfriWidget completely free to use?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Yes, AfriWidget is 100% free for all users. Every calculator, category page, and realtime AI assistant is available without any subscription, registration, or payment. We are supported by non-intrusive advertising and believe that access to smart, AI-powered tools is a right, not a premium feature.</div>
+        </div>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>Does AfriWidget store my personal data?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">AfriWidget has no user accounts and does not use calculator inputs for advertising targeting. Most calculations run locally in your browser. Finance and Education tools may send the relevant calculation context through a secure server-side proxy to generate a Groq-powered AI insight; do not include names or other personal identifiers in calculator fields. We do not maintain a database of calculator submissions.</div>
+        </div>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>How accurate are the calculator results?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Our calculators use internationally recognised, clinically and academically validated formulas. Our BMI tool follows WHO guidelines, our BMR calculator uses the Mifflin-St Jeor equation (considered the gold standard), and our GPA tool reflects standard 4.0-scale grading conventions. However, our tools are for informational purposes only and should not replace advice from qualified medical, financial, or academic professionals.</div>
+        </div>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>Who is AfriWidget designed for?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">AfriWidget is designed for everyone, with a particular focus on users across Africa and other developing regions who may lack access to premium advisory services. Our tools work on older smartphones, slow internet connections, and a wide range of devices and browsers. We are committed to digital inclusion and believe that geography should never determine access to quality decision-making tools.</div>
+        </div>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>How does the realtime AI assistant work?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">The shared realtime assistant waits for a completed tool result, then sends the relevant calculation context through the secure server-side proxy for a concise explanation and practical next step. The proxy keeps the Groq key out of the browser. If the deployed AI endpoint is unavailable, the assistant clearly reports that realtime AI is unavailable rather than presenting a locally generated response.</div>
+        </div>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+            <span>Can I use AfriWidget on my mobile phone?</span>
+            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Yes. AfriWidget is fully responsive and optimised for mobile, tablet, and desktop browsers. Every page is designed with a mobile-first approach using modern Tailwind CSS layouts, touch-friendly controls, and fast-loading static HTML so it feels native on any device without requiring an app download.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="finalCta" class="bg-gradient-to-r from-slate-900 to-slate-800 py-16 px-4 text-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Ready to Make Smarter Decisions?</h2>
+      <p class="text-teal-100 mb-8 text-lg">Start with any of our free AI-powered tools and transform how you approach health, money, and education today.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="bmi-calculator" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Check Your BMI</a>
+        <a href="compound-interest" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Grow Your Wealth</a>
+        <a href="gpa-calculator" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Track Your GPA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400">Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+          <li><a href="finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+          <li><a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+          <li><a href="business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+          <li><a href="education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+          <li><a href="compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+          <li><a href="mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+          <li><a href="rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+          <li><a href="gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+          <li><a href="paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calc</a></li>
+          <li><a href="profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+          <li><a href="hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+           <li><a href="faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+          <li><a href="privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+          <li><a href="cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
+      <p>&copy; 2025 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-slate-300 leading-relaxed">We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-emerald-400 underline hover:text-emerald-300">Read our Cookie Policy</a>.</p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors">Decline</button>
+        <button id="cookieAccept" class="text-sm px-4 py-2 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-semibold transition-colors">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const mobileMenuButton = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenuButton.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+
+      // Homepage tool search and category filters
+      const searchInput = document.getElementById('toolSearch');
+      const searchForm = document.getElementById('toolSearchForm');
+      const filters = document.querySelectorAll('.category-filter');
+      const cards = document.querySelectorAll('[data-tool-card]');
+      const sections = document.querySelectorAll('[data-category-section]');
+      const searchStatus = document.getElementById('toolSearchStatus');
+      let activeCategory = 'all';
+
+       const normalizeSearchText = value => String(value || '')
+         .toLocaleLowerCase()
+         .normalize('NFD')
+         .replace(/[\u0300-\u036f]/g, '');
+
+       const updateToolResults = () => {
+         const query = normalizeSearchText(searchInput.value).trim();
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+           const searchableText = normalizeSearchText(`${card.dataset.search} ${card.textContent}`);
+           const matchesQuery = !query || searchableText.includes(query);
+          const visible = matchesCategory && matchesQuery;
+          card.hidden = !visible;
+          if (visible) visibleCount++;
+        });
+        sections.forEach(section => {
+          section.hidden = !Array.from(section.querySelectorAll('[data-tool-card]')).some(card => !card.hidden);
+        });
+        searchStatus.classList.toggle('hidden', !query);
+        searchStatus.textContent = query ? `${visibleCount} ${visibleCount === 1 ? 'tool' : 'tools'} match “${searchInput.value.trim()}”.` : '';
+      };
+
+      searchInput.addEventListener('input', updateToolResults);
+      searchForm.addEventListener('submit', event => {
+        event.preventDefault();
+        updateToolResults();
+        document.getElementById('toolsMatrix').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      filters.forEach(filter => filter.addEventListener('click', () => {
+        activeCategory = filter.dataset.filter;
+        filters.forEach(item => {
+          item.classList.toggle('bg-slate-950', item === filter);
+          item.classList.toggle('text-white', item === filter);
+          item.classList.toggle('border-slate-950', item === filter);
+          item.classList.toggle('bg-white', item !== filter);
+          item.classList.toggle('text-slate-700', item !== filter);
+          item.classList.toggle('border-slate-300', item !== filter);
+        });
+        updateToolResults();
+      }));
+
+      // FAQ Accordion
+      document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.accordion-icon');
+          const isOpen = content.classList.contains('open');
+          document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+          document.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = '');
+          if (!isOpen) {
+            content.classList.add('open');
+            icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      // Cookie banner
+      if (!localStorage.getItem('cookieConsent')) {
+        setTimeout(() => document.getElementById('cookieBanner').classList.remove('hidden'), 800);
+      }
+      document.getElementById('cookieAccept').addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookieBanner').classList.add('hidden');
+      });
+      document.getElementById('cookieDecline').addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        document.getElementById('cookieBanner').classList.add('hidden');
+      });
+    });
+  </script>
+  <script src="nav.js" defer></script>
+</body>
+</html>

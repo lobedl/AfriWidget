@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profit Margin Calculator | AfriWidget</title>
+  <meta name="description" content="Calculate gross margin, markup, and net profit instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <link rel="canonical" href="https://afriwidget.com/profit-margin-calculator" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/profit-margin-calculator" />
+  <meta property="og:title" content="Profit Margin Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate gross margin, markup, and net profit instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="Profit Margin Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate gross margin, markup, and net profit instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Profit Margin Calculator",
+  "url": "https://afriwidget.com/profit-margin-calculator",
+  "description": "Free profit margin calculator. Compute gross margin, markup percentage, and net profit for any product or service with AI-powered pricing insights.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Tools",
+      "item": "https://afriwidget.com/business"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Profit Margin Calculator",
+      "item": "https://afriwidget.com/profit-margin-calculator"
+    }
+  ]
+}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="profit-margin-calculator" class="text-violet-400 font-bold">Margin Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="paypal-fee-calculator" class="block py-2 hover:text-emerald-400">Payment Fee Calculator</a>
+      <a href="profit-margin-calculator" class="block py-2 text-violet-400 font-bold">Profit Margin Calculator</a>
+      <a href="hourly-to-salary" class="block py-2 hover:text-emerald-400">Hourly to Salary</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-br from-slate-900 via-violet-900 to-slate-900 text-white py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-violet-500 bg-opacity-20 text-violet-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-violet-500 border-opacity-30">Free Business Tool</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Profit Margin Calculator</h1>
+      <p class="text-slate-300 text-lg">Compute gross margin, markup, and net profit — instantly understand whether your pricing is truly sustainable.</p>
+    </div>
+  </section>
+
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Product / Service Details</h2>
+      <form id="marginForm" class="space-y-5">
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Cost of Goods / Service (COGS)</label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="cost" placeholder="60.00" min="0.01" step="0.01" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+          <p class="text-xs text-slate-400 mt-1">The total cost to produce or deliver the product or service.</p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Selling Price (Revenue per unit)</label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="price" placeholder="100.00" min="0.01" step="0.01" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Units Sold per Month <span class="font-normal text-slate-400">(optional)</span></label>
+          <input type="number" id="units" placeholder="100" min="1" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          <p class="text-xs text-slate-400 mt-1">Used to calculate monthly and annual profit totals.</p>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Industry <span class="font-normal text-slate-400">(for benchmarking)</span></label>
+          <div class="relative">
+            <select id="industry" class="appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 pr-10 text-slate-800 font-semibold shadow-sm w-full transition-all outline-none cursor-pointer">
+              <option value="">Select your industry…</option>
+              <option value="retail">Retail / E-Commerce (typical: 40–60%)</option>
+              <option value="software">Software / Digital Products (typical: 70–90%)</option>
+              <option value="food">Food &amp; Beverage (typical: 10–25%)</option>
+              <option value="manufacturing">Manufacturing (typical: 25–40%)</option>
+              <option value="services">Professional Services (typical: 50–70%)</option>
+              <option value="freelance">Freelance / Consulting (typical: 60–80%)</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+              <svg class="w-5 h-5 text-[#0F766E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-[#0F766E] to-[#0D6E66] hover:from-[#0D6E66] hover:to-[#0B6560] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 text-lg tracking-wide mt-2">Calculate Margin →</button>
+      </form>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="mt-8 space-y-6">
+
+      <div class="bg-gradient-to-br from-slate-900 to-violet-900 text-white rounded-2xl p-8 text-center shadow-xl">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-2">Gross Margin</p>
+        <div class="text-6xl font-extrabold mb-1"><span id="marginPct">—</span>%</div>
+        <p class="text-slate-300 text-sm">Profit as a percentage of your selling price</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Gross Profit</p>
+          <p class="text-2xl font-bold text-emerald-600">$<span id="grossProfit">—</span></p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Markup %</p>
+          <p class="text-2xl font-bold text-slate-800"><span id="markupPct">—</span>%</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Cost Ratio</p>
+          <p class="text-2xl font-bold text-slate-800"><span id="costRatio">—</span>%</p>
+        </div>
+      </div>
+
+      <!-- Monthly / Annual (shown if units provided) -->
+      <div id="volumeBlock" class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden" style="display:none">
+        <div class="px-6 py-4 border-b border-slate-100">
+          <h3 class="font-bold text-slate-900">Volume Projection</h3>
+        </div>
+        <div class="grid grid-cols-3 divide-x divide-slate-100">
+          <div class="p-5 text-center">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Monthly Revenue</p>
+            <p class="text-xl font-bold text-slate-800">$<span id="monthlyRev">—</span></p>
+          </div>
+          <div class="p-5 text-center">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Monthly Profit</p>
+            <p class="text-xl font-bold text-emerald-600">$<span id="monthlyProfit">—</span></p>
+          </div>
+          <div class="p-5 text-center">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Annual Profit</p>
+            <p class="text-xl font-bold text-emerald-700">$<span id="annualProfit">—</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing scenarios table -->
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div class="px-6 py-4 border-b border-slate-100">
+          <h3 class="font-bold text-slate-900">Pricing Scenarios</h3>
+          <p class="text-slate-500 text-xs mt-1">Explore how different prices affect your margin</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Selling Price</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Gross Profit</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Margin</th>
+                <th class="px-6 py-3 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">Markup</th>
+              </tr>
+            </thead>
+            <tbody id="scenarioBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EDUCATIONAL CONTENT -->
+    <article class="mt-16 space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Gross Margin vs. Markup: The Difference That Matters</h2>
+      <p class="text-slate-600 leading-relaxed">Gross margin and markup both describe the relationship between cost and profit, but they use different bases for their percentage calculation. <strong>Gross margin</strong> expresses profit as a percentage of the <em>selling price</em>. <strong>Markup</strong> expresses profit as a percentage of the <em>cost</em>. For a product costing $60 and selling for $100: gross profit is $40, gross margin is 40% ($40 ÷ $100), and markup is 66.7% ($40 ÷ $60).</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Why Margin Benchmarks Matter</h3>
+      <p class="text-slate-600 leading-relaxed">Every industry has a range of typical gross margins that reflect the competitive environment, cost structures, and value delivered. Retail margins typically run 40–60%, digital products and software 70–90%, food service 10–25%, and professional services 50–70%. If your margin is well below your industry norm, it may indicate your costs are too high, your pricing is too low, or your product mix needs adjustment. If it is significantly above the norm, you either have a strong competitive advantage — or your prices may be too high and costing you volume.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">The Role of Payment Processor Fees in Margin</h3>
+      <p class="text-slate-600 leading-relaxed">One margin-eroding cost that many e-commerce sellers underestimate is payment processor fees. If you sell a $100 product with a $40 cost, your gross margin looks like 60%. But if you accept payment via PayPal (3.49% + $0.49), you pay $3.98 in fees, reducing your actual profit to $36.02 — a real margin of about 36%. Always include payment processor fees in your cost calculation when assessing true margin, especially if your products are lower-priced where the fixed fee component becomes a higher percentage.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Setting Prices for Target Margin</h3>
+      <p class="text-slate-600 leading-relaxed">If you know your cost and have a target gross margin, you can work backwards to find your required selling price: <strong>Price = Cost ÷ (1 − Target Margin)</strong>. For a $60 cost product targeting a 50% margin: Price = $60 ÷ 0.50 = $120. Many business owners make the mistake of applying a markup instead — a 50% markup on $60 gives $90, but that is only a 33% margin, not 50%. Using this calculator alongside our payment fee calculator gives you a complete picture of real profitability.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">How to Use the Profit Margin Calculator</h3>
+      <p class="text-slate-600 leading-relaxed">Enter the direct cost of producing or delivering one item, then enter its selling price. Units sold per month are optional and allow the calculator to estimate monthly and annual totals. Choose an industry only when you want a broad comparison with the displayed benchmark range. The calculator then shows gross profit, gross margin, markup, cost ratio, and pricing scenarios so you can see how a different selling price would change the result.</p>
+
+      <h3 class="text-xl font-bold text-slate-900">Gross Profit Is Not the Same as Net Profit</h3>
+      <p class="text-slate-600 leading-relaxed">Gross profit subtracts direct cost from sales revenue, but a business may still have operating expenses such as rent, salaries, advertising, software, shipping, taxes, payment fees, and loan interest. The result from this tool is therefore a product-level gross margin estimate, not a complete income statement. Include the costs that apply to your business before deciding whether a price is sustainable.</p>
+
+      <div class="bg-violet-50 rounded-xl border border-violet-100 p-6">
+        <h3 class="font-bold text-violet-800 mb-2">Example: Margin and Markup</h3>
+        <p class="text-slate-700 leading-relaxed">If an item costs $60 and sells for $100, the gross profit is $40. Gross margin is $40 divided by $100, or 40%. Markup is $40 divided by $60, or 66.7%. These are both correct but answer different questions: margin describes profit as a share of revenue, while markup describes profit as a share of cost.</p>
+      </div>
+
+      <div class="pt-2">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Profit Margin Calculator Questions</h2>
+        <div class="space-y-3 text-sm">
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">What is a good profit margin?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">There is no universal target. Retail, food, software, manufacturing, and professional services have different costs and pricing models. Compare with your own historical results and relevant industry information.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Should payment fees be included in cost?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">If a fee is charged on every sale, include it when assessing the margin you actually keep. You can estimate it with the Payment Processor Fee Calculator linked in the business tools.</p>
+          </details>
+          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+            <summary class="font-semibold text-slate-800 cursor-pointer">Does this calculate net profit?</summary>
+            <p class="text-slate-600 leading-relaxed mt-3">No. It estimates gross profit and related ratios from the cost and selling price you enter. Operating expenses and taxes require a broader business calculation.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/></svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400">Free browser-based tools with Groq-powered Finance and Education insights where enabled.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+          <li><a href="finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+          <li><a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+          <li><a href="business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+          <li><a href="education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Business Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+          <li><a href="profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin Calculator</a></li>
+          <li><a href="hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+          <li><a href="cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
+      <p>© 2025 AfriWidget · Free forever · No calculator submissions stored · No sign-up required · Built for Africa and the world 🌍</p>
+    </div>
+  </footer>
+
+  <script>
+    const INDUSTRY_BENCHMARKS = {
+      retail:        { low: 40, high: 60, label: 'Retail / E-Commerce' },
+      software:      { low: 70, high: 90, label: 'Software / Digital Products' },
+      food:          { low: 10, high: 25, label: 'Food & Beverage' },
+      manufacturing: { low: 25, high: 40, label: 'Manufacturing' },
+      services:      { low: 50, high: 70, label: 'Professional Services' },
+      freelance:     { low: 60, high: 80, label: 'Freelance / Consulting' },
+    };
+
+    document.getElementById('marginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const cost  = parseFloat(document.getElementById('cost').value);
+      const price = parseFloat(document.getElementById('price').value);
+      const units = parseInt(document.getElementById('units').value) || 0;
+      const industry = document.getElementById('industry').value;
+
+      if (!cost || !price || cost <= 0 || price <= 0) return;
+      if (price <= cost) {
+        alert('Selling price must be greater than cost to have a positive margin.');
+        return;
+      }
+
+      const grossProfit = price - cost;
+      const marginPct   = (grossProfit / price * 100).toFixed(1);
+      const markupPct   = (grossProfit / cost * 100).toFixed(1);
+      const costRatio   = (cost / price * 100).toFixed(1);
+
+      document.getElementById('marginPct').textContent  = marginPct;
+      document.getElementById('grossProfit').textContent = grossProfit.toFixed(2);
+      document.getElementById('markupPct').textContent  = markupPct;
+      document.getElementById('costRatio').textContent  = costRatio;
+
+      if (units > 0) {
+        const mRev = (price * units).toFixed(2);
+        const mPro = (grossProfit * units).toFixed(2);
+        const aPro = (grossProfit * units * 12).toFixed(2);
+        document.getElementById('monthlyRev').textContent    = parseFloat(mRev).toLocaleString(undefined,{minimumFractionDigits:2});
+        document.getElementById('monthlyProfit').textContent = parseFloat(mPro).toLocaleString(undefined,{minimumFractionDigits:2});
+        document.getElementById('annualProfit').textContent  = parseFloat(aPro).toLocaleString(undefined,{minimumFractionDigits:2});
+        document.getElementById('volumeBlock').style.display = 'block';
+      } else {
+        document.getElementById('volumeBlock').style.display = 'none';
+      }
+
+      // Scenarios: -20%, -10%, current, +10%, +20% price
+      const multipliers = [0.8, 0.9, 1.0, 1.1, 1.2];
+      document.getElementById('scenarioBody').innerHTML = multipliers.map(m => {
+        const p2 = price * m;
+        const gp = p2 - cost;
+        const mg = gp > 0 ? (gp / p2 * 100).toFixed(1) : '—';
+        const mu = gp > 0 ? (gp / cost * 100).toFixed(1) : '—';
+        const isCurrentRow = m === 1.0;
+        const rowClass = isCurrentRow ? 'bg-violet-50 font-semibold' : 'hover:bg-slate-50';
+        return `<tr class="${rowClass}">
+          <td class="px-6 py-3 text-slate-700">$${p2.toFixed(2)}${isCurrentRow ? ' <span class="text-xs text-violet-600">(current)</span>' : ''}</td>
+          <td class="px-6 py-3 text-right ${gp > 0 ? 'text-emerald-600' : 'text-red-500'}">$${gp.toFixed(2)}</td>
+          <td class="px-6 py-3 text-right text-slate-700">${mg}%</td>
+          <td class="px-6 py-3 text-right text-slate-700">${mu}%</td>
+        </tr>`;
+      }).join('');
+
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPA Calculator | AfriWidget</title>
+  <meta name="description" content="Calculate weighted GPA from course grades and credit hours with a clear browser-based academic planning tool." />
+  <link rel="canonical" href="https://afriwidget.com/gpa-calculator" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/gpa-calculator" />
+  <meta property="og:title" content="GPA Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate weighted GPA from course grades and credit hours with a clear browser-based academic planning tool." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="GPA Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate weighted GPA from course grades and credit hours with a clear browser-based academic planning tool." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GPA Calculator",
+  "url": "https://afriwidget.com/gpa-calculator",
+  "description": "Free cumulative GPA calculator with dynamic course entry and AI-powered academic insight cards. Track your academic standing with precision.",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Education & Academics",
+      "item": "https://afriwidget.com/education"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GPA Calculator",
+      "item": "https://afriwidget.com/gpa-calculator"
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is cumulative GPA calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cumulative GPA is calculated by multiplying each course's grade points by its credit hours, adding those quality points together, and dividing by the total number of attempted credit hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What GPA scale does this calculator use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator uses the standard 4.0 scale, with an A worth 4.0 points, A- worth 3.7, B+ worth 3.3, B worth 3.0, and lower grades following the scale shown on the page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do credit hours affect my GPA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A course with more credit hours has more influence on your cumulative GPA because its grade contributes more quality points to the weighted average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate my GPA for multiple semesters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enter all graded courses you want to include, or combine semester results by entering the courses and credit hours from each term. Leave out courses that do not contribute to your institution's GPA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 3.0 GPA good?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 3.0 GPA is generally considered good academic standing on a 4.0 scale, although requirements vary by institution, programme, scholarship, and country."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator replace my official academic record?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The result is an estimate based on the standard 4.0 scale. Always compare it with your official transcript and your institution's grading and repeat-course policies."
+      }
+    }
+  ]
+}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;}</style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400">Health</a>
+          <a href="finance" class="hover:text-emerald-400">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400">Business</a>
+          <a href="education" class="hover:text-emerald-400">Education</a>
+          <a href="productivity" class="hover:text-emerald-400">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400">All Widgets</a>
+          <a href="bmi-calculator" class="hover:text-emerald-400">BMI Calc</a>
+          <a href="compound-interest" class="hover:text-emerald-400">Compound Interest</a>
+          <a href="gpa-calculator" class="text-emerald-400 font-bold">GPA Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="bmi-calculator" class="block py-2 hover:text-emerald-400">BMI Calculator</a>
+      <a href="compound-interest" class="block py-2 hover:text-emerald-400">Compound Interest</a>
+      <a href="gpa-calculator" class="block py-2 text-emerald-400 font-bold">GPA Calculator</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-900 text-white py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-emerald-500 bg-opacity-20 text-emerald-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-emerald-500 border-opacity-30">Free Academic Tool</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Cumulative GPA Calculator</h1>
+      <p class="text-slate-300 text-lg">Add your courses dynamically, calculate your cumulative GPA instantly, and request personalised guidance from the realtime academic AI assistant.</p>
+    </div>
+  </section>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+
+    <!-- GRADE SCALE REFERENCE -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 mb-8">
+      <h2 class="font-bold text-slate-700 mb-3 text-sm uppercase tracking-wider">Grade Point Scale (4.0)</h2>
+      <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 text-xs text-center">
+        <div class="bg-emerald-50 rounded-lg p-2"><div class="font-extrabold text-emerald-700">A</div><div class="text-slate-500">4.0</div></div>
+        <div class="bg-emerald-50 rounded-lg p-2"><div class="font-extrabold text-emerald-600">A-</div><div class="text-slate-500">3.7</div></div>
+        <div class="bg-teal-50 rounded-lg p-2"><div class="font-extrabold text-teal-700">B+</div><div class="text-slate-500">3.3</div></div>
+        <div class="bg-teal-50 rounded-lg p-2"><div class="font-extrabold text-teal-600">B</div><div class="text-slate-500">3.0</div></div>
+        <div class="bg-teal-50 rounded-lg p-2"><div class="font-extrabold text-teal-500">B-</div><div class="text-slate-500">2.7</div></div>
+        <div class="bg-slate-100 rounded-lg p-2"><div class="font-extrabold text-slate-700">C+</div><div class="text-slate-500">2.3</div></div>
+        <div class="bg-slate-100 rounded-lg p-2"><div class="font-extrabold text-slate-600">C</div><div class="text-slate-500">2.0</div></div>
+        <div class="bg-red-50 rounded-lg p-2"><div class="font-extrabold text-red-500">F</div><div class="text-slate-500">0.0</div></div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 mb-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-slate-900">Your Courses</h2>
+        <button id="addRowBtn" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Add Course
+        </button>
+      </div>
+
+      <!-- TABLE HEADER -->
+      <div class="grid grid-cols-12 gap-2 mb-2 text-xs font-bold uppercase tracking-wider text-slate-400 px-1">
+        <div class="col-span-5">Course Name</div>
+        <div class="col-span-3 text-center">Grade</div>
+        <div class="col-span-3 text-center">Credit Hours</div>
+        <div class="col-span-1"></div>
+      </div>
+
+      <div id="courseRows" class="space-y-2"></div>
+
+      <div class="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+        <button id="calcBtn" class="flex-1 bg-gradient-to-r from-[#0F766E] to-[#0D6E66] hover:from-[#0D6E66] hover:to-[#0B6560] text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95">Calculate GPA</button>
+        <button id="clearBtn" class="px-6 py-3 border-2 border-slate-200 hover:border-[#0F766E]/40 text-slate-600 font-semibold rounded-xl transition-all hover:bg-slate-50">Clear All</button>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="hidden">
+      <h2 class="text-2xl font-bold text-slate-900 mb-5">Your GPA Results</h2>
+      <div class="grid sm:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Cumulative GPA</div>
+          <div id="cumGPA" class="text-5xl font-extrabold text-teal-700 mb-1">—</div>
+          <div id="gpaLabel" class="text-sm font-semibold text-slate-600">—</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Total Credits</div>
+          <div id="totalCredits" class="text-5xl font-extrabold text-emerald-600 mb-1">—</div>
+          <div class="text-sm text-slate-500">credit hours</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Total Courses</div>
+          <div id="totalCourses" class="text-5xl font-extrabold text-teal-700 mb-1">—</div>
+          <div class="text-sm text-slate-500">courses entered</div>
+        </div>
+      </div>
+
+      <!-- GPA MILESTONES -->
+      <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-6">
+        <h3 class="font-bold text-slate-800 mb-4">GPA Benchmarks</h3>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-slate-600">Summa Cum Laude (≥3.9)</span>
+            <div id="bench1" class="text-sm font-bold px-3 py-1 rounded-full">—</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-slate-600">Dean's List (≥3.7)</span>
+            <div id="bench2" class="text-sm font-bold px-3 py-1 rounded-full">—</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-slate-600">Merit Scholarship Eligible (≥3.5)</span>
+            <div id="bench3" class="text-sm font-bold px-3 py-1 rounded-full">—</div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-slate-600">Good Academic Standing (≥2.0)</span>
+            <div id="bench4" class="text-sm font-bold px-3 py-1 rounded-full">—</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- GPA GUIDE AND FAQ -->
+  <section class="max-w-3xl mx-auto px-4 pb-16">
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 sm:p-9 mb-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">How to Use This GPA Calculator</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        This cumulative GPA calculator helps students turn a list of courses, grades, and credit hours into a clear weighted average on the standard 4.0 scale. To begin, enter the name of each course, choose the letter grade you received, and provide the number of credit hours assigned to that course. Add as many rows as you need, then select <strong>Calculate GPA</strong> to see your cumulative result, total credits, course count, benchmark progress, and an academic insight based on the result.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Credit hours are important because GPA is weighted rather than calculated as a simple average of letter grades. A four-credit course affects the result more than a one-credit course. For example, earning an A in a four-credit course contributes 16 quality points, while an A in a one-credit course contributes 4 quality points. The calculator accounts for this difference automatically so your result better reflects the way most colleges and universities calculate academic standing.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The formula is straightforward: multiply the grade-point value for every course by its credit hours, add all of those quality points together, and divide the total quality points by the total number of credit hours. If a student earns a B worth 3.0 points in a three-credit course, that course contributes 9 quality points. Repeat the process for every graded course and the result is the weighted cumulative GPA. Rounding is applied only for display, so the page shows a practical two-decimal result.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-8">Understanding Your GPA Result</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        A GPA is one measure of academic performance, not a complete description of a student's ability or potential. A result of 3.7 or higher is often associated with Dean's List recognition, while a result of 3.5 or higher may meet the academic threshold for some merit scholarships. A result around 3.0 is commonly viewed as good standing and may satisfy the minimum academic requirement for many graduate programmes. These are useful general benchmarks, but exact rules differ between institutions, departments, countries, and scholarship providers.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Students in Nigeria, Ghana, Kenya, South Africa, and other countries may encounter grading systems that do not map perfectly to the American 4.0 scale. Some universities use percentages, class divisions, a 5.0 scale, or a different set of grade-point conversions. If your school publishes its own conversion table, use that official table rather than assuming the standard values shown here. The calculator is best used for planning, comparison, and understanding weighted performance; your registrar's transcript remains the authoritative record.
+      </p>
+      <p class="text-slate-700 leading-relaxed">
+        If your GPA is below your target, focus first on courses with the greatest number of credits and identify the subjects where support could make the biggest difference. Office hours, tutoring, study groups, past papers, a weekly study schedule, and early communication with academic advisers can all help. If your GPA is already strong, protect consistency while choosing challenging courses thoughtfully and maintaining a healthy balance between study, rest, work, and other responsibilities.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 sm:p-9">
+      <div class="mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Common questions</span>
+        <h2 class="text-2xl font-bold text-slate-900 mt-2">Cumulative GPA Calculator FAQ</h2>
+        <p class="text-slate-600 leading-relaxed mt-3">
+          Find quick answers about GPA formulas, credit hours, grading scales, semester results, and how to interpret the number shown by this tool.
+        </p>
+      </div>
+
+      <div class="divide-y divide-slate-200 border-y border-slate-200">
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>How is cumulative GPA calculated?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">Cumulative GPA is calculated by multiplying each course's grade points by its credit hours, adding those quality points together, and dividing by the total number of attempted credit hours. This weighted method means higher-credit courses have a larger effect on the final result.</p>
+        </details>
+
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>What GPA scale does this calculator use?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">This calculator uses the standard 4.0 scale shown near the top of the page: an A is worth 4.0 points, an A- is worth 3.7, a B+ is worth 3.3, and a B is worth 3.0. Your institution may use a different scale or conversion policy, so check its official guidance.</p>
+        </details>
+
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>Do credit hours affect my GPA?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">Yes. A course with more credit hours has more influence on your cumulative GPA because its grade contributes more quality points to the weighted average. Enter the correct credit value for every course to get the most useful estimate.</p>
+        </details>
+
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>Can I calculate my GPA for multiple semesters?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">Yes. Enter all graded courses you want to include, including courses from more than one semester. You can also use the tool term by term to compare progress. Leave out pass/fail, audit, withdrawn, or non-credit courses when your institution excludes them from GPA calculations.</p>
+        </details>
+
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>Is a 3.0 GPA good?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">A 3.0 GPA is generally considered good academic standing on a 4.0 scale. However, the right target depends on your programme, institution, scholarship, country, and career plans. Some competitive graduate programmes require 3.5 or higher, while others consider experience, research, and other evidence alongside GPA.</p>
+        </details>
+
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-800">
+            <span>Does this calculator replace my official academic record?</span>
+            <span class="text-emerald-600 text-xl leading-none group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="text-slate-600 leading-relaxed mt-3 pr-6">No. The result is an estimate based on the standard 4.0 scale and the courses you enter. Always compare it with your official transcript and your institution's rules for repeated courses, transfer credits, incomplete grades, exclusions, and rounding.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div><a href="/" class="flex items-center space-x-2 mb-4"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/></svg><span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span></a><p class="text-sm text-slate-400">Free AI tools for health, finance, and education.</p></div>
+      <div><h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4><ul class="space-y-2 text-sm"><li><a href="health" class="hover:text-emerald-400">Health &amp; Wellness</a></li><li><a href="finance" class="hover:text-emerald-400">Finance &amp; Wealth</a></li><li><a href="education" class="hover:text-emerald-400">Education &amp; Academics</a></li></ul></div>
+      <div><h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h4><ul class="space-y-2 text-sm"><li><a href="bmi-calculator" class="hover:text-emerald-400">BMI / BMR / TDEE</a></li><li><a href="compound-interest" class="hover:text-emerald-400">Compound Interest</a></li><li><a href="gpa-calculator" class="hover:text-emerald-400">GPA Calculator</a></li></ul></div>
+      <div><h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4><ul class="space-y-2 text-sm"><li><a href="about" class="hover:text-emerald-400">About</a></li><li><a href="faq" class="hover:text-emerald-400">FAQ</a></li><li><a href="contact" class="hover:text-emerald-400">Contact</a></li><li><a href="privacy-policy" class="hover:text-emerald-400">Privacy Policy</a></li><li><a href="terms" class="hover:text-emerald-400">Terms</a></li><li><a href="adsense-disclaimer" class="hover:text-emerald-400">AdSense</a></li><li><a href="cookie-policy" class="hover:text-emerald-400">Cookies</a></li></ul></div>
+    </div>
+    <div class="border-t border-slate-700 pt-6 text-center text-sm text-slate-500"><p>&copy; 2025 AfriWidget. For informational purposes only.</p></div>
+  </footer>
+
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-slate-300">We use cookies to improve your experience. <a href="cookie-policy" class="text-emerald-400 underline">Read our Cookie Policy</a>.</p>
+      <div class="flex gap-3"><button id="cookieDecline" class="text-sm px-4 py-2 border border-slate-500 rounded-lg">Decline</button><button id="cookieAccept" class="text-sm px-4 py-2 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-semibold">Accept All</button></div>
+    </div>
+  </div>
+
+  <script>
+    const gradePoints = { 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3, 'D': 1.0, 'D-': 0.7, 'F': 0.0 };
+
+    function addRow(courseName = '', grade = '', credits = '') {
+      const container = document.getElementById('courseRows');
+      const row = document.createElement('div');
+      row.className = 'course-row grid grid-cols-12 gap-2 items-center';
+      row.innerHTML = `
+        <input type="text" placeholder="e.g. Mathematics 101" value="${courseName}" class="course-name col-span-5 appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 px-3 py-2 rounded-lg text-slate-800 font-medium text-sm transition-all outline-none" />
+        <div class="col-span-3 relative">
+          <select class="grade-select appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 px-2 py-2 pr-7 rounded-lg text-slate-800 font-semibold text-sm w-full transition-all outline-none cursor-pointer">
+            <option value="">Grade</option>
+            ${Object.keys(gradePoints).map(g => `<option value="${g}" ${g === grade ? 'selected' : ''}>${g} (${gradePoints[g].toFixed(1)})</option>`).join('')}
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-1.5"><svg class="w-3.5 h-3.5 text-[#0F766E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+        </div>
+        <input type="number" placeholder="e.g. 3" value="${credits}" min="0.5" max="12" step="0.5" class="credit-input col-span-3 appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 px-3 py-2 rounded-lg text-slate-800 font-semibold text-sm transition-all outline-none" />
+        <button class="remove-row col-span-1 text-slate-400 hover:text-red-500 transition-colors flex justify-center">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      `;
+      row.querySelector('.remove-row').addEventListener('click', () => { row.remove(); });
+      container.appendChild(row);
+    }
+
+    function calcGPA() {
+      const rows = document.querySelectorAll('.course-row');
+      let totalPoints = 0, totalCredits = 0, validCourses = 0;
+      let hasError = false;
+      rows.forEach(row => {
+        const grade = row.querySelector('.grade-select').value;
+        const credits = parseFloat(row.querySelector('.credit-input').value);
+        if (grade && credits && credits > 0) {
+          totalPoints += gradePoints[grade] * credits;
+          totalCredits += credits;
+          validCourses++;
+        }
+      });
+      if (validCourses === 0) { alert('Please add at least one course with a grade and credit hours.'); return; }
+
+      const gpa = totalPoints / totalCredits;
+
+      let gpaLabel;
+      if (gpa >= 3.9) gpaLabel = 'Summa Cum Laude';
+      else if (gpa >= 3.7) gpaLabel = "Dean's List";
+      else if (gpa >= 3.5) gpaLabel = 'High Honours';
+      else if (gpa >= 3.0) gpaLabel = 'Good Standing';
+      else if (gpa >= 2.0) gpaLabel = 'Satisfactory';
+      else gpaLabel = 'Academic Probation Risk';
+
+      document.getElementById('cumGPA').textContent = gpa.toFixed(2);
+      document.getElementById('gpaLabel').textContent = gpaLabel;
+      document.getElementById('totalCredits').textContent = totalCredits;
+      document.getElementById('totalCourses').textContent = validCourses;
+
+      const setBench = (id, met) => {
+        const el = document.getElementById(id);
+        el.textContent = met ? '✓ Achieved' : '✗ Not yet';
+        el.className = met ? 'text-sm font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-700' : 'text-sm font-bold px-3 py-1 rounded-full bg-red-100 text-red-600';
+      };
+      setBench('bench1', gpa >= 3.9);
+      setBench('bench2', gpa >= 3.7);
+      setBench('bench3', gpa >= 3.5);
+      setBench('bench4', gpa >= 2.0);
+
+      document.getElementById('results').classList.remove('hidden');
+      setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
+
+      // Add default rows
+      addRow('Mathematics 101', 'A', '3');
+      addRow('English Composition', 'B+', '3');
+      addRow('Introduction to Chemistry', 'B', '4');
+
+      document.getElementById('addRowBtn').addEventListener('click', () => addRow());
+      document.getElementById('calcBtn').addEventListener('click', calcGPA);
+      document.getElementById('clearBtn').addEventListener('click', () => {
+        document.getElementById('courseRows').innerHTML = '';
+        document.getElementById('results').classList.add('hidden');
+        addRow();
+      });
+
+      if (!localStorage.getItem('cookieConsent')) setTimeout(() => document.getElementById('cookieBanner').classList.remove('hidden'), 800);
+      document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookieBanner').classList.add('hidden'); });
+      document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('cookieConsent','declined'); document.getElementById('cookieBanner').classList.add('hidden'); });
+    });
+  </script>
+</body>
+</html>

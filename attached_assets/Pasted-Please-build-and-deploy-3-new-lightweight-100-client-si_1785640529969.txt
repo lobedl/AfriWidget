@@ -1,0 +1,86 @@
+Please build and deploy 3 new lightweight, 100% client-side Webmaster & SEO tools for AfriWidget. Follow our site architecture, slate-dark background theme with yellow accent buttons, SVG-only icons (no casual emojis), and strict tool-first UX layout.
+
+---
+### 🛠️ TOOLS TO BUILD & CATEGORY ASSIGNMENT
+Add all three tools to the "Productivity Tools" (or dedicated "SEO / Developer Tools") category hub page, update sitemap.xml, and append them to llms.txt.
+
+1. `robots-txt-generator.html` - Robots.txt Generator & Crawl Control Tool
+2. `xml-sitemap-builder.html` - Static Site XML Sitemap Builder
+3. `meta-pixel-checker.html` - Meta Title & Description SERP Pixel Checker
+
+---
+### 1. PAGE LAYOUT & UX STRUCTURE (STRICT TOOL-FIRST RULE)
+For all 3 pages, maintain this exact vertical layout:
+[Header Navigation]
+[Hero Title & Subtitle]
+[TOOL WIDGET CONTAINER - Top Priority, Above the Fold]
+[Interactive AI Insight / Q&A Box (Hidden until tool is used)]
+--- Horizontal Divider ---
+[Section: About the Tool]
+[Section: Key Use Cases]
+[Section: Step-by-Step Instructions]
+[Section: Real-World Technical Examples]
+[Section: Frequently Asked Questions (Accordion Style)]
+[Footer]
+
+---
+### 2. TOOL FUNCTIONALITY SPECIFICATIONS
+
+#### Tool 1: Robots.txt Generator (`robots-txt-generator.html`)
+- UI CONTROLS:
+  * Global Access Dropdown: Allow All Bots, Block All Bots.
+  * AI Crawler Toggles: Toggles for GPTBot, ClaudeBot, Bytespider, CCBot, PerplexityBot.
+  * Search Engine Toggles: Google, Bing, Yandex, Baidu.
+  * Delay Setting: Default (None), 5s, 10s, 20s.
+  * Subfolder Exclusion Input: Text field to add paths to disallow (e.g., `/admin/`, `/private/`, `/cgi-bin/`).
+  * Sitemap URL Input: Optional input field to declare `Sitemap: https://...`.
+- OUTPUT: Live generated syntax in a dark code block with a "Copy File" and "Download robots.txt" button.
+
+#### Tool 2: Static Site XML Sitemap Builder (`xml-sitemap-builder.html`)
+- UI CONTROLS:
+  * Main Textarea: Paste multiple full site URLs (one per line).
+  * Default Priority Dropdown: `1.0 (Homepage)`, `0.8 (Important Pages)`, `0.5 (Standard Pages)`.
+  * Change Frequency Dropdown: `always`, `hourly`, `daily`, `weekly`, `monthly`, `yearly`, `never`.
+  * Include Last Modified Date Toggle: Inserts `<lastmod>YYYY-MM-DD</lastmod>` using today's ISO date.
+- OUTPUT: Real-time formatted XML structure inside a syntax-highlighted block with a "Copy XML" button and "Download sitemap.xml" button.
+
+#### Tool 3: Meta Title & Description Pixel Checker (`meta-pixel-checker.html`)
+- UI CONTROLS:
+  * Title Input (Text field) + Real-time character count AND calculated pixel width (Desktop target: max 600px / ~60 chars).
+  * Description Input (Textarea) + Real-time character count AND calculated pixel width (Desktop target: max 960px / ~155 chars).
+  * URL Input (Optional string for preview URL display).
+- OUTPUT & VISUAL PREVIEW:
+  * Dynamic Google SERP Snippet Box: Renders blue clickable title, green/gray URL breadcrumb, and snippet text.
+  * Truncation Warning System: Red/Yellow warning badge if title exceeds 600px or description exceeds 960px, showing exactly where Google will append `...`.
+
+---
+### 3. UNIQUE, HIGH-SEO TEXTUAL CONTENT REQUIREMENTS
+To avoid duplicate content flags across pages, write distinct, comprehensive text for each page covering these exact structured sections:
+
+#### For `robots-txt-generator.html`:
+- About: Explain the Robots Exclusion Protocol, how crawlers scan sites, and why properly directing search engines protects server resources and hides admin paths.
+- Uses: Managing search engine crawl budget, blocking AI training bots, hiding staging directories, specifying sitemap locations.
+- How to Use: 4-step guide on configuring bot permissions, listing disallow paths, copying generated code, and uploading to the root directory.
+- Example: Show a sample output for blocking AI scrapers while allowing Googlebot and specifying a sitemap.
+- FAQ: 4 accordions (e.g., "Does robots.txt hide pages from users?", "Where should I upload robots.txt?", "How long does Google take to update robots.txt rules?").
+
+#### For `xml-sitemap-builder.html`:
+- About: Explain how XML sitemaps act as a digital roadmap for search crawlers, helping engines discover newly published pages faster on static hosts like Netlify, Vercel, or Replit.
+- Uses: Essential for static HTML/CSS/JS websites without WordPress/CMS plugins, submit to Google Search Console & Bing Webmaster Tools.
+- How to Use: 4-step process from gathering site URLs to downloading `sitemap.xml` and submitting it in Google Search Console.
+- Example: Show sample XML code containing `<urlset>`, `<url>`, `<loc>`, `<lastmod>`, `<changefreq>`, and `<priority>` tags.
+- FAQ: 4 accordions (e.g., "What is the difference between HTML and XML sitemaps?", "How many URLs can an XML sitemap hold?", "Does a sitemap guarantee indexing?").
+
+#### For `meta-pixel-checker.html`:
+- About: Discuss why Google measures search snippet boundaries by pixel width (Proportional Sans-Serif fonts like Arial) rather than character counts alone (e.g., 'W' takes more pixels than 'I').
+- Uses: Maximizing Click-Through-Rate (CTR) in search results, preventing awkward title truncation, previewing SERP appearance prior to deployment.
+- How to Use: 3-step guide on pasting metadata, checking pixel bars against thresholds (600px / 960px), and editing text until badges turn green.
+- Example: Illustrate a good metadata example vs. a truncated title example.
+- FAQ: 4 accordions (e.g., "Why does Google rewrite meta titles?", "What is the exact pixel limit for desktop vs mobile?", "Do meta descriptions directly impact rankings?").
+
+---
+### 4. SITE INTEGRATION & SITEMAP UPDATES
+1. Add links to all 3 new tools in the Productivity Tools / Directory category page.
+2. Update `sitemap.xml` with canonical absolute URLs for all 3 newly created tools.
+3. Update `llms.txt` to register these 3 new pages along with a brief 1-sentence description of each for AI crawlers.
+Don't forget to update numbers tool website 

@@ -1,0 +1,15 @@
+{
+  "name": "afriwidget",
+  "version": "1.0.0",
+  "description": "AfriWidget static site server with AI function proxy",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": ""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,504 @@
+(function () {
+  'use strict';
+
+  function byId(id) {
+    return document.getElementById(id);
+  }
+
+  function number(id) {
+    var value = parseFloat(byId(id).value);
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  function money(value, currency) {
+    var symbols = { USD: '$', GHS: 'GH₵', NGN: '₦', KES: 'KSh', ZAR: 'R', EUR: '€', GBP: '£' };
+    return (symbols[currency] || currency + ' ') + Number(value || 0).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function show(id) {
+    var element = byId(id);
+    if (element) element.classList.remove('hidden');
+  }
+
+  function setText(id, text) {
+    var element = byId(id);
+    if (element) element.textContent = text;
+  }
+
+  function setupFreelance() {
+    var form = byId('freelanceForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var currency = byId('freelanceCurrency').value;
+      var annual = number('annualIncome');
+      var hours = number('billableHours');
+      var weeksOff = number('weeksOff');
+      var overhead = number('overheadRate');
+      var tax = number('taxRate');
+      var buffer = number('profitBuffer');
+      var projectHours = number('projectHours');
+      var projectCosts = number('projectCosts');
+      if (annual <= 0 || hours <= 0 || weeksOff < 0 || weeksOff >= 52) {
+        setText('freelanceMessage', 'Enter an annual income, billable hours, and between 0 and 51 weeks off.');
+        show('freelanceMessage');
+        return;
+      }
+      var workingWeeks = 52 - weeksOff;
+      var billableHoursYear = hours * workingWeeks;
+      var operatingMultiplier = 1 + Math.max(0, overhead) / 100;
+      var taxMultiplier = 1 - Math.min(95, Math.max(0, tax)) / 100;
+      var bufferMultiplier = 1 + Math.max(0, buffer) / 100;
+      var baseRate = annual * operatingMultiplier * bufferMultiplier / (billableHoursYear * taxMultiplier);
+      var projectQuote = baseRate * Math.max(0, projectHours) + Math.max(0, projectCosts);
+      setText('freelanceHourly', money(baseRate, currency));
+      setText('freelanceWeekly', money(baseRate * hours, currency));
+      setText('freelanceProject', money(projectQuote, currency));
+      setText('freelanceBillable', billableHoursYear.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' hours/year');
+      setText('freelanceMessage', 'This target rate includes your selected overhead, tax allowance, profit buffer, and non-billable weeks.');
+      show('freelanceResult');
+    });
+  }
+
+  function setupData() {
+    var form = byId('dataForm');
+    if (!form) return;
+    var units = {
+      bit: ['bits', 1 / 8],
+      byte: ['bytes', 1],
+      kilobit: ['kilobits', 1000 / 8],
+      kilobyte: ['kilobytes', 1000],
+      megabit: ['megabits', 1000000 / 8],
+      megabyte: ['megabytes', 1000000],
+      gigabit: ['gigabits', 1000000000 / 8],
+      gigabyte: ['gigabytes', 1000000000],
+      terabit: ['terabits', 1000000000000 / 8],
+      terabyte: ['terabytes', 1000000000000],
+      kibibyte: ['KiB', 1024],
+      mebibyte: ['MiB', 1048576],
+      gibibyte: ['GiB', 1073741824],
+      tebibyte: ['TiB', 1099511627776]
+    };
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var amount = number('dataAmount');
+      var from = units[byId('dataFrom').value];
+      var to = units[byId('dataTo').value];
+      if (!Number.isFinite(amount) || amount < 0 || !from || !to) {
+        setText('dataMessage', 'Enter a zero or positive data amount and choose both units.');
+        show('dataMessage');
+        return;
+      }
+      var output = amount * from[1] / to[1];
+      setText('dataValue', output.toLocaleString(undefined, { maximumFractionDigits: 10 }) + ' ' + to[0]);
+      setText('dataMessage', amount.toLocaleString() + ' ' + from[0] + ' equals ' + output.toLocaleString(undefined, { maximumFractionDigits: 10 }) + ' ' + to[0] + '.');
+      show('dataResult');
+    });
+  }
+
+  function dateDifference(start, end) {
+    var years = end.getFullYear() - start.getFullYear();
+    var months = end.getMonth() - start.getMonth();
+    var days = end.getDate() - start.getDate();
+    if (days < 0) {
+      months -= 1;
+      days += new Date(end.getFullYear(), end.getMonth(), 0).getDate();
+    }
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+    return { years: years, months: months, days: days };
+  }
+
+  function addDuration(total, duration) {
+    total.days += duration.days;
+    total.months += duration.months;
+    total.years += duration.years;
+    total.months += Math.floor(total.days / 30);
+    total.days = total.days % 30;
+    total.years += Math.floor(total.months / 12);
+    total.months = total.months % 12;
+  }
+
+  function setupExperience() {
+    var form = byId('experienceForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var total = { years: 0, months: 0, days: 0 };
+      var valid = 0;
+      [1, 2, 3].forEach(function (index) {
+        var startValue = byId('jobStart' + index).value;
+        var endValue = byId('jobEnd' + index).value;
+        if (!startValue) return;
+        var start = new Date(startValue + 'T00:00:00');
+        var end = byId('jobCurrent' + index).checked ? new Date() : new Date((endValue || startValue) + 'T00:00:00');
+        if (end <= start) return;
+        addDuration(total, dateDifference(start, end));
+        valid += 1;
+      });
+      if (!valid) {
+        setText('experienceMessage', 'Add at least one role with a start date and a later end date.');
+        show('experienceMessage');
+        return;
+      }
+      setText('experienceYears', total.years + ' years');
+      setText('experienceMonths', total.months + ' months');
+      setText('experienceDays', total.days + ' days');
+      setText('experienceSummary', 'Across ' + valid + ' role' + (valid === 1 ? '' : 's') + ', your entered experience totals approximately ' + total.years + ' years, ' + total.months + ' months, and ' + total.days + ' days. Overlapping roles are added separately, so review concurrent work before using this for an official application.');
+      show('experienceResult');
+    });
+    [1, 2, 3].forEach(function (index) {
+      byId('jobCurrent' + index).addEventListener('change', function () {
+        byId('jobEnd' + index).disabled = this.checked;
+        if (this.checked) byId('jobEnd' + index).value = '';
+      });
+    });
+  }
+
+  function setupSavings() {
+    var form = byId('savingsForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var currency = byId('savingsCurrency').value;
+      var target = number('savingsTarget');
+      var current = number('savingsCurrent');
+      var monthly = number('savingsMonthly');
+      var annualRate = Math.max(0, number('savingsRate'));
+      if (target <= 0 || current < 0 || monthly <= 0 || current >= target) {
+        setText('savingsMessage', 'Enter a target above current savings and a positive monthly contribution.');
+        show('savingsMessage');
+        return;
+      }
+      var monthlyRate = annualRate / 100 / 12;
+      var balance = current;
+      var months = 0;
+      while (balance < target && months < 1200) {
+        balance = balance * (1 + monthlyRate) + monthly;
+        months += 1;
+      }
+      if (months >= 1200) {
+        setText('savingsMessage', 'This target needs more than 100 years at the entered contribution. Increase the monthly amount or review the goal.');
+        show('savingsMessage');
+        return;
+      }
+      var years = Math.floor(months / 12);
+      var remainingMonths = months % 12;
+      var contributions = monthly * months;
+      var growth = balance - current - contributions;
+      var targetDate = new Date();
+      targetDate.setMonth(targetDate.getMonth() + months);
+      setText('savingsTime', years + ' years, ' + remainingMonths + ' months');
+      setText('savingsDate', targetDate.toLocaleDateString(undefined, { year: 'numeric', month: 'long' }));
+      setText('savingsContributions', money(contributions, currency));
+      setText('savingsGrowth', money(Math.max(0, growth), currency));
+      setText('savingsMessage', 'At the entered contribution and estimated rate, you reach the target in ' + months + ' months. Interest is an estimate, not a guaranteed return.');
+      show('savingsResult');
+    });
+  }
+
+  function pageKey() {
+    return (window.location.pathname.split('/').pop() || '').replace(/\.html$/i, '');
+  }
+
+  function escapeHtml(value) {
+    return String(value || '').replace(/[&<>"']/g, function (character) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character];
+    });
+  }
+
+  function renderMarkdown(markdown) {
+    var lines = String(markdown || '').replace(/\r/g, '').split('\n');
+    var html = [];
+    var paragraph = [];
+    var listType = '';
+    var inFaq = false;
+    var openFaq = false;
+    function flushParagraph() {
+      if (!paragraph.length) return;
+      var text = paragraph.join(' ').trim();
+      text = escapeHtml(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`(.+?)`/g, '<code>$1</code>');
+      html.push('<p>' + text + '</p>');
+      paragraph = [];
+    }
+    function closeList() {
+      if (listType) {
+        html.push('</' + listType + '>');
+        listType = '';
+      }
+    }
+    function closeFaq() {
+      if (openFaq) {
+        html.push('</div></details>');
+        openFaq = false;
+      }
+    }
+    lines.forEach(function (line) {
+      var trimmed = line.trim();
+      if (!trimmed) {
+        flushParagraph();
+        closeList();
+        return;
+      }
+      var heading = trimmed.match(/^(#{2,3})\s+(.+)$/);
+      if (heading) {
+        flushParagraph();
+        closeList();
+        if (heading[1].length === 2 && /frequently asked questions|faq/i.test(heading[2])) {
+          closeFaq();
+          inFaq = true;
+          html.push('<h2>' + escapeHtml(heading[2]) + '</h2>');
+        } else if (inFaq && heading[1].length === 3) {
+          closeFaq();
+          openFaq = true;
+          html.push('<details><summary>' + escapeHtml(heading[2]) + '</summary><div>');
+        } else {
+          if (heading[1].length === 2) closeFaq();
+          html.push('<h' + heading[1].length + '>' + escapeHtml(heading[2]) + '</h' + heading[1].length + '>');
+        }
+        return;
+      }
+      var list = trimmed.match(/^([-*]|\d+\.)\s+(.+)$/);
+      if (list) {
+        flushParagraph();
+        var nextType = /^\d+\./.test(list[1]) ? 'ol' : 'ul';
+        if (listType !== nextType) {
+          closeList();
+          listType = nextType;
+          html.push('<' + listType + '>');
+        }
+        html.push('<li>' + escapeHtml(list[2]) + '</li>');
+        return;
+      }
+      if (/^>\s?/.test(trimmed)) {
+        flushParagraph();
+        closeList();
+        html.push('<blockquote>' + escapeHtml(trimmed.replace(/^>\s?/, '')) + '</blockquote>');
+        return;
+      }
+      paragraph.push(trimmed);
+    });
+    flushParagraph();
+    closeList();
+    closeFaq();
+    return html.join('');
+  }
+
+  function setupGuide() {
+    var guide = byId('toolGuide');
+    if (!guide) return;
+    fetch('content/' + pageKey() + '.md', { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('Guide unavailable');
+        return response.text();
+      })
+      .then(function (markdown) {
+        guide.innerHTML = renderMarkdown(markdown);
+      })
+      .catch(function () {
+        guide.innerHTML = '<p>Guide content is temporarily unavailable. The calculator remains available for private in-browser use.</p>';
+      });
+  }
+
+  function setupQrGenerator() {
+    var form = byId('qrForm');
+    if (!form) return;
+    var canvas = byId('qrCanvas');
+    var type = byId('qrType');
+    var output = byId('qrStatus');
+    function fields() {
+      var mode = type.value;
+      document.querySelectorAll('[data-qr-mode]').forEach(function (element) {
+        element.classList.toggle('hidden', element.dataset.qrMode !== mode);
+      });
+    }
+    function value() {
+      if (type.value === 'wifi') {
+        var ssid = byId('wifiSsid').value.trim();
+        var password = byId('wifiPassword').value;
+        var security = byId('wifiSecurity').value;
+        return 'WIFI:T:' + security + ';S:' + ssid.replace(/[\\;,"]/g, '\\$&') + ';P:' + password.replace(/[\\;,"]/g, '\\$&') + ';;';
+      }
+      return type.value === 'url' ? byId('qrUrl').value.trim() : byId('qrPlainText').value.trim();
+    }
+    function draw() {
+      var text = value();
+      if (!text) {
+        output.textContent = 'Enter content to preview your QR code.';
+        return;
+      }
+      var qrLib = window.QRCode || window.qrcode;
+      if (!qrLib || typeof qrLib.toCanvas !== 'function') {
+        output.textContent = 'The QR renderer is loading...';
+        setTimeout(draw, 500);
+        return;
+      }
+      qrLib.toCanvas(canvas, text, { width: 280, margin: 2, color: { dark: '#0f172a', light: '#ffffff' } }, function (error) {
+        output.textContent = error ? 'This content is too long for a QR code.' : 'Live preview ready. Everything stays in this browser.';
+      });
+    }
+    type.addEventListener('change', function () { fields(); draw(); });
+    form.addEventListener('input', draw);
+    form.addEventListener('submit', function (event) { event.preventDefault(); draw(); });
+    window.addEventListener('load', draw);
+    byId('qrDownload').addEventListener('click', function () {
+      if (!canvas || !canvas.width) return;
+      var link = document.createElement('a');
+      link.download = 'afriwidget-qr-code.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+    fields();
+    draw();
+  }
+
+  function setupLoanCalculator() {
+    var form = byId('loanForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var principal = number('loanAmount');
+      var annual = number('loanRate');
+      var years = number('loanTerm');
+      var currency = byId('loanCurrency').value;
+      if (principal <= 0 || annual < 0 || years <= 0 || years > 100) {
+        setText('loanMessage', 'Enter a positive loan amount, a non-negative annual rate, and a term from 1 to 100 years.');
+        show('loanMessage');
+        return;
+      }
+      var months = Math.round(years * 12);
+      var monthlyRate = annual / 100 / 12;
+      var payment = monthlyRate ? principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1) : principal / months;
+      var balance = principal;
+      var totalInterest = 0;
+      var rows = [];
+      for (var month = 1; month <= months; month += 1) {
+        var interest = balance * monthlyRate;
+        var principalPaid = Math.min(balance, payment - interest);
+        balance = Math.max(0, balance - principalPaid);
+        totalInterest += interest;
+        if (month <= 12 || month === months) {
+          rows.push('<tr><td>' + month + '</td><td>' + money(principalPaid, currency) + '</td><td>' + money(interest, currency) + '</td><td>' + money(balance, currency) + '</td></tr>');
+        }
+      }
+      setText('loanPayment', money(payment, currency));
+      setText('loanTotal', money(payment * months, currency));
+      setText('loanInterest', money(totalInterest, currency));
+      byId('loanSchedule').innerHTML = '<tr><th>Month</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>' + rows.join('');
+      setText('loanMessage', 'This estimate assumes a fixed rate and equal monthly payments. Fees, insurance, taxes, and lender rules are not included.');
+      show('loanResult');
+    });
+  }
+
+  function setupSavingsCalculator() {
+    var form = byId('savingsCalcForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var start = number('savingsStart');
+      var monthly = number('savingsDeposit');
+      var annual = number('savingsAnnualRate');
+      var years = number('savingsYears');
+      var currency = byId('savingsCalcCurrency').value;
+      if (start < 0 || monthly < 0 || annual < 0 || years <= 0 || years > 100 || (start === 0 && monthly === 0)) {
+        setText('savingsCalcMessage', 'Enter a time period and at least one positive starting balance or monthly deposit.');
+        show('savingsCalcMessage');
+        return;
+      }
+      var rate = annual / 100 / 12;
+      var balance = start;
+      var deposits = start;
+      var rows = [];
+      for (var month = 1; month <= Math.round(years * 12); month += 1) {
+        balance = balance * (1 + rate) + monthly;
+        deposits += monthly;
+        if (month % 12 === 0 || month === Math.round(years * 12)) rows.push('<tr><td>' + Math.ceil(month / 12) + '</td><td>' + money(deposits, currency) + '</td><td>' + money(balance, currency) + '</td><td>' + money(Math.max(0, balance - deposits), currency) + '</td></tr>');
+      }
+      setText('savingsCalcTotal', money(balance, currency));
+      setText('savingsCalcDeposits', money(deposits, currency));
+      setText('savingsCalcGrowth', money(Math.max(0, balance - deposits), currency));
+      byId('savingsTable').innerHTML = '<tr><th>Year</th><th>Your deposits</th><th>Projected value</th><th>Growth</th></tr>' + rows.join('');
+      setText('savingsCalcMessage', 'The projection compounds monthly and assumes the deposit is made at the end of each month. Actual returns vary.');
+      show('savingsCalcResult');
+    });
+  }
+
+  function setupCurrencyConverter() {
+    var form = byId('currencyForm');
+    if (!form) return;
+    var fallback = { USD: 1, EUR: 0.92, GBP: 0.78, GHS: 15.2, NGN: 1550, KES: 129, ZAR: 18.2, CAD: 1.36, AUD: 1.52, INR: 83.5, JPY: 156, AED: 3.67 };
+    var rates = Object.assign({}, fallback);
+    var source = 'Fallback reference rates';
+    function convert() {
+      var amount = number('currencyAmount');
+      var from = byId('currencyFrom').value;
+      var to = byId('currencyTo').value;
+      if (amount < 0 || !rates[from] || !rates[to]) {
+        setText('currencyMessage', 'Enter a zero or positive amount and choose both currencies.');
+        show('currencyMessage');
+        return;
+      }
+      var value = amount / rates[from] * rates[to];
+      setText('currencyValue', value.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' ' + to);
+      setText('currencyMessage', amount.toLocaleString() + ' ' + from + ' ≈ ' + value.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' ' + to + '. ' + source + '.');
+      show('currencyResult');
+    }
+    form.addEventListener('submit', function (event) { event.preventDefault(); convert(); });
+    form.addEventListener('input', convert);
+    fetch('https://open.er-api.com/v6/latest/USD')
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        if (data && data.rates) {
+          rates = Object.assign(rates, data.rates);
+          source = 'Live rates refreshed from a public exchange-rate feed';
+          setText('currencyRateStatus', 'Live reference rates loaded');
+          convert();
+        }
+      })
+      .catch(function () { setText('currencyRateStatus', 'Live feed unavailable — using fallback rates'); });
+  }
+
+  function setupIcassCalculator() {
+    var form = byId('icassForm');
+    if (!form) return;
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var total = 0;
+      var weightTotal = 0;
+      var valid = true;
+      ['assignment', 'practical', 'test', 'attendance'].forEach(function (name) {
+        var score = parseFloat(byId('icass' + name.charAt(0).toUpperCase() + name.slice(1) + 'Score').value);
+        var weight = parseFloat(byId('icass' + name.charAt(0).toUpperCase() + name.slice(1) + 'Weight').value);
+        if (!Number.isFinite(score) || !Number.isFinite(weight) || score < 0 || score > 100 || weight < 0) valid = false;
+        total += (Number.isFinite(score) ? score : 0) * (Number.isFinite(weight) ? weight : 0);
+        weightTotal += Number.isFinite(weight) ? weight : 0;
+      });
+      if (!valid || weightTotal <= 0 || Math.abs(weightTotal - 100) > 0.01) {
+        setText('icassMessage', 'Use scores from 0 to 100 and make the component weights add up to exactly 100%.');
+        show('icassMessage');
+        return;
+      }
+      var result = total / 100;
+      setText('icassScore', result.toFixed(2) + '%');
+      setText('icassBand', result >= 75 ? 'Outstanding internal assessment' : result >= 50 ? 'Passing internal assessment range' : 'Below a 50% planning threshold');
+      setText('icassMessage', 'Your weighted ICASS estimate is ' + result.toFixed(2) + '%. Confirm the official weighting and pass requirements with your institution.');
+      show('icassResult');
+    });
+  }
+
+  setupFreelance();
+  setupData();
+  setupExperience();
+  setupSavings();
+  setupGuide();
+  setupQrGenerator();
+  setupLoanCalculator();
+  setupSavingsCalculator();
+  setupCurrencyConverter();
+  setupIcassCalculator();
+}());

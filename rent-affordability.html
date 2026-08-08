@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent Affordability Calculator | AfriWidget</title>
+  <meta name="description" content="Calculate affordable rent and budget limits instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <link rel="canonical" href="https://afriwidget.com/rent-affordability" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/rent-affordability" />
+  <meta property="og:title" content="Rent Affordability Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate affordable rent and budget limits instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="Rent Affordability Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate affordable rent and budget limits instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Rent Affordability Calculator",
+  "url": "https://afriwidget.com/rent-affordability",
+  "description": "Free rent affordability estimator. Find out how much rent you can afford using the 30% rule, 50/30/20 budgeting, and debt-to-income analysis with realtime AI guidance.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/"
+  }
+}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://afriwidget.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Real Estate & Housing",
+      "item": "https://afriwidget.com/real-estate"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rent Affordability Calculator",
+      "item": "https://afriwidget.com/rent-affordability"
+    }
+  ]
+}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="rent-affordability" class="text-emerald-400 font-bold">Rent Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="mortgage-calculator" class="block py-2 hover:text-emerald-400">Mortgage Calculator</a>
+      <a href="rent-affordability" class="block py-2 text-emerald-400 font-bold">Rent Affordability</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-br from-slate-900 via-amber-900 to-slate-900 text-white py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-amber-500 bg-opacity-20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-amber-500 border-opacity-30">Free Real Estate Tool</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Rent Affordability Estimator</h1>
+      <p class="text-slate-300 text-lg">Discover exactly how much rent you can comfortably afford based on your income, debts, and expenses — with optional realtime AI guidance.</p>
+    </div>
+  </section>
+
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">Your Financial Picture</h2>
+      <form id="rentForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Monthly Gross Income <span class="text-slate-400 font-normal">(before taxes)</span></label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="grossIncome" placeholder="4000" min="1" required class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Monthly Net Income <span class="text-slate-400 font-normal">(take-home pay)</span></label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="netIncome" placeholder="3200" min="0" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+          <p class="text-xs text-slate-400 mt-1">Optional but improves the 50/30/20 budget breakdown.</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Monthly Debt Payments <span class="text-slate-400 font-normal">(car, student loans, credit cards, etc.)</span></label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="monthlyDebts" placeholder="400" min="0" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Monthly Non-Debt Expenses <span class="text-slate-400 font-normal">(food, transport, utilities — excluding rent)</span></label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="otherExpenses" placeholder="800" min="0" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Target Monthly Savings Goal <span class="text-slate-400 font-normal">(optional)</span></label>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
+            <input type="number" id="savingsGoal" placeholder="300" min="0" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl pl-8 pr-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Budgeting Approach</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="method" value="30" class="sr-only peer" checked />
+              <div class="flex items-start gap-3 p-4 rounded-xl border-2 border-slate-200 bg-slate-50 transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <svg class="w-5 h-5 mt-0.5 flex-shrink-0 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div>
+                  <div class="font-semibold text-sm">30% Rule</div>
+                  <div class="text-xs mt-0.5 opacity-80">Keep rent ≤ 30% of gross income</div>
+                </div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="method" value="50" class="sr-only peer" />
+              <div class="flex items-start gap-3 p-4 rounded-xl border-2 border-slate-200 bg-slate-50 transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <svg class="w-5 h-5 mt-0.5 flex-shrink-0 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+                <div>
+                  <div class="font-semibold text-sm">50/30/20 Budget</div>
+                  <div class="text-xs mt-0.5 opacity-80">Needs ≤ 50% of net income</div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 text-lg tracking-wide mt-2">Calculate Rent Affordability →</button>
+      </form>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="mt-8 space-y-6">
+
+      <!-- Affordable rent hero -->
+      <div class="bg-gradient-to-br from-slate-900 to-amber-900 text-white rounded-2xl p-8 text-center shadow-xl">
+        <p class="text-amber-300 text-sm font-semibold uppercase tracking-wider mb-2">Maximum Affordable Monthly Rent</p>
+        <div class="text-6xl font-extrabold mb-1">$<span id="maxRent">—</span></div>
+        <p class="text-slate-300 text-sm" id="methodLabel">Based on the 30% rule</p>
+      </div>
+
+      <!-- Breakdown grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">30% Rule Max Rent</p>
+          <p class="text-2xl font-extrabold text-slate-800">$<span id="rule30">—</span></p>
+          <p class="text-xs text-slate-400 mt-1">≤ 30% of gross income</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Practical Max Rent</p>
+          <p class="text-2xl font-extrabold text-amber-600">$<span id="practicalMax">—</span></p>
+          <p class="text-xs text-slate-400 mt-1">After debts &amp; expenses</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Monthly Leftover</p>
+          <p class="text-2xl font-extrabold text-emerald-600">$<span id="leftover">—</span></p>
+          <p class="text-xs text-slate-400 mt-1">After all expenses + rent</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center shadow-sm">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Rent-to-Income</p>
+          <p class="text-2xl font-extrabold" id="rtiValue">—</p>
+          <p class="text-xs text-slate-400 mt-1">At practical max rent</p>
+        </div>
+      </div>
+
+      <!-- Budget breakdown bar -->
+      <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+        <h3 class="font-bold text-slate-800 mb-4">Monthly Budget Breakdown</h3>
+        <div class="space-y-3" id="budgetBreakdown"></div>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 bg-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <article class="mt-14">
+      <h2 class="text-2xl font-bold text-slate-900 mb-5">About This Rent Affordability Estimator</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">This estimator helps renters compare a rule-of-thumb rent ceiling with the amount left after debts, living costs, savings, and other budget commitments. It is designed for early housing research, especially when comparing neighbourhoods or deciding how much cash flow a new lease would consume.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mb-5">How to Use the Rent Estimator</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">Enter income, existing monthly obligations, regular expenses, savings goals, and the proposed rent. Review the 30% guideline, the 50/30/20 view, the practical maximum, and the remaining cash together. Include irregular costs such as transport, school fees, utilities, agency fees, deposits, and advance rent before making a final decision.</p>
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">Example: Why the Practical Maximum Can Be Lower</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">If gross income is $3,000, the 30% guideline suggests $900. But if debts, food, transport, utilities, and a $400 savings goal already use most of the monthly budget, the practical maximum may be below $900. The lower figure is a prompt to review the whole budget rather than treating the guideline as an approval.</p>
+      <h2 class="text-2xl font-bold text-slate-900 mb-5">How the Rent Affordability Estimator Works</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        This tool uses two complementary methods to determine how much rent you can comfortably afford. Understanding both — and knowing which one applies to your situation — is fundamental to making a housing decision that does not destabilise your broader financial life.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">The 30% Rule Explained</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The 30% rule is the most widely cited rental affordability guideline: spend no more than 30% of your gross monthly income on rent. If you earn $4,000 per month before taxes, the rule suggests a maximum rent of $1,200. This heuristic originated in US housing policy in the 1960s and has since become a global standard. However, it has real limitations — it does not account for taxes, debt obligations, family size, or the cost of living in your specific city or region. In high-cost African cities like Lagos, Nairobi, or Johannesburg, rental prices relative to median income can far exceed the 30% threshold, making the rule aspirational rather than descriptive.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">The 50/30/20 Budgeting Framework</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The 50/30/20 rule, popularised by Senator Elizabeth Warren in her book <em>All Your Worth</em>, divides take-home pay (net income) into three categories: 50% for needs (housing, food, transport, utilities, minimum debt payments), 30% for wants (entertainment, dining out, subscriptions), and 20% for savings and debt repayment above minimums. Under this framework, rent is just one component of the "needs" bucket — and ideally, it should consume no more than 25–30% of net income to leave room for other essential expenses within the 50% ceiling. This tool shows you how your rent fits within this framework so you can make a truly informed decision.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">The Practical Maximum: Your Real Affordability Ceiling</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Beyond the rule-based approaches, this calculator computes a <strong>practical maximum</strong> — the amount of rent you can pay after accounting for your known monthly debts, living expenses, and savings goal. This figure is often more conservative than the 30% rule and far more honest about what your budget can sustain without creating financial stress. If the practical maximum is significantly lower than the 30% figure, it signals that your debt or expense load is high relative to income — a situation where prioritising debt reduction before upgrading housing would be strategically sound.
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">Renting in African Cities: Context Matters</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Renting in African urban centres presents unique challenges. Many landlords require advance rent payments of six to twelve months upfront — a lump-sum commitment that requires dedicated savings well in advance. Agency fees, caution deposits, and legal fees can add another two to three months' rent to the initial outlay. Informal rental markets, which are common across the continent, often operate without formal leases, making tenant rights harder to enforce. Planning your rental budget must account for these upfront costs in addition to the ongoing monthly commitment this calculator models.
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Despite these challenges, renting strategically — spending less than you can technically afford and investing the difference — is one of the most powerful wealth-building strategies available to young urban Africans. Every dollar (or naira, or shilling) saved on rent is a dollar available for compound growth in an investment account, an emergency fund, or a home purchase down payment. Use this tool not just to find a rent ceiling, but to find a rent floor: the question is not just "can I afford this?" but "should I pay this when I could pay less and build more?"
+      </p>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-800 mt-6">
+        <strong>Disclaimer:</strong> This estimator provides general financial guidance for educational purposes only. Housing costs, tax rates, and living expenses vary widely by location. Consult a qualified financial advisor for personalised advice.
+      </div>
+      <h2 class="text-2xl font-bold text-slate-900 mb-5 mt-8">Frequently Asked Questions</h2>
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">Should I use gross or take-home income?</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">Use the income measure requested by the particular result and keep it consistent. The 30% rule commonly refers to gross income, while a practical household budget is easier to assess using money actually available after deductions.</p>
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">Does this include rent paid in advance?</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">The monthly estimate does not replace an upfront-cash plan. Add advance rent, deposits, agency fees, moving costs, utilities, and furnishing expenses before signing a lease.</p>
+      <h3 class="text-xl font-bold text-slate-900 mb-3 mt-7">Why can the result differ from a landlord’s rule?</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">Landlords and letting agencies may use their own income multiple, credit checks, guarantor rules, or local documentation requirements. Treat this tool as your budget view, not an approval guarantee.</p>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="/" class="flex items-center space-x-2 mb-4"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/></svg><span class="font-extrabold text-white text-lg">Afri<span class="text-emerald-400">Widget</span></span></a>
+        <p class="text-sm text-slate-400">Free browser-based tools with Groq-powered Finance and Education insights where enabled.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+          <li><a href="finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+          <li><a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+          <li><a href="education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+          <li><a href="compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+          <li><a href="mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+          <li><a href="rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+          <li><a href="gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+          <li><a href="faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+          <li><a href="contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+          <li><a href="privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+          <li><a href="cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
+      <p>&copy; 2025 AfriWidget. All rights reserved. For informational purposes only — not professional financial or legal advice.</p>
+    </div>
+  </footer>
+
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-slate-300">We use cookies to improve your experience. <a href="cookie-policy" class="text-emerald-400 underline">Read our Cookie Policy</a>.</p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors">Decline</button>
+        <button id="cookieAccept" class="text-sm px-4 py-2 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-semibold transition-colors">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
+
+      const fmt = v => Math.round(v).toLocaleString('en-US');
+
+      document.getElementById('rentForm').addEventListener('submit', e => {
+        e.preventDefault();
+
+        const gross = parseFloat(document.getElementById('grossIncome').value);
+        const net = parseFloat(document.getElementById('netIncome').value) || gross * 0.78;
+        const debts = parseFloat(document.getElementById('monthlyDebts').value) || 0;
+        const expenses = parseFloat(document.getElementById('otherExpenses').value) || 0;
+        const savings = parseFloat(document.getElementById('savingsGoal').value) || 0;
+        const method = document.querySelector('input[name="method"]:checked').value;
+
+        if (!gross || gross <= 0) { alert('Please enter your monthly gross income.'); return; }
+
+        // Calculations
+        const rule30 = gross * 0.30;
+        const practicalMax = Math.max(0, gross - debts - expenses - savings);
+        const mainRent = method === '30' ? rule30 : Math.min(net * 0.25, rule30);
+        const leftover = gross - mainRent - debts - expenses;
+        const rti = (practicalMax / gross * 100).toFixed(1);
+
+        document.getElementById('maxRent').textContent = fmt(mainRent);
+        document.getElementById('rule30').textContent = fmt(rule30);
+        document.getElementById('practicalMax').textContent = fmt(practicalMax);
+        document.getElementById('leftover').textContent = fmt(leftover);
+        document.getElementById('rtiValue').textContent = rti + '%';
+
+        const rtiEl = document.getElementById('rtiValue');
+        if (parseFloat(rti) <= 28) rtiEl.className = 'text-2xl font-extrabold text-emerald-600';
+        else if (parseFloat(rti) <= 35) rtiEl.className = 'text-2xl font-extrabold text-amber-500';
+        else rtiEl.className = 'text-2xl font-extrabold text-red-500';
+
+        document.getElementById('methodLabel').textContent = method === '30' ? 'Based on the 30% rule (30% of gross income)' : 'Based on the 50/30/20 framework (needs ≤ 50% of net)';
+
+        // Budget bar
+        const breakdown = document.getElementById('budgetBreakdown');
+        breakdown.innerHTML = '';
+        const items = [
+          { label: 'Recommended Rent', amount: mainRent, color: 'bg-amber-400', pct: mainRent / gross },
+          { label: 'Monthly Debts', amount: debts, color: 'bg-red-400', pct: debts / gross },
+          { label: 'Other Expenses', amount: expenses, color: 'bg-slate-400', pct: expenses / gross },
+          { label: 'Savings Goal', amount: savings, color: 'bg-emerald-400', pct: savings / gross },
+          { label: 'Remaining', amount: Math.max(0, leftover - savings), color: 'bg-teal-300', pct: Math.max(0, leftover - savings) / gross },
+        ];
+        items.forEach(item => {
+          const pctDisplay = (item.pct * 100).toFixed(1);
+          breakdown.innerHTML += `
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium text-slate-700">${item.label}</span>
+                <span class="text-slate-500">$${fmt(item.amount)} <span class="text-slate-400">(${pctDisplay}%)</span></span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-2.5">
+                <div class="${item.color} h-2.5 rounded-full" style="width: ${Math.min(100, parseFloat(pctDisplay))}%"></div>
+              </div>
+            </div>`;
+        });
+
+
+
+
+
+
+        document.getElementById('results').style.display = 'block';
+        setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      });
+
+      if (!localStorage.getItem('cookieConsent')) setTimeout(() => document.getElementById('cookieBanner').classList.remove('hidden'), 800);
+      document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('cookieConsent', 'accepted'); document.getElementById('cookieBanner').classList.add('hidden'); });
+      document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('cookieConsent', 'declined'); document.getElementById('cookieBanner').classList.add('hidden'); });
+    });
+  </script>
+</body>
+</html>

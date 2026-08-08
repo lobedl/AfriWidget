@@ -1,0 +1,25 @@
+Please build an AI assistant for all tools in the Education category (BECE, WASSCE, JAMB, GPA, APS, and KCSE Calculators) following these simple rules:
+
+1. AUTOMATIC REAL-TIME INSIGHT (UNLIMITED):
+   - Whenever a user clicks calculate or gets a result on any Education tool, automatically trigger an AI response in a box right under their calculation result.
+   - The AI should give a quick, helpful sentence breakdown and practical advice explaining what their score means (for example, whether their BECE or WASSCE score is strong and what steps to take next).
+   - This automatic insight must be 100% UNLIMITED for ises. Every time they run a calculation, generate a fresh real-time insight without deducting from any limit.
+
+2. CUSTOM USER QUESTIONS (5 QUESTIONS PER 24 HOURS):
+   - Beneath the automatic insight box, provide a branded responsive chat input box where users can type custom questions or follow up questions (e.g., "What courses can I study with this aggregate?").
+   - Track this in the user's browser storage (local storage).
+   - Each user gets a maximum of 5 custom questions every 24 hours across all Education tools.
+   - Show a clear counter that says "X / 5 questions left" and a countdown timer showing when their 5 questions will refresh (e.g., "Resets in 23h 45m").
+   - When they hit their 5-question limit, disable the question input box with a message telling them to check back after the reset timer.
+
+3. GROQ AI WITH 5 FALLBACK KEYS:
+   - Route all AI requests through a Netlify serverless function so our API keys remain completely secret.
+   - I'll Use 5 Groq API keys stored as secrets in Netlify (GROQ_KEY_1 through GROQ_KEY_5).
+   - If Key 1 runs out of quota or hits an error, automatically try Key 2, then Key 3, and so on, so the service never goes down for users also never show error messages to user when when key 1 doesn't work and it switching to next. Let it be a quiet and smooth fast transition
+
+4. SCOPE:
+   - Apply this AI feature ONLY to tools inside the Education category. Leave all other categories purely static for now.
+
+5. DOCUMENTATION:
+   - Create a file named GROQ_AI_INTEGRATION.md in the main directory that clearly explains this setup so we can easily add AI to other tools in the future.
+ If no key is set yet show Ai insights will be available soon.

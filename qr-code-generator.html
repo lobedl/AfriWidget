@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator for URLs, Wi-Fi &amp; Text – AfriWidget</title>
+  <meta name="description" content="Create and download QR codes for URLs, plain text, or Wi-Fi details with a private, live browser preview. No signup or upload required." />
+  <link rel="canonical" href="https://afriwidget.com/qr-code-generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/qr-code-generator" />
+  <meta property="og:title" content="QR Code Generator for URLs, Wi-Fi &amp; Text – AfriWidget" />
+  <meta property="og:description" content="Create and download QR codes for URLs, plain text, or Wi-Fi details with a private, live browser preview. No signup or upload required." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="QR Code Generator for URLs, Wi-Fi &amp; Text – AfriWidget" />
+  <meta name="twitter:description" content="Create and download QR codes for URLs, plain text, or Wi-Fi details with a private, live browser preview. No signup or upload required." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator","url":"https://afriwidget.com/qr-code-generator","description":"Generate downloadable QR codes for websites, text, and Wi-Fi credentials in the browser.","applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"AfriWidget","url":"https://afriwidget.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://afriwidget.com/"},{"@type":"ListItem","position":2,"name":"Productivity Tools","item":"https://afriwidget.com/productivity"},{"@type":"ListItem","position":3,"name":"QR Code Generator","item":"https://afriwidget.com/qr-code-generator"}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="new-tools.css" />
+  <script src="footer.js" defer></script><script src="nav.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="universal-ai.js" defer></script><script src="new-tools.js" defer></script>
+</head>
+<body class="new-tool-page font-sans">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center gap-2"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg><span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span></a><div class="hidden md:flex items-center gap-6 text-sm"><a href="/">Home</a><a href="education">Education Tools</a><a href="finance">Finance Tools</a><a href="health">Health Tools</a><a href="productivity">Productivity Tools</a><a href="widgets">All Tools Directory</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div></div></nav>
+  <header class="tool-hero px-4 py-12"><div class="max-w-4xl mx-auto"><span class="badge">⚡ 100% Free • No Signup • Private In-Browser Tool</span><p class="mt-5 text-sm font-bold uppercase tracking-widest text-yellow-300">Productivity utility</p><h1 class="mt-2 text-4xl sm:text-5xl font-black">QR Code Generator</h1><p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Create a clean QR code for a website, message, or Wi-Fi network and download a PNG without uploading your content.</p></div></header>
+  <main class="tool-shell">
+    <section class="tool-card p-5 sm:p-8" aria-labelledby="qr-title"><h2 id="qr-title" class="text-2xl font-black">Build your QR code</h2><p class="mt-2 text-slate-600">The canvas preview updates as you edit the content.</p><form id="qrForm" class="mt-6 grid gap-5 md:grid-cols-2"><label>Format<select id="qrType"><option value="url">Website URL</option><option value="text">Plain text</option><option value="wifi">Wi-Fi credentials</option></select></label><div data-qr-mode="url"><label for="qrUrl">Website URL</label><input id="qrUrl" type="url" value="https://afriwidget.com/" placeholder="https://example.com" /></div><div data-qr-mode="text" class="hidden md:col-span-2"><label for="qrPlainText">Message or plain text</label><textarea id="qrPlainText" rows="3" placeholder="Enter a short message"></textarea></div><div data-qr-mode="wifi" class="hidden md:col-span-2 grid gap-4 sm:grid-cols-3"><label>Network name<input id="wifiSsid" type="text" placeholder="My Wi-Fi" /></label><label>Password<input id="wifiPassword" type="text" placeholder="Network password" /></label><label>Security<select id="wifiSecurity"><option value="WPA">WPA/WPA2</option><option value="WEP">WEP</option><option value="nopass">No password</option></select></label></div><div class="md:col-span-2 flex flex-wrap gap-3"><button class="cta" type="submit">Generate QR Code</button><button class="secondary" type="button" id="qrDownload">Download PNG</button></div></form><div class="mt-8 grid gap-5 sm:grid-cols-[280px_1fr] items-center"><canvas id="qrCanvas" width="280" height="280" aria-label="QR code preview"></canvas><p id="qrStatus" class="text-sm text-slate-600" aria-live="polite">Enter content to preview your QR code.</p></div></section>
+    <section id="toolGuide" class="guide" aria-label="QR Code Generator guide"><p>Loading the QR Code Generator guide…</p></section>
+  </main>
+  <footer></footer>
+  <script>window.addEventListener('DOMContentLoaded',()=>{window.scrollTo({top:0,behavior:'smooth'});});</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6V491CW7H0');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="branding.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robots.txt Generator &amp; Crawl Control – AfriWidget</title>
+  <meta name="description" content="Generate a clean robots.txt file with bot controls, crawl delays, disallowed paths, and sitemap support. Free, private, and browser-based." />
+  <link rel="canonical" href="https://afriwidget.com/robots-txt-generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/robots-txt-generator" />
+  <meta property="og:title" content="Robots.txt Generator &amp; Crawl Control – AfriWidget" />
+  <meta property="og:description" content="Generate a clean robots.txt file with bot controls, crawl delays, disallowed paths, and sitemap support. Free, private, and browser-based." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="Robots.txt Generator &amp; Crawl Control – AfriWidget" />
+  <meta name="twitter:description" content="Generate a clean robots.txt file with bot controls, crawl delays, disallowed paths, and sitemap support. Free, private, and browser-based." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"WebApplication","name":"Robots.txt Generator & Crawl Control",
+    "url":"https://afriwidget.com/robots-txt-generator","description":"Create a robots.txt file with search, AI crawler, delay, path, and sitemap controls.",
+    "applicationCategory":"DeveloperApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"AfriWidget","url":"https://afriwidget.com/"}
+  }</script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://afriwidget.com/"},
+      {"@type":"ListItem","position":2,"name":"Productivity Tools","item":"https://afriwidget.com/productivity"},
+      {"@type":"ListItem","position":3,"name":"Robots.txt Generator","item":"https://afriwidget.com/robots-txt-generator"}
+    ]
+  }</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <style>
+    .mobile-menu{display:none}.mobile-menu.open{display:block}
+    .tool-shell{background:linear-gradient(145deg,#0f172a,#020617);box-shadow:0 24px 70px rgba(15,23,42,.18)}
+    .control{width:100%;border:1px solid #334155;background:#1e293b;color:#f8fafc;border-radius:.75rem;padding:.7rem .8rem;outline:none}
+    .control:focus{border-color:#facc15;box-shadow:0 0 0 3px rgba(250,204,21,.18)}
+    .toggle{appearance:none;width:2.75rem;height:1.5rem;border-radius:999px;background:#475569;position:relative;cursor:pointer;transition:.2s}
+    .toggle:before{content:'';position:absolute;width:1.1rem;height:1.1rem;left:.2rem;top:.2rem;background:#fff;border-radius:50%;transition:.2s}
+    .toggle:checked{background:#eab308}.toggle:checked:before{transform:translateX(1.25rem)}
+    .code-output{white-space:pre-wrap;word-break:break-word;min-height:230px}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2" aria-label="AfriWidget home"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#EAB308"/></svg><span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span></a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium"><a href="/" class="hover:text-yellow-300">Home</a><a href="education" class="hover:text-yellow-300">Education Tools</a><a href="finance" class="hover:text-yellow-300">Finance Tools</a><a href="health" class="hover:text-yellow-300">Health Tools</a><a href="productivity" class="text-yellow-300 font-bold">Productivity Tools</a><a href="widgets" class="hover:text-yellow-300">All Tools Directory</a></div>
+      <button id="mobileMenuBtn" class="md:hidden rounded-lg bg-slate-800 p-2" aria-label="Open navigation menu"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div></div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div>
+  </nav>
+
+  <header class="bg-slate-950 px-4 py-12 text-white sm:py-16"><div class="mx-auto max-w-4xl text-center">
+    <span class="mb-4 inline-block rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm font-semibold text-yellow-300">SEO &amp; Webmaster Tool</span>
+    <h1 class="mb-4 text-3xl font-extrabold sm:text-5xl">Robots.txt Generator</h1>
+    <p class="mx-auto max-w-2xl text-lg leading-8 text-slate-300">Set crawler permissions, protect private paths, manage AI bot access, and create a root-ready robots.txt file without uploading your site details.</p>
+    <span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+  </div></header>
+
+  <main class="mx-auto max-w-6xl px-4 py-10 sm:py-14">
+    <section class="tool-shell rounded-3xl p-5 text-white sm:p-8" aria-labelledby="robots-tool-title">
+      <div class="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end"><div><p class="text-xs font-bold uppercase tracking-[.2em] text-yellow-300">Configure and preview</p><h2 id="robots-tool-title" class="mt-2 text-2xl font-extrabold">Build your robots.txt</h2></div><span class="text-sm text-slate-400">Runs locally in your browser</span></div>
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="space-y-6">
+          <div><label for="globalAccess" class="mb-2 block text-sm font-semibold text-slate-200">Global access</label><select id="globalAccess" class="control"><option value="allow">Allow All Bots</option><option value="block">Block All Bots</option></select></div>
+          <div><p class="mb-3 text-sm font-semibold text-slate-200">AI crawler access</p><div class="grid gap-3 sm:grid-cols-2">
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">GPTBot <input class="toggle bot-toggle" data-bot="GPTBot" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">ClaudeBot <input class="toggle bot-toggle" data-bot="ClaudeBot" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">Bytespider <input class="toggle bot-toggle" data-bot="Bytespider" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">CCBot <input class="toggle bot-toggle" data-bot="CCBot" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">PerplexityBot <input class="toggle bot-toggle" data-bot="PerplexityBot" type="checkbox" checked></label>
+          </div></div>
+          <div><p class="mb-3 text-sm font-semibold text-slate-200">Search engine access</p><div class="grid gap-3 sm:grid-cols-2">
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">Googlebot <input class="toggle search-toggle" data-bot="Googlebot" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">Bingbot <input class="toggle search-toggle" data-bot="Bingbot" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">Yandex <input class="toggle search-toggle" data-bot="Yandex" type="checkbox" checked></label>
+            <label class="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-800/70 px-3 py-3 text-sm">Baiduspider <input class="toggle search-toggle" data-bot="Baiduspider" type="checkbox" checked></label>
+          </div></div>
+          <div class="grid gap-5 sm:grid-cols-2"><div><label for="crawlDelay" class="mb-2 block text-sm font-semibold text-slate-200">Crawl delay</label><select id="crawlDelay" class="control"><option value="">Default (None)</option><option value="5">5 seconds</option><option value="10">10 seconds</option><option value="20">20 seconds</option></select></div><div><label for="disallowPaths" class="mb-2 block text-sm font-semibold text-slate-200">Subfolder exclusions</label><input id="disallowPaths" class="control" placeholder="/admin/, /private/" /></div></div>
+          <div><label for="sitemapUrl" class="mb-2 block text-sm font-semibold text-slate-200">Sitemap URL <span class="font-normal text-slate-400">(optional)</span></label><input id="sitemapUrl" type="url" class="control" placeholder="https://example.com/sitemap.xml" /></div>
+        </div>
+        <div><div class="mb-3 flex items-center justify-between"><h3 class="font-bold text-slate-100">Generated syntax</h3><span id="robotsStatus" class="text-xs text-slate-400" aria-live="polite">Ready</span></div><pre id="robotsOutput" class="code-output rounded-2xl border border-slate-700 bg-slate-950 p-5 font-mono text-sm leading-7 text-yellow-200"></pre><div class="mt-4 flex flex-wrap gap-3"><button id="generateRobots" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Generate</button><button id="copyRobots" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Copy</button><button id="downloadRobots" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Download</button></div><p id="robotsCopyStatus" class="mt-3 min-h-5 text-sm text-emerald-300" aria-live="polite"></p></div>
+      </div>
+    </section>
+    <hr class="my-12 border-slate-200" />
+    <article class="mx-auto max-w-4xl space-y-10 leading-8 text-slate-700">
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">About the Robots.txt Generator</h2><p>The Robots Exclusion Protocol is a small but important agreement between a website and automated crawlers. A plain-text file named <code>robots.txt</code> tells cooperative robots which URL paths they may request and which paths they should leave alone. Search engines read it before crawling, so a carefully written file can reduce unnecessary requests, protect server resources, and make your preferred site structure clearer. This generator turns practical access choices into valid directives you can inspect before placing the file online.</p><p>Robots.txt is not a security wall and it is not an access-control system. It does not hide a URL from a person who already knows it, and a malicious scraper may ignore it. It is best used to guide well-behaved search crawlers away from admin screens, staging folders, internal reports, duplicate query paths, and other areas that do not belong in a crawl queue. Public pages that should appear in search should normally remain accessible and should not be blocked by a broad rule.</p><p>Crawlers scan links, sitemaps, redirects, and other signals over time. When a site is large or its hosting resources are limited, crawl guidance can help search engines spend more of their request budget on useful pages. The optional sitemap line gives a crawler a direct discovery hint, while specific user-agent blocks let you make a separate choice for AI training bots and search engine bots.</p></section>
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">Key Use Cases</h2><div class="grid gap-5 sm:grid-cols-2"><div class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-950">Manage crawl budget</h3><p class="mt-2">Reduce repeated visits to filters, internal search pages, calendars, and duplicate URL variations so important content receives clearer crawl attention.</p></div><div class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-950">Control AI crawlers</h3><p class="mt-2">Declare whether named AI agents such as GPTBot, ClaudeBot, Bytespider, CCBot, or PerplexityBot may request your content.</p></div><div class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-950">Hide staging paths from crawls</h3><p class="mt-2">List folders such as <code>/staging/</code>, <code>/admin/</code>, or <code>/private/</code> when they should not be part of normal discovery.</p></div><div class="rounded-2xl border border-slate-200 bg-white p-5"><h3 class="font-bold text-slate-950">Declare your sitemap</h3><p class="mt-2">Add an absolute sitemap URL so search crawlers can find the canonical list of pages on a static host.</p></div></div></section>
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">How to Use This Tool</h2><ol class="list-decimal space-y-3 pl-6"><li>Choose whether the default group of bots should be allowed or blocked. Use named toggles when a bot policy needs to differ from the global setting.</li><li>List one or more paths to disallow. Separate paths with commas and begin them with a slash; use folders rather than accidentally blocking your entire site.</li><li>Add a complete sitemap URL and review the generated code. Copy it to your clipboard or download the file directly from this page.</li><li>Upload the file as <code>/robots.txt</code> at the root of the public domain, then test the live response and submit the URL in the relevant webmaster tools.</li></ol></section>
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">Technical Example</h2><p>For example, a publisher may want Googlebot and Bingbot to crawl public content while asking named AI scrapers to stay away from the site. The resulting file can look like this:</p><pre class="overflow-x-auto rounded-2xl bg-slate-950 p-5 font-mono text-sm leading-7 text-yellow-200">User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://example.com/sitemap.xml</pre><p>Keep in mind that blank <code>Disallow:</code> lines allow the selected bot, while <code>Disallow: /</code> blocks every path for that user agent. Test carefully when rules overlap because a crawler’s interpretation can depend on its implementation.</p></section>
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">Frequently Asked Questions</h2><div class="space-y-3"><details class="rounded-xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Does robots.txt hide pages from users?</summary><p class="mt-3">No. It is public and advisory. Use authentication, authorization, or server rules for confidential information.</p></details><details class="rounded-xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Where should I upload robots.txt?</summary><p class="mt-3">Place it at the root of the exact host, such as <code>https://example.com/robots.txt</code>. A file inside a subfolder will not control the whole domain.</p></details><details class="rounded-xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">How long does Google take to update robots.txt rules?</summary><p class="mt-3">Google may recrawl the file quickly, but crawl behavior and cached interpretations can take time. Test the live file and allow a reasonable propagation period.</p></details><details class="rounded-xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Should I block all AI bots?</summary><p class="mt-3">That is a publisher decision. Review each bot’s policies, your licensing goals, and the value of referral traffic before choosing.</p></details></div></section>
+      <section><h2 class="mb-4 text-3xl font-extrabold text-slate-950">Important Limitations</h2><p>Rules only guide compliant crawlers and cannot replace a secure server configuration. Avoid blocking CSS, JavaScript, or image assets that search engines need to understand a page. A robots.txt rule also does not guarantee removal of an already indexed URL; use noindex directives where appropriate and ensure the page can still be crawled when removal needs to be observed. Review this file whenever your folder structure, sitemap, privacy policy, or crawler preferences change.</p></section>
+    </article>
+  </main>
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+  <script>
+    const $ = id => document.getElementById(id);
+    const allInputs = document.querySelectorAll('input,select');
+    function updateRobots() {
+      const global = $('globalAccess').value, defaultRule = global === 'block' ? 'Disallow: /' : 'Disallow:';
+      const lines = [];
+      document.querySelectorAll('.bot-toggle,.search-toggle').forEach(toggle => {
+        if (toggle.checked !== (global === 'allow')) {
+          lines.push('User-agent: ' + toggle.dataset.bot, toggle.checked ? 'Disallow:' : 'Disallow: /', '');
+        }
+      });
+      lines.push('User-agent: *', defaultRule);
+      const paths = $('disallowPaths').value.split(',').map(path => path.trim()).filter(Boolean);
+      paths.forEach(path => lines.push('Disallow: ' + (path.startsWith('/') ? path : '/' + path)));
+      if ($('crawlDelay').value) lines.push('Crawl-delay: ' + $('crawlDelay').value);
+      if ($('sitemapUrl').value.trim()) lines.push('', 'Sitemap: ' + $('sitemapUrl').value.trim());
+      $('robotsOutput').textContent = lines.join('\n');
+      $('robotsStatus').textContent = 'Updated just now';
+    }
+    function downloadFile(name, text) { const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([text], {type:'text/plain'})); link.download = name; link.click(); URL.revokeObjectURL(link.href); }
+    allInputs.forEach(input => input.addEventListener('input', updateRobots));
+    allInputs.forEach(input => input.addEventListener('change', updateRobots));
+     $('generateRobots').addEventListener('click', () => { updateRobots(); $('robotsCopyStatus').textContent = 'robots.txt generated locally.'; });
+     $('copyRobots').addEventListener('click', () => navigator.clipboard.writeText($('robotsOutput').textContent).then(() => $('robotsCopyStatus').textContent = 'robots.txt copied to your clipboard.').catch(() => $('robotsCopyStatus').textContent = 'Copy was unavailable; select the code manually.'));
+    $('downloadRobots').addEventListener('click', () => downloadFile('robots.txt', $('robotsOutput').textContent));
+    window.addEventListener('DOMContentLoaded', () => { updateRobots(); });
+  </script>
+</body>
+</html>

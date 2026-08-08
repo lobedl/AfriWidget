@@ -1,0 +1,39 @@
+Please build 5 lightweight, 100% client-side health tools to expand our web utility platform:
+
+---
+### 1. PEDIATRIC PARACETAMOL & IBUPROFEN DOSAGE CALCULATOR
+- INPUTS: Child weight (kg or lbs) + Medicine Type (Paracetamol 120mg/5mL, Paracetamol 250mg/5mL, or Ibuprofen 100mg/5mL).
+- LOGIC: Paracetamol standard dosage = 15mg per kg per dose. Ibuprofen standard dosage = 10mg per kg per dose.
+- OUTPUT: Exact single dose in mL, recommended frequency (every 4-6 hours), and max daily dose limit in mL.
+- SAFETY DISCLAIMER: Prominent warning block advising parents to verify with a doctor or pharmacist.
+
+---
+### 2. OVULATION & SAFE PERIOD CYCLE CALCULATOR
+- INPUTS: Start date of last period, average cycle length (21-35 days, default 28), period duration (days).
+- LOGIC: Estimated Ovulation Day = (Last Period Date + Cycle Length - 14 days). Fertile Window = 5 days before ovulation to 1 day after.
+- OUTPUT: Color-coded result cards highlighting Next Period Date, Fertile Window, Ovulation Peak, and Lower-Risk Days.
+
+---
+### 3. DAILY WATER INTAKE & HYDRATION CALCULATOR
+- INPUTS: Body Weight (kg), Daily Exercise (minutes), Climate/Environment (Normal vs Hot/Humid).
+- LOGIC: Baseline = Weight in kg × 0.033 L. Add +0.35 L per 30 mins exercise. Add +0.5 L if in hot climate.
+- OUTPUT: Total Daily Water Goal in Liters, Milliliters, and number of 500ml Water Bottles.
+
+---
+### 4. BMR, TDEE & CALORIE DEFICIT CALCULATOR
+- INPUTS: Gender, Age, Height (cm), Weight (kg), Activity Level (Sedentary, Lightly Active, Moderately Active, Very Active).
+- FORMULA: Mifflin-St Jeor Equation for BMR. TDEE = BMR × Activity Multiplier.
+- OUTPUT: BMR calories, TDEE calories, Weight Maintenance target, and Calorie Deficit target (-500 kcal/day for ~0.5kg/week loss).
+
+---
+### 5. BLOOD DONATION ELIGIBILITY & RE-DONATION CALCULATOR
+- INPUTS: Gender, Age, Weight (kg), Date of Last Blood Donation.
+- LOGIC: Age must be 18–65. Weight must be ≥ 50kg. Male donation gap = 90 days. Female donation gap = 120 days.
+- OUTPUT: Instant Eligibility Status (Eligible vs Ineligible) + Earliest Date Allowed for Next Donation.
+
+---
+### TECHNICAL STANDARDS:
+1. UI Design: Slate background, subtle borders, bright yellow CTA buttons ("Calculate Dosage", "Check Dates").
+2. Trust & Privacy: Header pill "⚡ 100% Free • No Signup • Private In-Browser Calculation".
+3. AdSense Compliance: Include 250-300 words of educational background text and a short FAQ accordion below each calculator.
+4. Execute 100% client-side with Vanilla JavaScript without page reloads.

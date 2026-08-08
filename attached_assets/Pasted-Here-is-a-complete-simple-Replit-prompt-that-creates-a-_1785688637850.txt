@@ -1,0 +1,45 @@
+Here is a complete, simple Replit prompt that creates a master instruction file (TOOL_BUILDING_RULES.md) in your project root.
+This ensures that any AI agent working on AfriWidget in the future automatically reads and follows these exact rules every time you request a new tool.
+### 📋 Replit Prompt (Copy & Paste)
+```text
+Please create a master rules file named `TOOL_BUILDING_RULES.md` in the project root directory. Write down the following strict guidelines so any AI agent working on this project must read and follow them before building any new tool:
+
+---
+### 🛠️ MANDATORY TOOL DEVELOPMENT RULES
+
+1. DIRECT LINKING & NO REDIRECTS:
+   - All internal links (in headers, footers, category cards, and homepages) must point directly to the final clean page path.
+   - Never use internal redirect rules or trailing-slash bounces.
+
+2. EXCLUSIVITY CHECK (SKIP DUPLICATES):
+   - Before building a requested tool, check if a tool with the same function already exists on AfriWidget.
+   - If the tool already exists, SKIP IT completely and notify the user.
+
+3. BRANDING & DESIGN SYSTEM:
+   - Every new page must strictly follow the site's branding: slate dark background theme, yellow accent action buttons, and inline SVG icons (no casual emojis).
+   - Must use the standardized clean 6-link header and mobile navigation menu.
+
+4. TOOL-FIRST LAYOUT & UNIQUE SEO CONTENT:
+   - Placement: The interactive tool widget MUST be placed at the top of the page (above the fold).
+   - Text Content (Below the Tool): Do not write generic or duplicate text. Write rich, unique content covering:
+     * About the Tool
+     * Why It Was Created
+     * How to Use
+     * Real-World Technical Examples
+     * Frequently Asked Questions (Accordion style)
+   - Title Tags: Must follow SEO rules and stay strictly between 50 and 58 characters.
+
+5. AUTOMATIC GROQ AI PANEL INTEGRATION:
+   - Every new tool page MUST automatically include the Groq AI panel beneath the tool output.
+   - Includes automatic, unlimited live insights upon calculation + the 5-question daily Q&A limit widget (following GROQ_AI_INTEGRATION.md).
+
+6. GOOGLE ANALYTICS INTEGRATION:
+   - Automatically embed the standard Google Analytics tracking script into the `<head>` of every newly created tool page.
+
+7. AUTOMATIC SITE INTEGRATION & COUNTS:
+   - Add the new tool card to the Homepage under its correct category section.
+   - Add the tool card to its dedicated Category Hub page (Health, Finance, Education, or Productivity).
+   - Update the total Tool Count numbers displayed across the homepage and directory pages.
+   - Append the new page path to `sitemap.xml` and `llms.txt`.
+
+```

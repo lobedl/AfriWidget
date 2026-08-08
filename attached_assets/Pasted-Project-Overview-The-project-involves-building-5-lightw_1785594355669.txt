@@ -1,0 +1,38 @@
+Project Overview
+​The project involves building 5 lightweight, 100% client-side health tools to expand the AfriWidget web utility platform without page reloads or backend dependencies.
+​🎨 Technical & Design Standards
+​UI Design: Slate background (slate-based UI), subtle borders, and high-visibility bright yellow CTA buttons (e.g., "Calculate Dosage", "Check Dates").
+​Trust & Privacy Header: Display a header pill: ⚡ 100% Free • No Signup • Private In-Browser Calculation.
+​SEO & AdSense Compliance: Include 250–300 words of educational text + an FAQ accordion section below every tool.
+​Execution: Vanilla JavaScript running strictly client-side (no page reloads, no backend).
+​🛠️ The 5 Health Tools & Specifications
+​1. Pediatric Paracetamol & Ibuprofen Dosage Calculator
+​Inputs: Child weight (kg or lbs), Medicine Type (Paracetamol 120mg/5mL, Paracetamol 250mg/5mL, or Ibuprofen 100mg/5mL).
+​Logic: Paracetamol = 15\text{ mg/kg} per dose. Ibuprofen = 10\text{ mg/kg} per dose.
+​Outputs: Single dose in \text{mL}, frequency (every 4–6 hours), and max daily dose limit in \text{mL}.
+​Safety: Prominent warning block advising parents to consult a doctor/pharmacist.
+​2. Ovulation & Safe Period Cycle Calculator
+​Inputs: Start date of last period, average cycle length (21–35 days, default: 28), period duration (days).
+​Logic: \text{Ovulation Day} = \text{Last Period Date} + \text{Cycle Length} - 14\text{ days}. Fertile window = 5 days before ovulation to 1 day after.
+​Outputs: Color-coded result cards for Next Period Date, Fertile Window, Ovulation Peak, and Lower-Risk Days.
+​3. Daily Water Intake & Hydration Calculator
+​Inputs: Body Weight (\text{kg}), Daily Exercise (minutes), Climate/Environment (Normal vs. Hot/Humid).
+​Logic: Baseline = \text{Weight (kg)} \times 0.033\text{ L}. Add +0.35\text{ L} per 30 mins exercise. Add +0.5\text{ L} if Hot/Humid.
+​Outputs: Total daily goal in Liters, Milliliters, and equivalent 500\text{ mL} bottles.
+​4. Calorie Deficit Planner (Deduplicated)
+​Inputs: Gender, Age, Height (\text{cm}), Weight (\text{kg}), Activity Level (Sedentary, Lightly Active, Moderately Active, Very Active).
+​Logic: Uses Mifflin-St Jeor Equation for BMR. \text{TDEE} = \text{BMR} \times \text{Activity Multiplier}.
+​Outputs: Weight maintenance target vs. Calorie Deficit target (-500\text{ kcal/day} for \sim 0.5\text{ kg/week} loss).
+​Note on Deduplication: The previous agent detected an existing bmi-calculator.html that already covers BMI/BMR/TDEE. To respect the "no duplicate tool" requirement, Tool #4 was adapted into a dedicated Calorie Deficit Planner targeting maintenance and weight loss goals without conflicting with the existing tool.
+​5. Blood Donation Eligibility & Re-Donation Calculator
+​Inputs: Gender, Age, Weight (\text{kg}), Date of Last Blood Donation.
+​Logic: Age must be 18–65. Weight \ge 50\text{ kg}. Male minimum gap = 90 days. Female minimum gap = 120 days.
+​Outputs: Eligibility status (Eligible vs. Ineligible) + Earliest allowed date for next donation.
+​🚦 Work Completed by Previous Agent
+​Shared Logic: Built the shared Vanilla JS calculation engine.
+​Pages Created: Created 5 standalone HTML pages populated with educational copy, safety disclaimers, FAQ accordions, canonical metadata, schema markup, and trust badges.
+​Directory Wiring: Began linking the new tools into crawlable site directories (Health Hub, All Tools directory, navbar/footer, homepage, sitemap, and llms.txt).
+​📋 Next Steps / Remaining Tasks
+​Verify Directory Integration: Finalize and verify links across sitemap, llms.txt, footer, and Health Hub navigation.
+​Functional Testing: Perform functional checks on each calculator form to ensure computations match the logic without throwing JS errors or triggering page reloads.
+​UI Verification: Confirm slate backgrounds, yellow CTA styling, warning blocks, and trust header badges display properly across mobile and desktop
