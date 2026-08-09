@@ -8,17 +8,16 @@ AfriWidget’s Savings Calculator provides an instant compound interest growth s
 
 ## The Mathematics of Compound Savings Growth
 
-The future balance ($A$) of a savings strategy combining an initial lump-sum balance ($P$) and recurring monthly deposits ($PMT$) compounded monthly is modeled by the standard compound interest formula:
+The future balance of a savings strategy combining an initial lump-sum balance and recurring monthly deposits compounded monthly is modeled by the standard compound interest formula:
 
-$$A = P\left(1 + \frac{r}{n}\right)^{nt} + PMT \times \frac{\left(1 + \frac{r}{n}\right)^{nt} - 1}{\frac{r}{n}}$$
+**Future Balance** = **[ Starting Balance × (1 + r)ⁿ ] + [ Monthly Deposit × ( (1 + r)ⁿ - 1 ) ÷ r ]**
 
 Where:
-- $A$ = Projected Future Balance (total accumulated portfolio value)
-- $P$ = Initial Starting Balance (lump-sum capital deposited on Day 1)
-- $PMT$ = Recurring Monthly Deposit Amount
-- $r$ = Annual Percentage Interest Rate / Expected Return (as a decimal, e.g., 8% = 0.08)
-- $n$ = Compounding Frequency per Year (12 for monthly compounding)
-- $t$ = Total Duration in Years
+- **Future Balance** = Total accumulated portfolio value at the end of the timeline
+- **Starting Balance** = Lump-sum capital deposited on Day 1
+- **Monthly Deposit** = Recurring monthly contribution
+- **r** = Monthly interest rate (Annual return rate ÷ 12 months ÷ 100)
+- **n** = Total compounding months (Years × 12)
 
 ### The Exponential Growth Curve
 During the initial years, your balance grows predominantly through your own out-of-pocket deposits. However, as your balance expands, annual interest earnings begin to exceed your annual personal contributions. This shift produces an exponential wealth curve, where time becomes the single most influential factor in total capital accumulation.
@@ -60,9 +59,12 @@ Selecting appropriate financial vehicles depends on your time horizon and risk t
 
 A quick mental calculation to estimate how many years it takes for your investment to double at a given interest rate is the **Rule of 72**:
 
-$$\text{Years to Double} \approx \frac{72}{\text{Annual Interest Rate}}$$
+<div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto">
+  <p class="font-semibold text-amber-400 mb-2">Years to Double ≈</p>
+  <p class="pl-4">72 &divide; Annual Interest Rate (%)</p>
+</div>
 
-For example, at an 8% annual return rate, your savings will double approximately every 9 years ($72 / 8 = 9$).
+For example, at an 8% annual return rate, your savings will double approximately every 9 years (72 &divide; 8 = 9).
 
 ### Scenario: Starting Early vs. Starting Late
 - **Saver A (Starts at Age 25)**: Deposits $100/month at 8% annual return for 35 years until age 60. Total personal deposits: $42,000. Projected portfolio value: **$229,388**.

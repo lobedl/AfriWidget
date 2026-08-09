@@ -12,19 +12,22 @@ AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessm
 
 In vocational education, different assessment tasks carry different percentage weights depending on whether the subject is primarily practical (such as Engineering Workshop Practice) or theoretical (such as Business Management). A student’s overall ICASS mark is calculated as a weighted sum:
 
-$$\text{Weighted ICASS Mark (\%)} = \frac{(S_{\text{assign}} \times W_{\text{assign}}) + (S_{\text{pract}} \times W_{\text{pract}}) + (S_{\text{test}} \times W_{\text{test}}) + (S_{\text{attend}} \times W_{\text{attend}})}{100}$$
+<div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto">
+  <p class="font-semibold text-amber-400 mb-2">Weighted ICASS Mark (%) =</p>
+  <p class="pl-4">((S<sub>assign</sub> &times; W<sub>assign</sub>) + (S<sub>pract</sub> &times; W<sub>pract</sub>) + (S<sub>test</sub> &times; W<sub>test</sub>) + (S<sub>attend</sub> &times; W<sub>attend</sub>)) &divide; 100</p>
+</div>
 
 Where:
-- $S_i$ = Percentage score achieved on a specific assessment component (0% to 100%)
-- $W_i$ = Official percentage weight allocated to that component (must total exactly 100%)
+- **S<sub>i</sub>** = Percentage score achieved on a specific assessment component (0% to 100%)
+- **W<sub>i</sub>** = Official percentage weight allocated to that component (must total 100%)
 
 ### Example Calculation
 Suppose a student scores the following marks in Nated N4 Electrical Engineering:
-- **Assignment**: Score = 70%, Weight = 25% $\rightarrow (70 \times 25) / 100 = 17.50\%$
-- **Practical Tasks**: Score = 80%, Weight = 35% $\rightarrow (80 \times 35) / 100 = 28.00\%$
-- **Class Tests**: Score = 60%, Weight = 30% $\rightarrow (60 \times 30) / 100 = 18.00\%$
-- **Attendance**: Score = 90%, Weight = 10% $\rightarrow (90 \times 10) / 100 = 9.00\%$
-- **Total Cumulative ICASS Mark**: $17.50 + 28.00 + 18.00 + 9.00 = \mathbf{72.50\%}$ (Distinction / Outstanding band).
+- **Assignment**: Score = 70%, Weight = 25% &rarr; (70 &times; 25) &divide; 100 = **17.50%**
+- **Practical Tasks**: Score = 80%, Weight = 35% &rarr; (80 &times; 35) &divide; 100 = **28.00%**
+- **Class Tests**: Score = 60%, Weight = 30% &rarr; (60 &times; 30) &divide; 100 = **18.00%**
+- **Attendance**: Score = 90%, Weight = 10% &rarr; (90 &times; 10) &divide; 100 = **9.00%**
+- **Total Cumulative ICASS Mark**: 17.50 + 28.00 + 18.00 + 9.00 = **72.50%** (Distinction / Outstanding band).
 
 ---
 

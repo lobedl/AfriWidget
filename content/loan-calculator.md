@@ -8,17 +8,20 @@ AfriWidget’s Loan Calculator provides an instant, interactive repayment and am
 
 ## The Mathematics of Loan Amortization
 
-Most consumer and commercial loans utilize the annuity amortization formula to determine fixed equal monthly payments ($PMT$). The formula balances declining interest charges with increasing principal contributions over the life of the loan:
+Most consumer and commercial loans utilize the annuity amortization formula to determine fixed equal monthly payments. The formula balances declining interest charges with increasing principal contributions over the life of the loan:
 
-$$PMT = P \times \frac{r(1 + r)^n}{(1 + r)^n - 1}$$
+<div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto">
+  <p class="font-semibold text-amber-400 mb-2">Monthly Loan Repayment (PMT) =</p>
+  <p class="pl-4">Principal &times; [ r(1 + r)<sup>n</sup> ] &divide; [ (1 + r)<sup>n</sup> - 1 ]</p>
+</div>
 
 Where:
-- $P$ = Principal Loan Amount (initial capital borrowed)
-- $r$ = Monthly Interest Rate (Annual Interest Rate divided by 12 months, expressed as a decimal)
-- $n$ = Total Number of Monthly Payments (Loan Term in Years multiplied by 12)
+- **Principal** = Initial loan capital borrowed
+- **r** = Monthly interest rate (Annual Interest Rate &divide; 12 &divide; 100)
+- **n** = Total number of monthly payments (Loan term in years &times; 12)
 
 ### How Amortization Works Month by Month
-During the early payment cycles, the principal balance ($P$) is at its peak, meaning monthly interest charges ($Interest = Balance \times r$) absorb a larger portion of your monthly installment. As payments reduce the remaining balance, subsequent interest charges decrease, allowing a progressively higher percentage of each monthly payment to pay down the underlying debt.
+During the early payment cycles, the principal balance is at its peak, meaning monthly interest charges (**Interest = Balance &times; r**) absorb a larger portion of your monthly installment. As payments reduce the remaining balance, subsequent interest charges decrease, allowing a progressively higher percentage of each monthly payment to pay down the underlying debt.
 
 ---
 
@@ -30,8 +33,8 @@ During the early payment cycles, the principal balance ($P$) is at its peak, mea
 4. **Choose Loan Term**: Enter the loan duration in full years (e.g., 1, 3, 5, or 10 years).
 5. **Review Instant Outputs**:
    - **Monthly Payment**: The exact fixed cash installment required each month.
-   - **Total Repayment**: The cumulative amount paid over the entire loan term ($PMT \times n$).
-   - **Total Interest**: The net cost of borrowing capital ($Total Repayment - Principal$).
+   - **Total Repayment**: The cumulative amount paid over the entire loan term (PMT &times; n).
+   - **Total Interest**: The net cost of borrowing capital (Total Repayment - Principal).
    - **Amortization Preview Table**: Breakdown of principal paid, interest charges, and remaining balance across key monthly milestones.
 
 ---

@@ -218,6 +218,14 @@
     });
   }
 
+  function formatInline(text) {
+    if (!text) return '';
+    return String(text)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`(.+?)`/g, '<code>$1</code>');
+  }
+
   function renderMarkdown(markdown) {
     var lines = String(markdown || '').replace(/\r/g, '').split('\n');
     var html = [];
@@ -228,8 +236,17 @@
     function flushParagraph() {
       if (!paragraph.length) return;
       var text = paragraph.join(' ').trim();
-      text = escapeHtml(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/`(.+?)`/g, '<code>$1</code>');
-      html.push('<p>' + text + '</p>');
+      if (text === '---') {
+        html.push('<hr class="my-6 border-slate-200" />');
+        paragraph = [];
+        return;
+      }
+      if (/<[a-z1-6]+[\s>]/i.test(text) || /<\/[a-z1-6]+>/i.test(text)) {
+        html.push(text);
+      } else {
+        text = formatInline(text);
+        html.push('<p>' + text + '</p>');
+      }
       paragraph = [];
     }
     function closeList() {
@@ -258,14 +275,14 @@
         if (heading[1].length === 2 && /frequently asked questions|faq/i.test(heading[2])) {
           closeFaq();
           inFaq = true;
-          html.push('<h2>' + escapeHtml(heading[2]) + '</h2>');
+          html.push('<h2>' + formatInline(heading[2]) + '</h2>');
         } else if (inFaq && heading[1].length === 3) {
           closeFaq();
           openFaq = true;
-          html.push('<details><summary>' + escapeHtml(heading[2]) + '</summary><div>');
+          html.push('<details><summary>' + formatInline(heading[2]) + '</summary><div>');
         } else {
           if (heading[1].length === 2) closeFaq();
-          html.push('<h' + heading[1].length + '>' + escapeHtml(heading[2]) + '</h' + heading[1].length + '>');
+          html.push('<h' + heading[1].length + '>' + formatInline(heading[2]) + '</h' + heading[1].length + '>');
         }
         return;
       }
@@ -278,13 +295,13 @@
           listType = nextType;
           html.push('<' + listType + '>');
         }
-        html.push('<li>' + escapeHtml(list[2]).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') + '</li>');
+        html.push('<li>' + formatInline(list[2]) + '</li>');
         return;
       }
       if (/^>\s?/.test(trimmed)) {
         flushParagraph();
         closeList();
-        html.push('<blockquote>' + escapeHtml(trimmed.replace(/^>\s?/, '')) + '</blockquote>');
+        html.push('<blockquote>' + formatInline(trimmed.replace(/^>\s?/, '')) + '</blockquote>');
         return;
       }
       paragraph.push(trimmed);
@@ -514,13 +531,52 @@
   function setupIcassCalculator() {
     var form = byId('icassForm');
     if (!form) return;
-    function calculate() {
+
+    var calcBtn = byId('icassCalculateBtn');
+
+    function clearInputErrors() {
+      var components = ['Assignment', 'Practical', 'Test', 'Attendance'];
+      components.forEach(function (name) {
+        var scoreInput = byId('icass' + name + 'Score');
+        var weightInput = byId('icass' + name + 'Weight');
+        if (scoreInput) {
+          scoreInput.classList.remove('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
+        }
+        if (weightInput) {
+          weightInput.classList.remove('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
+        }
+      });
+    }
+
+    function markInputError(inputId) {
+      var el = byId(inputId);
+      if (el) {
+        el.classList.add('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
+      }
+    }
+
+    function showError(htmlMessage, isAmber) {
+      var msgEl = byId('icassMessage');
+      if (!msgEl) return;
+      msgEl.innerHTML = htmlMessage;
+      msgEl.className = isAmber
+        ? 'mt-6 block rounded-xl border-2 border-amber-500 bg-amber-50 p-4 text-base font-semibold text-amber-950 shadow-lg'
+        : 'mt-6 block rounded-xl border-2 border-red-500 bg-red-50 p-4 text-base font-semibold text-red-950 shadow-lg';
+      msgEl.classList.remove('hidden');
+      var resEl = byId('icassResult');
+      if (resEl) resEl.classList.add('hidden');
+    }
+
+    function calculate(userTriggered) {
+      clearInputErrors();
+
       var components = [
         { key: 'assignment', label: 'Assignment' },
         { key: 'practical', label: 'Practical' },
         { key: 'test', label: 'Test' },
         { key: 'attendance', label: 'Attendance' }
       ];
+
       var total = 0;
       var weightTotal = 0;
       var missingFields = [];
@@ -529,8 +585,10 @@
       var hasAnyInput = false;
 
       components.forEach(function (c) {
-        var scoreInput = byId('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score');
-        var weightInput = byId('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
+        var scoreId = 'icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score';
+        var weightId = 'icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight';
+        var scoreInput = byId(scoreId);
+        var weightInput = byId(weightId);
         var rawScore = scoreInput ? scoreInput.value.trim() : '';
         var rawWeight = weightInput ? weightInput.value.trim() : '';
 
@@ -538,17 +596,22 @@
           hasAnyInput = true;
         }
 
-        if (rawScore === '') missingFields.push(c.label + ' score');
-        if (rawWeight === '') missingFields.push(c.label + ' weight');
+        if (rawScore === '') {
+          missingFields.push({ label: c.label + ' score', id: scoreId });
+        }
+        if (rawWeight === '') {
+          missingFields.push({ label: c.label + ' weight', id: weightId });
+        }
 
         var score = parseFloat(rawScore);
         var weight = parseFloat(rawWeight);
 
         if (rawScore !== '' && (isNaN(score) || score < 0 || score > 100)) {
-          invalidScores.push(c.label + ' (' + (rawScore || 'invalid') + '%)');
+          invalidScores.push({ label: c.label + ' score (' + (rawScore || 'invalid') + '%)', id: scoreId });
         }
+
         if (rawWeight !== '' && (isNaN(weight) || weight < 0)) {
-          negativeWeights.push(c.label + ' weight');
+          negativeWeights.push({ label: c.label + ' weight (' + (rawWeight || 'invalid') + '%)', id: weightId });
         }
 
         if (!isNaN(score) && !isNaN(weight) && score >= 0 && score <= 100 && weight >= 0) {
@@ -560,66 +623,140 @@
       });
 
       if (!hasAnyInput) {
-        setText('icassMessage', 'Enter assessment scores and weights (totaling 100%) to calculate your ICASS average.');
-        show('icassMessage');
-        byId('icassResult').classList.add('hidden');
+        if (userTriggered) {
+          components.forEach(function (c) {
+            markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score');
+            markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
+          });
+          showError(
+            '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Missing Assessment Figures</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your assessment scores (0–100%) and component weights (totaling 100%) in the fields above.</p></div></div>'
+          );
+          if (byId('icassMessage')) byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          var msgEl = byId('icassMessage');
+          if (msgEl) msgEl.classList.add('hidden');
+          var resEl = byId('icassResult');
+          if (resEl) resEl.classList.add('hidden');
+        }
         return;
       }
 
       if (missingFields.length > 0) {
-        setText('icassMessage', '⚠️ Please enter missing values for: ' + missingFields.join(', ') + '.');
-        show('icassMessage');
-        byId('icassResult').classList.add('hidden');
+        missingFields.forEach(function (f) { markInputError(f.id); });
+        var missingNames = missingFields.map(function (f) { return f.label; }).join(', ');
+        showError(
+          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Form Inputs</p><p class="mt-1 text-sm font-bold text-red-900">Please enter missing figures for: <strong class="underline font-black text-red-950">' + missingNames + '</strong>.</p></div></div>'
+        );
+        if (userTriggered && byId('icassMessage')) {
+          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
       if (invalidScores.length > 0) {
-        setText('icassMessage', '⚠️ Scores must be between 0% and 100%. Invalid: ' + invalidScores.join(', ') + '.');
-        show('icassMessage');
-        byId('icassResult').classList.add('hidden');
+        invalidScores.forEach(function (f) { markInputError(f.id); });
+        var invalidNames = invalidScores.map(function (f) { return f.label; }).join(', ');
+        showError(
+          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Figure</p><p class="mt-1 text-sm font-bold text-red-900">Scores must be percentage marks between 0% and 100%. Incorrect figures entered: <strong class="underline font-black text-red-950">' + invalidNames + '</strong>.</p></div></div>'
+        );
+        if (userTriggered && byId('icassMessage')) {
+          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
       if (negativeWeights.length > 0) {
-        setText('icassMessage', '⚠️ Component weights cannot be negative: ' + negativeWeights.join(', ') + '.');
-        show('icassMessage');
-        byId('icassResult').classList.add('hidden');
+        negativeWeights.forEach(function (f) { markInputError(f.id); });
+        var negativeNames = negativeWeights.map(function (f) { return f.label; }).join(', ');
+        showError(
+          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Weight Figure</p><p class="mt-1 text-sm font-bold text-red-900">Component weights cannot be negative numbers. Check: <strong class="underline font-black text-red-950">' + negativeNames + '</strong>.</p></div></div>'
+        );
+        if (userTriggered && byId('icassMessage')) {
+          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
       if (Math.abs(weightTotal - 100) > 0.01) {
+        components.forEach(function (c) {
+          markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
+        });
         var diff = weightTotal - 100;
         var diffText = diff > 0 
           ? 'exceeds 100% by ' + diff.toFixed(2).replace(/\.00$/, '') + '%' 
           : 'is short by ' + Math.abs(diff).toFixed(2).replace(/\.00$/, '') + '%';
-        setText('icassMessage', '⚠️ Component weights total ' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%. Weights must sum to exactly 100% (' + diffText + ').');
-        show('icassMessage');
-        byId('icassResult').classList.add('hidden');
+        showError(
+          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-amber-950">Weight Total Error (' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%)</p><p class="mt-1 text-sm font-bold text-amber-900">Component weights currently total <strong class="underline font-black text-amber-950">' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%</strong>. Official ICASS weights must add up to exactly 100% (' + diffText + '). Adjust your weights above.</p></div></div>',
+          true
+        );
+        if (userTriggered && byId('icassMessage')) {
+          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
-      byId('icassMessage').classList.add('hidden');
+      var msgEl = byId('icassMessage');
+      if (msgEl) msgEl.classList.add('hidden');
+
       var result = total / 100;
       setText('icassScore', result.toFixed(2) + '%');
-      setText('icassBand', result >= 75 ? 'Outstanding internal assessment (Distinction level)' : result >= 50 ? 'Passing internal assessment range' : 'Below 50% threshold — additional mark recovery needed');
+
+      var bandText = '';
+      if (result >= 75) {
+        bandText = '🌟 Outstanding internal assessment (Distinction level — ' + result.toFixed(2) + '%)';
+      } else if (result >= 50) {
+        bandText = '✅ Passing internal assessment range (' + result.toFixed(2) + '%)';
+      } else {
+        bandText = '⚠️ Below 50% threshold — Additional mark recovery recommended before exam entry';
+      }
+      setText('icassBand', bandText);
       show('icassResult');
+
+      if (userTriggered && byId('icassResult')) {
+        byId('icassResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
+
+    if (calcBtn) {
+      calcBtn.addEventListener('click', function (e) {
+        if (e) e.preventDefault();
+        calculate(true);
+      });
+    }
+
     form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      calculate();
+      if (event) event.preventDefault();
+      calculate(true);
+      return false;
     });
-    form.addEventListener('input', calculate);
-    calculate();
+
+    form.addEventListener('input', function () {
+      calculate(false);
+    });
+
+    calculate(false);
   }
 
-  setupFreelance();
-  setupData();
-  setupExperience();
-  setupSavings();
-  setupGuide();
-  setupQrGenerator();
-  setupLoanCalculator();
-  setupSavingsCalculator();
-  setupCurrencyConverter();
-  setupIcassCalculator();
+  var initialized = false;
+  function init() {
+    if (initialized) return;
+    initialized = true;
+    setupFreelance();
+    setupData();
+    setupExperience();
+    setupSavings();
+    setupGuide();
+    setupQrGenerator();
+    setupLoanCalculator();
+    setupSavingsCalculator();
+    setupCurrencyConverter();
+    setupIcassCalculator();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('load', init);
 }());
