@@ -2,6 +2,7 @@
 
 # compiled output
 !dist/styles.css
+!styles.css
 tmp
 out-tsc
 *.tsbuildinfo
