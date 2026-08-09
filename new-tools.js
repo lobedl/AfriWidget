@@ -433,6 +433,13 @@
       setText('loanMessage', 'This estimate assumes a fixed rate and equal monthly payments. Fees, insurance, taxes, and lender rules are not included.');
       show('loanResult');
     }
+    var loanBtn = byId('loanCalculateBtn');
+    if (loanBtn) {
+      loanBtn.addEventListener('click', function (e) {
+        if (e) e.preventDefault();
+        calculate();
+      });
+    }
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       calculate();
@@ -479,6 +486,13 @@
       setText('savingsCalcMessage', 'The projection compounds monthly and assumes the deposit is made at the end of each month. Actual returns vary.');
       show('savingsCalcResult');
     }
+    var savingsBtn = byId('savingsCalcBtn');
+    if (savingsBtn) {
+      savingsBtn.addEventListener('click', function (e) {
+        if (e) e.preventDefault();
+        calculate();
+      });
+    }
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       calculate();
@@ -510,6 +524,13 @@
       setText('currencyValue', value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' ' + to);
       setText('currencyMessage', amount.toLocaleString() + ' ' + from + ' ≈ ' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' ' + to + '. ' + source + '.');
       show('currencyResult');
+    }
+    var convertBtn = byId('currencyConvertBtn');
+    if (convertBtn) {
+      convertBtn.addEventListener('click', function (e) {
+        if (e) e.preventDefault();
+        convert();
+      });
     }
     form.addEventListener('submit', function (event) { event.preventDefault(); convert(); });
     form.addEventListener('input', convert);
