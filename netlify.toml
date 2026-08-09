@@ -3,6 +3,13 @@
   publish = "."
   functions = "netlify/functions"
 
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--include=dev"
+

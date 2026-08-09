@@ -1,16 +1,8 @@
-/*/nav.js             /nav.js             200
-/*/footer.js           /footer.js           200
-/*/branding.css        /branding.css        200
-/*/cards.css           /cards.css           200
-/*/universal-ai.js     /universal-ai.js    200
-/*/new-tools.js        /new-tools.js        200
-/*/share-results.js    /share-results.js    200
-/*/health-tools.js     /health-tools.js     200
-/*/academic-tools.js   /academic-tools.js   200
-/*/academic-utilities.js /academic-utilities.js 200
-/*/productivity-tools.js /productivity-tools.js 200
-
+# Legacy & Category Redirects
 /tech-tool.html   /productivity   301
 /tech-tools.html  /productivity   301
 /tech-tool        /productivity   301
 /tech-tools       /productivity   301
+
+# Clean URLs Rewrite: Map clean paths (e.g., /education, /gpa-calculator) to .html files
+/:page            /:page.html     200

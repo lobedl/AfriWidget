@@ -40,8 +40,8 @@ In `.gitignore`, compiled CSS files **MUST** be explicitly unignored so Netlify 
 !styles.css
 ```
 
-### 1.4 Netlify Environment Configuration (`netlify.toml`)
-Ensure `netlify.toml` specifies the build command and Node environment:
+### 1.4 Netlify Configuration & Pretty URLs (`netlify.toml`)
+Ensure `netlify.toml` specifies the build command, Node environment, and enables `pretty_urls`:
 
 ```toml
 [build]
@@ -49,12 +49,28 @@ Ensure `netlify.toml` specifies the build command and Node environment:
   publish = "."
   functions = "netlify/functions"
 
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--include=dev"
 ```
 
+### 1.5 Netlify Clean URL Routing Mandate (`_redirects`)
+To prevent "Site not found" 404 errors when navigating clean routes (e.g. `/education`, `/gpa-calculator`):
+- `_redirects` **MUST** include clean URL rewrite mapping:
+  ```
+  # Clean URLs Rewrite: Map clean paths (e.g., /education, /gpa-calculator) to .html files
+  /:page            /:page.html     200
+  ```
+- **NEVER** add invalid wildcard rules like `/*/nav.js` or `/*/*.js` into `_redirects`. Invalid syntax breaks Netlify's routing engine and causes valid pages to return 404.
+
 ---
+
 
 ## 🛡️ 2. SVG Icon Fail-Safe Rules
 
