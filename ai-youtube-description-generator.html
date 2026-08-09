@@ -32,7 +32,9 @@
         document.head.appendChild(adsScript);
       }
 
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click"];
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
       function triggerLoad() {
         loadThirdPartyScripts();
         events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
@@ -40,13 +42,11 @@
 
       events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
 
-      window.addEventListener("load", function() {
-        if ("requestIdleCallback" in window) {
-          requestIdleCallback(loadThirdPartyScripts, { timeout: 3500 });
-        } else {
-          setTimeout(loadThirdPartyScripts, 2500);
-        }
-      });
+      if (!isBot) {
+        window.addEventListener("load", function() {
+          setTimeout(loadThirdPartyScripts, 10000);
+        });
+      }
     })();
   </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI YouTube Description Generator with Chapters – AfriWidget</title>

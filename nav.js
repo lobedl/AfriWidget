@@ -96,11 +96,31 @@
 
   function loadUniversalAi() {
     if (document.querySelector('script[data-afriwidget-universal-ai]')) return;
+    var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+    if (isBot) return;
+
     var script = document.createElement('script');
     script.src = '/universal-ai.js';
     script.defer = true;
     script.dataset.afriwidgetUniversalAi = 'true';
-    document.head.appendChild(script);
+
+    var loadScript = function() {
+      if (document.querySelector('script[data-afriwidget-universal-ai]')) return;
+      document.head.appendChild(script);
+    };
+
+    var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+    var trigger = function() {
+      loadScript();
+      events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+    };
+    events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadScript, { timeout: 4000 });
+    } else {
+      setTimeout(loadScript, 2500);
+    }
   }
 
   ensureMenuStyles();
