@@ -10,8 +10,11 @@
 * DO NOT create client-side single-page applications (SPAs) with empty `<div id="root"></div>` containers. Right-clicking "View Page Source" MUST display all long-form text in plain HTML.
 
 ## 3. STYLING & SCRIPTING RULES
-* Tailwind CSS must be loaded purely via CDN in the `<head>` of every page:
-  `<script src="https://cdn.tailwindcss.com"></script>`
+* Stylesheets must be included at the very top of `<head>` in all `.html` pages:
+  `<link rel="stylesheet" href="branding.css" />`
+  `<link rel="stylesheet" href="styles.css" />`
+  `<link rel="stylesheet" href="/dist/styles.css" />`
+* Compiled CSS is generated to both `styles.css` and `dist/styles.css` via `npm run build` (see `AGENTS.md`).
 * Interactive calculators (BMI, Compound Interest, GPA) must be written in standard, clean Vanilla JavaScript DOM operations inside inline or local `.js` files.
 
 ## 4. STATIC SERVER & WORKFLOW COMMANDS

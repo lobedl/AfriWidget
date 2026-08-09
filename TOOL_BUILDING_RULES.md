@@ -45,3 +45,11 @@ Any AI agent working on AfriWidget must read and follow these rules before build
 - Add the tool card to its dedicated category hub page: Health, Finance, Education, or Productivity.
 - Update the total tool-count numbers displayed across the homepage and directory pages.
 - Append the new page path to `sitemap.xml` and `llms.txt`.
+
+### 8. Mandated Stylesheet Head Inclusion & Build Standards
+
+- Every new page MUST include the standard multi-path CSS links at the top of `<head>` as specified in `AGENTS.md`:
+  `<link rel="stylesheet" href="branding.css" />`
+  `<link rel="stylesheet" href="styles.css" />`
+  `<link rel="stylesheet" href="/dist/styles.css" />`
+- Always verify that all inline SVG elements have explicit sizing classes (`w-5 h-5`, etc.) to prevent unstyled layout shifts and maintain 100% PageSpeed scores.
