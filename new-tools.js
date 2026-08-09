@@ -360,17 +360,24 @@
   function setupLoanCalculator() {
     var form = byId('loanForm');
     if (!form) return;
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+    function calculate() {
+      var amountInput = byId('loanAmount');
+      var rateInput = byId('loanRate');
+      var termInput = byId('loanTerm');
+      var rawAmount = amountInput ? amountInput.value.trim() : '';
+      var rawRate = rateInput ? rateInput.value.trim() : '';
+      var rawTerm = termInput ? termInput.value.trim() : '';
       var principal = number('loanAmount');
       var annual = number('loanRate');
       var years = number('loanTerm');
       var currency = byId('loanCurrency').value;
-      if (principal <= 0 || annual < 0 || years <= 0 || years > 100) {
-        setText('loanMessage', 'Enter a positive loan amount, a non-negative annual rate, and a term from 1 to 100 years.');
+      if (!rawAmount || !rawRate || !rawTerm || principal <= 0 || annual < 0 || years <= 0 || years > 100) {
+        setText('loanMessage', 'Enter your loan amount, interest rate, and repayment term to calculate your monthly schedule.');
         show('loanMessage');
+        byId('loanResult').classList.add('hidden');
         return;
       }
+      byId('loanMessage').classList.add('hidden');
       var months = Math.round(years * 12);
       var monthlyRate = annual / 100 / 12;
       var payment = monthlyRate ? principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1) : principal / months;
@@ -392,24 +399,37 @@
       byId('loanSchedule').innerHTML = '<tr><th>Month</th><th>Principal</th><th>Interest</th><th>Balance</th></tr>' + rows.join('');
       setText('loanMessage', 'This estimate assumes a fixed rate and equal monthly payments. Fees, insurance, taxes, and lender rules are not included.');
       show('loanResult');
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
     });
+    form.addEventListener('input', calculate);
+    calculate();
   }
 
   function setupSavingsCalculator() {
     var form = byId('savingsCalcForm');
     if (!form) return;
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+    function calculate() {
+      var startInput = byId('savingsStart');
+      var depositInput = byId('savingsDeposit');
+      var yearsInput = byId('savingsYears');
+      var rawStart = startInput ? startInput.value.trim() : '';
+      var rawDeposit = depositInput ? depositInput.value.trim() : '';
+      var rawYears = yearsInput ? yearsInput.value.trim() : '';
       var start = number('savingsStart');
       var monthly = number('savingsDeposit');
       var annual = number('savingsAnnualRate');
       var years = number('savingsYears');
       var currency = byId('savingsCalcCurrency').value;
-      if (start < 0 || monthly < 0 || annual < 0 || years <= 0 || years > 100 || (start === 0 && monthly === 0)) {
-        setText('savingsCalcMessage', 'Enter a time period and at least one positive starting balance or monthly deposit.');
+      if (!rawYears || years <= 0 || years > 100 || (!rawStart && !rawDeposit)) {
+        setText('savingsCalcMessage', 'Enter a time horizon (years) and a starting balance or monthly deposit amount.');
         show('savingsCalcMessage');
+        byId('savingsCalcResult').classList.add('hidden');
         return;
       }
+      byId('savingsCalcMessage').classList.add('hidden');
       var rate = annual / 100 / 12;
       var balance = start;
       var deposits = start;
@@ -425,7 +445,13 @@
       byId('savingsTable').innerHTML = '<tr><th>Year</th><th>Your deposits</th><th>Projected value</th><th>Growth</th></tr>' + rows.join('');
       setText('savingsCalcMessage', 'The projection compounds monthly and assumes the deposit is made at the end of each month. Actual returns vary.');
       show('savingsCalcResult');
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
     });
+    form.addEventListener('input', calculate);
+    calculate();
   }
 
   function setupCurrencyConverter() {
@@ -435,28 +461,34 @@
     var rates = Object.assign({}, fallback);
     var source = 'Fallback reference rates';
     function convert() {
+      var amountInput = byId('currencyAmount');
+      var rawAmount = amountInput ? amountInput.value.trim() : '';
       var amount = number('currencyAmount');
       var from = byId('currencyFrom').value;
       var to = byId('currencyTo').value;
-      if (amount < 0 || !rates[from] || !rates[to]) {
-        setText('currencyMessage', 'Enter a zero or positive amount and choose both currencies.');
+      if (!rawAmount || amount <= 0 || !rates[from] || !rates[to]) {
+        setText('currencyMessage', 'Enter an amount above 0 to see the converted estimate.');
         show('currencyMessage');
+        byId('currencyResult').classList.add('hidden');
         return;
       }
+      byId('currencyMessage').classList.add('hidden');
       var value = amount / rates[from] * rates[to];
-      setText('currencyValue', value.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' ' + to);
-      setText('currencyMessage', amount.toLocaleString() + ' ' + from + ' ≈ ' + value.toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' ' + to + '. ' + source + '.');
+      setText('currencyValue', value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' ' + to);
+      setText('currencyMessage', amount.toLocaleString() + ' ' + from + ' ≈ ' + value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 }) + ' ' + to + '. ' + source + '.');
       show('currencyResult');
     }
     form.addEventListener('submit', function (event) { event.preventDefault(); convert(); });
     form.addEventListener('input', convert);
+    form.addEventListener('change', convert);
+    convert();
     fetch('https://open.er-api.com/v6/latest/USD')
       .then(function (response) { return response.json(); })
       .then(function (data) {
         if (data && data.rates) {
           rates = Object.assign(rates, data.rates);
           source = 'Live rates refreshed from a public exchange-rate feed';
-          setText('currencyRateStatus', 'Live reference rates loaded');
+          setText('currencyRateStatus', '⚡ Live reference rates loaded');
           convert();
         }
       })
@@ -466,29 +498,102 @@
   function setupIcassCalculator() {
     var form = byId('icassForm');
     if (!form) return;
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+    function calculate() {
+      var components = [
+        { key: 'assignment', label: 'Assignment' },
+        { key: 'practical', label: 'Practical' },
+        { key: 'test', label: 'Test' },
+        { key: 'attendance', label: 'Attendance' }
+      ];
       var total = 0;
       var weightTotal = 0;
-      var valid = true;
-      ['assignment', 'practical', 'test', 'attendance'].forEach(function (name) {
-        var score = parseFloat(byId('icass' + name.charAt(0).toUpperCase() + name.slice(1) + 'Score').value);
-        var weight = parseFloat(byId('icass' + name.charAt(0).toUpperCase() + name.slice(1) + 'Weight').value);
-        if (!Number.isFinite(score) || !Number.isFinite(weight) || score < 0 || score > 100 || weight < 0) valid = false;
-        total += (Number.isFinite(score) ? score : 0) * (Number.isFinite(weight) ? weight : 0);
-        weightTotal += Number.isFinite(weight) ? weight : 0;
+      var missingFields = [];
+      var invalidScores = [];
+      var negativeWeights = [];
+      var hasAnyInput = false;
+
+      components.forEach(function (c) {
+        var scoreInput = byId('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score');
+        var weightInput = byId('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
+        var rawScore = scoreInput ? scoreInput.value.trim() : '';
+        var rawWeight = weightInput ? weightInput.value.trim() : '';
+
+        if (rawScore !== '' || rawWeight !== '') {
+          hasAnyInput = true;
+        }
+
+        if (rawScore === '') missingFields.push(c.label + ' score');
+        if (rawWeight === '') missingFields.push(c.label + ' weight');
+
+        var score = parseFloat(rawScore);
+        var weight = parseFloat(rawWeight);
+
+        if (rawScore !== '' && (isNaN(score) || score < 0 || score > 100)) {
+          invalidScores.push(c.label + ' (' + (rawScore || 'invalid') + '%)');
+        }
+        if (rawWeight !== '' && (isNaN(weight) || weight < 0)) {
+          negativeWeights.push(c.label + ' weight');
+        }
+
+        if (!isNaN(score) && !isNaN(weight) && score >= 0 && score <= 100 && weight >= 0) {
+          total += score * weight;
+        }
+        if (!isNaN(weight) && weight >= 0) {
+          weightTotal += weight;
+        }
       });
-      if (!valid || weightTotal <= 0 || Math.abs(weightTotal - 100) > 0.01) {
-        setText('icassMessage', 'Use scores from 0 to 100 and make the component weights add up to exactly 100%.');
+
+      if (!hasAnyInput) {
+        setText('icassMessage', 'Enter assessment scores and weights (totaling 100%) to calculate your ICASS average.');
         show('icassMessage');
+        byId('icassResult').classList.add('hidden');
         return;
       }
+
+      if (missingFields.length > 0) {
+        setText('icassMessage', '⚠️ Please enter missing values for: ' + missingFields.join(', ') + '.');
+        show('icassMessage');
+        byId('icassResult').classList.add('hidden');
+        return;
+      }
+
+      if (invalidScores.length > 0) {
+        setText('icassMessage', '⚠️ Scores must be between 0% and 100%. Invalid: ' + invalidScores.join(', ') + '.');
+        show('icassMessage');
+        byId('icassResult').classList.add('hidden');
+        return;
+      }
+
+      if (negativeWeights.length > 0) {
+        setText('icassMessage', '⚠️ Component weights cannot be negative: ' + negativeWeights.join(', ') + '.');
+        show('icassMessage');
+        byId('icassResult').classList.add('hidden');
+        return;
+      }
+
+      if (Math.abs(weightTotal - 100) > 0.01) {
+        var diff = weightTotal - 100;
+        var diffText = diff > 0 
+          ? 'exceeds 100% by ' + diff.toFixed(2).replace(/\.00$/, '') + '%' 
+          : 'is short by ' + Math.abs(diff).toFixed(2).replace(/\.00$/, '') + '%';
+        setText('icassMessage', '⚠️ Component weights total ' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%. Weights must sum to exactly 100% (' + diffText + ').');
+        show('icassMessage');
+        byId('icassResult').classList.add('hidden');
+        return;
+      }
+
+      byId('icassMessage').classList.add('hidden');
       var result = total / 100;
       setText('icassScore', result.toFixed(2) + '%');
-      setText('icassBand', result >= 75 ? 'Outstanding internal assessment' : result >= 50 ? 'Passing internal assessment range' : 'Below a 50% planning threshold');
-      setText('icassMessage', 'Your weighted ICASS estimate is ' + result.toFixed(2) + '%. Confirm the official weighting and pass requirements with your institution.');
+      setText('icassBand', result >= 75 ? 'Outstanding internal assessment (Distinction level)' : result >= 50 ? 'Passing internal assessment range' : 'Below 50% threshold — additional mark recovery needed');
       show('icassResult');
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      calculate();
     });
+    form.addEventListener('input', calculate);
+    calculate();
   }
 
   setupFreelance();

@@ -275,3 +275,67 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## Base64 Encoder and Decoder
 
 [Base64 Encoder and Decoder](https://afriwidget.com/base64-encoder-decoder) — Encode and decode UTF-8 text with standard Base64 support, Unicode handling, and instant clipboard copying.
+
+## AI Business Name Generator
+
+[AI Business Name Generator](https://afriwidget.com/ai-business-name-generator) — Generate creative, brandable business name concepts and domain ideas in seconds.
+
+## AI Gig Description Generator
+
+[AI Gig Description Generator](https://afriwidget.com/ai-gig-description-generator) — Create compelling freelance service and gig descriptions tailored for client conversion.
+
+## AI Paraphrasing Tool
+
+[AI Paraphrasing Tool](https://afriwidget.com/ai-paraphrasing-tool) — Rewrite and rephrase sentences and paragraphs for improved clarity, tone, and readability.
+
+## AI Product Description Generator
+
+[AI Product Description Generator](https://afriwidget.com/ai-product-description-generator) — Generate persuasive e-commerce product descriptions highlighting features and benefits.
+
+## AI Text Summarizer
+
+[AI Text Summarizer](https://afriwidget.com/ai-text-summarizer) — Distill long articles, essays, or documents into key bullet points and executive summaries.
+
+## Compound Interest Calculator
+
+[Compound Interest Calculator](https://afriwidget.com/compound-interest) — Calculate investment growth and compound returns over custom timelines.
+
+## Hourly to Salary Converter
+
+[Hourly to Salary Converter](https://afriwidget.com/hourly-to-salary) — Convert hourly pay rates to equivalent weekly, monthly, and annual salary estimates.
+
+## Mortgage Calculator
+
+[Mortgage Calculator](https://afriwidget.com/mortgage-calculator) — Estimate home loan payments, interest breakdowns, and home purchase affordability.
+
+## Password Generator
+
+[Password Generator](https://afriwidget.com/password-generator) — Create secure, customizable random passwords with entropy scores in your browser.
+
+## PayPal Fee Calculator
+
+[PayPal Fee Calculator](https://afriwidget.com/paypal-fee-calculator) — Estimate transaction fees and calculate exact invoicing amounts for domestic and international transfers.
+
+## Percentage Calculator
+
+[Percentage Calculator](https://afriwidget.com/percentage-calculator) — Solve percentage increases, decreases, differences, and fractional proportions.
+
+## Profit Margin Calculator
+
+[Profit Margin Calculator](https://afriwidget.com/profit-margin-calculator) — Calculate gross profit, net margin, and markup percentages for business products.
+
+## Real Estate Investment Calculator
+
+[Real Estate Investment Calculator](https://afriwidget.com/real-estate) — Evaluate rental yield, cap rate, and cash flow projections for property investments.
+
+## Rent Affordability Calculator
+
+[Rent Affordability Calculator](https://afriwidget.com/rent-affordability) — Determine recommended monthly rental budgets based on gross income and expenses.
+
+## SEO Meta Tag Generator
+
+[SEO Meta Tag Generator](https://afriwidget.com/seo-meta-generator) — Create optimized meta titles, descriptions, and Open Graph social tags for web pages.
+
+## Word Counter
+
+[Word Counter](https://afriwidget.com/word-counter) — Count words, characters, sentences, paragraphs, and estimated reading time instantly.

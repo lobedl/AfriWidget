@@ -1,55 +1,116 @@
-## About the ICASS Calculator
+## Comprehensive Guide to ICASS Score Calculation for TVET Students
 
-Internal Continuous Assessment, commonly shortened to ICASS, is a structured way for a vocational or TVET programme to combine work completed during a term or year. Depending on the institution and qualification, assessment evidence may include assignments, practical work, tests, projects, attendance, portfolios, or other approved activities. AfriWidget’s ICASS Calculator lets a student enter a score and weight for four components and produces a transparent weighted estimate.
+Internal Continuous Assessment (ICASS) is a core evaluation framework utilized by Technical and Vocational Education and Training (TVET) colleges, vocational training institutes, and polytechnic colleges (such as those regulated by South Africa’s Department of Higher Education and Training - DHET for NATED Report 191 and NC(V) programmes). Unlike traditional academic systems that rely solely on a single high-stakes final examination, the ICASS system evaluates a student’s ongoing performance throughout the academic term across diverse practical, theoretical, and coursework tasks.
 
-The tool is intentionally flexible because institutions do not all use the same component names or percentages. It does not claim to reproduce a national or college-specific policy. Use the labels as planning categories, enter the weighting supplied by your lecturer or official handbook, and ensure that the weights total exactly 100%. If your institution uses a different structure, combine or rename your source categories on paper before entering them, or use the result only as a rough learning exercise.
+Achieving a strong ICASS score is vital because internal continuous assessment marks carry substantial weight in determining final subject pass statuses, qualifying for national examination entry, and maintaining financial bursary eligibility (such as NSFAS funding).
 
-## How to use it
+AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessment mark estimation tool. Designed specifically for TVET students, lecturers, and academic advisors, it calculates your weighted cumulative ICASS mark in real time, compares it against official passing thresholds, and executes 100% privately in your web browser.
 
-1. Enter each component score from 0 to 100.
-2. Enter the percentage weight assigned to that component.
-3. Check that all weights add up to 100%.
-4. Select Calculate ICASS.
-5. Review the weighted score and the broad planning band.
+---
 
-The calculation is a weighted average: each score is multiplied by its percentage weight, the products are added, and the total is divided by 100. For example, an assignment score of 70 with a 20% weight contributes 14 points to the overall estimate. A practical score of 80 with a 40% weight contributes 32 points. The remaining components contribute their own weighted amounts. This method prevents a small activity from counting the same as a major practical or examination preparation task.
+## The Mathematics of Weighted ICASS Calculations
 
-## Why weighting matters
+In vocational education, different assessment tasks carry different percentage weights depending on whether the subject is primarily practical (such as Engineering Workshop Practice) or theoretical (such as Business Management). A student’s overall ICASS mark is calculated as a weighted sum:
 
-Weighting reflects the academic purpose of an assessment system. A practical-heavy qualification may place more emphasis on demonstrated skill than on a written test. A portfolio can show consistency over time, while a timed test may show how well a learner can recall or apply knowledge under constraints. Attendance may support professional habits, but the institution decides whether and how it counts. The calculator does not judge the quality of the assessment; it simply applies the percentages you provide.
+$$\text{Weighted ICASS Mark (\%)} = \frac{(S_{\text{assign}} \times W_{\text{assign}}) + (S_{\text{pract}} \times W_{\text{pract}}) + (S_{\text{test}} \times W_{\text{test}}) + (S_{\text{attend}} \times W_{\text{attend}})}{100}$$
 
-Use the estimate early enough to act on it. If a low assignment score is pulling the result down, ask whether a correction, resubmission, tutoring session, or feedback meeting is available. If practical work has a high weight, schedule practice time and collect evidence carefully. Keep copies of rubrics, marks, feedback, and submission confirmations so that an error can be investigated through the proper academic channel.
+Where:
+- $S_i$ = Percentage score achieved on a specific assessment component (0% to 100%)
+- $W_i$ = Official percentage weight allocated to that component (must total exactly 100%)
 
-## Interpreting the result
+### Example Calculation
+Suppose a student scores the following marks in Nated N4 Electrical Engineering:
+- **Assignment**: Score = 70%, Weight = 25% $\rightarrow (70 \times 25) / 100 = 17.50\%$
+- **Practical Tasks**: Score = 80%, Weight = 35% $\rightarrow (80 \times 35) / 100 = 28.00\%$
+- **Class Tests**: Score = 60%, Weight = 30% $\rightarrow (60 \times 30) / 100 = 18.00\%$
+- **Attendance**: Score = 90%, Weight = 10% $\rightarrow (90 \times 10) / 100 = 9.00\%$
+- **Total Cumulative ICASS Mark**: $17.50 + 28.00 + 18.00 + 9.00 = \mathbf{72.50\%}$ (Distinction / Outstanding band).
 
-The page shows a broad “outstanding,” “passing range,” or “below a 50% planning threshold” message to make the number easier to read. These labels are not an official pass decision. A programme may require a minimum mark in a particular component, a separate examination mark, attendance evidence, competency sign-off, or a specific moderation process. A weighted total above a general threshold may still not satisfy those rules.
+---
 
-ICASS is also different from a final examination. A student can have strong continuous assessment and still need to prepare for the exam component. Conversely, a weak internal score may increase the mark needed later. Ask the institution for the official formula, rounding rule, supplementary policy, and academic-year requirements.
+## Breakdown of ICASS Assessment Components
 
-## Frequently asked questions
+Understanding the role of each assessment component helps students allocate study time effectively:
 
-### What should the weights total?
+1. **Class Assignments & Theoretical Projects (20% – 30% Weight)**:
+   - Designed to test conceptual understanding, problem-solving ability, case study analysis, and research skills.
+   - *Academic Tip*: Submit assignments ahead of deadlines to avoid point deductions for late submission.
 
-They must total exactly 100% in this calculator. If your official breakdown includes an examination, enter only the ICASS components here and do not quietly treat the exam as an ICASS item.
+2. **Practical Workshop & Laboratory Work (30% – 40% Weight)**:
+   - Evaluates hands-on vocational competency, equipment operation, safety compliance, technical drawing, computer proficiency, or workshop craftsmanship.
+   - *Academic Tip*: Practical tasks carry the heaviest weight in engineering, IT, and hospitality qualifications. Always complete laboratory logbooks carefully.
 
-### Can I use decimal scores?
+3. **Controlled Tests & Term Examinations (25% – 35% Weight)**:
+   - Timed, invigilated classroom assessments that simulate the conditions of national final examinations.
+   - *Academic Tip*: Revisit past test papers to identify core syllabus areas emphasized by national examiners.
 
-Yes. Scores such as 72.5 are accepted as long as they remain between 0 and 100.
+4. **Class Attendance & Professional Conduct (5% – 10% Weight)**:
+   - Rewards punctual attendance, active classroom engagement, and adherence to safety and ethical standards.
+   - *Academic Tip*: Maintaining high attendance provides easy percentage points that bolster your cumulative score.
 
-### Is 50% always a pass?
+---
 
-No. The message is a broad planning guide. Your institution, qualification, subject, and official assessment policy control the outcome.
+## Sub-Minimum Requirements & Examination Admission Rules
 
-### What if my college uses different components?
+To sit for national TVET final examinations, institutions enforce strict ICASS sub-minimum entry rules:
 
-Rename the categories conceptually and enter the official score and weight for each. If there are more than four components, combine only components that the official policy treats together.
+- **40% Sub-Minimum ICASS Requirement**: In most DHET NATED (N1–N6) subjects, a student MUST achieve a minimum ICASS mark of **40%** to qualify for admission to the final national examination paper.
+- **50% Sub-Minimum for Practical/Vocational Subjects**: In National Certificate Vocational (NCV) Level 2–4 practical subjects, the sub-minimum requirement is often **50%**.
+- **Disqualification Consequences**: Failing to meet the ICASS sub-minimum results in an automatic "Did Not Qualify" (DNQ) status. Students who DNQ are barred from writing the final exam and must re-enroll in the module during a subsequent semester.
+- **Contribution to Final Pass Mark**: In NATED engineering and business courses, the ICASS mark typically contributes **40%** to the final combined subject mark, while the national examination contributes **60%**.
 
-### Does the calculator store my marks?
+---
 
-No account or server submission is required. The weighted calculation runs in your browser; still avoid using shared devices for sensitive academic records without clearing the page afterwards.
+## How to Use the ICASS Calculator
 
-## Using feedback to improve the next result
+1. **Check Your Syllabus Handbook**: Confirm the exact component percentage weights specified by your college lecturer or departmental handbook.
+2. **Input Percentage Scores**: Enter your achieved scores (0% to 100%) for Assignments, Practicals, Tests, and Attendance.
+3. **Adjust Percentage Weights**: Ensure the four component weight inputs sum up to exactly **100%** (e.g., 25% + 35% + 30% + 10% = 100%).
+4. **Review Real-Time Output**:
+   - **Weighted ICASS Estimate**: Your overall weighted percentage score.
+   - **Performance Band**: Classification into Distinction (75%+), Passing Range (50%–74%), or At-Risk / Sub-Minimum warning (<50%).
+5. **Formulate Mark Recovery Plans**: Use the calculator to determine what marks you need in upcoming tests or practicals to cross the 40% or 50% examination entry barrier.
 
-The most useful follow-up to an ICASS estimate is an action plan. List the components with the largest weights, then identify the next assessment opportunity for each one. Ask for the marking rubric before submitting a project, confirm the practical demonstration requirements, and leave time to review safety, measurement, documentation, and presentation details. A high-weight practical can reward careful preparation more than last-minute memorisation. Keep a simple table of due dates, feedback, achieved marks, and the remaining possible marks so that your expectations stay realistic.
+---
 
-If the displayed score differs from a mark sheet, do not quietly change the inputs until the numbers agree. Check whether the lecturer used a moderated score, whether a component was excluded, whether the weight was different for that subject, and whether the school applies a minimum-component rule. Raise discrepancies through the official department or student-support process. This calculator is most valuable when it helps you ask precise questions and prepare evidence, not when it is treated as a replacement for an institution’s records.
+## Practical Strategies for ICASS Mark Recovery
+
+If your mid-term ICASS score falls near or below the 40% threshold, implement these recovery steps:
+
+- **Request Supplementary Practical Re-assessments**: Ask your workshop lecturer if you can re-attempt failed practical tasks or submit revised logbooks for re-marking.
+- **Maximize Attendance Points**: Attending every remaining class session guarantees full attendance weighting points.
+- **Form Peer Study Groups**: Collaborate with classmates on complex assignment calculations and past exam papers.
+
+---
+
+## Privacy, Security & Client-Side Execution
+
+AfriWidget handles academic mark calculations with complete confidentiality. All calculations run strictly inside your device’s browser using Vanilla JavaScript. No student names, identification numbers, college names, or academic grades are stored in databases or transmitted across the internet.
+
+---
+
+## Frequently Asked Questions
+
+### What happens if component weights do not equal 100%?
+
+Weighted calculations require all component weights to add up to 100%. If your institution uses a different weighting structure (e.g., 30% assignments, 50% tests, 20% practicals), adjust the input weight fields so their sum equals 100%.
+
+### Does a high ICASS score guarantee passing the module?
+
+A strong ICASS mark secures entry to the final examination and contributes significantly to your final grade. However, you must still meet the final exam sub-minimum pass mark (usually 40%) to pass the module overall.
+
+### Can I recalculate my ICASS if I rewrite a test?
+
+Yes. Simply replace your old test mark in the input field with your updated score to see how your cumulative ICASS average improves.
+
+### What is the difference between NATED and NC(V) ICASS requirements?
+
+NATED (Report 191) courses are trimester or semester-based programmes with a 40% ICASS exam entry requirement. NC(V) courses are full-year vocational programmes with higher practical component weights and a 50% pass requirement.
+
+### Is this ICASS calculator free to use?
+
+Yes. AfriWidget is a 100% free educational platform with no hidden subscription fees, required user registrations, or account creations.
+
+### Can TVET lecturers use this calculator to compute student averages?
+
+Yes. Lecturers and tutors can quickly verify individual student continuous assessment totals by entering component marks and verifying overall subject eligibility before submitting official mark sheets.
