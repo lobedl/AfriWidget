@@ -2085,5 +2085,11 @@ var QRCode = (() => {
       });
     }
   });
-  return require_browser();
+  var result = require_browser();
+  if (typeof window !== "undefined") {
+    window.QRCode = result;
+    window.qrcode = result;
+  }
+  return result;
 })();
+
