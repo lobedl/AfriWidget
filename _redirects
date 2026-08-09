@@ -1,5 +1,4 @@
-# Netlify Function Routes
-/.netlify/functions/*  /.netlify/functions/:splat  200
+# Netlify Function Proxies
 /api/groq-proxy        /.netlify/functions/groq-proxy 200
 /api/education-ai      /.netlify/functions/education-ai 200
 
