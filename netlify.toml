@@ -15,6 +15,11 @@
 
 # Ensure HTML, JS, CSS, and API responses always revalidate so new updates load immediately without stale cache
 [[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
