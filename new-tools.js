@@ -203,7 +203,13 @@
   }
 
   function pageKey() {
-    return (window.location.pathname.split('/').pop() || '').replace(/\.html$/i, '');
+    var guide = byId('toolGuide');
+    if (guide && guide.dataset && guide.dataset.contentKey) {
+      return guide.dataset.contentKey;
+    }
+    var parts = window.location.pathname.split('/').filter(Boolean);
+    var last = parts.pop() || '';
+    return last.replace(/\.html$/i, '');
   }
 
   function escapeHtml(value) {
@@ -272,7 +278,7 @@
           listType = nextType;
           html.push('<' + listType + '>');
         }
-        html.push('<li>' + escapeHtml(list[2]) + '</li>');
+        html.push('<li>' + escapeHtml(list[2]).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') + '</li>');
         return;
       }
       if (/^>\s?/.test(trimmed)) {
@@ -292,16 +298,26 @@
   function setupGuide() {
     var guide = byId('toolGuide');
     if (!guide) return;
-    fetch('content/' + pageKey() + '.md', { cache: 'no-store' })
+    var hasPrerendered = guide.querySelector('h2') || guide.children.length > 1;
+    if (hasPrerendered) {
+      return;
+    }
+    var key = pageKey();
+    if (!key) return;
+    fetch('/content/' + key + '.md', { cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) throw new Error('Guide unavailable');
         return response.text();
       })
       .then(function (markdown) {
-        guide.innerHTML = renderMarkdown(markdown);
+        if (markdown) {
+          guide.innerHTML = renderMarkdown(markdown);
+        }
       })
       .catch(function () {
-        guide.innerHTML = '<p>Guide content is temporarily unavailable. The calculator remains available for private in-browser use.</p>';
+        if (!guide.querySelector('h2')) {
+          guide.innerHTML = '<p>Guide content is temporarily unavailable. The calculator remains available for private in-browser use.</p>';
+        }
       });
   }
 
