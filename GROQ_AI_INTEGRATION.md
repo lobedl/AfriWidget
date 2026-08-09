@@ -23,37 +23,34 @@ categories. The browser calls the Netlify function at
 The Replit preview remains safe and functional when the Netlify function or
 Groq keys are unavailable; it displays **AI insights will be available soon.**
 
-## Netlify setup
+## Netlify setup & Groq API Key Configuration
 
 1. Deploy the repository to Netlify.
-2. In Netlify, open **Project configuration → Environment variables**.
-3. Add the active key using this preferred name:
-   - `GROQ_API_KEY`
+2. In Netlify, open **Site configuration → Environment variables** (or **Build & deploy → Environment**).
+3. Add your Groq API Key (starts with `gsk_...`).
 
-   The proxy also supports numbered fallback keys using either naming
-   convention:
-   - `GROQ_API_KEY_1`
-   - `GROQ_API_KEY_2`
-   - `GROQ_API_KEY_3`
-   - `GROQ_API_KEY_4`
-   - `GROQ_API_KEY_5`
+### Supported Environment Variable Names
+The proxy automatically scans Netlify environment variables for any of the following names:
+- `GROQ_API_KEY` (Recommended)
+- `GROQ_KEY`
+- `GROQ_API_TOKEN`
+- `GROQ_TOKEN`
+- `GROQ_SECRET`
+- `GROQ_API_KEY_1` through `GROQ_API_KEY_10`
+- `GROQ_KEY_1` through `GROQ_KEY_10`
+- Any variable containing `GROQ` in its name (case-insensitive)
 
-   Existing deployments may continue using:
-   - `GROQ_KEY_1`
-   - `GROQ_KEY_2`
-   - `GROQ_KEY_3`
-   - `GROQ_KEY_4`
-   - `GROQ_KEY_5`
-4. Redeploy after changing environment variables.
+### Key Formatting & Resilience
+- **Automatic Quote & Space Cleanup**: Surrounding quotes (`"gsk_..."` or `'gsk_...'`) and accidental leading/trailing spaces are automatically stripped during function execution.
+- **Deduplication**: Duplicate key values are automatically removed.
+- **Model Fallbacks**: The proxy attempts requests with `llama-3.3-70b-versatile` first. If rate-limited or busy, it automatically tries `llama-3.1-8b-instant` and `mixtral-8x7b-32768`.
+- **401 Invalid Key Detection**: If a key receives a `401 Unauthorized` response from Groq, it logs a warning in Netlify Function Logs and skips to the next key.
 
-The function checks `process.env.GROQ_API_KEY` first, then tries configured
-numbered keys in order. Blank values are ignored and duplicate values are
-deduplicated. If a request fails because of a quota, transient error, or
-unavailable key, it quietly tries the next key. On initialization, the
-function logs only how many credential sources are configured; it never logs
-key values.
-Keys are never placed in HTML or browser JavaScript. The proxy uses Groq model
-`llama-3.3-70b-versatile` for every category.
+4. **Trigger a New Deploy**:
+   After setting or updating your environment variable in Netlify, go to **Deploys → Trigger deploy → Clear cache and deploy site** to ensure Netlify Functions receive the new environment variables.
+
+5. **Verify Netlify Function Logs**:
+   In Netlify, navigate to **Logs → Functions → groq-proxy** to inspect live initialization and request status codes.
 
 ## Local preview
 

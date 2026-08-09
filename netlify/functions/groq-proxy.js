@@ -4,24 +4,40 @@ const MODEL = 'llama-3.3-70b-versatile';
 
 function configuredGroqKeys() {
   /*
-   * Netlify injects environment variables into the function runtime, so
-   * dotenv is intentionally not required here. Prefer the active singular
-   * key, while supporting both numbered naming conventions used by older
-   * deployments. Values are trimmed and deduplicated without ever logging
-   * the credentials themselves.
+   * Netlify injects environment variables into the function runtime.
+   * We search process.env for all variations of Groq key names,
+   * trim whitespace, strip quotes, and deduplicate.
    */
-  const candidates = [
-    process.env.GROQ_API_KEY,
-    ...[1, 2, 3, 4, 5].map(number => process.env[`GROQ_API_KEY_${number}`]),
-    ...[1, 2, 3, 4, 5].map(number => process.env[`GROQ_KEY_${number}`])
+  const keys = [];
+
+  const explicitNames = [
+    'GROQ_API_KEY',
+    'GROQ_KEY',
+    'GROQ_API_TOKEN',
+    'GROQ_TOKEN',
+    'GROQ_SECRET',
+    ...Array.from({ length: 10 }, (_, i) => `GROQ_API_KEY_${i + 1}`),
+    ...Array.from({ length: 10 }, (_, i) => `GROQ_KEY_${i + 1}`)
   ];
 
-  return [...new Set(
-    candidates
-      .filter(value => typeof value === 'string')
-      .map(value => value.trim())
-      .filter(Boolean)
-  )];
+  for (const name of explicitNames) {
+    if (process.env[name]) {
+      keys.push(process.env[name]);
+    }
+  }
+
+  for (const [envKey, envVal] of Object.entries(process.env)) {
+    if (/groq/i.test(envKey) && typeof envVal === 'string') {
+      keys.push(envVal);
+    }
+  }
+
+  const cleaned = keys
+    .filter(value => typeof value === 'string')
+    .map(value => value.replace(/^["']|["']$/g, '').trim())
+    .filter(Boolean);
+
+  return [...new Set(cleaned)];
 }
 
 const INITIAL_KEYS = configuredGroqKeys();
@@ -29,7 +45,7 @@ console.info(`[groq-proxy] initialized; ${INITIAL_KEYS.length} credential source
 
 const headers = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Content-Type': 'application/json',
   'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0, s-maxage=0',
@@ -136,7 +152,10 @@ export const handler = async (event) => {
   if (event.httpMethod !== 'POST') return json(405, { ok: false, message: FALLBACK_MESSAGE });
 
   const keys = configuredGroqKeys();
-  if (!keys.length) return json(200, { ok: false, available: false, message: FALLBACK_MESSAGE });
+  if (!keys.length) {
+    console.warn('[groq-proxy] No Groq API keys found in process.env');
+    return json(200, { ok: false, available: false, message: FALLBACK_MESSAGE });
+  }
 
   let payload;
   try {
@@ -151,33 +170,51 @@ export const handler = async (event) => {
     : 'tools';
   const userPrompt = promptFor(mode, category, payload.context, payload.question);
 
+  const modelsToTry = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'mixtral-8x7b-32768'];
+
   for (const key of keys) {
-    try {
-      const response = await fetch(GROQ_URL, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${key}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          temperature: 0.35,
-          max_tokens: mode === 'question' ? 300 : mode === 'writing'
-            ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1200 : 700
-            : 260,
-          messages: [
-            { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.` },
-            { role: 'user', content: userPrompt }
-          ]
-        })
-      });
-      if (!response.ok) continue;
-      const data = await response.json();
-      const text = data?.choices?.[0]?.message?.content?.trim();
-      if (text) return json(200, { ok: true, text });
-    } catch {
-      // Move quietly to the next configured key.
+    const keyHint = key.length > 8 ? `...${key.slice(-4)}` : 'key';
+    for (const model of modelsToTry) {
+      try {
+        const response = await fetch(GROQ_URL, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${key}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            model,
+            temperature: 0.35,
+            max_tokens: mode === 'question' ? 300 : mode === 'writing'
+              ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1200 : 700
+              : 260,
+            messages: [
+              { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.` },
+              { role: 'user', content: userPrompt }
+            ]
+          })
+        });
+
+        if (!response.ok) {
+          const errText = await response.text();
+          console.warn(`[groq-proxy] Key ${keyHint} model ${model} returned ${response.status}:`, errText);
+          if (response.status === 401) {
+            console.error(`[groq-proxy] Key ${keyHint} is unauthorized (401). Skipping this key.`);
+            break; // Stop trying other models for this invalid key
+          }
+          continue;
+        }
+
+        const data = await response.json();
+        const text = data?.choices?.[0]?.message?.content?.trim();
+        if (text) return json(200, { ok: true, text });
+      } catch (err) {
+        console.error(`[groq-proxy] Request failed for model ${model}:`, err?.message || err);
+      }
     }
   }
+
   return json(200, { ok: false, message: FALLBACK_MESSAGE });
 };
+
+export default handler;

@@ -1,10 +1,8 @@
 ---
 name: Groq Netlify key handling
-description: Groq AI runs through the Netlify function and supports a preferred singular key plus numbered fallbacks
+description: Groq AI runs through the Netlify serverless function and supports flexible environment variable naming, quote cleanup, and model fallbacks
 ---
 
-The Groq integration is serverless rather than a local Node server. The Netlify function reads `process.env.GROQ_API_KEY` first, then supports numbered `GROQ_API_KEY_1` through `GROQ_API_KEY_5` and legacy `GROQ_KEY_1` through `GROQ_KEY_5`.
+The Groq integration is serverless (`/.netlify/functions/groq-proxy`). The Netlify function dynamically scans `process.env` for any key matching `GROQ` (e.g. `GROQ_API_KEY`, `GROQ_KEY`, `GROQ_API_TOKEN`, `GROQ_SECRET`, `GROQ_API_KEY_1`..`10`), automatically strips quotes and whitespace, and applies model fallbacks (`llama-3.3-70b-versatile`, `llama-3.1-8b-instant`, `mixtral-8x7b-32768`).
 
-**Why:** The Replit preview workflow only serves static files and does not execute Netlify Functions, so its logs cannot prove a live Groq authentication request. Adding dotenv or a local backend would conflict with the static-only architecture.
-
-**How to apply:** Keep credentials in the deployment environment, never in HTML or browser JavaScript. Test the proxy module and fallback behavior without logging key values; verify live authentication after deploying the Netlify function with the environment variable configured.
+**How to apply:** Keep credentials in Netlify Environment Variables (`GROQ_API_KEY`), never in client HTML/JS. Always trigger a clear-cache redeploy on Netlify after adding or updating keys.
