@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  
+    <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Calculator: Calculate Selling Price &amp; Profit Target | AfriWidget</title>
+  <meta name="description" content="Calculate the exact required selling price for products or services based on total costs, target profit margins, and merchant payment processor fees. 100% free browser tool." />
+  <link rel="canonical" href="https://afriwidget.com/pricing-calculator" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/pricing-calculator" />
+  <meta property="og:title" content="Pricing Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate required selling prices and net profit from unit costs, target margins, and merchant payment processing fees." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="Pricing Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate required selling prices and net profit from unit costs, target margins, and merchant payment processing fees." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pricing Calculator",
+    "url": "https://afriwidget.com/pricing-calculator",
+    "description": "Free pricing calculator to compute selling price, gross profit, and fee-adjusted net payout based on target margin or markup.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "provider": { "@type": "Organization", "name": "AfriWidget", "url": "https://afriwidget.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://afriwidget.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://afriwidget.com/business" },
+      { "@type": "ListItem", "position": 3, "name": "Pricing Calculator", "item": "https://afriwidget.com/pricing-calculator" }
+    ]
+  }
+  </script>
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="pricing-calculator" class="text-yellow-400 font-bold">Pricing Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="profit-margin-calculator" class="block py-2 hover:text-emerald-400">Profit Margin Calculator</a>
+      <a href="roi-calculator" class="block py-2 hover:text-emerald-400">ROI Calculator</a>
+      <a href="pricing-calculator" class="block py-2 text-yellow-400 font-bold">Pricing Calculator</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 text-white py-12 px-4 text-center shadow-md">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-teal-500/20 text-teal-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4 border border-teal-500/30">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">Product &amp; Service Pricing Calculator</h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">Determine required selling prices, net payouts, and profit margins from your costs and target profit goals.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+    
+    <!-- ADSENSE PLACEHOLDER 1: TOP BANNER -->
+    <div class="my-6 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- CALCULATOR FORM -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Cost &amp; Profit Objectives</h2>
+        <span class="text-xs font-semibold px-3 py-1 bg-teal-50 text-teal-700 rounded-lg border border-teal-200">Interactive Model</span>
+      </div>
+
+      <form id="pricingForm" class="space-y-5" onsubmit="return false;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="cost" class="block text-sm font-bold text-slate-700 mb-1">Total Unit Cost ($) <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+              <input type="number" id="cost" placeholder="40.00" min="0.01" step="0.01" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl pl-8 pr-4 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Materials + direct labor + packaging + shipping.</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Calculation Target Mode</label>
+            <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 rounded-xl border border-slate-200">
+              <button type="button" id="modeMarginBtn" class="py-2.5 px-3 rounded-lg text-xs font-black transition-all bg-teal-700 text-white shadow cursor-pointer">Target Margin %</button>
+              <button type="button" id="modeMarkupBtn" class="py-2.5 px-3 rounded-lg text-xs font-black transition-all text-slate-600 hover:text-slate-900 cursor-pointer">Target Markup %</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="targetPct" class="block text-sm font-bold text-slate-700 mb-1"><span id="targetLabelText">Target Profit Margin (%)</span> <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <input type="number" id="targetPct" placeholder="35.0" min="0.1" max="99.9" step="0.1" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl pl-4 pr-8 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+              <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1" id="targetHelpText">Percentage of final selling price kept as profit.</p>
+          </div>
+
+          <div>
+            <label for="units" class="block text-sm font-bold text-slate-700 mb-1">Expected Monthly Volume <span class="font-normal text-slate-400">(Optional)</span></label>
+            <input type="number" id="units" placeholder="50" min="1" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl px-4 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+            <p class="text-xs text-slate-500 mt-1">Generates total profit projections.</p>
+          </div>
+        </div>
+
+        <!-- MERCHANT FEE OPTION -->
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+          <label class="flex items-center space-x-2 font-bold text-slate-800 text-sm cursor-pointer mb-2">
+            <input type="checkbox" id="enableFeeCheck" class="w-4 h-4 text-teal-600 rounded border-slate-300 focus:ring-teal-500" />
+            <span>Include Merchant Payment Processor Fees (PayPal, Stripe, Cards)</span>
+          </label>
+          
+          <div id="feeInputsDiv" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3 hidden">
+            <div>
+              <label for="feePct" class="block text-xs font-bold text-slate-600 mb-1">Processor Rate (%)</label>
+              <input type="number" id="feePct" value="3.49" step="0.01" min="0" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-bold text-slate-800" />
+            </div>
+            <div>
+              <label for="feeFixed" class="block text-xs font-bold text-slate-600 mb-1">Fixed Fee per Sale ($)</label>
+              <input type="number" id="feeFixed" value="0.49" step="0.01" min="0" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-bold text-slate-800" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="calcBtn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98] text-lg tracking-wide border border-yellow-500 cursor-pointer">
+          Calculate Required Price →
+        </button>
+      </form>
+    </div>
+
+    <!-- OUTPUT RESULTS -->
+    <div id="results" class="mt-8 space-y-6">
+      
+      <!-- MAIN HIGHLIGHT CARD -->
+      <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center shadow-2xl border border-slate-800 relative overflow-hidden">
+        <div class="absolute -left-12 -bottom-12 w-40 h-40 bg-teal-500/10 rounded-full blur-2xl"></div>
+        <p class="text-teal-400 text-xs sm:text-sm font-extrabold uppercase tracking-widest mb-2">Required Selling Price</p>
+        <div class="text-5xl sm:text-6xl font-black text-white mb-2">$<span id="sellingPrice">0.00</span></div>
+        <p class="text-slate-300 text-sm max-w-md mx-auto">List your product at this price to net your exact target profit after costs<span id="feeNoticeText"></span>.</p>
+      </div>
+
+      <!-- METRIC GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Net Profit / Unit</p>
+          <p class="text-2xl font-black text-emerald-600">$<span id="netProfit">0.00</span></p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Gross Margin</p>
+          <p class="text-2xl font-black text-slate-800"><span id="realMargin">0.0</span>%</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Markup %</p>
+          <p class="text-2xl font-black text-slate-800"><span id="realMarkup">0.0</span>%</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Merchant Fee</p>
+          <p class="text-2xl font-black text-amber-600">$<span id="feeAmount">0.00</span></p>
+        </div>
+      </div>
+
+      <!-- VOLUME PROJECTION CARD -->
+      <div id="volumeBlock" class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden hidden">
+        <div class="bg-slate-900 px-6 py-3.5 text-white flex justify-between items-center">
+          <h3 class="font-bold text-sm sm:text-base text-yellow-300">Revenue &amp; Net Profit Projections</h3>
+          <span class="text-xs bg-slate-800 px-2.5 py-1 rounded text-slate-300"><span id="volUnits">0</span> units/mo</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 p-4">
+          <div class="p-3 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase mb-1">Monthly Sales Revenue</p>
+            <p class="text-xl font-bold text-slate-800">$<span id="monthlyRev">0.00</span></p>
+          </div>
+          <div class="p-3 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase mb-1">Monthly Net Profit</p>
+            <p class="text-xl font-black text-emerald-600">$<span id="monthlyProfit">0.00</span></p>
+          </div>
+          <div class="p-3 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase mb-1">Annual Net Profit</p>
+            <p class="text-xl font-black text-emerald-700">$<span id="annualProfit">0.00</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING TIER MATRIX -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base">Margin Tier Sensitivity Comparison</h3>
+          <button type="button" id="copyBtn" class="text-xs font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 border border-teal-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer">Copy Summary</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100 text-slate-600 font-bold text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3 text-left">Target Margin</th>
+                <th class="px-4 py-3 text-right">Selling Price</th>
+                <th class="px-4 py-3 text-right">Net Profit</th>
+                <th class="px-4 py-3 text-right">Equivalent Markup</th>
+              </tr>
+            </thead>
+            <tbody id="tierBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ADSENSE PLACEHOLDER 2: BELOW OUTPUT -->
+    <div class="my-8 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- EDUCATIONAL GUIDE SECTION -->
+    <section id="toolGuide" class="guide prose max-w-none text-slate-600 space-y-6 mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm" data-content-key="pricing-calculator"><p># Understanding Product & Service Pricing Strategies</p><p>Setting the right selling price for your products or services is one of the most critical decisions in business management. Price too high, and potential customers migrate to cheaper competitors; price too low, and you risk undercutting your brand, eroding profit margins, or even operating at a loss after payment processor fees and administrative overhead.</p><p>The AfriWidget <strong>Pricing Calculator</strong> helps entrepreneurs, retailers, freelancers, manufacturers, and agency owners work backwards from total costs and desired profit targets to establish optimal, mathematically sound selling prices. Operating entirely in your browser with zero sign-up or data logging, it computes exact selling prices, net profit margins, and merchant fee adjustments instantly.</p><hr class="my-6 border-slate-200" /><h2>The Mathematics of Pricing</h2><p>When calculating product prices, business owners typically choose between two mathematical approaches: <strong>Margin-Based Pricing</strong> or <strong>Markup-Based Pricing</strong>.</p><h3>1. Target Margin Pricing Formula</h3><p>Margin-based pricing calculates the required selling price based on profit as a percentage of <strong>Revenue (Selling Price)</strong>.</p><blockquote><strong>Selling Price = Total Cost ÷ (1 − Target Margin Decimal)</strong></blockquote><p><em>Example</em>: If your total cost per unit is <strong>$50.00</strong> and your target profit margin is <strong>35%</strong> (0.35):</p><blockquote><strong>Selling Price</strong> = $50.00 ÷ (1 − 0.35) = $50.00 ÷ 0.65 = <strong>$76.92</strong></blockquote><p>At $76.92, your gross profit is $26.92, which represents exactly 35% of total sales revenue ($26.92 ÷ $76.92).</p><h3>2. Target Markup Pricing Formula</h3><p>Markup-based pricing calculates the required selling price based on profit as a percentage added directly to <strong>Total Cost</strong>.</p><blockquote><strong>Selling Price = Total Cost × (1 + Target Markup Decimal)</strong></blockquote><p><em>Example</em>: If your total cost per unit is <strong>$50.00</strong> and your target markup is <strong>50%</strong> (0.50):</p><blockquote><strong>Selling Price</strong> = $50.00 × (1 + 0.50) = <strong>$75.00</strong></blockquote><p>At $75.00, your gross profit is $25.00, which represents a 50% markup over cost ($25.00 ÷ $50.00), but yields a <strong>33.33% margin</strong> ($25.00 ÷ $75.00).</p><hr class="my-6 border-slate-200" /><h2>Factoring Merchant Payment Fees into Pricing</h2><p>A major hazard in modern e-commerce and retail pricing is failing to account for credit card, online checkout, or mobile money transaction fees. Payment gateways like PayPal, Stripe, Square, and merchant merchant accounts charge percentage-based transaction fees plus fixed transaction costs.</p><p>If you calculate a selling price of $100.00 to achieve a target profit, but your payment gateway deducts 3.5% + $0.30 per transaction ($3.80 total), your actual payout from the sale is <strong>$96.20</strong>, reducing your net profit by 15% or more!</p><h3>True Net Selling Price Formula (Fee-Adjusted Pricing)</h3><p>To ensure your business nets your exact target profit <em>after</em> payment processor deductions, adjust your selling price formula:</p><blockquote><strong>Fee-Adjusted Selling Price = (Total Cost + Fixed Fee) ÷ [1 − Target Margin Decimal − Processor Percentage Decimal]</strong></blockquote><p><em>Example</em>:</p><ul><li><strong>Total Product Cost</strong>: $40.00</li><li><strong>Target Net Margin</strong>: 30% (0.30)</li><li><strong>Payment Processor Fee</strong>: 3.49% (0.0349) + $0.49 fixed fee</li><li><strong>Calculation</strong>:</li></ul><blockquote><strong>Adjusted Price</strong> = ($40.00 + $0.49) ÷ (1 − 0.30 − 0.0349) = $40.49 ÷ 0.6651 = <strong>$60.88</strong></blockquote><p>When sold at <strong>$60.88</strong>, the payment processor deducts $2.61 ($60.88 × 3.49% + $0.49), leaving a net payout of <strong>$58.27</strong>. Subtracting the $40.00 cost leaves <strong>$18.27 net profit</strong>, achieving your precise 30% target margin!</p><hr class="my-6 border-slate-200" /><h2>Strategic Product Pricing Models</h2><p>Choosing the appropriate pricing strategy depends on your product category, customer segment, and market position:</p><h3>1. Cost-Plus Pricing</h3><p>The most straightforward method: add a fixed percentage markup to total direct production costs.</p><ul><li><em>Best For</em>: Commodity goods, wholesale manufacturing, construction contracting.</li><li><em>Pros</em>: Simple to calculate, guarantees cost coverage.</li><li><em>Cons</em>: Ignores market demand, competitor pricing, and perceived value.</li></ul><h3>2. Value-Based Pricing</h3><p>Price products based on the perceived value delivered to the customer rather than baseline manufacturing costs.</p><ul><li><em>Best For</em>: Software/SaaS, luxury items, professional consulting, proprietary technology.</li><li><em>Pros</em>: Maximizes profit margins and capture of customer willingness-to-pay.</li><li><em>Cons</em>: Requires extensive market research and strong brand positioning.</li></ul><h3>3. Competitive & Market-Rate Pricing</h3><p>Price products directly in line with established competitor benchmarks.</p><ul><li><em>Best For</em>: Highly competitive e-commerce markets, standardized services.</li><li><em>Pros</em>: Minimizes customer price friction and competitive risk.</li><li><em>Cons</em>: Can lead to price wars that squeeze margins if costs are unmanaged.</li></ul><h3>4. Psychological & Anchor Pricing</h3><p>Charm pricing strategies ending in <code>.99</code>, <code>.95</code>, or <code>.90</code> exploit psychological rounding tendencies (e.g., pricing at $49.99 rather than $50.00).</p><hr class="my-6 border-slate-200" /><h2>Step-by-Step Guide: How to Use the Pricing Calculator</h2><ol><li><strong>Select Currency</strong>: Choose your operational currency (USD, GHS, NGN, KES, ZAR, EUR, GBP, etc.) for standardized output formatting.</li><li><strong>Enter Total Cost ($)</strong>: Enter all direct costs associated with producing, purchasing, or delivering a single unit (COGS + direct labor + packaging + unit shipping).</li><li><strong>Select Calculation Mode</strong>: Choose between <strong>Target Margin %</strong> (profit relative to selling price) or <strong>Target Markup %</strong> (profit relative to cost).</li><li><strong>Input Target Percentage (%)</strong>: Enter your desired profit percentage (e.g., 40% target margin or 65% target markup).</li><li><strong>Add Payment Processor Fees (Optional)</strong>: Input gateway percentage fees (e.g., 3.49%) and fixed transaction fees (e.g., $0.49) to enable automated fee-adjusted pricing.</li><li><strong>Review Results</strong>:</li></ol><ul><li><strong>Required Selling Price ($)</strong>: The exact price to list on your storefront or quote to clients.</li><li><strong>Net Profit ($)</strong>: Clear dollar return per unit sold after all costs and transaction fees.</li><li><strong>Effective Margin (%) & Markup (%)</strong>: Comprehensive breakdown of both profit metrics.</li><li><strong>Volume Tier Matrix</strong>: Projected weekly, monthly, and annual revenue and profit based on different sales volumes.</li></ul><hr class="my-6 border-slate-200" /><h2>Practical Business Pricing Examples</h2><h3>Example A: Artisanal Craft Manufacturer</h3><p>A woodworker creates handcrafted dining tables with material costs of $180.00 and direct labor costs of $120.00 (Total Cost = $300.00). He desires a <strong>45% profit margin</strong>.</p><ul><li><strong>Formula</strong>: Selling Price = $300.00 ÷ (1 − 0.45) = $300.00 ÷ 0.55 = <strong>$545.45</strong></li><li><strong>Gross Profit</strong>: $545.45 − $300.00 = <strong>$245.45</strong></li><li><strong>Markup Check</strong>: $245.45 ÷ $300.00 = <strong>81.82% markup</strong></li></ul><h3>Example B: Digital Agency Retainer Pricing</h3><p>A marketing agency provides monthly SEO management. Software licenses and freelancer costs total $450.00 per client per month. The agency targets a <strong>60% margin</strong> and accepts credit cards via Stripe (2.9% + $0.30 fee).</p><ul><li><strong>Fee-Adjusted Price</strong>: ($450 + $0.30) ÷ (1 − 0.60 − 0.029) = $451.30 ÷ 0.371 = <strong>$1,216.44</strong></li><li><strong>Stripe Fee</strong>: ($1,216.44 × 2.9%) + $0.30 = $35.58</li><li><strong>Net Agency Payout</strong>: $1,216.44 − $35.58 = $1,180.86</li><li><strong>Net Profit</strong>: $1,180.86 − $450.00 = <strong>$730.86</strong> (Exactly 60.0% net margin!).</li></ul><hr class="my-6 border-slate-200" /><h2>Safety, Privacy & Tool Disclaimer</h2><p>The AfriWidget Pricing Calculator is a client-side web application designed to assist business planning. All calculations execute locally in standard browser memory using Vanilla JavaScript. No financial inputs, product descriptions, or pricing figures are stored on server databases or shared with external analytics trackers.</p><p><em>Disclaimer</em>: Pricing strategies must consider broader market dynamics, demand elasticity, fixed administrative overhead (SGA), and local tax regulations (VAT / Sales Tax). Always perform holistic financial reviews before finalizing price lists.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><h2>What is the difference between pricing for margin vs. pricing for markup?</h2><p>Pricing for margin sets a price based on profit as a percentage of final sales revenue (Price = Cost ÷ (1 − Margin)). Pricing for markup sets a price based on adding a percentage directly to cost (Price = Cost × (1 + Markup)). Margin-based pricing is standard in accounting and financial forecasting.</p><h2>Why is my net price higher when including merchant payment fees?</h2><p>Payment gateways charge fees on the <em>total transaction amount</em> (including their own fee). To ensure you retain your exact target profit after the gateway deducts its percentage, the selling price must be increased slightly to offset fee erosion.</p><h2>How do I price a service when labor is the primary cost?</h2><p>Calculate your hourly labor cost (desired annual salary + taxes + benefits ÷ annual billable hours), add direct job expenses (software, travel, materials), and then apply your target margin percentage to establish your client billing rate.</p><h2>What should I do if my calculated selling price is higher than competitor prices?</h2><p>You have three strategic options: (1) reduce direct material or labor costs, (2) accept a lower profit margin to match market rates, or (3) reposition your brand through value-added features, superior customer support, or premium packaging to justify higher pricing.</p><h2>Does this calculator include sales tax or VAT?</h2><p>No. Product prices are calculated on a net revenue basis before indirect sales taxes or Value Added Tax (VAT). If your jurisdiction requires tax-inclusive pricing, apply local VAT/sales tax rates to the final calculated price.</p><h2>Is my business pricing data saved on your server?</h2><p>No. All calculations run 100% locally in your browser session. No data is stored or transmitted.</p></section>
+
+    <!-- ADSENSE PLACEHOLDER 3: INSIDE CONTENT -->
+    <div class="my-8 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- RELATED TOOLS SECTION -->
+    <section class="mt-12 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+      <h2 class="text-xl sm:text-2xl font-bold mb-4 text-white">Related Financial &amp; Business Tools</h2>
+      <p class="text-slate-300 text-sm mb-6">Maximize product earnings and plan client quotes with our complementary business calculators:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="profit-margin-calculator" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-emerald-400 font-bold mb-1">Profit Margin Calculator →</div>
+          <p class="text-xs text-slate-300">Calculate gross profit margin and markup from cost and selling price.</p>
+        </a>
+        <a href="roi-calculator" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-yellow-400 font-bold mb-1">ROI Calculator →</div>
+          <p class="text-xs text-slate-300">Measure return on investment and annualized profit efficiency.</p>
+        </a>
+        <a href="paypal-fee-calculator" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-teal-400 font-bold mb-1">Payment Fee Calculator →</div>
+          <p class="text-xs text-slate-300">Calculate merchant processor fees and exact customer billing totals.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16"></footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentMode = 'margin'; // 'margin' or 'markup'
+
+      const modeMarginBtn = document.getElementById('modeMarginBtn');
+      const modeMarkupBtn = document.getElementById('modeMarkupBtn');
+      const targetLabelText = document.getElementById('targetLabelText');
+      const targetHelpText = document.getElementById('targetHelpText');
+      const enableFeeCheck = document.getElementById('enableFeeCheck');
+      const feeInputsDiv = document.getElementById('feeInputsDiv');
+
+      const costInput = document.getElementById('cost');
+      const targetPctInput = document.getElementById('targetPct');
+      const feePctInput = document.getElementById('feePct');
+      const feeFixedInput = document.getElementById('feeFixed');
+      const unitsInput = document.getElementById('units');
+      const resultsDiv = document.getElementById('results');
+      const copyBtn = document.getElementById('copyBtn');
+
+      modeMarginBtn.addEventListener('click', () => {
+        currentMode = 'margin';
+        modeMarginBtn.className = 'py-2.5 px-3 rounded-lg text-xs font-black transition-all bg-teal-700 text-white shadow cursor-pointer';
+        modeMarkupBtn.className = 'py-2.5 px-3 rounded-lg text-xs font-black transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
+        targetLabelText.textContent = 'Target Profit Margin (%)';
+        targetHelpText.textContent = 'Percentage of final selling price kept as profit.';
+        if (costInput.value && targetPctInput.value) calculate();
+      });
+
+      modeMarkupBtn.addEventListener('click', () => {
+        currentMode = 'markup';
+        modeMarkupBtn.className = 'py-2.5 px-3 rounded-lg text-xs font-black transition-all bg-teal-700 text-white shadow cursor-pointer';
+        modeMarginBtn.className = 'py-2.5 px-3 rounded-lg text-xs font-black transition-all text-slate-600 hover:text-slate-900 cursor-pointer';
+        targetLabelText.textContent = 'Target Markup (%)';
+        targetHelpText.textContent = 'Percentage added directly to baseline cost.';
+        if (costInput.value && targetPctInput.value) calculate();
+      });
+
+      enableFeeCheck.addEventListener('change', () => {
+        if (enableFeeCheck.checked) {
+          feeInputsDiv.classList.remove('hidden');
+        } else {
+          feeInputsDiv.classList.add('hidden');
+        }
+        if (costInput.value && targetPctInput.value) calculate();
+      });
+
+      function calculate() {
+        const cost = parseFloat(costInput.value);
+        const targetVal = parseFloat(targetPctInput.value);
+        const units = parseInt(unitsInput.value) || 0;
+
+        if (!cost || !targetVal || cost <= 0 || targetVal <= 0) return;
+
+        let feePct = 0;
+        let feeFixed = 0;
+        if (enableFeeCheck.checked) {
+          feePct = (parseFloat(feePctInput.value) || 0) / 100;
+          feeFixed = parseFloat(feeFixedInput.value) || 0;
+        }
+
+        let sellingPrice = 0;
+        const targetDec = targetVal / 100;
+
+        if (currentMode === 'margin') {
+          // Selling Price = (Cost + FeeFixed) / (1 - TargetMargin - FeePct)
+          const denom = 1 - targetDec - feePct;
+          if (denom <= 0) {
+            alert('Target margin and fee rates exceed 100%. Please reduce your target percentage.');
+            return;
+          }
+          sellingPrice = (cost + feeFixed) / denom;
+        } else {
+          // Target Markup Mode: Base Target Price = Cost * (1 + Markup)
+          // Adjust for fee: Selling Price = (Cost * (1 + Markup) + FeeFixed) / (1 - FeePct)
+          const basePrice = cost * (1 + targetDec);
+          sellingPrice = (basePrice + feeFixed) / (1 - feePct);
+        }
+
+        const feeAmount = (sellingPrice * feePct) + feeFixed;
+        const netPayout = sellingPrice - feeAmount;
+        const netProfit = netPayout - cost;
+        const realMargin = (netProfit / sellingPrice) * 100;
+        const realMarkup = (netProfit / cost) * 100;
+
+        document.getElementById('sellingPrice').textContent = sellingPrice.toFixed(2);
+        document.getElementById('netProfit').textContent = netProfit.toFixed(2);
+        document.getElementById('realMargin').textContent = realMargin.toFixed(1);
+        document.getElementById('realMarkup').textContent = realMarkup.toFixed(1);
+        document.getElementById('feeAmount').textContent = feeAmount.toFixed(2);
+
+        document.getElementById('feeNoticeText').textContent = enableFeeCheck.checked ? ' and merchant payment fees' : '';
+
+        if (units > 0) {
+          const mRev = sellingPrice * units;
+          const mPro = netProfit * units;
+          const aPro = mPro * 12;
+          document.getElementById('volUnits').textContent = units.toLocaleString();
+          document.getElementById('monthlyRev').textContent = mRev.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          document.getElementById('monthlyProfit').textContent = mPro.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          document.getElementById('annualProfit').textContent = aPro.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          document.getElementById('volumeBlock').classList.remove('hidden');
+        } else {
+          document.getElementById('volumeBlock').classList.add('hidden');
+        }
+
+        const targetMargins = [20, 30, 40, 50, 60];
+        document.getElementById('tierBody').innerHTML = targetMargins.map(mPct => {
+          const mDec = mPct / 100;
+          let sp = 0;
+          if (enableFeeCheck.checked) {
+            const denom = 1 - mDec - feePct;
+            sp = denom > 0 ? (cost + feeFixed) / denom : 0;
+          } else {
+            sp = cost / (1 - mDec);
+          }
+          const fa = (sp * feePct) + feeFixed;
+          const np = sp - fa - cost;
+          const mu = (np / cost) * 100;
+          const isCurrent = Math.abs(mPct - targetVal) < 2;
+
+          return `<tr class="${isCurrent ? 'bg-teal-50 font-bold' : 'hover:bg-slate-50'}">
+            <td class="px-4 py-3 text-slate-800">${mPct}% Margin${isCurrent ? ' <span class="text-xs text-teal-700 font-extrabold">(Target)</span>' : ''}</td>
+            <td class="px-4 py-3 text-right text-slate-900 font-black">$${sp > 0 ? sp.toFixed(2) : '—'}</td>
+            <td class="px-4 py-3 text-right text-emerald-600 font-bold">$${np > 0 ? np.toFixed(2) : '—'}</td>
+            <td class="px-4 py-3 text-right text-slate-700">${mu > 0 ? mu.toFixed(1) + '%' : '—'}</td>
+          </tr>`;
+        }).join('');
+
+        resultsDiv.style.display = 'block';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate_pricing', {
+            event_category: 'calculator',
+            event_label: 'Pricing Calculator',
+            value: Math.round(sellingPrice)
+          });
+        }
+      }
+
+      document.getElementById('pricingForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        calculate();
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      [costInput, targetPctInput, feePctInput, feeFixedInput, unitsInput].forEach(elem => {
+        elem.addEventListener('input', () => {
+          if (costInput.value && targetPctInput.value) calculate();
+        });
+      });
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const text = `Pricing Quote Summary:\nTotal Cost: $${costInput.value}\nTarget: ${targetPctInput.value}% (${currentMode})\nRequired Selling Price: $${document.getElementById('sellingPrice').textContent}\nNet Profit: $${document.getElementById('netProfit').textContent}\nEffective Margin: ${document.getElementById('realMargin').textContent}%\nVia AfriWidget Pricing Calculator (https://afriwidget.com/pricing-calculator)`;
+          navigator.clipboard.writeText(text).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = 'Copy Summary'; }, 2000);
+            if (typeof gtag === 'function') {
+              gtag('event', 'copy_results', { event_category: 'calculator', event_label: 'Pricing Summary' });
+            }
+          });
+        });
+      }
+
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          document.getElementById('mobileMenu').classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

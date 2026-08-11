@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google tag (gtag.js) -->
   
@@ -96,6 +62,20 @@
     </article>
   </main>
   <footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
   (function(){var vocab={sports:{bold:['Titans','Falcons','Warriors','Rockets','Wolves','Giants','Chargers'],funny:['Bouncy','Benchwarmers','Lucky','Sneaky','Snackers'],clever:['Full Counts','Goal Diggers','Net Gains','Point Taken','The Set Pieces'],professional:['United','Athletic','Club','Rovers','Alliance']},gaming:{bold:['Raiders','Sentinels','Vanguard','Legion','Hunters','Strikers'],funny:['Lag Legends','Pixel Pals','Noobs','Button Mashers','Respawnables'],clever:['Ctrl Alt Elite','Critical Thinkers','Packet Sniffers','The Meta'],professional:['Core','Prime','Collective','Division','Command']},office:{bold:['Leaders','Drivers','Makers','Achievers','Force'],funny:['Ctrl Freaks','Meeting Survivors','Spreadsheet Wizards','Coffee Committee','Reply All'],clever:['The Brain Trust','Synergy Pending','Deadline Diplomats','Think Tank'],professional:['Strategy Group','North Star','One Team','Growth Partners']},school:{bold:['Trailblazers','Scholars','Champions','Explorers','Pioneers'],funny:['Homework Heroes','Quiz Kids','The Late Slips','Snack Squad'],clever:['Mind Over Matter','The Bookends','Extra Credit','Class Action'],professional:['Scholars United','Learning League','Campus Collective','Future Leaders']}};var output=document.getElementById('teamOutput'),status=document.getElementById('teamStatus');function pick(a){return a[Math.floor(Math.random()*a.length)]}function make(){var theme=document.getElementById('teamTheme').value,energy=document.getElementById('teamEnergy').value,count=Math.max(1,Math.min(100,parseInt(document.getElementById('teamCount').value,10)||20)),key=(document.getElementById('teamKeyword').value||'').trim().replace(/[^a-zA-Z0-9À-ÿ -]/g,''),names=[];for(var i=0;i<count;i++){var name=key&&i%3===0?key+' '+pick(vocab[theme][energy]):pick(vocab[theme][energy]);if(!names.includes(name))names.push(name);else i--}output.innerHTML=names.map(function(n){return '<button type="button" data-name=\"'+n.replace(/\"/g,'&quot;')+'\" class="rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-left font-semibold text-emerald-300 transition hover:border-yellow-400 hover:text-yellow-300">'+n+'</button>'}).join('');status.textContent=names.length+' team name ideas generated locally. Click one to copy it.';output.querySelectorAll('[data-name]').forEach(function(btn){btn.addEventListener('click',function(){navigator.clipboard.writeText(btn.dataset.name).then(function(){btn.textContent='Copied: '+btn.dataset.name})})})}document.getElementById('teamForm').addEventListener('submit',function(e){e.preventDefault();make()});document.getElementById('copyTeams').addEventListener('click',function(){if(!output.children.length)make();var names=[].map.call(output.querySelectorAll('[data-name]'),function(x){return x.dataset.name});navigator.clipboard.writeText(names.join('\\n')).then(function(){status.textContent='Copied '+names.length+' team name ideas.'})});make()}());
   </script>

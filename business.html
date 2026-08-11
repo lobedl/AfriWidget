@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -212,6 +178,77 @@
           <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Margins →</span>
         </a>
 
+        <a href="break-even-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <span class="text-2xl font-black text-violet-600">⚖️</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Break-Even Calculator</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Calculate break-even unit volume, sales revenue, contribution margin ratio, and target profit thresholds for your product or service.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Break-Even Volume</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Contribution Margin</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Target Revenue</span>
+          </div>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Break-Even →</span>
+        </a>
+
+        <a href="pricing-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <span class="text-2xl font-black text-violet-600">$</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Pricing Calculator</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Calculate target selling prices and net payout based on unit costs, profit margin goals, and payment processor transaction fee deduction percentages.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Selling Price</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Target Margin</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Processor Fees</span>
+          </div>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Pricing →</span>
+        </a>
+
+        <a href="roi-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <span class="text-2xl font-black text-violet-600">📈</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">ROI Calculator</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Work out Return on Investment (ROI %), total net profit or loss, and annualized compound returns (CAGR) for marketing campaigns, capital, and business projects.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">ROI %</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Net Return</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">CAGR %</span>
+          </div>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate ROI →</span>
+        </a>
+
+        <a href="startup-cost-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <span class="text-2xl font-black text-violet-600">🚀</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Startup Cost Calculator</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Calculate total initial launch costs, monthly operating burn rate, and working capital cash runway reserves (3, 6, 12 months) for new business startups.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Launch Capital</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Monthly OpEx</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Cash Runway</span>
+          </div>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Startup Costs →</span>
+        </a>
+
+        <a href="freelance-rate-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
+            <span class="text-2xl font-black text-violet-600">💼</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Freelance Rate Calculator</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">Determine sustainable hourly rates, day rates, and monthly retainers based on target net income, overhead expenses, taxes, and billable capacity.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Hourly Rate</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Day Rate</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Retainers</span>
+            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Tax Buffer</span>
+          </div>
+          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Rates →</span>
+        </a>
+
         <a href="hourly-to-salary" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
           <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
             <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -368,10 +405,24 @@
       </div>
     </div>
     <div class="max-w-7xl mx-auto border-t border-slate-700 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <p>© 2025 AfriWidget. All rights reserved. Free to use · No calculator submissions stored · No sign-up required.</p>
+      <p>© 2026 AfriWidget. All rights reserved. Free to use · No calculator submissions stored · No sign-up required.</p>
       <p>Built for Africa and the world.</p>
     </div>
   </footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 
   <script>
     document.getElementById('mobileMenuBtn').addEventListener('click', () => {

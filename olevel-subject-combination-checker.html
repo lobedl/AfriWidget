@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -96,4 +62,18 @@
   <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">A simple subject-planning checklist</h2><p class="text-slate-700 leading-relaxed mb-4">Write down the exact university, course title, examination body, examination year, and result sitting before comparing a subject combination. Then check the official prospectus for required credits, minimum grades, accepted sittings, and any subject-specific alternatives. If two courses are possible, compare both lists rather than assuming that one science or humanities combination works everywhere.</p><p class="text-slate-700 leading-relaxed">Use this page as an early warning system: it can help you notice that Mathematics, Chemistry, Biology, Physics, English, or another subject deserves attention. It cannot decide eligibility for a real application. Keep the official requirement page beside your notes and revisit it when the admissions cycle changes.</p></section>
   </main>
 <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-teal-50 border border-teal-100 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">Keep a course shortlist</h2><p class="text-slate-700 leading-relaxed">Subject planning is stronger when it is connected to a shortlist. Write down your first-choice course, two related courses, and the subjects each institution accepts. This makes it easier to notice where one subject combination keeps several options open. Review the list with a teacher or counsellor before registration, especially when a course involves science practicals, professional licensing, or a competitive screening process.</p><p class="text-slate-700 leading-relaxed mt-4">The checker is intentionally cautious. It highlights common requirements but does not claim that every WAEC or NECO candidate with those subjects is eligible. Use the official institution page for the final decision, and save a copy of the current requirements with the date you checked them.</p></div></section><footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body></html>

@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real-Time AI Currency Converter Tool – AfriWidget</title>
   <meta name="description" content="Convert global and African currencies instantly with live reference rates when available and transparent fallback rates for private browser planning." />
@@ -94,6 +60,20 @@
     <section id="toolGuide" class="guide" data-content-key="currency-converter" aria-label="currency converter guide"><h2>Real-Time Currency Conversion & Global Exchange Rate Dynamics</h2><p>Foreign exchange rates dictate international trade pricing, cross-border remittances, online e-commerce transactions, travel budgeting, and cross-currency corporate accounting. Currency values fluctuate continuously throughout the global trading week based on macroeconomic interest rate decisions, inflation differentials, trade balance figures, sovereign debt levels, and geopolitical events. For businesses and individuals operating across international borders—particularly across emerging African economies and major global trade hubs—having immediate access to accurate conversion estimates is essential.</p><p>AfriWidget’s Real-Time AI Currency Converter provides an instant, private foreign exchange calculator. Integrating live public reference feeds with robust fallback conversion baselines, it allows users to convert between major global currencies (USD, EUR, GBP, CAD, AUD, INR, JPY, AED) and key African currencies (GHS, NGN, KES, ZAR) with full precision and zero server tracking.</p><hr class="my-6 border-slate-200" /><h2>Supported Currencies & Regional Trade Pairs</h2><p>This converter supports high-frequency international commercial currencies and key African trading currencies:</p><ul><li><strong>Global Trade Currencies</strong>:</li><li><strong>USD (US Dollar)</strong>: The world’s primary reserve and trade billing currency.</li><li><strong>EUR (Euro)</strong>: Central currency for European Union trade and commerce.</li><li><strong>GBP (British Pound Sterling)</strong>: Key currency for UK trade, education tuition, and financial settlement.</li><li><strong>CAD (Canadian Dollar)</strong> & <strong>AUD (Australian Dollar)</strong>: Major commodity-backed global currencies.</li><li><strong>INR (Indian Rupee)</strong> & <strong>JPY (Japanese Yen)</strong>: Major Asian trade and manufacturing currencies.</li><li><strong>AED (UAE Dirham)</strong>: Middle Eastern commercial hub currency pegged to the US Dollar.</li><li><strong>African Commercial & Regional Currencies</strong>:</li><li><strong>GHS (Ghanaian Cedi)</strong>: Ghana’s official currency, widely used in West African cocoa, gold, and energy commerce.</li><li><strong>NGN (Nigerian Naira)</strong>: Currency of Africa’s largest consumer economy and major oil producer.</li><li><strong>KES (Kenyan Shilling)</strong>: Key commercial currency across East Africa and mobile money regional networks.</li><li><strong>ZAR (South African Rand)</strong>: Sub-Saharan Africa’s most liquid financial currency, heavily traded across Southern Africa.</li></ul><hr class="my-6 border-slate-200" /><h2>Live Rates vs. Fallback Reference Baselines</h2><p>Exchange rate calculations on AfriWidget utilize a dual-layer rate strategy designed for maximum availability and reliability:</p><ol><li><strong>Live Reference Feed Refresh</strong>:</li></ol><ul><li>Upon page initialization, the converter attempts to fetch live mid-market reference rates from an open, public exchange-rate API feed.</li><li>When successful, the interface displays a confirmation banner: <code>⚡ Live reference rates loaded</code>.</li></ul><ol><li><strong>Transparent Fallback Baselines</strong>:</li></ol><ul><li>If network connections are limited, ad-blockers intercept the API fetch, or remote exchange servers experience downtime, the tool instantly engages built-in fallback reference rates.</li><li>This guarantees that the calculator remains 100% functional for estimation and planning even without an active internet connection.</li></ul><hr class="my-6 border-slate-200" /><h2>Understanding Interbank Rates, Bureau Spreads & Parallel Markets</h2><p>When exchanging real cash or sending bank wire transfers, the price you pay will differ slightly from wholesale mid-market benchmark rates due to market structures:</p><ul><li><strong>Mid-Market Benchmark Rate</strong>: The midpoint between buying and selling prices in high-volume interbank markets. This is the neutral reference rate displayed by financial news portals and converter tools.</li><li><strong>Commercial Bank & Bureau Spreads</strong>: Commercial banks and airport currency exchanges add a margin or commission spread (typically 1.5% to 5%) to mid-market rates to cover operational overhead and transaction risk.</li><li><strong>Official vs. Parallel Market Rates</strong>: In certain developing economies subject to foreign currency liquidity constraints, official central bank exchange rates may differ from informal parallel market (FX street) rates. Always confirm the final binding rate with your specific payment provider or bureau de change before committing capital.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Drivers of Exchange Rate Volatility</h2><p>Understanding why exchange rates shift helps businesses and travellers anticipate rate adjustments:</p><ol><li><strong>Central Bank Interest Rates</strong>: Higher policy rates set by central banks (such as the US Federal Reserve, Bank of England, European Central Bank, or Bank of Ghana) tend to attract foreign investment capital, strengthening the domestic currency.</li><li><strong>Inflation Rates</strong>: Countries with persistently higher inflation experience currency depreciation as local purchasing power declines relative to foreign trading partners.</li><li><strong>Trade Balance & Current Account</strong>: Nations exporting more goods and services than they import generate net foreign currency inflows, supporting domestic exchange rates.</li><li><strong>Commodity Price Movements</strong>: Currencies linked to crude oil exports (e.g., NGN), gold/cocoa exports (e.g., GHS), or mining exports (e.g., ZAR) move in sync with global commodity demand.</li></ol><hr class="my-6 border-slate-200" /><h2>Practical Application Guidelines</h2><ul><li><strong>International E-Commerce</strong>: Convert online checkout prices quoted in USD, EUR, or GBP into local GHS, NGN, KES, or ZAR to evaluate true import costs before authorizing credit card payments.</li><li><strong>Freelance & Remote Work Billing</strong>: Estimate local currency proceeds when receiving client payments in USD, EUR, or GBP across platforms like Payoneer, Wise, or bank wire transfers.</li><li><strong>Cross-Border Family Remittances</strong>: Calculate net funds received by family members when sending international money transfers across West, East, or Southern Africa.</li><li><strong>Travel Budget Planning</strong>: Plan vacation expenses, accommodation fees, and daily cash needs when traveling between African nations or international destinations.</li></ul><hr class="my-6 border-slate-200" /><h2>Privacy Assurance & Local Execution</h2><p>AfriWidget is built on a strict privacy-first foundation. All arithmetic calculations, rate matrix multiplications, and input changes occur strictly inside your device’s browser memory. Your entered financial figures, selected currency pairs, and conversion totals are never logged, stored in databases, or transmitted to remote tracking servers.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Are these exchange rates exact bank transaction rates?</summary><div><p>The figures displayed represent neutral mid-market reference rates. Commercial banks, credit card issuers, and money transfer operators usually apply a 1% to 3% spread or fee above the mid-market baseline.</p></div></details><details><summary>How often are live exchange rates updated?</summary><div><p>When connected to the internet, live reference rates are fetched upon page load from open global exchange-rate feeds. If the feed is unavailable, built-in fallback rates ensure continuous operation.</p></div></details><details><summary>Why do exchange rates differ between commercial banks and payment apps?</summary><div><p>Financial institutions set independent buy and sell rates based on their internal FX liquidity, transaction volume, and operational costs. Specialized remittance apps often offer narrower spreads than traditional retail bank branches.</p></div></details><details><summary>Does converting currency on AfriWidget cost any fees?</summary><div><p>No. AfriWidget is a 100% free, browser-based informational utility. There are no registration forms, hidden fees, or usage limits.</p></div></details><details><summary>Can I convert non-listed currencies?</summary><div><p>The tool currently supports 12 high-volume global and regional currencies (USD, EUR, GBP, GHS, NGN, KES, ZAR, CAD, AUD, INR, JPY, AED). You can convert through USD as an intermediary base currency for other international currencies.</p></div></details><details><summary>Is my conversion search private?</summary><div><p>Yes. AfriWidget executes all conversion logic entirely in client-side Vanilla JavaScript. No search terms, conversion amounts, or user IP details are saved or sold to third-party ad networks.</p></div></details></section>
   </main>
   <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>window.addEventListener('DOMContentLoaded',()=>{window.scrollTo({top:0,behavior:'smooth'});});</script>
 </body>
 </html>

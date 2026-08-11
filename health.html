@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   
   <script>
@@ -163,9 +129,10 @@
           <h2 id="health-tools-title">Health Tools</h2>
           <p class="mt-1 text-left">Private browser-based tools for everyday health planning.</p>
         </div>
-        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">12 tools</span>
+        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">13 tools</span>
       </div>
       <div class="category-tool-grid">
+        <a class="category-tool-card" href="macro-calculator"><span class="category-tool-icon"><span class="text-xl font-black">🥗</span></span><h3>Macro Calculator</h3><p>Calculate target daily grams of Protein, Carbs, and Fats based on TDEE and fitness goals.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="bmi-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16V8m4 8V5m4 11v-3m4 3V7"/></svg></span><h3>BMI / BMR / TDEE Calculator</h3><p>Estimate body mass index, resting energy, and daily calorie needs.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="body-fat-calculator"><span class="category-tool-icon"><span class="text-xl font-black">%</span></span><h3>Body Fat Calculator</h3><p>Estimate body fat percentage from waist, neck, height, and hip measurements.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
          <a class="category-tool-card" href="daily-calorie-needs-calculator"><span class="category-tool-icon"><span class="text-xl font-black">kcal</span></span><h3>Daily Calorie Needs Calculator</h3><p>Estimate BMR and daily maintenance calories from your body size and activity.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
@@ -270,7 +237,8 @@
   </article>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4">
+  
+<footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
       <div>
         <a href="/" class="flex items-center space-x-2 mb-4">
@@ -309,26 +277,30 @@
       </div>
     </div>
     <div class="border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
-      <p>&copy; 2025 AfriWidget. All rights reserved. For informational purposes only.</p>
+      <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only.</p>
     </div>
   </footer>
 
-  <!-- COOKIE BANNER -->
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-700 hidden">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <p class="text-sm text-slate-300">We use cookies to improve your experience. <a href="cookie-policy" class="text-emerald-400 underline">Read our Cookie Policy</a>.</p>
-      <div class="flex gap-3 flex-shrink-0">
-        <button id="cookieDecline" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors">Decline</button>
-        <button id="cookieAccept" class="text-sm px-4 py-2 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-semibold transition-colors">Accept All</button>
-      </div>
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
     </div>
+  </div>
+</div>
+
+
+  <!-- COOKIE BANNER -->
+  
   </div>
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
-      if (!localStorage.getItem('cookieConsent')) setTimeout(() => document.getElementById('cookieBanner').classList.remove('hidden'), 800);
-      document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookieBanner').classList.add('hidden'); });
-      document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('cookieConsent','declined'); document.getElementById('cookieBanner').classList.add('hidden'); });
     });
   </script>
 </body>

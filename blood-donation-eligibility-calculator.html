@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google tag (gtag.js) -->
   
@@ -73,5 +39,19 @@
   <header class="bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 text-white py-14 px-4 text-center"><span class="inline-block bg-emerald-400/20 text-emerald-300 text-sm font-bold px-4 py-1 rounded-full mb-5">⚡ 100% Free • No Signup • Private In-Browser Calculation</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Blood Donation Eligibility Calculator</h1><p class="text-lg text-slate-300 max-w-2xl mx-auto">Screen basic age, weight, and re-donation timing inputs before contacting a donation centre.</p></header>
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="max-w-2xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold mb-2">Check basic planning eligibility</h2><p class="text-slate-500 mb-6">Donation centres make the final decision after their health screening and local rules.</p><form id="donationForm" class="space-y-4"><div class="grid sm:grid-cols-2 gap-4"><label class="block text-sm font-semibold">Gender<select id="donorGender" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"><option value="male">Male</option><option value="female">Female</option></select></label><label class="block text-sm font-semibold">Age<input id="donorAge" type="number" min="1" max="120" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Weight (kg)<input id="donorWeight" type="number" min="1" step="0.1" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Date of last donation<input id="lastDonation" type="date" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"></label></div><button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Check Eligibility · No Account Needed</button></form><div id="donationResult" class="hidden mt-6"><div id="donationStatus" class="rounded-2xl border-2 p-5 text-center font-bold"></div><div class="grid sm:grid-cols-2 gap-3 mt-4"><div class="bg-emerald-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-emerald-700">Earliest date allowed</div><div id="earliestDonation" class="font-extrabold text-emerald-900 mt-1">—</div></div><div class="bg-slate-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-slate-500">Planning note</div><div id="donationReason" class="text-sm text-slate-700 mt-1">—</div></div></div></div></section>
   <article class="max-w-3xl mx-auto mt-14 space-y-5 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">What this donation screen checks</h2><p>This calculator uses a basic planning screen based on age, body weight, and the time since a previous donation. It applies an age range of 18 to 65 years, a minimum weight of 50 kilograms, and a 90-day interval for male donors or a 120-day interval for female donors. The earliest date is calculated by adding the applicable interval to the last donation date.</p><p>These rules are intentionally simple. Blood services may use different age limits, weight thresholds, donation intervals, haemoglobin requirements, and policies depending on country, donation type, medical history, and local regulations. Pregnancy, breastfeeding, recent illness, travel, medicines, tattoos, procedures, and infections can also affect eligibility.</p><p>An “eligible” result here means only that the supplied planning inputs pass this narrow screen. It does not guarantee that you can donate. The donation centre will ask health questions, check vital signs and haemoglobin, and make the final decision. Be honest during screening and follow the centre’s instructions.</p><div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 text-amber-900"><strong>Important:</strong> Confirm current requirements with the blood service you plan to visit. This page cannot assess your medical history.</div><h2 class="text-3xl font-bold text-slate-900 pt-4">Frequently asked questions</h2><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">Does an eligible result guarantee donation?</summary><p class="mt-3">No. A centre’s questionnaire, examination, haemoglobin test, and current rules determine the final decision.</p></details><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">What if I feel unwell?</summary><p class="mt-3">Do not donate until you have recovered and followed advice from a qualified healthcare professional or donation centre.</p></details></article></main><footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

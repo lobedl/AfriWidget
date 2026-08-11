@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google tag (gtag.js) -->
   
@@ -73,5 +39,19 @@
   <header class="bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 text-white py-14 px-4 text-center"><span class="inline-block bg-emerald-400/20 text-emerald-300 text-sm font-bold px-4 py-1 rounded-full mb-5">⚡ 100% Free • No Signup • Private In-Browser Calculation</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Calorie Deficit Planner</h1><p class="text-lg text-slate-300 max-w-2xl mx-auto">Estimate BMR, maintenance calories, and a conservative target for gradual weight loss.</p></header>
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="max-w-2xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold mb-2">Enter your body and activity details</h2><p class="text-slate-500 mb-6">This focused planner complements the existing BMI calculator by emphasizing maintenance and deficit targets.</p><form id="calorieForm" class="space-y-4"><div class="grid sm:grid-cols-2 gap-4"><label class="block text-sm font-semibold">Gender<select id="calorieGender" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"><option value="female">Female</option><option value="male">Male</option></select></label><label class="block text-sm font-semibold">Age<input id="calorieAge" type="number" min="1" max="120" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Height (cm)<input id="calorieHeight" type="number" min="50" max="250" step="0.1" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Weight (kg)<input id="calorieWeight" type="number" min="1" max="500" step="0.1" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label></div><label class="block text-sm font-semibold">Activity level<select id="activityLevel" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"><option value="1.2">Sedentary — little exercise</option><option value="1.375">Lightly active — 1–3 days/week</option><option value="1.55">Moderately active — 3–5 days/week</option><option value="1.725">Very active — 6–7 days/week</option></select></label><button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Calculate Targets · No Account Needed</button></form><div id="calorieResult" class="hidden mt-6"><div class="grid sm:grid-cols-2 gap-3"><div class="bg-slate-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-slate-500">BMR</div><div id="calorieBmr" class="text-2xl font-extrabold text-slate-800 mt-1">—</div></div><div class="bg-teal-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-teal-700">TDEE</div><div id="calorieTdee" class="text-2xl font-extrabold text-teal-800 mt-1">—</div></div><div class="bg-emerald-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-emerald-700">Maintenance target</div><div id="calorieMaintenance" class="text-2xl font-extrabold text-emerald-800 mt-1">—</div></div><div class="bg-amber-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-amber-700">Deficit target</div><div id="calorieDeficit" class="text-2xl font-extrabold text-amber-800 mt-1">—</div></div></div><p id="calorieFormula" class="text-sm text-slate-600 text-center mt-3"></p><div id="calorieMessage" class="rounded-2xl border-2 p-5 text-center font-bold mt-4"></div></div></section>
   <article class="max-w-3xl mx-auto mt-14 space-y-5 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">BMR, TDEE, and a sensible deficit</h2><p>Basal Metabolic Rate estimates the energy your body uses at rest for essential functions. This planner uses the Mifflin–St Jeor equation with age, height, weight, and sex category. It is a starting point, not a direct measurement of metabolism.</p><p>Total Daily Energy Expenditure multiplies BMR by an activity factor. Maintenance calories are an estimate of intake that may keep weight broadly stable. Real needs change with training, sleep, illness, stress, and body composition.</p><p>The deficit target subtracts 500 calories from TDEE as a gradual-loss planning approach. Weight loss is not linear, and aggressive restriction can increase fatigue and nutrient gaps. Focus on protein, fibre, enjoyable movement, sleep, and a sustainable pattern.</p><div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 text-amber-900"><strong>Important:</strong> Do not use a calorie deficit during pregnancy or for children without qualified clinical guidance. Speak with a professional if you have diabetes, an eating disorder history, or other medical needs.</div><h2 class="text-3xl font-bold text-slate-900 pt-4">Frequently asked questions</h2><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">Is the TDEE number exact?</summary><p class="mt-3">No. Compare it with real-world energy and weight trends over several weeks.</p></details><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">Why does this not duplicate the BMI calculator?</summary><p class="mt-3">The existing BMI tool reports body metrics; this page focuses on maintenance and deficit calorie planning.</p></details></article></main><footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

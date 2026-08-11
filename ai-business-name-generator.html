@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Business Name Generator by Industry – AfriWidget</title>
   <meta name="description" content="Generate creative business and brand name ideas by industry, audience, and style with a free AI business name generator.">
@@ -66,5 +32,19 @@
     <section class="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[.9fr_1.1fr]"><form data-writing-tool="business-name" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><h2 class="text-2xl font-black text-slate-950">Find a naming direction</h2><p class="mt-2 text-sm leading-6 text-slate-600">Start with the real market you want to serve. The generator creates ideas, not legal clearance.</p><div class="mt-6 grid gap-4"><label><span class="writing-label">Industry or business type</span><input class="writing-input" name="industry" placeholder="Natural skincare, logistics, tutoring"></label><label><span class="writing-label">Ideal audience</span><input class="writing-input" name="audience" placeholder="Busy parents, local retailers, startups"></label><label><span class="writing-label">Optional keyword</span><input class="writing-input" name="keyword" placeholder="A word, place, value, or founder name"></label><label><span class="writing-label">Brand style</span><select class="writing-input" name="style"><option value="modern">Modern and clean</option><option value="premium">Premium and established</option><option value="playful">Friendly and playful</option><option value="local">Local and community-minded</option></select></label></div><button class="writing-button mt-6 w-full" type="submit">Generate name ideas</button></form><section class="rounded-2xl border border-slate-200 bg-slate-100 p-6" aria-labelledby="name-result-title"><div class="flex items-center justify-between gap-4"><h2 id="name-result-title" class="text-2xl font-black text-slate-950">Your name ideas</h2><button id="copyWriting" class="writing-button text-sm" type="button">Copy</button></div><p id="writingStatus" class="mt-2 text-sm text-slate-600" aria-live="polite">Your ideas will appear here without leaving the page.</p><pre id="writingOutput" class="writing-output mt-5 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">Add your business details and select Generate draft to begin.</pre></section></section>
     <article class="mx-auto max-w-4xl px-4 pb-16 prose prose-slate max-w-none"><h2>How to choose a strong business name</h2><p>A business name is one of the first signals people receive from a company. Before they see your product, service, pricing, or customer support, they may see a name in a search result, social profile, invoice, storefront, or recommendation. A useful name does not need to explain everything. It needs to be memorable enough to repeat, flexible enough to grow with the business, and appropriate for the audience you want to reach. This AI business name generator helps you explore directions quickly, but the final decision still needs human judgment and practical checks.</p><p>Begin with positioning rather than random words. Think about what you sell, who buys it, and what feeling you want the name to create. A bookkeeping service may want to sound precise and dependable. A children’s activity brand may prefer warmth and energy. A technology consultancy may choose a clean, compact name that works well in proposals. Your industry field gives the generator context, while the audience field helps it avoid ideas that sound attractive but do not fit the people you need to convince.</p><h3>What makes a name easier to remember?</h3><p>Names tend to be easier to remember when they are short enough to say, distinctive without being confusing, and easy to spell after hearing them once. Rhythm, alliteration, familiar word combinations, and unusual but pronounceable sounds can help. A name that requires a long explanation every time someone asks for it may create friction. At the same time, a name that is so generic that it disappears among competitors may be difficult to search for and protect. Aim for a balance between clarity and character.</p><p>Consider how the name will sound in conversation. Could a customer recommend it to a friend without spelling it? Would a freelancer feel comfortable putting it in an email signature? Does it look credible on a proposal, packaging label, mobile app, or sign? Read the ideas aloud and write the best ones in several contexts. A name that looks clever in a list may feel awkward when spoken or may imply a meaning you did not intend.</p><h3>Use style intentionally</h3><p>A modern style can work well for digital products, agencies, and services that want a clean contemporary signal. A premium style may suit consulting, hospitality, beauty, or specialist products, but it should not promise a luxury experience you cannot deliver. Playful names can create warmth and make a brand approachable, although they may be less suitable for a serious professional service. Local or community-minded language can build connection when it is authentic and understood by the intended market. Choose the style because it supports your positioning, not because it is currently fashionable.</p><p>An optional keyword can help anchor the ideas around a founder name, location, product concept, or value. Use it carefully. Forcing a keyword into every option can make names feel predictable. Sometimes the best brand name is an indirect association rather than a literal description. If you plan to expand beyond one product, avoid a name that locks you into a narrow category unless that specialization is part of your strategy.</p><h3>Checks before you commit</h3><p>Generated ideas are starting points and are not automatically available. Search the web for similar businesses, check relevant company-registration records, search trademark databases in the countries where you will operate, and look at social handles. Check the domain options too, but do not assume that owning a domain gives you trademark rights. A name can be available in one country and already protected in another. If the business matters commercially, ask a qualified legal professional to review the shortlist.</p><p>Also check language and cultural meaning. A word may sound positive in one market and carry an unwanted meaning in another. Ask people who understand your target audience to pronounce and interpret the shortlist. Avoid names that copy a competitor’s distinctive identity or make an unsupported claim. A good name gives you room to build a reputation; it should not rely on confusion with someone else.</p><h3>Turn a shortlist into a brand</h3><p>Once you have three to five viable names, score them against consistent criteria: memorability, pronunciation, spelling, relevance, flexibility, searchability, and availability. Write one sentence explaining the promise behind each option. Test the names on a small group of potential customers without telling them which one you prefer. Ask what they expect the business to offer and what feeling each name creates. Their reactions can reveal assumptions you do not notice because you are close to the idea.</p><p>Finally, remember that the name is only the beginning. Brand trust comes from a consistent experience, clear communication, reliable delivery, and respect for customers. A modest name can become powerful when a business repeatedly keeps its promises. Use this generator to widen your options, then choose the name you can own, explain, and grow into honestly.</p><h3>Frequently asked questions</h3><h4>Does the generator check trademarks?</h4><p>No. It creates creative suggestions only. Always complete business-registration, domain, trademark, and social-handle checks before using a name.</p><h4>Should my name describe exactly what I sell?</h4><p>Not always. Descriptive names are clear, while suggestive names can be more flexible. Choose based on how much explanation your audience needs and how widely you may expand.</p><h4>How many names should I shortlist?</h4><p>Three to five is enough for focused testing. A huge list can feel productive while making the decision harder.</p></article>
   </main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

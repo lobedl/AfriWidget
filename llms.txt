@@ -1,8 +1,20 @@
 # AfriWidget
 
-> AfriWidget is a privacy-first collection of 65 free web utilities, including calculators for health, finance, business, education, career writing, creative naming, identity testing, and African academic admissions planning.
+> AfriWidget is a privacy-first collection of 70 free web utilities, including calculators for health, finance, business, education, career writing, creative naming, identity testing, and African academic admissions planning.
 
 AfriWidget provides browser-based tools with no sign-up required for everyday calculations and academic planning. The following pages are the primary African education and admissions calculators:
+
+## Debt Payoff & Snowball Calculator
+
+[Debt Payoff & Snowball Calculator](https://afriwidget.com/debt-payoff-calculator) — Calculate debt payoff timeline, compare Debt Avalanche vs. Debt Snowball strategies, and calculate total interest savings privately in the browser.
+
+## Break-Even Point Analysis Calculator
+
+[Break-Even Point Analysis Calculator](https://afriwidget.com/break-even-calculator) — Calculate break-even unit volume, required sales revenue, contribution margin ratio, and target profit thresholds.
+
+## Macronutrient Split & Macro Calculator
+
+[Macronutrient Split & Macro Calculator](https://afriwidget.com/macro-calculator) — Calculate daily protein, carbohydrate, and fat macronutrient goals based on TDEE and fitness goals.
 
 ## BMI, BMR and TDEE Calculator
 
@@ -323,6 +335,22 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## Profit Margin Calculator
 
 [Profit Margin Calculator](https://afriwidget.com/profit-margin-calculator) — Calculate gross profit, net margin, and markup percentages for business products.
+
+## Pricing Calculator
+
+[Pricing Calculator](https://afriwidget.com/pricing-calculator) — Determine selling prices and net profit margins based on product costs, desired profit targets, and transaction fees.
+
+## Startup Cost Calculator
+
+[Startup Cost Calculator](https://afriwidget.com/startup-cost-calculator) — Estimate initial one-time launch capital, monthly operating expenses, and working capital buffers (3, 6, 12 months) for new business planning.
+
+## Freelance Rate Calculator
+
+[Freelance Rate Calculator](https://afriwidget.com/freelance-rate-calculator) — Compute required freelance hourly rates, day rates, and monthly retainers based on target take-home earnings, business overhead, taxes, and billable capacity.
+
+## ROI Calculator
+
+[ROI Calculator](https://afriwidget.com/roi-calculator) — Calculate Return on Investment (ROI %), total net profit, and annualized compound returns (CAGR) for investments and business projects.
 
 ## Real Estate Investment Calculator
 

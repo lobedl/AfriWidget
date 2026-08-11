@@ -33,8 +33,8 @@ During the initial years, your balance grows predominantly through your own out-
 5. **Set Time Horizon (Years)**: Choose the investment duration in full years (e.g., 5, 10, 20, or 30 years).
 6. **Analyze Growth Results**:
    - **Projected Value**: Total estimated balance accumulated at the end of the timeline.
-   - **Your Deposits**: Total personal cash invested over time ($P + PMT \times 12 \times t$).
-   - **Estimated Growth**: Total net compound interest earned ($Projected Value - Total Deposits$).
+   - **Your Deposits**: Total personal cash invested over time (Initial Deposit + Monthly Deposit × 12 × Years).
+   - **Estimated Growth**: Total net compound interest earned (Projected Value − Total Deposits).
    - **Year-by-Year Table**: Annual breakdown tracking contribution totals against compounding interest gains.
 
 ---

@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
@@ -93,6 +59,21 @@
       <div class="space-y-3"><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Is the result exact?</summary><p class="mt-3">No. It is an average-based MET estimate. Pace, terrain, technique, breaks, fitness, and personal physiology can change actual energy use.</p></details><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Why does body weight affect the estimate?</summary><p class="mt-3">Moving a larger body generally requires more energy at the same activity intensity and duration, so the equation includes weight as one of its inputs.</p></details><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Should I eat back every calorie shown?</summary><p class="mt-3">No. The number is uncertain and may use a gross-calorie definition. Eat regularly and use broader health and training goals rather than treating an estimate as a food allowance.</p></details></div>
     </article>
   </main>
+  <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
     window.addEventListener('DOMContentLoaded',function(){document.getElementById('burnForm').addEventListener('submit',function(event){event.preventDefault();var met=Number(document.getElementById('burnActivity').value),weight=Number(document.getElementById('burnWeight').value),minutes=Number(document.getElementById('burnMinutes').value),error=document.getElementById('burnError');if(!met||!weight||!minutes){error.textContent='Please complete the activity, weight, and duration.';return}var calories=met*3.5*weight/200*minutes;document.getElementById('burnValue').textContent=Math.round(calories);document.getElementById('burnHourly').textContent='About '+Math.round(calories/(minutes/60))+' kcal per active hour at this intensity.';error.textContent='';document.getElementById('burnResults').classList.remove('hidden');setTimeout(function(){document.getElementById('burnResults').scrollIntoView({behavior:'smooth',block:'start'})},100)})});
   </script>

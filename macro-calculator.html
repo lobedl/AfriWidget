@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macronutrient Split &amp; Macro Calculator – AfriWidget</title>
+  <meta name="description" content="Calculate target daily grams of Protein, Carbohydrates, and Fats based on TDEE, activity level, and weight loss, muscle gain, or Keto goals for free." />
+  <link rel="canonical" href="https://afriwidget.com/macro-calculator" />
+  <meta property="og:type" content="website" /><meta property="og:url" content="https://afriwidget.com/macro-calculator" /><meta property="og:title" content="Macronutrient Split &amp; Macro Calculator – AfriWidget" /><meta property="og:description" content="Calculate target daily grams of Protein, Carbohydrates, and Fats based on TDEE, activity level, and weight loss, muscle gain, or Keto goals for free." /><meta property="og:image" content="https://afriwidget.com/og-image.png" /><meta property="og:site_name" content="AfriWidget" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@afriwidget" /><meta name="twitter:title" content="Macronutrient Split &amp; Macro Calculator – AfriWidget" /><meta name="twitter:description" content="Calculate target daily grams of Protein, Carbohydrates, and Fats based on TDEE, activity level, and weight loss, muscle gain, or Keto goals for free." /><meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Macro Calculator","url":"https://afriwidget.com/macro-calculator","description":"Calculate daily protein, carbohydrate, and fat macronutrient goals based on TDEE and fitness targets.","applicationCategory":"HealthApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"AfriWidget","url":"https://afriwidget.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://afriwidget.com/"},{"@type":"ListItem","position":2,"name":"Health Tools","item":"https://afriwidget.com/health"},{"@type":"ListItem","position":3,"name":"Macro Calculator","item":"https://afriwidget.com/macro-calculator"}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="new-tools.css" />
+  <script src="footer.js" defer></script><script src="nav.js" defer></script><script src="share-results.js" defer></script><script src="universal-ai.js" defer></script><script src="new-tools.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;}</style>
+</head>
+<body class="new-tool-page font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg>
+          <span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/" class="hover:text-yellow-300 transition-colors">Home</a>
+          <a href="education" class="hover:text-yellow-300 transition-colors">Education Tools</a>
+          <a href="finance" class="hover:text-yellow-300 transition-colors">Finance Tools</a>
+          <a href="health" class="hover:text-yellow-300 transition-colors">Health Tools</a>
+          <a href="productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          <a href="widgets" class="hover:text-yellow-300 transition-colors">All Tools Directory</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Open navigation menu">☰</button>
+      </div>
+      <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div>
+    </div>
+  </nav>
+
+  <header class="tool-hero bg-slate-900 text-white px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <span class="badge inline-block bg-yellow-400 text-slate-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      <p class="mt-5 text-sm font-bold uppercase tracking-widest text-yellow-300">Health &amp; Nutrition</p>
+      <h1 class="mt-2 text-3xl sm:text-5xl font-black text-white">Macro Calculator</h1>
+      <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-300">Calculate target daily grams of Protein, Carbohydrates, and Fats tailored to your physical stats, activity level, and weight loss or muscle building goals.</p>
+    </div>
+  </header>
+
+  <main class="tool-shell max-w-5xl mx-auto px-4 py-8 w-full flex-grow">
+    <section class="tool-card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm" aria-labelledby="macro-title">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+        <div>
+          <h2 id="macro-title" class="text-2xl font-black text-slate-900">Your Physical Profile</h2>
+          <p class="text-xs text-slate-500 mt-1">Provide your stats to calculate TDEE and customized macronutrient targets.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <label class="cursor-pointer">
+            <input type="radio" name="unitSystem" value="metric" checked class="peer sr-only" />
+            <span class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 peer-checked:border-teal-600 peer-checked:bg-teal-50 peer-checked:text-teal-900 transition-colors">Metric (kg/cm)</span>
+          </label>
+          <label class="cursor-pointer">
+            <input type="radio" name="unitSystem" value="imperial" class="peer sr-only" />
+            <span class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 peer-checked:border-teal-600 peer-checked:bg-teal-50 peer-checked:text-teal-900 transition-colors">Imperial (lbs/in)</span>
+          </label>
+        </div>
+      </div>
+
+      <form id="macroForm" onsubmit="return false;" class="mt-6 space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Gender</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="gender" value="male" checked class="peer sr-only" />
+                <div class="text-center py-2.5 text-xs font-bold rounded-xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50 peer-checked:text-teal-900 transition-all">Male</div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="gender" value="female" class="peer sr-only" />
+                <div class="text-center py-2.5 text-xs font-bold rounded-xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50 peer-checked:text-teal-900 transition-all">Female</div>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="age" class="block text-sm font-bold text-slate-700 mb-1">Age (Years) <span class="text-red-500">*</span></label>
+            <input type="number" id="age" placeholder="28" min="15" max="100" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl px-4 py-2.5 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+          </div>
+
+          <div>
+            <label for="height" id="heightLabel" class="block text-sm font-bold text-slate-700 mb-1">Height (cm) <span class="text-red-500">*</span></label>
+            <input type="number" id="height" placeholder="175" min="50" max="250" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl px-4 py-2.5 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+          </div>
+
+          <div>
+            <label for="weight" id="weightLabel" class="block text-sm font-bold text-slate-700 mb-1">Weight (kg) <span class="text-red-500">*</span></label>
+            <input type="number" id="weight" placeholder="72" min="30" max="300" step="any" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-500/20 rounded-xl px-4 py-2.5 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
+            <label for="activity" class="block text-sm font-bold text-slate-700 mb-1">Weekly Activity Level</label>
+            <select id="activity" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 outline-none">
+              <option value="1.2">Sedentary (Office job, little exercise)</option>
+              <option value="1.375" selected>Lightly Active (1–3 exercise days/wk)</option>
+              <option value="1.55">Moderately Active (3–5 workout days/wk)</option>
+              <option value="1.725">Very Active (6–7 intense workout days/wk)</option>
+              <option value="1.9">Extra Active (Athlete / physical labor)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="fitnessGoal" class="block text-sm font-bold text-slate-700 mb-1">Primary Fitness Goal</label>
+            <select id="fitnessGoal" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 outline-none">
+              <option value="0.85">Fat Loss / Cut (15% Deficit)</option>
+              <option value="1.0" selected>Maintain Weight / Recomp</option>
+              <option value="1.15">Muscle Gain / Lean Bulk (15% Surplus)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="macroSplit" class="block text-sm font-bold text-slate-700 mb-1">Macro Strategy Ratio</label>
+            <select id="macroSplit" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 focus:bg-white rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 outline-none">
+              <option value="30-40-30" selected>Balanced (30% Protein, 40% Carbs, 30% Fat)</option>
+              <option value="40-35-25">High Protein / Cutting (40% P, 35% C, 25% F)</option>
+              <option value="30-15-55">Low Carb / Keto (30% P, 15% C, 55% F)</option>
+              <option value="25-55-20">Endurance / High Carb (25% P, 55% C, 20% F)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" id="calcBtn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black text-base py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer uppercase tracking-wider">
+          Calculate Daily Macros
+        </button>
+      </form>
+
+      <!-- RESULTS SECTION -->
+      <div id="results" class="mt-8 pt-6 border-t-2 border-slate-200">
+        <h3 class="text-xl font-black text-slate-900 mb-4">Your Custom Macronutrient Blueprint</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-teal-900 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-300">Target Daily Calories</span>
+            <div id="dailyCalories" class="text-3xl font-black text-yellow-300 mt-1">—</div>
+            <p id="tdeeSubtitle" class="text-xs text-teal-200 mt-1 font-medium">Daily caloric intake</p>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Protein Target</span>
+            <div id="proteinGrams" class="text-2xl font-black text-white mt-1">—</div>
+            <p id="proteinKcal" class="text-xs text-slate-400 mt-1">4 kcal / gram</p>
+          </div>
+
+          <div class="bg-slate-800 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Carbohydrate Target</span>
+            <div id="carbsGrams" class="text-2xl font-black text-white mt-1">—</div>
+            <p id="carbsKcal" class="text-xs text-slate-400 mt-1">4 kcal / gram</p>
+          </div>
+
+          <div class="bg-slate-100 text-slate-900 rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-600">Healthy Fats Target</span>
+            <div id="fatsGrams" class="text-2xl font-black text-slate-900 mt-1">—</div>
+            <p id="fatsKcal" class="text-xs text-slate-500 mt-1">9 kcal / gram</p>
+          </div>
+        </div>
+
+        <!-- MEAL SPLIT SCHEDULE -->
+        <div class="mt-8 overflow-x-auto">
+          <h4 class="text-base font-black text-slate-900 mb-3">Meal Distribution Blueprint</h4>
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white font-bold uppercase text-[11px] tracking-wider">
+                <th class="px-4 py-3 rounded-l-xl">Meal Frequency</th>
+                <th class="px-4 py-3 text-right">Calories / Meal</th>
+                <th class="px-4 py-3 text-right text-amber-300">Protein</th>
+                <th class="px-4 py-3 text-right text-sky-300">Carbs</th>
+                <th class="px-4 py-3 text-right text-rose-300 rounded-r-xl">Fats</th>
+              </tr>
+            </thead>
+            <tbody id="mealBody" class="divide-y divide-slate-200">
+              <tr><td colspan="5" class="px-4 py-4 text-center text-slate-400">Enter stats and click calculate to view meal distribution</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-RENDERED GUIDE SECTION -->
+    <section id="toolGuide" class="guide mt-12 bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm" data-content-key="macro-calculator" aria-label="macro calculator guide"><h2>Precision Nutrition & Flexible Macronutrient Planning</h2><p>Whether your objective is sustainable fat loss, lean muscle hypertrophy, athletic endurance performance, or body recomposition, total daily calorie intake is only half the equation. The precise ratio of <strong>Macronutrients—Protein, Carbohydrates, and Fats</strong>—determines whether energy deficits burn body fat while preserving lean muscle mass, or whether calorie surpluses synthesize new muscle tissue rather than excess adipose storage.</p><p>AfriWidget’s <strong>Macro Calculator</strong> uses scientifically validated energy expenditure equations (Mifflin-St Jeor & Harris-Benedict) combined with flexible macronutrient split guidelines (IIFYM - If It Fits Your Macros) to calculate your ideal daily macronutrient targets in grams and calories.</p><hr class="my-6 border-slate-200" /><h2>The Science of Macronutrient Split Calculations</h2><p>Macronutrients are the energy-providing nutrients required by the body in large daily quantities. Each macronutrient serves specific physiological functions and provides a known caloric density:</p><ul><li><strong>Protein (4 Calories per gram)</strong>: Essential for muscle tissue repair, enzyme synthesis, metabolic recovery, and satiety during calorie deficits.</li><li><strong>Carbohydrate (4 Calories per gram)</strong>: The body's primary fuel source for high-intensity exercise, glycogen replenishment, brain function, and central nervous system stamina.</li><li><strong>Fat (9 Calories per gram)</strong>: Crucial for hormone production (testosterone, estrogen, thyroid), cellular membrane integrity, joint health, and fat-soluble vitamin absorption (A, D, E, K).</li></ul><hr class="my-6 border-slate-200" /><h2>Energy Expenditure Mathematics: TDEE Baseline</h2><p>To determine daily macronutrient targets, the calculator first determines your <strong>Total Daily Energy Expenditure (TDEE)</strong>:</p><ol><li><strong>Basal Metabolic Rate (BMR)</strong>: Calculated using the Mifflin-St Jeor equation:</li></ol><ul><li><em>For Men</em>: $$\text{BMR} = (10 \times \text{weight in kg}) + (6.25 \times \text{height in cm}) - (5 \times \text{age in years}) + 5$$</li><li><em>For Women</em>: $$\text{BMR} = (10 \times \text{weight in kg}) + (6.25 \times \text{height in cm}) - (5 \times \text{age in years}) - 161$$</li></ul><ol><li><strong>TDEE Multiplier</strong>: BMR is multiplied by an activity factor ranging from 1.2 (Sedentary) to 1.9 (Very Heavy Athletic Training).</li></ol><ol><li><strong>Goal Adjustment</strong>:</li></ol><ul><li><strong>Weight Loss (Fat Loss / Cut)</strong>: Creates a 15%–20% caloric deficit below TDEE.</li><li><strong>Maintenance</strong>: Matches TDEE exactly for body recomposition and steady weight maintenance.</li><li><strong>Weight Gain (Muscle Building / Lean Bulk)</strong>: Adds a 10%–15% caloric surplus above TDEE.</li></ul><hr class="my-6 border-slate-200" /><h2>Popular Macronutrient Ratio Distributions</h2><p>| Macro Strategy | Protein % | Carbohydrates % | Fats % | Ideal Fitness Goal | | --- | --- | --- | --- | --- | | <strong>Balanced Baseline</strong> | 30% | 40% | 30% | General fitness, steady energy, sustainable lifestyle | | <strong>High Protein (Bodybuilding)</strong> | 40% | 35% | 25% | Maximum muscle retention during fat loss cuts | | <strong>Low Carb / Keto</strong> | 30%–35% | 10%–15% | 55%–60% | Rapid insulin sensitivity control & ketogenic adaptation | | <strong>Endurance Athlete</strong> | 25% | 55% | 20% | Marathon runners, cyclists, intense glycogen loading |</p><hr class="my-6 border-slate-200" /><h2>How to Use the Macro Calculator</h2><ol><li><strong>Select Gender & Metric Units</strong>: Choose Male or Female and select Imperial (lbs / inches) or Metric (kg / cm) measurements.</li><li><strong>Input Physical Stats</strong>: Enter your age, height, and current body weight.</li><li><strong>Select Activity Level</strong>: Choose the option that best matches your actual weekly exercise routine (Sedentary, Lightly Active, Moderately Active, Very Active).</li><li><strong>Choose Fitness Objective</strong>: Select Fat Loss (Cut), Maintenance, or Lean Muscle Gain (Bulk).</li><li><strong>Choose Macro Ratio Preference</strong>: Select Balanced, High Protein, Low Carb, or Custom ratios.</li><li><strong>Review Instant Nutritional Blueprint</strong>:</li></ol><ul><li><strong>Target Daily Calories</strong>: Net daily caloric intake needed for your fitness goal.</li><li><strong>Daily Protein Target</strong>: Exact grams and total calories from protein.</li><li><strong>Daily Carbohydrate Target</strong>: Exact grams and total calories from carbs.</li><li><strong>Daily Fat Target</strong>: Exact grams and total calories from fats.</li><li><strong>Meal Breakdown</strong>: Recommended macro distribution across 3, 4, or 5 meals per day.</li></ul><hr class="my-6 border-slate-200" /><h2>Meal Distribution Blueprint Example</h2><p>If your daily goal is <strong>2,000 Calories</strong> with a <strong>30% Protein / 40% Carbs / 30% Fat</strong> split:</p><ul><li><strong>Total Protein</strong>: 150g per day (600 kcal)</li><li><strong>Total Carbs</strong>: 200g per day (800 kcal)</li><li><strong>Total Fats</strong>: 67g per day (600 kcal)</li></ul><h3>Split Across 4 Daily Meals:</h3><ul><li><strong>Meal 1 (Breakfast)</strong>: 37.5g Protein | 50g Carbs | 16.7g Fat</li><li><strong>Meal 2 (Lunch)</strong>: 37.5g Protein | 50g Carbs | 16.7g Fat</li><li><strong>Meal 3 (Pre-Workout Snack)</strong>: 37.5g Protein | 50g Carbs | 16.7g Fat</li><li><strong>Meal 4 (Dinner)</strong>: 37.5g Protein | 50g Carbs | 16.7g Fat</li></ul><hr class="my-6 border-slate-200" /><h2>Safety, Health & Nutritional Disclaimer</h2><p>This macronutrient calculator is an educational and fitness planning tool based on mathematical energy formulas. Individual metabolic rates, thyroid function, gut microbiome efficiency, and medical conditions can alter real-world energy expenditure. This calculator is not intended as medical nutrition therapy or clinical diagnosis. Always consult a licensed dietitian or physician before undertaking extreme caloric restriction or specialized ketogenic diets.</p><p>All calculations execute 100% locally in your web browser. AfriWidget does not collect, track, or share your personal physical measurements or health targets.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><h2>Frequently Asked Questions</h2><details><summary>What is the difference between counting macros and counting calories?</summary><div><p>Counting calories tracks total energy intake, whereas counting macros tracks the specific breakdown of protein, carbohydrates, and fats that make up those calories. Counting macros ensures you consume sufficient protein for muscle retention and adequate healthy fats for hormone health, yielding superior body composition results compared to calorie tracking alone.</p></div></details><details><summary>How much protein do I need per day?</summary><div><p>For active individuals and strength training, science recommends consuming 1.6 to 2.2 grams of protein per kilogram of body weight (0.7 to 1.0 grams per pound). During calorie deficits, higher protein intake (up to 2.4g/kg) helps prevent lean muscle tissue breakdown.</p></div></details><details><summary>Should I track raw or cooked food weights?</summary><div><p>It is best to consistently weigh foods in their raw or dry state before cooking. Cooking alters water weight significantly (e.g., meat shrinks while rice expands), which can introduce tracking discrepancies if raw and cooked weights are mixed.</p></div></details><details><summary>How often should I recalculate my macros?</summary><div><p>Recalculate your macronutrient targets every 4 to 6 weeks, or whenever your body weight changes by 3 to 5 kilograms. As your body weight drops during a cut, your Basal Metabolic Rate decreases slightly, requiring periodic macro adjustments.</p></div></details><details><summary>Is my physical and health data private?</summary><div><p>Yes. AfriWidget executes all health and macro calculations entirely in client-side JavaScript. No age, weight, height, or gender metrics are stored, logged, or sent to external servers.</p></div></details></section>
+  </main>
+
+  <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+      </p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+        <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ageInput = document.getElementById('age');
+      const heightInput = document.getElementById('height');
+      const weightInput = document.getElementById('weight');
+      const heightLabel = document.getElementById('heightLabel');
+      const weightLabel = document.getElementById('weightLabel');
+      const activitySelect = document.getElementById('activity');
+      const fitnessGoalSelect = document.getElementById('fitnessGoal');
+      const macroSplitSelect = document.getElementById('macroSplit');
+      const calcBtn = document.getElementById('calcBtn');
+
+      document.querySelectorAll('input[name="unitSystem"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          if (e.target.value === 'imperial') {
+            heightLabel.innerHTML = 'Height (Inches) <span class="text-red-500">*</span>';
+            weightLabel.innerHTML = 'Weight (lbs) <span class="text-red-500">*</span>';
+            if (heightInput.value) heightInput.value = Math.round(parseFloat(heightInput.value) / 2.54);
+            if (weightInput.value) weightInput.value = Math.round(parseFloat(weightInput.value) * 2.20462);
+            heightInput.placeholder = '69';
+            weightInput.placeholder = '160';
+          } else {
+            heightLabel.innerHTML = 'Height (cm) <span class="text-red-500">*</span>';
+            weightLabel.innerHTML = 'Weight (kg) <span class="text-red-500">*</span>';
+            if (heightInput.value) heightInput.value = Math.round(parseFloat(heightInput.value) * 2.54);
+            if (weightInput.value) weightInput.value = Math.round(parseFloat(weightInput.value) / 2.20462);
+            heightInput.placeholder = '175';
+            weightInput.placeholder = '72';
+          }
+          calculate();
+        });
+      });
+
+      function calculate() {
+        const isImperial = document.querySelector('input[name="unitSystem"]:checked').value === 'imperial';
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const age = parseFloat(ageInput.value);
+        let height = parseFloat(heightInput.value);
+        let weight = parseFloat(weightInput.value);
+
+        if (isNaN(age) || age <= 0 || isNaN(height) || height <= 0 || isNaN(weight) || weight <= 0) {
+          document.getElementById('dailyCalories').textContent = '—';
+          document.getElementById('proteinGrams').textContent = '—';
+          document.getElementById('carbsGrams').textContent = '—';
+          document.getElementById('fatsGrams').textContent = '—';
+          document.getElementById('mealBody').innerHTML = '<tr><td colspan="5" class="px-4 py-4 text-center text-slate-400">Enter stats and click calculate to view meal distribution</td></tr>';
+          return;
+        }
+
+        // Convert to metric for Mifflin-St Jeor equation
+        const weightKg = isImperial ? weight / 2.20462 : weight;
+        const heightCm = isImperial ? height * 2.54 : height;
+
+        // BMR (Mifflin-St Jeor)
+        let bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age);
+        bmr += (gender === 'male') ? 5 : -161;
+
+        const activityMult = parseFloat(activitySelect.value);
+        const goalMult = parseFloat(fitnessGoalSelect.value);
+
+        const tdee = bmr * activityMult;
+        const targetCalories = Math.round(tdee * goalMult);
+
+        // Split ratios
+        const [pPct, cPct, fPct] = macroSplitSelect.value.split('-').map(Number);
+
+        const pKcal = targetCalories * (pPct / 100);
+        const cKcal = targetCalories * (cPct / 100);
+        const fKcal = targetCalories * (fPct / 100);
+
+        const pGrams = Math.round(pKcal / 4);
+        const cGrams = Math.round(cKcal / 4);
+        const fGrams = Math.round(fKcal / 9);
+
+        document.getElementById('dailyCalories').textContent = `${targetCalories.toLocaleString()} kcal`;
+        document.getElementById('proteinGrams').textContent = `${pGrams}g`;
+        document.getElementById('proteinKcal').textContent = `${Math.round(pKcal)} kcal (${pPct}%)`;
+
+        document.getElementById('carbsGrams').textContent = `${cGrams}g`;
+        document.getElementById('carbsKcal').textContent = `${Math.round(cKcal)} kcal (${cPct}%)`;
+
+        document.getElementById('fatsGrams').textContent = `${fGrams}g`;
+        document.getElementById('fatsKcal').textContent = `${Math.round(fKcal)} kcal (${fPct}%)`;
+
+        // Meal breakdown table
+        const mealFrequencies = [
+          { name: '3 Meals / Day (Standard)', count: 3 },
+          { name: '4 Meals / Day (Fitness Routine)', count: 4 },
+          { name: '5 Meals / Day (High Frequency)', count: 5 }
+        ];
+
+        const mealBody = document.getElementById('mealBody');
+        mealBody.innerHTML = mealFrequencies.map(m => {
+          const mCal = Math.round(targetCalories / m.count);
+          const mP = Math.round(pGrams / m.count);
+          const mC = Math.round(cGrams / m.count);
+          const mF = Math.round(fGrams / m.count);
+
+          return `
+            <tr class="hover:bg-slate-50">
+              <td class="px-4 py-3 font-semibold text-slate-900">${m.name}</td>
+              <td class="px-4 py-3 text-right font-bold">${mCal} kcal</td>
+              <td class="px-4 py-3 text-right font-black text-amber-700">${mP}g</td>
+              <td class="px-4 py-3 text-right font-black text-sky-700">${mC}g</td>
+              <td class="px-4 py-3 text-right font-black text-rose-700">${mF}g</td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      calcBtn.addEventListener('click', calculate);
+      [ageInput, heightInput, weightInput, activitySelect, fitnessGoalSelect, macroSplitSelect].forEach(inp => inp.addEventListener('input', calculate));
+      document.querySelectorAll('input[name="gender"]').forEach(radio => radio.addEventListener('change', calculate));
+    });
+  </script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{window.scrollTo({top:0,behavior:'smooth'});});</script>
+</body>
+</html>

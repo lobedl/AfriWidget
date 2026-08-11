@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google Analytics -->
   
@@ -79,6 +45,20 @@
       <h2 class="text-2xl font-bold text-white">Responsible use and privacy</h2><p>Never use generated phone numbers to contact strangers, bypass SMS verification, impersonate a subscriber, create deceptive accounts, or send unsolicited messages. A fictional sequence can coincidentally belong to someone, especially when local patterns are broad. Keep the output in development and staging systems, disable real SMS and voice integrations during tests, and label fixtures clearly. Do not place real phone numbers into a public demo or paste personal data into a tool merely because it has a phone-shaped input. Browser generation keeps this page from sending the values to AfriWidget, but your clipboard and your application logs may still retain copied output.</p>
       <h2 class="text-2xl font-bold text-white">Frequently Asked Questions</h2><div class="space-y-3"><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Are the generated numbers active?</summary><p class="mt-3 leading-7">No. They are fictional test strings. The tool does not call, text, verify, or reserve any number.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Which format should I test?</summary><p class="mt-3 leading-7">Test both international and local-style displays if your product serves more than one country. Also test spaces, leading zeroes, and pasted values.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Can this send an SMS?</summary><p class="mt-3 leading-7">No. It is a local data generator only and has no connection to SMS, voice, or verification services.</p></details></div></article>
   <section class="mx-auto max-w-4xl px-4 pb-10 text-slate-300"><h2 class="text-2xl font-bold text-white">A practical phone-data checklist</h2><p class="mt-3 leading-7">Before shipping a phone field, decide whether the product stores a normalized international value, preserves the user’s original formatting, or supports both. Test empty input, too few digits, too many digits, letters, extensions, pasted spaces, and country changes. For imports, keep numbers as text so leading zeroes survive spreadsheet and database conversions. For analytics and logs, mask or minimize phone values wherever possible because a phone number can be a direct identifier even when the rest of a test record is fictional.</p></section></main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
   (function(){var formats={us:{code:'+1',local:function(){return '('+random(200,899)+') '+random(200,899)+'-'+random(1000,9999)}},gb:{code:'+44',local:function(){return '0'+random(7000,7999)+' '+random(100000,999999)}},gh:{code:'+233',local:function(){return '0'+random(200,599)+' '+random(100,999)+' '+random(1000,9999)}},ng:{code:'+234',local:function(){return '0'+random(700,909)+' '+random(100,999)+' '+random(1000,9999)}},ke:{code:'+254',local:function(){return '0'+random(700,799)+' '+random(100000,999999)}},za:{code:'+27',local:function(){return '0'+random(60,89)+' '+random(100,999)+' '+random(1000,9999)}},in:{code:'+91',local:function(){return '0'+random(600,999)+' '+random(100000,999999)}}};var output=document.getElementById('phoneOutput'),status=document.getElementById('phoneStatus'),latest=[];function random(min,max){return String(Math.floor(Math.random()*(max-min+1))+min)}function make(){var item=formats[document.getElementById('phoneRegion').value],count=Math.max(1,Math.min(100,parseInt(document.getElementById('phoneCount').value,10)||12)),international=document.getElementById('phoneFormat').value==='international';latest=[];for(var i=0;i<count;i++){var local=item.local();latest.push(international?item.code+' '+local.replace(/^0/,''):local)}output.value=latest.join(',\\n');status.textContent=count+' fictional phone numbers generated locally.'}document.getElementById('phoneForm').addEventListener('submit',function(e){e.preventDefault();make()});document.getElementById('copyPhones').addEventListener('click',function(){if(!latest.length)make();navigator.clipboard.writeText(latest.join('\\n')).then(function(){status.textContent='Copied '+latest.length+' mock phone numbers.'})});make()}());
   </script>

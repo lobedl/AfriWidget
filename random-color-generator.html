@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google Analytics -->
   
@@ -78,9 +44,25 @@
       <h2 class="text-2xl font-bold text-white">Testing color controls</h2><p>Designers and developers can use the generator to test a color input, copy button, theme editor, token table, or API response. Confirm that HEX values include the expected prefix, RGB channels remain within their valid range, and HSL values are formatted consistently. Test pasted lowercase and uppercase HEX values separately if your parser is case-sensitive. If the product supports alpha transparency, add RGBA and eight-digit HEX fixtures yourself because this simple generator produces opaque colors. Also verify how colors render in print, dark mode, high-contrast settings, and on screens with different brightness.</p>
       <h2 class="text-2xl font-bold text-white">Randomness, persistence, and privacy</h2><p>Each generation is intentionally different and does not use a seed or save a history. If a color is important, copy its codes into your project notes or design file. The browser performs the generation locally, so AfriWidget does not receive your palette. The usual browser cautions still apply: clipboard contents can remain available to other applications, and a screenshot can reveal a draft palette. Avoid placing confidential brand work into a public demonstration if it has not been approved.</p>
       <h2 class="text-2xl font-bold text-white">Frequently Asked Questions</h2><div class="space-y-3"><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Do HEX, RGB, and HSL describe the same color?</summary><p class="mt-3 leading-7">Yes. Each card shows three representations of the same generated opaque color, subject to normal rounding in the HSL conversion.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Are the colors suitable for accessibility?</summary><p class="mt-3 leading-7">Not automatically. Measure contrast and add non-color cues before using a generated value in an interface.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Can I generate transparent colors?</summary><p class="mt-3 leading-7">This tool creates opaque colors. Add alpha values separately when testing transparency or overlays.</p></details></div></article>
-  <section class="mx-auto max-w-4xl px-4 pb-10 text-slate-300"><h2 class="text-2xl font-bold text-white">From exploration to a usable palette</h2><p class="mt-3 leading-7">Treat a random swatch as an invitation to explore, not as a final token. Pick a primary color, then create a small set of supporting neutrals, emphasis colors, and accessible text colors around it. Name the choices in a way that describes their role, such as surface, border, action, or warning, rather than relying only on the color name. Document the background each swatch was tested against and include a dark-mode alternative when the product supports themes. This keeps quick experimentation connected to a maintainable design system.</p></section></main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+  <section class="mx-auto max-w-4xl px-4 pb-10 text-slate-300"><h2 class="text-2xl font-bold text-white">From exploration to a usable palette</h2><p class="mt-3 leading-7">Treat a random swatch as an invitation to explore, not as a final token. Pick a primary color, then create a small set of supporting neutrals, emphasis colors, and accessible text colors around it. Name the choices in a way that describes their role, such as surface, border, action, or warning, rather than relying only on the color name. Document the background each swatch was tested against and include a dark-mode alternative when the product supports themes. This keeps quick experimentation connected to a maintainable design system.</p></section>
+<p class="font-mono text-sm leading-7 text-slate-200"><strong class="text-yellow-300">'+c.hex+'</strong><br>'+c.rgb+'<br>'+c.hsl+'</p>
+</main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
-  (function(){var output=document.getElementById('colorOutput'),status=document.getElementById('colorStatus'),latest=[];function clamp(n,min,max){return Math.max(min,Math.min(max,n))}function make(){var count=Math.max(1,Math.min(50,parseInt(document.getElementById('colorCount').value,10)||12)),family=document.getElementById('colorFamily').value;latest=[];for(var i=0;i<count;i++){var h=Math.floor(Math.random()*360);if(family==='warm')h=Math.floor(Math.random()*70);if(family==='cool')h=180+Math.floor(Math.random()*180);if(family==='bright')h=Math.floor(Math.random()*360);var s=family==='bright'?75+Math.floor(Math.random()*26):45+Math.floor(Math.random()*51),l=family==='bright'?45+Math.floor(Math.random()*21):35+Math.floor(Math.random()*36),c=(1-Math.abs(2*l/100-1))*s/100,x=c*(1-Math.abs((h/60)%2-1)),m=l/100-c/2,r=0,g=0,b=0;if(h<60){r=c;g=x}else if(h<120){r=x;g=c}else if(h<180){g=c;b=x}else if(h<240){g=x;b=c}else if(h<300){r=x;b=c}else{r=c;b=x}r=Math.round((r+m)*255);g=Math.round((g+m)*255);b=Math.round((b+m)*255);var hex='#'+[r,g,b].map(function(v){return v.toString(16).padStart(2,'0').toUpperCase()}).join(''),rgb='rgb('+r+', '+g+', '+b+')',hsl='hsl('+h+', '+s+'%, '+l+'%)';latest.push({hex:hex,rgb:rgb,hsl:hsl});}output.innerHTML=latest.map(function(c){return '<div class="color-card rounded-2xl border border-slate-700 bg-slate-950 p-4"><div class="mb-4 h-20 rounded-xl border border-white/10 shadow-inner" style="background:'+c.hex+'"></div><p class="font-mono text-sm leading-7 text-slate-200"><strong class="text-yellow-300">'+c.hex+'</strong><br>'+c.rgb+'<br>'+c.hsl+'</p></div>'}).join('');status.textContent=count+' color swatches generated locally.'}document.getElementById('colorForm').addEventListener('submit',function(e){e.preventDefault();make()});document.getElementById('copyColors').addEventListener('click',function(){if(!latest.length)make();navigator.clipboard.writeText(latest.map(function(c){return c.hex+' | '+c.rgb+' | '+c.hsl}).join('\\n')).then(function(){status.textContent='Copied '+latest.length+' color codes.'})});make()}());
+  (function(){var output=document.getElementById('colorOutput'),status=document.getElementById('colorStatus'),latest=[];function clamp(n,min,max){return Math.max(min,Math.min(max,n))}function make(){var count=Math.max(1,Math.min(50,parseInt(document.getElementById('colorCount').value,10)||12)),family=document.getElementById('colorFamily').value;latest=[];for(var i=0;i<count;i++){var h=Math.floor(Math.random()*360);if(family==='warm')h=Math.floor(Math.random()*70);if(family==='cool')h=180+Math.floor(Math.random()*180);if(family==='bright')h=Math.floor(Math.random()*360);var s=family==='bright'?75+Math.floor(Math.random()*26):45+Math.floor(Math.random()*51),l=family==='bright'?45+Math.floor(Math.random()*21):35+Math.floor(Math.random()*36),c=(1-Math.abs(2*l/100-1))*s/100,x=c*(1-Math.abs((h/60)%2-1)),m=l/100-c/2,r=0,g=0,b=0;if(h<60){r=c;g=x}else if(h<120){r=x;g=c}else if(h<180){g=c;b=x}else if(h<240){g=x;b=c}else if(h<300){r=x;b=c}else{r=c;b=x}r=Math.round((r+m)*255);g=Math.round((g+m)*255);b=Math.round((b+m)*255);var hex='#'+[r,g,b].map(function(v){return v.toString(16).padStart(2,'0').toUpperCase()}).join(''),rgb='rgb('+r+', '+g+', '+b+')',hsl='hsl('+h+', '+s+'%, '+l+'%)';latest.push({hex:hex,rgb:rgb,hsl:hsl});}output.innerHTML=latest.map(function(c){return '<div class="color-card rounded-2xl border border-slate-700 bg-slate-950 p-4"><div class="mb-4 h-20 rounded-xl border border-white/10 shadow-inner" style="background:'+c.hex+'"></div></div>'}).join('');status.textContent=count+' color swatches generated locally.'}document.getElementById('colorForm').addEventListener('submit',function(e){e.preventDefault();make()});document.getElementById('copyColors').addEventListener('click',function(){if(!latest.length)make();navigator.clipboard.writeText(latest.map(function(c){return c.hex+' | '+c.rgb+' | '+c.hsl}).join('\\n')).then(function(){status.textContent='Copied '+latest.length+' color codes.'})});make()}());
   </script>
   <script>window.addEventListener('DOMContentLoaded',function(){window.scrollTo({top:0,behavior:'smooth'});});</script>
 </body>

@@ -89,3 +89,12 @@ When adding a new tool or page:
 3. **Vanilla JS & 100% Client-Side:** Calculations run in vanilla JavaScript with zero framework overhead.
 4. **Google Analytics & Privacy Tag:** Include GA tracking and the privacy banner tag: `"⚡ 100% Free • No Signup • Private In-Browser Tool"`.
 5. **Site Integration:** Link the tool across homepage categories, category hubs (Health, Finance, Education, Productivity), `sitemap.xml`, and `llms.txt`.
+
+---
+
+## 🚫 4. Strict Prohibition of LaTeX Syntax in Content & Code
+
+- **NO LaTeX Allowed**: Under NO circumstances should any LaTeX syntax (e.g., `$...$`, `\text{...}`, `\frac{...}`, `\left`, `\right`) be used in `.md` guide content files, `.html` pages, or JavaScript scripts.
+- **Why**: The site renders markdown directly into clean HTML without KaTeX or MathJax dependencies. LaTeX markup renders as unformatted raw code to visitors.
+- **Replacement Standard**: Always use plain text, standard mathematical symbols (`×`, `÷`, `+`, `-`, `=`), bold font weighting for variables, and standard parenthetical math expressions (e.g., `**BMR** = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5`).
+

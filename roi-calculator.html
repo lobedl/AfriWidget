@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  
+    <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROI Calculator: Calculate Return on Investment &amp; Annualized Gain | AfriWidget</title>
+  <meta name="description" content="Calculate net profit, Return on Investment (ROI %), and Annualized Compound Return (CAGR) for marketing campaigns, real estate, stocks, and business projects. 100% free browser tool." />
+  <link rel="canonical" href="https://afriwidget.com/roi-calculator" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://afriwidget.com/roi-calculator" />
+  <meta property="og:title" content="ROI Calculator | AfriWidget" />
+  <meta property="og:description" content="Calculate Return on Investment (ROI %), net profit, and annualized compound growth (CAGR) instantly." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.png" />
+  <meta property="og:site_name" content="AfriWidget" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:title" content="ROI Calculator | AfriWidget" />
+  <meta name="twitter:description" content="Calculate Return on Investment (ROI %), net profit, and annualized compound growth (CAGR) instantly." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ROI Calculator",
+    "url": "https://afriwidget.com/roi-calculator",
+    "description": "Free ROI calculator to evaluate investment gains, net profit, and annualized CAGR growth.",
+    "applicationCategory": "FinancialApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "provider": { "@type": "Organization", "name": "AfriWidget", "url": "https://afriwidget.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://afriwidget.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://afriwidget.com/business" },
+      { "@type": "ListItem", "position": 3, "name": "ROI Calculator", "item": "https://afriwidget.com/roi-calculator" }
+    ]
+  }
+  </script>
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  
+  <script src="footer.js" defer></script>
+  <script src="nav.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
+          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
+          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
+          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
+          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
+          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
+          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
+          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
+          <a href="roi-calculator" class="text-yellow-400 font-bold">ROI Calc</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
+      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
+      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
+      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
+      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
+      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
+      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
+      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
+      <a href="profit-margin-calculator" class="block py-2 hover:text-emerald-400">Profit Margin Calculator</a>
+      <a href="pricing-calculator" class="block py-2 hover:text-emerald-400">Pricing Calculator</a>
+      <a href="roi-calculator" class="block py-2 text-yellow-400 font-bold">ROI Calculator</a>
+      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-12 px-4 text-center shadow-md">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4 border border-indigo-500/30">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">Return on Investment (ROI) Calculator</h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">Measure total net profit, percentage return, and annualized growth efficiency for marketing campaigns, projects, or capital investments.</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+    
+    <!-- ADSENSE PLACEHOLDER 1: TOP BANNER -->
+    <div class="my-6 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- CALCULATOR FORM -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Investment &amp; Return Details</h2>
+        <span class="text-xs font-semibold px-3 py-1 bg-indigo-50 text-indigo-700 rounded-lg border border-indigo-200">Capital Performance</span>
+      </div>
+
+      <form id="roiForm" class="space-y-5" onsubmit="return false;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="investment" class="block text-sm font-bold text-slate-700 mb-1">Initial Capital Outlay ($) <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+              <input type="number" id="investment" placeholder="10000.00" min="0.01" step="0.01" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 focus:bg-white focus:ring-4 focus:ring-indigo-500/20 rounded-xl pl-8 pr-4 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Total principal capital invested or spent.</p>
+          </div>
+
+          <div>
+            <label for="returnVal" class="block text-sm font-bold text-slate-700 mb-1">Total Return / Value Generated ($) <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+              <input type="number" id="returnVal" placeholder="16500.00" min="0" step="0.01" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 focus:bg-white focus:ring-4 focus:ring-indigo-500/20 rounded-xl pl-8 pr-4 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Total revenue, final portfolio value, or return realized.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="timeVal" class="block text-sm font-bold text-slate-700 mb-1">Investment Time Horizon <span class="font-normal text-slate-400">(Optional for Annualized ROI)</span></label>
+            <div class="flex space-x-2">
+              <input type="number" id="timeVal" placeholder="12" min="0.1" step="0.1" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 focus:bg-white focus:ring-4 focus:ring-indigo-500/20 rounded-xl px-4 py-3 text-slate-900 font-bold shadow-sm transition-all outline-none" />
+              <select id="timeUnit" class="bg-slate-100 border-2 border-slate-200 rounded-xl px-3 py-3 text-sm font-bold text-slate-800 cursor-pointer">
+                <option value="months">Months</option>
+                <option value="years">Years</option>
+              </select>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Unlocks Annualized Return (CAGR) calculations.</p>
+          </div>
+
+          <div>
+            <label for="category" class="block text-sm font-bold text-slate-700 mb-1">Investment Category <span class="font-normal text-slate-400">(Optional)</span></label>
+            <select id="category" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-indigo-600 focus:bg-white focus:ring-4 focus:ring-indigo-500/20 rounded-xl px-4 py-3 text-slate-800 font-bold shadow-sm transition-all outline-none cursor-pointer">
+              <option value="marketing">Digital Marketing / PPC Ads</option>
+              <option value="realestate">Real Estate &amp; Rental Property</option>
+              <option value="stocks">Stock Market / Index Funds</option>
+              <option value="equipment">Business Equipment / Automation</option>
+              <option value="crypto">Cryptocurrency / Venture Asset</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" id="calcBtn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98] text-lg tracking-wide border border-yellow-500 cursor-pointer">
+          Calculate Return on Investment →
+        </button>
+      </form>
+    </div>
+
+    <!-- OUTPUT RESULTS -->
+    <div id="results" class="mt-8 space-y-6">
+      
+      <!-- MAIN HIGHLIGHT CARD (COLOR DYNAMIC) -->
+      <div id="statusBanner" class="rounded-2xl p-6 sm:p-8 text-center shadow-2xl border relative overflow-hidden transition-all bg-slate-900 border-slate-800 text-white">
+        <div id="statusTag" class="inline-block text-xs sm:text-sm font-extrabold uppercase tracking-widest px-3 py-1 rounded-full mb-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          Profitable Investment
+        </div>
+        <div class="text-5xl sm:text-6xl font-black mb-2"><span id="roiPct">+0.0</span>%</div>
+        <p class="text-slate-300 text-sm max-w-md mx-auto">Net Profit Realized: <strong id="netProfitText" class="text-emerald-400 font-extrabold">$0.00</strong></p>
+      </div>
+
+      <!-- METRIC GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Net Gain / Loss</p>
+          <p class="text-2xl font-black" id="netGainEl">$0.00</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Return Ratio</p>
+          <p class="text-2xl font-black text-slate-800"><span id="returnRatio">0.00</span>x</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow-sm col-span-2 sm:col-span-2">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Annualized Return (CAGR)</p>
+          <p class="text-2xl font-black text-indigo-700" id="annualizedEl">—</p>
+        </div>
+      </div>
+
+      <!-- BENCHMARK SENSITIVITY MATRIX -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
+        <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base">Investment Return Scenario Matrix</h3>
+          <button type="button" id="copyBtn" class="text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer">Copy Summary</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100 text-slate-600 font-bold text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3 text-left">Total Return Value</th>
+                <th class="px-4 py-3 text-right">Net Profit</th>
+                <th class="px-4 py-3 text-right">ROI (%)</th>
+                <th class="px-4 py-3 text-right">Return Multiple</th>
+              </tr>
+            </thead>
+            <tbody id="scenarioBody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ADSENSE PLACEHOLDER 2: BELOW OUTPUT -->
+    <div class="my-8 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- EDUCATIONAL GUIDE SECTION -->
+    <section id="toolGuide" class="guide prose max-w-none text-slate-600 space-y-6 mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm" data-content-key="roi-calculator"><p># Understanding Return on Investment (ROI) & Capital Allocation</p><p>Return on Investment (ROI) is the ultimate metric for measuring the profitability, efficiency, and financial gain of capital deployments. Whether you are evaluating a marketing campaign, purchasing machinery, funding software development, acquiring real estate, investing in stock portfolios, or funding a new business venture, calculating ROI enables investors, executives, and business owners to compare competing financial opportunities on an equal footing.</p><p>The AfriWidget <strong>ROI Calculator</strong> provides an instant, interactive tool to compute total net profit, percentage return on investment, and annualized ROI (CAGR). Operating 100% in your browser with zero sign-up or data logging, it includes real-time green/red profitability status indicators and investment comparison scenarios.</p><hr class="my-6 border-slate-200" /><h2>The Core Formulas for Calculating Return on Investment</h2><h3>1. Basic ROI Formula (%)</h3><p>Basic ROI measures total net monetary gain or loss expressed as a percentage of the initial principal capital invested.</p><blockquote><strong>Net Profit ($) = Total Return (Value Received) − Initial Investment</strong></blockquote><blockquote><strong>ROI (%) = (Net Profit ÷ Initial Investment) × 100</strong></blockquote><p><em>Example</em>: If you invest <strong>$10,000</strong> in an advertising campaign and generate <strong>$16,500</strong> in total sales revenue:</p><ul><li><strong>Net Profit</strong>: $16,500 − $10,000 = <strong>$6,500</strong></li><li><strong>ROI</strong>: ($6,500 ÷ $10,000) × 100 = <strong>+65.0%</strong></li></ul><p>A positive result indicates a profitable investment (+65.0%), whereas a total return below the initial capital produces a negative ROI (loss).</p><hr class="my-6 border-slate-200" /><h3>2. Annualized ROI Formula (CAGR %)</h3><p>Basic ROI measures total cumulative return over the entire investment lifespan, but it fails to account for time horizon. Earning a 50% total ROI over 1 year is dramatically better than earning 50% over 10 years!</p><p>To compare investments with different durations, calculate <strong>Annualized ROI</strong> (Compound Annual Growth Rate):</p><blockquote><strong>Annualized ROI (%) = [ (Total Return ÷ Initial Investment) ^ (1 ÷ Years) − 1 ] × 100</strong></blockquote><p><em>Comparison Example</em>:</p><ul><li><strong>Investment A</strong>: $10,000 yields $15,000 over 2 years (+50% basic ROI).</li></ul><blockquote><strong>Annualized ROI</strong> = [ (15,000 ÷ 10,000)<sup>(1 / 2)</sup> − 1 ] × 100 = (1.50<sup>0.5</sup> − 1) × 100 = <strong>+22.47% per year</strong></blockquote><ul><li><strong>Investment B</strong>: $10,000 yields $15,000 over 5 years (+50% basic ROI).</li></ul><blockquote><strong>Annualized ROI</strong> = [ (15,000 ÷ 10,000)<sup>(1 / 5)</sup> − 1 ] × 100 = (1.50<sup>0.20</sup> − 1) × 100 = <strong>+8.45% per year</strong></blockquote><p>Even though both investments produced identical dollar profits ($5,000), Investment A generated nearly triple the annual growth efficiency!</p><hr class="my-6 border-slate-200" /><h2>Key Metrics in ROI Analysis</h2><p>When evaluating capital efficiency, financial analysts examine several interrelated metrics:</p><ol><li><strong>Net Profit ($)</strong>: The absolute dollar value gained or lost after deducting initial capital outlay.</li><li><strong>Total Return Ratio</strong>: The total cash value realized relative to investment outlay (Total Return ÷ Initial Outlay). A ratio above 1.0 indicates profit; below 1.0 indicates capital loss.</li><li><strong>Payback Period</strong>: The amount of time required for net cash inflows to fully recover the initial capital investment.</li><li><strong>Hurdle Rate</strong>: The minimum required rate of return set by a company or investor to justify accepting investment risk.</li></ol><hr class="my-6 border-slate-200" /><h2>Evaluating ROI Across Business Sectors</h2><p>Ideal ROI benchmarks vary significantly depending on asset risk, market liquidity, and capital intensity:</p><h3>1. Digital Marketing & Advertising (ROAS / ROI)</h3><p>Digital campaigns measure Return on Ad Spend (ROAS). A 400% ROAS ($4 revenue per $1 ad spend) is considered a standard benchmark for e-commerce PPC advertising, covering product costs and fulfillment to yield a positive net ROI.</p><h3>2. Commercial Real Estate & Property Development</h3><p>Real estate investments evaluate annual rental yields (typically 6%–12%) alongside long-term property appreciation. Leveraged real estate purchases (using mortgage debt) can amplify equity ROI significantly.</p><h3>3. Software Automation & Business Equipment</h3><p>Investing $5,000 in customer support automation software that eliminates $20,000 in manual labor costs annually yields a <strong>300% annual ROI</strong>, making technology upgrades high-priority business decisions.</p><h3>4. Stock Market & Index Funds</h3><p>Historical long-term equity benchmarks (such as the S&P 500) average approximately <strong>7%–10% annualized return</strong> before inflation adjustments.</p><hr class="my-6 border-slate-200" /><h2>Step-by-Step Guide: How to Use the ROI Calculator</h2><ol><li><strong>Select Currency</strong>: Choose your operational currency (USD, GHS, NGN, KES, ZAR, EUR, GBP, etc.).</li><li><strong>Enter Initial Investment ($)</strong>: Input the initial total monetary capital spent or committed.</li><li><strong>Enter Total Return / Revenue Generated ($)</strong>: Input the total financial value or revenue returned at the end of the investment period.</li><li><strong>Enter Duration (Optional)</strong>: Input the investment timeframe in months or years to unlock automated <strong>Annualized ROI (CAGR)</strong> calculations.</li><li><strong>View Instant Calculation Outputs</strong>:</li></ol><ul><li><strong>Profit/Loss Status Banner</strong>: Dynamic green indicator for positive returns or red indicator for capital losses.</li><li><strong>ROI (%)</strong>: Exact cumulative return percentage.</li><li><strong>Net Profit ($)</strong>: Total cash dollar gain or loss.</li><li><strong>Annualized ROI (%)</strong>: Yearly compound rate of return.</li><li><strong>Scenario Sensitivity Matrix</strong>: Performance projections illustrating returns at higher or lower performance benchmarks.</li></ul><hr class="my-6 border-slate-200" /><h2>Practical Real-World ROI Examples</h2><h3>Scenario 1: E-Commerce Marketing Campaign</h3><p>A business spends <strong>$5,000</strong> on Google & Facebook ad campaigns. The campaign generates <strong>$14,000</strong> in direct online sales revenue over 3 months.</p><ul><li><strong>Net Profit</strong>: $14,000 − $5,000 = <strong>$9,000</strong></li><li><strong>Basic ROI</strong>: ($9,000 ÷ $5,000) × 100 = <strong>+180.0%</strong></li><li><strong>Annualized ROI (0.25 Years)</strong>: [ (14,000 ÷ 5,000)<sup>4</sup> − 1 ] × 100 = <strong>+6,046%</strong> (reflecting short-term compounding potential if scaled).</li></ul><h3>Scenario 2: Equipment Upgrade (Efficiency Loss / Gain)</h3><p>A bakery purchases a $12,000 automated mixer. Over 3 years, the mixer reduces labor costs and increases output value by $18,000.</p><ul><li><strong>Net Profit</strong>: $18,000 − $12,000 = <strong>$6,000</strong></li><li><strong>Basic ROI</strong>: ($6,000 ÷ $12,000) × 100 = <strong>+50.0%</strong></li><li><strong>Annualized ROI (3 Years)</strong>: [ (1.50)<sup>0.3333</sup> − 1 ] × 100 = <strong>+14.47% per year</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>Limitations of ROI & Risk Management</h2><p>While ROI is a universal financial metric, it should not be evaluated in isolation:</p><ol><li><strong>Ignores Risk</strong>: A speculative cryptocurrency investment offering a 100% potential ROI carries vastly higher risk of total capital loss than a government bond yielding 6%.</li><li><strong>Cash Flow Timing</strong>: Basic ROI does not account for the timing of cash inflows throughout the investment period (discounted cash flow / NPV metrics are better suited for complex multi-year projects).</li><li><strong>Non-Financial Returns</strong>: Certain investments (e.g., employee wellness programs or brand awareness campaigns) generate non-monetary value that is difficult to quantify directly in cash returns.</li></ol><hr class="my-6 border-slate-200" /><h2>Safety, Privacy & Tool Disclaimer</h2><p>The AfriWidget ROI Calculator is a browser-based financial estimation application. All calculations run strictly in local client-side browser memory using Vanilla JavaScript. No investment figures, financial logs, or corporate data are ever transmitted to external servers or stored in cookies.</p><p><em>Disclaimer</em>: ROI projections are mathematical estimates and do not guarantee future investment performance. Always perform thorough due diligence and consult certified financial advisors before deploying significant capital.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><h2>What is considered a good ROI?</h2><p>A "good" ROI depends on risk and investment type. Stock index funds historically average 7%–10% per year, real estate rental properties target 8%–12%, and high-growth marketing campaigns often seek 150%–300%+ short-term returns. Higher target returns generally require accepting higher capital risk.</p><h2>What does a negative ROI mean?</h2><p>A negative ROI means the total financial return or current asset value is less than the initial capital invested, resulting in a net financial loss.</p><h2>What is the difference between basic ROI and Annualized ROI?</h2><p>Basic ROI measures cumulative profit percentage regardless of time. Annualized ROI calculates the equivalent yearly compound growth rate (CAGR), allowing you to accurately compare a 2-year investment against a 5-year investment.</p><h2>How does inflation affect my real ROI?</h2><p>Inflation reduces the purchasing power of money over time. Your <strong>Real ROI</strong> equals your Nominal ROI minus the annual inflation rate (<strong>Real ROI = Nominal ROI − Inflation Rate</strong>).</p><h2>Is my financial data private when using this calculator?</h2><p>Yes. All calculations are executed 100% in your browser memory. AfriWidget never tracks, saves, or transmits your calculation inputs.</p></section>
+
+    <!-- ADSENSE PLACEHOLDER 3: INSIDE CONTENT -->
+    <div class="my-8 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- RELATED TOOLS SECTION -->
+    <section class="mt-12 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl">
+      <h2 class="text-xl sm:text-2xl font-bold mb-4 text-white">Related Business &amp; Financial Tools</h2>
+      <p class="text-slate-300 text-sm mb-6">Plan business expansion, product margins, and hourly earnings with our free calculators:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="profit-margin-calculator" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-emerald-400 font-bold mb-1">Profit Margin Calculator →</div>
+          <p class="text-xs text-slate-300">Compute product gross profit, margin %, and markup rates.</p>
+        </a>
+        <a href="pricing-calculator" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-yellow-400 font-bold mb-1">Pricing Calculator →</div>
+          <p class="text-xs text-slate-300">Calculate required selling price to hit target profit margins.</p>
+        </a>
+        <a href="hourly-to-salary" class="bg-slate-800 hover:bg-slate-700/80 p-4 rounded-xl border border-slate-700 transition-all hover:-translate-y-0.5 block">
+          <div class="text-indigo-400 font-bold mb-1">Hourly to Salary Converter →</div>
+          <p class="text-xs text-slate-300">Convert hourly wage rates to annual salary equivalents.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16"></footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const roiForm = document.getElementById('roiForm');
+      const investmentInput = document.getElementById('investment');
+      const returnInput = document.getElementById('returnVal');
+      const timeValInput = document.getElementById('timeVal');
+      const timeUnitSelect = document.getElementById('timeUnit');
+      const resultsDiv = document.getElementById('results');
+      const copyBtn = document.getElementById('copyBtn');
+
+      function calculate() {
+        const inv = parseFloat(investmentInput.value);
+        const ret = parseFloat(returnInput.value);
+        const timeNum = parseFloat(timeValInput.value);
+
+        if (!inv || isNaN(ret) || inv <= 0) return;
+
+        const netProfit = ret - inv;
+        const roiPct = (netProfit / inv) * 100;
+        const returnRatio = ret / inv;
+
+        const roiPctEl = document.getElementById('roiPct');
+        const netProfitText = document.getElementById('netProfitText');
+        const statusTag = document.getElementById('statusTag');
+        const netGainEl = document.getElementById('netGainEl');
+        const returnRatioEl = document.getElementById('returnRatio');
+        const annualizedEl = document.getElementById('annualizedEl');
+
+        roiPctEl.textContent = (roiPct >= 0 ? '+' : '') + roiPct.toFixed(1);
+        netProfitText.textContent = `${netProfit >= 0 ? '$' : '-$'}${Math.abs(netProfit).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        returnRatioEl.textContent = returnRatio.toFixed(2);
+
+        if (netProfit >= 0) {
+          statusTag.textContent = 'Profitable Investment';
+          statusTag.className = 'inline-block text-xs sm:text-sm font-extrabold uppercase tracking-widest px-3 py-1 rounded-full mb-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+          netProfitText.className = 'text-emerald-400 font-extrabold';
+          netGainEl.className = 'text-2xl font-black text-emerald-600';
+          netGainEl.textContent = `+$${netProfit.toFixed(2)}`;
+        } else {
+          statusTag.textContent = 'Capital Loss';
+          statusTag.className = 'inline-block text-xs sm:text-sm font-extrabold uppercase tracking-widest px-3 py-1 rounded-full mb-3 bg-red-500/20 text-red-400 border border-red-500/30';
+          netProfitText.className = 'text-red-400 font-extrabold';
+          netGainEl.className = 'text-2xl font-black text-red-500';
+          netGainEl.textContent = `-$${Math.abs(netProfit).toFixed(2)}`;
+        }
+
+        if (timeNum && timeNum > 0) {
+          let years = timeNum;
+          if (timeUnitSelect.value === 'months') {
+            years = timeNum / 12;
+          }
+          if (years > 0 && returnRatio > 0) {
+            const annualizedPct = (Math.pow(returnRatio, 1 / years) - 1) * 100;
+            annualizedEl.textContent = `${annualizedPct >= 0 ? '+' : ''}${annualizedPct.toFixed(1)}% / yr`;
+          } else {
+            annualizedEl.textContent = '—';
+          }
+        } else {
+          annualizedEl.textContent = 'Specify timeframe';
+        }
+
+        const multipliers = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+        document.getElementById('scenarioBody').innerHTML = multipliers.map(m => {
+          const rVal = ret * m;
+          const np = rVal - inv;
+          const rPct = (np / inv) * 100;
+          const ratio = rVal / inv;
+          const isCurrent = m === 1.0;
+
+          return `<tr class="${isCurrent ? 'bg-indigo-50 font-bold' : 'hover:bg-slate-50'}">
+            <td class="px-4 py-3 text-slate-800">$${rVal.toFixed(2)}${isCurrent ? ' <span class="text-xs text-indigo-700 font-extrabold">(Actual Return)</span>' : ''}</td>
+            <td class="px-4 py-3 text-right ${np >= 0 ? 'text-emerald-600 font-bold' : 'text-red-500 font-bold'}">${np >= 0 ? '+$' + np.toFixed(2) : '-$' + Math.abs(np).toFixed(2)}</td>
+            <td class="px-4 py-3 text-right text-slate-700">${rPct >= 0 ? '+' : ''}${rPct.toFixed(1)}%</td>
+            <td class="px-4 py-3 text-right text-slate-700">${ratio.toFixed(2)}x</td>
+          </tr>`;
+        }).join('');
+
+        resultsDiv.style.display = 'block';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate_roi', {
+            event_category: 'calculator',
+            event_label: 'ROI Calculator',
+            value: Math.round(roiPct)
+          });
+        }
+      }
+
+      roiForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        calculate();
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      [investmentInput, returnInput, timeValInput, timeUnitSelect].forEach(elem => {
+        elem.addEventListener('input', () => {
+          if (investmentInput.value && returnInput.value) calculate();
+        });
+      });
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const text = `ROI Summary:\nInitial Investment: $${investmentInput.value}\nTotal Return: $${returnInput.value}\nNet Profit: ${document.getElementById('netGainEl').textContent}\nROI: ${document.getElementById('roiPct').textContent}%\nAnnualized ROI: ${document.getElementById('annualizedEl').textContent}\nVia AfriWidget ROI Calculator (https://afriwidget.com/roi-calculator)`;
+          navigator.clipboard.writeText(text).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = 'Copy Summary'; }, 2000);
+            if (typeof gtag === 'function') {
+              gtag('event', 'copy_results', { event_category: 'calculator', event_label: 'ROI Summary' });
+            }
+          });
+        });
+      }
+
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          document.getElementById('mobileMenu').classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

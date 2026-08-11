@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -79,10 +45,28 @@
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></a><div class="hidden md:flex gap-5 text-sm"><a href="education">Education</a><a href="admissions">Admissions</a><a href="widgets">All Tools</a><a href="tertiary-gpa-cgpa-calculator" class="text-emerald-400 font-bold">Tertiary GPA</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation">☰</button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"><a href="education" class="block py-2">Education</a><a href="admissions" class="block py-2">Admissions</a><a href="widgets" class="block py-2">All Tools</a></div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-indigo-900 to-teal-900 text-white py-14 px-4"><div class="max-w-4xl mx-auto"><p class="text-amber-300 font-semibold mb-3">Pan-African University Planning</p><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Tertiary GPA &amp; CGPA Calculator</h1><p class="text-lg text-slate-300">Track a semester GPA or estimate a cumulative CGPA across the 4.0 and 5.0 grading scales.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><div class="flex flex-col sm:flex-row gap-4 justify-between items-start mb-6"><div><h2 class="text-2xl font-bold text-slate-900">Enter your courses</h2><p class="text-slate-600 text-sm mt-1">Use one row per course, semester, or combined record.</p></div><label class="text-sm font-semibold">Scale<select id="gpaScale" class="block mt-1 bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2"><option value="4">4.0 scale</option><option value="5">5.0 scale</option></select></label></div><div class="grid grid-cols-12 gap-2 text-xs uppercase font-bold text-slate-400 px-1 mb-2"><div class="col-span-5">Course</div><div class="col-span-3">Credits</div><div class="col-span-3">Grade</div></div><div id="courseRows" class="space-y-2"></div><div class="flex flex-col sm:flex-row gap-3 mt-6"><button id="addCourse" type="button" class="flex-1 border-2 border-slate-200 hover:border-teal-500 text-slate-700 font-bold py-3 rounded-xl">+ Add Course</button><button id="gpaCalculate" type="button" class="flex-1 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl shadow-lg">Calculate Now</button></div></div><div class="lg:col-span-2" aria-live="polite"><div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl"><p class="text-sm uppercase tracking-wider text-amber-300 font-bold">Current GPA / CGPA</p><div id="gpaResult" class="text-6xl font-extrabold text-amber-300 my-4">—</div><p id="gpaMessage" class="text-slate-300 leading-relaxed">Complete a course row to see your weighted result.</p></div></div></section>
-  <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Calculate weighted GPA across common African grading scales</h2><p>University students in Nigeria, Ghana, Kenya, South Africa, Uganda, and other African countries often need to track academic performance across semesters. The exact grading policy varies by institution, but the central calculation is consistent: multiply each grade point by the course credit units, add those quality points, and divide by the total credits. This page makes that weighted average visible without a spreadsheet or account.</p><p>Choose the 4.0 scale when your institution maps A to 4, B to 3, C to 2, D to 1, and F to 0. Choose the 5.0 scale when your institution maps A to 5, B to 4, C to 3, D to 2, E to 1, and F to 0. The scale selector updates every grade list. Always confirm the mapping in your student handbook because some institutions use plus or minus grades, percentage bands, or a different conversion.</p><h3 class="text-2xl font-bold text-slate-900">GPA versus CGPA</h3><p>GPA usually describes performance in one semester or academic term. CGPA means cumulative grade point average and combines more than one term. You can estimate a CGPA by entering all the graded courses from the periods you want to combine, including each course’s credit units. If you already know a previous CGPA and credit total, use the same quality-point method: previous CGPA multiplied by previous credits, plus new quality points, divided by all credits.</p><h3 class="text-2xl font-bold text-slate-900">Why credit units matter</h3><p>A three-credit course has more influence than a one-credit course because it represents more academic workload. For example, an A in a three-credit course contributes three times the grade points of an A in a one-credit course. Enter credit hours exactly as shown on your registration or transcript. Do not use the number of subjects as a substitute for credits, and do not include a course that your institution excludes from GPA calculations.</p><h3 class="text-2xl font-bold text-slate-900">How to interpret the result</h3><p>The result is a planning estimate for the courses entered. It can help you understand whether a target such as 3.0, 3.5, or a first-class benchmark is within reach, but academic standing rules differ. Schools may treat repeats, withdrawals, pass/fail courses, carryovers, and transferred credits differently. Compare the number with your official portal or transcript before making decisions about graduation, scholarships, probation, or postgraduate applications.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I use this for a 5.0 university?</summary><p class="mt-3">Yes. Select the 5.0 scale and enter A, B, C, D, E, or F with the correct credit units.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I calculate one semester GPA?</summary><p class="mt-3">Yes. Enter only the courses from that semester. To estimate a cumulative result, enter courses from all periods you want included.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Is the result official?</summary><p class="mt-3">No. It is a transparent estimate. Your institution’s transcript and academic regulations are the final authority.</p></details></article></main>
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer><script>document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));</script>
+  <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Calculate weighted GPA across common African grading scales</h2><p>University students in Nigeria, Ghana, Kenya, South Africa, Uganda, and other African countries often need to track academic performance across semesters. The exact grading policy varies by institution, but the central calculation is consistent: multiply each grade point by the course credit units, add those quality points, and divide by the total credits. This page makes that weighted average visible without a spreadsheet or account.</p><p>Choose the 4.0 scale when your institution maps A to 4, B to 3, C to 2, D to 1, and F to 0. Choose the 5.0 scale when your institution maps A to 5, B to 4, C to 3, D to 2, E to 1, and F to 0. The scale selector updates every grade list. Always confirm the mapping in your student handbook because some institutions use plus or minus grades, percentage bands, or a different conversion.</p><h3 class="text-2xl font-bold text-slate-900">GPA versus CGPA</h3><p>GPA usually describes performance in one semester or academic term. CGPA means cumulative grade point average and combines more than one term. You can estimate a CGPA by entering all the graded courses from the periods you want to combine, including each course’s credit units. If you already know a previous CGPA and credit total, use the same quality-point method: previous CGPA multiplied by previous credits, plus new quality points, divided by all credits.</p><h3 class="text-2xl font-bold text-slate-900">Why credit units matter</h3><p>A three-credit course has more influence than a one-credit course because it represents more academic workload. For example, an A in a three-credit course contributes three times the grade points of an A in a one-credit course. Enter credit hours exactly as shown on your registration or transcript. Do not use the number of subjects as a substitute for credits, and do not include a course that your institution excludes from GPA calculations.</p><h3 class="text-2xl font-bold text-slate-900">How to interpret the result</h3><p>The result is a planning estimate for the courses entered. It can help you understand whether a target such as 3.0, 3.5, or a first-class benchmark is within reach, but academic standing rules differ. Schools may treat repeats, withdrawals, pass/fail courses, carryovers, and transferred credits differently. Compare the number with your official portal or transcript before making decisions about graduation, scholarships, probation, or postgraduate applications.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I use this for a 5.0 university?</summary><p class="mt-3">Yes. Select the 5.0 scale and enter A, B, C, D, E, or F with the correct credit units.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I calculate one semester GPA?</summary><p class="mt-3">Yes. Enter only the courses from that semester. To estimate a cumulative result, enter courses from all periods you want included.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Is the result official?</summary><p class="mt-3">No. It is a transparent estimate. Your institution’s transcript and academic regulations are the final authority.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Keeping a useful academic record</h2><p class="text-slate-700 leading-relaxed">Save the course name, credit value, grade, and scale used whenever you calculate a GPA. This makes it easier to reproduce a result and spot a difference between your estimate and the official portal. If your institution changes a course grade after a remark, repeat, or correction, update the row rather than adding the same course twice. For a CGPA, include every course your institution says contributes to the cumulative record and exclude non-graded activities where the handbook instructs you to do so.</p><p class="text-slate-700 leading-relaxed mt-4">Students can also use the calculator for target planning. Enter current courses first, then test a realistic future grade scenario in an additional row. The comparison can show how many credits and what grades would be needed to move the average. Treat the scenario as guidance, not a promise, because academic policies around repeats and graduation classification can be more detailed than a simple weighted average.</p><p class="text-slate-700 leading-relaxed mt-4">Whether you study at a university or polytechnic, check the official grading handbook before converting results between scales. A 4.0 result should not be casually multiplied to create a 5.0 result because institutions may use different grade bands and classification rules.</p></section>
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Planning your next semester</h2><p class="text-slate-700 leading-relaxed">A reliable GPA plan starts with the credits you expect to take, the grades you are targeting, and the academic support available to you. Use the calculator to test a realistic combination, then break that target into weekly study actions. Ask lecturers or advisers about difficult courses early, and review your institution’s repeat and withdrawal rules before making a change to your registration.</p></section>
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Using the result with academic advice</h2><p class="text-slate-700 leading-relaxed">If your estimate is lower than your target, talk with an adviser about course selection, study support, attendance, and realistic workload. A higher course load is not always the best way to improve an average if it makes every course harder. The calculator shows the arithmetic; your institution’s advisers can help you apply it to your specific programme and academic policy.</p></section>
+</main>
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+<script>document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));</script>
+
+
+
 </body>
 </html>

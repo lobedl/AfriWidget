@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -95,7 +61,23 @@
   <main class="max-w-6xl mx-auto px-4 py-12">
     <section class="grid lg:grid-cols-5 gap-8 items-start" aria-labelledby="calculator-heading"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 id="calculator-heading" class="text-2xl font-bold text-slate-900 mb-2">Calculate your estimate</h2><p class="text-slate-600 mb-6">Enter your JAMB score out of 400 and select five O’Level grades.</p><label for="jambScore" class="block text-sm font-semibold text-slate-700 mb-2">JAMB UTME score</label><input id="jambScore" type="number" min="0" max="400" placeholder="e.g. 280" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-4 py-3 rounded-xl outline-none mb-6" /><div class="grid sm:grid-cols-2 gap-4"><label class="text-sm font-semibold text-slate-700">English Language<select class="jamb-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A1</option><option>B2</option><option>B3</option><option>C4</option><option>C5</option><option>C6</option></select></label><label class="text-sm font-semibold text-slate-700">Mathematics<select class="jamb-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A1</option><option>B2</option><option>B3</option><option>C4</option><option>C5</option><option>C6</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 3<select class="jamb-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A1</option><option>B2</option><option>B3</option><option>C4</option><option>C5</option><option>C6</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 4<select class="jamb-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A1</option><option>B2</option><option>B3</option><option>C4</option><option>C5</option><option>C6</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 5<select class="jamb-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A1</option><option>B2</option><option>B3</option><option>C4</option><option>C5</option><option>C6</option></select></label></div><button id="jambCalculate" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl shadow-lg">Calculate Now</button></div><div class="lg:col-span-2" aria-live="polite"><div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl"><p class="text-sm uppercase tracking-wider text-amber-300 font-bold">Estimated aggregate</p><div id="jambResult" class="text-6xl font-extrabold text-amber-300 my-4">—</div><p id="jambMessage" class="text-slate-300 leading-relaxed">Your result will appear here as soon as all fields are complete.</p></div><div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mt-5 text-sm text-amber-950"><strong>Planning note:</strong> this page follows the requested formula exactly: <strong>(JAMB ÷ 8) + five O’Level points</strong>.</div></div></section>
     <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How the Nigerian JAMB Aggregate Estimate Works</h2><p>JAMB UTME is one of the most important numbers Nigerian candidates use when planning university applications. A score by itself is not the whole admission picture because institutions can combine UTME performance with O’Level results, post-UTME screening, subject combinations, catchment policies, and programme requirements. This calculator provides a simple way to inspect the combined score described in the formula above before you compare your result with official guidance from a university.</p><p>To use the calculator, enter the UTME score printed on your result. The valid range is 0 to 400. Then select the five O’Level grades you want to include. The grade scale supported here is A1, B2, B3, C4, C5, and C6. A1 contributes 4.0 points, B2 contributes 3.6, B3 contributes 3.2, C4 contributes 2.8, C5 contributes 2.4, and C6 contributes 2.0. The five selected grades can therefore contribute up to 20 points.</p><h3 class="text-2xl font-bold text-slate-900">The formula and an example</h3><p>The JAMB part is calculated by dividing the UTME score by 8. A score of 280 therefore contributes 35 points. If the five O’Level grades are A1, B2, B3, C4, and C5, their points are 4.0 + 3.6 + 3.2 + 2.8 + 2.4, which equals 16.0. The combined estimate is 51.0 under this formula. The result is displayed with two decimal places so small differences are easy to compare.</p><p>The brief for this tool describes the final number as a percentage out of 100, but the supplied formula and point scale produce a maximum of 70 points: 50 from UTME and 20 from O’Level grades. AfriWidget does not silently rescale the number. Showing the exact calculation makes the result auditable and helps you compare it with the method used by the institution you are considering.</p><h3 class="text-2xl font-bold text-slate-900">Use official university requirements</h3><p>UNILAG, the University of Ibadan, OAU, and other Nigerian universities may publish different screening methods for different sessions and courses. Medicine, Law, Engineering, and competitive professional programmes often have higher requirements than broad-entry programmes. Check the current JAMB subject combination, minimum UTME score, O’Level credit requirements, post-UTME process, and any departmental cut-off information on the official institution website. A calculator cannot guarantee admission, and an estimate should never replace a current admission bulletin.</p><h3 class="text-2xl font-bold text-slate-900">Common mistakes to avoid</h3><p>Use the exact grades on your result rather than an expected grade. Do not enter a blank subject as zero because an unselected grade is not the same as C6. Confirm that the five grades are the subjects relevant to the course, not simply the five highest grades from an unrelated combination. If you are comparing scenarios, change only one grade or score at a time and record the result. Keep your official result, registration details, and school-specific instructions available when making an application.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does this calculator replace JAMB or a university screening calculator?</summary><p class="mt-3">No. It is an educational estimate using the stated formula. Official admission bodies may use a different weighting or additional criteria.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">What if my O’Level grade is below C6?</summary><p class="mt-3">This version only maps A1 through C6 because those are the grades in the requested scale. Review the institution’s subject-credit requirements separately.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Why does the maximum show 70 rather than 100?</summary><p class="mt-3">The supplied formula is UTME divided by 8 plus five grades worth up to 20 points. That arithmetic has a maximum of 70; it is not silently converted to another scale.</p></details></article>
-  </main><footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer><script>document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));</script>
+  
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Preparing a stronger Nigerian university application</h2><p class="text-slate-700 leading-relaxed">After calculating an estimate, create a checklist for each course you are considering. Record the required UTME subjects, minimum O’Level credits, application fee, deadline, post-UTME steps, and the official page where you found the information. This turns one score into a practical application plan and helps you identify early whether a course requires a subject you did not offer or a grade that is not on your result.</p><p class="text-slate-700 leading-relaxed mt-4">Keep your choices realistic and balanced. A highly competitive course may be worth pursuing, but related programmes or institutions can reduce the risk of relying on one outcome. Speak with a school counsellor or trusted adviser when you are unsure about subject combinations. Use this page to understand the arithmetic and use the institution’s current admission notice to make the final decision.</p></section>
+</main><footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+<script>document.getElementById('mobileMenuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));</script>
+
 </body>
 </html>

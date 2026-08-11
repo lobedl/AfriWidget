@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
   
@@ -92,6 +58,21 @@
       <section><h2 class="text-2xl font-extrabold text-slate-950">HTML Minifier FAQ</h2><div class="mt-4 space-y-3"><details class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Will minification change visible content?</summary><p class="mt-3">It removes structural whitespace and comments while protecting common text-sensitive blocks. Review the result whenever spaces are important to your design.</p></details><details class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Does it minify CSS and JavaScript too?</summary><p class="mt-3">Yes, when the inline asset option is enabled. It removes safe comments and formatting whitespace from inline style and script blocks while preserving strings and executable syntax.</p></details><details class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Why are class names and CSS properties still readable?</summary><p class="mt-3">Names are intentionally preserved. Renaming selectors or properties requires rewriting every matching CSS and JavaScript reference, and changing them in a generic HTML tool could break a page.</p></details><details class="rounded-2xl border border-slate-200 bg-white p-5"><summary class="cursor-pointer font-bold text-slate-950">Can I restore the original formatting?</summary><p class="mt-3">A minified file can be reformatted with an HTML beautifier, but the original comments and exact line breaks cannot be recovered. Keep a readable source copy.</p></details></div></section>
     </article>
   </main>
+  <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
     const $=id=>document.getElementById(id);let latest='';
     function compactJavaScript(value){let out='',quote='',pendingSpace=false;for(let i=0;i<value.length;i++){const c=value[i],n=value[i+1];if(quote){out+=c;if(c==='\\'){out+=n||'';i++}else if(c===quote)quote='';continue}if(c==="'"||c==='"'||c==='`'){if(pendingSpace&&out&&!/[({[,:;=.!?+\-*\/<>]$/.test(out))out+=' ';pendingSpace=false;quote=c;out+=c;continue}if(c==='/'&&n==='/'){i+=2;while(i<value.length&&value[i]!=='\n')i++;pendingSpace=true;continue}if(c==='/'&&n==='*'){i+=2;while(i<value.length&&!(value[i]==='*'&&value[i+1]==='/'))i++;i++;pendingSpace=true;continue}if(/\s/.test(c)){pendingSpace=true;continue}if(pendingSpace&&out&&!/[({[,:;=.!?+\-*\/<>]$/.test(out)&&!/[({[,:;=.!?+\-*\/<>]/.test(c))out+=' ';pendingSpace=false;out+=c}return out.trim()}

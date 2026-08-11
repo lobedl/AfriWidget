@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   
@@ -77,6 +43,20 @@
     <article class="mt-14 space-y-6 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">About the Savings Goal Calculator</h2><p>A savings goal becomes easier to manage when it has a number, a contribution schedule, and a date to work toward. This calculator estimates how many months of regular deposits may be needed to reach a target. It can also include an assumed annual return so you can see the difference between money you contribute and estimated growth.</p><p>The result is designed for planning everyday goals such as an emergency fund, school fees, a deposit, travel, equipment, or a business reserve. It works with any currency because the calculation is based on the amounts you enter. Inflation, fees, taxes, exchange rates, and changing interest rates are not automatically predicted, so use the result as a scenario rather than a promise.</p><h3 class="text-2xl font-bold text-slate-900">Why this tool was created</h3><p>Many people focus on the final amount and overlook the time required to build it. A timeline helps turn a large target into a repeatable monthly action. It also makes trade-offs visible: increasing the contribution can shorten the timeline, while a higher assumed return changes the result but introduces uncertainty. The calculator keeps the contribution and growth portions separate to encourage realistic decisions.</p><h3 class="text-2xl font-bold text-slate-900">How to use it</h3><p>Enter the amount you want to reach, any savings you already have, and the amount you can contribute each month. Choose a return assumption only when your savings or investment product has a reasonable basis for it. Use 0% when you want to see the simplest deposit-only plan. Review the target month, then test a lower contribution or a different rate to understand how sensitive the goal is.</p><div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6"><h3 class="font-bold text-emerald-900 mb-2">Technical example</h3><p>If you start with 1,000, add 250 each month, and use a 4% annual estimate, the balance is compounded monthly and the new contribution is added each month. The estimated growth is shown separately from your deposits. A bank account with fees or a variable rate may reach the target later than this simple model.</p></div><h3 class="text-2xl font-bold text-slate-900">Savings timeline questions</h3><div class="space-y-3"><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Is the estimated return guaranteed?</summary><p class="mt-3">No. It is a scenario assumption. Savings rates, investment returns, fees, inflation, and taxes can change. Use the calculator to compare plans, then check the terms of the actual product you are considering.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">What happens if I set the return to zero?</summary><p class="mt-3">The calculator models a contribution-only plan. This is useful when you keep money in a non-interest-bearing account or want a conservative baseline before considering growth.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Why is inflation not included?</summary><p class="mt-3">Inflation differs by place and time, and it affects both the future value of the target and the purchasing power of savings. Add your own buffer to the target and discuss long-term assumptions with a qualified financial professional.</p></details></div></article>
   </main>
   <footer class="bg-slate-900 text-slate-300 px-4 py-16"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open')});</script>
 </body>
 </html>

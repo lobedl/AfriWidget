@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -80,4 +46,18 @@
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6"><div class="grid sm:grid-cols-4 gap-3 mb-6"><div class="bg-slate-50 rounded-xl p-4 text-center"><strong id="readingWords" class="block text-2xl text-teal-700">0</strong><span class="text-xs uppercase text-slate-500">Words</span></div><div class="bg-slate-50 rounded-xl p-4 text-center"><strong id="readingChars" class="block text-2xl text-teal-700">0</strong><span class="text-xs uppercase text-slate-500">Characters</span></div><div class="bg-slate-50 rounded-xl p-4 text-center"><strong id="readingSentences" class="block text-2xl text-teal-700">0</strong><span class="text-xs uppercase text-slate-500">Sentences</span></div><div class="bg-slate-50 rounded-xl p-4 text-center"><strong id="silentTime" class="block text-2xl text-teal-700">0 min</strong><span class="text-xs uppercase text-slate-500">Silent reading</span></div></div><label class="block text-sm font-bold text-slate-700 mb-2" for="readingText">Paste or type your text</label><textarea id="readingText" rows="15" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 rounded-xl p-4 outline-none resize-y" placeholder="Paste an article, speech, presentation script, lesson, or video voice-over here..."></textarea><div class="flex flex-wrap items-center justify-between gap-4 mt-5"><label class="text-sm font-semibold">Speech rate<select id="speechRate" class="ml-2 bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2"><option value="110">Slow · 110 wpm</option><option value="130" selected>Average · 130 wpm</option><option value="160">Fast · 160 wpm</option></select></label><div class="text-right"><p class="text-xs uppercase text-slate-500">Spoken speech time</p><strong id="spokenTime" class="text-2xl text-teal-700">0 min</strong></div><button id="clearReading" type="button" class="text-sm font-bold text-slate-500 hover:text-rose-600">Clear text</button></div></section>
   <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How reading time and speech duration are estimated</h2><p>This free text estimator helps writers, teachers, students, presenters, podcasters, video creators, and public speakers understand the size of a draft. Paste text into the box and the page immediately counts words, characters, and sentences. It then shows two planning estimates: silent reading time and spoken speech time. The calculation is performed in the browser, so the text does not need to be uploaded or stored.</p><p>Word count is based on groups of characters separated by whitespace. Characters include spaces, punctuation, and line breaks. Sentence count looks for sentence-ending punctuation such as a full stop, question mark, or exclamation mark. These rules are deliberately simple and transparent. Different word processors and publishing platforms can count URLs, hyphenated words, numbers, emojis, and abbreviations differently, so use the method required by the destination when an exact limit matters.</p><h3 class="text-2xl font-bold text-slate-900">Silent reading time</h3><p>The silent reading estimate uses 225 words per minute, a useful general benchmark for ordinary adult prose. A 450-word article therefore takes about two minutes at this planning speed. Actual reading time varies widely. Technical writing, unfamiliar vocabulary, second-language reading, small screens, distractions, accessibility needs, and deliberate study can all make the real session longer. A short marketing article may be scanned faster, while a legal document or academic chapter may require rereading and note-taking.</p><h3 class="text-2xl font-bold text-slate-900">Spoken speech time</h3><p>Speech duration is calculated from the selected words-per-minute rate. Slow delivery is set to 110 words per minute, average delivery to 130 words per minute, and fast delivery to 160 words per minute. These are useful starting points for rehearsal. A calm keynote, teaching explanation, or voice-over with pauses may fit the slow estimate. A conversational presentation may be close to average, while a brisk reading of familiar material may approach the fast rate.</p><p>Remember that a script is not only words. A speaker may pause for emphasis, wait for an audience response, demonstrate a slide, pronounce names carefully, or allow translation. Add rehearsal time for introductions, questions, transitions, music, and visual demonstrations. If a speech needs to fit a strict slot, aim below the maximum and practise aloud with a timer.</p><h3 class="text-2xl font-bold text-slate-900">Useful planning examples</h3><p>Students can paste an essay to estimate how long a class presentation would take if read aloud. Teachers can check whether lesson notes fit a period. Content creators can compare a script with a target podcast or video length. Event speakers can test a welcome message before rehearsal. Editors can use the word count and reading estimate when writing a page title, article summary, newsletter, or long-form guide.</p><p>For a presentation, divide the total words across sections rather than assuming every slide receives equal attention. For a speech with audience interaction, use the average or slow rate and add a separate buffer. For captions or subtitles, this tool is only a first approximation because viewers need enough time to read each line and because subtitle standards use character-per-second rules as well as word counts.</p><h3 class="text-2xl font-bold text-slate-900">Planning an exact event slot</h3><p>If a speech must fit five, ten, or twenty minutes, calculate a safe word range rather than aiming at the last second. Multiply the minutes by the selected rate, then reserve space for pauses and audience interaction. Reading the script aloud with a stopwatch will reveal whether punctuation, slide transitions, names, or demonstrations add extra time. Rehearsal is especially important for multilingual audiences and accessible presentations where a deliberate pace improves understanding.</p><h3 class="text-2xl font-bold text-slate-900">Privacy and limitations</h3><p>The estimator is client-side. Text is read by JavaScript in the current tab and is not sent to a database. Do not paste confidential, legally protected, or unpublished material into any online tool unless you have permission. Close or clear the page when you finish if you are using a shared device. The results are estimates, not a guarantee of a reader’s or audience’s exact experience.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">What speech rate should I choose?</summary><p class="mt-3 text-slate-600">Use average for a normal presentation, slow for teaching or deliberate delivery, and fast for familiar text. Rehearsing aloud is the best way to refine the estimate.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Why is my real reading time different?</summary><p class="mt-3 text-slate-600">Reading speed changes with content difficulty, language familiarity, attention, accessibility needs, and whether you are studying instead of skimming.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Does the tool save my text?</summary><p class="mt-3 text-slate-600">No. The count and estimates are performed in your browser without an account or server upload.</p></details></article></main>
   <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body></html>

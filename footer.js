@@ -136,13 +136,30 @@
       </div>
     </div>
     <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
-      <p>&copy; 2025 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+      <p>&copy; ${new Date().getFullYear()} AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
     </div>
   `;
 
   function renderSharedFooter() {
     var footer = document.querySelector('footer');
-    if (!footer) return;
+
+    if (!footer) {
+      footer = document.createElement('footer');
+      document.body.appendChild(footer);
+    } else {
+      // Ensure footer is placed strictly at the bottom of body, after all main/article content
+      var lastContent = document.querySelector('main') || document.querySelector('article');
+      if (lastContent && footer.parentNode) {
+        var next = footer.nextElementSibling;
+        while (next) {
+          if (next.tagName === 'SECTION' || next.tagName === 'ARTICLE' || next.tagName === 'MAIN' || next.tagName === 'P') {
+            document.body.appendChild(footer);
+            break;
+          }
+          next = next.nextElementSibling;
+        }
+      }
+    }
 
     footer.className = 'bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16';
     footer.setAttribute('aria-label', 'AfriWidget site footer');
@@ -150,6 +167,58 @@
 
     syncSocialMetadata();
     enhanceToolTrust();
+    initCookieBanner();
+  }
+
+  function initCookieBanner() {
+    var banner = document.getElementById('cookieBanner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'cookieBanner';
+      document.body.appendChild(banner);
+    } else if (banner.parentNode !== document.body) {
+      document.body.appendChild(banner);
+    }
+
+    banner.className = 'fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[9999] border-t border-slate-700';
+    banner.innerHTML = [
+      '<div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">',
+      '  <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">',
+      '    We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.',
+      '  </p>',
+      '  <div class="flex gap-3 flex-shrink-0">',
+      '    <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white cursor-pointer">Decline</button>',
+      '    <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors cursor-pointer">Accept All</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+
+    var consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+      banner.classList.remove('hidden');
+      banner.style.display = 'block';
+    } else {
+      banner.classList.add('hidden');
+      banner.style.display = 'none';
+    }
+
+    var acceptBtn = document.getElementById('cookieAccept');
+    if (acceptBtn) {
+      acceptBtn.onclick = function () {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.add('hidden');
+        banner.style.display = 'none';
+      };
+    }
+
+    var declineBtn = document.getElementById('cookieDecline');
+    if (declineBtn) {
+      declineBtn.onclick = function () {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.classList.add('hidden');
+        banner.style.display = 'none';
+      };
+    }
   }
 
   function syncSocialMetadata() {

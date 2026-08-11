@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   
@@ -90,6 +56,20 @@
     <article class="mt-14 space-y-6 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">About the Freelance Pricing Calculator</h2><p>A freelance hourly rate should be more than a guess based on a salaried job or a competitor’s public price. It needs to support the life and business you are actually building. This calculator works backwards from a desired annual take-home income, then accounts for non-billable time, time away from work, operating costs, taxes, and a modest risk buffer. It turns a personal income goal into a rate you can explain to a client.</p><p>The tool also estimates a project quote. A project price is not simply an hourly number multiplied by optimistic effort: it should include the hours needed to research, communicate, revise, test, deliver, and close the work, plus any direct project expenses. Use the result as a planning baseline and adjust it for scope, urgency, value, and the client relationship.</p><h3 class="text-2xl font-bold text-slate-900">Why this tool was created</h3><p>Independent workers across Africa and the world often set prices from fear of losing a client. That can create a hidden pay cut when payment delays, connectivity, equipment, transport, holidays, and unpaid proposals are included. A rate that looks attractive on a timesheet can be too low across a full year. The calculator makes those invisible hours visible so a freelancer can negotiate from evidence rather than emotion.</p><h3 class="text-2xl font-bold text-slate-900">How to use the result</h3><p>Start with the annual income you want to take home, not the revenue you hope to invoice. Enter only hours you genuinely expect to sell each week. Add a realistic number of weeks off and a percentage for business overhead. Tax rules vary by country, so use the tax field as a planning allowance and confirm your actual obligations with a qualified adviser. Finally, enter a project’s estimated hours and direct expenses to create a starting quote.</p><div class="rounded-2xl border border-violet-200 bg-violet-50 p-6"><h3 class="font-bold text-violet-900 mb-2">Technical example</h3><p>Suppose a designer wants 48,000 in annual take-home income, bills 25 hours each week, takes four weeks off, and allows 15% for overhead, 20% for tax, and 10% for risk. A 20-hour project with 100 in expenses can then be compared with the recommended rate. If research and revisions add ten hours, the quote should be recalculated at 30 hours rather than absorbing that work for free.</p></div><h3 class="text-2xl font-bold text-slate-900">Freelance pricing questions</h3><div class="space-y-3"><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Is this the same as the hourly-to-salary converter?</summary><p class="mt-3">No. The hourly-to-salary tool translates an existing rate into income equivalents. This tool starts with a desired income and prices freelance work after billable capacity, expenses, tax, and project scope.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Should I charge the recommended rate to every client?</summary><p class="mt-3">Use it as a floor for sustainable planning. You can charge more for specialist expertise, urgent delivery, complex risk, or unusually high client value, and you may choose a different package price after documenting the scope.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Does the calculator know my local tax rules?</summary><p class="mt-3">No. The tax field is a personal planning assumption. Tax thresholds, registration, withholding, VAT, and social contributions differ, so verify local requirements independently.</p></details></div></article>
   </main>
   <footer class="bg-slate-900 text-slate-300 px-4 py-16"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open')});</script>
 </body>
 </html>

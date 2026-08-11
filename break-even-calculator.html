@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Break-Even Point Analysis Calculator – AfriWidget</title>
+  <meta name="description" content="Calculate break-even units, break-even sales revenue, contribution margin ratio, and target profit volume for free with instant unit economics analysis." />
+  <link rel="canonical" href="https://afriwidget.com/break-even-calculator" />
+  <meta property="og:type" content="website" /><meta property="og:url" content="https://afriwidget.com/break-even-calculator" /><meta property="og:title" content="Break-Even Point Analysis Calculator – AfriWidget" /><meta property="og:description" content="Calculate break-even units, break-even sales revenue, contribution margin ratio, and target profit volume for free with instant unit economics analysis." /><meta property="og:image" content="https://afriwidget.com/og-image.png" /><meta property="og:site_name" content="AfriWidget" />
+  <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@afriwidget" /><meta name="twitter:title" content="Break-Even Point Analysis Calculator – AfriWidget" /><meta name="twitter:description" content="Calculate break-even units, break-even sales revenue, contribution margin ratio, and target profit volume for free with instant unit economics analysis." /><meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Break-Even Calculator","url":"https://afriwidget.com/break-even-calculator","description":"Calculate break-even units, sales revenue, contribution margin, and target profit volume.","applicationCategory":"BusinessApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"AfriWidget","url":"https://afriwidget.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://afriwidget.com/"},{"@type":"ListItem","position":2,"name":"Business Tools","item":"https://afriwidget.com/business"},{"@type":"ListItem","position":3,"name":"Break-Even Calculator","item":"https://afriwidget.com/break-even-calculator"}]}</script>
+  <link rel="icon" href="/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="stylesheet" href="new-tools.css" />
+  <script src="footer.js" defer></script><script src="nav.js" defer></script><script src="share-results.js" defer></script><script src="universal-ai.js" defer></script><script src="new-tools.js" defer></script>
+  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;}</style>
+</head>
+<body class="new-tool-page font-sans bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg>
+          <span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/" class="hover:text-yellow-300 transition-colors">Home</a>
+          <a href="education" class="hover:text-yellow-300 transition-colors">Education Tools</a>
+          <a href="finance" class="hover:text-yellow-300 transition-colors">Finance Tools</a>
+          <a href="health" class="hover:text-yellow-300 transition-colors">Health Tools</a>
+          <a href="productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          <a href="widgets" class="hover:text-yellow-300 transition-colors">All Tools Directory</a>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Open navigation menu">☰</button>
+      </div>
+      <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div>
+    </div>
+  </nav>
+
+  <header class="tool-hero bg-slate-900 text-white px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <span class="badge inline-block bg-yellow-400 text-slate-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      <p class="mt-5 text-sm font-bold uppercase tracking-widest text-yellow-300">Business &amp; Unit Economics</p>
+      <h1 class="mt-2 text-3xl sm:text-5xl font-black text-white">Break-Even Analysis Calculator</h1>
+      <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-300">Determine exact sales volume, break-even revenue, contribution margins, and target profit thresholds for your product or service.</p>
+    </div>
+  </header>
+
+  <main class="tool-shell max-w-5xl mx-auto px-4 py-8 w-full flex-grow">
+    <section class="tool-card bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm" aria-labelledby="bep-title">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+        <div>
+          <h2 id="bep-title" class="text-2xl font-black text-slate-900">Unit Cost &amp; Revenue Inputs</h2>
+          <p class="text-xs text-slate-500 mt-1">Input your fixed operating costs and per-unit metrics to model break-even thresholds.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <label for="currencySelect" class="text-xs font-bold uppercase text-slate-500">Currency:</label>
+          <select id="currencySelect" class="bg-slate-100 border border-slate-300 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none">
+            <option value="$">USD ($)</option>
+            <option value="GH₵">GHS (GH₵)</option>
+            <option value="₦">NGN (₦)</option>
+            <option value="KSh">KES (KSh)</option>
+            <option value="R">ZAR (R)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+
+      <form id="bepForm" onsubmit="return false;" class="mt-6 space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div>
+            <label for="fixedCosts" class="block text-sm font-bold text-slate-700 mb-1">Total Fixed Costs (Monthly / Annual) <span class="text-red-500">*</span></label>
+            <div class="flex items-center rounded-xl border-2 border-slate-200 focus-within:border-teal-600 focus-within:bg-white focus-within:ring-4 focus-within:ring-teal-500/20 bg-slate-50 overflow-hidden shadow-sm transition-all">
+              <span class="curr-sym px-3.5 py-2.5 bg-slate-200/60 text-slate-700 font-bold text-xs sm:text-sm border-r border-slate-300 flex-shrink-0 select-none">$</span>
+              <input type="number" id="fixedCosts" placeholder="5000" min="0" step="any" required class="w-full bg-transparent px-3.5 py-2.5 text-slate-900 font-bold outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Rent, salaries, SaaS software, insurance, equipment leases.</p>
+          </div>
+
+          <div>
+            <label for="sellingPrice" class="block text-sm font-bold text-slate-700 mb-1">Selling Price Per Unit <span class="text-red-500">*</span></label>
+            <div class="flex items-center rounded-xl border-2 border-slate-200 focus-within:border-teal-600 focus-within:bg-white focus-within:ring-4 focus-within:ring-teal-500/20 bg-slate-50 overflow-hidden shadow-sm transition-all">
+              <span class="curr-sym px-3.5 py-2.5 bg-slate-200/60 text-slate-700 font-bold text-xs sm:text-sm border-r border-slate-300 flex-shrink-0 select-none">$</span>
+              <input type="number" id="sellingPrice" placeholder="35.00" min="0.01" step="any" required class="w-full bg-transparent px-3.5 py-2.5 text-slate-900 font-bold outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Retail or subscription price charged per customer purchase.</p>
+          </div>
+
+          <div>
+            <label for="variableCost" class="block text-sm font-bold text-slate-700 mb-1">Variable Cost Per Unit <span class="text-red-500">*</span></label>
+            <div class="flex items-center rounded-xl border-2 border-slate-200 focus-within:border-teal-600 focus-within:bg-white focus-within:ring-4 focus-within:ring-teal-500/20 bg-slate-50 overflow-hidden shadow-sm transition-all">
+              <span class="curr-sym px-3.5 py-2.5 bg-slate-200/60 text-slate-700 font-bold text-xs sm:text-sm border-r border-slate-300 flex-shrink-0 select-none">$</span>
+              <input type="number" id="variableCost" placeholder="10.00" min="0" step="any" required class="w-full bg-transparent px-3.5 py-2.5 text-slate-900 font-bold outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Materials, packaging, merchant fees, unit shipping.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+          <div>
+            <label for="targetProfit" class="block text-sm font-bold text-slate-700 mb-1">Desired Net Profit Goal (Optional)</label>
+            <div class="flex items-center rounded-xl border-2 border-slate-200 focus-within:border-teal-600 focus-within:bg-white focus-within:ring-4 focus-within:ring-teal-500/20 bg-slate-50 overflow-hidden shadow-sm transition-all">
+              <span class="curr-sym px-3.5 py-2.5 bg-slate-200/60 text-slate-700 font-bold text-xs sm:text-sm border-r border-slate-300 flex-shrink-0 select-none">$</span>
+              <input type="number" id="targetProfit" placeholder="2500" min="0" step="any" class="w-full bg-transparent px-3.5 py-2.5 text-slate-900 font-bold outline-none" />
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Target net operating profit above break-even costs.</p>
+          </div>
+
+          <div class="flex items-end">
+            <button type="button" id="calcBtn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black text-base py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer uppercase tracking-wider">
+              Calculate Break-Even
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- RESULTS SECTION -->
+      <div id="results" class="mt-8 pt-6 border-t-2 border-slate-200">
+        <h3 class="text-xl font-black text-slate-900 mb-4">Break-Even Analysis Results</h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-teal-900 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-300">Break-Even Sales Volume</span>
+            <div id="beUnits" class="text-3xl font-black text-yellow-300 mt-1">—</div>
+            <p class="text-xs text-teal-200 mt-1 font-medium">Units required to break even</p>
+          </div>
+
+          <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Break-Even Revenue</span>
+            <div id="beRevenue" class="text-2xl font-black text-white mt-1">—</div>
+            <p class="text-xs text-slate-400 mt-1">Sales dollars required</p>
+          </div>
+
+          <div class="bg-slate-800 text-white rounded-2xl p-5 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Contribution Margin</span>
+            <div id="contribMargin" class="text-2xl font-black text-white mt-1">—</div>
+            <p id="contribRatioText" class="text-xs text-slate-400 mt-1">Margin per unit sold</p>
+          </div>
+
+          <div class="bg-slate-100 text-slate-900 rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Target Profit Volume</span>
+            <div id="targetUnits" class="text-2xl font-black text-slate-900 mt-1">—</div>
+            <p id="targetRevenueText" class="text-xs text-slate-500 mt-1">Units needed for profit goal</p>
+          </div>
+        </div>
+
+        <!-- SCENARIO PROFIT TABLE -->
+        <div class="mt-8 overflow-x-auto">
+          <h4 class="text-base font-black text-slate-900 mb-3">Unit Volume &amp; Profitability Breakdown</h4>
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white font-bold uppercase text-[11px] tracking-wider">
+                <th class="px-4 py-3 rounded-l-xl">Sales Volume</th>
+                <th class="px-4 py-3 text-right">Total Revenue</th>
+                <th class="px-4 py-3 text-right">Total Costs</th>
+                <th class="px-4 py-3 text-right rounded-r-xl">Net Operating Profit / (Loss)</th>
+              </tr>
+            </thead>
+            <tbody id="matrixBody" class="divide-y divide-slate-200">
+              <tr><td colspan="4" class="px-4 py-4 text-center text-slate-400">Input costs and click calculate to view profitability schedule</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRE-RENDERED GUIDE SECTION -->
+    <section id="toolGuide" class="guide mt-12 bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm" data-content-key="break-even-calculator" aria-label="break-even calculator guide"><h2>Mastering Business Unit Economics & Break-Even Analysis</h2><p>In entrepreneurship, commercial manufacturing, retail, and digital software services, determining your <strong>Break-Even Point (BEP)</strong> is a fundamental pillar of business survival and profit planning. Before a company can generate a single dollar of net profit, it must generate sufficient sales revenue to cover all fixed operating overhead (rent, salaries, utility contracts, software licenses) and direct variable unit costs (raw materials, packaging, payment processing, shipping fees).</p><p>AfriWidget’s <strong>Break-Even Analysis Calculator</strong> enables founders, small business owners, retail managers, and startup financial analysts to compute exact break-even unit volumes, target revenue benchmarks, and contribution margins instantly in their browser.</p><hr class="my-6 border-slate-200" /><h2>The Core Formulas of Break-Even Analysis</h2><p>Break-even analysis measures the precise operational point where <strong>Total Sales Revenue equals Total Business Costs</strong> (Net Profit = $0). Beyond this sales volume, every additional unit sold contributes directly to bottom-line net profit.</p><h3>1. Contribution Margin Per Unit</h3><p>The contribution margin represents the dollar amount each sold unit contributes toward paying down fixed company overhead: $$\text{Contribution Margin} = \text{Selling Price Per Unit} - \text{Variable Cost Per Unit}$$</p><h3>2. Contribution Margin Ratio (%)</h3><p>The percentage of total sales revenue retained after covering variable costs: $$\text{Contribution Margin Ratio} = \left( \frac{\text{Contribution Margin Per Unit}}{\text{Selling Price Per Unit}} \right) \times 100$$</p><h3>3. Break-Even Point in Units</h3><p>The number of physical items, subscriptions, or service contracts required to cover all fixed operating costs: $$\text{Break-Even Units} = \frac{\text{Total Fixed Costs}}{\text{Contribution Margin Per Unit}}$$</p><h3>4. Break-Even Point in Revenue ($)</h3><p>The gross monetary sales required to break even: $$\text{Break-Even Revenue} = \text{Break-Even Units} \times \text{Selling Price Per Unit} = \frac{\text{Total Fixed Costs}}{\text{Contribution Margin Ratio}}$$</p><h3>5. Sales Volume for Target Profit</h3><p>To calculate the unit volume required to achieve a specific monthly or annual net profit goal: $$\text{Target Profit Units} = \frac{\text{Total Fixed Costs} + \text{Target Profit}}{\text{Contribution Margin Per Unit}}$$</p><hr class="my-6 border-slate-200" /><h2>How to Use the Break-Even Calculator</h2><ol><li><strong>Select Currency</strong>: Choose your operating currency (USD, GHS, NGN, KES, ZAR, EUR, GBP) for clear financial output formatting.</li><li><strong>Input Total Fixed Costs</strong>: Enter total recurring fixed monthly overhead expenses (office rent, employee salaries, administrative insurance, software SaaS fees, equipment leases).</li><li><strong>Set Selling Price Per Unit</strong>: Input the retail or contract price charged to customers for one unit of product or service.</li><li><strong>Enter Variable Cost Per Unit</strong>: Input the direct costs incurred to manufacture or deliver one single unit (raw materials, direct labor, packaging, payment gateway fees, unit shipping).</li><li><strong>(Optional) Add Target Net Profit</strong>: Input your monthly or annual desired net profit goal to see the required unit sales volume.</li><li><strong>Review Business Outputs</strong>:</li></ol><ul><li><strong>Break-Even Units</strong>: Minimum units required to avoid a financial operating loss.</li><li><strong>Break-Even Revenue</strong>: Gross sales income required to achieve zero net loss.</li><li><strong>Contribution Margin ($ & %)</strong>: Your gross profit yield per unit sold.</li><li><strong>Target Profit Unit Volume</strong>: Sales required to achieve your custom profit benchmark.</li></ul><hr class="my-6 border-slate-200" /><h2>Real-World Business Examples</h2><h3>Example 1: E-Commerce Apparel Brand</h3><ul><li><strong>Fixed Monthly Costs</strong>: $5,000 (Storefront software, warehouse rent, marketing baseline, staff salaries)</li><li><strong>Retail Price Per T-Shirt</strong>: $35</li><li><strong>Variable Cost Per T-Shirt</strong>: $10 (Garment production $6 + Custom packaging $1.50 + Shipping & Gateway fees $2.50)</li><li><strong>Contribution Margin</strong>: $35 - $10 = $25 per shirt (71.4% Contribution Margin Ratio)</li><li><strong>Break-Even Volume</strong>: $5,000 / $25 = <strong>200 T-Shirts / Month</strong> ($7,000 monthly sales revenue)</li><li><strong>Target $3,000 Profit Goal</strong>: ($5,000 + $3,000) / $25 = <strong>320 T-Shirts / Month</strong> ($11,200 revenue)</li></ul><h3>Example 2: SaaS Software Subscription</h3><ul><li><strong>Fixed Monthly Costs</strong>: $12,000 (Developer payroll, cloud server infrastructure, legal, office)</li><li><strong>Monthly Subscription Price</strong>: $49 / month</li><li><strong>Variable Cost Per User</strong>: $4 / month (Database queries, AI API tokens, customer support hosting)</li><li><strong>Contribution Margin</strong>: $45 / subscriber (91.8% Contribution Margin Ratio)</li><li><strong>Break-Even Volume</strong>: $12,000 / $45 = <strong>267 Active Paid Subscribers</strong></li></ul><hr class="my-6 border-slate-200" /><h2>Key Strategies to Lower Your Break-Even Point</h2><p>Lowering your break-even point reduces operational risk and increases business resilience during economic slowdowns.</p><ol><li><strong>Increase Selling Prices</strong>: A modest 5%–10% price increase expands unit contribution margin, significantly reducing the total volume required to cover fixed costs.</li><li><strong>Negotiate Supplier Discounts</strong>: Bulk purchasing raw materials or renegotiating payment processing rates lowers unit variable costs.</li><li><strong>Audit Fixed Overhead</strong>: Convert fixed expenses into variable costs where possible (e.g., transitioning from fixed office rent to remote work or performance-based contractor contracts).</li><li><strong>Optimize Product Mix</strong>: Focus sales and marketing efforts on high-margin product lines that contribute more dollars per unit sold.</li></ol><hr class="my-6 border-slate-200" /><h2>Privacy, Safety & Business Tool Disclaimer</h2><p>This break-even analysis calculator provides mathematical estimations based on static input parameters. Real-world business operations involve fluctuating demand, variable pricing tiers, multi-product overhead allocation, tax obligations, and inventory depreciation. This tool serves as an educational and strategic financial modeling guide and does not constitute formal accounting, tax, or legal advice.</p><p>All calculation calculations execute 100% locally in your web browser. AfriWidget does not collect, record, or share your proprietary financial metrics or business unit costs.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><h2>Frequently Asked Questions</h2><details><summary>What is the difference between fixed costs and variable costs?</summary><div><p>Fixed costs are recurring operational expenses that remain constant regardless of production or sales volume (e.g., rent, insurance, salaried payroll). Variable costs fluctuate directly in proportion to production volume (e.g., raw materials, packaging, per-unit delivery fees, credit card processing charges).</p></div></details><details><summary>Why is contribution margin important for break-even analysis?</summary><div><p>Contribution margin measures how much money each unit sale provides toward paying off fixed company expenses. Once fixed expenses are fully paid, 100% of the remaining contribution margin flows directly into net operating profit.</p></div></details><details><summary>What happens if variable cost per unit exceeds the selling price?</summary><div><p>If variable cost exceeds selling price, the contribution margin is negative. This means every unit sold increases your operational loss, and no amount of sales volume will ever allow the business to break even. Selling price must immediately be raised or variable costs cut.</p></div></details><details><summary>How do I calculate break-even for multiple products?</summary><div><p>For multi-product companies, calculate a weighted average contribution margin based on the sales mix percentage of each product, or perform individual break-even analyses for each product line.</p></div></details><details><summary>Is my proprietary cost data kept private?</summary><div><p>Yes. AfriWidget operates on a 100% client-side browser framework. None of your business costs, retail prices, sales volumes, or profit targets are uploaded to external servers or logged in databases.</p></div></details></section>
+  </main>
+
+  <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+      </p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+        <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const currencySelect = document.getElementById('currencySelect');
+      const fixedCostsInput = document.getElementById('fixedCosts');
+      const sellingPriceInput = document.getElementById('sellingPrice');
+      const variableCostInput = document.getElementById('variableCost');
+      const targetProfitInput = document.getElementById('targetProfit');
+      const calcBtn = document.getElementById('calcBtn');
+
+      function updateCurrencySymbols() {
+        const sym = currencySelect.value;
+        document.querySelectorAll('.curr-sym').forEach(el => el.textContent = sym);
+      }
+      currencySelect.addEventListener('change', () => {
+        updateCurrencySymbols();
+        calculate();
+      });
+
+      function calculate() {
+        const sym = currencySelect.value;
+        const fixedCosts = parseFloat(fixedCostsInput.value);
+        const sellingPrice = parseFloat(sellingPriceInput.value);
+        const variableCost = parseFloat(variableCostInput.value);
+        const targetProfit = parseFloat(targetProfitInput.value) || 0;
+
+        if (isNaN(fixedCosts) || fixedCosts < 0 || isNaN(sellingPrice) || sellingPrice <= 0 || isNaN(variableCost) || variableCost < 0) {
+          document.getElementById('beUnits').textContent = '—';
+          document.getElementById('beRevenue').textContent = '—';
+          document.getElementById('contribMargin').textContent = '—';
+          document.getElementById('contribRatioText').textContent = 'Margin per unit sold';
+          document.getElementById('targetUnits').textContent = '—';
+          document.getElementById('targetRevenueText').textContent = 'Units needed for profit goal';
+          document.getElementById('matrixBody').innerHTML = '<tr><td colspan="4" class="px-4 py-4 text-center text-slate-400">Input costs and click calculate to view profitability schedule</td></tr>';
+          return;
+        }
+
+        const contribMargin = sellingPrice - variableCost;
+        if (contribMargin <= 0) {
+          document.getElementById('beUnits').textContent = 'N/A';
+          document.getElementById('beRevenue').textContent = 'N/A';
+          document.getElementById('contribMargin').textContent = `${sym}${contribMargin.toFixed(2)}`;
+          document.getElementById('contribRatioText').textContent = 'Variable cost exceeds selling price!';
+          document.getElementById('targetUnits').textContent = 'N/A';
+          document.getElementById('matrixBody').innerHTML = '<tr><td colspan="4" class="px-4 py-4 text-center text-red-600 font-bold">Selling price must be higher than variable cost to calculate break-even!</td></tr>';
+          return;
+        }
+
+        const contribRatio = (contribMargin / sellingPrice) * 100;
+        const beUnits = Math.ceil(fixedCosts / contribMargin);
+        const beRevenue = beUnits * sellingPrice;
+
+        const targetUnits = targetProfit > 0 ? Math.ceil((fixedCosts + targetProfit) / contribMargin) : beUnits;
+        const targetRevenue = targetUnits * sellingPrice;
+
+        document.getElementById('beUnits').textContent = `${beUnits.toLocaleString()} units`;
+        document.getElementById('beRevenue').textContent = `${sym}${Math.round(beRevenue).toLocaleString()}`;
+        document.getElementById('contribMargin').textContent = `${sym}${contribMargin.toFixed(2)}`;
+        document.getElementById('contribRatioText').textContent = `${contribRatio.toFixed(1)}% Contribution Margin Ratio`;
+
+        if (targetProfit > 0) {
+          document.getElementById('targetUnits').textContent = `${targetUnits.toLocaleString()} units`;
+          document.getElementById('targetRevenueText').textContent = `${sym}${Math.round(targetRevenue).toLocaleString()} target revenue`;
+        } else {
+          document.getElementById('targetUnits').textContent = `${beUnits.toLocaleString()} units`;
+          document.getElementById('targetRevenueText').textContent = `Zero profit goal set`;
+        }
+
+        // Generate matrix schedule
+        const multipliers = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+        const matrixBody = document.getElementById('matrixBody');
+        
+        matrixBody.innerHTML = multipliers.map(m => {
+          const u = Math.round(beUnits * m);
+          const rev = u * sellingPrice;
+          const totCost = fixedCosts + (u * variableCost);
+          const profit = rev - totCost;
+          const isBreakEven = m === 1.0;
+
+          return `
+            <tr class="${isBreakEven ? 'bg-amber-50/70 font-bold text-slate-900' : 'hover:bg-slate-50'}">
+              <td class="px-4 py-3">${u.toLocaleString()} units ${isBreakEven ? '<span class="text-[10px] bg-amber-400 text-slate-950 px-1.5 py-0.5 rounded ml-1 uppercase font-black">Break-Even</span>' : ''}</td>
+              <td class="px-4 py-3 text-right">${sym}${Math.round(rev).toLocaleString()}</td>
+              <td class="px-4 py-3 text-right">${sym}${Math.round(totCost).toLocaleString()}</td>
+              <td class="px-4 py-3 text-right font-black ${profit > 0 ? 'text-emerald-600' : profit < 0 ? 'text-red-600' : 'text-slate-900'}">
+                ${profit >= 0 ? '+' : ''}${sym}${Math.round(profit).toLocaleString()}
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      calcBtn.addEventListener('click', calculate);
+      [fixedCostsInput, sellingPriceInput, variableCostInput, targetProfitInput].forEach(inp => inp.addEventListener('input', calculate));
+    });
+  </script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{window.scrollTo({top:0,behavior:'smooth'});});</script>
+</body>
+</html>

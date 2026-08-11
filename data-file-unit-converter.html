@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   
@@ -79,6 +45,20 @@
     <article class="mt-14 space-y-6 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">About the Data and File Unit Converter</h2><p>Digital files are measured with several unit systems, and the labels are easy to mix up. A storage manufacturer may describe a drive in decimal gigabytes, while an operating system displays a closely related binary value in gibibytes. Internet connections are commonly advertised in bits per second, while downloads are shown in bytes. This converter keeps those relationships visible and lets you move between the units used in everyday technology work.</p><p>The calculator runs locally in the browser. It is useful for checking a phone’s storage, estimating download sizes, comparing cloud plans, planning backups, reading software requirements, and translating bandwidth figures into a more familiar file-size estimate. It does not upload a filename or inspect the contents of a file.</p><h3 class="text-2xl font-bold text-slate-900">Why this tool was created</h3><p>People often see “GB,” “GiB,” “Mb,” and “MB” used as if they mean the same thing. They do not. The capital B in MB means bytes, while a lower-case b in Mb means bits. Decimal prefixes use powers of 1,000; binary prefixes use powers of 1,024. A clear converter helps students, developers, creators, and support teams communicate about the same quantity.</p><h3 class="text-2xl font-bold text-slate-900">How to use it</h3><p>Enter the numeric amount, choose the unit printed on your specification, and choose the unit you want to understand. Use decimal units for most drive, mobile-data, and network-provider descriptions. Use binary units when a technical document or operating system explicitly uses KiB, MiB, GiB, or TiB. For network speed, convert bits to bytes by dividing by eight before estimating how long a download might take.</p><div class="rounded-2xl border border-cyan-200 bg-cyan-50 p-6"><h3 class="font-bold text-cyan-900 mb-2">Technical example</h3><p>A 100 megabit-per-second connection has a theoretical maximum of 12.5 megabytes per second because eight bits make one byte. A 10 GB download would therefore take at least about 800 seconds in perfect conditions. Real-world overhead, Wi-Fi quality, congestion, server speed, and throttling make the actual time longer.</p></div><h3 class="text-2xl font-bold text-slate-900">Data conversion questions</h3><div class="space-y-3"><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">How many bits are in a byte?</summary><p class="mt-3">One byte contains eight bits. This is why a network speed expressed in megabits per second is numerically about eight times larger than the equivalent megabytes per second.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer">What is the difference between GB and GiB?</summary><p class="mt-3">A GB uses 1,000,000,000 bytes. A GiB uses 1,073,741,824 bytes, based on powers of 1,024. Both can appear in storage software and product documentation.</p></details><details class="rounded-xl border border-slate-200 bg-white p-4"><summary class="cursor-pointer font-semibold">Does this show the exact size of my file?</summary><p class="mt-3">It converts the number you provide. It does not read your file metadata, and the displayed size can differ from a device’s formatted capacity or a download’s actual transfer size.</p></details></div></article>
   </main>
   <footer class="bg-slate-900 text-slate-300 px-4 py-16"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('open')});</script>
 </body>
 </html>

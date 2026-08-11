@@ -271,14 +271,22 @@
   }
 
   function resultHost() {
-    return $('#results') ||
-      (page === 'percentage-calculator' ? $('main > section') : null) ||
+    return $('#statusBanner')?.closest('.rounded-2xl, section, div') ||
+      $('#gpaResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#jambResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#apsResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#kcseResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#aggregateResult')?.closest('.bg-white, .rounded-2xl, section') ||
       $('#eligibilityCard') ||
-      $('#gpaResult')?.closest('section, div.bg-white, div.rounded-2xl') ||
-      $('#jambResult')?.closest('section, div.bg-white, div.rounded-2xl') ||
-      $('#apsResult')?.closest('section, div.bg-white, div.rounded-2xl') ||
-      $('#kcseResult')?.closest('section, div.bg-white, div.rounded-2xl') ||
-      $('#aggregateResult')?.closest('section, div.bg-white, div.rounded-2xl') ||
+      $('#conversionResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#ageResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#olevelResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#kcseTierResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#natedCard') ||
+      $('#becePlacementCard') ||
+      $('#igcseGpaResult')?.closest('.bg-white, .rounded-2xl, section') ||
+      $('#results') ||
+      (page === 'percentage-calculator' ? $('#changeForm')?.closest('section') : null) ||
       $('main');
   }
 
@@ -289,8 +297,17 @@
     const bar = document.createElement('div');
     bar.id = 'shareResultBar';
     bar.className = 'mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4';
-    bar.innerHTML = '<div><p class="font-bold text-emerald-900">Share your result</p><p class="text-sm text-emerald-800">Send this calculation to someone or save a link to reopen it.</p></div><button id="shareResultButton" type="button" class="w-full sm:w-auto rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white shadow-md transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-200">Share Result</button>';
-    host.appendChild(bar);
+    bar.innerHTML = '<div><p class="font-bold text-emerald-900">Share your result</p><p class="text-sm text-emerald-800">Send this calculation to someone or save a link to reopen it.</p></div><button id="shareResultButton" type="button" class="w-full sm:w-auto rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white shadow-md transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-200 cursor-pointer">Share Result</button>';
+
+    if (host.id === 'results' && host.firstElementChild) {
+      host.firstElementChild.insertAdjacentElement('afterend', bar);
+    } else if (host.tagName === 'MAIN' && host.firstElementChild) {
+      const target = host.querySelector('section, form, div.grid') || host.firstElementChild;
+      target.insertAdjacentElement('afterend', bar);
+    } else {
+      host.insertAdjacentElement('afterend', bar);
+    }
+
     bindShareButton($('#shareResultButton'), adapterConfig);
   }
 

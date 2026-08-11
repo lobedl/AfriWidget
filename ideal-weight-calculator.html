@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6V491CW7H0');</script>
@@ -92,6 +58,21 @@
       <div class="space-y-3"><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Which formula is most accurate?</summary><p class="mt-3">None is universally most accurate. Devine, Robinson, Miller, and Hamwi are reference equations with different origins and assumptions. A professional assessment is more appropriate for an individual decision.</p></details><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Why do you show a range?</summary><p class="mt-3">The formulas often disagree. Showing their spread prevents one historical equation from looking like a precise personal target.</p></details><details class="bg-white rounded-2xl border border-slate-200 p-5"><summary class="font-bold text-slate-950 cursor-pointer">Can I use this for children?</summary><p class="mt-3">No. These adult reference formulas are not appropriate for children or teenagers. Growth should be assessed with age- and sex-specific charts by a qualified clinician.</p></details></div>
     </article>
   </main>
+  <footer></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
     window.addEventListener('DOMContentLoaded',function(){document.getElementById('idealForm').addEventListener('submit',function(event){event.preventDefault();var sex=document.getElementById('idealSex').value,height=Number(document.getElementById('idealHeight').value),error=document.getElementById('idealError');if(!sex||!height){error.textContent='Please select a formula category and enter height.';return}var inches=height/2.54,over=inches-60;if(over<0){error.textContent='Please enter a height above 152.4 cm for these formulas.';return}var values;if(sex==='male'){values={devine:50+2.3*over,robinson:52+1.9*over,miller:56.2+1.41*over,hamwi:48+2.7*over}}else{values={devine:45.5+2.3*over,robinson:49+1.7*over,miller:53.1+1.36*over,hamwi:45.5+2.2*over}}Object.keys(values).forEach(function(key){document.getElementById(key).textContent=values[key].toFixed(1)+' kg'});var low=Math.min.apply(null,Object.values(values)),high=Math.max.apply(null,Object.values(values));document.getElementById('idealRange').textContent=low.toFixed(1)+'–'+high.toFixed(1)+' kg';error.textContent='';document.getElementById('idealResults').classList.remove('hidden');setTimeout(function(){document.getElementById('idealResults').scrollIntoView({behavior:'smooth',block:'start'})},100)})});
   </script>

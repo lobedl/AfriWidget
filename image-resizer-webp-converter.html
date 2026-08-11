@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
   <!-- Google tag (gtag.js) -->
@@ -80,4 +46,18 @@
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6"><div id="imageDropzone" class="border-2 border-dashed border-slate-300 rounded-2xl p-12 text-center cursor-pointer hover:border-teal-500 transition-colors"><input id="imageFile" type="file" accept="image/*" class="hidden" /><label for="imageFile" class="cursor-pointer"><span class="text-5xl block mb-4">🖼️</span><strong class="text-xl text-slate-900">Drop an image here or choose a file</strong><span class="block text-sm text-slate-500 mt-2">JPEG, PNG, WebP, GIF, and other browser-readable images</span></label></div><div id="imageControls" class="hidden grid lg:grid-cols-2 gap-8 mt-8"><div><img id="imagePreview" class="hidden max-h-72 max-w-full mx-auto rounded-xl object-contain bg-slate-100 p-2" alt="Selected image preview" /><p class="text-center text-sm text-slate-500 mt-3">Original: <span id="imageOriginalDimensions">—</span> · Output: <span id="imageDimensions">—</span></p></div><div class="space-y-4"><div class="grid grid-cols-2 gap-3"><label class="text-sm font-semibold">Width (px)<input id="imageWidth" type="number" min="1" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2" /></label><label class="text-sm font-semibold">Height (px)<input id="imageHeight" type="number" min="1" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2" /></label></div><label class="flex items-center gap-2 text-sm font-semibold"><input id="lockRatio" type="checkbox" checked class="accent-teal-700" /> Lock aspect ratio</label><label class="block text-sm font-semibold">Output format<select id="imageFormat" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2"><option value="webp">WebP</option><option value="jpg">JPEG</option><option value="png">PNG</option></select></label><label class="block text-sm font-semibold">Quality: <span id="qualityValue">85%</span><input id="imageQuality" type="range" min="10" max="100" value="85" class="block mt-3 w-full accent-teal-700" /></label><button id="downloadImage" disabled class="w-full bg-amber-400 hover:bg-amber-500 disabled:opacity-50 text-slate-900 font-bold py-3 rounded-xl">Download Converted Image</button><div id="imageStatus" aria-live="polite"></div></div></div><canvas id="imageCanvas" class="hidden"></canvas></section>
   <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Resize and convert images privately</h2><p>Images often need a different size or file format before they are uploaded to a website, sent in a message, added to a document, or used in a social post. This free image resizer and WebP converter uses the HTML5 Canvas API in your browser. Choose a file or drag it into the drop zone, set the dimensions, select WebP, JPEG, or PNG, and download the result. The original file is not uploaded to AfriWidget and the processing does not require an account.</p><p>The preview starts with the image’s natural width and height. Change the width or height to set a new output size. With aspect-ratio lock enabled, changing the width automatically calculates a proportional height. This helps prevent stretched faces, distorted logos, and squashed product photos. Turn the lock off when you specifically need exact dimensions, such as a banner slot or a fixed thumbnail frame.</p><h3 class="text-2xl font-bold text-slate-900">Choosing WebP, JPEG, or PNG</h3><p>WebP is often a strong default for websites because it can provide a smaller file than a comparable JPEG or PNG while retaining good visual quality. JPEG works well for photographs and natural scenes with many colours. PNG is useful when you need lossless output or transparency, although the resulting file may be larger. Browser support is broad, but always test the downloaded file in the application where it will be used.</p><p>The quality slider affects lossy formats such as WebP and JPEG. A high setting preserves more detail but can produce a larger file. A lower setting can make a useful small image for a website, email, or preview. PNG encoding is lossless, so changing the quality slider may not change its file size in the same way. The best setting depends on the image, its viewing size, and whether sharp text or fine detail matters.</p><h3 class="text-2xl font-bold text-slate-900">Dimensions and image quality</h3><p>Reducing dimensions usually reduces file size and makes a page load faster. Do not enlarge a small image expecting it to gain detail; the canvas can create a larger file, but it cannot restore information that was never captured. For a website hero image, use the display size and device requirements as a guide. For a profile image, a square crop may be more important than maximum resolution. This tool resizes the entire image rather than cropping it.</p><p>Canvas output can flatten some image characteristics, including certain metadata and advanced colour profiles. If you need camera metadata, layered editing, animation, or professional colour management, use a specialised application. Animated formats may only represent the currently decoded image frame, depending on browser behaviour.</p><h3 class="text-2xl font-bold text-slate-900">A simple image workflow</h3><p>Start with the original file whenever possible, then decide where the output will be used. A blog image may need a maximum width for responsive loading, while a messaging profile may need a square image. Keep the ratio locked while reducing a photograph, check the output dimensions shown beneath the preview, and choose a format based on transparency and compatibility. Download a test file and open it before replacing the original or uploading it to a production system.</p><p>For large photos, try a smaller width before lowering quality aggressively. For screenshots with text, PNG may keep edges sharper. For ordinary photos, WebP or JPEG at a moderate quality can be much smaller. Compare the result at the size visitors will actually see rather than judging only while zoomed in. If an image looks soft, return to a larger source instead of repeatedly enlarging the converted copy.</p><h3 class="text-2xl font-bold text-slate-900">Client-side privacy</h3><p>File selection and conversion happen on the device. The page creates an in-memory object URL, draws the image to a canvas, and creates a downloadable data URL. This means no server upload is required. You should still avoid using any online tool with confidential images unless your organisation permits it, and remember that downloaded output may contain visual information you intended to keep private.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Will resizing improve a blurry photo?</summary><p class="mt-3 text-slate-600">No. Resizing changes dimensions but cannot recreate missing detail. It is usually better to start with the largest clear original.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Which format is best for a website?</summary><p class="mt-3 text-slate-600">WebP is a useful starting point for many modern websites. JPEG suits photos and PNG suits transparency or lossless graphics. Test the output in your target system.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Are files uploaded?</summary><p class="mt-3 text-slate-600">No. This tool uses browser JavaScript and HTML5 Canvas for local processing.</p></details></article></main>
   <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
 </body></html>

@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   <!-- Google Analytics -->
   
@@ -100,6 +66,20 @@
       <div class="space-y-3"><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Are these real addresses?</summary><p class="mt-3 leading-7">No. They are fictional strings for software testing and design. Deliverability, ownership, and residence are never checked.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Can I use an address for a delivery?</summary><p class="mt-3 leading-7">No. Do not use generated records for deliveries, identity verification, financial forms, or contact with real people.</p></details><details class="rounded-2xl border border-slate-700 bg-slate-900 p-5"><summary class="cursor-pointer font-bold text-white">Why do formats change by region?</summary><p class="mt-3 leading-7">Different countries use different conventions for states, cities, postal codes, spacing, and letter-number patterns. Selecting a region helps you test those interface differences.</p></details></div>
     </article>
   </main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    </div>
+  </div>
+</div>
+
   <script>
   (function(){var data={us:{cities:['Austin','Chicago','Denver','Phoenix'],regions:['CA','NY','TX','IL'],streets:['Maple','Oak','Cedar','Juniper','River','Sunset'],types:['Street','Avenue','Road','Drive'],postal:function(){return String(Math.floor(Math.random()*90000)+10000)}},uk:{cities:['Bristol','Leeds','London','Manchester'],regions:['Greater London','West Yorkshire','Bristol','Lancashire'],streets:['High','Victoria','King','Church','Station','Mill'],types:['Road','Street','Lane','Close'],postal:function(){return pick(['SW1A 1AA','M1 1AE','BS1 4DJ','LS1 2AB'])}},ca:{cities:['Calgary','Halifax','Montreal','Toronto'],regions:['AB','NS','ON','QC'],streets:['King','Queen','Lake','Pine','Cedar','Park'],types:['Street','Avenue','Road','Drive'],postal:function(){return pick(['K1A 0B1','M5V 2T6','T2P 1J9','H3A 1A1'])}},gh:{cities:['Accra','Kumasi','Tamale','Takoradi'],regions:['Greater Accra','Ashanti','Northern','Western'],streets:['Independence','Adum','Airport','Cocoa','Liberation'],types:['Road','Avenue','Street'],postal:function(){return String(Math.floor(Math.random()*90000)+10000)}},ng:{cities:['Abuja','Ibadan','Lagos','Enugu'],regions:['FCT','Oyo','Lagos','Enugu'],streets:['Airport','Allen','Ahmadu Bello','Ring','Garden'],types:['Road','Crescent','Close','Street'],postal:function(){return String(Math.floor(Math.random()*900000)+100000)}},ke:{cities:['Nairobi','Mombasa','Kisumu','Nakuru'],regions:['Nairobi','Mombasa','Kisumu','Nakuru'],streets:['Kenyatta','Moi','River','Market','Ngong'],types:['Road','Avenue','Street'],postal:function(){return String(Math.floor(Math.random()*90000)+10000)}},za:{cities:['Cape Town','Durban','Johannesburg','Pretoria'],regions:['Western Cape','KwaZulu-Natal','Gauteng','Gauteng'],streets:['Long','Church','Main','Nelson Mandela','Market'],types:['Street','Road','Avenue','Drive'],postal:function(){return String(Math.floor(Math.random()*9000)+1000)}}};var output=document.getElementById('addressOutput'),status=document.getElementById('addressStatus'),latest=[];function pick(a){return a[Math.floor(Math.random()*a.length)]}function make(){var region=data[document.getElementById('addressRegion').value],count=Math.max(1,Math.min(100,parseInt(document.getElementById('addressCount').value,10)||12));latest=[];for(var i=0;i<count;i++){var record=(Math.floor(Math.random()*9800)+100)+' '+pick(region.streets)+' '+pick(region.types)+', '+pick(region.cities)+', '+pick(region.regions)+' '+region.postal();latest.push(record)}output.innerHTML=latest.map(function(x){return '<div class="address-card rounded-2xl border border-slate-700 bg-slate-950 p-4 font-mono text-sm leading-7 text-slate-200">'+x+'</div>'}).join('');status.textContent=count+' fictional address records generated locally.'}document.getElementById('addressForm').addEventListener('submit',function(e){e.preventDefault();make()});document.getElementById('copyAddresses').addEventListener('click',function(){if(!latest.length)make();navigator.clipboard.writeText(latest.join('\\n')).then(function(){status.textContent='Copied '+latest.length+' mock addresses.'})});make()}());
   </script>

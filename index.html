@@ -6,49 +6,15 @@
   <link rel="stylesheet" href="/dist/styles.css" />
   
   
-  <!-- Deferred Google Analytics & AdSense -->
+  <!-- Google Analytics & Google AdSense -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    (function() {
-      var loaded = false;
-      function loadThirdPartyScripts() {
-        if (loaded) return;
-        loaded = true;
-        
-        // Load Google Analytics (gtag.js)
-        var gtagScript = document.createElement("script");
-        gtagScript.async = true;
-        gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        document.head.appendChild(gtagScript);
-        gtag("js", new Date());
-        gtag("config", "G-6V491CW7H0");
-
-        // Load Google AdSense (adsbygoogle.js)
-        var adsScript = document.createElement("script");
-        adsScript.async = true;
-        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        adsScript.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(adsScript);
-      }
-
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      function triggerLoad() {
-        loadThirdPartyScripts();
-        events.forEach(function(e) { window.removeEventListener(e, triggerLoad, { passive: true }); });
-      }
-
-      events.forEach(function(e) { window.addEventListener(e, triggerLoad, { passive: true }); });
-
-      if (!isBot) {
-        window.addEventListener("load", function() {
-          setTimeout(loadThirdPartyScripts, 10000);
-        });
-      }
-    })();
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   
   
     
@@ -399,7 +365,6 @@
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="mortgage home loan payment interest property" href="mortgage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m4 11 8-7 8 7M6 10v9h12v-9M10 19v-5h4v5"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Mortgage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly home-loan payments, interest, and total borrowing cost.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="rent affordability housing 30 percent income" href="rent-affordability"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M3 11h18M5 11V8l7-5 7 5v3M6 11v8h12v-8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Rent Affordability Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare a target rent with income using practical affordability guidelines.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="paypal fee payment processor transaction" href="paypal-fee-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 7h14v10H5zM8 11h8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">PayPal Fee Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate transaction fees and the amount to request or receive.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
-            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="profit margin markup business sales cost" href="profit-margin-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 19V9m4 10V5m4 14v-7m4 7V3"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Profit Margin Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Work out gross profit, margin, markup, and selling price from your costs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="hourly salary annual income freelance rate" href="hourly-to-salary"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Hourly to Salary Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Translate an hourly rate into weekly, monthly, and annual salary estimates.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
@@ -409,6 +374,7 @@
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="savings goal timeline target monthly contribution interest" href="savings-goal-timeline-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Savings Goal Timeline Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate when regular contributions may reach a savings target.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan a goal <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="loan calculator repayment monthly payment interest amortization borrowing" href="loan-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">%</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Loan Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly payments, total interest, and an amortization preview.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate a loan <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="debt payoff calculator snowball avalanche interest repayment payoff date" href="debt-payoff-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">💳</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Debt Payoff Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare Debt Avalanche vs. Debt Snowball strategies to minimize interest and calculate your debt-free target date.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate payoff <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="savings calculator compound interest deposits projected growth investment" href="savings-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↗</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Savings Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Project compound growth from a starting balance and monthly deposits.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Project savings <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="currency converter exchange rates African global currencies real time" href="currency-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">↔</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Real-Time Currency Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert global and African currencies using live or fallback reference rates.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert currency <span aria-hidden="true">→</span></span></a>
           </div>
@@ -417,6 +383,7 @@
         <div class="category-section" data-category-section="health">
           <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">03 / Know your numbers</p><h3 class="mt-1 text-2xl font-black text-slate-950">Health &amp; wellness</h3></div><a href="health" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore health hub →</a></div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="macro calculator macronutrient split protein carbs fats tdee keto nutrition" href="macro-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🥗</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Macro Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate target daily grams of Protein, Carbohydrates, and Fats tailored to your physical stats and fitness goals.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate macros <span aria-hidden="true">→</span></span></a>
              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="bmi bmr tdee body mass index health" href="bmi-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">BMI / BMR / TDEE Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Understand body mass index, basal metabolism, and daily energy needs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="body fat percentage navy circumference waist neck hips health composition" href="body-fat-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">%</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Body Fat Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate body fat percentage from simple tape measurements in your browser.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate body fat <span aria-hidden="true">→</span></span></a>
              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="health" data-search="daily calorie needs maintenance calories bmr tdee energy nutrition" href="daily-calorie-needs-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xs font-black">kcal</span></span><span class="text-xs font-bold text-slate-400">Health</span></div><h4 class="text-lg font-extrabold text-slate-950">Daily Calorie Needs Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate resting and maintenance calories from body size and usual activity.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate needs <span aria-hidden="true">→</span></span></a>
@@ -487,8 +454,14 @@
         </div>
 
         <div class="category-section" data-category-section="business">
-          <div class="sr-only">Freelance pricing tools</div>
+          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">05 / Grow &amp; sell</p><h3 class="mt-1 text-2xl font-black text-slate-950">Business &amp; freelance</h3></div><a href="business" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore business hub →</a></div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="startup cost calculator business launch capital expenses runway working capital buffer budget" href="startup-cost-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🚀</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Startup Cost Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate upfront launch costs, monthly operating expenses, and working capital buffers.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate startup budget <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="freelance rate calculator hourly rate day rate retainer project pricing tax billable hours" href="freelance-rate-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">💼</span></span><span class="text-xs font-bold text-slate-400">Freelance</span></div><h4 class="text-lg font-extrabold text-slate-950">Freelance Rate Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Determine required hourly rates, day rates, and retainers covering expenses, tax, and vacation.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate rates <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="profit margin markup business sales cost gross net" href="profit-margin-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M5 19V9m4 10V5m4 14v-7m4 7V3"/></svg></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Profit Margin Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Work out gross profit, margin, markup, and selling price from your costs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="pricing calculator selling price target margin markup fee cost product" href="pricing-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">$</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Pricing Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate required selling prices and net payout from unit costs and target profit goals.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="break even calculator volume sales revenue contribution margin ratio target profit fixed costs" href="break-even-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">⚖️</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Break-Even Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate break-even sales volume, revenue, contribution margin ratio, and target profit thresholds.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate break-even <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="roi calculator return on investment annualized cagr profit gain loss marketing capital" href="roi-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">📈</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">ROI Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate Return on Investment (ROI %), net profit, and annualized compound growth (CAGR).</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="freelance hourly rate project pricing quote income overhead tax" href="freelance-hourly-rate-pricing-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor"><path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Freelance Hourly Rate &amp; Project Pricing</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Set a sustainable rate and project quote from income, billable hours, tax, and overhead.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Price freelance work <span aria-hidden="true">→</span></span></a>
              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai business company brand name generator industry audience style startup" href="ai-business-name-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">Aa</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Business Name Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Explore creative company and brand name directions by industry, audience, and style.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate names <span aria-hidden="true">→</span></span></a>
              <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="business" data-search="ai product description generator ecommerce shop marketplace product copy features benefits" href="ai-product-description-generator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">✦</span></span><span class="text-xs font-bold text-slate-400">E-commerce</span></div><h4 class="text-lg font-extrabold text-slate-950">AI Product Description Generator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Turn accurate product features into clear, persuasive copy for online stores and marketplaces.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Write product copy <span aria-hidden="true">→</span></span></a>
@@ -817,7 +790,8 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4">
+  
+<footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
       <div>
         <a href="/" class="flex items-center space-x-2 mb-4">
@@ -863,19 +837,26 @@
       </div>
     </div>
     <div class="border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
-      <p>&copy; 2025 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+      <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
     </div>
   </footer>
 
   <!-- COOKIE CONSENT BANNER -->
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-50 border-t border-slate-700 hidden">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <p class="text-sm text-slate-300 leading-relaxed">We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-emerald-400 underline hover:text-emerald-300">Read our Cookie Policy</a>.</p>
-      <div class="flex gap-3 flex-shrink-0">
-        <button id="cookieDecline" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors">Decline</button>
-        <button id="cookieAccept" class="text-sm px-4 py-2 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-semibold transition-colors">Accept All</button>
-      </div>
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
+    </p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
     </div>
+  </div>
+</div>
+
+
+  <!-- COOKIE CONSENT BANNER -->
+  
   </div>
 
   <script>
@@ -955,18 +936,7 @@
         });
       });
 
-      // Cookie banner
-      if (!localStorage.getItem('cookieConsent')) {
-        setTimeout(() => document.getElementById('cookieBanner').classList.remove('hidden'), 800);
-      }
-      document.getElementById('cookieAccept').addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookieBanner').classList.add('hidden');
-      });
-      document.getElementById('cookieDecline').addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'declined');
-        document.getElementById('cookieBanner').classList.add('hidden');
-      });
+      // Cookie banner managed by footer.js
     });
   </script>
   <script src="nav.js" defer></script>
