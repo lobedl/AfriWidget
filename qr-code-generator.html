@@ -132,7 +132,138 @@
     </section>
     <section id="toolGuide" class="guide" data-content-key="qr-code-generator" aria-label="qr code generator guide"><h2>Comprehensive Guide to Instant QR Code Generation</h2><p>Quick Response (QR) codes have transformed how physical environments connect with digital content. First invented in 1994 by Masahiro Hara at Denso Wave for automotive inventory tracking, modern QR codes are two-dimensional matrix barcodes capable of storing thousands of alphanumeric characters in a tiny square footprint. Today, smartphone operating systems seamlessly scan QR codes using native camera applications without requiring extra downloads.</p><p>AfriWidget’s QR Code Generator provides a fast, zero-signup, client-side visual encoding tool. Every QR code is generated locally in your web browser using HTML5 Canvas rendering. Your data—whether a website URL, a sensitive Wi-Fi password, or a personal contact note—never leaves your device or gets transmitted to an external web server.</p><hr class="my-6 border-slate-200" /><h2>Supported Formats & Digital Use Cases</h2><p>Selecting the correct QR format ensures that scanning devices launch the appropriate native action on iOS, Android, and desktop devices:</p><ol><li><strong>Website URL Mode (<code>https://</code>)</strong>:</li></ol><ul><li>Best for directing visitors to landing pages, digital menus, online store checkouts, social media profiles, application download links, or customer feedback forms.</li><li><em>Best Practice</em>: Always include the full protocol (<code>https://</code>) so mobile browsers recognize the payload immediately as a web link rather than plain text.</li></ul><ol><li><strong>Plain-Text & Instruction Mode</strong>:</li></ol><ul><li>Ideal for short notices, serial numbers, event Wi-Fi instructions, promotional promo codes, voucher codes, classroom assignments, or emergency contact directions.</li><li>Text payloads up to several hundred characters render clearly, creating a standalone offline note when scanned.</li></ul><ol><li><strong>Wi-Fi Credentials Mode (<code>WIFI:S:...;P:...;</code>)</strong>:</li></ol><ul><li>Formatted according to the standard MECARD Wi-Fi specification.</li><li>Automatically prompts Android and iOS smartphones to connect directly to a wireless access point upon camera scanning, eliminating manual typing of long network keys.</li><li>Includes fields for Network Name (SSID), WPA/WPA2/WEP Encryption Type, and Password.</li></ul><hr class="my-6 border-slate-200" /><h2>How to Generate & Download Your QR Code</h2><ol><li><strong>Select Form Format</strong>: Choose between Website URL, Plain Text, or Wi-Fi Credentials using the dropdown selector.</li><li><strong>Enter Payload Details</strong>: Input your destination web link, message string, or wireless SSID and password into the designated fields.</li><li><strong>Review Live Canvas Preview</strong>: Watch the 2D matrix symbol render in real time on the 280x280 pixel canvas. The generator dynamically recalculates module spacing as you type.</li><li><strong>Test Before Distribution</strong>: Use a smartphone camera to scan the live preview directly on your monitor screen to verify destination accuracy before downloading.</li><li><strong>Download PNG Graphic</strong>: Click <strong>Download PNG</strong> to save a high-resolution 32-bit PNG file to your computer or mobile device.</li></ol><hr class="my-6 border-slate-200" /><h2>Technical Design, Contrast & Print Rules</h2><p>To guarantee 100% scan reliability across diverse lighting conditions and camera lenses, observe these essential print design standards:</p><ul><li><strong>Quiet Zone Margin</strong>: Maintain an unobstructed white border equal to at least 4 module widths around all four edges of the symbol. Overlapping text, graphics, or borders inside the quiet zone will prevent scanner alignment algorithms from locating finder patterns.</li><li><strong>High Visual Contrast</strong>: Standard black modules on a pure white background yield the highest contrast ratio (21:1). Avoid light yellow, soft gray, or inverted light-on-dark color schemes on physical print materials, as cheap optical scanners frequently fail to detect inverted modules.</li><li><strong>Physical Print Sizing Math</strong>: For short scanning distances (e.g., table menus, business cards), minimum physical size should be 2 cm x 2 cm (0.8 in x 0.8 in). For medium distances (e.g., wall posters, indoor signage), scale to at least 5 cm x 5 cm. For billboard or highway displays, use the 10:1 ratio rule (Distance to scanner / 10 = minimum QR size).</li><li><strong>Data Density vs Module Size</strong>: Encoding longer URLs or large blocks of text increases matrix dimensions (e.g., Version 1 is 21x21 modules; Version 10 is 57x57 modules). Dense symbols require larger physical print dimensions and higher camera resolution to scan quickly.</li></ul><hr class="my-6 border-slate-200" /><h2>Real-World Practical Examples</h2><ul><li><strong>Hospitality & Restaurants</strong>: Display contactless QR codes on dining tables linking directly to live PDF menus or ordering portals, reducing paper reprinting costs.</li><li><strong>Short-Term Rentals & Guest Access</strong>: Print a laminated Wi-Fi QR code card for Airbnb guests or conference rooms so visitors can join guest networks in one tap.</li><li><strong>Real Estate & Construction</strong>: Attach weather-resistant QR stickers to property sales boards leading to virtual tours, floor plans, and pricing spec sheets.</li><li><strong>Education & Training</strong>: Include QR codes on lecture slides or textbook handouts linking students to supplementary video walkthroughs, quiz portals, or research datasets.</li></ul><hr class="my-6 border-slate-200" /><h2>Privacy, Security & Data Safety</h2><p>Because this tool executes 100% in your browser using client-side JavaScript, no data entries, URLs, or Wi-Fi passwords are stored in databases, sent to telemetry servers, or logged in tracking analytics. Once generated, your PNG graphic is strictly a local asset under your personal control.</p><p><em>Security Warning</em>: When sharing Wi-Fi QR codes in public venues, configure access points to run on isolated Guest VLAN networks rather than main administrative networks to protect local network equipment from unauthorized access.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Can I create a QR code for any website?</summary><div><p>Yes. Select Website URL mode, paste the full URL including <code>https://</code>, and verify that the rendered preview opens the desired web page when scanned by a phone camera.</p></div></details><details><summary>Does a generated QR code ever expire?</summary><div><p>No. Static QR codes contain fixed encoded data and do not have expiration dates. As long as your target website URL remains active or your Wi-Fi password stays unchanged, the physical QR graphic will continue to function indefinitely.</p></div></details><details><summary>Why does my phone camera fail to scan a printed QR code?</summary><div><p>Scan failures are typically caused by insufficient visual contrast, crumpled or reflective print surfaces, inadequate quiet zone borders, or print sizes that are too small for the scanning distance. Ensure high dark-on-light contrast and re-test in well-lit conditions.</p></div></details><details><summary>Is my entry saved on AfriWidget servers?</summary><div><p>No. AfriWidget operates on a 100% private, browser-first architecture. All matrix calculations, HTML5 canvas draw commands, and PNG exports occur entirely within your local web browser session.</p></div></details><details><summary>What is the maximum character capacity of a QR code?</summary><div><p>A standard Version 40 QR code can hold up to 7,089 numeric characters or 2,953 alphanumeric characters. However, for maximum readability on mobile screens, keep encoded text concise or use clean URL destinations.</p></div></details><details><summary>Can I print this QR code on t-shirts or merchandise?</summary><div><p>Yes. Export the high-resolution PNG image and place it onto your apparel print templates. Ensure the fabric surface remains flat and undistorted when worn to allow seamless camera scanning.</p></div></details></section>
   </main>
-  <footer></footer>
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 
   <!-- COOKIE CONSENT BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">

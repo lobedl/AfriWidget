@@ -88,7 +88,138 @@
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Enter your marks</h2><p class="text-slate-600 mb-6">Use percentages from 0 to 100. The calculator updates instantly and checks both the overall pass mark and the examination sub-minimum.</p><div class="grid sm:grid-cols-2 gap-4"><label class="text-sm font-semibold">Internal ICASS mark (%)<input id="natedIcass" type="number" min="0" max="100" step="0.1" placeholder="e.g. 55" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none" /></label><label class="text-sm font-semibold">Final exam mark (%)<input id="natedExam" type="number" min="0" max="100" step="0.1" placeholder="e.g. 48" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none" /></label></div><button id="natedCalculate" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Calculate final mark</button></div><div id="natedCard" class="lg:col-span-2 bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-8 shadow-lg" aria-live="polite"><p class="text-sm uppercase tracking-wider text-teal-700 font-bold">NATED result</p><div id="natedResult" class="text-3xl font-extrabold text-slate-900 my-5">Enter both marks</div><p id="natedMessage" class="text-slate-600 leading-relaxed">Enter ICASS and final examination marks from 0 to 100.</p></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How the NATED pass calculation works</h2><p>This calculator is for a common South African TVET NATED planning formula. It combines the internal ICASS mark, weighted at 40%, with the final examination mark, weighted at 60%. The calculation is: final mark equals ICASS multiplied by 0.40 plus examination mark multiplied by 0.60. Because the examination carries the larger weight, improving the exam mark can have a greater effect on the final total than an equal improvement in the internal mark.</p><p>A result is marked PASS only when two conditions are both satisfied. First, the weighted total must be at least 40%. Second, the final examination mark itself must be at least 40%. The second condition is the sub-minimum check. For example, an ICASS mark of 80% and an examination mark of 30% produces a weighted total of 50%, but it does not pass this rule because the exam mark is below 40%. The card makes that distinction visible instead of looking only at the total.</p><h3 class="text-2xl font-bold text-slate-900">Worked examples</h3><p>If ICASS is 55% and the examination is 48%, the weighted total is 22.0 plus 28.8, or 50.8%. The examination is above the 40% sub-minimum, so the supplied rule classifies the result as a pass. If ICASS is 70% and the examination is 35%, the weighted total is 49.0%, but the result remains below the sub-minimum requirement. These examples show why both inputs matter.</p><h3 class="text-2xl font-bold text-slate-900">Use the result carefully</h3><p>Enter the marks exactly as they appear on your statement or institutional record. Do not enter a fraction as a decimal unless your school presents it that way; use percentages such as 42.5. If a mark is missing, wait until the official record is available rather than treating a blank as zero. The tool performs no server upload and does not store your marks.</p><p>NATED programmes, subjects, examination sessions, and institutional policies can have additional rules. A pass result here is a calculation under the supplied weighting and pass criteria, not an official certificate, promotion decision, or transcript. Check the current Department of Higher Education and Training guidance, your TVET college instructions, and the rules for the specific N-level or subject.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Why can a total above 40% still fail?</summary><p class="mt-3">The supplied rule requires the examination mark itself to be at least 40%. A strong ICASS mark cannot compensate for an exam mark below the sub-minimum.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Is ICASS always exactly 40%?</summary><p class="mt-3">This page uses the 40% ICASS and 60% examination weighting specified in the brief. Confirm the current rule for your subject and institution.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does AfriWidget issue an official result?</summary><p class="mt-3">No. It is a private browser calculator for planning. Your college, examination authority, or official statement remains authoritative.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-teal-50 border border-teal-100 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">Plan improvement from the formula</h2><p class="text-slate-700 leading-relaxed mb-4">The weighting can help you set a realistic target. A ten-point improvement in the examination mark changes the final total by six points, while a ten-point improvement in ICASS changes it by four points. That does not replace study advice, but it explains why examination preparation matters in this particular calculation. Use the result to discuss revision, supplementary assessments, or support with your lecturer.</p><p class="text-slate-700 leading-relaxed mt-4">Enter one scenario at a time and write down the result before changing a mark. This makes it easier to compare possible outcomes without confusing a projected score with an official record. Always check the current college and examination rules for your subject, level, and session.</p><h3 class="text-xl font-bold text-slate-900 mt-5 mb-2">Before asking for help</h3><p class="text-slate-700 leading-relaxed">Have your statement, subject name, assessment session, and both component marks ready when speaking with a lecturer or college office. Ask whether the pass rule applies to your specific subject and whether any moderation or supplementary assessment changes the calculation. Keep these records together for clarity.</p></div></section>
 </main>
-   <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-white border border-slate-200 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">A useful result-review checklist</h2><p class="text-slate-700 leading-relaxed mb-4">Record the ICASS mark, examination mark, calculated total, and date of the calculation. If the result is below the pass rule, identify whether the overall total or the exam sub-minimum is the issue. Then ask the college which supplementary, rewrite, moderation, or progression rules apply to the exact subject and N-level.</p><p class="text-slate-700 leading-relaxed">Use the calculator for planning a target mark, but keep the official statement as the authoritative record. A pass calculation does not replace an institutional decision, and a result may be affected by rules not included in this simplified formula.</p></div></section><footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+   <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-white border border-slate-200 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">A useful result-review checklist</h2><p class="text-slate-700 leading-relaxed mb-4">Record the ICASS mark, examination mark, calculated total, and date of the calculation. If the result is below the pass rule, identify whether the overall total or the exam sub-minimum is the issue. Then ask the college which supplementary, rewrite, moderation, or progression rules apply to the exact subject and N-level.</p><p class="text-slate-700 leading-relaxed">Use the calculator for planning a target mark, but keep the official statement as the authoritative record. A pass calculation does not replace an institutional decision, and a result may be affected by rules not included in this simplified formula.</p></div></section><footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 
   <!-- COOKIE CONSENT BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">

@@ -38,11 +38,23 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   }
 
   function renderDesktopMenu() {
+    var page = currentPage();
     document.querySelectorAll('nav').forEach(function (nav) {
       var desktopMenu = nav.querySelector('.hidden.md\\:flex');
       if (!desktopMenu) return;
+      var existingLinks = desktopMenu.querySelectorAll('a');
+      if (existingLinks.length >= navigationItems.length) {
+        // Highlight active link without re-rendering DOM
+        existingLinks.forEach(function (link) {
+          var href = link.getAttribute('href');
+          var isCurrent = (href === page) || (href === '/' && page === '/');
+          link.classList.toggle('text-yellow-300', isCurrent);
+          link.classList.toggle('font-bold', isCurrent);
+        });
+        return;
+      }
       desktopMenu.innerHTML = navigationItems.map(function (item) {
-        var isCurrent = item[0] === currentPage();
+        var isCurrent = item[0] === page;
         var classes = 'transition-colors hover:text-yellow-300' + (isCurrent ? ' text-yellow-300 font-bold' : '');
         return '<a href="' + item[0] + '" class="' + classes + '">' + item[1] + '</a>';
       }).join('');
@@ -54,6 +66,17 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     if (!menu) return;
 
     var page = currentPage();
+    var existingLinks = menu.querySelectorAll('a');
+    if (existingLinks.length >= navigationItems.length) {
+      existingLinks.forEach(function (link) {
+        var href = link.getAttribute('href');
+        var isCurrent = (href === page) || (href === '/' && page === '/');
+        link.classList.toggle('text-yellow-300', isCurrent);
+        link.classList.toggle('font-bold', isCurrent);
+      });
+      return;
+    }
+
     menu.innerHTML = navigationItems.map(function (item) {
       var href = item[0];
       var isCurrent = href === page;

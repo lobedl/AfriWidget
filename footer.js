@@ -19,13 +19,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
           </svg>
           <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
         </a>
-        <p class="text-sm leading-relaxed text-slate-400">
+        <p class="text-sm leading-relaxed text-slate-300">
           Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
         </p>
       </div>
 
       <div>
-        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h4>
+        <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
         <ul class="space-y-2 text-sm">
            <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
            <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
@@ -38,7 +38,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       </div>
 
       <div>
-        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h4>
+        <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
           <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
@@ -88,7 +88,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       </div>
 
       <div>
-        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h4>
+        <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
           <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
@@ -137,7 +137,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         </ul>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
       <p>&copy; ${new Date().getFullYear()} AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
     </div>
   `;
@@ -148,24 +148,15 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     if (!footer) {
       footer = document.createElement('footer');
       document.body.appendChild(footer);
-    } else {
-      // Ensure footer is placed strictly at the bottom of body, after all main/article content
-      var lastContent = document.querySelector('main') || document.querySelector('article');
-      if (lastContent && footer.parentNode) {
-        var next = footer.nextElementSibling;
-        while (next) {
-          if (next.tagName === 'SECTION' || next.tagName === 'ARTICLE' || next.tagName === 'MAIN' || next.tagName === 'P') {
-            document.body.appendChild(footer);
-            break;
-          }
-          next = next.nextElementSibling;
-        }
-      }
     }
 
     footer.className = 'bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16';
     footer.setAttribute('aria-label', 'AfriWidget site footer');
-    footer.innerHTML = footerMarkup;
+
+    // Only inject footer markup if footer is currently empty or minimal
+    if (!footer.querySelector('.max-w-7xl')) {
+      footer.innerHTML = footerMarkup;
+    }
 
     syncSocialMetadata();
     initCookieBanner();

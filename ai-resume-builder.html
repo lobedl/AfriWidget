@@ -88,7 +88,138 @@
     <section class="border-b border-slate-200 bg-white px-4 py-14 sm:py-20"><div class="mx-auto max-w-5xl"><p class="mb-4 text-sm font-black uppercase tracking-[.2em] text-yellow-700">Career writing toolkit</p><h1 class="max-w-3xl text-4xl font-black tracking-tight text-slate-950 sm:text-6xl">AI Resume Builder</h1><p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">Turn your real experience into a focused resume draft that is easier to edit, tailor, and send.</p><p class="mt-5 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-bold text-emerald-700">⚡ 100% Free • No Signup • Private In-Browser Generation</p></div></section>
      <section class="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[.9fr_1.1fr]"><form data-writing-tool="resume" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><h2 class="text-2xl font-black text-slate-950">Create your resume draft</h2><p class="mt-2 text-sm leading-6 text-slate-600">Answer the guided questions with truthful details. The AI will correct wording and organize your information, but it will never invent employers, dates, metrics, or qualifications.</p><div class="mt-6 grid gap-4 sm:grid-cols-2"><label><span class="writing-label">Name</span><input class="writing-input" name="name" placeholder="Amara Mensah"></label><label><span class="writing-label">Target role</span><input class="writing-input" name="title" placeholder="Customer Success Specialist"></label><label><span class="writing-label">Industry</span><select class="writing-input" name="industry"><option value="">Choose an industry</option><option>Technology</option><option>Finance and banking</option><option>Healthcare</option><option>Education</option><option>Retail and ecommerce</option><option>Government and nonprofit</option><option>Media and communications</option><option>Hospitality and tourism</option><option>Construction and engineering</option><option>Other</option></select></label><label><span class="writing-label">Experience level</span><select class="writing-input" name="experienceLevel"><option value="">Choose your level</option><option>Student or recent graduate</option><option>Entry level</option><option>Mid level</option><option>Senior</option><option>Manager or director</option><option>Career changer</option></select></label><label><span class="writing-label">Location</span><input class="writing-input" name="location" placeholder="Accra, Ghana"></label><label><span class="writing-label">Email</span><input class="writing-input" name="email" type="email" placeholder="you@example.com"></label><label><span class="writing-label">Work arrangement</span><select class="writing-input" name="workArrangement"><option value="">Choose an option</option><option>On-site</option><option>Hybrid</option><option>Remote</option><option>Flexible</option></select></label><label><span class="writing-label">Leadership experience</span><select class="writing-input" name="leadership"><option value="">Choose an option</option><option>No formal leadership yet</option><option>Led projects or small groups</option><option>Managed people or budgets</option><option>Senior strategic leadership</option></select></label><label class="sm:col-span-2"><span class="writing-label">What job description are you targeting? <span class="font-normal text-slate-500">(optional)</span></span><textarea class="writing-input" name="jobDescription" rows="3" placeholder="Paste the key requirements or describe the role. The AI will prioritize relevant language without keyword stuffing."></textarea></label><label><span class="writing-label">Primary skill area</span><select class="writing-input" name="skillFocus"><option value="">Choose a skill area</option><option>Administration and operations</option><option>Customer service and success</option><option>Data and analytics</option><option>Design and creative</option><option>Education and training</option><option>Engineering and technical</option><option>Finance and accounting</option><option>Health and social care</option><option>Human resources</option><option>Marketing and communications</option><option>Sales and business development</option><option>Project and product management</option></select></label><label><span class="writing-label">Tools or technologies</span><input class="writing-input" name="tools" placeholder="Excel, Salesforce, Canva, Python"></label><label class="sm:col-span-2"><span class="writing-label">Skills and strengths</span><textarea class="writing-input" name="skills" rows="3" placeholder="Add real skills, methods, languages, and strengths. Separate them with commas if helpful."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Work history</span><textarea class="writing-input" name="experience" rows="5" placeholder="For each role: job title, employer, dates, what you did, who you supported, and what changed because of your work. Rough notes are fine."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Results and evidence</span><textarea class="writing-input" name="impact" rows="3" placeholder="Share numbers when you know them: customers helped, revenue, time saved, volume handled, quality scores, deadlines, or improvements. Write 'not measured' if you do not know."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Education</span><input class="writing-input" name="education" placeholder="Qualification, institution, field, and year or expected year"></label><label><span class="writing-label">Certifications</span><input class="writing-input" name="certifications" placeholder="Certification, provider, year"></label><label><span class="writing-label">Languages</span><input class="writing-input" name="languages" placeholder="English, French, Twi"></label><label class="sm:col-span-2"><span class="writing-label">Projects, volunteering, or achievements</span><textarea class="writing-input" name="achievements" rows="4" placeholder="Add projects, awards, volunteer work, community leadership, publications, or wins. Include the action and result when possible."></textarea></label></div><button class="writing-button mt-6 w-full" type="submit">Generate polished resume</button></form><section class="rounded-2xl border border-slate-200 bg-slate-100 p-6" aria-labelledby="resume-result-title"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="resume-result-title" class="text-2xl font-black text-slate-950">Your editable draft</h2><div class="flex flex-wrap gap-2"><button id="copyWriting" class="writing-button text-sm" type="button">Copy</button><button id="downloadResumePdf" class="writing-button text-sm" type="button">Download PDF</button></div></div><p id="writingStatus" class="mt-2 text-sm text-slate-600" aria-live="polite">Your draft will appear here without leaving the page.</p><div id="writingOutput" contenteditable="true" spellcheck="true" aria-label="Editable resume preview" class="writing-output resume-preview-shell mt-5 rounded-xl border border-slate-200"></div></section></section>
     <article class="mx-auto max-w-5xl px-4 pb-16 prose prose-slate max-w-none"><h2>How to use an AI resume builder well</h2><p>A resume is a short explanation of the value you can bring to a role. It is not a complete biography and it should not try to record every task you have ever completed. A useful resume gives a recruiter enough context to understand your direction, evidence of your ability, and a reason to continue the conversation. This free AI resume builder helps you organise that information into a practical first draft. You provide the facts, then review the language and adjust it for the specific opportunity.</p><p>Start with the role you want rather than a vague description of yourself. “Operations assistant” gives a better direction than “hard worker.” Add the tools, industries, and responsibilities that are genuinely relevant. If you supported customers, explain the type of customers and the channel you used. If you managed stock, mention the size of the process or the improvement you helped make. Numbers are useful when they are accurate: a shorter response time, more orders processed, a larger portfolio, or a project completed before a deadline can make a contribution clearer.</p><h3>What to include in the form</h3><p>The experience field can contain several roles in plain language. Include employer names, approximate dates, job titles, major responsibilities, and outcomes. The skills field works best when it includes both practical tools and human strengths. For example, “Excel, customer relationship management, weekly reporting, conflict resolution” is more informative than “computer literate.” Add education even if your qualification is still in progress. You can also mention certificates, volunteer work, freelance projects, or community leadership when they help explain your readiness.</p><p>Use the achievements field for evidence. A strong achievement connects an action to a result: “created a stock checklist that reduced missing items” is a useful starting point, while “responsible for stock” only describes a duty. If you do not know the number yet, add a reminder such as [add metric] and research it before sending the resume. Never allow an automated draft to invent a percentage, employer, certificate, language level, or job title. Accuracy builds trust and protects you during interviews.</p><h3>Example resume workflow</h3><p>Imagine a graduate applying for a junior communications role. They can enter a campus communications project, a volunteer newsletter, social media scheduling, writing skills, and a degree that is awaiting final results. The first draft may suggest a summary and experience bullets. The applicant should then replace general phrases with real details, match relevant words from the vacancy, check spelling, and keep the final document to a length that fits their experience. A mid-career applicant can use the same workflow but should prioritise recent outcomes and remove old details that no longer support the target role.</p><p>For example, a raw note might say: “Answered WhatsApp questions and helped customers choose products.” A stronger truthful bullet could become: “Responded to product questions through WhatsApp, clarified customer needs, and followed up on orders.” If the applicant knows they handled 40 conversations per day or improved repeat orders, they can add that evidence after checking the records. The builder helps with structure and phrasing; the applicant remains responsible for the facts.</p><h3>Make the final resume easier to read</h3><p>Use clear section headings, consistent dates, readable spacing, and a professional email address. Keep formatting simple when you expect an applicant tracking system to read the file. Avoid stuffing the page with every keyword or using a design that hides the actual content. Read the resume aloud once. If a bullet sounds impressive but you cannot explain it with a real example, rewrite it. Tailor the summary and skills order for each important application, and save a clean master copy before making a tailored version.</p><p>Privacy matters when working on job documents. This page gives you a browser-local draft immediately and can use the secure site proxy when the production AI service is available. Do not paste passwords, identity numbers, private references, or confidential employer information into a writing prompt. Remove placeholders before exporting or sharing. A resume should be specific enough to show fit while still respecting information that does not belong in a public application.</p><h3>Frequently asked questions</h3><h4>Can this builder guarantee an interview?</h4><p>No. It can improve structure and clarity, but hiring decisions depend on the role, evidence, timing, competition, and human review.</p><h4>Should I copy the draft without editing?</h4><p>No. Check every claim, date, employer, qualification, and metric. Add your own voice and tailor the document to the job description.</p><h4>What if I have no formal work experience?</h4><p>Use projects, volunteering, school activities, internships, caregiving, community work, and freelance tasks when they demonstrate transferable skills.</p><h4>Is my resume stored on this page?</h4><p>The local fallback runs in your browser. When production AI is enabled, only the details needed for the request are sent through AfriWidget’s secure proxy; avoid unnecessary sensitive information.</p></article>
-  </main><footer class="mt-16 bg-slate-900 px-4 py-14 text-slate-300"></footer>
+  </main><footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 
   <!-- COOKIE CONSENT BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">

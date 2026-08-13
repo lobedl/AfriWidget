@@ -87,7 +87,138 @@
   <header class="bg-gradient-to-br from-slate-900 via-sky-900 to-slate-900 text-white py-14 px-4 text-center"><div class="max-w-3xl mx-auto"><span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">Free Text Utility</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Text Case Converter &amp; Cleanup Tool</h1><p class="text-lg text-slate-300">Transform messy text into consistent, copy-ready content with one click.</p></div></header>
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6"><div class="flex flex-wrap gap-2 mb-4"><button data-action="uppercase" class="case-action bg-slate-900 text-white font-bold px-3 py-2 rounded-lg text-sm">UPPERCASE</button><button data-action="lowercase" class="case-action bg-slate-100 hover:bg-slate-200 font-bold px-3 py-2 rounded-lg text-sm">lowercase</button><button data-action="titlecase" class="case-action bg-teal-100 text-teal-800 font-bold px-3 py-2 rounded-lg text-sm">Title Case</button><button data-action="sentencecase" class="case-action bg-teal-100 text-teal-800 font-bold px-3 py-2 rounded-lg text-sm">Sentence case</button><button data-action="camelcase" class="case-action bg-amber-100 text-amber-800 font-bold px-3 py-2 rounded-lg text-sm">camelCase</button><button data-action="slugify" class="case-action bg-amber-100 text-amber-800 font-bold px-3 py-2 rounded-lg text-sm">URL slug</button></div><textarea id="caseInput" rows="15" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 rounded-xl p-4 outline-none resize-y" placeholder="Paste text, headings, HTML, product names, or duplicate lines here..."></textarea><div class="flex flex-wrap gap-2 mt-4"><button id="removeSpaces" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Extra Spaces</button><button id="removeBreaks" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Line Breaks</button><button id="stripHtml" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Strip HTML Tags</button><button id="removeDuplicateLines" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Duplicate Lines</button></div><div class="flex items-center justify-between gap-4 mt-5"><p class="text-sm text-slate-500"><span id="caseWords">0</span> words · <span id="caseChars">0</span> characters</p><div class="flex gap-2"><button id="clearCase" class="text-sm font-semibold text-slate-500">Clear</button><button id="copyCaseText" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-5 py-2 rounded-lg">Copy to Clipboard</button></div></div><div id="caseStatus" aria-live="polite"></div></section>
   <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">A practical text case converter</h2><p>Inconsistent capitalization is a small problem that can create a lot of editing work. Product names, headings, spreadsheet exports, content briefs, code labels, and copied web text often arrive with mixed case, unwanted spaces, HTML tags, or repeated lines. This browser-based text case converter lets you paste content and clean it without an account. The original text is processed in the page, and the result can be copied back to your clipboard.</p><p>Choose the transformation that matches the destination. UPPERCASE is useful for labels, codes, and emphasis. lowercase is useful for normalising tags, email data, or search terms. Title Case capitalises the first letter of words for headings. Sentence case creates a more natural paragraph style by capitalising the start of the text and the beginning of sentences. No automatic case tool can understand every brand name or acronym, so proofread the result before publishing.</p><h3 class="text-2xl font-bold text-slate-900">camelCase and URL slugs</h3><p>camelCase joins words without spaces and capitalises the start of each word after the first. It is commonly used for JavaScript variables, API properties, spreadsheet field names, and other identifiers. The converter removes punctuation between words, which makes it convenient for ordinary labels, but reserved words, acronyms, and programming-language conventions may require manual adjustment.</p><p>URL slugify creates lowercase, hyphen-separated text suitable for a page path or article slug. It removes HTML markup and non-alphanumeric punctuation, collapses repeated separators, and trims hyphens from the edges. A good slug is short, descriptive, and stable. Do not change a published URL casually because URL changes can break existing links unless redirects are configured.</p><h3 class="text-2xl font-bold text-slate-900">Cleanup actions</h3><p>Remove Extra Spaces turns repeated spaces and tabs into a single space and trims the edges. Remove Line Breaks joins lines into one flowing string, which is useful when copied PDF text has artificial breaks. Strip HTML Tags extracts visible text from markup, so it can help you turn a small HTML fragment into plain text. Remove Duplicate Lines keeps the first copy of each exact line and preserves the order of unique lines.</p><p>Cleanup actions are deliberately conservative. Duplicate lines are compared as exact strings, so lines with different punctuation or spacing may remain separate until you normalise them. Stripping HTML tags does not execute scripts in the page, but do not paste untrusted markup into other tools without understanding what it contains. Always keep a copy of the original before a large transformation.</p><h3 class="text-2xl font-bold text-slate-900">Common workflows</h3><p>Content editors can paste a list of article titles, remove duplicates, and convert the final headings to title case. Developers can turn a list of field labels into camelCase keys. SEO teams can create a readable URL slug from a headline. Teachers can clean a copied list of student names or topics. Customer-support teams can remove line breaks from copied form entries before placing them into a system.</p><p>Use the character and word counters to understand how the transformation changed your content. Click Copy to Clipboard when the result is ready. If clipboard permission is blocked by the browser, the tool attempts a standard fallback; you can also select the text manually. Since the work stays in the browser, it is suitable for quick edits on a shared document, but you should still avoid pasting private information into any online service without permission.</p><h3 class="text-2xl font-bold text-slate-900">A reliable editing sequence</h3><p>For a long list, start by keeping the original in another tab or document. Remove HTML tags first if the source is markup, remove line breaks if the copy came from a narrow PDF, and then remove extra spaces. Run duplicate-line cleanup after spacing is consistent. Apply a case conversion last, because converting case before cleaning can make it harder to compare the original values. For code or data imports, inspect a few samples after every step so that punctuation, identifiers, and meaningful blank lines are not lost.</p><p>The tool is intentionally a lightweight editor rather than a full word processor. It does not rewrite sentences, correct spelling, translate content, or infer a brand’s preferred capitalisation. That predictable behavior is useful when you need a transformation you can explain to a colleague. The result remains editable in the text area, so you can correct names, acronyms, headings, and exceptions before copying it into a CMS, spreadsheet, ticket, or code editor.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Does Title Case know every proper noun?</summary><p class="mt-3 text-slate-600">No. It applies a general word-capitalisation rule. Brand names, acronyms, short connecting words, and style-guide exceptions may need manual editing.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Will duplicate lines with different spaces be removed?</summary><p class="mt-3 text-slate-600">Only exact duplicate lines are removed. Run Remove Extra Spaces first if you want to make spacing more consistent.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Is my text uploaded?</summary><p class="mt-3 text-slate-600">No. Transformations happen locally in your browser and do not require an account or database.</p></details></article></main>
-  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4"></footer>
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 
   <!-- COOKIE CONSENT BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
