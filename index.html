@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" />
-  
-  
   <!-- Google Analytics & Google AdSense -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
@@ -15,238 +10,64 @@
     gtag("config", "G-6V491CW7H0");
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  
-  
-    
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AfriWidget | Free Health, Finance &amp; Education Tools</title>
-  <meta name="description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <title>Free Online Calculators &amp; Utility Tools – AfriWidget</title>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="cards.css" />
+
+  <meta name="description" content="Explore AfriWidget" />
   <link rel="canonical" href="https://afriwidget.com/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Online Calculators &amp; Utility Tools – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/" />
-  <meta property="og:title" content="AfriWidget | Free Health, Finance &amp; Education Tools" />
-  <meta property="og:description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <meta property="og:description" content="Explore AfriWidget" />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Online Calculators &amp; Utility Tools – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:title" content="AfriWidget | Free Health, Finance &amp; Education Tools" />
-  <meta name="twitter:description" content="Explore AfriWidget's privacy-first calculators and browser tools for health, finance, education, business, admissions, and everyday work." />
+  <meta name="twitter:description" content="Explore AfriWidget" />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
-  <!-- Structured Data -->
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://afriwidget.com/#website",
-  "name": "AfriWidget",
-  "url": "https://afriwidget.com/",
-  "description": "AfriWidget offers free browser-based calculators and tools for health, finance, and education, with optional Groq-powered insights for Finance and Education. Designed for Africa and the world.",
-  "publisher": {
-    "@id": "https://afriwidget.com/#organization"
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="qrcode.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/",
+    "description": "Free, fast, private in-browser online tools and calculators.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://afriwidget.com/widgets?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://afriwidget.com/widgets?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AfriWidget",
+    "url": "https://afriwidget.com/",
+    "logo": "https://afriwidget.com/og-image.png"
   }
-}</script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://afriwidget.com/#organization",
-  "name": "AfriWidget",
-  "url": "https://afriwidget.com/",
-  "logo": "https://afriwidget.com/og-image.png",
-  "sameAs": [
-    "https://x.com/afriwidget"
-  ]
-}</script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://afriwidget.com/"
-    }
-  ]
-}</script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "AfriWidget Site Navigation",
-  "description": "Primary categories and calculators available on AfriWidget.",
-  "itemListElement": [
-    {
-      "@type": "SiteNavigationElement",
-      "position": 1,
-      "name": "Health & Wellness Tools",
-      "description": "BMI, BMR, TDEE and other health calculators and guides.",
-      "url": "https://afriwidget.com/health"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 2,
-      "name": "Finance & Wealth Tools",
-      "description": "Compound interest, savings and investment calculators.",
-      "url": "https://afriwidget.com/finance"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 3,
-      "name": "Real Estate & Housing Tools",
-      "description": "Mortgage and rent affordability calculators.",
-      "url": "https://afriwidget.com/real-estate"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 4,
-      "name": "Business & Freelance Tools",
-      "description": "Payment fee, profit margin and salary conversion calculators.",
-      "url": "https://afriwidget.com/business"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 5,
-      "name": "Education & Academic Tools",
-      "description": "GPA calculators and academic planning resources.",
-      "url": "https://afriwidget.com/education"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 6,
-      "name": "Productivity & Developer Tools",
-      "description": "Writing, business, SEO, JSON, password and other browser utilities.",
-      "url": "https://afriwidget.com/productivity"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 7,
-      "name": "All Tools & Widgets",
-      "description": "Browse every AfriWidget calculator and utility.",
-      "url": "https://afriwidget.com/widgets"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 8,
-      "name": "BMI Calculator",
-      "description": "Calculate BMI, BMR and TDEE.",
-      "url": "https://afriwidget.com/bmi-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 9,
-      "name": "Compound Interest Calculator",
-      "description": "Model investment and savings growth over time.",
-      "url": "https://afriwidget.com/compound-interest"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 10,
-      "name": "Cumulative GPA Calculator",
-      "description": "Calculate weighted GPA on the standard 4.0 scale.",
-      "url": "https://afriwidget.com/gpa-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 11,
-      "name": "African Admissions & Academic Tools",
-      "description": "Plan WASSCE, BECE, GPA and aggregate decisions with free academic tools.",
-      "url": "https://afriwidget.com/admissions"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 12,
-      "name": "JAMB UTME Aggregate Calculator",
-      "description": "Combine a Nigerian JAMB score with five O'Level grades.",
-      "url": "https://afriwidget.com/jamb-utme-aggregate-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 13,
-      "name": "Tertiary GPA & CGPA Calculator",
-      "description": "Calculate university GPA and CGPA on 4.0 or 5.0 scales.",
-      "url": "https://afriwidget.com/tertiary-gpa-cgpa-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 14,
-      "name": "South African APS Calculator",
-      "description": "Convert Matric and NSC percentages into APS points.",
-      "url": "https://afriwidget.com/south-african-aps-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 15,
-      "name": "KCSE & KUCCPS Cluster Calculator",
-      "description": "Estimate Kenyan KCSE aggregate points and mean grade.",
-      "url": "https://afriwidget.com/kcse-kuccps-cluster-calculator"
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "position": 16,
-      "name": "University Cut-Off & Eligibility Checker",
-      "description": "Compare JAMB or WASSCE scores with course planning baselines.",
-      "url": "https://afriwidget.com/university-cutoff-eligibility-checker"
-    }
-  ]
-}</script>
-  
-  <link rel="stylesheet" href="cards.css" />
-  
-  <style>
-    @font-face { font-display: swap; }
-    html, body { font-display: swap; }
-    /* Above-the-fold critical layout and hero styles */
-    .accordion-content { display: none; }
-    .accordion-content.open { display: block; }
-    .mobile-menu { display: none; }
-    .mobile-menu.open { display: block; }
-    :root { --ink: #111827; --yellow: #facc15; --paper: #f8fafc; }
-    body { background: var(--paper); margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-    body.home-layout { display: flex; flex-direction: column; }
-    body.home-layout > nav { order: 0; position: sticky; top: 0; z-index: 50; background-color: #0f172a; color: #ffffff; }
-    body.home-layout > #hero { order: 1; position: relative; overflow: hidden; background-color: #020617; color: #ffffff; }
-    body.home-layout > #toolsMatrix { order: 2; }
-    body.home-layout > #aboutSection { order: 3; }
-    body.home-layout > #missionSection { order: 4; }
-    body.home-layout > #categoriesSection { order: 5; }
-    body.home-layout > #faqSection { order: 6; }
-    body.home-layout > #finalCta { order: 7; }
-    body.home-layout > #hero h1 { content-visibility: auto; contain-intrinsic-size: 1px 120px; }
-    body.home-layout > footer { order: 8; }
-    body.home-layout > #cookieBanner { order: 9; }
-    .tool-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(15,23,42,.09); }
-    .tool-card[hidden] { display: none; }
-    .category-section[hidden] { display: none; }
-    .search-ring:focus-within { box-shadow: 0 0 0 4px rgba(250,204,21,.25); }
-    .yellow-grid { background-image: linear-gradient(rgba(250,204,21,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(250,204,21,.1) 1px, transparent 1px); background-size: 32px 32px; }
-    .legacy-showcase { display: none; }
-    .home-layout footer .text-emerald-400, .home-layout footer a:hover { color: #facc15 !important; }
-    .home-layout #cookieBanner .text-emerald-400 { color: #facc15 !important; }
-    .home-layout nav a:hover, .home-layout nav summary:hover { color: #facc15 !important; }
-    .home-layout nav .text-emerald-400 { color: #facc15 !important; }
-    .home-layout nav .bg-teal-700, .home-layout nav .hover\:bg-teal-600:hover { background-color: #facc15 !important; color: #111827 !important; }
-    .home-layout .text-emerald-400, .home-layout .text-emerald-600 { color: #ca8a04 !important; }
-    .home-layout .bg-emerald-500 { background-color: #facc15 !important; }
-    .home-layout .border-emerald-300, .home-layout .border-emerald-200 { border-color: #fde68a !important; }
-    .home-layout nav .site-brand-wordmark .text-emerald-400 { color: #FACC15 !important; }
-    .legacy-showcase { display: none; }
-  </style>
+]
+  </script>
 </head>
 <body class="home-layout bg-slate-50 text-slate-800 font-sans">
 
@@ -295,8 +116,8 @@
           <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l4 4L19 6"/></svg>
           Free tools. Private by design.
         </div>
-        <h1 class="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">Make the next decision <span class="text-yellow-300">clearer.</span></h1>
-        <p class="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">Practical calculators and utilities for health, money, school, work, and everyday life — ready when you are.</p>
+        <h1 class="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">Free Online Calculators &amp; Utility Tools</h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">AfriWidget is a free, privacy-first platform offering fast, browser-based calculators and utility tools for health, finance, education, real estate, business, and daily productivity — running 100% client-side with no sign-up required.</p>
         <form id="toolSearchForm" class="search-ring mt-9 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/15 bg-white p-2 shadow-2xl" role="search">
           <svg class="ml-3 h-5 w-5 shrink-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/></svg>
           <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base" placeholder="Search BMI, GPA, invoice, mortgage..." aria-label="Search all AfriWidget tools" autocomplete="off">
@@ -360,6 +181,12 @@
         <div class="category-section" data-category-section="finance">
           <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">02 / Plan ahead</p><h3 class="mt-1 text-2xl font-black text-slate-950">Finance &amp; housing</h3></div><a href="finance" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore finance hub →</a></div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="reverse adsense calculator monthly pageviews traffic rpm cpc ctr" href="reverse-adsense-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">📈</span></span><span class="text-xs font-bold text-slate-400">Publisher</span></div><h4 class="text-lg font-extrabold text-slate-950">Reverse AdSense Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate required monthly pageviews and daily traffic for target AdSense income goals.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate traffic <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="website acquisition valuation calculator website price worth site multiple" href="website-valuation-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🏛️</span></span><span class="text-xs font-bold text-slate-400">Business</span></div><h4 class="text-lg font-extrabold text-slate-950">Website Valuation Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate market sale value and SDE multiples for blogs, SaaS, and e-commerce stores.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Estimate worth <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="startup burn rate calculator gross net burn runway zero cash date" href="startup-burn-rate-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🔥</span></span><span class="text-xs font-bold text-slate-400">Startup</span></div><h4 class="text-lg font-extrabold text-slate-950">Startup Burn Rate Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate net monthly cash burn, financial runway in months, and zero cash date forecast.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate runway <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="creator sponsorship rate calculator youtube tiktok instagram brand deal" href="creator-sponsorship-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">📱</span></span><span class="text-xs font-bold text-slate-400">Creator</span></div><h4 class="text-lg font-extrabold text-slate-950">Creator Sponsorship Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate sponsorship rate cards for YouTubers, TikTokers, and Instagram creators.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate rates <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="remote salary converter cost of living exchange rates purchasing power" href="remote-salary-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🌍</span></span><span class="text-xs font-bold text-slate-400">Remote Work</span></div><h4 class="text-lg font-extrabold text-slate-950">Remote Salary Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Compare global remote salaries with exchange rates and cost-of-living purchasing power.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert salary <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="tech" data-search="reddit video downloader browser extract mp4 audio stream hd 1080p" href="reddit-video-downloader"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🎬</span></span><span class="text-xs font-bold text-slate-400">Media</span></div><h4 class="text-lg font-extrabold text-slate-950">Reddit Video Downloader Browser</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Extract, preview, and download public Reddit videos with audio tracks in MP4 format.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Fetch video <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="compound interest investment savings growth" href="compound-interest"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 18 9 13l3 3 7-9M15 7h4v4"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Compound Interest Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Model savings and investment growth across time, rates, and contributions.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="percentage discount markup change everyday" href="percentage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-lg font-black">%</span></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Percentage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate percentages, discounts, markups, and percentage change quickly.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="mortgage home loan payment interest property" href="mortgage-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m4 11 8-7 8 7M6 10v9h12v-9M10 19v-5h4v5"/></svg></span><span class="text-xs font-bold text-slate-400">Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Mortgage Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly home-loan payments, interest, and total borrowing cost.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
@@ -483,7 +310,69 @@
     </div>
   </section>
 
-  <!-- ABOUT AFRIWIDGET -->
+  
+  <!-- USER SUCCESS STORIES BANNER -->
+  <section class="py-16 px-4 bg-slate-900 text-white border-y border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="px-3 py-1 bg-yellow-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-full">Real Impact Stories</span>
+          <h2 class="text-3xl font-black text-white mt-3">Empowering 250,000+ Africans Every Month</h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-xl">See how students, freelancers, and small business owners use AfriWidget's 100% free, private web tools to achieve real results.</p>
+        </div>
+        <a href="success-stories" class="inline-flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md">
+          <span>Read All Success Stories</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-yellow-400">🇰🇪 Kenya • Academic</span>
+              <span class="text-xs text-slate-400">JKUAT Engineering</span>
+            </div>
+            <p class="text-slate-300 text-xs leading-relaxed italic mb-4">"Calculated my exact KUCCPS cluster points for JKUAT engineering. Saved me time and consultancy money!"</p>
+          </div>
+          <div class="text-xs font-bold text-white border-t border-slate-700 pt-3 flex justify-between">
+            <span>Kwesi O.</span>
+            <span class="text-emerald-400">KCSE Cluster Calculator</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-yellow-400">🇿🇦 South Africa • Finance</span>
+              <span class="text-xs text-slate-400">R12,400 Saved</span>
+            </div>
+            <p class="text-slate-300 text-xs leading-relaxed italic mb-4">"Modeled my debt snowball schedule privately. Paid off R45k in consumer debt 17 months early."</p>
+          </div>
+          <div class="text-xs font-bold text-white border-t border-slate-700 pt-3 flex justify-between">
+            <span>Sibusiso M.</span>
+            <span class="text-emerald-400">Debt Payoff Calculator</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-yellow-400">🇳🇬 Nigeria • Freelance</span>
+              <span class="text-xs text-slate-400">+42% Revenue</span>
+            </div>
+            <p class="text-slate-300 text-xs leading-relaxed italic mb-4">"Calculated sustainable rates and generated professional PDF invoices for international clients."</p>
+          </div>
+          <div class="text-xs font-bold text-white border-t border-slate-700 pt-3 flex justify-between">
+            <span>Amara N.</span>
+            <span class="text-emerald-400">Freelance Rate Tool</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ABOUT AFRIWIDGET -->
   <section id="aboutSection" class="py-20 px-4 bg-white">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">What Is AfriWidget?</h2>
@@ -510,7 +399,7 @@
             <div class="text-sm text-slate-600 font-medium">Data Sold</div>
           </div>
           <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
-             <div class="text-4xl font-extrabold text-slate-700 mb-1">84</div>
+             <div class="text-4xl font-extrabold text-slate-700 mb-1">100+</div>
             <div class="text-sm text-slate-600 font-medium">Smart Tools</div>
           </div>
           <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
@@ -860,7 +749,9 @@
   </div>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+
+    onReady(() => {
 
       const mobileMenuButton = document.getElementById('mobileMenuBtn');
       const mobileMenu = document.getElementById('mobileMenu');

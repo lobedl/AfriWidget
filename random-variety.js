@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -102,7 +103,7 @@
       }
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyEmails').addEventListener('click', function () {
@@ -151,7 +152,7 @@
       renderCards(document.getElementById('usernameOutput'), document.getElementById('usernameStatus'), values, 'username ideas');
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyUsernames').addEventListener('click', function () {
@@ -214,7 +215,7 @@
       renderCards(document.getElementById('businessOutput'), document.getElementById('businessStatus'), values, 'business name ideas');
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyBusiness').addEventListener('click', function () {
@@ -253,7 +254,7 @@
       renderCards(document.getElementById('teamOutput'), document.getElementById('teamStatus'), values, 'team name ideas');
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyTeams').addEventListener('click', function () {
@@ -290,7 +291,7 @@
       renderCards(document.getElementById('nicknameOutput'), document.getElementById('nicknameStatus'), values, 'nickname ideas');
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyNicknames').addEventListener('click', function () {
@@ -334,7 +335,7 @@
       document.getElementById('addressStatus').textContent = values.length + ' varied fictional address records generated locally.';
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyAddresses').addEventListener('click', function () {
@@ -373,7 +374,7 @@
       document.getElementById('colorStatus').textContent = values.length + ' varied color swatches generated locally.';
       return values;
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
       document.getElementById('copyColors').addEventListener('click', function () {
@@ -387,7 +388,7 @@
   function dateTool() {
     var form = document.getElementById('dateForm');
     if (!form) return;
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       var pad = function (n) { return n < 10 ? '0' + n : String(n); };
       var localDate = function (value) { var parts = value.split('-'); return new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])); };
@@ -437,7 +438,7 @@
       za: { code: '+27', local: function () { return '0' + number(60, 89) + ' ' + number(100, 999) + ' ' + number(1000, 9999); } },
       in: { code: '+91', local: function () { return '0' + number(600, 999) + ' ' + number(100000, 999999); } }
     };
-    document.addEventListener('DOMContentLoaded', function () {
+    onReady(function () {
       form = resetForm(form);
       var run = function () {
         var item = formats[document.getElementById('phoneRegion').value];

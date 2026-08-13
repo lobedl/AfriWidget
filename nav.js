@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
   /*
    * Shared primary navigation.
    *
@@ -22,11 +23,12 @@
 
   var navigationItems = [
     ['/', 'Home'],
-    ['education', 'Education Tools'],
-    ['finance', 'Finance Tools'],
-    ['health', 'Health Tools'],
-    ['productivity', 'Productivity Tools'],
-    ['widgets', 'All Tools Directory']
+    ['/education', 'Education Tools'],
+    ['/finance', 'Finance Tools'],
+    ['/health', 'Health Tools'],
+    ['/productivity', 'Productivity Tools'],
+    ['/success-stories', 'Success Stories'],
+    ['/widgets', 'All Tools Directory']
   ];
 
   function currentPage() {
@@ -131,6 +133,6 @@
     normalizeNavigationLabels();
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', normalizeNavigationLabels, { once: true });
+    onReady(normalizeNavigationLabels, { once: true });
   }
 })();

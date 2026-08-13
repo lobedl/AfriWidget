@@ -106,21 +106,19 @@ function renderMarkdown(markdown) {
   return html.join('');
 }
 
-const tools = [
-  { htmlFile: 'icass-calculator.html', mdKey: 'icass-calculator' },
-  { htmlFile: 'loan-calculator.html', mdKey: 'loan-calculator' },
-  { htmlFile: 'savings-calculator.html', mdKey: 'savings-calculator' },
-  { htmlFile: 'currency-converter.html', mdKey: 'currency-converter' },
-  { htmlFile: 'qr-code-generator.html', mdKey: 'qr-code-generator' },
-  { htmlFile: 'profit-margin-calculator.html', mdKey: 'profit-margin-calculator' },
-  { htmlFile: 'pricing-calculator.html', mdKey: 'pricing-calculator' },
-  { htmlFile: 'roi-calculator.html', mdKey: 'roi-calculator' },
-  { htmlFile: 'startup-cost-calculator.html', mdKey: 'startup-cost-calculator' },
-  { htmlFile: 'freelance-rate-calculator.html', mdKey: 'freelance-rate-calculator' },
-  { htmlFile: 'debt-payoff-calculator.html', mdKey: 'debt-payoff-calculator' },
-  { htmlFile: 'break-even-calculator.html', mdKey: 'break-even-calculator' },
-  { htmlFile: 'macro-calculator.html', mdKey: 'macro-calculator' }
+const contentDir = path.join(process.cwd(), 'content');
+let tools = [
+  { htmlFile: 'success-stories.html', mdKey: 'success-stories' }
 ];
+
+if (fs.existsSync(contentDir)) {
+  const mdFiles = fs.readdirSync(contentDir).filter(f => f.endsWith('.md'));
+  mdFiles.forEach(mdFile => {
+    const mdKey = mdFile.replace(/\.md$/, '');
+    const htmlFile = `${mdKey}.html`;
+    tools.push({ htmlFile, mdKey });
+  });
+}
 
 tools.forEach(({ htmlFile, mdKey }) => {
   const mdPath = path.join(process.cwd(), 'content', `${mdKey}.md`);

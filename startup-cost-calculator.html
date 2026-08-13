@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" />
-  
   <!-- Google Analytics & Google AdSense -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
@@ -17,63 +13,73 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Startup Cost Calculator: Estimate Business Launch Capital &amp; Runway | AfriWidget</title>
+  <title>Startup Cost Calculator – AfriWidget</title>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+
   <meta name="description" content="Calculate total initial startup costs, monthly operating expenses, and working capital buffers (3, 6, 12 months). 100% free interactive business planning tool." />
   <link rel="canonical" href="https://afriwidget.com/startup-cost-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Startup Cost Calculator – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/startup-cost-calculator" />
-  <meta property="og:title" content="Startup Cost Calculator | AfriWidget" />
-  <meta property="og:description" content="Estimate initial one-time launch costs, monthly burn rate, and required cash runway for your new business startup." />
+  <meta property="og:description" content="Calculate total initial startup costs, monthly operating expenses, and working capital buffers (3, 6, 12 months). 100% free interactive business planning tool." />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Startup Cost Calculator – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:title" content="Startup Cost Calculator | AfriWidget" />
-  <meta name="twitter:description" content="Estimate initial one-time launch costs, monthly burn rate, and required cash runway for your new business startup." />
+  <meta name="twitter:description" content="Calculate total initial startup costs, monthly operating expenses, and working capital buffers (3, 6, 12 months). 100% free interactive business planning tool." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
-
-  <!-- Structured Data -->
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
   <script type="application/ld+json">
+[
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Startup Cost Calculator",
+    "description": "Calculate total initial startup costs, monthly operating expenses, and working capital buffers (3, 6, 12 months). 100% free interactive business planning tool.",
     "url": "https://afriwidget.com/startup-cost-calculator",
-    "description": "Free interactive startup cost calculator to estimate initial capital expenditures, monthly operating expenses, and working capital runway buffers.",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "HealthApplication",
     "operatingSystem": "All",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires JavaScript",
-    "isAccessibleForFree": true,
-    "provider": { "@type": "Organization", "name": "AfriWidget", "url": "https://afriwidget.com/" }
-  }
-  </script>
-  <script type="application/ld+json">
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://afriwidget.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://afriwidget.com/business" },
-      { "@type": "ListItem", "position": 3, "name": "Startup Cost Calculator", "item": "https://afriwidget.com/startup-cost-calculator" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Startup Cost Calculator",
+        "item": "https://afriwidget.com/startup-cost-calculator"
+      }
     ]
   }
+]
   </script>
-
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
-
-  <script src="footer.js" defer></script>
-  <script src="nav.js" defer></script>
-  <script src="share-results.js" defer></script>
-  <script src="universal-ai.js" defer></script>
-  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;}</style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
@@ -358,7 +364,9 @@
 
   <!-- CALCULATOR LOGIC SCRIPT -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+
+    onReady(() => {
       const defaultOneTime = [
         { name: 'Equipment & Hardware', amount: '', placeholder: '2,500' },
         { name: 'Business Legal Filing & Registration', amount: '', placeholder: '500' },

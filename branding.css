@@ -105,6 +105,21 @@ header a:hover, nav a:hover {
   color: #facc15;
 }
 
+/* Mobile Navigation Drawer Fail-safe Reset - Hidden by default to prevent FOUC / flashing */
+.mobile-menu {
+  display: none !important;
+}
+
+.mobile-menu.open {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
 /* Core Structural Layout Helpers */
 .flex { display: flex; }
 .hidden { display: none; }

@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -67,9 +68,7 @@
       text('#olevelElectives', selected.electives.join(' · '));
       text('#olevelCritical', selected.critical);
     };
-    course.addEventListener('change', calculate);
-    course.addEventListener('input', calculate);
-    calculate();
+    $('#olevelCheck')?.addEventListener('click', calculate);
   }
 
   const kcseTiers = {
@@ -95,9 +94,7 @@
       text('#kcseTierResult', result ? result[0] : 'Choose your KCSE mean grade');
       text('#kcseTierMessage', result ? result[1] : 'Select a grade to see the planning tier.');
     };
-    grade.addEventListener('change', calculate);
-    grade.addEventListener('input', calculate);
-    calculate();
+    $('#kcseTierCheck')?.addEventListener('click', calculate);
   }
 
   function initNatedCalculator() {
@@ -122,27 +119,88 @@
       const card = $('#natedCard');
       if (card) card.dataset.status = passed ? 'pass' : 'fail';
     };
-    [icass, exam].forEach(input => ['input', 'change'].forEach(event => input.addEventListener(event, calculate)));
     $('#natedCalculate')?.addEventListener('click', calculate);
-    calculate();
   }
 
-  const beceBands = {
-    A: [
-      [6, 10, 'High Chance', 'Category A planning range: aggregates 6–10.'],
-      [11, 14, 'Borderline', 'Category A planning range: aggregates 11–14.'],
-      [15, 54, 'Low Chance', 'Category A planning range: aggregate 15 or higher.']
-    ],
-    B: [
-      [6, 18, 'High Chance', 'Category B planning range: aggregates 6–18.'],
-      [19, 24, 'Borderline', 'Category B planning range: aggregates 19–24.'],
-      [25, 54, 'Low Chance', 'Category B planning estimate: aggregate 25 or higher.']
-    ],
-    C: [
-      [6, 30, 'High Chance', 'Category C indicative planning range: aggregates 6–30.'],
-      [31, 42, 'Borderline', 'Category C indicative planning range: aggregates 31–42.'],
-      [43, 54, 'Low Chance', 'Category C indicative planning estimate: aggregate 43 or higher.']
-    ]
+  const beceData = {
+    A: {
+      high: {
+        range: [6, 10],
+        title: 'High Placement Chance',
+        statusKey: 'high-chance',
+        badgeClass: 'text-emerald-800 bg-emerald-100 border-emerald-300',
+        reason: 'In BECE, lower aggregates mean better grades (Aggregate 6 is the best). Category A national schools are Ghana\'s top-tier institutions. They typically admit students with aggregates between 6 and 10. Your aggregate puts you in the top candidate pool.',
+        strategy: '<strong>Recommended Form Strategy:</strong> You can confidently place Category A schools as your top choices on your CSSPS form. Always list strong Category B schools as your 2nd or 3rd choices as safe backups.'
+      },
+      borderline: {
+        range: [11, 14],
+        title: 'Borderline / Competitive',
+        statusKey: 'borderline',
+        badgeClass: 'text-amber-800 bg-amber-100 border-amber-300',
+        reason: 'Your aggregate is good, but Category A schools are extremely competitive across Ghana. Most admitted students score aggregates between 6 and 10. Admission is possible depending on programme demand and regional quotas, but competition is fierce.',
+        strategy: '<strong>Recommended Form Strategy:</strong> You can select 1 Category A school as your first choice, but make sure your 2nd, 3rd, and 4th choices are solid Category B schools so you get placed smoothly.'
+      },
+      low: {
+        range: [15, 54],
+        title: 'Low Placement Chance',
+        statusKey: 'low-chance',
+        badgeClass: 'text-rose-800 bg-rose-100 border-rose-300',
+        reason: 'Category A schools (top national schools like Wesley Girls, Prempeh, Achimota, etc.) fill virtually all available places with students who scored aggregates 6 to 12. Because lower aggregates get selected first, an aggregate of {AGG} has a low probability of securing a Category A spot.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Avoid using multiple choices on Category A schools. Focus your choices on Category B and Category C schools where your aggregate has a much higher placement chance.'
+      }
+    },
+    B: {
+      high: {
+        range: [6, 18],
+        title: 'High Placement Chance',
+        statusKey: 'high-chance',
+        badgeClass: 'text-emerald-800 bg-emerald-100 border-emerald-300',
+        reason: 'Strong result for Category B regional schools! Aggregates from 6 to 18 give you a solid qualification for premier Category B institutions across Ghana.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Select your preferred Category B schools confidently, while adding Category C schools as safe backups.'
+      },
+      borderline: {
+        range: [19, 24],
+        title: 'Borderline / Competitive',
+        statusKey: 'borderline',
+        badgeClass: 'text-amber-800 bg-amber-100 border-amber-300',
+        reason: 'Your aggregate is in the middle range for Category B. Highly competitive courses like Science in top Category B schools fill up with lower aggregates (6–18), while General Arts, Home Economics, or Technical courses may accept up to aggregate 24.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Pair your Category B choices with 2 or 3 reliable Category C schools on your CSSPS form to guarantee placement.'
+      },
+      low: {
+        range: [25, 54],
+        title: 'Low Placement Chance',
+        statusKey: 'low-chance',
+        badgeClass: 'text-rose-800 bg-rose-100 border-rose-300',
+        reason: 'Category B regional schools fill most of their available seats with students scoring aggregates between 6 and 18 (and up to 24 for less crowded programmes). With an aggregate of {AGG}, applicants with lower (better) grades take available places first.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Select Category C schools, local district day schools, or Technical/Vocational (TVET) institutes as your primary CSSPS choices to guarantee a spot.'
+      }
+    },
+    C: {
+      high: {
+        range: [6, 30],
+        title: 'High Placement Chance',
+        statusKey: 'high-chance',
+        badgeClass: 'text-emerald-800 bg-emerald-100 border-emerald-300',
+        reason: 'Very strong qualification for Category C schools! Your aggregate is well within the typical placement threshold for Category C institutions and district high schools.',
+        strategy: '<strong>Recommended Form Strategy:</strong> You have a very high chance of placement in Category C. Choose preferred district or regional schools on your form.'
+      },
+      borderline: {
+        range: [31, 42],
+        title: 'Borderline / Competitive',
+        statusKey: 'borderline',
+        badgeClass: 'text-amber-800 bg-amber-100 border-amber-300',
+        reason: 'Aggregates between 31 and 42 qualify for Category C, but placement depends on school capacity and local applicant demand. Choosing public day schools in your district increases your placement likelihood.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Choose local day schools in your district and include TVET / technical options on your CSSPS form.'
+      },
+      low: {
+        range: [43, 54],
+        title: 'Low Placement Chance',
+        statusKey: 'low-chance',
+        badgeClass: 'text-rose-800 bg-rose-100 border-rose-300',
+        reason: 'An aggregate of {AGG} is higher than the standard cutoff for general Category C academic Senior High Schools. Places in Category C are typically taken by students scoring aggregates 30 to 40.',
+        strategy: '<strong>Recommended Form Strategy:</strong> Select local community day schools, district TVET institutes, or private high school options to ensure continued schooling without delay.'
+      }
+    }
   };
 
   function initBecePlacementEstimator() {
@@ -152,22 +210,45 @@
     const calculate = () => {
       const value = Number(aggregate.value);
       const valid = aggregate.value !== '' && Number.isFinite(value) && value >= 6 && value <= 54 && category.value;
+      const resEl = $('#becePlacementResult');
+      const msgEl = $('#becePlacementMessage');
+      const altEl = $('#becePlacementAlternatives');
+      const cardEl = $('#becePlacementCard');
+
       if (!valid) {
-        text('#becePlacementResult', 'Enter an aggregate and school category');
-        text('#becePlacementMessage', 'Use an aggregate from 6 to 54 and choose Category A, B, or C.');
+        if (resEl) resEl.textContent = 'Enter an aggregate and school category';
+        if (msgEl) msgEl.textContent = 'Use an aggregate from 6 to 54 and choose Category A, B, or C to see your placement estimate and clear reasons.';
+        if (altEl) altEl.classList.add('hidden');
         return;
       }
-      const band = beceBands[category.value].find(item => value >= item[0] && value <= item[1]);
-      text('#becePlacementResult', `${band[2]} · Category ${category.value}`);
-      text('#becePlacementMessage', `${band[3]} These are planning bands, not official CSSPS placement predictions.`);
-      const alternatives = category.value === 'A' ? 'Consider Category B as a practical backup tier.' : category.value === 'B' ? 'Consider Category C or a less competitive Category B school as backup options.' : 'Consider additional Category C schools, day options, or a programme with more available places.';
-      text('#becePlacementAlternatives', `Suggested backup plan: ${alternatives}`);
-      const card = $('#becePlacementCard');
-      if (card) card.dataset.status = band[2].toLowerCase().replace(' ', '-');
+
+      const catData = beceData[category.value];
+      let band = catData.high;
+      if (value >= catData.low.range[0]) {
+        band = catData.low;
+      } else if (value >= catData.borderline.range[0]) {
+        band = catData.borderline;
+      }
+
+      if (resEl) {
+        resEl.innerHTML = `<span class="inline-block px-3 py-1 rounded-lg border font-extrabold text-xs uppercase tracking-wider mb-2 ${band.badgeClass}">${band.title}</span><div class="text-2xl font-black text-slate-900">Category ${category.value} School Placement</div>`;
+      }
+
+      const reasonText = band.reason.replace('{AGG}', value);
+      if (msgEl) {
+        msgEl.innerHTML = `<div class="font-bold text-slate-900 mb-1.5 text-base">Why this result?</div><p class="text-slate-700 leading-relaxed">${reasonText}</p>`;
+      }
+
+      if (altEl) {
+        altEl.classList.remove('hidden');
+        altEl.innerHTML = `<div class="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wider text-amber-900">Form Strategy</div><p class="text-slate-800 leading-relaxed">${band.strategy}</p>`;
+      }
+
+      if (cardEl) {
+        cardEl.dataset.status = band.statusKey;
+      }
     };
-    [aggregate, category].forEach(input => ['input', 'change'].forEach(event => input.addEventListener(event, calculate)));
     $('#becePlacementCalculate')?.addEventListener('click', calculate);
-    calculate();
   }
 
   const conversionPoints = { 'A*': 4, A: 4, B: 3, C: 2, D: 1, E: 0 };
@@ -200,17 +281,16 @@
       const row = document.createElement('div');
       row.className = 'igcse-row grid grid-cols-12 gap-2 items-center';
       row.innerHTML = `<label class="sr-only" for="igcseSubject${rowNumber}">Subject name</label><input id="igcseSubject${rowNumber}" class="igcse-subject col-span-5 bg-slate-50 border-2 border-slate-200 px-3 py-2 rounded-lg" placeholder="Subject name" /><label class="sr-only" for="igcseLevel${rowNumber}">Level</label><select id="igcseLevel${rowNumber}" class="igcse-level col-span-3 bg-slate-50 border-2 border-slate-200 px-2 py-2 rounded-lg">${options(levels, 'Level')}</select><label class="sr-only" for="igcseGrade${rowNumber}">Grade</label><select id="igcseGrade${rowNumber}" class="igcse-grade col-span-3 bg-slate-50 border-2 border-slate-200 px-2 py-2 rounded-lg">${options(grades, 'Grade')}</select><button type="button" class="igcse-remove col-span-1 text-slate-400 hover:text-rose-600 text-xl" aria-label="Remove subject">×</button>`;
-      $('.igcse-remove', row).addEventListener('click', () => { row.remove(); calculate(); });
+      $('.igcse-remove', row).addEventListener('click', () => { row.remove(); });
       rows.appendChild(row);
-      $$('.igcse-subject, .igcse-level, .igcse-grade', row).forEach(input => ['input', 'change'].forEach(event => input.addEventListener(event, calculate)));
     };
-    $('#addIgcseSubject')?.addEventListener('click', () => { addRow(); calculate(); });
+    $('#addIgcseSubject')?.addEventListener('click', () => { addRow(); });
+    $('#igcseCalculate')?.addEventListener('click', calculate);
     addRow();
     addRow();
-    calculate();
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  onReady(() => {
     const mobileMenuButton = $('#mobileMenuBtn');
     const mobileMenu = $('#mobileMenu');
     if (mobileMenuButton && mobileMenu) mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('open'));

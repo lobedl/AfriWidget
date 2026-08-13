@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -201,22 +202,22 @@
   function buildAssistant(config) {
     const assistant = document.createElement('section');
     assistant.id = 'ai-live-insight';
-    assistant.className = 'hidden mt-6 rounded-2xl border border-emerald-200 bg-white p-5 sm:p-6 shadow-sm';
+    assistant.className = 'hidden mt-8 w-full rounded-2xl border border-emerald-200 bg-white p-6 sm:p-8 shadow-md text-left';
     const categoryName = CATEGORY_NAMES[config.category] || CATEGORY_NAMES.tools;
     assistant.innerHTML = `
-      <div class="flex items-center gap-3 mb-3">
-        <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold" aria-hidden="true">AI</div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm shadow-sm" aria-hidden="true">AI</div>
         <div>
-          <h2 class="font-bold text-slate-900">AfriWidget AI ${categoryName} Assistant</h2>
-          <p class="text-xs text-slate-500">Friendly, practical guidance based on this result</p>
+          <h2 class="font-extrabold text-slate-900 text-lg">AfriWidget AI ${categoryName} Assistant</h2>
+          <p class="text-xs text-slate-500 font-medium">Friendly, practical guidance based on this result</p>
         </div>
       </div>
-      <p id="universalAiInsight" class="text-slate-700 leading-relaxed" aria-live="polite">${FALLBACK_MESSAGE}</p>
-      <div class="mt-5 pt-5 border-t border-slate-200">
+      <p id="universalAiInsight" class="text-slate-700 leading-relaxed text-base bg-slate-50 border border-slate-100 p-4 sm:p-5 rounded-xl" aria-live="polite">${FALLBACK_MESSAGE}</p>
+      <div class="mt-6 pt-5 border-t border-slate-200">
         <label for="universalAiQuestion" class="block text-sm font-semibold text-slate-800 mb-2">Ask a follow-up question</label>
-        <div class="flex flex-col sm:flex-row gap-2">
-          <input id="universalAiQuestion" type="text" maxlength="500" class="flex-1 bg-slate-50 border-2 border-slate-200 focus:border-emerald-500 px-3 py-2.5 rounded-xl outline-none" placeholder="Ask about this result…" />
-          <button id="universalAiAsk" type="button" class="bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 text-white font-semibold px-5 py-2.5 rounded-xl">Ask AI</button>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input id="universalAiQuestion" type="text" maxlength="500" class="flex-1 bg-slate-50 border-2 border-slate-200 focus:border-emerald-500 px-4 py-3 rounded-xl outline-none text-slate-800 text-sm font-medium" placeholder="Ask about this result…" />
+          <button id="universalAiAsk" type="button" class="bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm shadow-sm cursor-pointer">Ask AI</button>
         </div>
         <div class="mt-2 flex flex-wrap justify-between gap-2 text-xs text-slate-500">
           <span id="universalAiCounter"></span>
@@ -225,8 +226,18 @@
         <p id="universalAiAnswer" class="hidden mt-4 rounded-xl bg-emerald-50 border border-emerald-100 p-4 text-sm text-emerald-950 leading-relaxed" aria-live="polite"></p>
       </div>`;
 
-    const host = $(config.host) || $('main');
-    if (host) host.insertAdjacentElement('afterend', assistant);
+    let targetElement = null;
+    if (config.host) {
+      const hostEl = $(config.host);
+      if (hostEl) {
+        targetElement = hostEl.closest('main > section') || hostEl.closest('section') || hostEl.closest('.tool-card') || hostEl.closest('main');
+      }
+    }
+    if (!targetElement) {
+      targetElement = $('main > section') || $('main') || document.body;
+    }
+
+    targetElement.insertAdjacentElement('afterend', assistant);
     return assistant;
   }
 
@@ -274,29 +285,35 @@
       if (currentRequest === requestVersion) insight.textContent = text;
     };
 
-    const scheduleInsight = () => {
-      window.clearTimeout(scheduled);
-      scheduled = window.setTimeout(runInsight, 450);
+    const triggerInsightOnClick = () => {
+      try {
+        activitySeen = true;
+        window.clearTimeout(scheduled);
+        scheduled = window.setTimeout(() => {
+          try {
+            if (hasValidResult(config)) {
+              runInsight();
+            }
+          } catch (e) {
+            console.error('AI insight error:', e);
+          }
+        }, 350);
+      } catch (e) {
+        console.error('Trigger insight error:', e);
+      }
     };
 
-    const markActivity = event => {
-      if (event.target.closest('#ai-live-insight') || event.target.closest('#cookieBanner')) return;
-      activitySeen = true;
-      scheduleInsight();
-    };
-
-    document.addEventListener('input', markActivity, true);
-    document.addEventListener('change', markActivity, true);
     document.addEventListener('click', event => {
-      if (event.target.closest('#ai-live-insight') || event.target.closest('#cookieBanner')) return;
-      if (event.target.closest('button, [role="button"], summary')) markActivity(event);
-    }, true);
-    document.addEventListener('submit', markActivity, true);
-
-    const observer = new MutationObserver(() => {
-      if (activitySeen) scheduleInsight();
+      const btn = event.target.closest('button, input[type="submit"], input[type="button"]');
+      if (!btn) return;
+      if (btn.closest('#ai-live-insight') || btn.closest('#cookieBanner') || btn.id === 'mobileMenuBtn' || btn.id === 'universalAiAsk') return;
+      triggerInsightOnClick();
     });
-    observer.observe(document.body, { childList: true, characterData: true, subtree: true });
+
+    document.addEventListener('submit', event => {
+      if (event.target.closest('#ai-live-insight') || event.target.closest('#cookieBanner')) return;
+      triggerInsightOnClick();
+    });
 
     askButton.addEventListener('click', async () => {
       const prompt = question.value.trim();
@@ -328,7 +345,6 @@
     window.addEventListener('pagehide', () => {
       window.clearInterval(countdownTimer);
       window.clearTimeout(scheduled);
-      observer.disconnect();
     }, { once: true });
   }
 
@@ -338,7 +354,7 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start, { once: true });
+    onReady(start, { once: true });
   } else {
     start();
   }

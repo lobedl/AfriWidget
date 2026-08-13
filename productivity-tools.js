@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -504,7 +505,7 @@
     generate();
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  onReady(() => {
     const menuButton = $('#mobileMenuBtn');
     const menu = $('#mobileMenu');
     if (menuButton && menu) menuButton.addEventListener('click', () => menu.classList.toggle('open'));

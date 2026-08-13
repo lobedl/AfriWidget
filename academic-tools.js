@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -30,7 +31,6 @@
       set('#jambResult', moneyOrNumber(finalScore));
       set('#jambMessage', `JAMB component: ${jambPart.toFixed(2)} · O’Level component: ${oLevel.toFixed(1)} · Formula maximum with this scale: 70 points.`);
     };
-    [scoreInput, ...$$('.jamb-grade')].forEach(input => input.addEventListener('input', calculate));
     $('#jambCalculate')?.addEventListener('click', calculate);
   }
 
@@ -58,12 +58,8 @@
         <select id="grade-${rowNumber}" class="grade-select col-span-3 bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-2 py-2 rounded-lg text-sm outline-none"><option value="">Grade</option>${options(scaleSelect.value)}</select>
         <button type="button" class="remove-row col-span-1 text-slate-400 hover:text-red-500 text-xl" aria-label="Remove course">×</button>`;
       if (grade) $('.grade-select', row).value = grade;
-      $('.remove-row', row).addEventListener('click', () => { row.remove(); calculate(); });
+      $('.remove-row', row).addEventListener('click', () => { row.remove(); });
       container.appendChild(row);
-      $$('.course-row input, .course-row select', row).forEach(input => {
-        input.addEventListener('input', calculate);
-        input.addEventListener('change', calculate);
-      });
     };
     const calculate = () => {
       const scale = Number(scaleSelect.value);
@@ -96,7 +92,6 @@
         select.innerHTML = `<option value="">Grade</option>${options(scaleSelect.value)}`;
         if (gradeScales[scaleSelect.value][current] !== undefined) select.value = current;
       });
-      calculate();
     });
     $('#addCourse')?.addEventListener('click', () => addRow());
     for (let i = 0; i < 4; i += 1) addRow();
@@ -143,7 +138,6 @@
       set('#apsResult', String(total));
       set('#apsMessage', `${detail} Converted points: ${subjectPoints.join(', ')}${$('#includeLifeOrientation')?.checked ? ` · LO: ${points(Number(loInput.value))}` : ''}.`);
     };
-    $$('.aps-main, #apsLifeOrientation, #includeLifeOrientation').forEach(input => input.addEventListener('input', calculate));
     $('#apsCalculate')?.addEventListener('click', calculate);
   }
 
@@ -163,7 +157,6 @@
       set('#kcseResult', `${total} / 84`);
       set('#kcseMessage', `Estimated overall mean grade: ${meanGrade(total)} · Seven entered subjects counted. Higher aggregate points indicate stronger performance.`);
     };
-    $$('.kcse-grade').forEach(input => input.addEventListener('change', calculate));
     $('#kcseCalculate')?.addEventListener('click', calculate);
   }
 
@@ -503,12 +496,9 @@
       if (statusNode) statusNode.className = `inline-block rounded-xl px-4 py-2 text-2xl sm:text-3xl font-extrabold my-5 ${detailsHost.dataset.status === 'high-chance' ? 'bg-emerald-100 text-emerald-800' : detailsHost.dataset.status === 'competitive' ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'}`;
     };
     system.addEventListener('change', () => { scoreInput?.setAttribute('placeholder', `${getSystem().min}–${getSystem().max}`); refreshInstitutions(); resetResult('Your comparison and next-step advice will appear here.'); });
-    institution.addEventListener('input', () => { refreshCourses(); calculate(); });
-    institution.addEventListener('change', () => { refreshCourses(); calculate(); });
-    category.addEventListener('change', () => { refreshCourses(); calculate(); });
-    course.addEventListener('input', calculate);
-    course.addEventListener('change', calculate);
-    scoreInput?.addEventListener('input', calculate);
+    institution.addEventListener('input', () => { refreshCourses(); });
+    institution.addEventListener('change', () => { refreshCourses(); });
+    category.addEventListener('change', () => { refreshCourses(); });
     $('#eligibilityCalculate')?.addEventListener('click', calculate);
     system.value = system.value || 'JAMB';
     refreshInstitutions();
@@ -516,7 +506,7 @@
     scoreInput?.setAttribute('max', getSystem().max);
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  onReady(() => {
     initJamb();
     initGpa();
     initAps();

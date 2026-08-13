@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" />
-  
-    <!-- Google Analytics & Google AdSense -->
+  <!-- Google Analytics & Google AdSense -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,65 +10,76 @@
     gtag("config", "G-6V491CW7H0");
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profit Margin Calculator: Calculate Gross Margin &amp; Markup | AfriWidget</title>
+  <title>Profit Margin Calculator – AfriWidget</title>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+
   <meta name="description" content="Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator. Private, in-browser tool with zero signup." />
   <link rel="canonical" href="https://afriwidget.com/profit-margin-calculator" />
-  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Profit Margin Calculator – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/profit-margin-calculator" />
-  <meta property="og:title" content="Profit Margin Calculator | AfriWidget" />
-  <meta property="og:description" content="Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator." />
+  <meta property="og:description" content="Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator. Private, in-browser tool with zero signup." />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Profit Margin Calculator – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:title" content="Profit Margin Calculator | AfriWidget" />
-  <meta name="twitter:description" content="Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator." />
+  <meta name="twitter:description" content="Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator. Private, in-browser tool with zero signup." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
-  
-  <!-- Structured Data -->
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
   <script type="application/ld+json">
+[
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Profit Margin Calculator",
+    "description": "Calculate gross profit, margin percentage, markup rate, and cost ratios instantly with our 100% free profit margin calculator. Private, in-browser tool with zero signup.",
     "url": "https://afriwidget.com/profit-margin-calculator",
-    "description": "Free profit margin calculator. Compute gross margin, markup percentage, and net profit for products or services.",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "HealthApplication",
     "operatingSystem": "All",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "browserRequirements": "Requires JavaScript",
-    "isAccessibleForFree": true,
-    "provider": { "@type": "Organization", "name": "AfriWidget", "url": "https://afriwidget.com/" }
-  }
-  </script>
-  <script type="application/ld+json">
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://afriwidget.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://afriwidget.com/business" },
-      { "@type": "ListItem", "position": 3, "name": "Profit Margin Calculator", "item": "https://afriwidget.com/profit-margin-calculator" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Profit Margin Calculator",
+        "item": "https://afriwidget.com/profit-margin-calculator"
+      }
     ]
   }
+]
   </script>
-  
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
-  
-  <script src="footer.js" defer></script>
-  <script src="nav.js" defer></script>
-  <script src="share-results.js" defer></script>
-  <style>.mobile-menu{display:none;}.mobile-menu.open{display:block;} #results{display:none;}</style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
@@ -305,7 +312,9 @@
   <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 px-4 mt-16"></footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+
+    onReady(() => {
       const marginForm = document.getElementById('marginForm');
       const costInput = document.getElementById('cost');
       const priceInput = document.getElementById('price');

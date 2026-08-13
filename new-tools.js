@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -375,10 +376,8 @@
         output.textContent = error ? 'This content is too long for a QR code.' : 'Live preview ready. Everything stays in this browser.';
       });
     }
-    type.addEventListener('change', function () { fields(); draw(); });
-    form.addEventListener('input', draw);
+    type.addEventListener('change', function () { fields(); });
     form.addEventListener('submit', function (event) { event.preventDefault(); draw(); });
-    window.addEventListener('load', draw);
     byId('qrDownload').addEventListener('click', function () {
       if (!canvas || !canvas.width) return;
       var link = document.createElement('a');
@@ -387,7 +386,6 @@
       link.click();
     });
     fields();
-    draw();
   }
 
   function setupLoanCalculator() {
@@ -444,8 +442,6 @@
       event.preventDefault();
       calculate();
     });
-    form.addEventListener('input', calculate);
-    calculate();
   }
 
   function setupSavingsCalculator() {
@@ -497,8 +493,6 @@
       event.preventDefault();
       calculate();
     });
-    form.addEventListener('input', calculate);
-    calculate();
   }
 
   function setupCurrencyConverter() {
@@ -533,9 +527,6 @@
       });
     }
     form.addEventListener('submit', function (event) { event.preventDefault(); convert(); });
-    form.addEventListener('input', convert);
-    form.addEventListener('change', convert);
-    convert();
     fetch('https://open.er-api.com/v6/latest/USD')
       .then(function (response) { return response.json(); })
       .then(function (data) {
@@ -543,7 +534,6 @@
           rates = Object.assign(rates, data.rates);
           source = 'Live rates refreshed from a public exchange-rate feed';
           setText('currencyRateStatus', '⚡ Live reference rates loaded');
-          convert();
         }
       })
       .catch(function () { setText('currencyRateStatus', 'Live feed unavailable — using fallback rates'); });
@@ -750,12 +740,479 @@
       calculate(true);
       return false;
     });
+  }
 
-    form.addEventListener('input', function () {
-      calculate(false);
+  function setupReverseAdsense() {
+    var form = byId('adsenseForm');
+    if (!form) return;
+    var modeSelect = byId('adsenseMode');
+    var rpmGroup = byId('rpmGroup');
+    var cpcCtrGroup = byId('cpcCtrGroup');
+
+    if (modeSelect) {
+      modeSelect.addEventListener('change', function () {
+        if (modeSelect.value === 'cpc_ctr') {
+          if (rpmGroup) rpmGroup.classList.add('hidden');
+          if (cpcCtrGroup) cpcCtrGroup.classList.remove('hidden');
+        } else {
+          if (rpmGroup) rpmGroup.classList.remove('hidden');
+          if (cpcCtrGroup) cpcCtrGroup.classList.add('hidden');
+        }
+      });
+    }
+
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var target = number('adsenseTarget');
+      var pagesPerVisit = number('adsensePageviewsPerVisit') || 1.3;
+      var mode = modeSelect ? modeSelect.value : 'rpm';
+      var rpm = 0;
+
+      if (mode === 'cpc_ctr') {
+        var cpc = number('adsenseCpc');
+        var ctr = number('adsenseCtr');
+        rpm = cpc * (ctr / 100) * 1000;
+      } else {
+        rpm = number('adsenseRpm');
+      }
+
+      var msg = byId('adsenseMessage');
+      if (target <= 0 || rpm <= 0) {
+        if (msg) {
+          msg.textContent = 'Please enter a valid monthly revenue goal and a positive Page RPM or CPC/CTR rates.';
+          msg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var monthlyPv = (target / rpm) * 1000;
+      var dailyPv = monthlyPv / 30.4167;
+      var dailyVisits = dailyPv / Math.max(1, pagesPerVisit);
+      var estimatedClicks = monthlyPv * 0.015;
+
+      setText('adsenseMonthlyPv', Math.round(monthlyPv).toLocaleString() + ' PVs');
+      setText('adsenseDailyPv', Math.round(dailyPv).toLocaleString() + ' PVs/day');
+      setText('adsenseDailyVisits', Math.round(dailyVisits).toLocaleString() + ' visitors/day');
+      setText('adsenseClicks', Math.round(estimatedClicks).toLocaleString() + ' clicks/mo');
+      show('adsenseResult');
     });
+  }
 
-    calculate(false);
+  function setupWebsiteValuation() {
+    var form = byId('valuationForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var netProfit = number('valNetProfit');
+      var model = (byId('valModel') || {}).value || 'display_ads';
+      var age = (byId('valAge') || {}).value || '1_to_3';
+      var trend = (byId('valTrend') || {}).value || 'stable';
+
+      var msg = byId('valMessage');
+      if (netProfit <= 0) {
+        if (msg) {
+          msg.textContent = 'Please enter a valid average monthly net profit.';
+          msg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var baseMultiple = 34;
+      if (model === 'saas') baseMultiple = 42;
+      else if (model === 'ecommerce') baseMultiple = 38;
+      else if (model === 'affiliate') baseMultiple = 33;
+      else if (model === 'digital_products') baseMultiple = 31;
+
+      if (age === '3_plus') baseMultiple += 4;
+      else if (age === 'under_1') baseMultiple -= 6;
+
+      if (trend === 'growing') baseMultiple += 5;
+      else if (trend === 'declining') baseMultiple -= 8;
+
+      baseMultiple = Math.max(18, baseMultiple);
+      var conservativeMult = Math.max(15, baseMultiple - 4);
+      var premiumMult = baseMultiple + 5;
+      var curr = (byId('valCurrency') || {}).value || 'USD';
+
+      setText('valConservative', money(netProfit * conservativeMult, curr));
+      setText('valAverage', money(netProfit * baseMultiple, curr));
+      setText('valPremium', money(netProfit * premiumMult, curr));
+      setText('valMultiple', baseMultiple + 'x SDE (' + (baseMultiple / 12).toFixed(1) + 'x Annual)');
+      show('valResult');
+    });
+  }
+
+  function setupStartupBurnRate() {
+    var form = byId('burnForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var cash = number('burnCash');
+      var expenses = number('burnExpenses');
+      var revenue = number('burnRevenue');
+      var curr = (byId('burnCurrency') || {}).value || 'USD';
+
+      var msg = byId('burnMessage');
+      if (expenses <= 0 || cash < 0) {
+        if (msg) {
+          msg.textContent = 'Please enter valid cash reserves and monthly operating expenses.';
+          msg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var grossBurn = expenses;
+      var netBurn = expenses - revenue;
+
+      setText('burnGross', money(grossBurn, curr) + '/mo');
+      setText('burnNet', money(netBurn, curr) + '/mo');
+
+      if (netBurn <= 0) {
+        setText('burnRunway', 'Infinite (Cash Positive 🎉)');
+        setText('burnZeroDate', 'N/A (Profitable)');
+      } else {
+        var runwayMonths = cash / netBurn;
+        setText('burnRunway', runwayMonths.toFixed(1) + ' Months');
+
+        var zeroDate = new Date();
+        zeroDate.setMonth(zeroDate.getMonth() + Math.floor(runwayMonths));
+        var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        setText('burnZeroDate', monthNames[zeroDate.getMonth()] + ' ' + zeroDate.getFullYear());
+      }
+      show('burnResult');
+    });
+  }
+
+  function setupCreatorSponsorship() {
+    var form = byId('sponsorshipForm');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var platform = (byId('creatorPlatform') || {}).value || 'youtube';
+      var followers = number('creatorFollowers');
+      var views = number('creatorViews');
+      var niche = (byId('creatorNiche') || {}).value || 'lifestyle_beauty';
+      var curr = (byId('sponsorCurrency') || {}).value || 'USD';
+
+      var msg = byId('sponsorMessage');
+      if (followers <= 0 && views <= 0) {
+        if (msg) {
+          msg.textContent = 'Please enter your follower/subscriber count or average post views.';
+          msg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var nicheMultiplier = 1.0;
+      if (niche === 'finance_tech') nicheMultiplier = 1.6;
+      else if (niche === 'fitness') nicheMultiplier = 1.2;
+      else if (niche === 'education') nicheMultiplier = 1.1;
+      else if (niche === 'gaming') nicheMultiplier = 0.85;
+
+      var dedicated = 0, integrated = 0, story = 0, effectiveCpm = '$25 - $40';
+
+      if (platform === 'youtube') {
+        var baseViews = views > 0 ? views : followers * 0.15;
+        dedicated = (baseViews / 1000) * 35 * nicheMultiplier;
+        integrated = dedicated * 0.45;
+        story = dedicated * 0.25;
+        effectiveCpm = '$' + Math.round(25 * nicheMultiplier) + ' - $' + Math.round(50 * nicheMultiplier);
+      } else if (platform === 'tiktok') {
+        var baseViews = views > 0 ? views : followers * 0.10;
+        dedicated = (baseViews / 1000) * 12 * nicheMultiplier;
+        integrated = dedicated * 0.6;
+        story = dedicated * 0.3;
+        effectiveCpm = '$' + Math.round(8 * nicheMultiplier) + ' - $' + Math.round(18 * nicheMultiplier);
+      } else {
+        var baseViews = views > 0 ? views : followers * 0.08;
+        dedicated = (followers / 10000) * 150 * nicheMultiplier;
+        integrated = dedicated * 0.5;
+        story = dedicated * 0.3;
+        effectiveCpm = '$' + Math.round(15 * nicheMultiplier) + ' - $' + Math.round(30 * nicheMultiplier);
+      }
+
+      setText('sponsorDedicated', money(dedicated, curr));
+      setText('sponsorIntegrated', money(integrated, curr));
+      setText('sponsorStory', money(story, curr));
+      setText('sponsorCpm', effectiveCpm);
+      show('sponsorResult');
+    });
+  }
+
+  function setupRemoteSalary() {
+    var form = byId('remoteSalaryForm');
+    if (!form) return;
+
+    var colIndices = {
+      'San Francisco, US': 100,
+      'New York, US': 98,
+      'London, UK': 85,
+      'Munich, Germany': 72,
+      'Toronto, Canada': 74,
+      'Dubai, UAE': 70,
+      'Cape Town, South Africa': 40,
+      'Johannesburg, South Africa': 38,
+      'Nairobi, Kenya': 34,
+      'Lagos, Nigeria': 30,
+      'Accra, Ghana': 32,
+      'Bangalore, India': 25
+    };
+
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var salary = number('remoteBaseSalary');
+      var curr = (byId('remoteCurrency') || {}).value || 'USD';
+      var baseLoc = (byId('remoteBaseLocation') || {}).value || 'San Francisco, US';
+      var targetLoc = (byId('remoteTargetLocation') || {}).value || 'Nairobi, Kenya';
+
+      var msg = byId('remoteMessage');
+      if (salary <= 0) {
+        if (msg) {
+          msg.textContent = 'Please enter a valid base annual salary.';
+          msg.classList.remove('hidden');
+        }
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var baseIndex = colIndices[baseLoc] || 100;
+      var targetIndex = colIndices[targetLoc] || 40;
+
+      var equivalent = salary * (targetIndex / baseIndex);
+      var diffPct = ((targetIndex - baseIndex) / baseIndex) * 100;
+      var powerMult = baseIndex / targetIndex;
+
+      setText('remoteEquivalentSalary', money(equivalent, curr) + '/yr');
+      setText('remoteColDiff', (diffPct > 0 ? '+' : '') + diffPct.toFixed(1) + '% Cost of Living');
+      setText('remotePowerMult', powerMult.toFixed(2) + 'x Effective Purchasing Power');
+      show('remoteResult');
+    });
+  }
+
+  function setupRedditDownloader() {
+    var form = byId('redditForm');
+    if (!form) return;
+
+    var audioEl = null;
+
+    function getAudioElement() {
+      if (!audioEl) {
+        audioEl = document.getElementById('redditAudioSync');
+        if (!audioEl) {
+          audioEl = document.createElement('audio');
+          audioEl.id = 'redditAudioSync';
+          document.body.appendChild(audioEl);
+        }
+      }
+      return audioEl;
+    }
+
+    function setupSync(player, audioUrl) {
+      var audio = getAudioElement();
+      if (!audioUrl) {
+        audio.pause();
+        audio.src = '';
+        return;
+      }
+      audio.src = audioUrl;
+      player.onplay = function () {
+        audio.currentTime = player.currentTime;
+        audio.play().catch(function () {});
+      };
+      player.onpause = function () {
+        audio.pause();
+      };
+      player.onseeking = function () {
+        audio.currentTime = player.currentTime;
+      };
+      player.onvolumechange = function () {
+        audio.volume = player.volume;
+        audio.muted = player.muted;
+      };
+    }
+
+    function fetchProxyJson(targetUrl) {
+      var proxies = [
+        function (u) { return 'https://corsproxy.io/?' + encodeURIComponent(u); },
+        function (u) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u); },
+        function (u) { return 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u); }
+      ];
+
+      function tryProxy(idx) {
+        if (idx >= proxies.length) {
+          return Promise.reject(new Error('All CORS proxies failed to reach Reddit.'));
+        }
+        var proxyUrl = proxies[idx](targetUrl);
+        var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        var timeoutId = setTimeout(function () { if (controller) controller.abort(); }, 9000);
+
+        var fetchOptions = controller ? { signal: controller.signal } : {};
+
+        return fetch(proxyUrl, fetchOptions)
+          .then(function (res) {
+            clearTimeout(timeoutId);
+            if (!res.ok) throw new Error('HTTP status ' + res.status);
+            return res.text();
+          })
+          .then(function (text) {
+            if (!text) throw new Error('Empty response');
+            var parsed = JSON.parse(text);
+            return parsed;
+          })
+          .catch(function () {
+            clearTimeout(timeoutId);
+            return tryProxy(idx + 1);
+          });
+      }
+
+      return tryProxy(0);
+    }
+
+    form.addEventListener('submit', function (e) {
+      if (e) e.preventDefault();
+      var rawUrl = (byId('redditUrl') || {}).value || '';
+      var msg = byId('redditMessage');
+
+      var trimmed = rawUrl.trim();
+      if (!trimmed.toLowerCase().includes('reddit.com') && !trimmed.toLowerCase().includes('redd.it')) {
+        if (msg) {
+          msg.textContent = 'Please enter a valid public Reddit URL (e.g., https://www.reddit.com/r/videos/comments/... or https://www.reddit.com/r/.../s/...)';
+          msg.classList.remove('hidden');
+        }
+        byId('redditResult').classList.add('hidden');
+        return;
+      }
+      if (msg) msg.classList.add('hidden');
+
+      var targetJsonUrl = trimmed;
+      if (!targetJsonUrl.startsWith('http://') && !targetJsonUrl.startsWith('https://')) {
+        targetJsonUrl = 'https://' + targetJsonUrl;
+      }
+
+      if (targetJsonUrl.includes('v.redd.it/')) {
+        var vid = targetJsonUrl.split('v.redd.it/')[1].split('/')[0].split('?')[0];
+        targetJsonUrl = 'https://www.reddit.com/video/' + vid + '.json';
+      } else if (targetJsonUrl.includes('redd.it/')) {
+        var pid = targetJsonUrl.split('redd.it/')[1].split('/')[0].split('?')[0];
+        targetJsonUrl = 'https://www.reddit.com/comments/' + pid + '.json';
+      } else {
+        var basePart = targetJsonUrl.split('?')[0].replace(/\/$/, '');
+        if (!basePart.endsWith('.json')) {
+          targetJsonUrl = basePart + '.json';
+        } else {
+          targetJsonUrl = basePart;
+        }
+      }
+
+      setText('redditTitle', '⏳ Extracting Reddit media metadata...');
+      setText('redditSubreddit', 'Processing Link');
+      byId('redditPlayer').classList.add('hidden');
+      byId('redditLinks').innerHTML = '';
+      show('redditResult');
+
+      fetchProxyJson(targetJsonUrl)
+        .then(function (data) {
+          try {
+            var post = null;
+            if (Array.isArray(data)) {
+              if (data[0] && data[0].data && data[0].data.children && data[0].data.children[0]) {
+                post = data[0].data.children[0].data;
+              }
+            } else if (data && data.data) {
+              if (data.data.children && data.data.children[0]) {
+                post = data.data.children[0].data;
+              } else if (data.data.title) {
+                post = data.data;
+              }
+            }
+
+            if (!post) {
+              throw new Error('Unable to extract post object');
+            }
+
+            var title = post.title || 'Reddit Video';
+            var subreddit = post.subreddit_name_prefixed || ('r/' + (post.subreddit || 'reddit'));
+
+            var mediaObj = null;
+            if (post.secure_media && post.secure_media.reddit_video) {
+              mediaObj = post.secure_media.reddit_video;
+            } else if (post.media && post.media.reddit_video) {
+              mediaObj = post.media.reddit_video;
+            } else if (post.crosspost_parent_list && post.crosspost_parent_list[0]) {
+              var cp = post.crosspost_parent_list[0];
+              if (cp.secure_media && cp.secure_media.reddit_video) mediaObj = cp.secure_media.reddit_video;
+              else if (cp.media && cp.media.reddit_video) mediaObj = cp.media.reddit_video;
+              else if (cp.preview && cp.preview.reddit_video_preview) mediaObj = cp.preview.reddit_video_preview;
+            } else if (post.preview && post.preview.reddit_video_preview) {
+              mediaObj = post.preview.reddit_video_preview;
+            }
+
+            setText('redditTitle', title);
+            setText('redditSubreddit', subreddit);
+
+            var player = byId('redditPlayer');
+            var linksDiv = byId('redditLinks');
+
+            if (mediaObj && mediaObj.fallback_url) {
+              var fallbackUrl = mediaObj.fallback_url;
+              var videoBase = fallbackUrl.split('DASH_')[0];
+              var audioUrl = videoBase + 'DASH_AUDIO_128.mp4';
+
+              if (player) {
+                player.src = fallbackUrl;
+                player.classList.remove('hidden');
+                setupSync(player, audioUrl);
+              }
+
+              if (linksDiv) {
+                var streamLinks = [
+                  { label: 'Download 1080p MP4', url: videoBase + 'DASH_1080.mp4', color: 'bg-yellow-400 hover:bg-yellow-300 text-slate-900' },
+                  { label: 'Download 720p MP4', url: videoBase + 'DASH_720.mp4', color: 'bg-slate-700 hover:bg-slate-600 text-white' },
+                  { label: 'Download 480p MP4', url: videoBase + 'DASH_480.mp4', color: 'bg-slate-700 hover:bg-slate-600 text-white' },
+                  { label: 'Download Audio Track', url: audioUrl, color: 'bg-slate-800 hover:bg-slate-700 text-yellow-300 border border-yellow-400/40' }
+                ];
+
+                var htmlBtns = '<p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Available Streams & Downloads:</p><div class="flex flex-wrap gap-2.5 sm:gap-3">';
+                streamLinks.forEach(function (s) {
+                  htmlBtns += '<a href="' + s.url + '" target="_blank" rel="noopener" download class="font-bold px-4 py-2.5 rounded-xl text-sm transition-colors shadow-sm inline-flex items-center gap-1.5 ' + s.color + '"><span>⬇️</span> ' + s.label + '</a>';
+                });
+                htmlBtns += '</div>';
+                linksDiv.innerHTML = htmlBtns;
+              }
+            } else if (post.url && (post.url.includes('.mp4') || post.url.includes('.gif') || post.url.includes('v.redd.it') || post.url.includes('i.redd.it'))) {
+              if (player) {
+                player.src = post.url;
+                player.classList.remove('hidden');
+                setupSync(player, null);
+              }
+              if (linksDiv) {
+                linksDiv.innerHTML = '<div class="mt-3"><a href="' + post.url + '" target="_blank" rel="noopener" download class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-bold px-4 py-2.5 rounded-xl text-sm shadow-sm inline-flex items-center gap-1.5"><span>⬇️</span> Download Direct Media</a></div>';
+              }
+            } else {
+              setText('redditTitle', 'No direct v.redd.it video stream detected on this post.');
+              if (player) player.classList.add('hidden');
+              if (linksDiv) linksDiv.innerHTML = '<p class="text-sm text-slate-400 mt-2">This Reddit post was fetched successfully, but it appears to be a standard text or external link post rather than a v.redd.it video stream.</p>';
+            }
+          } catch (err) {
+            setText('redditTitle', 'Unable to parse media stream structure from Reddit JSON.');
+            if (msg) {
+              msg.textContent = 'Failed to parse Reddit media details. Please double-check that the post URL is public and contains a video.';
+              msg.classList.remove('hidden');
+            }
+          }
+        })
+        .catch(function () {
+          setText('redditTitle', 'Error reaching Reddit API.');
+          if (msg) {
+            msg.textContent = 'Could not fetch Reddit post data. Make sure the post is public, not age-restricted, and try again.';
+            msg.classList.remove('hidden');
+          }
+        });
+    });
   }
 
   var initialized = false;
@@ -772,10 +1229,16 @@
     setupSavingsCalculator();
     setupCurrencyConverter();
     setupIcassCalculator();
+    setupReverseAdsense();
+    setupWebsiteValuation();
+    setupStartupBurnRate();
+    setupCreatorSponsorship();
+    setupRemoteSalary();
+    setupRedditDownloader();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    onReady(init);
   } else {
     init();
   }

@@ -1,3 +1,4 @@
+function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 (function () {
   'use strict';
 
@@ -193,7 +194,7 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  onReady(function () {
     initDosage();
     initCycle();
     initWater();

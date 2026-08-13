@@ -1,8 +1,36 @@
 # AfriWidget
 
-> AfriWidget is a privacy-first collection of 70 free web utilities, including calculators for health, finance, business, education, career writing, creative naming, identity testing, and African academic admissions planning.
+> AfriWidget is a privacy-first collection of 99 free web utilities, including calculators for health, finance, business, education, publisher monetization, startup burn rate, creator sponsorship, remote work, and media streaming.
 
 AfriWidget provides browser-based tools with no sign-up required for everyday calculations and academic planning. The following pages are the primary African education and admissions calculators:
+
+## Reverse AdSense Calculator
+
+[Reverse AdSense Calculator](https://afriwidget.com/reverse-adsense-calculator) — Calculate required monthly pageviews, daily traffic, and ad clicks needed to achieve target monthly Google AdSense revenue goals.
+
+## Website Acquisition Valuation Calculator
+
+[Website Acquisition Valuation Calculator](https://afriwidget.com/website-valuation-calculator) — Estimate market sale value and SDE valuation multiples for content blogs, SaaS software, affiliate sites, and digital businesses.
+
+## Startup Burn Rate Calculator
+
+[Startup Burn Rate Calculator](https://afriwidget.com/startup-burn-rate-calculator) — Calculate gross burn, net burn rate, remaining financial runway in months, and zero cash date forecast for startups.
+
+## Creator Sponsorship Rate Calculator
+
+[Creator Sponsorship Rate Calculator](https://afriwidget.com/creator-sponsorship-calculator) — Calculate commercial rate cards for YouTube integrations, TikTok clips, and Instagram sponsorship posts.
+
+## Remote Salary Converter
+
+[Remote Salary Converter](https://afriwidget.com/remote-salary-converter) — Compare international remote salaries across countries using foreign exchange rates and purchasing power cost-of-living adjustments.
+
+## Reddit Video Downloader Browser
+
+[Reddit Video Downloader Browser](https://afriwidget.com/reddit-video-downloader) — Extract, preview, and download public Reddit videos with audio tracks in 1080p, 720p, and MP4 formats.
+
+## User Success Stories & Impact Studies
+
+[User Success Stories & Impact Studies](https://afriwidget.com/success-stories) — Real-world case studies of students, entrepreneurs, freelancers, and healthcare workers across Africa utilizing AfriWidget's free privacy-first web tools for academic placement, debt payoff, freelance rate optimization, and clinical safety.
 
 ## Debt Payoff & Snowball Calculator
 

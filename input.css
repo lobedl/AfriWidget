@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "./branding.css";
+@import "./cards.css";
+@import "./category-pages.css";
+@import "./new-tools.css";
+
 @source "./**/*.html";
 @source "./**/*.js";
 
@@ -7,3 +12,18 @@
   --color-brand-emerald: #10B981;
   --color-brand-dark: #0F172A;
 }
+
+.mobile-menu {
+  display: none !important;
+}
+
+.mobile-menu.open {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+

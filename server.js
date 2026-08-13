@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { handler as groqHandler } from './netlify/functions/groq-proxy.js';
+import { handler as sendEmailHandler } from './netlify/functions/send-email.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,10 +33,33 @@ async function handleNetlifyFunction(req, res) {
   }
 }
 
+async function handleSendEmailFunction(req, res) {
+  try {
+    const event = {
+      httpMethod: req.method,
+      body: JSON.stringify(req.body)
+    };
+    const response = await sendEmailHandler(event);
+    res.status(response.statusCode || 200);
+    if (response.headers) {
+      Object.entries(response.headers).forEach(([key, val]) => {
+        res.setHeader(key, val);
+      });
+    }
+    res.send(response.body);
+  } catch (err) {
+    console.error('Error invoking send-email function:', err);
+    res.status(500).json({ error: 'Internal Function Error' });
+  }
+}
+
 app.all('/.netlify/functions/groq-proxy', handleNetlifyFunction);
 app.all('/.netlify/functions/education-ai', handleNetlifyFunction);
 app.all('/api/groq-proxy', handleNetlifyFunction);
 app.all('/api/education-ai', handleNetlifyFunction);
+
+app.all('/.netlify/functions/send-email', handleSendEmailFunction);
+app.all('/api/send-email', handleSendEmailFunction);
 
 // 301 Redirects from _redirects
 app.get(['/tech-tool.html', '/tech-tools.html', '/tech-tool', '/tech-tools'], (req, res) => {
