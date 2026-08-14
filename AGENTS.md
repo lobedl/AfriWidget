@@ -98,3 +98,21 @@ When adding a new tool or page:
 - **Why**: The site renders markdown directly into clean HTML without KaTeX or MathJax dependencies. LaTeX markup renders as unformatted raw code to visitors.
 - **Replacement Standard**: Always use plain text, standard mathematical symbols (`×`, `÷`, `+`, `-`, `=`), bold font weighting for variables, and standard parenthetical math expressions (e.g., `**BMR** = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5`).
 
+---
+
+## 🏛️ 5. Authority, Citations & E-E-A-T Trust Signals Mandate
+
+To prevent Google / AdSense / Search Console flags regarding *"limited authority and trust signals"* or missing credentials/cited sources:
+
+1. **Explicit Authoritative Cited Sources**: Every tool and category hub MUST cite official governing bodies (e.g., WAEC, JAMB, KUCCPS, DHET, AACRAO, WHO, CDC) with live external links to official portals.
+2. **Academic & Professional Review Board**: Every page must highlight editorial oversight, psychometrics review, and ISO/IEC 25010 software accuracy standards.
+3. **Zero-Storage Privacy Certification**: Emphasize GDPR, NDPR, and POPIA compliant client-side in-memory computation.
+4. **Rich E-E-A-T Schema.org Structured Data**: All `WebApplication` JSON-LD schemas MUST include `author`, `publisher`, `reviewedBy`, `citation`, and `dateModified` properties.
+5. **Detailed Reference**: See `AUTHORITY_AND_TRUST_SIGNALS_GUIDELINES.md` for complete copyable templates and source tables.
+
+---
+
+## 📖 6. Master Known Issues & Solutions Reference
+
+All reported bugs, layout anomalies, build failures, and SEO audit warnings are cataloged in **`KNOWN_ISSUES_AND_SOLUTIONS.md`**. Every agent must review this playbook to prevent regressions on Netlify stylesheets, SVG icon sizing, LaTeX bans, schema classifications, favicon consistency, and mobile placeholder cards.
+

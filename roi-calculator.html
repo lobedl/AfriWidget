@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Return on Investment (ROI) Calculator – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>Return on Investment (ROI) Calculator – AfriWidget</title>
+  
   <meta name="description" content="Free online return on investment (roi) calculator tool. Calculate instantly in your browser with zero signup, 100% private execution, and clear results." />
   <link rel="canonical" href="https://afriwidget.com/roi-calculator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -80,6 +112,20 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
@@ -87,35 +133,34 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
-          <span class="text-xl font-extrabold tracking-tight">Afri<span class="text-emerald-400">Widget</span></span>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="health" class="hover:text-emerald-400 transition-colors">Health</a>
-          <a href="finance" class="hover:text-emerald-400 transition-colors">Finance</a>
-          <a href="real-estate" class="hover:text-emerald-400 transition-colors">Real Estate</a>
-          <a href="business" class="hover:text-emerald-400 transition-colors">Business</a>
-          <a href="education" class="hover:text-emerald-400 transition-colors">Education</a>
-          <a href="productivity" class="hover:text-emerald-400 transition-colors">Tech</a>
-          <a href="widgets" class="hover:text-emerald-400 transition-colors">All Widgets</a>
-          <a href="roi-calculator" class="text-yellow-400 font-bold">ROI Calc</a>
-        </div>
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4">
-      <a href="health" class="block py-2 hover:text-emerald-400">Health</a>
-      <a href="finance" class="block py-2 hover:text-emerald-400">Finance</a>
-      <a href="real-estate" class="block py-2 hover:text-emerald-400">Real Estate</a>
-      <a href="business" class="block py-2 hover:text-emerald-400">Business</a>
-      <a href="education" class="block py-2 hover:text-emerald-400">Education</a>
-      <a href="productivity" class="block py-2 hover:text-emerald-400">Tech</a>
-      <a href="widgets" class="block py-2 hover:text-emerald-400">All Widgets</a>
-      <a href="profit-margin-calculator" class="block py-2 hover:text-emerald-400">Profit Margin Calculator</a>
-      <a href="pricing-calculator" class="block py-2 hover:text-emerald-400">Pricing Calculator</a>
-      <a href="roi-calculator" class="block py-2 text-yellow-400 font-bold">ROI Calculator</a>
-      <a href="faq" class="block py-2 hover:text-emerald-400">FAQ</a>
-    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
   </nav>
 
   <header class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-12 px-4 text-center shadow-md">

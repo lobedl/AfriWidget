@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML Minifier – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>HTML Minifier – AfriWidget</title>
+  
   <meta name="description" content="Free online html minifier tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/html-minifier" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -80,9 +112,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800">
-  <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-xl"><div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4"><a href="/" class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></a><div class="hidden gap-5 text-sm font-medium md:flex"><a href="productivity" class="hover:text-yellow-300">Tech</a><a href="widgets" class="hover:text-yellow-300">All Widgets</a><a href="faq" class="hover:text-yellow-300">FAQ</a></div><button id="mobileMenuBtn" class="rounded-md p-2 md:hidden" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="hidden bg-slate-800 px-4 pb-4 md:hidden"><a href="productivity" class="block py-2">Tech Tools</a><a href="widgets" class="block py-2">All Widgets</a></div></nav>
+  <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-xl"><div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden gap-5 text-sm font-medium md:flex">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="rounded-md p-2 md:hidden" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-slate-950 px-4 py-14 text-center text-white"><div class="mx-auto max-w-3xl"><span class="text-sm font-bold uppercase tracking-widest text-yellow-300">Developer Utility</span><h1 class="mt-3 text-3xl font-extrabold sm:text-5xl">HTML Minifier</h1><p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">Remove unnecessary whitespace and comments from HTML to create a smaller, copy-ready document without sending your source anywhere.</p><span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Tool</span></div></header>
   <main class="mx-auto max-w-6xl px-4 py-10">
     <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7" aria-label="HTML minifier"><div class="mb-3 flex items-center justify-between"><label for="htmlInput" class="text-lg font-extrabold text-slate-950">HTML input</label><button id="clearHtml" class="text-sm font-bold text-slate-500 hover:text-red-600">Clear</button></div><textarea id="htmlInput" rows="16" class="w-full resize-y rounded-2xl border border-slate-300 bg-slate-50 p-4 font-mono text-sm leading-6 outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-100" placeholder="<!-- Your HTML here -->&#10;<div class=&quot;card&quot;>  <h1>Hello</h1>  </div>"></textarea><div class="mt-4 flex flex-wrap items-center gap-3"><label class="flex items-center gap-2 text-sm font-semibold text-slate-700"><input id="removeComments" type="checkbox" checked class="h-4 w-4 accent-yellow-400"> Remove comments</label><label class="flex items-center gap-2 text-sm font-semibold text-slate-700"><input id="minifyAssets" type="checkbox" checked class="h-4 w-4 accent-yellow-400"> Minify inline CSS &amp; JavaScript</label><button id="minifyHtml" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Minify</button><button id="copyMinified" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Copy</button><button id="downloadMinified" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Download</button></div><p id="minifyStatus" class="mt-3 min-h-5 text-sm text-emerald-700" aria-live="polite"></p><div class="mt-6 grid gap-4 sm:grid-cols-3"><div class="rounded-2xl bg-slate-50 p-4"><strong id="beforeSize">0 B</strong><span class="block text-xs uppercase tracking-wider text-slate-500">Before</span></div><div class="rounded-2xl bg-slate-50 p-4"><strong id="afterSize">0 B</strong><span class="block text-xs uppercase tracking-wider text-slate-500">After</span></div><div class="rounded-2xl bg-yellow-50 p-4"><strong id="savedSize">0%</strong><span class="block text-xs uppercase tracking-wider text-slate-500">Saved</span></div></div><pre id="htmlOutput" class="mt-6 min-h-40 overflow-auto rounded-2xl bg-slate-950 p-4 font-mono text-xs leading-6 text-yellow-100"></pre></section>

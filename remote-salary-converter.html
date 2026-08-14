@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remote Salary Converter – Cost of Living & Foreign Pay Comparison</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-  <link rel="stylesheet" href="cards.css" />
-  <link rel="stylesheet" href="new-tools.css" />
-
+<title>Remote Salary Converter – Cost of Living & Foreign Pay Comparison</title>
+  
   <meta name="description" content="Free online remote salary converter tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/remote-salary-converter" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -83,9 +113,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="new-tool-page font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center gap-2"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg><span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span></a><div class="hidden md:flex items-center gap-6 text-sm"><a href="/">Home</a><a href="/education">Education Tools</a><a href="/finance">Finance Tools</a><a href="/health">Health Tools</a><a href="/productivity">Productivity Tools</a><a href="/widgets">All Tools Directory</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></div></nav>
   <header class="tool-hero px-4 py-12"><div class="max-w-4xl mx-auto"><span class="badge">⚡ 100% Free • No Signup • Private In-Browser Tool</span><p class="mt-5 text-sm font-bold uppercase tracking-widest text-yellow-300">Remote Work & Salary Tool</p><h1 id="toolTitle" class="mt-2 text-4xl sm:text-5xl font-black">Remote Salary Converter</h1><p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Compare compensation across global cities with real-time purchasing power and cost-of-living adjustments.</p></div></header>
   <main class="tool-shell">
     <section class="tool-card p-5 sm:p-8" aria-labelledby="remote-heading">

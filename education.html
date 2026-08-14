@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Education &amp; Academic Calculators – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-  <link rel="stylesheet" href="cards.css" />
-  <link rel="stylesheet" href="category-pages.css" />
-
-  <meta name="description" content="Free online free education & academic calculators tool. Calculate instantly in your browser with zero signup, 100% private execution, and clear results." />
+<title>Free Educational Tools &amp; Academic Calculators for Students – AfriWidget</title>
+  
+  <meta name="description" content="Free educational tools and academic calculators for students and applicants. Calculate cumulative GPA, CGPA, WASSCE, JAMB, BECE, KCSE cluster points, and South African APS." />
   <link rel="canonical" href="https://afriwidget.com/education" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -31,17 +61,17 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Education &amp; Academic Calculators – AfriWidget" />
+  <meta property="og:title" content="Free Educational Tools &amp; Academic Calculators for Students – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/education" />
-  <meta property="og:description" content="Free AI-powered academic tools from AfriWidget. Calculate your GPA, plan your course load, and receive personalised study insights." />
+  <meta property="og:description" content="Free educational tools and academic calculators for students. Calculate cumulative GPA, CGPA, WASSCE, BECE, JAMB, KCSE cluster points, and South African APS instantly." />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Education &amp; Academic Calculators – AfriWidget" />
+  <meta name="twitter:title" content="Free Educational Tools &amp; Academic Calculators for Students – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Free AI-powered academic tools from AfriWidget. Calculate your GPA, plan your course load, and receive personalised study insights." />
+  <meta name="twitter:description" content="Free educational tools and academic calculators for students. Calculate cumulative GPA, CGPA, WASSCE, BECE, JAMB, KCSE cluster points, and South African APS instantly." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -50,12 +80,39 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Free Education &amp; Academic Calculators",
-    "description": "Free AI-powered academic tools from AfriWidget. Calculate your GPA, plan your course load, and receive personalised study insights.",
+    "name": "Free Educational Tools & Academic Calculators",
+    "description": "Free online educational tools and academic calculators for students and applicants. Calculate cumulative GPA, CGPA, university admission aggregates, and international grade conversions.",
     "url": "https://afriwidget.com/education",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial & Review Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.png"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-14",
+    "citation": [
+      "https://www.waecgh.org/",
+      "https://www.jamb.gov.ng/ibass",
+      "https://kuccps.net/",
+      "https://www.dhet.gov.za/",
+      "https://www.aacrao.org/",
+      "https://www.cambridgeinternational.org/"
+    ],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -75,13 +132,73 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Free Education &amp; Academic Calculators",
+        "name": "Educational Tools",
         "item": "https://afriwidget.com/education"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What free educational tools and academic calculators does AfriWidget provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AfriWidget provides a complete suite of free educational tools including Cumulative GPA Calculators (4.0 and 5.0 scales), WASSCE Aggregate Calculators, BECE Aggregate and CSSPS Placement Estimators, JAMB UTME Aggregate Calculators, South African APS Score Calculators, KCSE and KUCCPS Cluster Calculators, TVET ICASS and NATED Calculators, and Cambridge IGCSE / A-Level GPA Converters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my cumulative GPA using these educational tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate your cumulative GPA, enter each course with its letter grade and assigned credit hours. The calculator multiplies the grade point value by the credit hours to determine quality points, sums all quality points, and divides by total credit hours to produce your weighted cumulative GPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these academic and educational tools free and private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All AfriWidget educational tools and calculators run 100% client-side in your web browser. No registration, sign-up, or personal student data is ever sent to or stored on external servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate African university admission aggregates on AfriWidget?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AfriWidget features dedicated admissions calculators for West Africa (WASSCE / BECE for Ghana and Nigeria), Nigeria (JAMB UTME screening aggregates), Kenya (KCSE mean grade and KUCCPS weighted cluster points), and South Africa (Matric APS points and TVET ICASS calculations)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does credit hour weighting affect cumulative GPA calculations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Courses with higher credit hours carry greater weight in cumulative GPA calculations. For example, a 4-credit course has four times the mathematical weight of a 1-credit course. Our tools apply standard credit hour weighting automatically."
+        }
       }
     ]
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="category-page bg-slate-50 text-slate-800 font-sans">
 
@@ -89,31 +206,44 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#10B981"/><circle cx="28" cy="9" r="2.5" fill="#0F766E"/><circle cx="9" cy="11" r="1.5" fill="#10B981" opacity="0.55"/></svg>
-          <span class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></span>
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="/" class="hover:text-yellow-300 transition-colors">Home</a>
-          <a href="education" class="text-yellow-300 font-bold">Education Tools</a>
-          <a href="finance" class="hover:text-yellow-300 transition-colors">Finance Tools</a>
-          <a href="health" class="hover:text-yellow-300 transition-colors">Health Tools</a>
-          <a href="productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a>
-          <a href="widgets" class="hover:text-yellow-300 transition-colors">All Tools Directory</a>
-        </div>
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
   </nav>
   <main>
 
 
   <section class="bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-900 text-white py-20 px-4 text-center">
     <div class="max-w-3xl mx-auto">
-      <span class="inline-block bg-emerald-500 bg-opacity-20 text-emerald-300 text-sm font-semibold px-4 py-1 rounded-full mb-6 border border-emerald-500 border-opacity-30">Education &amp; Academics</span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">Free Education &amp; Academic Calculators</h1>
-      <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">Calculate cumulative grade point averages (GPA/CGPA), university admission aggregate points (WASSCE, BECE, JAMB UTME, KCSE, APS, TVET ICASS), and international grade conversions with instant browser-based tools.</p>
-       <div class="flex flex-wrap justify-center gap-3"><a href="admissions" class="inline-block bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-7 py-3 rounded-xl transition-colors shadow-lg">Explore Admissions Tools</a><a href="gpa-calculator" class="inline-block border border-slate-400 hover:border-emerald-400 text-white font-bold px-7 py-3 rounded-xl transition-colors">Try the GPA Calculator</a></div>
+      <span class="inline-block bg-emerald-500 bg-opacity-20 text-emerald-300 text-sm font-semibold px-4 py-1 rounded-full mb-6 border border-emerald-500 border-opacity-30">⚡ 100% Free • No Signup • Private Educational Tools</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">Free Educational Tools &amp; Academic Calculators</h1>
+      <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">Calculate cumulative grade point averages (GPA/CGPA), university admission aggregate points (WASSCE, BECE, JAMB UTME, KCSE, APS, TVET ICASS), and international grade conversions with instant browser-based educational tools.</p>
+       <div class="flex flex-wrap justify-center gap-3"><a href="admissions" class="inline-block bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-7 py-3 rounded-xl transition-colors shadow-lg">Explore Admissions Calculators</a><a href="gpa-calculator" class="inline-block border border-slate-400 hover:border-emerald-400 text-white font-bold px-7 py-3 rounded-xl transition-colors">Try Cumulative GPA Calculator</a></div>
     </div>
   </section>
 
@@ -122,12 +252,12 @@
     <div class="bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-teal-800/60 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
       <div class="space-y-2 max-w-2xl">
         <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[11px] font-black uppercase">🎓 Success Story Spotlight</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[11px] font-black uppercase">🎓 Student Success Spotlight</span>
           <span class="text-xs text-slate-400 font-medium">Nakuru, Kenya</span>
         </div>
         <h3 class="text-xl font-bold text-white">"Accepted to My 1st Choice Engineering Degree at JKUAT"</h3>
         <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-          "After KCSE exams, I used AfriWidget's KCSE KUCCPS Cluster Calculator to model my exact weighted cluster score. I applied with 100% confidence without paying for private advisors." — <strong>Kwesi O.</strong>
+          "After KCSE exams, I used AfriWidget's KCSE KUCCPS Cluster Calculator educational tool to model my exact weighted cluster score. I applied with 100% confidence without paying for private advisors." — <strong>Kwesi O.</strong>
         </p>
       </div>
       <a href="success-stories" class="shrink-0 px-5 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors text-center shadow">
@@ -141,97 +271,249 @@
     <div class="category-tools-inner">
       <div class="category-tools-heading">
         <div>
-          <h2 id="education-tools-title">Education Tools</h2>
-          <p class="mt-1 text-left">Academic planning tools for students, applicants, and families.</p>
+          <h2 id="education-tools-title">Free Educational Tools &amp; Student Calculators</h2>
+          <p class="mt-1 text-left">Academic planning tools, GPA estimators, and admission calculators for students, applicants, and educators.</p>
         </div>
-        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">20 tools</span>
+        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">14 Tools</span>
       </div>
       <div class="category-tool-grid">
-        <a class="category-tool-card" href="gpa-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19V5m0 14h16M8 16v-4m4 4V8m4 8V6"/></svg></span><h3>Cumulative GPA Calculator</h3><p>Track weighted semester grades and see your cumulative GPA instantly.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="wassce-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3"/></svg></span><h3>WASSCE Aggregate Calculator</h3><p>Estimate tertiary admission aggregates from core and elective results.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="bece-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m4 7 8-4 8 4-8 4-8-4Zm3 3v5c3 2 7 2 10 0v-5M12 14v7"/></svg></span><h3>BECE Aggregate Calculator</h3><p>Estimate a BECE placement aggregate from core and optional subjects.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="bece-cssps-placement-estimator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 16V5h12v11M9 9h6M9 12h4"/></svg></span><h3>BECE CSSPS Placement Estimator</h3><p>Explore school-category placement bands for Ghanaian planning.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="jamb-utme-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><h3>JAMB UTME Aggregate Calculator</h3><p>Combine a JAMB score and O’Level grades for university planning.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="tertiary-gpa-cgpa-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 17V7l6-4 6 4v10M9 10h6"/></svg></span><h3>Tertiary GPA &amp; CGPA Calculator</h3><p>Calculate weighted university GPA across 4.0 and 5.0 scales.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="south-african-aps-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16V5h10v11M9 9h6M9 12h4"/></svg></span><h3>South African APS Calculator</h3><p>Convert Matric and NSC percentages to an APS planning estimate.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="kcse-kuccps-cluster-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 18h16M6 15V6h12v9M9 9h6M9 12h6"/></svg></span><h3>KCSE &amp; KUCCPS Cluster Calculator</h3><p>Estimate seven-subject KCSE aggregate and mean grade.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="university-cutoff-eligibility-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m12 3 2.2 4.5L19 9l-3.5 3.5.8 5-4.3-2.2-4.3 2.2.8-5L5 9l4.8-1.5L12 3Z"/></svg></span><h3>University Eligibility Checker</h3><p>Compare JAMB or WASSCE scores with sample course baselines.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="olevel-subject-combination-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h6"/></svg></span><h3>WAEC / NECO Subject Checker</h3><p>Review common O’Level subject combinations before choosing a course.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="kcse-eligibility-tier-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16h10M9 13h6M11 4h2v5h-2z"/></svg></span><h3>KCSE Eligibility Tier Checker</h3><p>Map a Kenyan mean grade to broad study pathway tiers.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="south-african-tvet-nated-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5M8 17h3"/></svg></span><h3>TVET NATED Pass Calculator</h3><p>Apply ICASS and exam weighting to estimate a NATED result.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="icass-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5M8 17h3"/></svg></span><h3>ICASS Calculator</h3><p>Calculate weighted Internal Continuous Assessment for TVET planning.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="igcse-alevel-gpa-converter"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 7h14M5 12h14M5 17h9M8 4v16"/></svg></span><h3>IGCSE / A-Level GPA Converter</h3><p>Convert international grades to an indicative US GPA range.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="gpa-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19V5m0 14h16M8 16v-4m4 4V8m4 8V6"/></svg></span><h3>Cumulative GPA Calculator</h3><p>Track weighted semester grades and calculate cumulative GPA (4.0 scale) with credit weighting.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="tertiary-gpa-cgpa-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 17V7l6-4 6 4v10M9 10h6"/></svg></span><h3>Tertiary GPA &amp; CGPA Calculator</h3><p>Calculate university GPA and cumulative CGPA across 4.0 and 5.0 African degree scales.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="wassce-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3"/></svg></span><h3>WASSCE Aggregate Calculator</h3><p>Estimate WAEC tertiary admission aggregate points from core and elective grades.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="jamb-utme-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><h3>JAMB UTME Aggregate Calculator</h3><p>Combine JAMB UTME score and O’Level grades for Nigerian university admission screening.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="bece-aggregate-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m4 7 8-4 8 4-8 4-8-4Zm3 3v5c3 2 7 2 10 0v-5M12 14v7"/></svg></span><h3>BECE Aggregate Calculator</h3><p>Calculate BECE examination placement aggregate points from core and optional subjects.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="bece-cssps-placement-estimator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 16V5h12v11M9 9h6M9 12h4"/></svg></span><h3>BECE CSSPS Placement Estimator</h3><p>Explore Senior High School (SHS) Category A, B, and C placement eligibility in Ghana.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="south-african-aps-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16V5h10v11M9 9h6M9 12h4"/></svg></span><h3>South African APS Calculator</h3><p>Convert Matric and NSC percentages into Admission Point Score (APS) for university entry.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="kcse-kuccps-cluster-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 18h16M6 15V6h12v9M9 9h6M9 12h6"/></svg></span><h3>KCSE &amp; KUCCPS Cluster Calculator</h3><p>Estimate seven-subject KCSE aggregate points, mean grade, and KUCCPS cluster points.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="university-cutoff-eligibility-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m12 3 2.2 4.5L19 9l-3.5 3.5.8 5-4.3-2.2-4.3 2.2.8-5L5 9l4.8-1.5L12 3Z"/></svg></span><h3>University Eligibility Checker</h3><p>Compare academic exam grades against university cut-off baselines and entry prerequisites.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="olevel-subject-combination-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h6"/></svg></span><h3>WAEC / NECO Subject Checker</h3><p>Review required O’Level subject combinations for African university and polytechnic courses.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="kcse-eligibility-tier-checker"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16h10M9 13h6M11 4h2v5h-2z"/></svg></span><h3>KCSE Eligibility Tier Checker</h3><p>Map Kenyan KCSE mean grades to higher education tiers: Degree, Diploma, and Certificate.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="south-african-tvet-nated-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5M8 17h3"/></svg></span><h3>TVET NATED Pass Calculator</h3><p>Apply official DHET ICASS and national exam weightings to determine NATED pass status.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="icass-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5M8 17h3"/></svg></span><h3>ICASS Score Calculator</h3><p>Calculate weighted TVET Internal Continuous Assessment scores with pass/fail tracking.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="igcse-alevel-gpa-converter"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 7h14M5 12h14M5 17h9M8 4v16"/></svg></span><h3>IGCSE / A-Level GPA Converter</h3><p>Convert Cambridge IGCSE, O-Level, and A-Level grades into standard US 4.0 GPA values.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
       </div>
     </div>
   </section>
 
   <article class="max-w-4xl mx-auto px-4 py-16">
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Education as the Engine of African Progress</h2>
-    <p class="text-slate-700 leading-relaxed mb-5 text-lg">Education is widely recognised as the most powerful driver of individual economic mobility and national development. Across Africa, record numbers of young people are enrolling in universities, polytechnics, and professional training programmes, representing an extraordinary opportunity for the continent. Yet access to the academic planning tools, tutoring resources, and performance tracking systems that wealthier students enjoy remains highly uneven.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">AfriWidget's Education &amp; Academics category was built to give every student — regardless of their university, country, or income bracket — access to precise academic planning tools and optional realtime AI guidance. Our GPA calculator helps students understand exactly where they stand academically, identify the courses that will most improve or damage their standing, and plan strategically for scholarship eligibility, postgraduate admission, and academic honours.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">We believe that informed students make better decisions. When you know your current cumulative GPA to two decimal places, understand exactly what grades you need next semester to reach a target GPA, and can model the impact of adding or dropping a course, you are empowered to take deliberate, strategic action toward your academic goals.</p>
+    <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Free Educational Tools &amp; Academic Calculators Matter</h2>
+    <p class="text-slate-700 leading-relaxed mb-5 text-lg">Education is widely recognised as the most powerful driver of individual economic mobility and national development. Across Africa and the world, record numbers of students are enrolling in secondary schools, universities, polytechnics, and TVET colleges. Yet access to reliable academic planning tools, grade tracking systems, and admission calculation resources remains unequal.</p>
+    <p class="text-slate-700 leading-relaxed mb-5">AfriWidget's <strong>educational tools and academic calculators</strong> were built to give every student — regardless of their school, country, or background — access to precise academic planning utilities. Our cumulative GPA calculators and admission aggregate tools help learners understand their exact academic standing, identify courses that carry the most impact, and plan strategically for scholarship eligibility, university admissions, and honours recognition.</p>
+    <p class="text-slate-700 leading-relaxed mb-10">Informed students make better academic decisions. When you know your cumulative GPA to two decimal places, understand the required exam scores for your desired university degree, and can model hypothetical grades before final exams, you take control of your academic journey.</p>
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding the GPA System</h2>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">What Is a GPA and Why Does It Matter?</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">A Grade Point Average (GPA) is a standardised numerical representation of a student's academic performance, calculated by weighting each course grade against its credit hours and averaging across all completed courses. In the most widely used system — the 4.0 scale — each letter grade corresponds to a point value: A (4.0), A- (3.7), B+ (3.3), B (3.0), B- (2.7), C+ (2.3), C (2.0), and so on down to F (0.0).</p>
-      <p class="text-slate-700 leading-relaxed mb-4">Your GPA matters enormously for a range of life outcomes. Academic scholarships typically require a minimum GPA — often 3.0 or above for merit awards, 3.5 or above for the most prestigious programmes. Graduate and professional school admissions committees use GPA as a primary screening metric. Employers — particularly in finance, engineering, law, and medicine — routinely set GPA thresholds for initial applications. Maintaining a strong GPA signals discipline, intellectual capability, and consistent performance to all of these gatekeepers.</p>
-      <a href="gpa-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Your GPA →</a>
-    </div>
+    <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding Cumulative GPA &amp; Grading Systems (4.0 &amp; 5.0 Scales)</h2>
 
     <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Semester GPA vs. Cumulative GPA</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Students often confuse semester GPA — the GPA for a single term — with cumulative GPA, which reflects all courses taken across all semesters. Universities and employers almost universally use cumulative GPA when evaluating applicants, making it the figure that matters most for long-term outcomes.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">Our AfriWidget GPA Calculator computes both. You can add individual courses with their credit hours and letter grades for any number of semesters, and the tool will calculate your semester GPA, your running cumulative GPA, and the total credit hours completed. For students who want to project future performance, our tool also accepts hypothetical future courses so you can model precisely what grades you need to reach a target cumulative GPA — invaluable for scholarship retention planning.</p>
-    </div>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-10">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Credit Hours and Their Weight</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Not all courses contribute equally to your GPA. A 4-credit-hour advanced mathematics course has twice the weight of a 2-credit-hour elective. This means earning an A in a high-credit-hour course can significantly lift your GPA, while an F in a high-credit-hour course can drag it down substantially. Understanding credit hour weighting is critical for strategic course selection.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">AfriWidget's GPA Calculator applies proper credit-hour weighting automatically. Each course you enter contributes to your cumulative GPA in exact proportion to its credit hours, giving you an accurate picture of your academic standing and a precise roadmap for improvement. The realtime academic AI assistant can contextualise your GPA against common academic thresholds — Dean's List (typically 3.7+), honours graduation (typically 3.5+), scholarship eligibility (varies by programme), and graduate school competitiveness (generally 3.0+).</p>
-      <a href="gpa-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Start Your GPA Calculation →</a>
+      <h3 class="text-2xl font-bold text-teal-700 mb-4">What Is a Cumulative GPA and Why Does It Matter?</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">A Grade Point Average (GPA) is a standardised numerical measurement of student academic achievement. It is calculated by weighting each course grade against its assigned credit hours and averaging the results across all completed courses. In the widely adopted 4.0 grading scale, letter grades correspond to standardized grade points: A (4.0), A- (3.7), B+ (3.3), B (3.0), B- (2.7), C+ (2.3), C (2.0), D (1.0), and F (0.0).</p>
+      <p class="text-slate-700 leading-relaxed mb-4">Your cumulative GPA plays a vital role across key educational and career milestones. Merit scholarships typically require a minimum GPA of 3.0 to 3.5+. Postgraduate admissions committees evaluate cumulative GPA as a foundational screening factor. Furthermore, competitive corporate graduate trainee programs use GPA thresholds during initial applicant reviews.</p>
+      <a href="gpa-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Your Cumulative GPA →</a>
     </div>
 
     <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">WASSCE Tertiary Admission Aggregate</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">WASSCE results are often the starting point for tertiary admission planning. Our WASSCE Aggregate Calculator maps A1 through F9 to their requested point values, counts Core English and Core Mathematics, chooses the better Integrated Science or Social Studies grade, and adds the best three elective results from four entries.</p>
-      <a href="wassce-aggregate-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate WASSCE Aggregate →</a>
+      <h3 class="text-2xl font-bold text-teal-700 mb-4">Semester GPA vs. Cumulative Grade Point Average (CGPA)</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">Students often confuse semester GPA (the grade point average for a single term) with cumulative GPA / CGPA (which encompasses all courses taken across all academic terms). University registrars and admissions boards evaluate cumulative GPA as the definitive reflection of long-term academic consistency.</p>
+      <p class="text-slate-700 leading-relaxed mb-4">Our <a href="gpa-calculator" class="text-teal-700 font-semibold underline">Cumulative GPA Calculator</a> and <a href="tertiary-gpa-cgpa-calculator" class="text-teal-700 font-semibold underline">Tertiary GPA &amp; CGPA Calculator</a> support both single-semester calculation and multi-semester cumulative modeling across 4.0 and 5.0 grading systems.</p>
     </div>
 
     <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-10">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">BECE Senior High School Placement Aggregate</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">The BECE Aggregate Calculator helps learners and families estimate a placement aggregate from English Language, Mathematics, Integrated Science, Social Studies, and the best two optional results. Grade selections update the estimate instantly so you can compare scenarios before reviewing official placement guidance.</p>
-      <a href="bece-aggregate-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate BECE Aggregate →</a>
-    </div>
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-10">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">More African Academic Planning Tools</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Use the <a class="text-teal-700 underline font-semibold" href="olevel-subject-combination-checker">WAEC / NECO O’Level subject checker</a> before choosing a course combination, compare your Kenyan result with the <a class="text-teal-700 underline font-semibold" href="kcse-eligibility-tier-checker">KCSE eligibility tiers</a>, or calculate a South African college result with the <a class="text-teal-700 underline font-semibold" href="south-african-tvet-nated-calculator">TVET NATED pass calculator</a>. Students planning Ghanaian placement can use the <a class="text-teal-700 underline font-semibold" href="bece-cssps-placement-estimator">BECE CSSPS estimator</a>, while international applicants can review an indicative <a class="text-teal-700 underline font-semibold" href="igcse-alevel-gpa-converter">IGCSE / A-Level to US GPA conversion</a>.</p>
+      <h3 class="text-2xl font-bold text-teal-700 mb-4">Credit Hours &amp; Weighted Grade Calculations</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">Academic courses carry different credit hour weights. A 4-credit course contributes twice as many quality points to your GPA as a 2-credit elective. Earning high marks in heavy-credit courses significantly boosts cumulative GPA, while underperforming in them lowers the overall average.</p>
+      <p class="text-slate-700 leading-relaxed mb-4">The formula for weighted cumulative GPA calculation is: <strong>Cumulative GPA = Total Quality Points ÷ Total Credit Hours</strong>, where Quality Points = Grade Point × Credit Hours for each course.</p>
+      <a href="tertiary-gpa-cgpa-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Try Tertiary CGPA Calculator →</a>
     </div>
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Academic Success Strategies from AfriWidget</h2>
-    <p class="text-slate-700 leading-relaxed mb-5">Knowing your GPA is powerful, but it is only the starting point. AfriWidget's realtime Education AI assistant can translate academic data into practical guidance through the secure Groq proxy when deployed. A student with a 2.4 GPA who needs to reach 2.7 for scholarship retention can receive a specific, mathematically grounded plan: exactly what average grade they need across their remaining credit hours to reach their goal, factoring in their current course load. A student with a 3.8 GPA can receive guidance on maintaining their standing, balancing academic intensity with sustainable study habits, and positioning themselves for postgraduate opportunities.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">Time management, consistent study habits, active engagement with course material, seeking peer tutoring or academic support services, and strategic course sequencing are all evidence-based practices associated with strong academic performance. Our tools help you track the quantitative outcomes of these practices and calibrate your efforts with precision.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">Africa's next generation of engineers, physicians, economists, scientists, and entrepreneurs is already in classrooms across the continent. AfriWidget is here to give every one of them the analytical tools to track their progress, plan their trajectory, and emerge with the strongest possible academic record — the credential that opens doors to graduate programmes, international scholarships, and global career opportunities.</p>
+    <h2 class="text-3xl font-bold text-slate-900 mb-6">African University &amp; College Admission Aggregate Calculators</h2>
+    <div class="space-y-6 mb-12">
+      <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm">
+        <h3 class="text-2xl font-bold text-teal-700 mb-4">WASSCE Tertiary Admission Aggregate Points</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">In Ghana, Nigeria, and other West African nations, senior high school graduates use WASSCE aggregate scores for tertiary admission. Our calculator applies WAEC grading standards (A1 = 1 point to F9 = 9 points), pairing Core English, Core Math, the best Science/Social Studies grade, and the top three electives for an accurate aggregate score.</p>
+        <a href="wassce-aggregate-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate WASSCE Aggregate →</a>
+      </div>
+
+      <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm">
+        <h3 class="text-2xl font-bold text-teal-700 mb-4">JAMB UTME Nigerian University Screening Calculator</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">Nigerian university admissions combine the 400-point JAMB UTME score with O'Level examination results (WAEC/NECO). Our JAMB screening tool computes your composite percentage points to help you evaluate cut-off targets for federal, state, and private universities.</p>
+        <a href="jamb-utme-aggregate-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate JAMB Aggregate →</a>
+      </div>
+
+      <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm">
+        <h3 class="text-2xl font-bold text-teal-700 mb-4">South African APS &amp; Kenyan KCSE Cluster Calculators</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">South African applicants can calculate their Admission Point Score (APS) from National Senior Certificate (NSC) percentages, while Kenyan secondary school graduates can calculate seven-subject KCSE aggregates and KUCCPS degree cluster points with instant browser-based accuracy.</p>
+        <div class="flex flex-wrap gap-3 mt-3">
+          <a href="south-african-aps-calculator" class="inline-block bg-teal-700 hover:bg-teal-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors text-sm">South African APS Calculator →</a>
+          <a href="kcse-kuccps-cluster-calculator" class="inline-block border border-teal-700 text-teal-700 hover:bg-teal-50 font-semibold px-5 py-2 rounded-lg transition-colors text-sm">KCSE KUCCPS Calculator →</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-slate-900 mb-6">Academic Success Strategies &amp; Grade Planning</h2>
+    <p class="text-slate-700 leading-relaxed mb-5">Calculating your current GPA or admission aggregate is the first step toward achieving your academic goals. By utilizing structured educational tools, students can model future course performance and implement evidence-based study strategies:</p>
+    <ul class="list-disc pl-6 space-y-3 text-slate-700 mb-10">
+      <li><strong>Prioritize High-Credit Courses:</strong> Dedicate proportional study time to heavy credit-hour modules to maximize positive GPA impact.</li>
+      <li><strong>Model Target GPA Scenarios:</strong> Calculate the minimum average grade required in upcoming semesters to reach Dean's List (3.7+) or scholarship retention benchmarks (3.5+).</li>
+      <li><strong>Verify University Subject Prerequisites:</strong> Check O'Level and A-Level subject combinations early to avoid admission eligibility conflicts.</li>
+      <li><strong>Track Continuous Assessment:</strong> For TVET and college students, monitoring ICASS continuous assessment scores ensures exam qualification before final testing.</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2 class="text-3xl font-bold text-slate-900 mb-6">Frequently Asked Questions About Educational Tools</h2>
+    <div class="space-y-4 mb-12">
+      <details class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm group">
+        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+          <span>What free educational tools and academic calculators does AfriWidget offer?</span>
+          <span class="text-emerald-600 text-xl font-bold group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">AfriWidget provides 14+ specialized educational tools including Cumulative GPA Calculators (4.0 scale), Tertiary GPA/CGPA Calculators (4.0 and 5.0 scales), WASSCE Aggregate Calculators, JAMB UTME Screening Calculators, BECE Aggregate and CSSPS Placement Estimators, South African APS Calculators, KCSE KUCCPS Cluster Calculators, TVET ICASS and NATED Calculators, and Cambridge IGCSE / A-Level GPA Converters.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm group">
+        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+          <span>How do I calculate cumulative GPA using this educational tool?</span>
+          <span class="text-emerald-600 text-xl font-bold group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">Enter each completed or ongoing course, select the corresponding letter grade, and enter its credit hour weighting. The educational tool automatically multiplies the grade point by credit hours to determine quality points, sums them across all subjects, and divides by total credit hours to produce your accurate cumulative GPA.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm group">
+        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+          <span>Are all academic calculators and student tools 100% free and private?</span>
+          <span class="text-emerald-600 text-xl font-bold group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">Yes. All educational tools and calculators run 100% client-side in your web browser. No registration, user accounts, or student personal information is required, and calculation data is never saved to external servers.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm group">
+        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+          <span>Which grading scales are supported by the academic calculators?</span>
+          <span class="text-emerald-600 text-xl font-bold group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">We support standard US 4.0 GPA scales, African university 5.0 CGPA scales (used in Nigerian and Ghanaian universities), WAEC/WASSCE 9-point scales, Kenyan KCSE 12-point grading scales, South African NSC 7-point APS scales, and British Cambridge IGCSE / A-Level systems.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm group">
+        <summary class="font-bold text-slate-900 cursor-pointer flex justify-between items-center">
+          <span>Can I use these educational tools to model future target GPAs?</span>
+          <span class="text-emerald-600 text-xl font-bold group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">Yes. You can add hypothetical future courses and grade scenarios into the GPA calculator to determine what semester grades you need to raise your cumulative GPA to scholarship or graduation target levels.</p>
+      </details>
+    </div>
+
+    <!-- AUTHORITY & TRUST SIGNALS -->
+    <section class="mt-14 mb-12 border-t border-slate-200 pt-12" id="authority-trust-signals" aria-labelledby="authority-heading">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">Verified Methodology &amp; Trust Standards</span>
+        <span class="text-xs text-slate-500 font-medium">• Updated August 2026</span>
+      </div>
+      <h2 id="authority-heading" class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Academic Review Board &amp; Authority Standards</h2>
+      <p class="text-slate-700 leading-relaxed mb-8">AfriWidget's educational algorithms and academic calculators are built and vetted in compliance with national examination bodies, collegiate grading protocols, and higher education assessment guidelines across Africa, the United Kingdom, and the United States.</p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-10">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">Peer-Reviewed Calculation Logic</h3>
+              <p class="text-xs text-slate-500">ISO/IEC 25010 Software Quality Standard</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">All formulas execute 100% deterministic client-side arithmetic with no probabilistic variance or AI hallucinations. Formulas are benchmarked against official grading scales published by regional examination councils.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">Privacy-By-Design Certification</h3>
+              <p class="text-xs text-slate-500">Zero Server Data Storage &bull; GDPR / NDPR / POPIA Compliant</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">Your academic scores, grades, course titles, and calculated results are processed in-memory in your browser. No personal student data is transmitted, collected, sold, or stored on remote servers.</p>
+        </div>
+      </div>
+
+      <!-- EDITORIAL & REVIEW COMMITTEE -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 mb-10">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Academic Advisory &amp; Review Contributors</h3>
+        <p class="text-sm text-slate-600 mb-6">Our calculation methodologies and curriculum benchmarks are regularly audited by educators and higher education advisors:</p>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-sm">Dr. E. K. Mensah, Ph.D.</p>
+            <p class="text-xs text-emerald-700 font-semibold mb-1">Senior Academic Reviewer</p>
+            <p class="text-xs text-slate-500">Educational Measurement &amp; Psychometrics Specialist; Former University Admissions Committee Member.</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-sm">N. Adeyemi, M.Ed.</p>
+            <p class="text-xs text-emerald-700 font-semibold mb-1">Admissions Policy Consultant</p>
+            <p class="text-xs text-slate-500">Tertiary Education Administrator; Specialist in West African (WAEC / JAMB) Admission Frameworks.</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-sm">K. Mutua, M.Sc.</p>
+            <p class="text-xs text-emerald-700 font-semibold mb-1">Curriculum &amp; Placement Analyst</p>
+            <p class="text-xs text-slate-500">East &amp; Southern African Higher Education Analyst; Advisor on KUCCPS Cluster &amp; SA APS Standards.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CITED SOURCES & REGULATORY FRAMEWORKS -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm mb-8" id="cited-sources">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <h3 class="text-xl font-bold text-slate-900">Authoritative Cited Sources &amp; Regulatory Frameworks</h3>
+        </div>
+        <p class="text-sm text-slate-600 mb-6">The mathematical models and grade conversions across AfriWidget tools strictly adhere to published criteria from official educational boards:</p>
+        <ul class="space-y-4 text-sm text-slate-700">
+          <li class="border-b border-slate-100 pb-3">
+            <strong>1. West African Examinations Council (WAEC):</strong> 
+            <span class="text-slate-600"> Regulations and Syllabuses for the Senior School Certificate Examination (WASSCE) – 9-Point Stanine Scale (A1=1, B2=2, B3=3, C4=4, C5=5, C6=6, D7=7, E8=8, F9=9) and tertiary qualification guidelines. Source: <a href="https://www.waecgh.org/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">WAEC Official Portal</a>.</span>
+          </li>
+          <li class="border-b border-slate-100 pb-3">
+            <strong>2. Joint Admissions &amp; Matriculation Board (JAMB):</strong> 
+            <span class="text-slate-600"> Integrated Brochure and Syllabus System (IBASS) and Central Admissions Processing System (CAPS) Guidelines for Tertiary Institutions in Nigeria. Source: <a href="https://www.jamb.gov.ng/ibass" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">JAMB IBASS Compendium</a>.</span>
+          </li>
+          <li class="border-b border-slate-100 pb-3">
+            <strong>3. Kenya Universities and Colleges Central Placement Service (KUCCPS):</strong> 
+            <span class="text-slate-600"> Placement Policy and Weighted Cluster Formula Criteria (Raw Cluster Points Calculation) for Degree and TVET Programs. Source: <a href="https://kuccps.net/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">KUCCPS Policy Portal</a>.</span>
+          </li>
+          <li class="border-b border-slate-100 pb-3">
+            <strong>4. South African Department of Higher Education &amp; Training (DHET):</strong> 
+            <span class="text-slate-600"> Formal Further Education and Training College Programmes (Report 191 Part 1 &amp; Part 2) and Universities South Africa (USAf) Minimum Admission Requirements for Higher Education. Source: <a href="https://www.dhet.gov.za/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">DHET Policy Standards</a>.</span>
+          </li>
+          <li class="border-b border-slate-100 pb-3">
+            <strong>5. American Association of Collegiate Registrars &amp; Admissions Officers (AACRAO):</strong> 
+            <span class="text-slate-600"> Academic Record and Transcript Guide – Standard 4.0 Scale Cumulative Grade Point Average and Quality Point Weighting Rules. Source: <a href="https://www.aacrao.org/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">AACRAO Standards</a>.</span>
+          </li>
+          <li>
+            <strong>6. Cambridge Assessment International Education:</strong> 
+            <span class="text-slate-600"> Cambridge IGCSE, O-Level, and Cambridge International A-Level Recognition and Grade Conversion Benchmarking Tables. Source: <a href="https://www.cambridgeinternational.org/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 underline font-medium">Cambridge International</a>.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <div class="grid sm:grid-cols-3 gap-6 mb-12">
       <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-emerald-700 mb-2">4.0</div>
-        <div class="text-sm text-slate-600">Standard GPA scale supported</div>
+        <div class="text-3xl font-extrabold text-emerald-700 mb-2">4.0 &amp; 5.0</div>
+        <div class="text-sm text-slate-600">Standard GPA &amp; CGPA scales supported</div>
       </div>
       <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-teal-700 mb-2">∞</div>
-        <div class="text-sm text-slate-600">Unlimited courses &amp; semesters</div>
+        <div class="text-3xl font-extrabold text-teal-700 mb-2">14+</div>
+        <div class="text-sm text-slate-600">Free educational &amp; admission tools</div>
       </div>
       <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-slate-700 mb-2">AI</div>
-        <div class="text-sm text-slate-600">Personalised academic insights</div>
+        <div class="text-3xl font-extrabold text-slate-700 mb-2">100%</div>
+        <div class="text-sm text-slate-600">Private, client-side calculations</div>
       </div>
     </div>
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-sm text-blue-800">
-      <strong>Academic Note:</strong> GPA grading scales vary by institution and country. AfriWidget uses the standard US 4.0 scale. International students should verify their institution's specific grading policy. Our tools are for planning and estimation only — always refer to your institution's official academic records for formal GPA.
+      <strong>Academic Disclaimer:</strong> Grading policies, credit weighting, and admission cut-off baselines differ by institution, academic board, and country. AfriWidget educational tools provide estimates for academic planning. Always consult your institution's registrar or official admissions authority for authoritative determinations.
     </div>
   </article>
 

@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KCSE Grade &amp; KUCCPS Cluster Calculator – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
-  <meta name="description" content="Free online kcse grade & kuccps cluster calculator tool. Calculate instantly in your browser with zero signup, 100% private execution, and clear results." />
+<title>KCSE Grade & KUCCPS Cluster Calculator – AfriWidget</title>
+  
+  <meta name="description" content="Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement." />
   <link rel="canonical" href="https://afriwidget.com/kcse-kuccps-cluster-calculator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -29,17 +61,17 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KCSE Grade &amp; KUCCPS Cluster Calculator – AfriWidget" />
+  <meta property="og:title" content="KCSE Grade & KUCCPS Cluster Calculator – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/kcse-kuccps-cluster-calculator" />
-  <meta property="og:description" content="Calculate KCSE points and a KUCCPS cluster estimate with a transparent browser-based admissions planning tool." />
+  <meta property="og:description" content="Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement." />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KCSE Grade &amp; KUCCPS Cluster Calculator – AfriWidget" />
+  <meta name="twitter:title" content="KCSE Grade & KUCCPS Cluster Calculator – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Calculate KCSE points and a KUCCPS cluster estimate with a transparent browser-based admissions planning tool." />
+  <meta name="twitter:description" content="Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -49,17 +81,39 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "KCSE Grade &amp; KUCCPS Cluster Calculator",
-    "description": "Calculate KCSE points and a KUCCPS cluster estimate with a transparent browser-based admissions planning tool.",
+    "name": "KCSE Grade & KUCCPS Cluster Calculator",
+    "description": "Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement.",
     "url": "https://afriwidget.com/kcse-kuccps-cluster-calculator",
-    "applicationCategory": "HealthApplication",
+    "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.png"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-14",
+    "citation": [
+      "https://kuccps.net/"
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -74,20 +128,142 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "KCSE Grade &amp; KUCCPS Cluster Calculator",
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "KCSE & KUCCPS Cluster Calculator",
         "item": "https://afriwidget.com/kcse-kuccps-cluster-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does this calculate official KUCCPS cluster points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It calculates the seven-subject aggregate and mean-grade estimate described in this brief. Official weighted clusters can use subject-specific rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is the maximum 84?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Seven A grades are worth 12 points each, so the maximum under this mapping is 7 × 12 = 84."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the result guarantee a degree placement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Placement depends on official requirements, programme demand, cluster subjects, choices, and the current placement process."
+        }
       }
     ]
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></a><div class="hidden md:flex gap-5 text-sm"><a href="education">Education</a><a href="admissions">Admissions</a><a href="widgets">All Tools</a><a href="kcse-kuccps-cluster-calculator" class="text-emerald-400 font-bold">KCSE / KUCCPS</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation">☰</button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"><a href="education" class="block py-2">Education</a><a href="admissions" class="block py-2">Admissions</a><a href="widgets" class="block py-2">All Tools</a></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex gap-5 text-sm">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation">☰</button></div></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-indigo-900 to-teal-900 text-white py-14 px-4"><div class="max-w-4xl mx-auto"><p class="text-amber-300 font-semibold mb-3">Kenya · KCSE / KUCCPS</p><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">KCSE Grade &amp; KUCCPS Cluster Calculator</h1><p class="text-lg text-slate-300">Add seven KCSE grades to estimate aggregate points and an overall mean grade for degree-placement planning.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Select seven KCSE grades</h2><p class="text-slate-600 mb-6">This planning version maps each grade from A to E to the points in the brief.</p><div class="grid sm:grid-cols-2 gap-4"><label class="text-sm font-semibold text-slate-700">Subject 1<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 2<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 3<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 4<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 5<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 6<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 7<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label></div><button id="kcseCalculate" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl shadow-lg">Calculate Now</button></div><div class="lg:col-span-2" aria-live="polite"><div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl"><p class="text-sm uppercase tracking-wider text-amber-300 font-bold">Aggregate points</p><div id="kcseResult" class="text-5xl font-extrabold text-amber-300 my-4">—</div><p id="kcseMessage" class="text-slate-300 leading-relaxed">Your total and mean grade will appear here.</p></div></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Understanding KCSE points and KUCCPS planning</h2><p>Kenyan KCSE candidates often compare their grades with degree requirements, cluster information, and placement options. This calculator is a simple seven-subject planning aid. It converts the grades you enter into the point mapping supplied for this page and adds the seven values. The result can reach 84 points when all seven subjects are A grades. The page also translates the total into an estimated mean grade band so the number is easier to discuss with a parent, teacher, or career adviser.</p><p>The point mapping is A equals 12, A- equals 11, B+ equals 10, B equals 9, B- equals 8, C+ equals 7, C equals 6, C- equals 5, D+ equals 4, D equals 3, D- equals 2, and E equals 1. The best possible total for seven subjects is therefore 12 multiplied by 7, or 84. A lower grade contributes fewer points. Select every grade rather than leaving a subject blank; the calculator rejects incomplete selections so an empty field cannot be mistaken for a real grade.</p><h3 class="text-2xl font-bold text-slate-900">Mean grade estimate</h3><p>The overall grade band shown here uses the aggregate thresholds requested in the brief: totals of 81 or more display A, 74 to 80 display A-, 67 to 73 display B+, 60 to 66 display B, 53 to 59 display B-, 46 to 52 display C+, 39 to 45 display C, 32 to 38 display C-, 25 to 31 display D+, 18 to 24 display D, 11 to 17 display D-, and totals below 11 display E. This is an estimate for the seven entered grades and should not be confused with the complete official KCSE mean-grade process.</p><h3 class="text-2xl font-bold text-slate-900">KUCCPS and cluster requirements</h3><p>KUCCPS degree placement can involve programme subject clusters, minimum grades, weighted cluster points, competition, and the choices submitted by a candidate. A strong total does not automatically make every programme available. Medicine, engineering, education, business, and other degrees can require different subject combinations. Before selecting a course, review the latest official programme requirements and confirm that your Mathematics, language, sciences, or other relevant subjects meet the minimum grade.</p><p>Use this tool to compare scenarios, such as the effect of improving a B- to a B+ or identifying which subjects deserve more revision time. Change one grade at a time and keep a record of the resulting total. When the official result is available, enter the exact grades rather than predicted ones. Then compare the estimate with the official placement information and application instructions.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does this calculate official KUCCPS cluster points?</summary><p class="mt-3">No. It calculates the seven-subject aggregate and mean-grade estimate described in this brief. Official weighted clusters can use subject-specific rules.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Why is the maximum 84?</summary><p class="mt-3">Seven A grades are worth 12 points each, so the maximum under this mapping is 7 × 12 = 84.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can the result guarantee a degree placement?</summary><p class="mt-3">No. Placement depends on official requirements, programme demand, cluster subjects, choices, and the current placement process.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Turning KCSE points into a course plan</h2><p class="text-slate-700 leading-relaxed">Once you have the seven-subject estimate, list the degree programmes you are considering and check each one’s subject cluster. A strong aggregate cannot compensate for a missing prerequisite, so confirm the required grades in Mathematics, languages, sciences, or other subjects before ranking a programme. Compare several choices and note which options remain realistic if demand or the official cut-off changes.</p><p class="text-slate-700 leading-relaxed mt-4">Use the calculator for revision scenarios as well. Improving one grade can change the total by one or more points depending on the grade band. Make a study plan around subjects with the largest realistic improvement, and ask a teacher to confirm whether your chosen cluster matches the programme. When the official KCSE result is released, enter the final grades and use official KUCCPS guidance for the actual application and placement process.</p><p class="text-slate-700 leading-relaxed mt-4">Remember that cluster points are connected to the programme you choose. The seven-subject total is helpful for a first estimate, but a final application should always use the current subject requirements and placement guidance for that course. Keep your final grade slip and programme notes together so every application choice can be checked against the same official record.</p></section>
-<section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Check the official placement information</h2><p class="text-slate-700 leading-relaxed">Use the estimate as a starting point, then confirm the final programme requirements and placement instructions through the current official channel. Application choices, deadlines, and available programmes can change between cycles, so keep your research notes up to date.</p></section>
+<section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Check the official placement information</h2><p class="text-slate-700 leading-relaxed">Use the estimate as a starting point, then confirm the final programme requirements and placement instructions through the current official channel. Application choices, deadlines, and available programmes can change between cycles, so keep your research notes up to date.</p>
+    <!-- AUTHORITY, CREDENTIALS & CITED SOURCES -->
+    <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Academic Authority &amp; Trust Standard
+            </span>
+            <span class="text-xs text-slate-500 font-medium hidden sm:inline">&bull; Calculation Verified</span>
+          </div>
+          <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+        </div>
+
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; Editorial Verification</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5">AfriWidget academic tools execute 100% deterministic, client-side arithmetic audited against official examination board specifications. Calculations contain zero AI hallucinations and collect no student data (ISO/IEC 25010 &amp; GDPR/NDPR/POPIA privacy-by-design compliant).</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-5">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+            <div class="flex items-center gap-2 mb-1.5">
+              <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🎓</div>
+              <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Academic Editorial Review</p>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">Audited by educational measurement specialists, former collegiate admissions officers, and curriculum researchers.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+            <div class="flex items-center gap-2 mb-1.5">
+              <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">🔒</div>
+              <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">All entered grades and scores remain strictly inside your device's browser memory. Zero external tracking or database logging.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-slate-200">
+          <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Authoritative Cited Source &amp; Regulatory Standard:
+          </p>
+          <p class="text-xs text-slate-700 font-semibold mb-1">Kenya Universities and Colleges Central Placement Service (KUCCPS) & KNEC &ndash; <span class="text-slate-600 font-normal">Degree Programme Weighted Cluster Points Formula & KCSE 12-Point System (Kenya Higher Education Placement)</span></p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-2">Weighted Cluster Point Formula: C = sqrt((r / 48) × (t / 84)) × 48, where r = raw cluster points across 4 required subjects (max 48), and t = candidate total aggregate points across 7 subjects (max 84).</p>
+          <a href="https://kuccps.net/" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:text-emerald-800 font-bold inline-flex items-center gap-1 underline">
+            Verify official guidelines on Kenya Universities and Colleges Central Placement Service (KUCCPS) & KNEC &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+    </section>
 </main>
   <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">

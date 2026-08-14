@@ -2086,10 +2086,68 @@ var QRCode = (() => {
     }
   });
   var result = require_browser();
-  if (typeof window !== "undefined") {
-    window.QRCode = result;
-    window.qrcode = result;
+  function QRCodeWrapper(target, options) {
+    if (!(this instanceof QRCodeWrapper)) {
+      return new QRCodeWrapper(target, options);
+    }
+    if (!target) return this;
+    var el = typeof target === 'string' && typeof document !== 'undefined' ? document.getElementById(target) : target;
+    if (!el) return this;
+    var opts = typeof options === 'string' ? { text: options } : (options || {});
+    var text = opts.text || '';
+    var width = opts.width || 256;
+    var height = opts.height || 256;
+    var colorDark = opts.colorDark || (opts.color && opts.color.dark) || '#000000';
+    var colorLight = opts.colorLight || (opts.color && opts.color.light) || '#ffffff';
+    
+    var canvas = el.tagName === 'CANVAS' ? el : (typeof document !== 'undefined' ? document.createElement('canvas') : null);
+    if (canvas) {
+      canvas.width = width;
+      canvas.height = height;
+      if (el !== canvas && typeof el.appendChild === 'function') {
+        el.innerHTML = '';
+        el.appendChild(canvas);
+      }
+    }
+    this.canvas = canvas;
+    this.el = el;
+    this.makeCode = function(newText) {
+      if (!newText || !canvas) return;
+      result.toCanvas(canvas, newText, {
+        width: width,
+        margin: opts.margin !== undefined ? opts.margin : 2,
+        color: { dark: colorDark, light: colorLight }
+      }, function(err) {
+        if (err && opts.onError) opts.onError(err);
+      });
+    };
+    this.clear = function() {
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      if (ctx) ctx.clearRect(0, 0, width, height);
+    };
+    if (text) {
+      this.makeCode(text);
+    }
   }
-  return result;
+
+  // Copy methods from result to QRCodeWrapper
+  Object.keys(result).forEach(function(key) {
+    QRCodeWrapper[key] = result[key];
+  });
+  QRCodeWrapper.CorrectLevel = { L: 1, M: 0, Q: 3, H: 2 };
+
+  if (typeof window !== "undefined") {
+    window.QRCode = QRCodeWrapper;
+    window.qrcode = QRCodeWrapper;
+  }
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = QRCodeWrapper;
+  }
+  return QRCodeWrapper;
 })();
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = QRCode;
+}
 

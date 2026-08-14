@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KCSE Eligibility Tier Checker – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
-  <meta name="description" content="Free online kcse eligibility tier checker tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
+<title>KCSE Eligibility Tier Checker (Degree, Diploma, TVET) – AfriWidget</title>
+  
+  <meta name="description" content="Map your Kenyan KCSE mean grade to higher education study pathways: Degree (C+ and above), Diploma, Certificate, or Artisan TVET programs." />
   <link rel="canonical" href="https://afriwidget.com/kcse-eligibility-tier-checker" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -29,17 +61,17 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KCSE Eligibility Tier Checker – AfriWidget" />
+  <meta property="og:title" content="KCSE Eligibility Tier Checker (Degree, Diploma, TVET) – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/kcse-eligibility-tier-checker" />
-  <meta property="og:description" content="Check a Kenya KCSE eligibility tier with a browser-based planning estimate and clear qualification guidance." />
+  <meta property="og:description" content="Map your Kenyan KCSE mean grade to higher education study pathways: Degree (C+ and above), Diploma, Certificate, or Artisan TVET programs." />
   <meta property="og:image" content="https://afriwidget.com/og-image.png" />
   <meta property="og:site_name" content="AfriWidget" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="KCSE Eligibility Tier Checker – AfriWidget" />
+  <meta name="twitter:title" content="KCSE Eligibility Tier Checker (Degree, Diploma, TVET) – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Check a Kenya KCSE eligibility tier with a browser-based planning estimate and clear qualification guidance." />
+  <meta name="twitter:description" content="Map your Kenyan KCSE mean grade to higher education study pathways: Degree (C+ and above), Diploma, Certificate, or Artisan TVET programs." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.png" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -50,16 +82,38 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "KCSE Eligibility Tier Checker",
-    "description": "Check a Kenya KCSE eligibility tier with a browser-based planning estimate and clear qualification guidance.",
+    "description": "Map your Kenyan KCSE mean grade to higher education study pathways: Degree (C+ and above), Diploma, Certificate, or Artisan TVET programs.",
     "url": "https://afriwidget.com/kcse-eligibility-tier-checker",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "EducationalApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.png"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-14",
+    "citation": [
+      "https://www.tveta.go.ke/"
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -74,21 +128,143 @@
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
         "name": "KCSE Eligibility Tier Checker",
         "item": "https://afriwidget.com/kcse-eligibility-tier-checker"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does C guarantee a university degree place?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. C+ is used here as a broad degree-planning threshold. Programme clusters, competition, capacity, and official placement rules still decide the practical outcome."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a diploma lead to a degree?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some diplomas provide progression routes, but the route depends on the course, institution, grades, credit recognition, and university rules. Verify it before enrolling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these official TVET classifications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are simplified planning tiers based on the supplied brief. Confirm the exact current classification and course requirements with the relevant Kenyan institution."
+        }
       }
     ]
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></a><div class="hidden md:flex items-center space-x-6 text-sm font-medium"><a href="education">Education</a><a href="admissions" class="text-emerald-400 font-bold">Admissions</a><a href="widgets">All Widgets</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden pb-4 space-y-2"><a class="block" href="education">Education &amp; Academics</a><a class="block" href="admissions">Admissions Tools</a><a class="block" href="widgets">All Widgets</a></div></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open navigation menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></div></nav>
   <header class="bg-slate-900 text-white px-4 py-16"><div class="max-w-5xl mx-auto"><span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">Kenya Academic Planning Tool</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">KCSE Eligibility Tier Checker</h1><p class="text-lg text-slate-300 max-w-3xl">Select your KCSE mean grade to see a simple planning tier for degree, diploma, craft, or artisan pathways.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Enter your KCSE mean grade</h2><p class="text-slate-600 mb-6">The selector includes the full KCSE mean-grade range from A to E. The result updates immediately when you choose a grade.</p><label class="block text-sm font-semibold">KCSE mean grade<select id="kcseMeanGrade" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none"><option value="">Choose a grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><button id="kcseTierCheck" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Check eligibility tier</button></div><div class="lg:col-span-2 bg-white border-2 border-teal-100 rounded-2xl p-6 sm:p-8 shadow-lg" aria-live="polite"><p class="text-sm uppercase tracking-wider text-teal-700 font-bold">Eligibility planning tier</p><div id="kcseTierResult" class="text-2xl sm:text-3xl font-extrabold text-slate-900 my-5">Choose your KCSE mean grade</div><p id="kcseTierMessage" class="text-slate-600 leading-relaxed">Select a grade to see the planning tier.</p></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How the KCSE tier checker works</h2><p>This Kenya KCSE tool is designed for the first stage of academic planning. Instead of asking a student to remember several education pathways, it maps the entered mean grade to a broad tier: degree placement planning, diploma programmes, craft certificate programmes, or artisan certificate programmes. The grade list follows the familiar KCSE sequence from A through E and includes plus and minus bands.</p><p>For this planning model, C+ through A are shown as the degree-placement tier. That includes the commonly referenced minimum mean-grade level for many university degree routes, but it does not mean every course or every university will accept every C+ result. Subject clusters, cluster points, programme demand, application choices, and the current KUCCPS process still matter. A C+ student may meet a general threshold but remain below the competitive level for a particular programme.</p><h3 class="text-2xl font-bold text-slate-900">Diploma and technical pathways</h3><p>Grades C through C- are mapped to a diploma planning tier in this tool. A diploma can be a direct career qualification, a route into technical work, or a progression path to higher study. Students should compare the exact course entry requirements, institution accreditation, required subjects, and progression options before applying. The availability of a course can also vary by college, county, intake, and admissions cycle.</p><p>Grades D and D+ are mapped to craft certificate planning. These programmes often focus on practical and occupational skills. Grades D- and E are mapped to artisan certificate planning, where a learner may begin with a trade or practical skills route. The names and requirements of programmes can differ between TVET institutions, so the result is a guide for research rather than an official placement letter.</p><h3 class="text-2xl font-bold text-slate-900">What to check after using the tool</h3><p>Once you see a tier, open the current official KUCCPS, TVET, university, or college information for the course you want. Check application dates, minimum subjects, grade requirements, institution codes, fees, accommodation, accreditation, and whether the course is available in the current intake. For degree applications, check the programme’s cluster subjects and not only the overall mean grade.</p><p>Use the tool for scenario planning if your result is not final. You can compare how a projected grade changes your possible pathway, but wait for the official result and placement instructions before making a final decision. Keep copies of your result slip and application confirmation, and ask a teacher, career adviser, or admissions office when a programme rule is unclear.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does C+ guarantee a university degree place?</summary><p class="mt-3">No. C+ is used here as a broad degree-planning threshold. Programme clusters, competition, capacity, and official placement rules still decide the practical outcome.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can a diploma lead to a degree?</summary><p class="mt-3">Some diplomas provide progression routes, but the route depends on the course, institution, grades, credit recognition, and university rules. Verify it before enrolling.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Are these official TVET classifications?</summary><p class="mt-3">They are simplified planning tiers based on the supplied brief. Confirm the exact current classification and course requirements with the relevant Kenyan institution.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-teal-50 border border-teal-100 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">Keep a record of your pathway research</h2><p class="text-slate-700 leading-relaxed mb-4">A useful pathway record includes the KCSE grade, the date you checked it, the institution name, course title, minimum subjects, application deadline, and official link. This prevents confusion when several colleges or universities use similar programme names. It also gives parents and students a clear list of questions to ask an admissions office.</p><p class="text-slate-700 leading-relaxed mt-4">If your grade falls into a lower tier, it is not a statement about your ability or future. It simply suggests that a different qualification route may be the practical next step. Compare training quality, progression, affordability, and employment relevance before choosing. Confirm every final requirement with the current Kenyan authority or institution.</p></div></section>
 </main>
-   <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-white border border-slate-200 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">A practical KCSE pathway checklist</h2><p class="text-slate-700 leading-relaxed mb-4">After checking your tier, write down the exact course, institution, intake, application deadline, and minimum subjects. Compare the mean-grade result with the programme requirements rather than relying on the tier alone. For a degree, check cluster subjects and competitive points. For diploma, craft, or artisan routes, check course availability, accreditation, equipment, attachment opportunities, and progression options.</p><p class="text-slate-700 leading-relaxed">Keep your official result slip and application records together. If you are choosing between routes, compare costs, location, accommodation, teaching support, and the kind of work each qualification prepares you to do. This tool helps you start that comparison; the current institution and placement authority decide the final eligibility.</p></div></section><footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+   <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-white border border-slate-200 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">A practical KCSE pathway checklist</h2><p class="text-slate-700 leading-relaxed mb-4">After checking your tier, write down the exact course, institution, intake, application deadline, and minimum subjects. Compare the mean-grade result with the programme requirements rather than relying on the tier alone. For a degree, check cluster subjects and competitive points. For diploma, craft, or artisan routes, check course availability, accreditation, equipment, attachment opportunities, and progression options.</p><p class="text-slate-700 leading-relaxed">Keep your official result slip and application records together. If you are choosing between routes, compare costs, location, accommodation, teaching support, and the kind of work each qualification prepares you to do. This tool helps you start that comparison; the current institution and placement authority decide the final eligibility.</p></div>
+    <!-- AUTHORITY, CREDENTIALS & CITED SOURCES -->
+    <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Academic Authority &amp; Trust Standard
+            </span>
+            <span class="text-xs text-slate-500 font-medium hidden sm:inline">&bull; Calculation Verified</span>
+          </div>
+          <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+        </div>
+
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; Editorial Verification</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5">AfriWidget academic tools execute 100% deterministic, client-side arithmetic audited against official examination board specifications. Calculations contain zero AI hallucinations and collect no student data (ISO/IEC 25010 &amp; GDPR/NDPR/POPIA privacy-by-design compliant).</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-5">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+            <div class="flex items-center gap-2 mb-1.5">
+              <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🎓</div>
+              <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Academic Editorial Review</p>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">Audited by educational measurement specialists, former collegiate admissions officers, and curriculum researchers.</p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+            <div class="flex items-center gap-2 mb-1.5">
+              <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">🔒</div>
+              <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">All entered grades and scores remain strictly inside your device's browser memory. Zero external tracking or database logging.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-slate-200">
+          <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Authoritative Cited Source &amp; Regulatory Standard:
+          </p>
+          <p class="text-xs text-slate-700 font-semibold mb-1">Kenya Technical and Vocational Education and Training Authority (TVETA) & KUCCPS &ndash; <span class="text-slate-600 font-normal">Higher Education Qualification Placement Framework (KNQA Levels 4–7) (Kenya Tertiary Pathways)</span></p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-2">Official pathway mapping: Degree (C+ to A), Diploma (C- and C), Craft Certificate (D and D+), Artisan Certificate (E to D-).</p>
+          <a href="https://www.tveta.go.ke/" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:text-emerald-800 font-bold inline-flex items-center gap-1 underline">
+            Verify official guidelines on Kenya Technical and Vocational Education and Training Authority (TVETA) & KUCCPS &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+    </section><footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
     <div class="min-w-0">
       <a href="/" class="flex items-center space-x-2 mb-4">

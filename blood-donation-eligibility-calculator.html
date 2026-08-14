@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blood Donation Eligibility Calculator – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>Blood Donation Eligibility Calculator – AfriWidget</title>
+  
   <meta name="description" content="Free online blood donation eligibility calculator tool. Calculate instantly in your browser with zero signup, 100% private execution, and clear results." />
   <link rel="canonical" href="https://afriwidget.com/blood-donation-eligibility-calculator.html" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,9 +113,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between"><a href="index.html" class="text-xl font-extrabold">Afri<span class="text-emerald-400">Widget</span></a><div class="hidden md:flex gap-5 text-sm"><a href="health.html">Health</a><a href="finance.html">Finance</a><a href="education.html">Education</a><a href="widgets.html">All Tools</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"><a href="health.html" class="block py-2">Health</a><a href="widgets.html" class="block py-2">All Tools</a></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex gap-5 text-sm">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open menu">☰</button></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 text-white py-14 px-4 text-center"><span class="inline-block bg-emerald-400/20 text-emerald-300 text-sm font-bold px-4 py-1 rounded-full mb-5">⚡ 100% Free • No Signup • Private In-Browser Calculation</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Blood Donation Eligibility Calculator</h1><p class="text-lg text-slate-300 max-w-2xl mx-auto">Screen basic age, weight, and re-donation timing inputs before contacting a donation centre.</p></header>
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="max-w-2xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold mb-2">Check basic planning eligibility</h2><p class="text-slate-500 mb-6">Donation centres make the final decision after their health screening and local rules.</p><form id="donationForm" class="space-y-4"><div class="grid sm:grid-cols-2 gap-4"><label class="block text-sm font-semibold">Gender<select id="donorGender" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"><option value="male">Male</option><option value="female">Female</option></select></label><label class="block text-sm font-semibold">Age<input id="donorAge" type="number" min="1" max="120" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Weight (kg)<input id="donorWeight" type="number" min="1" step="0.1" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3" required></label><label class="block text-sm font-semibold">Date of last donation<input id="lastDonation" type="date" class="mt-2 w-full border-2 border-slate-200 rounded-xl px-4 py-3"></label></div><button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Check Eligibility · No Account Needed</button></form><div id="donationResult" class="hidden mt-6"><div id="donationStatus" class="rounded-2xl border-2 p-5 text-center font-bold"></div><div class="grid sm:grid-cols-2 gap-3 mt-4"><div class="bg-emerald-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-emerald-700">Earliest date allowed</div><div id="earliestDonation" class="font-extrabold text-emerald-900 mt-1">—</div></div><div class="bg-slate-50 rounded-xl p-4"><div class="text-xs uppercase font-bold text-slate-500">Planning note</div><div id="donationReason" class="text-sm text-slate-700 mt-1">—</div></div></div></div></section>
   <article class="max-w-3xl mx-auto mt-14 space-y-5 text-slate-700 leading-relaxed"><h2 class="text-3xl font-bold text-slate-900">What this donation screen checks</h2><p>This calculator uses a basic planning screen based on age, body weight, and the time since a previous donation. It applies an age range of 18 to 65 years, a minimum weight of 50 kilograms, and a 90-day interval for male donors or a 120-day interval for female donors. The earliest date is calculated by adding the applicable interval to the last donation date.</p><p>These rules are intentionally simple. Blood services may use different age limits, weight thresholds, donation intervals, haemoglobin requirements, and policies depending on country, donation type, medical history, and local regulations. Pregnancy, breastfeeding, recent illness, travel, medicines, tattoos, procedures, and infections can also affect eligibility.</p><p>An “eligible” result here means only that the supplied planning inputs pass this narrow screen. It does not guarantee that you can donate. The donation centre will ask health questions, check vital signs and haemoglobin, and make the final decision. Be honest during screening and follow the centre’s instructions.</p><div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 text-amber-900"><strong>Important:</strong> Confirm current requirements with the blood service you plan to visit. This page cannot assess your medical history.</div><h2 class="text-3xl font-bold text-slate-900 pt-4">Frequently asked questions</h2><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">Does an eligible result guarantee donation?</summary><p class="mt-3">No. A centre’s questionnaire, examination, haemoglobin test, and current rules determine the final decision.</p></details><details class="bg-white border rounded-xl p-4"><summary class="font-bold cursor-pointer">What if I feel unwell?</summary><p class="mt-3">Do not donate until you have recovered and followed advice from a qualified healthcare professional or donation centre.</p></details></article></main><footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">

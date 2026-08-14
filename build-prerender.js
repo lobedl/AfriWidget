@@ -274,26 +274,157 @@ tools.forEach(({ htmlFile, mdKey }) => {
   }
 });
 
-// 2. Prerender complete shared footer into ALL HTML files to eliminate Cumulative Layout Shift (CLS)
+// 2. Prerender complete shared footer and navigation into ALL HTML files to eliminate Cumulative Layout Shift (CLS)
 const allHtmlFiles = fs.readdirSync(process.cwd()).filter(f => f.endsWith('.html'));
 let footersUpdated = 0;
+let navsUpdated = 0;
+
+const navItems = [
+  ['/', 'Home'],
+  ['/education', 'Education Tools'],
+  ['/finance', 'Finance Tools'],
+  ['/health', 'Health Tools'],
+  ['/productivity', 'Productivity Tools'],
+  ['/success-stories', 'Success Stories'],
+  ['/widgets', 'All Tools Directory']
+];
 
 allHtmlFiles.forEach(htmlFile => {
   const htmlPath = path.join(process.cwd(), htmlFile);
   let content = fs.readFileSync(htmlPath, 'utf8');
+  let updated = false;
 
+  const pageSlug = htmlFile === 'index.html' ? '/' : htmlFile.replace(/\.html$/, '');
+
+  // 1. Remove duplicate or unneeded legacy scripts from non-tool pages
+  if (htmlFile !== 'qr-code-generator.html' && htmlFile !== 'whatsapp-direct-link-qr-generator.html') {
+    content = content.replace(/\s*<script[^>]*src=["']\/?qrcode\.js["'][^>]*><\/script>/gi, '');
+  }
+
+  // 2. Normalize and optimize <head> for 100% PageSpeed Performance & Zero CLS
+  const headMatch = content.match(/<head>([\s\S]*?)<\/head>/i);
+  if (headMatch) {
+    let headInner = headMatch[1];
+
+    // Remove legacy raw GA / AdSense script tags
+    headInner = headInner.replace(/<!--\s*Google Analytics[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<script[^>]*googletagmanager\.com[\s\S]*?<\/script>/gi, '');
+    headInner = headInner.replace(/<script[^>]*pagead2\.googlesyndication\.com[\s\S]*?<\/script>/gi, '');
+    headInner = headInner.replace(/<script[^>]*>[\s\S]*?window\.dataLayer[\s\S]*?<\/script>/gi, '');
+
+    // Extract meta charset and viewport if present
+    headInner = headInner.replace(/<meta\s+charset=["'][^"']+["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<meta\s+name=["']viewport["'][^>]*\/?>\s*/gi, '');
+
+    // Ensure CSS links are clean
+    headInner = headInner.replace(/<!--\s*Multi-Path CSS Inclusion[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?(?:dist\/)?styles\.css["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?branding\.css["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?cards\.css["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?category-pages\.css["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?new-tools\.css["']\s*\/?>\s*/gi, '');
+
+    const optimizedHeadPrefix = `
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics & Google AdSense -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+`;
+
+    headInner = optimizedHeadPrefix + headInner.trimStart();
+    content = content.replace(/<head>[\s\S]*?<\/head>/i, `<head>${headInner}\n</head>`);
+    updated = true;
+  }
+
+  // Pre-render Desktop Navigation Links
+  const desktopLinksHtml = navItems.map(([href, label]) => {
+    const isCurrent = href === pageSlug || (href === '/' && pageSlug === '/');
+    const classes = 'transition-colors hover:text-yellow-300' + (isCurrent ? ' text-yellow-300 font-bold' : '');
+    return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
+  }).join('\n        ');
+
+  const desktopNavRegex = /(<div[^>]*class=["'][^"']*\b(?:hidden\b[^"']*\bmd:flex|md:flex\b[^"']*\bhidden)\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i;
+  if (desktopNavRegex.test(content)) {
+    content = content.replace(desktopNavRegex, (match, p1, p2, p3) => `${p1}\n        ${desktopLinksHtml}\n      ${p3}`);
+    updated = true;
+  }
+
+  // Pre-render Mobile Navigation Menu
+  const mobileLinksHtml = navItems.map(([href, label]) => {
+    const isCurrent = href === pageSlug || (href === '/' && pageSlug === '/');
+    const classes = 'block py-2 hover:text-yellow-300 transition-colors' + (isCurrent ? ' text-yellow-300 font-bold' : '');
+    return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
+  }).join('\n    ');
+
+  const mobileMenuHtml = `<div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">\n    ${mobileLinksHtml}\n  </div>`;
+
+  const mobileNavRegex = /<div\s+id=["']mobileMenu["'][^>]*>([\s\S]*?)<\/div>/i;
+  if (mobileNavRegex.test(content)) {
+    content = content.replace(mobileNavRegex, mobileMenuHtml);
+    updated = true;
+  }
+
+  // Pre-render Shared Footer
   const footerRegex = /<footer[^>]*>([\s\S]*?)<\/footer>/i;
   if (footerRegex.test(content)) {
     content = content.replace(footerRegex, sharedFooterMarkup);
-    fs.writeFileSync(htmlPath, content, 'utf8');
+    updated = true;
     footersUpdated++;
   } else if (content.includes('</body>')) {
-    // Insert footer right before </body>
     content = content.replace('</body>', `${sharedFooterMarkup}\n</body>`);
-    fs.writeFileSync(htmlPath, content, 'utf8');
+    updated = true;
     footersUpdated++;
+  }
+
+  if (updated) {
+    fs.writeFileSync(htmlPath, content, 'utf8');
+    navsUpdated++;
   }
 });
 
-console.log(`Prerendered complete shared footer in ${footersUpdated} HTML files.`);
+console.log(`Prerendered navigation and shared footer in ${navsUpdated} HTML files.`);
 

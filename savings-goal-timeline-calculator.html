@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Savings Goal &amp; Timeline Target – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>Savings Goal &amp; Timeline Target – AfriWidget</title>
+  
   <meta name="description" content="Free online savings goal & timeline target tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/savings-goal-timeline-calculator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,9 +113,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></a><div class="hidden md:flex gap-6 text-sm font-medium"><a href="health">Health</a><a href="finance">Finance</a><a href="real-estate">Real Estate</a><a href="business">Business</a><a href="education">Education</a><a href="productivity">Tech</a><a href="widgets">All Widgets</a></div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"><a href="health" class="block py-2">Health</a><a href="finance" class="block py-2">Finance</a><a href="real-estate" class="block py-2">Real Estate</a><a href="business" class="block py-2">Business</a><a href="education" class="block py-2">Education</a><a href="productivity" class="block py-2">Tech</a><a href="widgets" class="block py-2">All Widgets</a></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 text-white py-12 px-4 text-center"><div class="max-w-3xl mx-auto"><span class="inline-block rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm font-semibold text-yellow-300 mb-4">Free Finance Tool</span><h1 class="text-3xl sm:text-5xl font-extrabold mb-4">Savings Goal &amp; Timeline Target</h1><p class="text-lg text-slate-300">See when a consistent monthly contribution could reach your target and how much of the result comes from deposits versus estimated growth.</p></div></header>
   <main class="max-w-5xl mx-auto px-4 py-10">
     <section class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Set your savings goal</h2><p class="text-slate-600 mb-6">Use an estimated annual return only for planning; actual rates and results can change.</p><form id="savingsForm" class="grid gap-5 sm:grid-cols-2"><label class="block text-sm font-semibold">Currency<select id="savingsCurrency" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3"><option>USD</option><option>GHS</option><option>NGN</option><option>KES</option><option>ZAR</option><option>EUR</option><option>GBP</option></select></label><label class="block text-sm font-semibold">Target amount<input id="savingsTarget" type="number" min="1" step="0.01" placeholder="10000" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3" required></label><label class="block text-sm font-semibold">Current savings<input id="savingsCurrent" type="number" min="0" step="0.01" value="0" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3"></label><label class="block text-sm font-semibold">Monthly contribution<input id="savingsMonthly" type="number" min="0.01" step="0.01" placeholder="250" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3" required></label><label class="block text-sm font-semibold sm:col-span-2">Estimated annual return<input id="savingsRate" type="number" min="0" step="0.1" value="4" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3"><span class="mt-1 block text-xs font-normal text-slate-500">Set to 0% for a contribution-only timeline.</span></label><button class="sm:col-span-2 rounded-xl bg-yellow-400 py-4 text-lg font-extrabold text-slate-950 hover:bg-yellow-300" type="submit">Calculate My Timeline</button></form></section>

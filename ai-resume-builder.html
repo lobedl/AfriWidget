@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Resume Builder – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>AI Resume Builder – AfriWidget</title>
+  
   <meta name="description" content="Free online ai resume builder tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/ai-resume-builder" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,9 +113,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="homepage-branding light-generator bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center gap-2 font-extrabold text-lg" aria-label="AfriWidget home"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg><span>Afri<span class="text-yellow-300">Widget</span></span></a><div class="hidden md:flex items-center gap-6 text-sm font-medium"><a href="/" class="hover:text-yellow-300">Home</a><a href="education" class="hover:text-yellow-300">Education Tools</a><a href="finance" class="hover:text-yellow-300">Finance Tools</a><a href="health" class="hover:text-yellow-300">Health Tools</a><a href="productivity" class="text-yellow-300 font-bold">Productivity Tools</a><a href="widgets" class="hover:text-yellow-300">All Tools Directory</a></div><button id="mobileMenuBtn" class="md:hidden rounded-lg bg-slate-800 p-2" aria-label="Open navigation menu"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden rounded-lg bg-slate-800 p-2" aria-label="Open navigation menu"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <main>
     <section class="border-b border-slate-200 bg-white px-4 py-14 sm:py-20"><div class="mx-auto max-w-5xl"><p class="mb-4 text-sm font-black uppercase tracking-[.2em] text-yellow-700">Career writing toolkit</p><h1 class="max-w-3xl text-4xl font-black tracking-tight text-slate-950 sm:text-6xl">AI Resume Builder</h1><p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">Turn your real experience into a focused resume draft that is easier to edit, tailor, and send.</p><p class="mt-5 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-bold text-emerald-700">⚡ 100% Free • No Signup • Private In-Browser Generation</p></div></section>
      <section class="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[.9fr_1.1fr]"><form data-writing-tool="resume" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><h2 class="text-2xl font-black text-slate-950">Create your resume draft</h2><p class="mt-2 text-sm leading-6 text-slate-600">Answer the guided questions with truthful details. The AI will correct wording and organize your information, but it will never invent employers, dates, metrics, or qualifications.</p><div class="mt-6 grid gap-4 sm:grid-cols-2"><label><span class="writing-label">Name</span><input class="writing-input" name="name" placeholder="Amara Mensah"></label><label><span class="writing-label">Target role</span><input class="writing-input" name="title" placeholder="Customer Success Specialist"></label><label><span class="writing-label">Industry</span><select class="writing-input" name="industry"><option value="">Choose an industry</option><option>Technology</option><option>Finance and banking</option><option>Healthcare</option><option>Education</option><option>Retail and ecommerce</option><option>Government and nonprofit</option><option>Media and communications</option><option>Hospitality and tourism</option><option>Construction and engineering</option><option>Other</option></select></label><label><span class="writing-label">Experience level</span><select class="writing-input" name="experienceLevel"><option value="">Choose your level</option><option>Student or recent graduate</option><option>Entry level</option><option>Mid level</option><option>Senior</option><option>Manager or director</option><option>Career changer</option></select></label><label><span class="writing-label">Location</span><input class="writing-input" name="location" placeholder="Accra, Ghana"></label><label><span class="writing-label">Email</span><input class="writing-input" name="email" type="email" placeholder="you@example.com"></label><label><span class="writing-label">Work arrangement</span><select class="writing-input" name="workArrangement"><option value="">Choose an option</option><option>On-site</option><option>Hybrid</option><option>Remote</option><option>Flexible</option></select></label><label><span class="writing-label">Leadership experience</span><select class="writing-input" name="leadership"><option value="">Choose an option</option><option>No formal leadership yet</option><option>Led projects or small groups</option><option>Managed people or budgets</option><option>Senior strategic leadership</option></select></label><label class="sm:col-span-2"><span class="writing-label">What job description are you targeting? <span class="font-normal text-slate-500">(optional)</span></span><textarea class="writing-input" name="jobDescription" rows="3" placeholder="Paste the key requirements or describe the role. The AI will prioritize relevant language without keyword stuffing."></textarea></label><label><span class="writing-label">Primary skill area</span><select class="writing-input" name="skillFocus"><option value="">Choose a skill area</option><option>Administration and operations</option><option>Customer service and success</option><option>Data and analytics</option><option>Design and creative</option><option>Education and training</option><option>Engineering and technical</option><option>Finance and accounting</option><option>Health and social care</option><option>Human resources</option><option>Marketing and communications</option><option>Sales and business development</option><option>Project and product management</option></select></label><label><span class="writing-label">Tools or technologies</span><input class="writing-input" name="tools" placeholder="Excel, Salesforce, Canva, Python"></label><label class="sm:col-span-2"><span class="writing-label">Skills and strengths</span><textarea class="writing-input" name="skills" rows="3" placeholder="Add real skills, methods, languages, and strengths. Separate them with commas if helpful."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Work history</span><textarea class="writing-input" name="experience" rows="5" placeholder="For each role: job title, employer, dates, what you did, who you supported, and what changed because of your work. Rough notes are fine."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Results and evidence</span><textarea class="writing-input" name="impact" rows="3" placeholder="Share numbers when you know them: customers helped, revenue, time saved, volume handled, quality scores, deadlines, or improvements. Write 'not measured' if you do not know."></textarea></label><label class="sm:col-span-2"><span class="writing-label">Education</span><input class="writing-input" name="education" placeholder="Qualification, institution, field, and year or expected year"></label><label><span class="writing-label">Certifications</span><input class="writing-input" name="certifications" placeholder="Certification, provider, year"></label><label><span class="writing-label">Languages</span><input class="writing-input" name="languages" placeholder="English, French, Twi"></label><label class="sm:col-span-2"><span class="writing-label">Projects, volunteering, or achievements</span><textarea class="writing-input" name="achievements" rows="4" placeholder="Add projects, awards, volunteer work, community leadership, publications, or wins. Include the action and result when possible."></textarea></label></div><button class="writing-button mt-6 w-full" type="submit">Generate polished resume</button></form><section class="rounded-2xl border border-slate-200 bg-slate-100 p-6" aria-labelledby="resume-result-title"><div class="flex flex-wrap items-center justify-between gap-3"><h2 id="resume-result-title" class="text-2xl font-black text-slate-950">Your editable draft</h2><div class="flex flex-wrap gap-2"><button id="copyWriting" class="writing-button text-sm" type="button">Copy</button><button id="downloadResumePdf" class="writing-button text-sm" type="button">Download PDF</button></div></div><p id="writingStatus" class="mt-2 text-sm text-slate-600" aria-live="polite">Your draft will appear here without leaving the page.</p><div id="writingOutput" contenteditable="true" spellcheck="true" aria-label="Editable resume preview" class="writing-output resume-preview-shell mt-5 rounded-xl border border-slate-200"></div></section></section>

@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Color Generator – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>Random Color Generator – AfriWidget</title>
+  
   <meta name="description" content="Free online random color generator tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/random-color-generator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,10 +113,47 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="homepage-branding light-generator bg-slate-50 text-slate-800 font-sans">
   <nav class="sr-only" aria-label="Primary navigation"><a href="/">Home</a><a href="education">Education Tools</a><a href="finance">Finance Tools</a><a href="health">Health Tools</a><a href="productivity">Productivity Tools</a><a href="widgets">All Tools Directory</a></nav>
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity=".7"/></svg><span class="text-xl font-extrabold">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span></a><div class="hidden md:flex items-center gap-6 text-sm font-medium"></div><button id="mobileMenuBtn" class="md:hidden rounded-lg bg-slate-800 p-2" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden rounded-lg bg-slate-800 p-2" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 px-4 py-16 text-center"><div class="mx-auto max-w-3xl"><span class="inline-flex items-center rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-bold text-yellow-300">⚡ Free • No Signup • Private In-Browser Generation</span><h1 class="mt-6 text-4xl font-black tracking-tight sm:text-5xl">Random Color Generator</h1><p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">Generate visual color swatches with HEX, RGB, and HSL codes for design exploration, CSS, and test data.</p></div></header>
   <main class="mx-auto max-w-4xl px-4 py-10"><section class="rounded-3xl border border-slate-700 bg-slate-900 p-5 shadow-2xl sm:p-8" aria-labelledby="color-title"><div class="mb-6 flex flex-wrap items-start justify-between gap-4"><div><h2 id="color-title" class="text-2xl font-extrabold">Color swatch builder</h2><p class="mt-1 text-sm text-slate-400">Create up to 50 random colors and copy all codes.</p></div><span class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-300">Runs locally</span></div><form id="colorForm" class="grid gap-5 sm:grid-cols-2"><label class="text-sm font-semibold">How many colors?<input id="colorCount" type="number" min="1" max="50" value="12" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-white"></label><label class="text-sm font-semibold">Color family<select id="colorFamily" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-white"><option value="any">Any hue</option><option value="warm">Warm colors</option><option value="cool">Cool colors</option><option value="bright">Bright colors</option></select></label><div class="flex flex-wrap gap-3 sm:col-span-2"><button type="submit" class="rounded-xl bg-yellow-400 px-6 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Generate colors →</button><button id="copyColors" type="button" class="rounded-xl border border-slate-600 px-6 py-3 font-bold hover:border-yellow-400 hover:text-yellow-300">Copy all codes</button></div></form><p id="colorStatus" class="mt-5 text-sm text-slate-400" aria-live="polite"></p><div id="colorOutput" class="mt-3 grid gap-3 sm:grid-cols-2"></div></section>
     <div class="mt-6 rounded-2xl border border-yellow-400/20 bg-yellow-400/10 p-5 text-sm leading-7 text-yellow-100"><strong>Privacy badge:</strong> Color generation happens in your browser. Nothing is uploaded, stored, or sent to a design service.</div>

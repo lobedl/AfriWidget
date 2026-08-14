@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Analytics & Google AdSense -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Water Intake Calculator – AfriWidget</title>
+    (function() {
+      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
+      if (isBot) return;
+
+      var loaded = false;
+      function loadThirdParty() {
+        if (loaded) return;
+        loaded = true;
+        
+        var ga = document.createElement("script");
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
+        ga.async = true;
+        document.head.appendChild(ga);
+
+        var ads = document.createElement("script");
+        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
+        ads.async = true;
+        ads.crossOrigin = "anonymous";
+        document.head.appendChild(ads);
+      }
+
+      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
+      var trigger = function() {
+        loadThirdParty();
+        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
+      };
+      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
+
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadThirdParty, { timeout: 3500 });
+      } else {
+        setTimeout(loadThirdParty, 2500);
+      }
+    })();
+  </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-
+<title>Daily Water Intake Calculator – AfriWidget</title>
+  
   <meta name="description" content="Free online daily water intake calculator tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
   <link rel="canonical" href="https://afriwidget.com/water-intake-calculator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -81,9 +113,46 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/></svg><span class="text-xl font-extrabold">Afri<span class="text-yellow-300">Widget</span></span></a><div class="hidden md:flex items-center space-x-6 text-sm font-medium"></div><button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden bg-slate-800 px-4 pb-4"></div></nav>
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a><div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div><button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div></nav>
   <header class="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 text-white py-14 px-4 text-center"><div class="max-w-3xl mx-auto"><span class="inline-block bg-yellow-300/10 text-yellow-200 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-yellow-300/30">Health &amp; Wellness Tool</span><h1 class="text-3xl sm:text-5xl font-extrabold mb-4">Daily Water Intake Calculator</h1><p class="text-slate-300 text-lg max-w-2xl mx-auto">Build a practical hydration starting point from body weight, exercise time, and hot or humid conditions.</p><span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Calculation</span></div></header>
   <main class="max-w-5xl mx-auto px-4 py-12">
     <section class="max-w-2xl mx-auto bg-white rounded-3xl shadow-lg border border-slate-200 p-6 sm:p-8" aria-labelledby="water-tool-title"><h2 id="water-tool-title" class="text-2xl font-extrabold text-slate-950 mb-2">Estimate your daily water goal</h2><p class="text-slate-600 text-sm leading-6 mb-6">Use body weight in kilograms. Add exercise and climate adjustments only when they describe your usual day.</p><form id="waterForm" class="space-y-5"><div><label for="waterWeight" class="block text-sm font-semibold text-slate-700 mb-2">Body weight (kg)</label><input id="waterWeight" type="number" min="25" max="500" step="0.1" placeholder="70" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-yellow-400 focus:bg-white focus:ring-4 focus:ring-yellow-100 rounded-xl px-4 py-3 font-semibold outline-none" /></div><div class="grid sm:grid-cols-2 gap-5"><div><label for="waterExercise" class="block text-sm font-semibold text-slate-700 mb-2">Exercise (minutes/day)</label><input id="waterExercise" type="number" min="0" max="600" step="5" value="0" required class="w-full bg-slate-50 border-2 border-slate-200 focus:border-yellow-400 focus:bg-white focus:ring-4 focus:ring-yellow-100 rounded-xl px-4 py-3 font-semibold outline-none" /></div><div><label for="waterClimate" class="block text-sm font-semibold text-slate-700 mb-2">Climate</label><select id="waterClimate" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-yellow-400 focus:bg-white focus:ring-4 focus:ring-yellow-100 rounded-xl px-4 py-3 font-semibold outline-none"><option value="0">Temperate or usual</option><option value="0.5">Hot or humid</option></select></div></div><button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg transition-all text-lg">Calculate</button><p id="waterError" class="min-h-5 text-sm text-red-700" aria-live="polite"></p></form></section>

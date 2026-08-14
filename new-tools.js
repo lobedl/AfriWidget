@@ -345,47 +345,124 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     var canvas = byId('qrCanvas');
     var type = byId('qrType');
     var output = byId('qrStatus');
+    var generateBtn = byId('qrGenerateBtn');
+    var downloadBtn = byId('qrDownload');
+    var urlInput = byId('qrUrl');
+    var textInput = byId('qrPlainText');
+    var ssidInput = byId('wifiSsid');
+    var passwordInput = byId('wifiPassword');
+    var securityInput = byId('wifiSecurity');
+
+    if (urlInput && !urlInput.value) {
+      urlInput.value = 'https://afriwidget.com/';
+    }
+
     function fields() {
-      var mode = type.value;
+      var mode = type ? type.value : 'url';
       document.querySelectorAll('[data-qr-mode]').forEach(function (element) {
         element.classList.toggle('hidden', element.dataset.qrMode !== mode);
       });
     }
+
     function value() {
-      if (type.value === 'wifi') {
-        var ssid = byId('wifiSsid').value.trim();
-        var password = byId('wifiPassword').value;
-        var security = byId('wifiSecurity').value;
+      var mode = type ? type.value : 'url';
+      if (mode === 'wifi') {
+        var ssid = ssidInput ? ssidInput.value.trim() : '';
+        var password = passwordInput ? passwordInput.value : '';
+        var security = securityInput ? securityInput.value : 'WPA';
+        if (!ssid) return '';
         return 'WIFI:T:' + security + ';S:' + ssid.replace(/[\\;,"]/g, '\\$&') + ';P:' + password.replace(/[\\;,"]/g, '\\$&') + ';;';
       }
-      return type.value === 'url' ? byId('qrUrl').value.trim() : byId('qrPlainText').value.trim();
+      if (mode === 'text') {
+        return textInput ? textInput.value.trim() : '';
+      }
+      var url = urlInput ? urlInput.value.trim() : '';
+      if (url && !/^https?:\/\//i.test(url) && !/^mailto:/i.test(url) && !/^tel:/i.test(url)) {
+        url = 'https://' + url;
+      }
+      return url;
     }
+
+    var drawTimer = null;
     function draw() {
       var text = value();
       if (!text) {
-        output.textContent = 'Enter content to preview your QR code.';
+        if (output) output.textContent = 'Enter content to preview your QR code.';
+        if (canvas) {
+          var ctx = canvas.getContext('2d');
+          if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
         return;
       }
       var qrLib = window.QRCode || window.qrcode;
       if (!qrLib || typeof qrLib.toCanvas !== 'function') {
-        output.textContent = 'The QR renderer is loading...';
-        setTimeout(draw, 500);
+        if (output) output.textContent = 'Preparing QR renderer...';
+        clearTimeout(drawTimer);
+        drawTimer = setTimeout(draw, 100);
         return;
       }
-      qrLib.toCanvas(canvas, text, { width: 280, margin: 2, color: { dark: '#0f172a', light: '#ffffff' } }, function (error) {
-        output.textContent = error ? 'This content is too long for a QR code.' : 'Live preview ready. Everything stays in this browser.';
+      if (!canvas) return;
+      qrLib.toCanvas(canvas, text, {
+        width: 280,
+        margin: 2,
+        color: { dark: '#0f172a', light: '#ffffff' }
+      }, function (error) {
+        if (output) {
+          output.textContent = error ? 'This content is too long for a standard QR code.' : 'Live preview ready. 100% private in-browser generation.';
+        }
       });
     }
-    type.addEventListener('change', function () { fields(); });
-    form.addEventListener('submit', function (event) { event.preventDefault(); draw(); });
-    byId('qrDownload').addEventListener('click', function () {
-      if (!canvas || !canvas.width) return;
-      var link = document.createElement('a');
-      link.download = 'afriwidget-qr-code.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
+
+    function debouncedDraw() {
+      clearTimeout(drawTimer);
+      drawTimer = setTimeout(draw, 80);
+    }
+
+    if (type) {
+      type.addEventListener('change', function () {
+        fields();
+        draw();
+      });
+    }
+
+    [urlInput, textInput, ssidInput, passwordInput].forEach(function (inp) {
+      if (inp) {
+        inp.addEventListener('input', debouncedDraw);
+        inp.addEventListener('change', draw);
+      }
     });
+
+    if (securityInput) {
+      securityInput.addEventListener('change', draw);
+    }
+
+    if (generateBtn) {
+      generateBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        draw();
+      });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      draw();
+    });
+
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function () {
+        if (!canvas || !canvas.width) return;
+        draw();
+        setTimeout(function() {
+          var link = document.createElement('a');
+          link.download = 'afriwidget-qr-code.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        }, 50);
+      });
+    }
+
     fields();
+    draw();
   }
 
   function setupLoanCalculator() {

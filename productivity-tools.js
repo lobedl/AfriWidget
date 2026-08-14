@@ -472,8 +472,19 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         return;
       }
       $('#whatsappOutput').classList.remove('hidden');
-      if (window.QRCode) {
-        new window.QRCode(qr, { text: link, width: 220, height: 220, colorDark: '#0f172a', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M });
+      const qrLib = window.QRCode || window.qrcode;
+      if (qrLib) {
+        if (typeof qrLib.toCanvas === 'function') {
+          const canvas = document.createElement('canvas');
+          canvas.width = 220;
+          canvas.height = 220;
+          qr.appendChild(canvas);
+          qrLib.toCanvas(canvas, link, { width: 220, margin: 2, color: { dark: '#0f172a', light: '#ffffff' } }, function (err) {
+            if (err) console.error('QR generation error:', err);
+          });
+        } else if (typeof qrLib === 'function') {
+          new qrLib(qr, { text: link, width: 220, height: 220, colorDark: '#0f172a', colorLight: '#ffffff' });
+        }
       }
     };
     [phone, $('#countryCode'), $('#whatsappMessage')].forEach(input => input.addEventListener('input', generate));

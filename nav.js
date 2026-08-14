@@ -10,15 +10,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   'use strict';
 
   function ensureMenuStyles() {
-    if (document.getElementById('afriwidget-menu-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'afriwidget-menu-styles';
-    style.textContent = [
-      '.mobile-menu{display:none!important}',
-      '.mobile-menu.open{display:block!important}',
-      '@media (min-width:768px){.mobile-menu{display:none!important}}'
-    ].join('');
-    document.head.appendChild(style);
+    // Styles are statically compiled in branding.css & styles.css.
   }
 
   var navigationItems = [

@@ -105,6 +105,20 @@ header a:hover, nav a:hover {
   color: #facc15;
 }
 
+/* Brand Wordmark Styling */
+nav a span.font-extrabold,
+header a span.font-extrabold,
+.site-brand-wordmark {
+  color: #ffffff !important;
+}
+
+nav a span.font-extrabold span,
+header a span.font-extrabold span,
+.site-brand-wordmark span,
+.afriwidget-home-wordmark {
+  color: #fde047 !important; /* Yellow-300 */
+}
+
 /* Mobile Navigation Drawer Fail-safe Reset - Hidden by default to prevent FOUC / flashing */
 .mobile-menu {
   display: none !important;
@@ -600,3 +614,221 @@ body:not(.home-layout) .filter-pill:focus-visible {
   color: var(--afri-ink) !important;
   border-color: #facc15 !important;
 }
+
+/* Cumulative Layout Shift (CLS) Prevention & Layout Stability */
+ins.adsbygoogle {
+  display: block !important;
+  min-height: 250px;
+  contain: layout style;
+}
+
+#cookieBanner {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* ==========================================================================
+   AI Writing Tools & Form Field Standards (AfriWidget Design System)
+   ========================================================================== */
+
+form[data-writing-tool] label,
+.writing-tool-card label {
+  display: block;
+  width: 100%;
+}
+
+.writing-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+.writing-input {
+  display: block;
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.writing-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.writing-input:focus {
+  border-color: #facc15 !important;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25) !important;
+}
+
+select.writing-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+textarea.writing-input {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.writing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #facc15 !important;
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  font-size: 1rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.75rem;
+  border: 1px solid #facc15 !important;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.25);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.writing-button:hover {
+  background-color: #fde047 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.35);
+}
+
+.writing-button:active {
+  transform: translateY(0);
+}
+
+.writing-button.text-sm {
+  font-size: 0.875rem !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.writing-output {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  min-height: 120px;
+}
+
+.profile-image-preview {
+  display: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 3px solid #facc15;
+}
+
+.profile-image-preview.visible {
+  display: inline-block;
+}
+
+/* Resume Builder Paper Preview */
+.resume-preview-shell {
+  background: #ffffff;
+  min-height: 480px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.resume-preview-empty {
+  color: #64748b;
+  font-style: italic;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.resume-paper {
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+
+.resume-paper-header {
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.resume-paper-header h3 {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.resume-paper-header p {
+  color: #475569;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 0.25rem;
+}
+
+.resume-paper-contact {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-section h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0f766e;
+  border-bottom: 1.5px solid #e2e8f0;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.resume-section-copy {
+  color: #334155;
+}
+
+.resume-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.resume-skill-list span {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.4rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+.resume-entry {
+  margin-bottom: 0.85rem;
+}
+
