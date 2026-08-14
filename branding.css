@@ -832,3 +832,17 @@ textarea.writing-input {
   margin-bottom: 0.85rem;
 }
 
+/* Mobile Performance & Rendering Speed Optimizations */
+@media (max-width: 1024px) {
+  .category-section:nth-child(n+3),
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 400px;
+  }
+}
+
+/* Ensure smooth, instantaneous paint */
+html {
+  text-rendering: optimizeSpeed;
+}
+

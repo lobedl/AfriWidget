@@ -318,16 +318,17 @@ allHtmlFiles.forEach(htmlFile => {
 
     // Ensure CSS links are clean
     headInner = headInner.replace(/<!--\s*Multi-Path CSS Inclusion[\s\S]*?-->/gi, '');
-    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?(?:dist\/)?styles\.css["']\s*\/?>\s*/gi, '');
-    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?branding\.css["']\s*\/?>\s*/gi, '');
-    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?cards\.css["']\s*\/?>\s*/gi, '');
-    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?category-pages\.css["']\s*\/?>\s*/gi, '');
-    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?new-tools\.css["']\s*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?(?:dist\/)?styles\.css["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?branding\.css["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?cards\.css["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?category-pages\.css["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?new-tools\.css["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<noscript><link\s+rel=["']stylesheet["']\s+href=["']\/dist\/styles\.css["']\s*\/><\/noscript>\s*/gi, '');
 
     const optimizedHeadPrefix = `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics & Google AdSense -->
+  <!-- Google Analytics & Google AdSense (High-Performance Deferred Lazy-Loader) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -361,18 +362,13 @@ allHtmlFiles.forEach(htmlFile => {
         events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
       };
       events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
-
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadThirdParty, { timeout: 3500 });
-      } else {
-        setTimeout(loadThirdParty, 2500);
-      }
     })();
   </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 `;
 
     headInner = optimizedHeadPrefix + headInner.trimStart();

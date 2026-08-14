@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics & Google AdSense -->
+  <!-- Google Analytics & Google AdSense (High-Performance Deferred Lazy-Loader) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -37,18 +37,13 @@
         events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
       };
       events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
-
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadThirdParty, { timeout: 3500 });
-      } else {
-        setTimeout(loadThirdParty, 2500);
-      }
     })();
   </script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Free Online Calculators &amp; Utility Tools – AfriWidget</title>
   
   <meta name="description" content="Free online calculators and utility tools for education, finance, health, and productivity. 100% private, browser-based tools with zero signup required." />
@@ -98,6 +93,8 @@
   }
 ]
   </script>
+
+
 
 
 
@@ -963,6 +960,5 @@
       // Cookie banner managed by footer.js
     });
   </script>
-  <script src="nav.js" defer></script>
 </body>
 </html>

@@ -159,7 +159,11 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     }
 
     syncSocialMetadata();
-    initCookieBanner();
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initCookieBanner);
+    } else {
+      setTimeout(initCookieBanner, 200);
+    }
   }
 
   function initCookieBanner() {
