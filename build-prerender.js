@@ -308,9 +308,14 @@ allHtmlFiles.forEach(htmlFile => {
 
     // Remove legacy raw GA / AdSense script tags
     headInner = headInner.replace(/<!--\s*Google Analytics[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<!--\s*Google AdSense[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<!--\s*Resource Preconnects[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']preconnect["'][^>]*\/?>\s*/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']dns-prefetch["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<script[^>]*googletagmanager\.com[\s\S]*?<\/script>/gi, '');
     headInner = headInner.replace(/<script[^>]*pagead2\.googlesyndication\.com[\s\S]*?<\/script>/gi, '');
     headInner = headInner.replace(/<script[^>]*>[\s\S]*?window\.dataLayer[\s\S]*?<\/script>/gi, '');
+    headInner = headInner.replace(/<script[^>]*>[\s\S]*?loadThirdParty[\s\S]*?<\/script>/gi, '');
 
     // Extract meta charset and viewport if present
     headInner = headInner.replace(/<meta\s+charset=["'][^"']+["']\s*\/?>\s*/gi, '');
@@ -324,46 +329,26 @@ allHtmlFiles.forEach(htmlFile => {
     headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?category-pages\.css["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?new-tools\.css["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<noscript><link\s+rel=["']stylesheet["']\s+href=["']\/dist\/styles\.css["']\s*\/><\/noscript>\s*/gi, '');
+    headInner = headInner.replace(/<noscript>\s*<\/noscript>\s*/gi, '');
 
     const optimizedHeadPrefix = `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics & Google AdSense (High-Performance Deferred Lazy-Loader) -->
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
-
-    (function() {
-      var isBot = /Lighthouse|PageSpeed|HeadlessChromium|Chrome-Lighthouse|WebDriver/i.test(navigator.userAgent) || navigator.webdriver;
-      if (isBot) return;
-
-      var loaded = false;
-      function loadThirdParty() {
-        if (loaded) return;
-        loaded = true;
-        
-        var ga = document.createElement("script");
-        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0";
-        ga.async = true;
-        document.head.appendChild(ga);
-
-        var ads = document.createElement("script");
-        ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474";
-        ads.async = true;
-        ads.crossOrigin = "anonymous";
-        document.head.appendChild(ads);
-      }
-
-      var events = ["mousemove", "touchstart", "scroll", "keydown", "click", "pointerdown"];
-      var trigger = function() {
-        loadThirdParty();
-        events.forEach(function(e) { window.removeEventListener(e, trigger, { passive: true }); });
-      };
-      events.forEach(function(e) { window.addEventListener(e, trigger, { passive: true }); });
-    })();
   </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
   <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
