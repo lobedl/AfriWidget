@@ -8,7 +8,7 @@
     "dev": "node server.js",
     "start": "node server.js",
     "build:css": "npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\"",
-    "build": "node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
+    "build": "node generate-og-assets.js && node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
