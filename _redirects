@@ -1,6 +1,7 @@
 # Netlify Function Proxies
 /api/groq-proxy        /.netlify/functions/groq-proxy 200
 /api/education-ai      /.netlify/functions/education-ai 200
+/api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
 /tech-tool.html   /productivity   301

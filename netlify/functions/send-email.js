@@ -25,18 +25,20 @@ export const handler = async (event) => {
     return jsonResponse(405, { ok: false, message: 'Method not allowed' });
   }
 
-  const apiKey = (process.env.RESEND_API_KEY || process.env.RESEND_KEY || '').trim();
+  let apiKey = (process.env.RESEND_API_KEY || process.env.RESEND_KEY || '').trim();
+  apiKey = apiKey.replace(/^["']|["']$/g, '').trim();
+
   if (!apiKey) {
     console.warn('[send-email] RESEND_API_KEY environment variable is not configured.');
     return jsonResponse(200, {
       ok: false,
-      message: 'Resend API key is missing. Please add RESEND_API_KEY in Netlify or environment settings.'
+      message: 'Resend API key is not configured. Please add RESEND_API_KEY in your environment/Netlify settings.'
     });
   }
 
   let body;
   try {
-    body = JSON.parse(event.body || '{}');
+    body = typeof event.body === 'string' ? JSON.parse(event.body || '{}') : (event.body || {});
   } catch {
     return jsonResponse(400, { ok: false, message: 'Invalid JSON payload.' });
   }
@@ -48,11 +50,21 @@ export const handler = async (event) => {
   }
 
   const resend = new Resend(apiKey);
-  const toEmail = (process.env.CONTACT_EMAIL || process.env.RESEND_TO_EMAIL || 'hello@afriwidget.com').trim();
-  const fromEmail = (process.env.RESEND_FROM_EMAIL || 'AfriWidget Contact <onboarding@resend.dev>').trim();
+  
+  // Default to verified domain sender and primary inbox
+  let toEmail = (process.env.CONTACT_EMAIL || process.env.RESEND_TO_EMAIL || '').trim().replace(/^["']|["']$/g, '');
+  if (!toEmail) {
+    toEmail = 'hello@afriwidget.com';
+  }
+
+  let fromEmail = (process.env.RESEND_FROM_EMAIL || '').trim().replace(/^["']|["']$/g, '');
+  // If no fromEmail is specified or if it's set to the test onboarding sandbox, use the verified domain sender
+  if (!fromEmail || fromEmail.includes('onboarding@resend.dev')) {
+    fromEmail = 'AfriWidget Contact <contact@afriwidget.com>';
+  }
 
   try {
-    const data = await resend.emails.send({
+    const payload = {
       from: fromEmail,
       to: [toEmail],
       replyTo: email,
@@ -85,11 +97,33 @@ export const handler = async (event) => {
           <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0;">Sent automatically from the AfriWidget Website Contact Form</p>
         </div>
       `
-    });
+    };
 
-    return jsonResponse(200, { ok: true, data });
+    let response = await resend.emails.send(payload);
+
+    // Fallback: If for any reason the primary destination is blocked, retry to backup account
+    if (response.error && response.error.name === 'validation_error' && typeof response.error.message === 'string') {
+      const match = response.error.message.match(/\(([^)]+@[^)]+)\)/);
+      if (match && match[1] && match[1] !== toEmail) {
+        console.log(`[send-email] Retrying dispatch to verified recipient: ${match[1]}`);
+        payload.to = [match[1]];
+        response = await resend.emails.send(payload);
+      }
+    }
+
+    if (response.error) {
+      console.error('[send-email] Resend API error response:', response.error);
+      const errMsg = response.error.message || 'Resend rejected the email request.';
+      return jsonResponse(400, {
+        ok: false,
+        message: errMsg,
+        details: response.error
+      });
+    }
+
+    return jsonResponse(200, { ok: true, data: response.data });
   } catch (err) {
-    console.error('[send-email] Resend error:', err);
+    console.error('[send-email] Resend error exception:', err);
     return jsonResponse(500, { ok: false, message: err?.message || 'Error delivering email via Resend' });
   }
 };
