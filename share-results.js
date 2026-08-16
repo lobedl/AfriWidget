@@ -127,6 +127,22 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       fields: () => [$('#becePlacementAggregate'), $('#beceSchoolCategory')],
       calculate: () => $('#becePlacementCalculate')?.click()
     },
+    'tvet-ncv-pass-calculator': {
+      fields: () => [$('#ncvLevel'), ...$$('.ncv-input')],
+      calculate: () => $('#ncvCalculate')?.click()
+    },
+    'tvet-exam-target-mark-calculator': {
+      fields: () => [$('#streamSelect'), $('#targetIcass'), $('#targetIsat'), $('#customTarget')],
+      calculate: () => $('#targetCalculate')?.click()
+    },
+    'nsfas-tvet-allowance-calculator': {
+      fields: () => [$('#nsfasInstType'), $('#nsfasLivingType'), $('#nsfasMonths')],
+      calculate: () => $('#nsfasCalculate')?.click()
+    },
+    'matric-sba-exam-calculator': {
+      fields: () => $$('.matric-input'),
+      calculate: () => $('#matricCalculate')?.click()
+    },
     'igcse-alevel-gpa-converter': {
       fields: () => $$('.igcse-row input, .igcse-row select'),
       restore(values) {

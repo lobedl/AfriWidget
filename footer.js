@@ -78,6 +78,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
            <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
            <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
            <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+           <li><a href="/tvet-ncv-pass-calculator" class="hover:text-emerald-400 transition-colors">TVET NC(V) Pass</a></li>
+           <li><a href="/tvet-exam-target-mark-calculator" class="hover:text-emerald-400 transition-colors">TVET Exam Target Mark</a></li>
+           <li><a href="/nsfas-tvet-allowance-calculator" class="hover:text-emerald-400 transition-colors">NSFAS TVET Allowance</a></li>
+           <li><a href="/matric-sba-exam-calculator" class="hover:text-emerald-400 transition-colors">Matric SBA + Exam Pass</a></li>
             <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
            <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
            <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>

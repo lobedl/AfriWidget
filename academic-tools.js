@@ -506,11 +506,539 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     scoreInput?.setAttribute('max', getSystem().max);
   }
 
+  /* -------------------------------------------------------------------------
+   * TVET NC(V) Pass & Aggregate Calculator
+   * ------------------------------------------------------------------------- */
+  function initNcvCalculator() {
+    const calcBtn = $('#ncvCalculate');
+    if (!calcBtn) return;
+
+    const calculate = () => {
+      const getNum = id => {
+        const val = $(id)?.value.trim();
+        return val === '' ? null : Number(val);
+      };
+
+      const langIcass = getNum('#ncvLangIcass');
+      const langExam = getNum('#ncvLangExam');
+      const loIcass = getNum('#ncvLoIcass');
+      const loExam = getNum('#ncvLoExam');
+      const mathIcass = getNum('#ncvMathIcass');
+      const mathExam = getNum('#ncvMathExam');
+
+      const vocs = [1, 2, 3, 4].map(num => ({
+        name: $(`#ncvVoc${num}Name`)?.value || `Vocational Subject ${num}`,
+        icass: getNum(`#ncvVoc${num}Icass`),
+        isat: getNum(`#ncvVoc${num}Isat`),
+        exam: getNum(`#ncvVoc${num}Exam`)
+      }));
+
+      // Validation
+      const fundamentalInputs = [langIcass, langExam, loIcass, loExam, mathIcass, mathExam];
+      const hasMissingFundamental = fundamentalInputs.some(v => v === null || Number.isNaN(v) || v < 0 || v > 100);
+      const hasMissingVoc = vocs.some(v => v.icass === null || v.isat === null || v.exam === null || Number.isNaN(v.icass) || Number.isNaN(v.isat) || Number.isNaN(v.exam) || v.icass < 0 || v.icass > 100 || v.isat < 0 || v.isat > 100 || v.exam < 0 || v.exam > 100);
+
+      if (hasMissingFundamental || hasMissingVoc) {
+        set('#ncvResult', 'Incomplete Marks');
+        set('#ncvStatusBadge', 'Please fill all fields');
+        const badge = $('#ncvStatusBadge');
+        if (badge) badge.className = 'inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-rose-100 text-rose-800 mb-4';
+        set('#ncvMessage', 'Please provide marks (0–100%) for all 3 fundamental and 4 vocational subjects.');
+        return;
+      }
+
+      // Calculations
+      const langFinal = (langIcass * 0.5) + (langExam * 0.5);
+      const loFinal = (loIcass * 0.5) + (loExam * 0.5);
+      const mathFinal = (mathIcass * 0.5) + (mathExam * 0.5);
+
+      const langPass = langFinal >= 40;
+      const loPass = loFinal >= 40;
+      const mathPass = mathFinal >= 30;
+
+      const vocResults = vocs.map(v => {
+        const finalMark = (v.icass * 0.25) + (v.isat * 0.25) + (v.exam * 0.5);
+        return {
+          ...v,
+          finalMark,
+          passed: finalMark >= 50
+        };
+      });
+
+      const vocAvg = vocResults.reduce((acc, curr) => acc + curr.finalMark, 0) / 4;
+      const passedVocCount = vocResults.filter(v => v.passed).length;
+      const allPassed = langPass && loPass && mathPass && passedVocCount === 4;
+
+      const level = $('#ncvLevel')?.value || '4';
+
+      set('#ncvResult', `${allPassed ? 'QUALIFIED (PASS)' : 'INCOMPLETE'}`);
+      const badge = $('#ncvStatusBadge');
+      if (badge) {
+        badge.textContent = allPassed ? `Full NC(V) Level ${level} Pass` : `${7 - ( (langPass?1:0) + (loPass?1:0) + (mathPass?1:0) + passedVocCount )} Subject(s) Need Rewrite`;
+        badge.className = `inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-4 ${allPassed ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`;
+      }
+
+      // Render breakdown list
+      const listEl = $('#ncvBreakdownList');
+      if (listEl) {
+        listEl.innerHTML = `
+          <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+            <div class="flex justify-between font-bold text-slate-900">
+              <span>Vocational Aggregate Average:</span>
+              <span class="text-teal-800">${vocAvg.toFixed(1)}%</span>
+            </div>
+          </div>
+          <div class="space-y-1.5 pt-2">
+            <div class="flex justify-between p-2 rounded bg-slate-50">
+              <span>Language: <strong>${langFinal.toFixed(1)}%</strong> (Min 40%)</span>
+              <span class="font-bold ${langPass ? 'text-emerald-600' : 'text-rose-600'}">${langPass ? '✓ PASS' : '✗ FAIL'}</span>
+            </div>
+            <div class="flex justify-between p-2 rounded bg-slate-50">
+              <span>Life Orientation: <strong>${loFinal.toFixed(1)}%</strong> (Min 40%)</span>
+              <span class="font-bold ${loPass ? 'text-emerald-600' : 'text-rose-600'}">${loPass ? '✓ PASS' : '✗ FAIL'}</span>
+            </div>
+            <div class="flex justify-between p-2 rounded bg-slate-50">
+              <span>Mathematics: <strong>${mathFinal.toFixed(1)}%</strong> (Min 30%)</span>
+              <span class="font-bold ${mathPass ? 'text-emerald-600' : 'text-rose-600'}">${mathPass ? '✓ PASS' : '✗ FAIL'}</span>
+            </div>
+            ${vocResults.map((v, i) => `
+              <div class="flex justify-between p-2 rounded bg-slate-50">
+                <span class="truncate max-w-[200px]">${v.name}: <strong>${v.finalMark.toFixed(1)}%</strong> (Min 50%)</span>
+                <span class="font-bold ${v.passed ? 'text-emerald-600' : 'text-rose-600'}">${v.passed ? '✓ PASS' : '✗ FAIL'}</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      set('#ncvMessage', allPassed
+        ? `Congratulations! You have satisfied all fundamental (Language, LO, Math) and vocational criteria for your NC(V) Level ${level} certificate.`
+        : `Under Umalusi guidelines, credits for passed subjects are retained permanently. You only need to rewrite subjects marked as failed.`
+      );
+    };
+
+    calcBtn.addEventListener('click', calculate);
+
+    $('#ncvReset')?.addEventListener('click', () => {
+      $$('.ncv-input').forEach(input => { input.value = ''; });
+      set('#ncvResult', 'Enter marks to calculate');
+      set('#ncvStatusBadge', 'Awaiting Calculation');
+      const badge = $('#ncvStatusBadge');
+      if (badge) badge.className = 'inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-slate-600 mb-4';
+      set('#ncvBreakdownList', '<p class="text-slate-500">Subject results, vocational aggregate, and certification eligibility will appear here.</p>');
+      set('#ncvMessage', 'Enter all 3 fundamental and 4 vocational marks. All calculations are executed privately in your browser memory.');
+    });
+
+    $('#ncvShareWhatsApp')?.addEventListener('click', () => {
+      const res = $('#ncvResult')?.textContent || '';
+      const textToShare = `My South African TVET NC(V) Pass Calculation: ${res}. Calculated on AfriWidget: https://afriwidget.com/tvet-ncv-pass-calculator`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare)}`, '_blank');
+    });
+
+    $('#ncvCopyResult')?.addEventListener('click', () => {
+      const res = $('#ncvResult')?.textContent || '';
+      const msg = $('#ncvMessage')?.textContent || '';
+      navigator.clipboard?.writeText(`TVET NC(V) Status: ${res}\n${msg}\nhttps://afriwidget.com/tvet-ncv-pass-calculator`);
+      const copyBtn = $('#ncvCopyResult');
+      if (copyBtn) {
+        const orig = copyBtn.textContent;
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+   * TVET Exam Target Mark Calculator
+   * ------------------------------------------------------------------------- */
+  function initTargetMarkCalculator() {
+    const calcBtn = $('#targetCalculate');
+    const streamSel = $('#streamSelect');
+    if (!calcBtn || !streamSel) return;
+
+    const toggleIsat = () => {
+      const isatWrapper = $('#isatWrapper');
+      if (isatWrapper) {
+        if (streamSel.value === 'ncv_voc') {
+          isatWrapper.classList.remove('hidden');
+        } else {
+          isatWrapper.classList.add('hidden');
+        }
+      }
+    };
+
+    streamSel.addEventListener('change', toggleIsat);
+    toggleIsat();
+
+    const slider = $('#customTarget');
+    slider?.addEventListener('input', () => {
+      set('#customTargetValue', `${slider.value}% (${Number(slider.value) >= 75 ? 'Distinction' : Number(slider.value) >= 60 ? 'Good Pass' : 'Standard Pass'})`);
+    });
+
+    const getFeasibility = (needed, submin = 40) => {
+      const effective = Math.max(needed, submin);
+      if (effective > 100) return { label: 'Unreachable (>100%)', badge: 'bg-rose-100 text-rose-800' };
+      if (effective >= 80) return { label: 'Intense Revision (80-100%)', badge: 'bg-orange-100 text-orange-800' };
+      if (effective >= 65) return { label: 'Challenging (65-79%)', badge: 'bg-amber-100 text-amber-800' };
+      if (effective >= 50) return { label: 'Realistic (50-64%)', badge: 'bg-emerald-100 text-emerald-800' };
+      return { label: 'Highly Achievable (<=49%)', badge: 'bg-emerald-100 text-emerald-800' };
+    };
+
+    const calculate = () => {
+      const icassRaw = $('#targetIcass')?.value.trim();
+      const isatRaw = $('#targetIsat')?.value.trim();
+      const stream = streamSel.value;
+      const customGoal = Number(slider?.value || 50);
+
+      if (!icassRaw || Number.isNaN(Number(icassRaw))) {
+        set('#targetResult', 'Enter ICASS');
+        set('#targetMessage', 'Please enter your current ICASS percentage (0–100%).');
+        return;
+      }
+
+      const icass = Number(icassRaw);
+      const isat = isatRaw ? Number(isatRaw) : 0;
+
+      // Tier targets: 40% (or 50% for voc), 50%, 60%, 75%
+      const goals = stream === 'ncv_voc'
+        ? [ { label: '50% Minimum Pass', target: 50 }, { label: '60% Good Pass', target: 60 }, { label: '70% Merit Pass', target: 70 }, { label: '75% Distinction', target: 75 } ]
+        : [ { label: '40% Minimum Pass', target: 40 }, { label: '50% Standard Pass', target: 50 }, { label: '60% Good Pass', target: 60 }, { label: '75% Distinction', target: 75 } ];
+
+      // Compute needed exam for any target
+      const getNeeded = (targetVal) => {
+        if (stream === 'nated') {
+          // target = (icass * 0.4) + (exam * 0.6)
+          const needed = (targetVal - (icass * 0.4)) / 0.6;
+          return { needed, subminApplied: needed < 40 };
+        } else if (stream === 'ncv_voc') {
+          // target = (icass * 0.25) + (isat * 0.25) + (exam * 0.5)
+          const needed = (targetVal - (icass * 0.25) - (isat * 0.25)) / 0.5;
+          return { needed, subminApplied: false };
+        } else {
+          // 50% icass + 50% exam
+          const needed = (targetVal - (icass * 0.5)) / 0.5;
+          return { needed, subminApplied: false };
+        }
+      };
+
+      const customCalc = getNeeded(customGoal);
+      const displayCustomNeeded = stream === 'nated' ? Math.max(40, customCalc.needed) : Math.max(0, customCalc.needed);
+      const customFeas = getFeasibility(displayCustomNeeded, stream === 'nated' ? 40 : 0);
+
+      set('#targetResult', `${displayCustomNeeded > 100 ? '> 100%' : displayCustomNeeded.toFixed(1) + '%'}`);
+      const badge = $('#targetFeasibilityBadge');
+      if (badge) {
+        badge.textContent = customFeas.label;
+        badge.className = `inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-4 ${customFeas.badge}`;
+      }
+
+      // Render table
+      const tbody = $('#targetTableBody');
+      if (tbody) {
+        tbody.innerHTML = goals.map(g => {
+          const calc = getNeeded(g.target);
+          const effective = stream === 'nated' ? Math.max(40, calc.needed) : Math.max(0, calc.needed);
+          const feas = getFeasibility(effective, stream === 'nated' ? 40 : 0);
+          return `
+            <tr>
+              <td class="p-2.5 font-bold">${g.label}</td>
+              <td class="p-2.5 font-extrabold ${effective > 100 ? 'text-rose-600' : 'text-slate-900'}">
+                ${effective > 100 ? 'Unreachable' : effective.toFixed(1) + '%'}
+                ${calc.subminApplied ? '<span class="text-[10px] text-amber-600 block">(40% DHET Sub-min)</span>' : ''}
+              </td>
+              <td class="p-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${feas.badge}">${feas.label.split(' ')[0]}</span></td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      set('#targetMessage', `For your target of ${customGoal}%, you need at least ${displayCustomNeeded > 100 ? 'over 100% (unreachable)' : displayCustomNeeded.toFixed(1) + '%'} in the national exam. ${stream === 'nated' ? 'Note: The DHET 40% sub-minimum rule is strictly enforced.' : ''}`);
+    };
+
+    calcBtn.addEventListener('click', calculate);
+
+    $('#targetReset')?.addEventListener('click', () => {
+      $('#targetIcass').value = '';
+      if ($('#targetIsat')) $('#targetIsat').value = '';
+      set('#targetResult', 'Enter ICASS to see targets');
+      set('#targetFeasibilityBadge', 'Awaiting Calculation');
+      const badge = $('#targetFeasibilityBadge');
+      if (badge) badge.className = 'inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-slate-600 mb-4';
+      set('#targetMessage', 'Enter your ICASS mark. The DHET sub-minimum of 40% will automatically be enforced on all examination targets.');
+    });
+
+    $('#targetShareWhatsApp')?.addEventListener('click', () => {
+      const res = $('#targetResult')?.textContent || '';
+      const textToShare = `My DHET TVET Exam Target Mark: ${res}. Plan your exam goals with AfriWidget: https://afriwidget.com/tvet-exam-target-mark-calculator`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare)}`, '_blank');
+    });
+
+    $('#targetCopyResult')?.addEventListener('click', () => {
+      const res = $('#targetResult')?.textContent || '';
+      const msg = $('#targetMessage')?.textContent || '';
+      navigator.clipboard?.writeText(`TVET Target Mark: ${res}\n${msg}\nhttps://afriwidget.com/tvet-exam-target-mark-calculator`);
+      const copyBtn = $('#targetCopyResult');
+      if (copyBtn) {
+        const orig = copyBtn.textContent;
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+   * NSFAS TVET Allowance Estimator
+   * ------------------------------------------------------------------------- */
+  function initNsfasCalculator() {
+    const calcBtn = $('#nsfasCalculate');
+    if (!calcBtn) return;
+
+    const calculate = () => {
+      const instType = $('#nsfasInstType')?.value || 'tvet_ncv';
+      const livingType = $('#nsfasLivingType')?.value || 'home';
+      const months = Number($('#nsfasMonths')?.value || 10);
+
+      // Rates (annualized / monthly)
+      const isUniv = instType === 'university';
+      const personalCareMonthly = isUniv ? 1650 : 304.50;
+      const personalCareAnnual = personalCareMonthly * months;
+
+      let accomMonthly = 0;
+      let travelMonthly = 0;
+
+      if (livingType === 'home') {
+        travelMonthly = isUniv ? 1065 : 800;
+      } else if (livingType === 'accredited_urban') {
+        accomMonthly = isUniv ? 5000 : 4500;
+      } else if (livingType === 'accredited_rural') {
+        accomMonthly = isUniv ? 4000 : 3600;
+      } else if (livingType === 'campus_res') {
+        accomMonthly = isUniv ? 4200 : 3800;
+      }
+
+      const accomAnnual = accomMonthly * months;
+      const travelAnnual = travelMonthly * months;
+
+      const directStudentMonthly = personalCareMonthly + travelMonthly;
+      const totalAnnualPackage = personalCareAnnual + accomAnnual + travelAnnual;
+
+      set('#nsfasResult', `R${totalAnnualPackage.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / year`);
+      set('#nsfasMonthlyBadge', `Direct Monthly Cash: R${directStudentMonthly.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / month`);
+
+      set('#nsfasPersonalCareVal', `R${personalCareAnnual.toLocaleString('en-ZA', { minimumFractionDigits: 2 })} (R${personalCareMonthly.toFixed(2)}/mo)`);
+      set('#nsfasAccomVal', accomAnnual > 0 ? `R${accomAnnual.toLocaleString('en-ZA', { minimumFractionDigits: 2 })} (Capped to Landlord)` : 'R0.00 (Living at Home)');
+      set('#nsfasTravelVal', travelAnnual > 0 ? `R${travelAnnual.toLocaleString('en-ZA', { minimumFractionDigits: 2 })} (R${travelMonthly.toFixed(2)}/mo)` : 'R0.00 (In Accommodation)');
+      set('#nsfasMaterialsVal', isUniv ? 'R5,460.00 / year' : 'Provided by TVET College');
+
+      set('#nsfasMessage', `Estimated for a ${months}-month cycle. Direct cash to your bank/wallet is R${directStudentMonthly.toFixed(2)}/month. 100% of college tuition is paid directly to your institution.`);
+    };
+
+    calcBtn.addEventListener('click', calculate);
+    calculate(); // auto-run on load
+
+    $('#nsfasReset')?.addEventListener('click', () => {
+      $('#nsfasInstType').value = 'tvet_ncv';
+      $('#nsfasLivingType').value = 'home';
+      $('#nsfasMonths').value = '10';
+      calculate();
+    });
+
+    $('#nsfasShareWhatsApp')?.addEventListener('click', () => {
+      const res = $('#nsfasResult')?.textContent || '';
+      const textToShare = `My Estimated NSFAS Allowance Package: ${res}. Calculate your TVET allowance on AfriWidget: https://afriwidget.com/nsfas-tvet-allowance-calculator`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare)}`, '_blank');
+    });
+
+    $('#nsfasCopyResult')?.addEventListener('click', () => {
+      const res = $('#nsfasResult')?.textContent || '';
+      const msg = $('#nsfasMessage')?.textContent || '';
+      navigator.clipboard?.writeText(`NSFAS Allowance Breakdown: ${res}\n${msg}\nhttps://afriwidget.com/nsfas-tvet-allowance-calculator`);
+      const copyBtn = $('#nsfasCopyResult');
+      if (copyBtn) {
+        const orig = copyBtn.textContent;
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------------------
+   * Matric SBA + Final Exam Pass Calculator
+   * ------------------------------------------------------------------------- */
+  function initMatricSbaExamCalculator() {
+    const calcBtn = $('#matricCalculate');
+    if (!calcBtn) return;
+
+    const getApsPoints = (pct) => {
+      if (pct >= 80) return { level: 7, points: 7, label: 'Outstanding' };
+      if (pct >= 70) return { level: 6, points: 6, label: 'Meritorious' };
+      if (pct >= 60) return { level: 5, points: 5, label: 'Substantial' };
+      if (pct >= 50) return { level: 4, points: 4, label: 'Adequate' };
+      if (pct >= 40) return { level: 3, points: 3, label: 'Moderate' };
+      if (pct >= 30) return { level: 2, points: 2, label: 'Elementary' };
+      return { level: 1, points: 1, label: 'Not Achieved' };
+    };
+
+    const calculate = () => {
+      const getNum = id => {
+        const val = $(id)?.value.trim();
+        return val === '' ? null : Number(val);
+      };
+
+      const hlSba = getNum('#matricHlSba');
+      const hlExam = getNum('#matricHlExam');
+      const falSba = getNum('#matricFalSba');
+      const falExam = getNum('#matricFalExam');
+      const mathSba = getNum('#matricMathSba');
+      const mathExam = getNum('#matricMathExam');
+      const loScore = getNum('#matricLoScore');
+
+      const elec1Name = $('#matricElec1Name')?.value || 'Elective Subject 1';
+      const elec1Sba = getNum('#matricElec1Sba');
+      const elec1Exam = getNum('#matricElec1Exam');
+
+      const elec2Name = $('#matricElec2Name')?.value || 'Elective Subject 2';
+      const elec2Sba = getNum('#matricElec2Sba');
+      const elec2Exam = getNum('#matricElec2Exam');
+
+      const elec3Name = $('#matricElec3Name')?.value || 'Elective Subject 3';
+      const elec3Sba = getNum('#matricElec3Sba');
+      const elec3Exam = getNum('#matricElec3Exam');
+
+      const allInputs = [hlSba, hlExam, falSba, falExam, mathSba, mathExam, loScore, elec1Sba, elec1Exam, elec2Sba, elec2Exam, elec3Sba, elec3Exam];
+      if (allInputs.some(v => v === null || Number.isNaN(v) || v < 0 || v > 100)) {
+        set('#matricResult', 'Incomplete Marks');
+        set('#matricPassBadge', 'Please fill all 7 subjects');
+        const badge = $('#matricPassBadge');
+        if (badge) badge.className = 'inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-rose-100 text-rose-800 mb-4';
+        set('#matricMessage', 'Please provide SBA (25%) and Final Exam (75%) marks for all 7 Grade 12 subjects.');
+        return;
+      }
+
+      // Compute final marks (25% SBA + 75% Exam)
+      const hlFinal = Math.round((hlSba * 0.25) + (hlExam * 0.75));
+      const falFinal = Math.round((falSba * 0.25) + (falExam * 0.75));
+      const mathFinal = Math.round((mathSba * 0.25) + (mathExam * 0.75));
+      const loFinal = Math.round(loScore); // 100% CAT/SBA
+      const e1Final = Math.round((elec1Sba * 0.25) + (elec1Exam * 0.75));
+      const e2Final = Math.round((elec2Sba * 0.25) + (elec2Exam * 0.75));
+      const e3Final = Math.round((elec3Sba * 0.25) + (elec3Exam * 0.75));
+
+      const subjects = [
+        { name: 'Home Language', mark: hlFinal, isHl: true, isLo: false },
+        { name: 'First Add Language', mark: falFinal, isHl: false, isLo: false },
+        { name: 'Mathematics / Math Lit', mark: mathFinal, isHl: false, isLo: false },
+        { name: 'Life Orientation', mark: loFinal, isHl: false, isLo: true },
+        { name: elec1Name, mark: e1Final, isHl: false, isLo: false },
+        { name: elec2Name, mark: e2Final, isHl: false, isLo: false },
+        { name: elec3Name, mark: e3Final, isHl: false, isLo: false }
+      ].map(s => ({
+        ...s,
+        aps: getApsPoints(s.mark)
+      }));
+
+      // Calculate Total APS (excluding LO or including LO - SA standard counts 6 subjects + LO points)
+      const totalAps = subjects.reduce((sum, s) => sum + s.aps.points, 0);
+
+      // Determine Umalusi Pass Level
+      // Non-LO subjects
+      const nonLo = subjects.filter(s => !s.isLo);
+      const countAtOrAbove = (thresh) => nonLo.filter(s => s.mark >= thresh).length;
+
+      let passCategory = 'NSC Not Achieved (Fail)';
+      let badgeClass = 'bg-rose-100 text-rose-800';
+
+      const hlPass40 = hlFinal >= 40;
+      const count50 = countAtOrAbove(50);
+      const count40 = countAtOrAbove(40);
+      const count30 = countAtOrAbove(30);
+
+      if (hlPass40 && count50 >= 4 && count30 >= 6) {
+        passCategory = "Bachelor's Degree Pass (B.Deg)";
+        badgeClass = 'bg-emerald-100 text-emerald-800';
+      } else if (hlPass40 && count40 >= 4 && count30 >= 6) {
+        passCategory = 'Diploma Pass (Dip)';
+        badgeClass = 'bg-teal-100 text-teal-800';
+      } else if (hlPass40 && count40 >= 2 && count30 >= 5) {
+        passCategory = 'Higher Certificate Pass (HC)';
+        badgeClass = 'bg-amber-100 text-amber-800';
+      } else if (hlPass40 && count30 >= 4) {
+        passCategory = 'Senior Certificate Pass (NSC Standard)';
+        badgeClass = 'bg-blue-100 text-blue-800';
+      }
+
+      set('#matricResult', passCategory);
+      set('#matricApsVal', `${totalAps} APS Points`);
+
+      const badge = $('#matricPassBadge');
+      if (badge) {
+        badge.textContent = passCategory.split(' (')[0];
+        badge.className = `inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-4 ${badgeClass}`;
+      }
+
+      // Render subject list
+      const listEl = $('#matricSubjectList');
+      if (listEl) {
+        listEl.innerHTML = subjects.map(s => `
+          <div class="flex justify-between items-center p-2 rounded bg-slate-50 border border-slate-200">
+            <span class="font-medium text-slate-800 truncate max-w-[190px]">${s.name}</span>
+            <div class="text-right">
+              <span class="font-bold text-slate-900">${s.mark}%</span>
+              <span class="ml-1 text-[10px] px-1.5 py-0.5 rounded bg-slate-200 font-bold text-slate-700">L${s.aps.level} (${s.aps.points} pts)</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      set('#matricMessage', passCategory.includes('Bachelor')
+        ? `Outstanding achievement! Your marks qualify for University Bachelor's Degree admission with ${totalAps} cumulative APS points.`
+        : `Your marks qualify for ${passCategory}. Check faculty prerequisites and minimum APS cut-offs on individual tertiary portals.`
+      );
+    };
+
+    calcBtn.addEventListener('click', calculate);
+
+    $('#matricReset')?.addEventListener('click', () => {
+      $$('.matric-input').forEach(input => { input.value = ''; });
+      set('#matricResult', 'Enter marks to calculate');
+      set('#matricPassBadge', 'Awaiting Calculation');
+      set('#matricApsVal', '0 Points');
+      const badge = $('#matricPassBadge');
+      if (badge) badge.className = 'inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-slate-600 mb-4';
+      set('#matricSubjectList', '<p class="text-slate-500">Subject final percentages (25% SBA + 75% Exam) and NSC levels will display here.</p>');
+      set('#matricMessage', 'Enter your term SBA and predicted/trial exam marks. All data is processed privately in your browser.');
+    });
+
+    $('#matricShareWhatsApp')?.addEventListener('click', () => {
+      const res = $('#matricResult')?.textContent || '';
+      const aps = $('#matricApsVal')?.textContent || '';
+      const textToShare = `My Matric SBA + Exam Pass Status: ${res} (${aps}). Calculate your Matric level with AfriWidget: https://afriwidget.com/matric-sba-exam-calculator`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare)}`, '_blank');
+    });
+
+    $('#matricCopyResult')?.addEventListener('click', () => {
+      const res = $('#matricResult')?.textContent || '';
+      const aps = $('#matricApsVal')?.textContent || '';
+      const msg = $('#matricMessage')?.textContent || '';
+      navigator.clipboard?.writeText(`Matric Result: ${res} (${aps})\n${msg}\nhttps://afriwidget.com/matric-sba-exam-calculator`);
+      const copyBtn = $('#matricCopyResult');
+      if (copyBtn) {
+        const orig = copyBtn.textContent;
+        copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => { copyBtn.textContent = orig; }, 2000);
+      }
+    });
+  }
+
   onReady(() => {
     initJamb();
     initGpa();
     initAps();
     initKcse();
     initEligibility();
+    initNcvCalculator();
+    initTargetMarkCalculator();
+    initNsfasCalculator();
+    initMatricSbaExamCalculator();
   });
 })();

@@ -132,6 +132,26 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [South African TVET NATED Pass Calculator](https://afriwidget.com/south-african-tvet-nated-calculator) — Calculate a weighted NATED final mark from ICASS and final examination marks.
 
+## TVET NC(V) Pass & Aggregate Calculator
+
+[TVET NC(V) Pass & Aggregate Calculator](https://afriwidget.com/tvet-ncv-pass-calculator) — Calculate South African National Certificate Vocational (NCV) Level 2, 3, and 4 pass status across fundamental and vocational subjects.
+
+## TVET Exam Target Mark Calculator
+
+[TVET Exam Target Mark Calculator](https://afriwidget.com/tvet-exam-target-mark-calculator) — Determine the exact final examination mark required to pass (40%), meet standard (50%), or earn distinction (75%) based on current ICASS term scores.
+
+## NSFAS TVET Allowance Estimator
+
+[NSFAS TVET Allowance Estimator](https://afriwidget.com/nsfas-tvet-allowance-calculator) — Estimate annual and monthly DHET / NSFAS student financial aid packages for accommodation, personal care, and transport allowances.
+
+## Matric SBA + Final Exam Pass Calculator
+
+[Matric SBA + Final Exam Pass Calculator](https://afriwidget.com/matric-sba-exam-calculator) — Combine 25% School-Based Assessment (SBA) and 75% final examination marks to calculate National Senior Certificate (NSC) Bachelor, Diploma, and Higher Certificate pass levels.
+
+## ICASS Score Calculator
+
+[ICASS Score Calculator](https://afriwidget.com/icass-calculator) — Calculate weighted TVET Internal Continuous Assessment scores with pass/fail tracking.
+
 ## BECE CSSPS School Placement Estimator
 
 [BECE CSSPS School Placement Estimator](https://afriwidget.com/bece-cssps-placement-estimator) — Compare a Ghanaian BECE aggregate with indicative Category A, B, and C placement bands.

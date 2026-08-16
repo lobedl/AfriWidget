@@ -846,3 +846,212 @@ html {
   text-rendering: optimizeSpeed;
 }
 
+/* ==========================================================================
+   Fail-Safe Universal Form Inputs, Textareas, Controls & Tool Styles
+   ========================================================================== */
+
+/* Keyword Density Checker classes */
+.density-input {
+  display: block;
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.density-input:focus {
+  border-color: #facc15;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+}
+
+.density-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.density-table th {
+  background-color: #f8fafc;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.density-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.density-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* AI Writing Toolkit Classes */
+.writing-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.35rem;
+}
+
+.writing-input {
+  display: block;
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.writing-input:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+}
+
+.writing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border-radius: 0.75rem;
+  background-color: #facc15;
+  color: #0f172a;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.writing-button:hover {
+  background-color: #fde047;
+}
+
+.writing-button:active {
+  transform: scale(0.98);
+}
+
+.writing-output {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* URL Slug Generator classes */
+.slug-input {
+  display: block;
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.slug-input:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+}
+
+.slug-output {
+  word-break: break-all;
+}
+
+/* Meta Pixel Checker & XML Sitemap Builder dark tool shell classes */
+.tool-shell {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.control {
+  display: block;
+  width: 100%;
+  border: 2px solid #334155;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.control:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+}
+
+.control::placeholder {
+  color: #64748b;
+}
+
+.meter {
+  height: 6px;
+  background-color: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #10b981;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.meter > span.warning {
+  background-color: #f59e0b;
+}
+
+.meter > span.danger {
+  background-color: #ef4444;
+}
+
+.serp-url {
+  color: #475569;
+}
+
+.serp-title {
+  color: #1a0dab;
+  font-weight: 500;
+}
+
+.serp-title:hover {
+  text-decoration: underline;
+}
+
+.serp-copy {
+  color: #4d5156;
+}
+
+.code-output {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: auto;
+}
+
+
