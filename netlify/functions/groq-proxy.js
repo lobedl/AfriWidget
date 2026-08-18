@@ -1,6 +1,19 @@
 const FALLBACK_MESSAGE = 'Realtime AI is unavailable right now. Please try again later.';
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = 'llama-3.3-70b-versatile';
+const GROQ_MODELS_URL = 'https://api.groq.com/openai/v1/models';
+
+const DEFAULT_MODELS = [
+  'openai/gpt-oss-120b',
+  'openai/gpt-oss-20b',
+  'qwen/qwen3.6-27b',
+  'groq/compound',
+  'groq/compound-mini',
+  'allam-2-7b'
+];
+
+// In-memory cache for available models per API key (10-minute TTL)
+const keyModelCache = new Map();
+const CACHE_TTL_MS = 10 * 60 * 1000;
 
 function configuredGroqKeys() {
   /*
@@ -38,6 +51,51 @@ function configuredGroqKeys() {
     .filter(Boolean);
 
   return [...new Set(cleaned)];
+}
+
+async function getAvailableModelsForKey(key) {
+  const cached = keyModelCache.get(key);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.models;
+  }
+
+  try {
+    const res = await fetch(GROQ_MODELS_URL, {
+      headers: {
+        Authorization: `Bearer ${key}`
+      }
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      const rawList = Array.isArray(data?.data) ? data.data.map(m => m.id) : [];
+
+      const IGNORED = [/whisper/i, /guard/i, /embed/i, /orpheus/i, /safeguard/i];
+      const validChatModels = rawList.filter(id =>
+        typeof id === 'string' && !IGNORED.some(rx => rx.test(id))
+      );
+
+      // Sort by preferred order
+      validChatModels.sort((a, b) => {
+        const idxA = DEFAULT_MODELS.indexOf(a);
+        const idxB = DEFAULT_MODELS.indexOf(b);
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+        if (idxA !== -1) return -1;
+        if (idxB !== -1) return 1;
+        return a.localeCompare(b);
+      });
+
+      if (validChatModels.length > 0) {
+        keyModelCache.set(key, { models: validChatModels, timestamp: Date.now() });
+        return validChatModels;
+      }
+    }
+  } catch (err) {
+    console.warn('[groq-proxy] Dynamic model fetch failed, using default model list:', err?.message || err);
+  }
+
+  keyModelCache.set(key, { models: DEFAULT_MODELS, timestamp: Date.now() });
+  return DEFAULT_MODELS;
 }
 
 const INITIAL_KEYS = configuredGroqKeys();
@@ -147,15 +205,46 @@ Tool context:
 ${contextText}`;
 }
 
+// Optional Gemini fallback if Groq keys are exhausted
+async function tryGeminiFallback(category, userPrompt) {
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+  if (!geminiKey) return null;
+
+  try {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: `System: You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.\n\n${userPrompt}` }]
+          }
+        ],
+        generationConfig: {
+          temperature: 0.35,
+          maxOutputTokens: 600
+        }
+      })
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+      if (text) return text;
+    }
+  } catch (err) {
+    console.warn('[groq-proxy] Gemini fallback attempt failed:', err?.message || err);
+  }
+  return null;
+}
+
 export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers, body: '' };
   if (event.httpMethod !== 'POST') return json(405, { ok: false, message: FALLBACK_MESSAGE });
 
   const keys = configuredGroqKeys();
-  if (!keys.length) {
-    console.warn('[groq-proxy] No Groq API keys found in process.env');
-    return json(200, { ok: false, available: false, message: FALLBACK_MESSAGE });
-  }
 
   let payload;
   try {
@@ -170,48 +259,68 @@ export const handler = async (event) => {
     : 'tools';
   const userPrompt = promptFor(mode, category, payload.context, payload.question);
 
-  const modelsToTry = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'mixtral-8x7b-32768'];
+  if (keys.length > 0) {
+    for (const key of keys) {
+      const keyHint = key.length > 8 ? `...${key.slice(-4)}` : 'key';
+      const modelsToTry = await getAvailableModelsForKey(key);
 
-  for (const key of keys) {
-    const keyHint = key.length > 8 ? `...${key.slice(-4)}` : 'key';
-    for (const model of modelsToTry) {
-      try {
-        const response = await fetch(GROQ_URL, {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${key}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            model,
-            temperature: 0.35,
-            max_tokens: mode === 'question' ? 300 : mode === 'writing'
-              ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1200 : 700
-              : 260,
-            messages: [
-              { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.` },
-              { role: 'user', content: userPrompt }
-            ]
-          })
-        });
+      for (const model of modelsToTry) {
+        try {
+          const response = await fetch(GROQ_URL, {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${key}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              model,
+              temperature: 0.35,
+              max_tokens: mode === 'question' ? 400 : mode === 'writing'
+                ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1200 : 700
+                : 350,
+              messages: [
+                { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.` },
+                { role: 'user', content: userPrompt }
+              ]
+            })
+          });
 
-        if (!response.ok) {
-          const errText = await response.text();
-          console.warn(`[groq-proxy] Key ${keyHint} model ${model} returned ${response.status}:`, errText);
-          if (response.status === 401) {
-            console.error(`[groq-proxy] Key ${keyHint} is unauthorized (401). Skipping this key.`);
-            break; // Stop trying other models for this invalid key
+          if (!response.ok) {
+            const errText = await response.text();
+            if (response.status === 401) {
+              console.error(`[groq-proxy] Key ${keyHint} is unauthorized (401). Skipping this key.`);
+              break; // Stop trying other models for this invalid key
+            }
+            if (response.status === 404 || response.status === 400) {
+              // Model not found or decommissioned, remove from cache and continue to next model
+              const cached = keyModelCache.get(key);
+              if (cached?.models) {
+                cached.models = cached.models.filter(m => m !== model);
+              }
+              continue;
+            }
+            console.warn(`[groq-proxy] Key ${keyHint} model ${model} returned ${response.status}:`, errText);
+            continue;
           }
-          continue;
-        }
 
-        const data = await response.json();
-        const text = data?.choices?.[0]?.message?.content?.trim();
-        if (text) return json(200, { ok: true, text });
-      } catch (err) {
-        console.error(`[groq-proxy] Request failed for model ${model}:`, err?.message || err);
+          const data = await response.json();
+          let text = data?.choices?.[0]?.message?.content?.trim();
+          if (text) {
+            // Strip any chain-of-thought tags (<think>...</think>)
+            text = text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+            if (text) return json(200, { ok: true, text });
+          }
+        } catch (err) {
+          console.error(`[groq-proxy] Request failed for model ${model}:`, err?.message || err);
+        }
       }
     }
+  }
+
+  // If Groq fails or no keys configured, try Gemini fallback
+  const geminiText = await tryGeminiFallback(category, userPrompt);
+  if (geminiText) {
+    return json(200, { ok: true, text: geminiText });
   }
 
   return json(200, { ok: false, message: FALLBACK_MESSAGE });
