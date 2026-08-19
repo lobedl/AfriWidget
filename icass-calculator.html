@@ -235,7 +235,295 @@
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></div></nav>
   <header class="tool-hero px-4 py-12"><div class="max-w-4xl mx-auto"><span class="badge">⚡ 100% Free • No Signup • Private In-Browser Tool</span><p class="mt-5 text-sm font-bold uppercase tracking-widest text-yellow-300">Education calculator</p><h1 class="mt-2 text-4xl sm:text-5xl font-black">ICASS Score Calculator for TVET Students</h1><p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Apply your institution’s component weights to assignments, practicals, tests, and attendance for a transparent TVET planning estimate.</p></div></header>
-  <main class="tool-shell"><section class="tool-card p-5 sm:p-8" aria-labelledby="icass-title"><h2 id="icass-title" class="text-2xl font-black">Enter assessment scores and weights</h2><p class="mt-2 text-slate-600">Use the official weights from your programme handbook and make sure they total 100%.</p><form id="icassForm" onsubmit="return false;" class="mt-6 grid gap-5 sm:grid-cols-2"><label>Assignment score (%)<input id="icassAssignmentScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 70" /></label><label>Assignment weight (%)<input id="icassAssignmentWeight" type="number" min="0" max="100" step="0.01" placeholder="e.g. 25" /></label><label>Practical score (%)<input id="icassPracticalScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 75" /></label><label>Practical weight (%)<input id="icassPracticalWeight" type="number" min="0" max="100" step="0.01" placeholder="e.g. 35" /></label><label>Test score (%)<input id="icassTestScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" /></label><label>Test weight (%)<input id="icassTestWeight" type="number" min="0" max="100" step="0.01" placeholder="e.g. 30" /></label><label>Attendance score (%)<input id="icassAttendanceScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 90" /></label><label>Attendance weight (%)<input id="icassAttendanceWeight" type="number" min="0" max="100" step="0.01" placeholder="e.g. 10" /></label><div class="sm:col-span-2"><button class="cta font-extrabold text-slate-950 bg-yellow-400 hover:bg-yellow-300 py-3.5 px-7 rounded-xl shadow-md transition text-base cursor-pointer" type="submit" id="icassCalculateBtn">Calculate ICASS Score</button></div></form><div id="icassMessage" class="mt-6 hidden rounded-xl border-2 border-red-500 bg-red-50 p-4 text-base font-bold text-red-950 shadow-md" aria-live="polite"></div><div id="icassResult" class="result mt-8 hidden"><p class="text-xs font-bold uppercase text-slate-500">Weighted ICASS estimate</p><strong id="icassScore" class="mt-1 block text-4xl text-slate-950"></strong><p id="icassBand" class="mt-2 font-bold text-slate-700"></p></div></section><section id="toolGuide" class="guide" data-content-key="icass-calculator" aria-label="icass calculator guide"><h2>Comprehensive Guide to ICASS Score Calculation for TVET Students</h2><p>Internal Continuous Assessment (ICASS) is a core evaluation framework utilized by Technical and Vocational Education and Training (TVET) colleges, vocational training institutes, and polytechnic colleges (such as those regulated by South Africa’s Department of Higher Education and Training - DHET for NATED Report 191 and NC(V) programmes). Unlike traditional academic systems that rely solely on a single high-stakes final examination, the ICASS system evaluates a student’s ongoing performance throughout the academic term across diverse practical, theoretical, and coursework tasks.</p><p>Achieving a strong ICASS score is vital because internal continuous assessment marks carry substantial weight in determining final subject pass statuses, qualifying for national examination entry, and maintaining financial bursary eligibility (such as NSFAS funding).</p><p>AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessment mark estimation tool. Designed specifically for TVET students, lecturers, and academic advisors, it calculates your weighted cumulative ICASS mark in real time, compares it against official passing thresholds, and executes 100% privately in your web browser.</p><hr class="my-6 border-slate-200" /><h2>The Mathematics of Weighted ICASS Calculations</h2><p>In vocational education, different assessment tasks carry different percentage weights depending on whether the subject is primarily practical (such as Engineering Workshop Practice) or theoretical (such as Business Management). A student’s overall ICASS mark is calculated as a weighted sum:</p><div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto"> <p class="font-semibold text-amber-400 mb-2">Weighted ICASS Mark (%) =</p> <p class="pl-4">((S<sub>assign</sub> &times; W<sub>assign</sub>) + (S<sub>pract</sub> &times; W<sub>pract</sub>) + (S<sub>test</sub> &times; W<sub>test</sub>) + (S<sub>attend</sub> &times; W<sub>attend</sub>)) &divide; 100</p> </div><p>Where:</p><ul><li><strong>S<sub>i</sub></strong> = Percentage score achieved on a specific assessment component (0% to 100%)</li><li><strong>W<sub>i</sub></strong> = Official percentage weight allocated to that component (must total 100%)</li></ul><h3>Example Calculation</h3><p>Suppose a student scores the following marks in Nated N4 Electrical Engineering:</p><ul><li><strong>Assignment</strong>: Score = 70%, Weight = 25% &rarr; (70 &times; 25) &divide; 100 = <strong>17.50%</strong></li><li><strong>Practical Tasks</strong>: Score = 80%, Weight = 35% &rarr; (80 &times; 35) &divide; 100 = <strong>28.00%</strong></li><li><strong>Class Tests</strong>: Score = 60%, Weight = 30% &rarr; (60 &times; 30) &divide; 100 = <strong>18.00%</strong></li><li><strong>Attendance</strong>: Score = 90%, Weight = 10% &rarr; (90 &times; 10) &divide; 100 = <strong>9.00%</strong></li><li><strong>Total Cumulative ICASS Mark</strong>: 17.50 + 28.00 + 18.00 + 9.00 = <strong>72.50%</strong> (Distinction / Outstanding band).</li></ul><hr class="my-6 border-slate-200" /><h2>Breakdown of ICASS Assessment Components</h2><p>Understanding the role of each assessment component helps students allocate study time effectively:</p><ol><li><strong>Class Assignments & Theoretical Projects (20% – 30% Weight)</strong>:</li></ol><ul><li>Designed to test conceptual understanding, problem-solving ability, case study analysis, and research skills.</li><li><em>Academic Tip</em>: Submit assignments ahead of deadlines to avoid point deductions for late submission.</li></ul><ol><li><strong>Practical Workshop & Laboratory Work (30% – 40% Weight)</strong>:</li></ol><ul><li>Evaluates hands-on vocational competency, equipment operation, safety compliance, technical drawing, computer proficiency, or workshop craftsmanship.</li><li><em>Academic Tip</em>: Practical tasks carry the heaviest weight in engineering, IT, and hospitality qualifications. Always complete laboratory logbooks carefully.</li></ul><ol><li><strong>Controlled Tests & Term Examinations (25% – 35% Weight)</strong>:</li></ol><ul><li>Timed, invigilated classroom assessments that simulate the conditions of national final examinations.</li><li><em>Academic Tip</em>: Revisit past test papers to identify core syllabus areas emphasized by national examiners.</li></ul><ol><li><strong>Class Attendance & Professional Conduct (5% – 10% Weight)</strong>:</li></ol><ul><li>Rewards punctual attendance, active classroom engagement, and adherence to safety and ethical standards.</li><li><em>Academic Tip</em>: Maintaining high attendance provides easy percentage points that bolster your cumulative score.</li></ul><hr class="my-6 border-slate-200" /><h2>Sub-Minimum Requirements & Examination Admission Rules</h2><p>To sit for national TVET final examinations, institutions enforce strict ICASS sub-minimum entry rules:</p><ul><li><strong>40% Sub-Minimum ICASS Requirement</strong>: In most DHET NATED (N1–N6) subjects, a student MUST achieve a minimum ICASS mark of <strong>40%</strong> to qualify for admission to the final national examination paper.</li><li><strong>50% Sub-Minimum for Practical/Vocational Subjects</strong>: In National Certificate Vocational (NCV) Level 2–4 practical subjects, the sub-minimum requirement is often <strong>50%</strong>.</li><li><strong>Disqualification Consequences</strong>: Failing to meet the ICASS sub-minimum results in an automatic "Did Not Qualify" (DNQ) status. Students who DNQ are barred from writing the final exam and must re-enroll in the module during a subsequent semester.</li><li><strong>Contribution to Final Pass Mark</strong>: In NATED engineering and business courses, the ICASS mark typically contributes <strong>40%</strong> to the final combined subject mark, while the national examination contributes <strong>60%</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>How to Use the ICASS Calculator</h2><ol><li><strong>Check Your Syllabus Handbook</strong>: Confirm the exact component percentage weights specified by your college lecturer or departmental handbook.</li><li><strong>Input Percentage Scores</strong>: Enter your achieved scores (0% to 100%) for Assignments, Practicals, Tests, and Attendance.</li><li><strong>Adjust Percentage Weights</strong>: Ensure the four component weight inputs sum up to exactly <strong>100%</strong> (e.g., 25% + 35% + 30% + 10% = 100%).</li><li><strong>Review Real-Time Output</strong>:</li></ol><ul><li><strong>Weighted ICASS Estimate</strong>: Your overall weighted percentage score.</li><li><strong>Performance Band</strong>: Classification into Distinction (75%+), Passing Range (50%–74%), or At-Risk / Sub-Minimum warning (<50%).</li></ul><ol><li><strong>Formulate Mark Recovery Plans</strong>: Use the calculator to determine what marks you need in upcoming tests or practicals to cross the 40% or 50% examination entry barrier.</li></ol><hr class="my-6 border-slate-200" /><h2>Practical Strategies for ICASS Mark Recovery</h2><p>If your mid-term ICASS score falls near or below the 40% threshold, implement these recovery steps:</p><ul><li><strong>Request Supplementary Practical Re-assessments</strong>: Ask your workshop lecturer if you can re-attempt failed practical tasks or submit revised logbooks for re-marking.</li><li><strong>Maximize Attendance Points</strong>: Attending every remaining class session guarantees full attendance weighting points.</li><li><strong>Form Peer Study Groups</strong>: Collaborate with classmates on complex assignment calculations and past exam papers.</li></ul><hr class="my-6 border-slate-200" /><h2>Privacy, Security & Client-Side Execution</h2><p>AfriWidget handles academic mark calculations with complete confidentiality. All calculations run strictly inside your device’s browser using Vanilla JavaScript. No student names, identification numbers, college names, or academic grades are stored in databases or transmitted across the internet.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>What happens if component weights do not equal 100%?</summary><div><p>Weighted calculations require all component weights to add up to 100%. If your institution uses a different weighting structure (e.g., 30% assignments, 50% tests, 20% practicals), adjust the input weight fields so their sum equals 100%.</p></div></details><details><summary>Does a high ICASS score guarantee passing the module?</summary><div><p>A strong ICASS mark secures entry to the final examination and contributes significantly to your final grade. However, you must still meet the final exam sub-minimum pass mark (usually 40%) to pass the module overall.</p></div></details><details><summary>Can I recalculate my ICASS if I rewrite a test?</summary><div><p>Yes. Simply replace your old test mark in the input field with your updated score to see how your cumulative ICASS average improves.</p></div></details><details><summary>What is the difference between NATED and NC(V) ICASS requirements?</summary><div><p>NATED (Report 191) courses are trimester or semester-based programmes with a 40% ICASS exam entry requirement. NC(V) courses are full-year vocational programmes with higher practical component weights and a 50% pass requirement.</p></div></details><details><summary>Is this ICASS calculator free to use?</summary><div><p>Yes. AfriWidget is a 100% free educational platform with no hidden subscription fees, required user registrations, or account creations.</p></div></details><details><summary>Can TVET lecturers use this calculator to compute student averages?</summary><div><p>Yes. Lecturers and tutors can quickly verify individual student continuous assessment totals by entering component marks and verifying overall subject eligibility before submitting official mark sheets.</p></div></details></section></main>
+  <main class="tool-shell"><section class="tool-card p-5 sm:p-8" aria-labelledby="icass-title">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-yellow-100 text-yellow-900 border border-yellow-300">
+          📚 South Africa TVET DHET Assessment Model
+        </span>
+        <h2 id="icass-title" class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+          General TVET ICASS Calculator
+        </h2>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" id="icassSampleBtn" class="px-3.5 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition border border-slate-200 cursor-pointer">
+          ✨ Sample Marks
+        </button>
+        <button type="button" id="icassResetBtn" class="px-3.5 py-1.5 text-xs font-bold text-slate-500 hover:text-slate-800 bg-white hover:bg-slate-100 rounded-lg transition border border-slate-200 cursor-pointer">
+          🔄 Clear
+        </button>
+      </div>
+    </div>
+
+    <!-- Standard TVET Formula Pill / Badge -->
+    <div class="mt-4 p-3.5 bg-slate-900 text-slate-200 rounded-xl text-xs sm:text-sm font-medium flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border border-slate-800">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-yellow-400 font-bold">Standard Formula:</span>
+        <span class="font-mono text-yellow-200">Test 1 (10%) + Assign 1 (25%) + Test 2 (10%) + Assign 2 (25%) + Trial Exam (30%)</span>
+      </div>
+      <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-700 px-2 py-0.5 rounded font-bold whitespace-nowrap">Total = 100%</span>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="mt-5 flex items-center gap-2 overflow-x-auto pb-1" role="tablist" aria-label="ICASS Assessment Preset">
+      <button type="button" id="tabStandard" class="px-4 py-2 text-xs sm:text-sm font-black rounded-lg bg-slate-900 text-yellow-300 shadow-sm transition cursor-pointer" role="tab" aria-selected="true">
+        ⭐ Standard TVET 5-Task Model (Recommended)
+      </button>
+      <button type="button" id="tabTrimester" class="px-4 py-2 text-xs sm:text-sm font-bold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer" role="tab" aria-selected="false">
+        📅 Trimester 3-Task Model
+      </button>
+      <button type="button" id="tabCustom" class="px-4 py-2 text-xs sm:text-sm font-bold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer" role="tab" aria-selected="false">
+        ⚙️ Custom Weights
+      </button>
+    </div>
+
+    <!-- Form Container -->
+    <form id="icassForm" onsubmit="return false;" class="mt-6">
+      <!-- Mode 1: Standard TVET 5-Task Mode (Test 1, Assign 1, Test 2, Assign 2, Trial Exam) -->
+      <div id="icassStandardMode" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Test 1 (10%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl hover:border-yellow-400 transition">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTest1Score" class="font-extrabold text-slate-800 text-sm">🧪 Test 1</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">10% Weight</span>
+          </div>
+          <div class="relative mt-1">
+            <input id="icassTest1Score" type="number" min="0" max="100" step="0.01" placeholder="Mark out of 100 (e.g. 68)" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+            <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1.5">First term class test mark</p>
+        </div>
+
+        <!-- Assignment 1 (25%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl hover:border-yellow-400 transition">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassAssign1Score" class="font-extrabold text-slate-800 text-sm">📝 Assignment 1</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">25% Weight</span>
+          </div>
+          <div class="relative mt-1">
+            <input id="icassAssign1Score" type="number" min="0" max="100" step="0.01" placeholder="Mark out of 100 (e.g. 80)" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+            <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1.5">Theory assignment / coursework 1</p>
+        </div>
+
+        <!-- Test 2 (10%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl hover:border-yellow-400 transition">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTest2Score" class="font-extrabold text-slate-800 text-sm">🧪 Test 2</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">10% Weight</span>
+          </div>
+          <div class="relative mt-1">
+            <input id="icassTest2Score" type="number" min="0" max="100" step="0.01" placeholder="Mark out of 100 (e.g. 72)" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+            <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1.5">Second term class test mark</p>
+        </div>
+
+        <!-- Assignment 2 (25%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl hover:border-yellow-400 transition">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassAssign2Score" class="font-extrabold text-slate-800 text-sm">📝 Assignment 2</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">25% Weight</span>
+          </div>
+          <div class="relative mt-1">
+            <input id="icassAssign2Score" type="number" min="0" max="100" step="0.01" placeholder="Mark out of 100 (e.g. 78)" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+            <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1.5">Practical project / coursework 2</p>
+        </div>
+
+        <!-- Trial Exam / Internal Exam (30%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl hover:border-yellow-400 transition sm:col-span-2 lg:col-span-2">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTrialScore" class="font-extrabold text-slate-800 text-sm">🏛️ Trial / Preparatory Internal Exam</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-purple-100 text-purple-900 border border-purple-300 rounded-md">30% Weight</span>
+          </div>
+          <div class="relative mt-1">
+            <input id="icassTrialScore" type="number" min="0" max="100" step="0.01" placeholder="Mark out of 100 (e.g. 65)" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+            <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1.5">End-of-term internal preparatory exam mark</p>
+        </div>
+      </div>
+
+      <!-- Mode 2: Trimester NATED 3-Task Mode (Hidden by default) -->
+      <div id="icassTrimesterMode" class="hidden grid gap-4 sm:grid-cols-3">
+        <!-- Test 1 (30%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTrimTest" class="font-extrabold text-slate-800 text-sm">🧪 Class Test</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">30% Weight</span>
+          </div>
+          <input id="icassTrimTest" type="number" min="0" max="100" step="0.01" placeholder="Mark (0–100)" class="w-full text-base font-bold px-3 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+        </div>
+        <!-- Assignment (20%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTrimAssign" class="font-extrabold text-slate-800 text-sm">📝 Assignment</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">20% Weight</span>
+          </div>
+          <input id="icassTrimAssign" type="number" min="0" max="100" step="0.01" placeholder="Mark (0–100)" class="w-full text-base font-bold px-3 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+        </div>
+        <!-- Internal Exam (50%) -->
+        <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="icassTrimTrial" class="font-extrabold text-slate-800 text-sm">🏛️ Internal Exam</label>
+            <span class="text-xs font-black px-2 py-0.5 bg-purple-100 text-purple-900 border border-purple-300 rounded-md">50% Weight</span>
+          </div>
+          <input id="icassTrimTrial" type="number" min="0" max="100" step="0.01" placeholder="Mark (0–100)" class="w-full text-base font-bold px-3 py-2.5 bg-white border-2 border-slate-300 rounded-lg focus:border-yellow-500 focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Mode 3: Custom Weights Mode (Hidden by default) -->
+      <div id="icassCustomMode" class="hidden space-y-3">
+        <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 font-medium">
+          Enter your scores and percentage weights. Ensure all four weights total exactly 100%.
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex gap-2">
+              <div class="flex-1">
+                <label for="icassAssignmentScore" class="text-xs font-bold text-slate-700">Assignment Score (%)</label>
+                <input id="icassAssignmentScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 70" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+              <div class="w-1/3">
+                <label for="icassAssignmentWeight" class="text-xs font-bold text-slate-700">Weight (%)</label>
+                <input id="icassAssignmentWeight" type="number" min="0" max="100" step="0.01" placeholder="25" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex gap-2">
+              <div class="flex-1">
+                <label for="icassPracticalScore" class="text-xs font-bold text-slate-700">Practical Score (%)</label>
+                <input id="icassPracticalScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 75" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+              <div class="w-1/3">
+                <label for="icassPracticalWeight" class="text-xs font-bold text-slate-700">Weight (%)</label>
+                <input id="icassPracticalWeight" type="number" min="0" max="100" step="0.01" placeholder="35" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex gap-2">
+              <div class="flex-1">
+                <label for="icassTestScore" class="text-xs font-bold text-slate-700">Test Score (%)</label>
+                <input id="icassTestScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+              <div class="w-1/3">
+                <label for="icassTestWeight" class="text-xs font-bold text-slate-700">Weight (%)</label>
+                <input id="icassTestWeight" type="number" min="0" max="100" step="0.01" placeholder="30" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex gap-2">
+              <div class="flex-1">
+                <label for="icassAttendanceScore" class="text-xs font-bold text-slate-700">Attendance / Other (%)</label>
+                <input id="icassAttendanceScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 90" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+              <div class="w-1/3">
+                <label for="icassAttendanceWeight" class="text-xs font-bold text-slate-700">Weight (%)</label>
+                <input id="icassAttendanceWeight" type="number" min="0" max="100" step="0.01" placeholder="10" class="w-full font-bold px-3 py-2 bg-white border border-slate-300 rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center gap-3">
+        <button class="cta w-full sm:w-auto font-black text-slate-950 bg-yellow-400 hover:bg-yellow-300 py-3.5 px-8 rounded-xl shadow-md transition text-base cursor-pointer flex items-center justify-center gap-2" type="submit" id="icassCalculateBtn">
+          <span>Calculate ICASS Mark</span>
+          <span>→</span>
+        </button>
+        <span class="text-xs text-slate-500 font-semibold">⚡ Instant calculation • 100% private in browser</span>
+      </div>
+    </form>
+
+    <!-- Error/Validation Message -->
+    <div id="icassMessage" class="mt-6 hidden rounded-xl border-2 border-red-500 bg-red-50 p-4 text-base font-bold text-red-950 shadow-md" aria-live="polite"></div>
+
+    <!-- Rich Results Display Card -->
+    <div id="icassResult" class="result mt-8 hidden space-y-6">
+      <div class="border-b border-yellow-200/60 pb-5">
+        <p class="text-xs font-extrabold uppercase tracking-wider text-slate-600">Calculated Continuous Assessment Mark</p>
+        <div class="mt-2 flex flex-wrap items-baseline gap-3">
+          <strong id="icassScore" class="text-4xl sm:text-5xl font-black text-slate-950"></strong>
+          <span id="icassBand" class="font-bold text-sm"></span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mt-4">
+          <div class="flex justify-between text-xs font-bold text-slate-500 mb-1">
+            <span>0%</span>
+            <span class="text-amber-700">40% (Exam Entry)</span>
+            <span class="text-blue-700">50% (Pass)</span>
+            <span class="text-emerald-700">75% (Distinction)</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+            <div id="icassProgressBar" class="h-3 rounded-full bg-yellow-500 transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eligibility Banner -->
+      <div id="icassEligibility" class="p-3.5 bg-white border border-slate-200 rounded-xl shadow-sm"></div>
+
+      <!-- Assessment Component Breakdown -->
+      <div>
+        <h3 class="text-base font-black text-slate-900 mb-2">📊 Assessment Contribution Breakdown</h3>
+        <div class="overflow-x-auto bg-white rounded-xl border border-slate-200">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 border-b border-slate-200 text-xs font-black text-slate-700 uppercase">
+              <tr>
+                <th class="py-2.5 px-3 text-left">Task Component</th>
+                <th class="py-2.5 px-3 text-center">Weight</th>
+                <th class="py-2.5 px-3 text-center">Mark Entered</th>
+                <th class="py-2.5 px-3 text-right">Contributed to ICASS</th>
+              </tr>
+            </thead>
+            <tbody id="icassBreakdownTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Target Exam Mark Projection -->
+      <div class="p-4 bg-slate-900 text-white rounded-xl border border-slate-800">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <h3 class="text-sm font-black text-yellow-300">🎯 Final DHET National Exam Target Required (NATED 40/60 Split)</h3>
+          <span class="text-xs text-slate-400">Based on your current ICASS score</span>
+        </div>
+        <p class="text-xs text-slate-300 mb-3">In NATED Report 191 courses, ICASS counts 40% and the National Final Exam counts 60%. Here is the minimum exam mark you must score:</p>
+        <div class="grid grid-cols-3 gap-2 text-center">
+          <div class="p-2.5 bg-slate-800 rounded-lg border border-slate-700">
+            <span class="text-xs text-slate-400 block font-bold">For 50% Pass</span>
+            <strong id="icassTarget50" class="text-lg sm:text-xl font-black text-yellow-400 mt-1 block">—</strong>
+          </div>
+          <div class="p-2.5 bg-slate-800 rounded-lg border border-slate-700">
+            <span class="text-xs text-slate-400 block font-bold">For 65% Strong</span>
+            <strong id="icassTarget65" class="text-lg sm:text-xl font-black text-blue-400 mt-1 block">—</strong>
+          </div>
+          <div class="p-2.5 bg-slate-800 rounded-lg border border-slate-700">
+            <span class="text-xs text-slate-400 block font-bold">For 75% Distinction</span>
+            <strong id="icassTarget75" class="text-lg sm:text-xl font-black text-emerald-400 mt-1 block">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button type="button" id="icassCopyBtn" class="secondary text-xs font-bold flex items-center gap-1.5 cursor-pointer">
+          <span>📋</span> Copy ICASS Summary
+        </button>
+        <a href="/tvet-exam-target-mark-calculator" class="text-xs font-bold text-slate-800 hover:text-yellow-600 underline">
+          Explore TVET Exam Target Mark Calculator →
+        </a>
+      </div>
+    </div>
+  </section><section id="toolGuide" class="guide" data-content-key="icass-calculator" aria-label="icass calculator guide"><h2>Comprehensive Guide to ICASS Score Calculation for TVET Students</h2><p>Internal Continuous Assessment (ICASS) is a core evaluation framework utilized by Technical and Vocational Education and Training (TVET) colleges, vocational training institutes, and polytechnic colleges (such as those regulated by South Africa’s Department of Higher Education and Training - DHET for NATED Report 191 and NC(V) programmes). Unlike traditional academic systems that rely solely on a single high-stakes final examination, the ICASS system evaluates a student’s ongoing performance throughout the academic term across diverse practical, theoretical, and coursework tasks.</p><p>Achieving a strong ICASS score is vital because internal continuous assessment marks carry substantial weight in determining final subject pass statuses, qualifying for national examination entry, and maintaining financial bursary eligibility (such as NSFAS funding).</p><p>AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessment mark estimation tool. Designed specifically for TVET students, lecturers, and academic advisors, it calculates your weighted cumulative ICASS mark in real time, compares it against official passing thresholds, and executes 100% privately in your web browser.</p><hr class="my-6 border-slate-200" /><h2>The Mathematics of Weighted ICASS Calculations</h2><p>In vocational education, different assessment tasks carry different percentage weights depending on whether the subject is primarily practical (such as Engineering Workshop Practice) or theoretical (such as Business Management). A student’s overall ICASS mark is calculated as a weighted sum:</p><div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto"> <p class="font-semibold text-amber-400 mb-2">Weighted ICASS Mark (%) =</p> <p class="pl-4">((S<sub>assign</sub> &times; W<sub>assign</sub>) + (S<sub>pract</sub> &times; W<sub>pract</sub>) + (S<sub>test</sub> &times; W<sub>test</sub>) + (S<sub>attend</sub> &times; W<sub>attend</sub>)) &divide; 100</p> </div><p>Where:</p><ul><li><strong>S<sub>i</sub></strong> = Percentage score achieved on a specific assessment component (0% to 100%)</li><li><strong>W<sub>i</sub></strong> = Official percentage weight allocated to that component (must total 100%)</li></ul><h3>Example Calculation</h3><p>Suppose a student scores the following marks in Nated N4 Electrical Engineering:</p><ul><li><strong>Assignment</strong>: Score = 70%, Weight = 25% &rarr; (70 &times; 25) &divide; 100 = <strong>17.50%</strong></li><li><strong>Practical Tasks</strong>: Score = 80%, Weight = 35% &rarr; (80 &times; 35) &divide; 100 = <strong>28.00%</strong></li><li><strong>Class Tests</strong>: Score = 60%, Weight = 30% &rarr; (60 &times; 30) &divide; 100 = <strong>18.00%</strong></li><li><strong>Attendance</strong>: Score = 90%, Weight = 10% &rarr; (90 &times; 10) &divide; 100 = <strong>9.00%</strong></li><li><strong>Total Cumulative ICASS Mark</strong>: 17.50 + 28.00 + 18.00 + 9.00 = <strong>72.50%</strong> (Distinction / Outstanding band).</li></ul><hr class="my-6 border-slate-200" /><h2>Breakdown of ICASS Assessment Components</h2><p>Understanding the role of each assessment component helps students allocate study time effectively:</p><ol><li><strong>Class Assignments & Theoretical Projects (20% – 30% Weight)</strong>:</li></ol><ul><li>Designed to test conceptual understanding, problem-solving ability, case study analysis, and research skills.</li><li><em>Academic Tip</em>: Submit assignments ahead of deadlines to avoid point deductions for late submission.</li></ul><ol><li><strong>Practical Workshop & Laboratory Work (30% – 40% Weight)</strong>:</li></ol><ul><li>Evaluates hands-on vocational competency, equipment operation, safety compliance, technical drawing, computer proficiency, or workshop craftsmanship.</li><li><em>Academic Tip</em>: Practical tasks carry the heaviest weight in engineering, IT, and hospitality qualifications. Always complete laboratory logbooks carefully.</li></ul><ol><li><strong>Controlled Tests & Term Examinations (25% – 35% Weight)</strong>:</li></ol><ul><li>Timed, invigilated classroom assessments that simulate the conditions of national final examinations.</li><li><em>Academic Tip</em>: Revisit past test papers to identify core syllabus areas emphasized by national examiners.</li></ul><ol><li><strong>Class Attendance & Professional Conduct (5% – 10% Weight)</strong>:</li></ol><ul><li>Rewards punctual attendance, active classroom engagement, and adherence to safety and ethical standards.</li><li><em>Academic Tip</em>: Maintaining high attendance provides easy percentage points that bolster your cumulative score.</li></ul><hr class="my-6 border-slate-200" /><h2>Sub-Minimum Requirements & Examination Admission Rules</h2><p>To sit for national TVET final examinations, institutions enforce strict ICASS sub-minimum entry rules:</p><ul><li><strong>40% Sub-Minimum ICASS Requirement</strong>: In most DHET NATED (N1–N6) subjects, a student MUST achieve a minimum ICASS mark of <strong>40%</strong> to qualify for admission to the final national examination paper.</li><li><strong>50% Sub-Minimum for Practical/Vocational Subjects</strong>: In National Certificate Vocational (NCV) Level 2–4 practical subjects, the sub-minimum requirement is often <strong>50%</strong>.</li><li><strong>Disqualification Consequences</strong>: Failing to meet the ICASS sub-minimum results in an automatic "Did Not Qualify" (DNQ) status. Students who DNQ are barred from writing the final exam and must re-enroll in the module during a subsequent semester.</li><li><strong>Contribution to Final Pass Mark</strong>: In NATED engineering and business courses, the ICASS mark typically contributes <strong>40%</strong> to the final combined subject mark, while the national examination contributes <strong>60%</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>How to Use the ICASS Calculator</h2><ol><li><strong>Check Your Syllabus Handbook</strong>: Confirm the exact component percentage weights specified by your college lecturer or departmental handbook.</li><li><strong>Input Percentage Scores</strong>: Enter your achieved scores (0% to 100%) for Assignments, Practicals, Tests, and Attendance.</li><li><strong>Adjust Percentage Weights</strong>: Ensure the four component weight inputs sum up to exactly <strong>100%</strong> (e.g., 25% + 35% + 30% + 10% = 100%).</li><li><strong>Review Real-Time Output</strong>:</li></ol><ul><li><strong>Weighted ICASS Estimate</strong>: Your overall weighted percentage score.</li><li><strong>Performance Band</strong>: Classification into Distinction (75%+), Passing Range (50%–74%), or At-Risk / Sub-Minimum warning (<50%).</li></ul><ol><li><strong>Formulate Mark Recovery Plans</strong>: Use the calculator to determine what marks you need in upcoming tests or practicals to cross the 40% or 50% examination entry barrier.</li></ol><hr class="my-6 border-slate-200" /><h2>Practical Strategies for ICASS Mark Recovery</h2><p>If your mid-term ICASS score falls near or below the 40% threshold, implement these recovery steps:</p><ul><li><strong>Request Supplementary Practical Re-assessments</strong>: Ask your workshop lecturer if you can re-attempt failed practical tasks or submit revised logbooks for re-marking.</li><li><strong>Maximize Attendance Points</strong>: Attending every remaining class session guarantees full attendance weighting points.</li><li><strong>Form Peer Study Groups</strong>: Collaborate with classmates on complex assignment calculations and past exam papers.</li></ul><hr class="my-6 border-slate-200" /><h2>Privacy, Security & Client-Side Execution</h2><p>AfriWidget handles academic mark calculations with complete confidentiality. All calculations run strictly inside your device’s browser using Vanilla JavaScript. No student names, identification numbers, college names, or academic grades are stored in databases or transmitted across the internet.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>What happens if component weights do not equal 100%?</summary><div><p>Weighted calculations require all component weights to add up to 100%. If your institution uses a different weighting structure (e.g., 30% assignments, 50% tests, 20% practicals), adjust the input weight fields so their sum equals 100%.</p></div></details><details><summary>Does a high ICASS score guarantee passing the module?</summary><div><p>A strong ICASS mark secures entry to the final examination and contributes significantly to your final grade. However, you must still meet the final exam sub-minimum pass mark (usually 40%) to pass the module overall.</p></div></details><details><summary>Can I recalculate my ICASS if I rewrite a test?</summary><div><p>Yes. Simply replace your old test mark in the input field with your updated score to see how your cumulative ICASS average improves.</p></div></details><details><summary>What is the difference between NATED and NC(V) ICASS requirements?</summary><div><p>NATED (Report 191) courses are trimester or semester-based programmes with a 40% ICASS exam entry requirement. NC(V) courses are full-year vocational programmes with higher practical component weights and a 50% pass requirement.</p></div></details><details><summary>Is this ICASS calculator free to use?</summary><div><p>Yes. AfriWidget is a 100% free educational platform with no hidden subscription fees, required user registrations, or account creations.</p></div></details><details><summary>Can TVET lecturers use this calculator to compute student averages?</summary><div><p>Yes. Lecturers and tutors can quickly verify individual student continuous assessment totals by entering component marks and verifying overall subject eligibility before submitting official mark sheets.</p></div></details></section></main>
   <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
     <div class="min-w-0">

@@ -10,24 +10,27 @@ AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessm
 
 ## The Mathematics of Weighted ICASS Calculations
 
-In vocational education, different assessment tasks carry different percentage weights depending on whether the subject is primarily practical (such as Engineering Workshop Practice) or theoretical (such as Business Management). A student’s overall ICASS mark is calculated as a weighted sum:
+In Technical and Vocational Education and Training (TVET), continuous assessment tasks carry specific percentage weights prescribed by curriculum policy guidelines (such as the DHET National Policy on Assessment for TVET Colleges). The standard 5-task vocational model weights assessments as follows:
 
 <div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto">
-  <p class="font-semibold text-amber-400 mb-2">Weighted ICASS Mark (%) =</p>
-  <p class="pl-4">((S<sub>assign</sub> &times; W<sub>assign</sub>) + (S<sub>pract</sub> &times; W<sub>pract</sub>) + (S<sub>test</sub> &times; W<sub>test</sub>) + (S<sub>attend</sub> &times; W<sub>attend</sub>)) &divide; 100</p>
+  <p class="font-semibold text-amber-400 mb-2">Standard TVET ICASS Mark (%) =</p>
+  <p class="pl-4">(Test 1 &times; 0.10) + (Assign 1 &times; 0.25) + (Test 2 &times; 0.10) + (Assign 2 &times; 0.25) + (Trial Exam &times; 0.30)</p>
 </div>
 
 Where:
-- **S<sub>i</sub>** = Percentage score achieved on a specific assessment component (0% to 100%)
-- **W<sub>i</sub>** = Official percentage weight allocated to that component (must total 100%)
+- **Test 1 & Test 2** = Class tests weighted at **10%** each (Total 20%)
+- **Assignment 1 & Assignment 2** = Formal assignments / practical coursework weighted at **25%** each (Total 50%)
+- **Trial Exam / Preparatory Exam** = Internal preparatory examination weighted at **30%** (Total 30%)
+- **Total Weights** = 10% + 25% + 10% + 25% + 30% = **100%**
 
 ### Example Calculation
-Suppose a student scores the following marks in Nated N4 Electrical Engineering:
-- **Assignment**: Score = 70%, Weight = 25% &rarr; (70 &times; 25) &divide; 100 = **17.50%**
-- **Practical Tasks**: Score = 80%, Weight = 35% &rarr; (80 &times; 35) &divide; 100 = **28.00%**
-- **Class Tests**: Score = 60%, Weight = 30% &rarr; (60 &times; 30) &divide; 100 = **18.00%**
-- **Attendance**: Score = 90%, Weight = 10% &rarr; (90 &times; 10) &divide; 100 = **9.00%**
-- **Total Cumulative ICASS Mark**: 17.50 + 28.00 + 18.00 + 9.00 = **72.50%** (Distinction / Outstanding band).
+Suppose a student scores the following marks in NATED N4 / NCV Level 4:
+- **Test 1**: Score = 68% (Weight 10%) &rarr; 68 &times; 0.10 = **6.80%**
+- **Assignment 1**: Score = 80% (Weight 25%) &rarr; 80 &times; 0.25 = **20.00%**
+- **Test 2**: Score = 72% (Weight 10%) &rarr; 72 &times; 0.10 = **7.20%**
+- **Assignment 2**: Score = 78% (Weight 25%) &rarr; 78 &times; 0.25 = **19.50%**
+- **Trial Exam**: Score = 65% (Weight 30%) &rarr; 65 &times; 0.30 = **19.50%**
+- **Total Cumulative ICASS Mark**: 6.80 + 20.00 + 7.20 + 19.50 + 19.50 = **73.00%** (Good Academic Standing / Near Distinction).
 
 ---
 
@@ -35,21 +38,17 @@ Suppose a student scores the following marks in Nated N4 Electrical Engineering:
 
 Understanding the role of each assessment component helps students allocate study time effectively:
 
-1. **Class Assignments & Theoretical Projects (20% – 30% Weight)**:
-   - Designed to test conceptual understanding, problem-solving ability, case study analysis, and research skills.
-   - *Academic Tip*: Submit assignments ahead of deadlines to avoid point deductions for late submission.
+1. **Class Tests (Test 1 & Test 2 — 10% Each / 20% Total)**:
+   - Evaluates foundational theory, module units, and problem-solving concepts taught during the term.
+   - *Academic Tip*: Consistent preparation for class tests provides easy foundation marks that protect your cumulative average.
 
-2. **Practical Workshop & Laboratory Work (30% – 40% Weight)**:
-   - Evaluates hands-on vocational competency, equipment operation, safety compliance, technical drawing, computer proficiency, or workshop craftsmanship.
-   - *Academic Tip*: Practical tasks carry the heaviest weight in engineering, IT, and hospitality qualifications. Always complete laboratory logbooks carefully.
+2. **Coursework & Formal Assignments (Assign 1 & Assign 2 — 25% Each / 50% Total)**:
+   - Deep-dive technical assignments, case studies, drafting exercises, or practical laboratory reports.
+   - *Academic Tip*: Submit assignments ahead of deadlines to avoid point penalties and secure high marks.
 
-3. **Controlled Tests & Term Examinations (25% – 35% Weight)**:
-   - Timed, invigilated classroom assessments that simulate the conditions of national final examinations.
-   - *Academic Tip*: Revisit past test papers to identify core syllabus areas emphasized by national examiners.
-
-4. **Class Attendance & Professional Conduct (5% – 10% Weight)**:
-   - Rewards punctual attendance, active classroom engagement, and adherence to safety and ethical standards.
-   - *Academic Tip*: Maintaining high attendance provides easy percentage points that bolster your cumulative score.
+3. **Trial / Internal Preparatory Examination (30% Weight)**:
+   - Comprehensive simulated exam covering the full semester or trimester curriculum under strict exam conditions.
+   - *Academic Tip*: The trial exam is the single largest individual assessment in the ICASS portfolio. High performance here significantly boosts exam qualification.
 
 ---
 

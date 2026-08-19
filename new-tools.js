@@ -620,19 +620,53 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     var form = byId('icassForm');
     if (!form) return;
 
-    var calcBtn = byId('icassCalculateBtn');
+    var currentMode = 'standard'; // 'standard', 'trimester', 'custom'
+
+    // Tab buttons
+    var tabStandard = byId('tabStandard');
+    var tabTrimester = byId('tabTrimester');
+    var tabCustom = byId('tabCustom');
+
+    var modeStandard = byId('icassStandardMode');
+    var modeTrimester = byId('icassTrimesterMode');
+    var modeCustom = byId('icassCustomMode');
+
+    function setTab(mode) {
+      currentMode = mode;
+      var tabs = [
+        { btn: tabStandard, panel: modeStandard, key: 'standard' },
+        { btn: tabTrimester, panel: modeTrimester, key: 'trimester' },
+        { btn: tabCustom, panel: modeCustom, key: 'custom' }
+      ];
+
+      tabs.forEach(function (t) {
+        if (!t.btn || !t.panel) return;
+        var isActive = t.key === mode;
+        if (isActive) {
+          t.btn.classList.remove('bg-slate-100', 'text-slate-700');
+          t.btn.classList.add('bg-slate-900', 'text-yellow-300', 'shadow-sm');
+          t.btn.setAttribute('aria-selected', 'true');
+          t.panel.classList.remove('hidden');
+        } else {
+          t.btn.classList.remove('bg-slate-900', 'text-yellow-300', 'shadow-sm');
+          t.btn.classList.add('bg-slate-100', 'text-slate-700');
+          t.btn.setAttribute('aria-selected', 'false');
+          t.panel.classList.add('hidden');
+        }
+      });
+
+      var msgEl = byId('icassMessage');
+      if (msgEl) msgEl.classList.add('hidden');
+    }
+
+    if (tabStandard) tabStandard.addEventListener('click', function () { setTab('standard'); calculate(false); });
+    if (tabTrimester) tabTrimester.addEventListener('click', function () { setTab('trimester'); calculate(false); });
+    if (tabCustom) tabCustom.addEventListener('click', function () { setTab('custom'); calculate(false); });
 
     function clearInputErrors() {
-      var components = ['Assignment', 'Practical', 'Test', 'Attendance'];
-      components.forEach(function (name) {
-        var scoreInput = byId('icass' + name + 'Score');
-        var weightInput = byId('icass' + name + 'Weight');
-        if (scoreInput) {
-          scoreInput.classList.remove('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
-        }
-        if (weightInput) {
-          weightInput.classList.remove('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
-        }
+      var allInputs = form.querySelectorAll('input');
+      allInputs.forEach(function (inp) {
+        inp.classList.remove('border-red-500', 'bg-red-50', 'ring-2', 'ring-red-400');
       });
     }
 
@@ -658,159 +692,363 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     function calculate(userTriggered) {
       clearInputErrors();
 
-      var components = [
-        { key: 'assignment', label: 'Assignment' },
-        { key: 'practical', label: 'Practical' },
-        { key: 'test', label: 'Test' },
-        { key: 'attendance', label: 'Attendance' }
-      ];
+      var items = [];
+      var missing = [];
+      var invalid = [];
 
-      var total = 0;
-      var weightTotal = 0;
-      var missingFields = [];
-      var invalidScores = [];
-      var negativeWeights = [];
-      var hasAnyInput = false;
+      if (currentMode === 'standard') {
+        // Standard TVET Model: Test 1 (10%), Assign 1 (25%), Test 2 (10%), Assign 2 (25%), Trial Exam (30%)
+        var stdConfigs = [
+          { id: 'icassTest1Score', name: 'Test 1', weight: 10 },
+          { id: 'icassAssign1Score', name: 'Assignment 1', weight: 25 },
+          { id: 'icassTest2Score', name: 'Test 2', weight: 10 },
+          { id: 'icassAssign2Score', name: 'Assignment 2', weight: 25 },
+          { id: 'icassTrialScore', name: 'Trial Exam', weight: 30 }
+        ];
 
-      components.forEach(function (c) {
-        var scoreId = 'icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score';
-        var weightId = 'icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight';
-        var scoreInput = byId(scoreId);
-        var weightInput = byId(weightId);
-        var rawScore = scoreInput ? scoreInput.value.trim() : '';
-        var rawWeight = weightInput ? weightInput.value.trim() : '';
+        var anyProvided = false;
+        stdConfigs.forEach(function (cfg) {
+          var inp = byId(cfg.id);
+          var val = inp ? inp.value.trim() : '';
+          if (val !== '') anyProvided = true;
+          if (val === '') {
+            missing.push({ id: cfg.id, label: cfg.name });
+          } else {
+            var num = parseFloat(val);
+            if (isNaN(num) || num < 0 || num > 100) {
+              invalid.push({ id: cfg.id, label: cfg.name + ' (' + val + '%)' });
+            } else {
+              items.push({ name: cfg.name, weight: cfg.weight, score: num });
+            }
+          }
+        });
 
-        if (rawScore !== '' || rawWeight !== '') {
-          hasAnyInput = true;
+        if (!anyProvided) {
+          if (userTriggered) {
+            stdConfigs.forEach(function (cfg) { markInputError(cfg.id); });
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your marks (0–100) for Test 1, Assignment 1, Test 2, Assignment 2, and Trial Exam above.</p></div></div>');
+          } else {
+            var msgEl = byId('icassMessage');
+            if (msgEl) msgEl.classList.add('hidden');
+            var resEl = byId('icassResult');
+            if (resEl) resEl.classList.add('hidden');
+          }
+          return;
         }
 
-        if (rawScore === '') {
-          missingFields.push({ label: c.label + ' score', id: scoreId });
-        }
-        if (rawWeight === '') {
-          missingFields.push({ label: c.label + ' weight', id: weightId });
-        }
-
-        var score = parseFloat(rawScore);
-        var weight = parseFloat(rawWeight);
-
-        if (rawScore !== '' && (isNaN(score) || score < 0 || score > 100)) {
-          invalidScores.push({ label: c.label + ' score (' + (rawScore || 'invalid') + '%)', id: scoreId });
+        if (missing.length > 0) {
+          if (userTriggered) {
+            missing.forEach(function (m) { markInputError(m.id); });
+            var missingLabels = missing.map(function (m) { return m.label; }).join(', ');
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please provide marks for: <strong class="underline font-black">' + missingLabels + '</strong>.</p></div></div>');
+          }
+          return;
         }
 
-        if (rawWeight !== '' && (isNaN(weight) || weight < 0)) {
-          negativeWeights.push({ label: c.label + ' weight (' + (rawWeight || 'invalid') + '%)', id: weightId });
+        if (invalid.length > 0) {
+          invalid.forEach(function (inv) { markInputError(inv.id); });
+          var invalidLabels = invalid.map(function (i) { return i.label; }).join(', ');
+          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Assessment marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalidLabels + '</strong>.</p></div></div>');
+          return;
         }
 
-        if (!isNaN(score) && !isNaN(weight) && score >= 0 && score <= 100 && weight >= 0) {
-          total += score * weight;
+      } else if (currentMode === 'trimester') {
+        // Trimester 3-task model: Test (30%), Assignment (20%), Trial Exam (50%)
+        var triConfigs = [
+          { id: 'icassTrimTest', name: 'Class Test', weight: 30 },
+          { id: 'icassTrimAssign', name: 'Assignment', weight: 20 },
+          { id: 'icassTrimTrial', name: 'Internal Exam', weight: 50 }
+        ];
+
+        var anyTriProvided = false;
+        triConfigs.forEach(function (cfg) {
+          var inp = byId(cfg.id);
+          var val = inp ? inp.value.trim() : '';
+          if (val !== '') anyTriProvided = true;
+          if (val === '') {
+            missing.push({ id: cfg.id, label: cfg.name });
+          } else {
+            var num = parseFloat(val);
+            if (isNaN(num) || num < 0 || num > 100) {
+              invalid.push({ id: cfg.id, label: cfg.name + ' (' + val + '%)' });
+            } else {
+              items.push({ name: cfg.name, weight: cfg.weight, score: num });
+            }
+          }
+        });
+
+        if (!anyTriProvided) {
+          if (userTriggered) {
+            triConfigs.forEach(function (cfg) { markInputError(cfg.id); });
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for Test (30%), Assignment (20%), and Internal Exam (50%).</p></div></div>');
+          }
+          return;
         }
-        if (!isNaN(weight) && weight >= 0) {
-          weightTotal += weight;
+
+        if (missing.length > 0) {
+          if (userTriggered) {
+            missing.forEach(function (m) { markInputError(m.id); });
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for: <strong class="underline font-black">' + missing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
+          }
+          return;
         }
+
+        if (invalid.length > 0) {
+          invalid.forEach(function (inv) { markInputError(inv.id); });
+          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
+          return;
+        }
+
+      } else {
+        // Custom Mode
+        var customConfigs = [
+          { scoreId: 'icassAssignmentScore', weightId: 'icassAssignmentWeight', name: 'Assignment' },
+          { scoreId: 'icassPracticalScore', weightId: 'icassPracticalWeight', name: 'Practical' },
+          { scoreId: 'icassTestScore', weightId: 'icassTestWeight', name: 'Test' },
+          { scoreId: 'icassAttendanceScore', weightId: 'icassAttendanceWeight', name: 'Attendance' }
+        ];
+
+        var anyCustProvided = false;
+        var custWeightSum = 0;
+        var custMissing = [];
+        var custInvalid = [];
+
+        customConfigs.forEach(function (cfg) {
+          var sInp = byId(cfg.scoreId);
+          var wInp = byId(cfg.weightId);
+          var sVal = sInp ? sInp.value.trim() : '';
+          var wVal = wInp ? wInp.value.trim() : '';
+
+          if (sVal !== '' || wVal !== '') anyCustProvided = true;
+
+          if (sVal === '') custMissing.push({ id: cfg.scoreId, label: cfg.name + ' score' });
+          if (wVal === '') custMissing.push({ id: cfg.weightId, label: cfg.name + ' weight' });
+
+          var sNum = parseFloat(sVal);
+          var wNum = parseFloat(wVal);
+
+          if (sVal !== '' && (isNaN(sNum) || sNum < 0 || sNum > 100)) {
+            custInvalid.push({ id: cfg.scoreId, label: cfg.name + ' score (' + sVal + '%)' });
+          }
+          if (wVal !== '' && (isNaN(wNum) || wNum < 0)) {
+            custInvalid.push({ id: cfg.weightId, label: cfg.name + ' weight' });
+          }
+
+          if (!isNaN(sNum) && !isNaN(wNum) && sNum >= 0 && sNum <= 100 && wNum >= 0) {
+            items.push({ name: cfg.name, weight: wNum, score: sNum });
+            custWeightSum += wNum;
+          }
+        });
+
+        if (!anyCustProvided) {
+          if (userTriggered) {
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Custom Assessment Figures</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your scores and percentage weights (totaling 100%).</p></div></div>');
+          }
+          return;
+        }
+
+        if (custMissing.length > 0) {
+          if (userTriggered) {
+            custMissing.forEach(function (m) { markInputError(m.id); });
+            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Custom Fields</p><p class="mt-1 text-sm font-bold text-red-900">Please complete: <strong class="underline font-black">' + custMissing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
+          }
+          return;
+        }
+
+        if (custInvalid.length > 0) {
+          custInvalid.forEach(function (inv) { markInputError(inv.id); });
+          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Values</p><p class="mt-1 text-sm font-bold text-red-900">Check: <strong class="underline font-black">' + custInvalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
+          return;
+        }
+
+        if (Math.abs(custWeightSum - 100) > 0.01) {
+          customConfigs.forEach(function (cfg) { markInputError(cfg.weightId); });
+          var diff = custWeightSum - 100;
+          var diffTxt = diff > 0 ? 'exceeds 100% by ' + diff.toFixed(1) + '%' : 'is short by ' + Math.abs(diff).toFixed(1) + '%';
+          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-amber-950">Weight Total Error (' + custWeightSum.toFixed(1) + '%)</p><p class="mt-1 text-sm font-bold text-amber-900">Component weights must total 100% (currently ' + diffTxt + ').</p></div></div>', true);
+          return;
+        }
+      }
+
+      // Calculate Total Weighted ICASS
+      var totalContribution = 0;
+      var totalWeight = 0;
+      items.forEach(function (it) {
+        var contrib = (it.score * it.weight) / 100;
+        it.contrib = contrib;
+        totalContribution += contrib;
+        totalWeight += it.weight;
       });
 
-      if (!hasAnyInput) {
-        if (userTriggered) {
-          components.forEach(function (c) {
-            markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Score');
-            markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
-          });
-          showError(
-            '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Missing Assessment Figures</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your assessment scores (0–100%) and component weights (totaling 100%) in the fields above.</p></div></div>'
-          );
-          if (byId('icassMessage')) byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          var msgEl = byId('icassMessage');
-          if (msgEl) msgEl.classList.add('hidden');
-          var resEl = byId('icassResult');
-          if (resEl) resEl.classList.add('hidden');
-        }
-        return;
-      }
-
-      if (missingFields.length > 0) {
-        missingFields.forEach(function (f) { markInputError(f.id); });
-        var missingNames = missingFields.map(function (f) { return f.label; }).join(', ');
-        showError(
-          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Form Inputs</p><p class="mt-1 text-sm font-bold text-red-900">Please enter missing figures for: <strong class="underline font-black text-red-950">' + missingNames + '</strong>.</p></div></div>'
-        );
-        if (userTriggered && byId('icassMessage')) {
-          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return;
-      }
-
-      if (invalidScores.length > 0) {
-        invalidScores.forEach(function (f) { markInputError(f.id); });
-        var invalidNames = invalidScores.map(function (f) { return f.label; }).join(', ');
-        showError(
-          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Figure</p><p class="mt-1 text-sm font-bold text-red-900">Scores must be percentage marks between 0% and 100%. Incorrect figures entered: <strong class="underline font-black text-red-950">' + invalidNames + '</strong>.</p></div></div>'
-        );
-        if (userTriggered && byId('icassMessage')) {
-          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return;
-      }
-
-      if (negativeWeights.length > 0) {
-        negativeWeights.forEach(function (f) { markInputError(f.id); });
-        var negativeNames = negativeWeights.map(function (f) { return f.label; }).join(', ');
-        showError(
-          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Weight Figure</p><p class="mt-1 text-sm font-bold text-red-900">Component weights cannot be negative numbers. Check: <strong class="underline font-black text-red-950">' + negativeNames + '</strong>.</p></div></div>'
-        );
-        if (userTriggered && byId('icassMessage')) {
-          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return;
-      }
-
-      if (Math.abs(weightTotal - 100) > 0.01) {
-        components.forEach(function (c) {
-          markInputError('icass' + c.key.charAt(0).toUpperCase() + c.key.slice(1) + 'Weight');
-        });
-        var diff = weightTotal - 100;
-        var diffText = diff > 0 
-          ? 'exceeds 100% by ' + diff.toFixed(2).replace(/\.00$/, '') + '%' 
-          : 'is short by ' + Math.abs(diff).toFixed(2).replace(/\.00$/, '') + '%';
-        showError(
-          '<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-amber-950">Weight Total Error (' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%)</p><p class="mt-1 text-sm font-bold text-amber-900">Component weights currently total <strong class="underline font-black text-amber-950">' + weightTotal.toFixed(2).replace(/\.00$/, '') + '%</strong>. Official ICASS weights must add up to exactly 100% (' + diffText + '). Adjust your weights above.</p></div></div>',
-          true
-        );
-        if (userTriggered && byId('icassMessage')) {
-          byId('icassMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return;
+      var icassResultScore = totalContribution;
+      if (totalWeight > 0 && Math.abs(totalWeight - 100) > 0.01) {
+        icassResultScore = (totalContribution / totalWeight) * 100;
       }
 
       var msgEl = byId('icassMessage');
       if (msgEl) msgEl.classList.add('hidden');
 
-      var result = total / 100;
-      setText('icassScore', result.toFixed(2) + '%');
+      // Update UI Result
+      setText('icassScore', icassResultScore.toFixed(2) + '%');
 
       var bandText = '';
-      if (result >= 75) {
-        bandText = '🌟 Outstanding internal assessment (Distinction level — ' + result.toFixed(2) + '%)';
-      } else if (result >= 50) {
-        bandText = '✅ Passing internal assessment range (' + result.toFixed(2) + '%)';
+      var bandClass = '';
+      var progressColor = 'bg-yellow-500';
+
+      if (icassResultScore >= 75) {
+        bandText = '🌟 Outstanding Continuous Assessment (Distinction Level — ' + icassResultScore.toFixed(2) + '%)';
+        bandClass = 'text-emerald-700 bg-emerald-50 border-emerald-300';
+        progressColor = 'bg-emerald-500';
+      } else if (icassResultScore >= 50) {
+        bandText = '✅ Good Academic Standing (Passing Range — ' + icassResultScore.toFixed(2) + '%)';
+        bandClass = 'text-blue-700 bg-blue-50 border-blue-300';
+        progressColor = 'bg-blue-500';
+      } else if (icassResultScore >= 40) {
+        bandText = '⚠️ Eligible for Final Exam Entry (Sub-minimum 40% met — ' + icassResultScore.toFixed(2) + '%)';
+        bandClass = 'text-amber-800 bg-amber-50 border-amber-300';
+        progressColor = 'bg-amber-500';
       } else {
-        bandText = '⚠️ Below 50% threshold — Additional mark recovery recommended before exam entry';
+        bandText = '🚨 Below Sub-Minimum (< 40%) — Urgent Mark Recovery Recommended Before Exam Admission';
+        bandClass = 'text-red-700 bg-red-50 border-red-300';
+        progressColor = 'bg-red-500';
       }
-      setText('icassBand', bandText);
+
+      var bandEl = byId('icassBand');
+      if (bandEl) {
+        bandEl.textContent = bandText;
+        bandEl.className = 'mt-2 px-3 py-1.5 rounded-lg border font-bold text-sm inline-block ' + bandClass;
+      }
+
+      var progressEl = byId('icassProgressBar');
+      if (progressEl) {
+        progressEl.style.width = Math.min(100, Math.max(0, icassResultScore)) + '%';
+        progressEl.className = 'h-3 rounded-full transition-all duration-500 ' + progressColor;
+      }
+
+      // Exam Eligibility Status
+      var eligEl = byId('icassEligibility');
+      if (eligEl) {
+        if (icassResultScore >= 40) {
+          eligEl.innerHTML = '<div class="flex items-center gap-2 text-emerald-800 font-extrabold text-sm sm:text-base"><span class="text-xl">✅</span><span><strong>Exam Admission Status: QUALIFIED</strong> (Meets DHET 40% sub-minimum requirement for national exam entry)</span></div>';
+        } else {
+          var neededPoints = (40 - icassResultScore).toFixed(2);
+          eligEl.innerHTML = '<div class="flex items-center gap-2 text-red-800 font-extrabold text-sm sm:text-base"><span class="text-xl">⚠️</span><span><strong>Exam Admission Status: AT RISK</strong> (Short by ' + neededPoints + '% to reach the 40% exam sub-minimum)</span></div>';
+        }
+      }
+
+      // Populate Contribution Breakdown Table
+      var breakdownEl = byId('icassBreakdownTable');
+      if (breakdownEl) {
+        var rowsHtml = items.map(function (it) {
+          return '<tr class="border-b border-slate-100 hover:bg-slate-50">' +
+            '<td class="py-2.5 px-3 text-left font-bold text-slate-800">' + it.name + '</td>' +
+            '<td class="py-2.5 px-3 text-center font-bold text-slate-600">' + it.weight + '%</td>' +
+            '<td class="py-2.5 px-3 text-center font-extrabold text-slate-900">' + it.score.toFixed(1) + '%</td>' +
+            '<td class="py-2.5 px-3 text-right font-black text-emerald-700">+' + it.contrib.toFixed(2) + '%</td>' +
+          '</tr>';
+        }).join('');
+        breakdownEl.innerHTML = rowsHtml;
+      }
+
+      // Calculate Target Exam Marks (Standard NATED: 40% ICASS + 60% Exam)
+      var target50El = byId('icassTarget50');
+      var target65El = byId('icassTarget65');
+      var target75El = byId('icassTarget75');
+
+      var icassWeightNated = 0.40;
+      var examWeightNated = 0.60;
+      var currentIcassPoints = icassResultScore * icassWeightNated;
+
+      function calcExamNeeded(targetOverall) {
+        var needed = (targetOverall - currentIcassPoints) / examWeightNated;
+        if (needed <= 40) return '40.0% (Sub-minimum)';
+        if (needed > 100) return 'Impossible (>100%)';
+        return needed.toFixed(1) + '%';
+      }
+
+      if (target50El) target50El.textContent = calcExamNeeded(50);
+      if (target65El) target65El.textContent = calcExamNeeded(65);
+      if (target75El) target75El.textContent = calcExamNeeded(75);
+
       show('icassResult');
 
       if (userTriggered && byId('icassResult')) {
-        byId('icassResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        byId('icassResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
 
+    // Load sample marks
+    var sampleBtn = byId('icassSampleBtn');
+    if (sampleBtn) {
+      sampleBtn.addEventListener('click', function () {
+        if (currentMode === 'standard') {
+          if (byId('icassTest1Score')) byId('icassTest1Score').value = 68;
+          if (byId('icassAssign1Score')) byId('icassAssign1Score').value = 80;
+          if (byId('icassTest2Score')) byId('icassTest2Score').value = 72;
+          if (byId('icassAssign2Score')) byId('icassAssign2Score').value = 78;
+          if (byId('icassTrialScore')) byId('icassTrialScore').value = 65;
+        } else if (currentMode === 'trimester') {
+          if (byId('icassTrimTest')) byId('icassTrimTest').value = 65;
+          if (byId('icassTrimAssign')) byId('icassTrimAssign').value = 80;
+          if (byId('icassTrimTrial')) byId('icassTrimTrial').value = 68;
+        } else {
+          if (byId('icassAssignmentScore')) byId('icassAssignmentScore').value = 75;
+          if (byId('icassAssignmentWeight')) byId('icassAssignmentWeight').value = 25;
+          if (byId('icassPracticalScore')) byId('icassPracticalScore').value = 80;
+          if (byId('icassPracticalWeight')) byId('icassPracticalWeight').value = 35;
+          if (byId('icassTestScore')) byId('icassTestScore').value = 65;
+          if (byId('icassTestWeight')) byId('icassTestWeight').value = 30;
+          if (byId('icassAttendanceScore')) byId('icassAttendanceScore').value = 90;
+          if (byId('icassAttendanceWeight')) byId('icassAttendanceWeight').value = 10;
+        }
+        calculate(true);
+      });
+    }
+
+    // Reset button
+    var resetBtn = byId('icassResetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        var allInputs = form.querySelectorAll('input');
+        allInputs.forEach(function (inp) { inp.value = ''; });
+        clearInputErrors();
+        var msgEl = byId('icassMessage');
+        if (msgEl) msgEl.classList.add('hidden');
+        var resEl = byId('icassResult');
+        if (resEl) resEl.classList.add('hidden');
+      });
+    }
+
+    // Copy Results
+    var copyBtn = byId('icassCopyBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var score = byId('icassScore') ? byId('icassScore').textContent : '';
+        var band = byId('icassBand') ? byId('icassBand').textContent : '';
+        var summary = '📚 TVET ICASS Mark Calculation Report (AfriWidget)\n' +
+          '• Overall ICASS Score: ' + score + '\n' +
+          '• Assessment Band: ' + band + '\n' +
+          '• Calculator: https://afriwidget.com/icass-calculator';
+        navigator.clipboard.writeText(summary).then(function () {
+          var original = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span>✅</span> Copied to Clipboard!';
+          setTimeout(function () { copyBtn.innerHTML = original; }, 2000);
+        }).catch(function () {});
+      });
+    }
+
+    var calcBtn = byId('icassCalculateBtn');
     if (calcBtn) {
       calcBtn.addEventListener('click', function (e) {
         if (e) e.preventDefault();
         calculate(true);
       });
     }
+
+    // Auto-calculate on input
+    form.addEventListener('input', function () {
+      calculate(false);
+    });
 
     form.addEventListener('submit', function (event) {
       if (event) event.preventDefault();
