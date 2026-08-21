@@ -615,11 +615,36 @@ body:not(.home-layout) .filter-pill:focus-visible {
   border-color: #facc15 !important;
 }
 
-/* Cumulative Layout Shift (CLS) Prevention & Layout Stability */
+/* Ad Layout & Zero-Gap CLS Stability: Never reserve large empty whitespace when ads are unfilled */
 ins.adsbygoogle {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+ins.adsbygoogle:empty,
+ins.adsbygoogle[data-ad-status="unfilled"],
+ins.adsbygoogle:not([data-ad-status="filled"]) {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ins.adsbygoogle[data-ad-status="filled"],
+ins.adsbygoogle:has(iframe) {
   display: block !important;
-  min-height: 250px;
-  contain: layout style;
+  min-height: 90px;
+}
+
+/* Hide parent container if it only contains an empty or unfilled ad slot */
+div:has(> ins.adsbygoogle:empty),
+div:has(> ins.adsbygoogle[data-ad-status="unfilled"]),
+div:has(> ins.adsbygoogle:not([data-ad-status="filled"]):not(:has(iframe))) {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #cookieBanner {
@@ -834,10 +859,8 @@ textarea.writing-input {
 
 /* Mobile Performance & Rendering Speed Optimizations */
 @media (max-width: 1024px) {
-  .category-section:nth-child(n+3),
-  footer {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 400px;
+  .category-section:nth-child(n+3) {
+    contain: style;
   }
 }
 

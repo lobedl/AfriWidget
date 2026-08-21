@@ -180,6 +180,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -206,6 +229,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">KCSE Grade &amp; KUCCPS Cluster Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-gradient-to-br from-slate-900 via-indigo-900 to-teal-900 text-white py-14 px-4"><div class="max-w-4xl mx-auto"><p class="text-amber-300 font-semibold mb-3">Kenya · KCSE / KUCCPS</p><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">KCSE Grade &amp; KUCCPS Cluster Calculator</h1><p class="text-lg text-slate-300">Add seven KCSE grades to estimate aggregate points and an overall mean grade for degree-placement planning.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Select seven KCSE grades</h2><p class="text-slate-600 mb-6">This planning version maps each grade from A to E to the points in the brief.</p><div class="grid sm:grid-cols-2 gap-4"><label class="text-sm font-semibold text-slate-700">Subject 1<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 2<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 3<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 4<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 5<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 6<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><label class="text-sm font-semibold text-slate-700">Subject 7<select class="kcse-grade mt-2 w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 px-3 py-3 rounded-xl outline-none"><option value="">Choose grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label></div><button id="kcseCalculate" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl shadow-lg">Calculate Now</button></div><div class="lg:col-span-2" aria-live="polite"><div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl"><p class="text-sm uppercase tracking-wider text-amber-300 font-bold">Aggregate points</p><div id="kcseResult" class="text-5xl font-extrabold text-amber-300 my-4">—</div><p id="kcseMessage" class="text-slate-300 leading-relaxed">Your total and mean grade will appear here.</p></div></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Understanding KCSE points and KUCCPS planning</h2><p>Kenyan KCSE candidates often compare their grades with degree requirements, cluster information, and placement options. This calculator is a simple seven-subject planning aid. It converts the grades you enter into the point mapping supplied for this page and adds the seven values. The result can reach 84 points when all seven subjects are A grades. The page also translates the total into an estimated mean grade band so the number is easier to discuss with a parent, teacher, or career adviser.</p><p>The point mapping is A equals 12, A- equals 11, B+ equals 10, B equals 9, B- equals 8, C+ equals 7, C equals 6, C- equals 5, D+ equals 4, D equals 3, D- equals 2, and E equals 1. The best possible total for seven subjects is therefore 12 multiplied by 7, or 84. A lower grade contributes fewer points. Select every grade rather than leaving a subject blank; the calculator rejects incomplete selections so an empty field cannot be mistaken for a real grade.</p><h3 class="text-2xl font-bold text-slate-900">Mean grade estimate</h3><p>The overall grade band shown here uses the aggregate thresholds requested in the brief: totals of 81 or more display A, 74 to 80 display A-, 67 to 73 display B+, 60 to 66 display B, 53 to 59 display B-, 46 to 52 display C+, 39 to 45 display C, 32 to 38 display C-, 25 to 31 display D+, 18 to 24 display D, 11 to 17 display D-, and totals below 11 display E. This is an estimate for the seven entered grades and should not be confused with the complete official KCSE mean-grade process.</p><h3 class="text-2xl font-bold text-slate-900">KUCCPS and cluster requirements</h3><p>KUCCPS degree placement can involve programme subject clusters, minimum grades, weighted cluster points, competition, and the choices submitted by a candidate. A strong total does not automatically make every programme available. Medicine, engineering, education, business, and other degrees can require different subject combinations. Before selecting a course, review the latest official programme requirements and confirm that your Mathematics, language, sciences, or other relevant subjects meet the minimum grade.</p><p>Use this tool to compare scenarios, such as the effect of improving a B- to a B+ or identifying which subjects deserve more revision time. Change one grade at a time and keep a record of the resulting total. When the official result is available, enter the exact grades rather than predicted ones. Then compare the estimate with the official placement information and application instructions.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does this calculate official KUCCPS cluster points?</summary><p class="mt-3">No. It calculates the seven-subject aggregate and mean-grade estimate described in this brief. Official weighted clusters can use subject-specific rules.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Why is the maximum 84?</summary><p class="mt-3">Seven A grades are worth 12 points each, so the maximum under this mapping is 7 × 12 = 84.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can the result guarantee a degree placement?</summary><p class="mt-3">No. Placement depends on official requirements, programme demand, cluster subjects, choices, and the current placement process.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><h2 class="text-2xl font-bold text-slate-900 mb-4">Turning KCSE points into a course plan</h2><p class="text-slate-700 leading-relaxed">Once you have the seven-subject estimate, list the degree programmes you are considering and check each one’s subject cluster. A strong aggregate cannot compensate for a missing prerequisite, so confirm the required grades in Mathematics, languages, sciences, or other subjects before ranking a programme. Compare several choices and note which options remain realistic if demand or the official cut-off changes.</p><p class="text-slate-700 leading-relaxed mt-4">Use the calculator for revision scenarios as well. Improving one grade can change the total by one or more points depending on the grade band. Make a study plan around subjects with the largest realistic improvement, and ask a teacher to confirm whether your chosen cluster matches the programme. When the official KCSE result is released, enter the final grades and use official KUCCPS guidance for the actual application and placement process.</p><p class="text-slate-700 leading-relaxed mt-4">Remember that cluster points are connected to the programme you choose. The seven-subject total is helpful for a first estimate, but a final application should always use the current subject requirements and placement guidance for that course. Keep your final grade slip and programme notes together so every application choice can be checked against the same official record.</p></section>
@@ -332,6 +380,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

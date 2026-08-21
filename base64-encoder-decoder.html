@@ -25,7 +25,7 @@
   <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Base64 Encoder &amp; Decoder – AfriWidget</title>
   
-  <meta name="description" content="Free online base64 encoder & decoder tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
+  <meta name="description" content="Encode text and files to Base64 or decode Base64 strings back to plain text instantly in your browser. 100% private, client-side data handling." />
   <link rel="canonical" href="https://afriwidget.com/base64-encoder-decoder" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -37,7 +37,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Base64 Encoder &amp; Decoder – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/base64-encoder-decoder" />
-  <meta property="og:description" content="Encode text to Base64 or decode Base64 back to text in your browser. Supports Unicode, instant copy, and private client-side processing." />
+  <meta property="og:description" content="Convert strings and binary data to and from Base64 format with fast, private client-side execution." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
@@ -45,7 +45,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Base64 Encoder &amp; Decoder – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Encode text to Base64 or decode Base64 back to text in your browser. Supports Unicode, instant copy, and private client-side processing." />
+  <meta name="twitter:description" content="Convert strings and binary data to and from Base64 format with fast, private client-side execution." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -123,6 +123,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800">
   <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-xl"><div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4"><a href="/" class="flex items-center space-x-2">
@@ -149,6 +175,32 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Base64 Encoder &amp; Decoder</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
   <header class="bg-slate-950 px-4 py-14 text-center text-white"><div class="mx-auto max-w-3xl"><span class="text-sm font-bold uppercase tracking-widest text-yellow-300">Developer Utility</span><h1 class="mt-3 text-3xl font-extrabold sm:text-5xl">Base64 Encoder &amp; Decoder</h1><p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">Convert text to Base64 or decode Base64 back to readable Unicode text instantly in your browser.</p><span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Tool</span></div></header>
   <main class="mx-auto max-w-5xl px-4 py-10">
     <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7" aria-label="Base64 converter"><div class="mb-3 flex items-center justify-between"><label for="base64Input" class="text-lg font-extrabold text-slate-950">Input</label><button id="clearBase64" class="text-sm font-bold text-slate-500 hover:text-red-600">Clear</button></div><textarea id="base64Input" rows="12" class="w-full resize-y rounded-2xl border border-slate-300 bg-slate-50 p-4 font-mono text-sm leading-6 outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-100" placeholder="Type text to encode, or paste Base64 to decode..."></textarea><div class="mt-4 flex flex-wrap gap-3"><button id="encodeBase64" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Encode</button><button id="decodeBase64" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Decode</button><button id="copyBase64" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Copy</button></div><p id="base64Status" class="mt-3 min-h-5 text-sm text-emerald-700" aria-live="polite"></p><label for="base64Output" class="mt-5 block text-lg font-extrabold text-slate-950">Output</label><textarea id="base64Output" rows="12" readonly class="mt-3 w-full resize-y rounded-2xl border border-slate-300 bg-slate-50 p-4 font-mono text-sm leading-6 outline-none"></textarea></section>
@@ -247,6 +299,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

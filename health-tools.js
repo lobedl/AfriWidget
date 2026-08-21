@@ -9,7 +9,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   }
 
   function numberValue(id) {
-    return Number(byId(id).value);
+    var el = byId(id);
+    if (!el) return 0;
+    var val = parseFloat(el.value);
+    return Number.isFinite(val) ? val : 0;
   }
 
   function formatNumber(value, decimals) {
@@ -19,6 +22,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   }
 
   function localDateFromInput(value) {
+    if (!value) return new Date();
     var parts = value.split('-').map(Number);
     return new Date(parts[0], parts[1] - 1, parts[2]);
   }
@@ -75,8 +79,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       var weight = numberValue('dosageWeight');
-      var unit = byId('dosageUnit').value;
-      var medicine = byId('medicineType').value;
+      var unitEl = byId('dosageUnit');
+      var unit = unitEl ? unitEl.value : 'kg';
+      var medEl = byId('medicineType');
+      var medicine = medEl ? medEl.value : 'para120';
       if (!(weight > 0)) return setStatus('dosageMessage', 'Enter a child weight greater than zero.', 'bad');
       var kg = unit === 'lb' ? weight / 2.20462 : weight;
       var doseMgPerKg = medicine === 'ibuprofen' ? 10 : 15;
@@ -98,10 +104,12 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     var form = byId('cycleForm');
     if (!form) return;
     var dateInput = byId('periodStart');
-    dateInput.value = localDateString(todayAtMidnight());
+    if (dateInput && !dateInput.value) {
+      dateInput.value = localDateString(todayAtMidnight());
+    }
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      var startValue = dateInput.value;
+      var startValue = dateInput ? dateInput.value : '';
       var cycleLength = numberValue('cycleLength');
       var periodLength = numberValue('periodLength');
       if (!startValue || cycleLength < 21 || cycleLength > 35 || periodLength < 1 || periodLength > cycleLength) {
@@ -129,16 +137,36 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       var weight = numberValue('waterWeight');
-      var exercise = numberValue('exerciseMinutes');
-      var climate = byId('climate').value;
-      if (!(weight > 0) || exercise < 0) return setStatus('waterMessage', 'Enter a positive body weight and zero or more exercise minutes.', 'bad');
-      var liters = weight * 0.033 + (exercise / 30) * 0.35 + (climate === 'hot' ? 0.5 : 0);
-      show('waterLiters', formatNumber(liters, 2) + ' L');
-      show('waterMilliliters', formatNumber(liters * 1000, 0) + ' mL');
-      show('waterBottles', formatNumber(Math.ceil(liters * 2), 0) + ' × 500 mL bottles');
-      show('waterFormula', 'Baseline ' + formatNumber(weight * 0.033, 2) + ' L + exercise and climate adjustments');
+      var exercise = byId('waterExercise') ? numberValue('waterExercise') : numberValue('exerciseMinutes');
+      var climateEl = byId('waterClimate') || byId('climate');
+      var climateVal = climateEl ? climateEl.value : '0';
+      var climateAdj = climateVal === 'hot' ? 0.5 : (parseFloat(climateVal) || 0);
+      var errorEl = byId('waterError');
+
+      if (!(weight > 0) || exercise < 0) {
+        if (errorEl) errorEl.textContent = 'Please enter a valid weight and exercise duration.';
+        setStatus('waterMessage', 'Enter a positive body weight and zero or more exercise minutes.', 'bad');
+        return;
+      }
+      if (errorEl) errorEl.textContent = '';
+
+      var liters = weight * 0.033 + (exercise / 30) * 0.35 + climateAdj;
+      show('waterLitres', liters.toFixed(1) + ' L');
+      show('waterLiters', liters.toFixed(1) + ' L');
+      show('waterMl', Math.round(liters * 1000) + ' mL');
+      show('waterMilliliters', Math.round(liters * 1000) + ' mL');
+      show('waterBottles', (liters / 0.5).toFixed(1));
+      show('waterFormula', 'Starting estimate: 0.033 L/kg + exercise adjustment + climate adjustment.');
       setStatus('waterMessage', 'Use this as a starting estimate and drink according to thirst, medical advice, and your activity conditions.', 'good');
+      showResult('waterResults');
       showResult('waterResult');
+
+      var resultsEl = byId('waterResults') || byId('waterResult');
+      if (resultsEl) {
+        setTimeout(function () {
+          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
     });
   }
 
@@ -147,11 +175,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     if (!form) return;
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      var gender = byId('calorieGender').value;
+      var genEl = byId('calorieGender');
+      var gender = genEl ? genEl.value : 'female';
       var age = numberValue('calorieAge');
       var height = numberValue('calorieHeight');
       var weight = numberValue('calorieWeight');
-      var activity = Number(byId('activityLevel').value);
+      var actEl = byId('activityLevel');
+      var activity = actEl ? (Number(actEl.value) || 1.2) : 1.2;
       if (!(age > 0) || !(height > 0) || !(weight > 0) || !(activity > 0)) {
         return setStatus('calorieMessage', 'Complete every field with a positive value.', 'bad');
       }
@@ -177,8 +207,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       event.preventDefault();
       var age = numberValue('donorAge');
       var weight = numberValue('donorWeight');
-      var lastValue = byId('lastDonation').value;
-      var gap = byId('donorGender').value === 'female' ? 120 : 90;
+      var lastEl = byId('lastDonation');
+      var lastValue = lastEl ? lastEl.value : '';
+      var genEl = byId('donorGender');
+      var gap = (genEl && genEl.value === 'female') ? 120 : 90;
       var today = todayAtMidnight();
       var dateAllowed = lastValue ? addDays(localDateFromInput(lastValue), gap) : today;
       var basicEligible = age >= 18 && age <= 65 && weight >= 50;

@@ -3,13 +3,39 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODELS_URL = 'https://api.groq.com/openai/v1/models';
 
 const DEFAULT_MODELS = [
+  'llama-3.3-70b-versatile',
+  'llama-3.1-8b-instant',
+  'mixtral-8x7b-32768',
+  'gemma2-9b-it',
   'openai/gpt-oss-120b',
-  'openai/gpt-oss-20b',
-  'qwen/qwen3.6-27b',
-  'groq/compound',
-  'groq/compound-mini',
-  'allam-2-7b'
+  'openai/gpt-oss-20b'
 ];
+
+function cleanAIOutput(rawText) {
+  if (!rawText || typeof rawText !== 'string') return '';
+  let text = rawText;
+  // Strip complete <think>...</think> blocks
+  text = text.replace(/<think>[\s\S]*?<\/think>/gi, '');
+  // Strip unclosed <think> blocks (e.g. if token limit cut off before </think>)
+  text = text.replace(/<think>[\s\S]*$/gi, '');
+  // Strip stray closing </think> tags
+  text = text.replace(/<\/think>/gi, '');
+  // Strip common reasoning process preambles
+  text = text.replace(/^(Here'?s (a|the) (thinking process|rationale|analysis):?[\s\S]*?\n\n)/i, '');
+  text = text.replace(/^(Thinking Process:?[\s\S]*?\n\n)/i, '');
+  // Clean any accidental LaTeX syntax
+  text = text.replace(/\\(?:text|mathrm|mathbf)\{([^}]+)\}/g, '$1');
+  text = text.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 / $2)');
+  text = text.replace(/\\(?:times|cdot)/g, '×');
+  text = text.replace(/\\(?:div)/g, '÷');
+  text = text.replace(/\\(?:approx)/g, '≈');
+  text = text.replace(/\\(?:leq)/g, '≤');
+  text = text.replace(/\\(?:geq)/g, '≥');
+  text = text.replace(/\$\$([\s\S]*?)\$\$/g, '$1');
+  text = text.replace(/\$([^$]+)\$/g, '$1');
+  text = text.replace(/\\(?:left|right|big|Big)[()\[\]|.]?/g, '');
+  return text.trim();
+}
 
 // In-memory cache for available models per API key (10-minute TTL)
 const keyModelCache = new Map();
@@ -275,11 +301,12 @@ export const handler = async (event) => {
             body: JSON.stringify({
               model,
               temperature: 0.35,
-              max_tokens: mode === 'question' ? 400 : mode === 'writing'
-                ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1200 : 700
-                : 350,
+              max_tokens: mode === 'question' ? 600 : mode === 'writing'
+                ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1500 : 900
+                : 500,
+              reasoning_format: 'hidden',
               messages: [
-                { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result.` },
+                { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result. Never output internal thought processes, reasoning preambles, or <think> tags. Strictly NEVER use LaTeX syntax or notation (such as $, $$, \\frac, \\text, \\sum). Use plain text and standard math symbols (+, -, ×, ÷, =). Provide only the clear final advice.` },
                 { role: 'user', content: userPrompt }
               ]
             })
@@ -304,12 +331,9 @@ export const handler = async (event) => {
           }
 
           const data = await response.json();
-          let text = data?.choices?.[0]?.message?.content?.trim();
-          if (text) {
-            // Strip any chain-of-thought tags (<think>...</think>)
-            text = text.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-            if (text) return json(200, { ok: true, text });
-          }
+          const rawText = data?.choices?.[0]?.message?.content;
+          const text = cleanAIOutput(rawText);
+          if (text) return json(200, { ok: true, text });
         } catch (err) {
           console.error(`[groq-proxy] Request failed for model ${model}:`, err?.message || err);
         }
@@ -320,7 +344,8 @@ export const handler = async (event) => {
   // If Groq fails or no keys configured, try Gemini fallback
   const geminiText = await tryGeminiFallback(category, userPrompt);
   if (geminiText) {
-    return json(200, { ok: true, text: geminiText });
+    const cleanedGemini = cleanAIOutput(geminiText);
+    if (cleanedGemini) return json(200, { ok: true, text: cleanedGemini });
   }
 
   return json(200, { ok: false, message: FALLBACK_MESSAGE });

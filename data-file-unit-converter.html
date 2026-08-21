@@ -25,7 +25,7 @@
   <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Data &amp; File Unit Converter – AfriWidget</title>
   
-  <meta name="description" content="Free online data & file unit converter tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
+  <meta name="description" content="Convert digital storage and file size units across Bits, Bytes, KB, MB, GB, TB, and PB in binary (1024) and decimal (1000) standards." />
   <link rel="canonical" href="https://afriwidget.com/data-file-unit-converter" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -37,7 +37,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Data &amp; File Unit Converter – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/data-file-unit-converter" />
-  <meta property="og:description" content="Convert bits, bytes, kilobytes, megabytes, gigabytes, and binary storage units in a fast browser-based data converter." />
+  <meta property="og:description" content="Convert digital storage data units from bits and bytes to gigabytes and terabytes." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
@@ -126,6 +126,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -152,6 +177,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Data &amp; File Unit Converter</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900 text-white py-12 px-4 text-center"><div class="max-w-3xl mx-auto"><span class="inline-block rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-1 text-sm font-semibold text-yellow-300 mb-4">Free Productivity Tool</span><h1 class="text-3xl sm:text-5xl font-extrabold mb-4">Data &amp; File Unit Converter</h1><p class="text-lg text-slate-300">Convert file sizes, bandwidth units, and digital storage values without confusing decimal and binary scales.</p></div></header>
   <main class="max-w-5xl mx-auto px-4 py-10">
     <section class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Convert digital storage units</h2><p class="text-slate-600 mb-6">Choose a value and compare decimal SI units with binary IEC units such as MiB and GiB.</p><form id="dataForm" class="grid gap-5 sm:grid-cols-3 items-end"><label class="block text-sm font-semibold">Amount<input id="dataAmount" type="number" min="0" step="any" value="1" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3" required></label><label class="block text-sm font-semibold">From<select id="dataFrom" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3"><option value="gigabyte">Gigabytes (GB)</option><option value="byte">Bytes (B)</option><option value="bit">Bits (bit)</option><option value="kilobyte">Kilobytes (KB)</option><option value="megabyte">Megabytes (MB)</option><option value="terabyte">Terabytes (TB)</option><option value="kibibyte">Kibibytes (KiB)</option><option value="mebibyte">Mebibytes (MiB)</option><option value="gibibyte">Gibibytes (GiB)</option><option value="tebibyte">Tebibytes (TiB)</option><option value="kilobit">Kilobits (kbit)</option><option value="megabit">Megabits (Mbit)</option><option value="gigabit">Gigabits (Gbit)</option><option value="terabit">Terabits (Tbit)</option></select></label><label class="block text-sm font-semibold">To<select id="dataTo" class="mt-2 w-full rounded-xl border-2 border-slate-200 bg-slate-50 p-3"><option value="megabyte">Megabytes (MB)</option><option value="byte">Bytes (B)</option><option value="gigabyte">Gigabytes (GB)</option><option value="gibibyte">Gibibytes (GiB)</option><option value="mebibyte">Mebibytes (MiB)</option><option value="terabyte">Terabytes (TB)</option><option value="bit">Bits (bit)</option><option value="kilobyte">Kilobytes (KB)</option><option value="kibibyte">Kibibytes (KiB)</option></select></label><button class="sm:col-span-3 rounded-xl bg-yellow-400 py-4 text-lg font-extrabold text-slate-950 hover:bg-yellow-300" type="submit">Convert Data</button></form></section>
@@ -230,6 +280,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

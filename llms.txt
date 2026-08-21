@@ -160,6 +160,26 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [IGCSE / A-Level to US GPA Converter](https://afriwidget.com/igcse-alevel-gpa-converter) — Convert IGCSE, AS-Level, and A-Level grades into an indicative US-style GPA.
 
+## UCAS Points Calculator
+
+[UCAS Points Calculator](https://afriwidget.com/ucas-points-calculator) — Calculate official UK UCAS Tariff points from A-Levels, BTECs, T-Levels, Scottish Highers, and International Baccalaureate (IB) for university admissions.
+
+## A-Level Grade Calculator
+
+[A-Level Grade Calculator](https://afriwidget.com/a-level-grade-calculator) — Calculate weighted overall marks across papers and components for Cambridge International, Edexcel, and AQA A-Level examinations, with grade boundary forecasting and target mark planning.
+
+## GCSE Grade Calculator
+
+[GCSE Grade Calculator](https://afriwidget.com/gcse-grade-calculator) — Calculate 9–1 average GCSE grade, official DfE Attainment 8 scores, and Sixth Form / College admissions eligibility with EBacc grouping.
+
+## Degree Classification Calculator
+
+[Degree Classification Calculator](https://afriwidget.com/degree-classification-calculator) — Calculate UK university undergraduate honours degree classification (First Class, Upper Second 2:1, Lower Second 2:2, Third) across Year 2 and Year 3 modular credits and weightings.
+
+## UK Student Finance & Loan Repayment Calculator
+
+[UK Student Finance & Loan Repayment Calculator](https://afriwidget.com/uk-student-finance-calculator) — Calculate means-tested UK Student Finance maintenance loan entitlements and forecast monthly Plan 5, Plan 2, and Postgraduate salary deductions.
+
 ## All AfriWidget Tools
 
 [All AfriWidget Tools](https://afriwidget.com/widgets) — Browse the complete collection of AfriWidget calculators and browser-based utilities.
@@ -415,3 +435,12 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## Word Counter
 
 [Word Counter](https://afriwidget.com/word-counter) — Count words, characters, sentences, paragraphs, and estimated reading time instantly.
+
+## GCSE Grade Calculator
+
+[GCSE Grade Calculator](https://afriwidget.com/gcse-grade-calculator) — Calculate 9–1 average GCSE grades, DfE Attainment 8 scores, and Sixth Form / College admissions eligibility with EBacc bucket breakdowns.
+
+## Degree Classification Calculator
+
+[Degree Classification Calculator](https://afriwidget.com/degree-classification-calculator) — Calculate UK undergraduate degree classification (First-Class, Upper Second 2:1, Lower Second 2:2, Third-Class) across modular Year 2 and Year 3 weightings.
+

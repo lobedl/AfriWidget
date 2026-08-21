@@ -121,6 +121,30 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="home-layout bg-slate-50 text-slate-800 font-sans">
 
@@ -160,38 +184,134 @@
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div>
   </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <span class="text-yellow-300 font-semibold inline-flex items-center gap-1.5" aria-current="page">
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </span>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-slate-400 font-medium truncate max-w-[280px] sm:max-w-none">Free Privacy-First Online Tools &amp; Calculators Directory</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <main>
 
 
   <!-- HERO -->
-  <section id="hero" class="relative overflow-hidden bg-slate-950 text-white px-4 py-20 sm:py-28">
-    <div class="absolute inset-0 yellow-grid opacity-60 pointer-events-none"></div>
-    <div class="absolute -right-24 -top-32 h-80 w-80 rounded-full bg-yellow-300/20 blur-3xl pointer-events-none"></div>
+  <section id="hero" class="relative overflow-hidden bg-slate-950 text-white px-4 py-16 sm:py-24 lg:py-28" style="background: radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.08) 0%, transparent 45%), radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 45%), #020617;">
+    <!-- Lightweight Geometric Grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+    
     <div class="relative max-w-6xl mx-auto">
       <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 rounded-full border border-yellow-300/40 bg-yellow-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[.18em] text-yellow-200">
-          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l4 4L19 6"/></svg>
-          Free tools. Private by design.
+        <!-- Live Trust & Privacy Badge -->
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm">
+          <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
+          <span>⚡ 100% Free • Private In-Browser Tools • Zero Data Storage</span>
         </div>
-        <h1 class="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">Free Online Calculators &amp; Utility Tools</h1>
-        <p class="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">AfriWidget is a free, privacy-first platform offering fast, browser-based calculators and utility tools for health, finance, education, real estate, business, and daily productivity — running 100% client-side with no sign-up required.</p>
-        <form id="toolSearchForm" class="search-ring mt-9 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/15 bg-white p-2 shadow-2xl" role="search">
-          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/></svg>
-          <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base" placeholder="Search BMI, GPA, invoice, mortgage..." aria-label="Search all AfriWidget tools" autocomplete="off">
-          <button type="submit" class="rounded-xl bg-yellow-300 px-5 py-3 text-sm font-extrabold text-slate-950 transition hover:bg-yellow-200">Find a tool</button>
+
+        <!-- Catchy, Smart & Professional Heading -->
+        <h1 class="mt-5 text-3xl font-black leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl text-white">
+          Smart Online Calculators &amp; Utilities
+          <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1 sm:mt-2">
+            Built for Speed &amp; Total Privacy.
+          </span>
+        </h1>
+
+        <!-- Welcoming & Clear Value Proposition -->
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          AfriWidget delivers verified, instant calculations for education, finance, health, business, and daily productivity. Everything runs 100% locally in your browser with zero registration and zero cloud tracking.
+        </p>
+
+        <!-- High-Impact Smart Search Bar -->
+        <form id="toolSearchForm" class="search-ring mt-7 flex max-w-2xl items-center gap-2 rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20" role="search">
+          <label for="toolSearch" class="sr-only">Search all AfriWidget tools</label>
+          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
+          </svg>
+          <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search 100+ tools (e.g. GPA, BMI, Mortgage, UCAS, Invoices...)" aria-label="Search all AfriWidget tools" autocomplete="off">
+          <button type="submit" class="flex items-center gap-1.5 rounded-xl bg-yellow-400 px-5 py-3 text-sm font-extrabold text-slate-950 transition-all hover:bg-yellow-300 active:scale-95 shadow-sm shrink-0">
+            <span>Find a tool</span>
+            <svg class="h-4 w-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
         </form>
-        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
-          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18m9-9H3"/></svg>No signup</span>
-          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Zm-7 9a7 7 0 0 1 14 0"/></svg>Runs in your browser</span>
-          <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 3 7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z"/></svg>Privacy-first</span>
+
+        <!-- Smart Quick Suggestions / Popular Search Chips -->
+        <div class="mt-3.5 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
+          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
+            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Popular:
+          </span>
+          <button type="button" data-quick-search="student finance" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🎓 Student Finance</button>
+          <button type="button" data-quick-search="gpa" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📊 GPA &amp; CGPA</button>
+          <button type="button" data-quick-search="ucas" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🇬🇧 UCAS Points</button>
+          <button type="button" data-quick-search="bmi" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💪 BMI &amp; BMR</button>
+          <button type="button" data-quick-search="mortgage" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💰 Mortgage &amp; Loan</button>
+          <button type="button" data-quick-search="invoice" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🧾 Invoice Builder</button>
+          <button type="button" data-quick-search="reading time" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">⏱️ Reading Time</button>
         </div>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="https://launchstag.com" target="_blank" rel="noopener" class="inline-block transition-opacity hover:opacity-90">
-            <img src="https://launchstag.com/badge-light.svg" alt="Featured on Launchstag" width="198" height="62" class="h-11 w-auto max-h-[48px] object-contain" loading="lazy" decoding="async" />
-          </a>
-          <a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff" class="inline-block transition-opacity hover:opacity-90">
-            <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" class="h-11 w-auto max-h-[48px] object-contain" loading="lazy" decoding="async" />
-          </a>
+
+        <!-- 4-Pillar Trust & Performance Grid -->
+        <div class="mt-8 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Instant Speed</div>
+              <div class="text-[11px] text-slate-400">Sub-millisecond</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">100% Private</div>
+              <div class="text-[11px] text-slate-400">In-browser engine</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Verified Math</div>
+              <div class="text-[11px] text-slate-400">Official syllabi</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
+            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">No Signups</div>
+              <div class="text-[11px] text-slate-400">Free forever</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured & Recognized Badges -->
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 pt-5 border-t border-slate-800/80">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Featured &amp; Recognized On:</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="https://launchstag.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800" title="Featured on Launchstag">
+              <img src="https://launchstag.com/badge-light.svg" alt="Featured on Launchstag" width="198" height="62" class="h-8 w-auto max-h-[36px] object-contain" loading="lazy" decoding="async" />
+            </a>
+            <a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800">
+              <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" class="h-8 w-auto max-h-[36px] object-contain" loading="lazy" decoding="async" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -244,6 +364,11 @@
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="nsfas tvet allowance estimator financial aid accommodation transport personal care" href="nsfas-tvet-allowance-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">NSFAS TVET Allowance Estimator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate personal care, accommodation, and travel allowance disbursements.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Estimate Allowances <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="icass calculator tvet south africa internal continuous assessment" href="icass-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h6"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">ICASS Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate weighted Internal Continuous Assessment for TVET planning.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate ICASS <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="igcse a level gpa converter international" href="igcse-alevel-gpa-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">IGCSE / A-Level GPA Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Translate IGCSE or A-Level grades into an indicative GPA range.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Launch tool <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="ucas points calculator tariff a level btec t level ib scottish highers admissions university uk" href="ucas-points-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇬🇧</span></span><span class="text-xs font-bold text-slate-400">UK &amp; Int'l</span></div><h4 class="text-lg font-extrabold text-slate-950">UCAS Points Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate UK UCAS Tariff points from A-Levels, BTECs, T-Levels, and IB for university admissions.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate UCAS points <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="a level grade calculator cambridge edexcel aqa component weight raw mark target" href="a-level-grade-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 7h6m-6 4h6m-6 4h6M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span><span class="text-xs font-bold text-slate-400">Education</span></div><h4 class="text-lg font-extrabold text-slate-950">A-Level Grade Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate weighted marks across exam components and forecast target marks for A* and A.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate A-Level mark <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="gcse grade calculator attainment 8 average grade progress sixth form admissions 9 1 scale uk" href="gcse-grade-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇬🇧</span></span><span class="text-xs font-bold text-slate-400">UK 9–1 GCSEs</span></div><h4 class="text-lg font-extrabold text-slate-950">GCSE Grade Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate average 9–1 GCSE grade, official Attainment 8 scores, and Sixth Form eligibility.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate GCSE Grade <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="degree classification calculator uk university first upper second 2 1 2 2 third modular weighting" href="degree-classification-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🎓</span></span><span class="text-xs font-bold text-slate-400">UK University</span></div><h4 class="text-lg font-extrabold text-slate-950">Degree Classification Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate UK university honours degree class (1st, 2:1, 2:2, 3rd) across Year 2 &amp; 3 module weightings.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Degree Class <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="uk student finance calculator maintenance loan repayment plan 5 plan 2 postgraduate slc student loans company sfe university tuition" href="uk-student-finance-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇬🇧</span></span><span class="text-xs font-bold text-slate-400">UK Student Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">UK Student Finance Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate means-tested maintenance loans and forecast Plan 5, Plan 2, and Postgraduate repayments.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Student Finance <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
 
@@ -823,6 +948,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
@@ -914,15 +1041,6 @@
     function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 
     onReady(() => {
-
-      const mobileMenuButton = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenuButton.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
-        mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      });
-
       // Homepage tool search and category filters
       const searchInput = document.getElementById('toolSearch');
       const searchForm = document.getElementById('toolSearchForm');
@@ -961,6 +1079,30 @@
         updateToolResults();
         document.getElementById('toolsMatrix').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+
+      // Quick Search Suggestions
+      document.querySelectorAll('[data-quick-search]').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          const query = chip.dataset.quickSearch || chip.textContent.trim();
+          searchInput.value = query;
+          // Reset category to all when using quick search
+          activeCategory = 'all';
+          filters.forEach(item => {
+            const isAll = item.dataset.filter === 'all';
+            item.classList.toggle('bg-slate-950', isAll);
+            item.classList.toggle('text-white', isAll);
+            item.classList.toggle('border-slate-950', isAll);
+            item.classList.toggle('bg-white', !isAll);
+            item.classList.toggle('text-slate-700', !isAll);
+            item.classList.toggle('border-slate-300', !isAll);
+          });
+          updateToolResults();
+          searchInput.focus();
+          document.getElementById('toolsMatrix').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
       filters.forEach(filter => filter.addEventListener('click', () => {
         activeCategory = filter.dataset.filter;
         filters.forEach(item => {

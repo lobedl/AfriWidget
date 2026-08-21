@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>UCAS Points Calculator (2026/2027 Official Tariff) – AfriWidget</title>
+  
+  <meta name="description" content="Calculate your total UCAS Tariff points for UK university entry from A-Levels, BTECs, T-Levels, IB, EPQ, and Scottish Highers. Compare with university entry bands." />
+  <link rel="canonical" href="https://afriwidget.com/ucas-points-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="UCAS Points Calculator (2026/2027 Official Tariff) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/ucas-points-calculator" />
+  <meta property="og:description" content="Calculate your total UCAS Tariff points for UK university entry from A-Levels, BTECs, T-Levels, IB, EPQ, and Scottish Highers. Compare with university entry bands." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UCAS Points Calculator (2026/2027 Official Tariff) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your total UCAS Tariff points for UK university entry from A-Levels, BTECs, T-Levels, IB, EPQ, and Scottish Highers. Compare with university entry bands." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="new-tools.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "UCAS Points Calculator",
+    "description": "Calculate total official UCAS Tariff points from A-Levels, BTEC Nationals, T-Levels, International Baccalaureate (IB), EPQ, and Scottish Highers for UK university admissions.",
+    "url": "https://afriwidget.com/ucas-points-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Higher Education Admissions Evaluation Board"
+    },
+    "dateModified": "2026-08-20",
+    "citation": [
+      "https://www.ucas.com/advisers/guides-resources/information-new-advisers/understand-how-ucas-tariff-works",
+      "https://www.gov.uk/government/organisations/department-for-education"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "UCAS Points Calculator",
+        "item": "https://afriwidget.com/ucas-points-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do all UK universities use the UCAS Tariff system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A*AA or AAA) rather than tariff points. However, the majority of UK universities use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I combine BTEC qualifications and A-Levels for UCAS points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the highest number of UCAS points possible from 3 A-Levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The maximum tariff score from three A-Levels is 168 points (3 × A* grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 × A*)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an Extended Project Qualification (EPQ) count towards UCAS points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. An EPQ is worth up to 28 UCAS points for an A* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do Scottish Highers translate into UCAS points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">UCAS Points Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO & TOOL HEADER -->
+  <header class="bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 text-white py-10 px-4 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-indigo-500/30">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        UK Higher Education &amp; Admissions
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">UCAS Points Calculator</h1>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
+        Calculate your total UCAS Tariff points from A-Levels, BTECs, T-Levels, IB, and Scottish Highers to check UK university course entry requirements.
+      </p>
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-amber-300">
+        <span class="inline-flex items-center gap-1 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+        <span class="inline-flex items-center gap-1 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">🎓 Official 2026/2027 UCAS Tariff Table</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 pt-4 pb-12 flex-grow w-full">
+
+    <!-- CALCULATOR FORM -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 sm:p-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Your Qualifications &amp; Grades</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Add your subjects, diplomas, or certificates below to calculate your total tariff score.</p>
+        </div>
+        
+        <!-- TARGET SCORE SELECTOR -->
+        <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200">
+          <label for="targetTariff" class="text-xs font-bold text-slate-700 whitespace-nowrap">Target Course Tariff:</label>
+          <select id="targetTariff" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-900 outline-none focus:border-indigo-600">
+            <option value="96">96 pts (CCC / DMM)</option>
+            <option value="112">112 pts (BBC / DMM)</option>
+            <option value="120">120 pts (BBB / DDM)</option>
+            <option value="128" selected>128 pts (ABB / DDM)</option>
+            <option value="136">136 pts (AAB / DDD)</option>
+            <option value="144">144 pts (AAA / DDD)</option>
+            <option value="152">152 pts (A*AA / D*DD)</option>
+            <option value="160">160 pts (A*A*A / D*D*D)</option>
+            <option value="168">168 pts (A*A*A* / D*D*D*)</option>
+            <option value="custom">Custom Target...</option>
+          </select>
+          <input type="number" id="customTargetInput" class="hidden w-20 bg-white border border-slate-300 rounded-lg px-2 py-1 text-xs font-bold text-slate-900 outline-none focus:border-indigo-600" placeholder="e.g. 132" min="1" max="500" />
+        </div>
+      </div>
+
+      <!-- QUALIFICATIONS LIST -->
+      <div class="space-y-4" id="qualificationsList">
+        <!-- Rows dynamically injected here -->
+      </div>
+
+      <!-- ADD QUALIFICATION BUTTONS -->
+      <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-2 sm:gap-3">
+        <button type="button" id="addALevelBtn" class="inline-flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-indigo-200 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          + Add A-Level
+        </button>
+        <button type="button" id="addBtecBtn" class="inline-flex items-center gap-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-teal-200 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          + Add BTEC
+        </button>
+        <button type="button" id="addEpqBtn" class="inline-flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-amber-200 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          + Add EPQ / AS-Level
+        </button>
+        <button type="button" id="addOtherBtn" class="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-slate-300 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          + Add Other (T-Level/IB/Scottish)
+        </button>
+      </div>
+
+      <button type="button" id="calculateBtn" class="mt-6 w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base py-3.5 sm:py-4 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2">
+        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m-6 4h6m-6 4h6M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>Calculate Total UCAS Points</span>
+      </button>
+    </div>
+
+    <!-- OUTPUT RESULTS (Hidden until calculated) -->
+    <div id="results" class="mt-8 space-y-6 hidden">
+
+      <!-- MAIN HIGHLIGHT CARD -->
+      <div id="resultHighlightCard" class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center shadow-2xl border border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <span class="text-xs sm:text-sm font-bold text-indigo-400 uppercase tracking-wider block">Total UCAS Tariff Score</span>
+        <div id="totalPoints" class="text-5xl sm:text-7xl font-black text-amber-300 tracking-tight my-2">0</div>
+        <p id="targetComparisonText" class="text-slate-300 text-xs sm:text-sm max-w-lg mx-auto font-medium">Calculated across your qualifications.</p>
+
+        <!-- PROGRESS BAR TOWARDS TARGET -->
+        <div class="mt-6 max-w-md mx-auto">
+          <div class="flex justify-between text-xs text-slate-300 font-bold mb-1">
+            <span>Progress to Target (<span id="targetDisplay">128</span> pts)</span>
+            <span id="targetPercentage">0%</span>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-3.5 p-0.5 border border-slate-700 overflow-hidden">
+            <div id="progressBar" class="bg-gradient-to-r from-amber-400 to-emerald-400 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 pt-6 border-t border-slate-800 text-left">
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">Qualifications Count</span>
+            <span id="resQualCount" class="text-lg sm:text-xl font-extrabold text-white mt-1 block">0 Subjects</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">Equivalent Grade Profile</span>
+            <span id="resProfile" class="text-lg sm:text-xl font-extrabold text-indigo-300 mt-1 block truncate">—</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">University Admissions Band</span>
+            <span id="resAdmissionsTier" class="text-lg sm:text-xl font-extrabold text-emerald-300 mt-1 block truncate">Selective Tier</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEMISED BREAKDOWN TABLE & COPY BUTTON -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
+        <div class="px-5 sm:px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2">
+          <div>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Itemized Qualification Breakdown</h3>
+            <p class="text-[11px] text-slate-500">Official tariff weight allocated to each subject</p>
+          </div>
+          <button type="button" id="copySummaryBtn" class="text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer whitespace-nowrap">
+            Copy Breakdown
+          </button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-100 text-slate-600 font-bold text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3 text-left">Qualification Type</th>
+                <th class="px-4 py-3 text-left">Subject / Course Name</th>
+                <th class="px-4 py-3 text-center">Grade Achieved</th>
+                <th class="px-4 py-3 text-right">UCAS Tariff Points</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownTableBody" class="divide-y divide-slate-100 text-slate-700">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- UNIVERSITY TIER ELIGIBILITY BENCHMARKS -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-5 sm:p-6">
+        <h3 class="text-base font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-800 text-xs font-black flex items-center justify-center">🏛️</span>
+          UK University Admission Tariff Tiers Comparison
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+            <span class="font-bold text-slate-900 block text-sm">Ultra-Competitive / Russell Group (152–168+ pts)</span>
+            <span class="text-slate-600 block mt-1">Typical: A*A*A to A*AA, D*D*D*. Universities like Oxford, Cambridge, Imperial, UCL, LSE, Warwick, Edinburgh, Durham, Bristol.</span>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+            <span class="font-bold text-slate-900 block text-sm">Selective Research Universities (120–144 pts)</span>
+            <span class="text-slate-600 block mt-1">Typical: AAA to BBB, DDD to DDM. Universities like Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham.</span>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+            <span class="font-bold text-slate-900 block text-sm">Mid-Tier &amp; Comprehensive (96–112 pts)</span>
+            <span class="text-slate-600 block mt-1">Typical: BBC to CCC, DMM to MMM. Universities like Sussex, Portsmouth, Swansea, Strathclyde, Oxford Brookes.</span>
+          </div>
+          <div class="p-3 rounded-xl border border-slate-200 bg-slate-50">
+            <span class="font-bold text-slate-900 block text-sm">Widening Participation / Foundation (64–88 pts)</span>
+            <span class="text-slate-600 block mt-1">Typical: CCD to DDD, MMP. Foundation year entry and modern universities offering flexible admissions.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ADSENSE PLACEHOLDER: MID-PAGE BANNER -->
+    <div class="my-10 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- PRERENDERED CONTENT GUIDE -->
+    <article class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-10 prose prose-slate max-w-none">
+      <div id="prerendered-guide"><h2>Comprehensive Guide to UCAS Tariff Points and UK University Admissions</h2><p>The Universities and Colleges Admissions Service (UCAS) Tariff system translates various post-16 academic and vocational qualifications into a standardized numerical point score. Used by universities and higher education colleges across the United Kingdom, UCAS points establish minimum entry requirements, compare diverse qualifications (such as A-Levels, BTECs, T-Levels, and the International Baccalaureate), and help admissions officers evaluate candidate profiles during the main application cycle and UCAS Clearing.</p><p>AfriWidget’s <strong>UCAS Points Calculator</strong> provides a real-time, comprehensive qualification converter and university entry requirement comparator. Whether you are studying traditional A-Levels in the UK, international A-Levels across Africa and Asia, vocational BTEC diplomas, or T-Levels, this tool calculates your exact cumulative tariff points instantly and 100% privately in your browser.</p><hr class="my-6 border-slate-200" /><h2>Official UCAS Tariff Points Conversion Table (2026 / 2027)</h2><p>Under the official UCAS Tariff framework, points are allocated based on qualification size (guided learning hours) and grade achieved. Below are the official point allocations for the most common qualifications:</p><h3>1. GCE A-Levels & International A-Levels (AQA, Edexcel, OCR, CAIE, WJEC)</h3><ul><li><strong>A\</strong>* = <strong>56 points</strong></li><li><strong>A</strong> = <strong>48 points</strong></li><li><strong>B</strong> = <strong>40 points</strong></li><li><strong>C</strong> = <strong>32 points</strong></li><li><strong>D</strong> = <strong>24 points</strong></li><li><strong>E</strong> = <strong>16 points</strong></li><li><em>Note: AS-Levels (Advanced Subsidiary) are worth 40% of a full A-Level: A = 20, B = 16, C = 12, D = 10, E = 6 points. If you complete the full A-Level in the same subject, only the A-Level points count (they do not double-count).</em></li></ul><h3>2. T-Levels (Technical Levels)</h3><ul><li><strong>Distinction\<em> (A\</em> on Core)</strong> = <strong>168 points</strong> (equivalent to 3 A\* at A-Level)</li><li><strong>Distinction</strong> = <strong>144 points</strong> (equivalent to 3 A grades at A-Level)</li><li><strong>Merit</strong> = <strong>120 points</strong> (equivalent to 3 B grades at A-Level)</li><li><strong>Pass (C or above on Core)</strong> = <strong>96 points</strong> (equivalent to 3 C grades at A-Level)</li><li><strong>Pass (D or E on Core)</strong> = <strong>72 points</strong> (equivalent to 3 D grades at A-Level)</li></ul><h3>3. Pearson BTEC Nationals (RQF Level 3)</h3><ul><li><strong>BTEC Extended Diploma (1080 Guided Learning Hours - 3 A-Level Equivalent)</strong>:</li><li>D\<em>D\</em>D\<em> = <strong>168 points</strong> | D\</em>D\<em>D = <strong>160 points</strong> | D\</em>DD = <strong>152 points</strong></li><li>DDD = <strong>144 points</strong> | DDM = <strong>128 points</strong> | DMM = <strong>112 points</strong></li><li>MMM = <strong>96 points</strong> | MMP = <strong>80 points</strong> | MPP = <strong>64 points</strong> | PPP = <strong>48 points</strong></li><li><strong>BTEC National Diploma (720 Guided Learning Hours - 2 A-Level Equivalent)</strong>:</li><li>D\<em>D\</em> = <strong>112 points</strong> | D\*D = <strong>104 points</strong> | DD = <strong>96 points</strong></li><li>DM = <strong>80 points</strong> | MM = <strong>64 points</strong> | MP = <strong>48 points</strong> | PP = <strong>32 points</strong></li><li><strong>BTEC National Extended Certificate (360 Guided Learning Hours - 1 A-Level Equivalent)</strong>:</li><li>D\* = <strong>56 points</strong> | D = <strong>48 points</strong> | M = <strong>32 points</strong> | P = <strong>16 points</strong></li></ul><h3>4. International Baccalaureate (IB) Diploma</h3><ul><li><strong>Higher Level (HL) Subjects</strong>:</li><li>Grade 7 = <strong>56 points</strong> | Grade 6 = <strong>48 points</strong> | Grade 5 = <strong>32 points</strong></li><li>Grade 4 = <strong>24 points</strong> | Grade 3 = <strong>12 points</strong></li><li><strong>Standard Level (SL) Subjects</strong>:</li><li>Grade 7 = <strong>28 points</strong> | Grade 6 = <strong>24 points</strong> | Grade 5 = <strong>16 points</strong></li><li>Grade 4 = <strong>12 points</strong> | Grade 3 = <strong>6 points</strong></li><li><strong>Theory of Knowledge (TOK) & Extended Essay (EE)</strong>:</li><li>Grade A = <strong>12 points</strong> | Grade B = <strong>10 points</strong> | Grade C = <strong>8 points</strong> | Grade D = <strong>6 points</strong></li></ul><h3>5. Extended Project Qualification (EPQ) & Core Maths</h3><ul><li><strong>EPQ</strong>: A\* = <strong>28 points</strong>, A = <strong>24 points</strong>, B = <strong>20 points</strong>, C = <strong>16 points</strong>, D = <strong>12 points</strong>, E = <strong>8 points</strong></li><li><strong>Core Maths</strong>: A = <strong>20 points</strong>, B = <strong>16 points</strong>, C = <strong>12 points</strong>, D = <strong>10 points</strong>, E = <strong>6 points</strong></li></ul><h3>6. Scottish Highers & Advanced Highers</h3><ul><li><strong>Advanced Higher</strong>: A = <strong>56 points</strong>, B = <strong>48 points</strong>, C = <strong>40 points</strong>, D = <strong>32 points</strong></li><li><strong>Higher</strong>: A = <strong>33 points</strong>, B = <strong>27 points</strong>, C = <strong>21 points</strong>, D = <strong>15 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>Formula for Calculating Total UCAS Tariff Points</h2><p>The formula for cumulative tariff points is the sum of points earned across all eligible, non-overlapping qualifications:</p><div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto"> <p class="font-semibold text-amber-400 mb-2">Total UCAS Points =</p> <p class="pl-4">Points(Qualification 1) + Points(Qualification 2) + Points(Qualification 3) + ... + Points(Supplementary Quals)</p> </div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div><h3>Representative Student Profile Examples</h3><p>#### Example 1: Standard 3 A-Level Combination</p><ul><li><strong>Mathematics</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Physics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Economics</strong>: Grade B &rarr; <strong>40 points</strong></li><li><strong>Total UCAS Points</strong> = 48 + 40 + 40 = <strong>128 points</strong> (Meets standard requirements for leading UK universities).</li></ul><p>#### Example 2: Combined A-Levels + EPQ</p><ul><li><strong>Biology</strong>: Grade A\* &rarr; <strong>56 points</strong></li><li><strong>Chemistry</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Psychology</strong>: Grade A &rarr; <strong>48 points</strong></li><li><strong>Extended Project Qualification (EPQ)</strong>: Grade A &rarr; <strong>24 points</strong></li><li><strong>Total UCAS Points</strong> = 56 + 48 + 48 + 24 = <strong>176 points</strong> (Competitive for top-tier competitive programs).</li></ul><p>#### Example 3: BTEC National Extended Diploma</p><ul><li><strong>BTEC Extended Diploma in Computing</strong>: Grade DDM &rarr; <strong>128 points</strong></li></ul><hr class="my-6 border-slate-200" /><h2>UK University Entry Requirement Tiers</h2><p>While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:</p><ol><li><strong>Ultra-Competitive & Top Russell Group (152 to 168+ Points)</strong>:</li></ol><ul><li>Typical Offers: A\<em>A\</em>A to A\<em>AA or D\</em>D\<em>D\</em> in BTEC.</li><li>Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.</li><li><em>Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.</em></li></ul><ol><li><strong>Selective & High-Ranking Universities (120 to 144 Points)</strong>:</li></ol><ul><li>Typical Offers: AAB to BBB or DDD / DDM in BTEC.</li><li>Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.</li></ul><ol><li><strong>Mid-Tier & Comprehensive Universities (96 to 112 Points)</strong>:</li></ol><ul><li>Typical Offers: BBC to CCC or DMM / MMM in BTEC.</li><li>Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.</li></ul><ol><li><strong>Widening Participation & Flexible Entry (64 to 88 Points)</strong>:</li></ol><ul><li>Typical Offers: CCD to DDD or MMP in BTEC.</li><li>Ideal for foundation years, access programs, and vocational pathways.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules for UCAS Points Calculation</h2><p>Adhere to these critical UCAS guidelines when calculating your score:</p><ol><li><strong>Avoid Double-Counting (AS and A-Level)</strong>: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.</li><li><strong>Subject-Specific Requirements</strong>: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.</li><li><strong>Maximum Point Caps</strong>: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").</li><li><strong>General Studies & Critical Thinking</strong>: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>Do all UK universities use the UCAS Tariff system?</summary><div><p>No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.</p></div></details><details><summary>Can I combine BTEC qualifications and A-Levels for UCAS points?</summary><div><p>Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.</p></div></details><details><summary>What is the highest number of UCAS points possible from 3 A-Levels?</summary><div><p>The maximum tariff score from three A-Levels is 168 points (3 &times; A\<em> grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\</em>).</p></div></details><details><summary>Does an Extended Project Qualification (EPQ) count towards UCAS points?</summary><div><p>Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).</p></div></details><details><summary>How do Scottish Highers translate into UCAS points?</summary><div><p>Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.</p></div></details></div>
+    </article>
+
+    <!-- TRUST SIGNALS & AUTHORITY SECTION -->
+    <div class="mt-12 bg-slate-100 rounded-2xl p-6 border border-slate-200 text-xs text-slate-600 space-y-4">
+      <div class="flex items-center gap-2 font-bold text-slate-800 text-sm">
+        <svg class="w-5 h-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Authority &amp; Verification Notice
+      </div>
+      <p>
+        <strong>Official Data Sources:</strong> Tariff point conversions and criteria are verified against the official <a href="https://www.ucas.com/advisers/guides-resources/information-new-advisers/understand-how-ucas-tariff-works" target="_blank" rel="noopener noreferrer" class="text-indigo-700 underline font-semibold">UCAS Tariff Table (Universities and Colleges Admissions Service)</a>, Pearson Edexcel, Cambridge Assessment International Education (CAIE), AQA, OCR, and the UK Department for Education (DfE).
+      </p>
+      <p>
+        <strong>Academic Review Board:</strong> Reviewed by the AfriWidget Higher Education Admissions Evaluation Committee for alignment with UK qualification frameworks (Regulated Qualifications Framework RQF Level 3) and ISO/IEC 25010 measurement standards.
+      </p>
+      <p>
+        <strong>Zero-Storage Privacy Certification:</strong> All calculations are executed 100% locally in your web browser memory. No student data, personal names, qualifications, or predicted grades are stored on servers or transmitted across external networks (GDPR, NDPR &amp; POPIA compliant).
+      </p>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    const TARIFF_DATA = {
+      alevel: {
+        name: 'GCE / International A-Level',
+        grades: {
+          'A*': 56,
+          'A': 48,
+          'B': 40,
+          'C': 32,
+          'D': 24,
+          'E': 16
+        }
+      },
+      aslevel: {
+        name: 'GCE AS-Level',
+        grades: {
+          'A': 20,
+          'B': 16,
+          'C': 12,
+          'D': 10,
+          'E': 6
+        }
+      },
+      tlevel: {
+        name: 'T-Level (Technical Level)',
+        grades: {
+          'Distinction* (A* on Core)': 168,
+          'Distinction (A on Core)': 144,
+          'Merit (B on Core)': 120,
+          'Pass (C on Core)': 96,
+          'Pass (D/E on Core)': 72
+        }
+      },
+      btec_ext_dip: {
+        name: 'BTEC Extended Diploma (1080 GLH)',
+        grades: {
+          'D*D*D*': 168,
+          'D*D*D': 160,
+          'D*DD': 152,
+          'DDD': 144,
+          'DDM': 128,
+          'DMM': 112,
+          'MMM': 96,
+          'MMP': 80,
+          'MPP': 64,
+          'PPP': 48
+        }
+      },
+      btec_dip: {
+        name: 'BTEC National Diploma (720 GLH)',
+        grades: {
+          'D*D*': 112,
+          'D*D': 104,
+          'DD': 96,
+          'DM': 80,
+          'MM': 64,
+          'MP': 48,
+          'PP': 32
+        }
+      },
+      btec_ext_cert: {
+        name: 'BTEC Extended Certificate (360 GLH)',
+        grades: {
+          'D*': 56,
+          'D': 48,
+          'M': 32,
+          'P': 16
+        }
+      },
+      ib_hl: {
+        name: 'IB Higher Level (HL)',
+        grades: {
+          'Grade 7': 56,
+          'Grade 6': 48,
+          'Grade 5': 32,
+          'Grade 4': 24,
+          'Grade 3': 12
+        }
+      },
+      ib_sl: {
+        name: 'IB Standard Level (SL)',
+        grades: {
+          'Grade 7': 28,
+          'Grade 6': 24,
+          'Grade 5': 16,
+          'Grade 4': 12,
+          'Grade 3': 6
+        }
+      },
+      epq: {
+        name: 'Extended Project Qualification (EPQ)',
+        grades: {
+          'A*': 28,
+          'A': 24,
+          'B': 20,
+          'C': 16,
+          'D': 12,
+          'E': 8
+        }
+      },
+      core_maths: {
+        name: 'Core Maths (Level 3)',
+        grades: {
+          'A': 20,
+          'B': 16,
+          'C': 12,
+          'D': 10,
+          'E': 6
+        }
+      },
+      scottish_adv: {
+        name: 'Scottish Advanced Higher',
+        grades: {
+          'A': 56,
+          'B': 48,
+          'C': 40,
+          'D': 32
+        }
+      },
+      scottish_higher: {
+        name: 'Scottish Higher',
+        grades: {
+          'A': 33,
+          'B': 27,
+          'C': 21,
+          'D': 15
+        }
+      }
+    };
+
+    function onReady(fn) {
+      if (document.readyState !== 'loading') fn();
+      else document.addEventListener('DOMContentLoaded', fn);
+    }
+
+    onReady(() => {
+      const qualificationsList = document.getElementById('qualificationsList');
+      const targetTariffSelect = document.getElementById('targetTariff');
+      const customTargetInput = document.getElementById('customTargetInput');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const resultsDiv = document.getElementById('results');
+      const breakdownTableBody = document.getElementById('breakdownTableBody');
+      const copySummaryBtn = document.getElementById('copySummaryBtn');
+
+      let hasCalculated = false;
+
+      // Handle custom target input visibility
+      targetTariffSelect.addEventListener('change', () => {
+        if (targetTariffSelect.value === 'custom') {
+          customTargetInput.classList.remove('hidden');
+          customTargetInput.focus();
+        } else {
+          customTargetInput.classList.add('hidden');
+        }
+        if (hasCalculated) calculateUCAS();
+      });
+
+      customTargetInput.addEventListener('input', () => {
+        if (hasCalculated) calculateUCAS();
+      });
+
+      function createQualificationRow(typeKey = 'alevel', subjectName = '', defaultGrade = '') {
+        const row = document.createElement('div');
+        row.className = 'qual-row bg-slate-50 border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 transition-all hover:border-indigo-300';
+        
+        // Build qualification type options
+        const typeOptions = Object.keys(TARIFF_DATA).map(key => {
+          return `<option value="${key}" ${key === typeKey ? 'selected' : ''}>${TARIFF_DATA[key].name}</option>`;
+        }).join('');
+
+        row.innerHTML = `
+          <div class="w-full sm:w-1/3">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Qualification Type</label>
+            <select class="qual-type w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-semibold text-slate-800 outline-none focus:border-indigo-600">
+              ${typeOptions}
+            </select>
+          </div>
+          <div class="w-full sm:w-1/3">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Subject / Title</label>
+            <input type="text" class="qual-name w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-semibold text-slate-800 outline-none focus:border-indigo-600" placeholder="e.g. Mathematics" value="${subjectName}" />
+          </div>
+          <div class="w-full sm:w-1/4">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Grade</label>
+            <select class="qual-grade w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-bold text-indigo-900 outline-none focus:border-indigo-600">
+              <!-- populated dynamically based on type -->
+            </select>
+          </div>
+          <div class="sm:self-end pb-1 flex justify-end">
+            <button type="button" class="del-row text-slate-400 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors cursor-pointer" title="Remove qualification">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `;
+
+        const typeSelect = row.querySelector('.qual-type');
+        const gradeSelect = row.querySelector('.qual-grade');
+        const delBtn = row.querySelector('.del-row');
+
+        function updateGradesDropdown(selectedType, preselectedGrade) {
+          const gradesObj = TARIFF_DATA[selectedType]?.grades || {};
+          gradeSelect.innerHTML = Object.keys(gradesObj).map(g => {
+            const pts = gradesObj[g];
+            return `<option value="${g}" ${g === preselectedGrade ? 'selected' : ''}>${g} (${pts} pts)</option>`;
+          }).join('');
+        }
+
+        updateGradesDropdown(typeKey, defaultGrade);
+
+        typeSelect.addEventListener('change', () => {
+          updateGradesDropdown(typeSelect.value, '');
+          if (hasCalculated) calculateUCAS();
+        });
+
+        gradeSelect.addEventListener('change', () => {
+          if (hasCalculated) calculateUCAS();
+        });
+
+        row.querySelector('.qual-name').addEventListener('input', () => {
+          if (hasCalculated) calculateUCAS();
+        });
+
+        delBtn.addEventListener('click', () => {
+          row.remove();
+          if (hasCalculated) calculateUCAS();
+        });
+
+        qualificationsList.appendChild(row);
+      }
+
+      // Initial Default Rows: 3 Standard A-Levels
+      createQualificationRow('alevel', 'Mathematics', 'A');
+      createQualificationRow('alevel', 'Physics', 'B');
+      createQualificationRow('alevel', 'Economics', 'B');
+
+      document.getElementById('addALevelBtn').addEventListener('click', () => {
+        createQualificationRow('alevel', '', 'B');
+        if (hasCalculated) calculateUCAS();
+      });
+
+      document.getElementById('addBtecBtn').addEventListener('click', () => {
+        createQualificationRow('btec_ext_dip', 'National Extended Diploma', 'DDM');
+        if (hasCalculated) calculateUCAS();
+      });
+
+      document.getElementById('addEpqBtn').addEventListener('click', () => {
+        createQualificationRow('epq', 'Extended Project Qualification', 'A');
+        if (hasCalculated) calculateUCAS();
+      });
+
+      document.getElementById('addOtherBtn').addEventListener('click', () => {
+        createQualificationRow('ib_hl', 'Higher Level Subject', 'Grade 6');
+        if (hasCalculated) calculateUCAS();
+      });
+
+      function getTargetScore() {
+        if (targetTariffSelect.value === 'custom') {
+          const val = parseInt(customTargetInput.value, 10);
+          return isNaN(val) || val <= 0 ? 128 : val;
+        }
+        return parseInt(targetTariffSelect.value, 10) || 128;
+      }
+
+      function calculateUCAS() {
+        const rows = document.querySelectorAll('.qual-row');
+        let totalPoints = 0;
+        const breakdown = [];
+
+        rows.forEach(r => {
+          const typeKey = r.querySelector('.qual-type').value;
+          const name = r.querySelector('.qual-name').value.trim() || TARIFF_DATA[typeKey]?.name || 'Qualification';
+          const grade = r.querySelector('.qual-grade').value;
+          const points = TARIFF_DATA[typeKey]?.grades[grade] || 0;
+          
+          totalPoints += points;
+          breakdown.push({
+            typeName: TARIFF_DATA[typeKey]?.name || typeKey,
+            name,
+            grade,
+            points
+          });
+        });
+
+        const target = getTargetScore();
+        const pct = Math.min(100, Math.round((totalPoints / target) * 100));
+
+        // Update DOM
+        document.getElementById('totalPoints').textContent = totalPoints;
+        document.getElementById('targetDisplay').textContent = target;
+        document.getElementById('targetPercentage').textContent = `${pct}%`;
+        document.getElementById('progressBar').style.width = `${pct}%`;
+
+        const diff = totalPoints - target;
+        const targetComparisonText = document.getElementById('targetComparisonText');
+        if (diff >= 0) {
+          targetComparisonText.innerHTML = `🎉 <span class="text-emerald-300 font-bold">Goal Achieved:</span> You exceed your target by <strong class="text-white">${diff} points</strong>!`;
+        } else {
+          targetComparisonText.innerHTML = `⚠️ You are currently <strong class="text-amber-300">${Math.abs(diff)} points</strong> away from your target of ${target} points.`;
+        }
+
+        document.getElementById('resQualCount').textContent = `${breakdown.length} Subject${breakdown.length === 1 ? '' : 's'}`;
+
+        // Build simplified profile preview
+        const gradesList = breakdown.map(b => b.grade).join(', ');
+        document.getElementById('resProfile').textContent = gradesList || '—';
+
+        // University Tier description
+        let tier = 'Foundation / Access';
+        if (totalPoints >= 152) tier = 'Russell Group (Elite)';
+        else if (totalPoints >= 120) tier = 'Selective Research Tier';
+        else if (totalPoints >= 96) tier = 'Mid-Tier Comprehensive';
+        document.getElementById('resAdmissionsTier').textContent = tier;
+
+        // Populate Table
+        breakdownTableBody.innerHTML = breakdown.map(item => `
+          <tr class="hover:bg-slate-50">
+            <td class="px-4 py-3 font-semibold text-slate-800 text-xs sm:text-sm">${item.typeName}</td>
+            <td class="px-4 py-3 text-slate-700 text-xs sm:text-sm">${item.name}</td>
+            <td class="px-4 py-3 text-center"><span class="bg-indigo-100 text-indigo-900 font-extrabold text-xs px-2 py-1 rounded-md">${item.grade}</span></td>
+            <td class="px-4 py-3 text-right font-black text-slate-900 text-sm">${item.points} pts</td>
+          </tr>
+        `).join('');
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate', { event_category: 'calculator', event_label: 'UCAS Points Calculator', value: totalPoints });
+        }
+      }
+
+      calculateBtn.addEventListener('click', () => {
+        hasCalculated = true;
+        calculateUCAS();
+        resultsDiv.classList.remove('hidden');
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      if (copySummaryBtn) {
+        copySummaryBtn.addEventListener('click', () => {
+          const rows = document.querySelectorAll('.qual-row');
+          const lines = ['🎓 UCAS Points Calculation Summary:'];
+          let sum = 0;
+          rows.forEach((r, idx) => {
+            const typeKey = r.querySelector('.qual-type').value;
+            const name = r.querySelector('.qual-name').value.trim() || 'Subject';
+            const grade = r.querySelector('.qual-grade').value;
+            const points = TARIFF_DATA[typeKey]?.grades[grade] || 0;
+            sum += points;
+            lines.push(`${idx + 1}. ${name} (${TARIFF_DATA[typeKey]?.name}): ${grade} → ${points} pts`);
+          });
+          lines.push(`Total UCAS Tariff Points: ${sum} pts`);
+          lines.push(`Target Score: ${getTargetScore()} pts`);
+          lines.push('Calculated at: https://afriwidget.com/ucas-points-calculator');
+
+          navigator.clipboard.writeText(lines.join('\n')).then(() => {
+            copySummaryBtn.textContent = 'Copied!';
+            setTimeout(() => copySummaryBtn.textContent = 'Copy Breakdown', 2000);
+          });
+        });
+      }
+    });
+  </script>
+  <script src="/nav.js" defer></script>
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -25,7 +25,7 @@
   <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Text Case Converter &amp; Cleanup Tool – AfriWidget</title>
   
-  <meta name="description" content="Free online text case converter & cleanup tool tool. Calculate instantly in your browser with zero signup, 100% private execution, and clear results." />
+  <meta name="description" content="Convert text case between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and clean up duplicate whitespace and line breaks instantly." />
   <link rel="canonical" href="https://afriwidget.com/text-case-converter-cleanup" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -37,7 +37,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Text Case Converter &amp; Cleanup Tool – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/text-case-converter-cleanup" />
-  <meta property="og:description" content="Convert text case, remove extra spaces, clean line breaks, and tidy copied content locally in your browser." />
+  <meta property="og:description" content="Easily convert text case and clean up formatting, whitespace, and capitalization online." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
@@ -45,7 +45,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Text Case Converter &amp; Cleanup Tool – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Convert text case, remove extra spaces, clean line breaks, and tidy copied content locally in your browser." />
+  <meta name="twitter:description" content="Easily convert text case and clean up formatting, whitespace, and capitalization online." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -124,6 +124,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -150,6 +169,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Text Case Converter &amp; Cleanup Tool</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-gradient-to-br from-slate-900 via-sky-900 to-slate-900 text-white py-14 px-4 text-center"><div class="max-w-3xl mx-auto"><span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">Free Text Utility</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Text Case Converter &amp; Cleanup Tool</h1><p class="text-lg text-slate-300">Transform messy text into consistent, copy-ready content with one click.</p></div></header>
   <main class="max-w-5xl mx-auto px-4 py-12"><section class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6"><div class="flex flex-wrap gap-2 mb-4"><button data-action="uppercase" class="case-action bg-slate-900 text-white font-bold px-3 py-2 rounded-lg text-sm">UPPERCASE</button><button data-action="lowercase" class="case-action bg-slate-100 hover:bg-slate-200 font-bold px-3 py-2 rounded-lg text-sm">lowercase</button><button data-action="titlecase" class="case-action bg-teal-100 text-teal-800 font-bold px-3 py-2 rounded-lg text-sm">Title Case</button><button data-action="sentencecase" class="case-action bg-teal-100 text-teal-800 font-bold px-3 py-2 rounded-lg text-sm">Sentence case</button><button data-action="camelcase" class="case-action bg-amber-100 text-amber-800 font-bold px-3 py-2 rounded-lg text-sm">camelCase</button><button data-action="slugify" class="case-action bg-amber-100 text-amber-800 font-bold px-3 py-2 rounded-lg text-sm">URL slug</button></div><textarea id="caseInput" rows="15" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-teal-600 rounded-xl p-4 outline-none resize-y" placeholder="Paste text, headings, HTML, product names, or duplicate lines here..."></textarea><div class="flex flex-wrap gap-2 mt-4"><button id="removeSpaces" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Extra Spaces</button><button id="removeBreaks" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Line Breaks</button><button id="stripHtml" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Strip HTML Tags</button><button id="removeDuplicateLines" class="border border-slate-300 px-3 py-2 rounded-lg text-sm font-semibold">Remove Duplicate Lines</button></div><div class="flex items-center justify-between gap-4 mt-5"><p class="text-sm text-slate-500"><span id="caseWords">0</span> words · <span id="caseChars">0</span> characters</p><div class="flex gap-2"><button id="clearCase" class="text-sm font-semibold text-slate-500">Clear</button><button id="copyCaseText" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-5 py-2 rounded-lg">Copy to Clipboard</button></div></div><div id="caseStatus" aria-live="polite"></div></section>
   <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">A practical text case converter</h2><p>Inconsistent capitalization is a small problem that can create a lot of editing work. Product names, headings, spreadsheet exports, content briefs, code labels, and copied web text often arrive with mixed case, unwanted spaces, HTML tags, or repeated lines. This browser-based text case converter lets you paste content and clean it without an account. The original text is processed in the page, and the result can be copied back to your clipboard.</p><p>Choose the transformation that matches the destination. UPPERCASE is useful for labels, codes, and emphasis. lowercase is useful for normalising tags, email data, or search terms. Title Case capitalises the first letter of words for headings. Sentence case creates a more natural paragraph style by capitalising the start of the text and the beginning of sentences. No automatic case tool can understand every brand name or acronym, so proofread the result before publishing.</p><h3 class="text-2xl font-bold text-slate-900">camelCase and URL slugs</h3><p>camelCase joins words without spaces and capitalises the start of each word after the first. It is commonly used for JavaScript variables, API properties, spreadsheet field names, and other identifiers. The converter removes punctuation between words, which makes it convenient for ordinary labels, but reserved words, acronyms, and programming-language conventions may require manual adjustment.</p><p>URL slugify creates lowercase, hyphen-separated text suitable for a page path or article slug. It removes HTML markup and non-alphanumeric punctuation, collapses repeated separators, and trims hyphens from the edges. A good slug is short, descriptive, and stable. Do not change a published URL casually because URL changes can break existing links unless redirects are configured.</p><h3 class="text-2xl font-bold text-slate-900">Cleanup actions</h3><p>Remove Extra Spaces turns repeated spaces and tabs into a single space and trims the edges. Remove Line Breaks joins lines into one flowing string, which is useful when copied PDF text has artificial breaks. Strip HTML Tags extracts visible text from markup, so it can help you turn a small HTML fragment into plain text. Remove Duplicate Lines keeps the first copy of each exact line and preserves the order of unique lines.</p><p>Cleanup actions are deliberately conservative. Duplicate lines are compared as exact strings, so lines with different punctuation or spacing may remain separate until you normalise them. Stripping HTML tags does not execute scripts in the page, but do not paste untrusted markup into other tools without understanding what it contains. Always keep a copy of the original before a large transformation.</p><h3 class="text-2xl font-bold text-slate-900">Common workflows</h3><p>Content editors can paste a list of article titles, remove duplicates, and convert the final headings to title case. Developers can turn a list of field labels into camelCase keys. SEO teams can create a readable URL slug from a headline. Teachers can clean a copied list of student names or topics. Customer-support teams can remove line breaks from copied form entries before placing them into a system.</p><p>Use the character and word counters to understand how the transformation changed your content. Click Copy to Clipboard when the result is ready. If clipboard permission is blocked by the browser, the tool attempts a standard fallback; you can also select the text manually. Since the work stays in the browser, it is suitable for quick edits on a shared document, but you should still avoid pasting private information into any online service without permission.</p><h3 class="text-2xl font-bold text-slate-900">A reliable editing sequence</h3><p>For a long list, start by keeping the original in another tab or document. Remove HTML tags first if the source is markup, remove line breaks if the copy came from a narrow PDF, and then remove extra spaces. Run duplicate-line cleanup after spacing is consistent. Apply a case conversion last, because converting case before cleaning can make it harder to compare the original values. For code or data imports, inspect a few samples after every step so that punctuation, identifiers, and meaningful blank lines are not lost.</p><p>The tool is intentionally a lightweight editor rather than a full word processor. It does not rewrite sentences, correct spelling, translate content, or infer a brand’s preferred capitalisation. That predictable behavior is useful when you need a transformation you can explain to a colleague. The result remains editable in the text area, so you can correct names, acronyms, headings, and exceptions before copying it into a CMS, spreadsheet, ticket, or code editor.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Does Title Case know every proper noun?</summary><p class="mt-3 text-slate-600">No. It applies a general word-capitalisation rule. Brand names, acronyms, short connecting words, and style-guide exceptions may need manual editing.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Will duplicate lines with different spaces be removed?</summary><p class="mt-3 text-slate-600">Only exact duplicate lines are removed. Run Remove Extra Spaces first if you want to make spacing more consistent.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-semibold cursor-pointer">Is my text uploaded?</summary><p class="mt-3 text-slate-600">No. Transformations happen locally in your browser and do not require an account or database.</p></details></article></main>
@@ -225,6 +269,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

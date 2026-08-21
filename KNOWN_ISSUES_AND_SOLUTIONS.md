@@ -15,6 +15,7 @@
 7. [Issue 7: Inconsistent Favicons Breaking Google Search Favicon Snippet](#issue-7-inconsistent-favicons-breaking-google-search-favicon-snippet)
 8. [Issue 8: Brand Color Inconsistency (Old Emerald Green vs Official Gold/Yellow)](#issue-8-brand-color-inconsistency-old-emerald-green-vs-official-goldyellow)
 9. [Issue 9: Empty Result Placeholder Cards Causing Mobile Layout Gaps](#issue-9-empty-result-placeholder-cards-causing-mobile-layout-gaps)
+10. [Issue 10: Missing Site Header, Logo, Navigation & Breadcrumbs on New Tools](#issue-10-missing-site-header-logo-navigation--breadcrumbs-on-new-tools)
 
 ---
 
@@ -177,3 +178,20 @@ Hardcoded placeholder cards in HTML that stayed visible with zero content before
 - Remove empty placeholder containers.
 - Wrap result sections in a `hidden` class until the user triggers calculation.
 - Display calculation output immediately following the form submission.
+
+---
+
+## Issue 10: Missing Site Header, Logo, Navigation & Breadcrumbs on New Tools
+
+### 🚨 The Problem:
+A newly created tool page loaded with the tool hero directly at the top of the viewport, completely missing the AfriWidget SVG logo, site brand name, top category navigation links, mobile hamburger menu, and visual breadcrumb trail.
+
+### 🔍 Root Cause:
+The page was created using an empty placeholder tag `<div id="nav-placeholder"></div>` or omitting `<nav>`. Because `build-prerender.js` searches for static `</nav>` tags to inject breadcrumbs, and `nav.js` only binds interactions to existing elements rather than injecting raw markup, the entire header was lost.
+
+### ✅ The Solution:
+1. **Never use placeholder divs**: Every `.html` page MUST contain the full static `<nav class="bg-slate-900 ...">` markup with SVG logo, desktop links, and mobile menu pre-rendered directly in HTML.
+2. **Visual Breadcrumb Bar**: Pre-render the visual breadcrumb bar immediately beneath `</nav>`.
+3. **Nav Script**: Add `<script src="/nav.js" defer></script>` before `</body>`.
+4. **Automated Build Guard**: `build-prerender.js` automatically checks all HTML files during `npm run build` and replaces any placeholder with the full pre-rendered navigation header and breadcrumbs.
+

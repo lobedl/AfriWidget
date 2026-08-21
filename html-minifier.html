@@ -25,7 +25,7 @@
   <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>HTML Minifier – AfriWidget</title>
   
-  <meta name="description" content="Free online html minifier tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
+  <meta name="description" content="Minify HTML code online by stripping unnecessary whitespace, comments, and empty lines to optimize website page load speed." />
   <link rel="canonical" href="https://afriwidget.com/html-minifier" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -37,7 +37,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="HTML Minifier – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/html-minifier" />
-  <meta property="og:description" content="Minify HTML in your browser by removing comments and unnecessary whitespace. Copy or download compact HTML privately with no signup." />
+  <meta property="og:description" content="Minify HTML markup to reduce page size and improve website PageSpeed performance." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
@@ -125,6 +125,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800">
   <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-xl"><div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4"><a href="/" class="flex items-center space-x-2">
@@ -151,6 +176,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">HTML Minifier</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-slate-950 px-4 py-14 text-center text-white"><div class="mx-auto max-w-3xl"><span class="text-sm font-bold uppercase tracking-widest text-yellow-300">Developer Utility</span><h1 class="mt-3 text-3xl font-extrabold sm:text-5xl">HTML Minifier</h1><p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">Remove unnecessary whitespace and comments from HTML to create a smaller, copy-ready document without sending your source anywhere.</p><span class="mt-5 inline-flex rounded-full border border-yellow-300/40 bg-yellow-300/10 px-4 py-2 text-sm font-extrabold text-yellow-100">⚡ 100% Free • No Signup • Private In-Browser Tool</span></div></header>
   <main class="mx-auto max-w-6xl px-4 py-10">
     <section class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7" aria-label="HTML minifier"><div class="mb-3 flex items-center justify-between"><label for="htmlInput" class="text-lg font-extrabold text-slate-950">HTML input</label><button id="clearHtml" class="text-sm font-bold text-slate-500 hover:text-red-600">Clear</button></div><textarea id="htmlInput" rows="16" class="w-full resize-y rounded-2xl border border-slate-300 bg-slate-50 p-4 font-mono text-sm leading-6 outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-100" placeholder="<!-- Your HTML here -->&#10;<div class=&quot;card&quot;>  <h1>Hello</h1>  </div>"></textarea><div class="mt-4 flex flex-wrap items-center gap-3"><label class="flex items-center gap-2 text-sm font-semibold text-slate-700"><input id="removeComments" type="checkbox" checked class="h-4 w-4 accent-yellow-400"> Remove comments</label><label class="flex items-center gap-2 text-sm font-semibold text-slate-700"><input id="minifyAssets" type="checkbox" checked class="h-4 w-4 accent-yellow-400"> Minify inline CSS &amp; JavaScript</label><button id="minifyHtml" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Minify</button><button id="copyMinified" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Copy</button><button id="downloadMinified" class="rounded-xl bg-yellow-400 px-5 py-3 font-extrabold text-slate-950 hover:bg-yellow-300">Download</button></div><p id="minifyStatus" class="mt-3 min-h-5 text-sm text-emerald-700" aria-live="polite"></p><div class="mt-6 grid gap-4 sm:grid-cols-3"><div class="rounded-2xl bg-slate-50 p-4"><strong id="beforeSize">0 B</strong><span class="block text-xs uppercase tracking-wider text-slate-500">Before</span></div><div class="rounded-2xl bg-slate-50 p-4"><strong id="afterSize">0 B</strong><span class="block text-xs uppercase tracking-wider text-slate-500">After</span></div><div class="rounded-2xl bg-yellow-50 p-4"><strong id="savedSize">0%</strong><span class="block text-xs uppercase tracking-wider text-slate-500">Saved</span></div></div><pre id="htmlOutput" class="mt-6 min-h-40 overflow-auto rounded-2xl bg-slate-950 p-4 font-mono text-xs leading-6 text-yellow-100"></pre></section>
@@ -249,6 +299,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

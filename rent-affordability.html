@@ -25,7 +25,7 @@
   <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Rent Affordability Calculator – AfriWidget</title>
   
-  <meta name="description" content="Free online rent affordability calculator tool. Calculate instantly in your browser with zero signup required, 100% private execution, and clear guidance." />
+  <meta name="description" content="Calculate how much rent you can afford based on the 30% rule and 40x gross monthly income benchmark, factoring in taxes and debt." />
   <link rel="canonical" href="https://afriwidget.com/rent-affordability" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -37,7 +37,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Rent Affordability Calculator – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/rent-affordability" />
-  <meta property="og:description" content="Calculate affordable rent and budget limits instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta property="og:description" content="Determine maximum affordable monthly rent based on your income, taxes, and debt obligations." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
@@ -45,9 +45,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rent Affordability Calculator – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Calculate affordable rent and budget limits instantly with our 100% free tool. No signup, no email required, and no hidden paywalls." />
+  <meta name="twitter:description" content="Determine maximum affordable monthly rent based on your income, taxes, and debt obligations." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
+  <script src="universal-ai.js" defer></script>
   <script src="footer.js" defer></script>
   <script type="application/ld+json">
 [
@@ -123,6 +124,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
@@ -159,6 +179,31 @@
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div>
   </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/real-estate" class="text-slate-400 hover:text-yellow-300 transition-colors">Real Estate Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Rent Affordability Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
   <section class="bg-gradient-to-br from-slate-900 via-amber-900 to-slate-900 text-white py-14 px-4 text-center">
     <div class="max-w-2xl mx-auto">
@@ -238,7 +283,7 @@
     </div>
 
     <!-- RESULTS -->
-    <div id="results" class="mt-8 space-y-6">
+    <div id="results" class="hidden mt-8 space-y-6">
 
       <!-- Affordable rent hero -->
       <div class="bg-gradient-to-br from-slate-900 to-amber-900 text-white rounded-2xl p-8 text-center shadow-xl">
@@ -277,11 +322,19 @@
         <div class="space-y-3" id="budgetBreakdown"></div>
       </div>
 
-      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-8 h-8 bg-amber-200 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      <!-- Dynamic Financial Advisor Insight & Housing Strategy Card -->
+      <div class="bg-amber-50 border border-amber-200/90 rounded-2xl p-6 sm:p-7 shadow-sm" id="rentAdviceCard">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-amber-200/80 text-amber-900 rounded-xl flex items-center justify-center flex-shrink-0 shadow-xs">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
           </div>
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Financial Advisor Insight &amp; Housing Strategy</h3>
+            <p class="text-xs text-amber-800 font-medium">Actionable cash flow assessment, affordability checks &amp; lease tips</p>
+          </div>
+        </div>
+        <div id="rentAdviceContent" class="text-sm text-slate-800 leading-relaxed space-y-3.5 pt-3 border-t border-amber-200/70" aria-live="polite">
+          <p class="text-slate-600">Enter your income and expenses above to generate personalized financial insights and rental recommendations.</p>
         </div>
       </div>
 
@@ -413,6 +466,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
@@ -568,13 +623,64 @@
             </div>`;
         });
 
+        // Dynamic Financial Advisor Insight & Housing Strategy Generation
+        const adviceContainer = document.getElementById('rentAdviceContent');
+        if (adviceContainer) {
+          const debtPct = (debts / gross) * 100;
+          const expensesPct = (expenses / gross) * 100;
+          const totalFixedObligations = debts + expenses;
+          const totalFixedPct = (totalFixedObligations / gross) * 100;
+          const discretionarySurplus = leftover - savings;
 
+          let healthBadge = '';
+          let coreVerdict = '';
+          let actionPoints = [];
 
+          if (practicalMax <= 0 || leftover < 0) {
+            healthBadge = '<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200">🚨 Severe Cash Flow Deficit</span>';
+            coreVerdict = `Your current monthly expenses ($${fmt(expenses)}) and debt obligations ($${fmt(debts)}) consume <strong>${totalFixedPct.toFixed(1)}%</strong> of your gross income. At this expense level, paying the standard 30% guideline rent ($${fmt(rule30)}/mo) would create an immediate monthly deficit of <strong>$${fmt(Math.abs(leftover))}</strong>.`;
+            actionPoints.push(`<strong>Immediate Housing Adjustment:</strong> Do not sign a lease at the $${fmt(rule30)} ceiling. Target a shared living space, co-living flatshare, or lower rent under $${fmt(Math.max(0, gross * 0.15))}/mo.`);
+            actionPoints.push(`<strong>Expense Restructuring:</strong> Prioritize debt consolidation or eliminating non-essential monthly subscriptions before committing to a new residential lease.`);
+            actionPoints.push(`<strong>Emergency Fund Warning:</strong> Without discretionary cash flow, any unexpected repair or medical cost could lead to high-interest debt.`);
+          } else if (practicalMax < rule30 * 0.85) {
+            healthBadge = '<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300">⚠️ Constrained Budget (Practical Max &lt; 30% Rule)</span>';
+            coreVerdict = `While the conventional 30% rule suggests you can spend up to <strong>$${fmt(rule30)}/month</strong>, your non-housing obligations ($${fmt(debts)} in debt + $${fmt(expenses)} in essentials) reduce your safe practical ceiling to <strong>$${fmt(practicalMax)}/month</strong>. Spending above $${fmt(practicalMax)} will compromise your monthly buffer.`;
+            actionPoints.push(`<strong>Stick to the Practical Ceiling:</strong> Filter your apartment search strictly for rentals priced between $${fmt(practicalMax * 0.75)} and $${fmt(practicalMax)}/mo.`);
+            actionPoints.push(`<strong>Factor in Move-in & Upfront Costs:</strong> Ensure you have accumulated 2–3 months of rent in liquid savings for utility deposits and agency fees (or 6–12 months advance rent if renting in cities like Lagos, Nairobi, or Accra).`);
+            actionPoints.push(`<strong>Debt Reduction Impact:</strong> Paying off just $200/month of debt would increase your monthly rent affordability ceiling to $${fmt(practicalMax + 200)}.`);
+          } else if (parseFloat(rti) <= 28) {
+            healthBadge = '<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">🟢 Excellent Housing Affordability</span>';
+            coreVerdict = `Your financial foundation is robust. At <strong>$${fmt(mainRent)}/month</strong> (${(mainRent/gross*100).toFixed(1)}% of gross income), you have a strong monthly cash buffer of <strong>$${fmt(leftover)}</strong> remaining after all debts and living essentials.`;
+            actionPoints.push(`<strong>Wealth Building Opportunity:</strong> With your target savings of $${fmt(savings)}/mo fully funded, you have an extra $${fmt(Math.max(0, discretionarySurplus))}/month in surplus cash flow to invest or build a 6-month emergency reserve.`);
+            actionPoints.push(`<strong>Lease Negotiation:</strong> Your healthy income-to-debt ratio (${debtPct.toFixed(1)}%) qualifies you for prime rental properties without requiring a guarantor or co-signer.`);
+            actionPoints.push(`<strong>Upgrade Flexibility:</strong> You can comfortably afford amenities like dedicated parking, in-unit laundry, or higher-efficiency climate control.`);
+          } else {
+            healthBadge = '<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-200">ℹ️ Moderate & Sustainable Housing Range</span>';
+            coreVerdict = `A monthly rent of <strong>$${fmt(mainRent)}</strong> aligns well with your income. Your debt-to-income load is manageable at <strong>${debtPct.toFixed(1)}%</strong>, leaving you with $${fmt(leftover)} in monthly leftover liquidity.`;
+            actionPoints.push(`<strong>Maintain a Fixed Utilities Buffer:</strong> Allocate 10–15% of your rental budget specifically for seasonal electric, water, heating, and internet bills.`);
+            actionPoints.push(`<strong>Savings Goal Protection:</strong> Your $${fmt(savings)}/month savings plan is ${discretionarySurplus >= 0 ? 'fully achievable' : 'slightly tight'} with this rent allocation.`);
+            actionPoints.push(`<strong>Lease Term Recommendation:</strong> Seek a 12-month fixed lease to lock in rent prices against annual inflation.`);
+          }
 
+          adviceContainer.innerHTML = `
+            <div class="flex items-center justify-between flex-wrap gap-2 pb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Financial Diagnosis</span>
+              ${healthBadge}
+            </div>
+            <p class="text-slate-800 leading-relaxed font-normal">${coreVerdict}</p>
+            <div class="mt-3 space-y-2 bg-white/80 rounded-xl p-4 border border-amber-200/80 shadow-2xs">
+              <p class="font-bold text-xs uppercase tracking-wider text-slate-700">Strategic Housing Recommendations:</p>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc list-inside">
+                ${actionPoints.map(pt => `<li>${pt}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        }
 
-
-        document.getElementById('results').style.display = 'block';
-        setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        const resultsEl = document.getElementById('results');
+        resultsEl.classList.remove('hidden');
+        resultsEl.style.display = 'block';
+        setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
       });
 
     });

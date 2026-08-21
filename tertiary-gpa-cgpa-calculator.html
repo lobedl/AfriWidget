@@ -182,6 +182,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -208,6 +225,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Tertiary GPA &amp; CGPA Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-gradient-to-br from-slate-900 via-indigo-900 to-teal-900 text-white py-14 px-4"><div class="max-w-4xl mx-auto"><p class="text-amber-300 font-semibold mb-3">Pan-African University Planning</p><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Tertiary GPA &amp; CGPA Calculator</h1><p class="text-lg text-slate-300">Track a semester GPA or estimate a cumulative CGPA across the 4.0 and 5.0 grading scales.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><div class="flex flex-col sm:flex-row gap-4 justify-between items-start mb-6"><div><h2 class="text-2xl font-bold text-slate-900">Enter your courses</h2><p class="text-slate-600 text-sm mt-1">Use one row per course, semester, or combined record.</p></div><label class="text-sm font-semibold">Scale<select id="gpaScale" class="block mt-1 bg-slate-50 border-2 border-slate-200 rounded-lg px-3 py-2"><option value="4">4.0 scale</option><option value="5">5.0 scale</option></select></label></div><div class="grid grid-cols-12 gap-2 text-xs uppercase font-bold text-slate-400 px-1 mb-2"><div class="col-span-5">Course</div><div class="col-span-3">Credits</div><div class="col-span-3">Grade</div></div><div id="courseRows" class="space-y-2"></div><div class="flex flex-col sm:flex-row gap-3 mt-6"><button id="addCourse" type="button" class="flex-1 border-2 border-slate-200 hover:border-teal-500 text-slate-700 font-bold py-3 rounded-xl">+ Add Course</button><button id="gpaCalculate" type="button" class="flex-1 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl shadow-lg">Calculate Now</button></div></div><div class="lg:col-span-2" aria-live="polite"><div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl"><p class="text-sm uppercase tracking-wider text-amber-300 font-bold">Current GPA / CGPA</p><div id="gpaResult" class="text-6xl font-extrabold text-amber-300 my-4">—</div><p id="gpaMessage" class="text-slate-300 leading-relaxed">Complete a course row to see your weighted result.</p></div></div></section>
   <article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">Calculate weighted GPA across common African grading scales</h2><p>University students in Nigeria, Ghana, Kenya, South Africa, Uganda, and other African countries often need to track academic performance across semesters. The exact grading policy varies by institution, but the central calculation is consistent: multiply each grade point by the course credit units, add those quality points, and divide by the total credits. This page makes that weighted average visible without a spreadsheet or account.</p><p>Choose the 4.0 scale when your institution maps A to 4, B to 3, C to 2, D to 1, and F to 0. Choose the 5.0 scale when your institution maps A to 5, B to 4, C to 3, D to 2, E to 1, and F to 0. The scale selector updates every grade list. Always confirm the mapping in your student handbook because some institutions use plus or minus grades, percentage bands, or a different conversion.</p><h3 class="text-2xl font-bold text-slate-900">GPA versus CGPA</h3><p>GPA usually describes performance in one semester or academic term. CGPA means cumulative grade point average and combines more than one term. You can estimate a CGPA by entering all the graded courses from the periods you want to combine, including each course’s credit units. If you already know a previous CGPA and credit total, use the same quality-point method: previous CGPA multiplied by previous credits, plus new quality points, divided by all credits.</p><h3 class="text-2xl font-bold text-slate-900">Why credit units matter</h3><p>A three-credit course has more influence than a one-credit course because it represents more academic workload. For example, an A in a three-credit course contributes three times the grade points of an A in a one-credit course. Enter credit hours exactly as shown on your registration or transcript. Do not use the number of subjects as a substitute for credits, and do not include a course that your institution excludes from GPA calculations.</p><h3 class="text-2xl font-bold text-slate-900">How to interpret the result</h3><p>The result is a planning estimate for the courses entered. It can help you understand whether a target such as 3.0, 3.5, or a first-class benchmark is within reach, but academic standing rules differ. Schools may treat repeats, withdrawals, pass/fail courses, carryovers, and transferred credits differently. Compare the number with your official portal or transcript before making decisions about graduation, scholarships, probation, or postgraduate applications.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I use this for a 5.0 university?</summary><p class="mt-3">Yes. Select the 5.0 scale and enter A, B, C, D, E, or F with the correct credit units.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can I calculate one semester GPA?</summary><p class="mt-3">Yes. Enter only the courses from that semester. To estimate a cumulative result, enter courses from all periods you want included.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Is the result official?</summary><p class="mt-3">No. It is a transparent estimate. Your institution’s transcript and academic regulations are the final authority.</p></details></article>
@@ -336,6 +378,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

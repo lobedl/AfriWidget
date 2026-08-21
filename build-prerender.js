@@ -7,6 +7,17 @@ function escapeHtml(value) {
   });
 }
 
+function unescapeHtml(str) {
+  return String(str || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+}
+
 function formatInline(text) {
   if (!text) return '';
   return String(text)
@@ -178,6 +189,8 @@ const sharedFooterMarkup = `<footer class="bg-slate-900 text-slate-300 pt-14 pb-
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
@@ -247,6 +260,196 @@ const sharedFooterMarkup = `<footer class="bg-slate-900 text-slate-300 pt-14 pb-
   </div>
 </footer>`;
 
+// Category Mapping for Breadcrumb Generation
+const categoryMap = {
+  // Health Tools
+  "bmi-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "body-fat-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "daily-calorie-needs-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "calorie-burn-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "calorie-deficit-planner.html": { category: "Health Tools", categoryUrl: "/health" },
+  "ideal-weight-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "healthy-weight-range-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "pediatric-dosage-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "ovulation-cycle-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "water-intake-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "hydration-reminder-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "blood-donation-eligibility-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+  "macro-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
+
+  // Education & Admissions Tools
+  "gpa-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "tertiary-gpa-cgpa-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "wassce-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "bece-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "bece-cssps-placement-estimator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "jamb-utme-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "kcse-kuccps-cluster-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "kcse-eligibility-tier-checker.html": { category: "Education Tools", categoryUrl: "/education" },
+  "south-african-aps-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "matric-sba-exam-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "icass-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "south-african-tvet-nated-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "tvet-exam-target-mark-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "tvet-ncv-pass-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "nsfas-tvet-allowance-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "igcse-alevel-gpa-converter.html": { category: "Education Tools", categoryUrl: "/education" },
+  "ucas-points-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "a-level-grade-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
+  "olevel-subject-combination-checker.html": { category: "Education Tools", categoryUrl: "/education" },
+  "university-cutoff-eligibility-checker.html": { category: "Education Tools", categoryUrl: "/education" },
+
+  // Finance Tools
+  "loan-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "mortgage-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "compound-interest.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "savings-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "savings-goal-timeline-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "debt-payoff-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "roi-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "paypal-fee-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "currency-converter.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "percentage-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "hourly-to-salary.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "remote-salary-converter.html": { category: "Finance Tools", categoryUrl: "/finance" },
+  "creator-sponsorship-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
+
+  // Business & Freelance Tools
+  "profit-margin-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "break-even-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "startup-burn-rate-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "startup-cost-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "freelance-rate-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "freelance-hourly-rate-pricing-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "pricing-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "invoice-receipt-generator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "website-valuation-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+  "reverse-adsense-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
+
+  // Real Estate Tools
+  "rent-affordability.html": { category: "Real Estate Tools", categoryUrl: "/real-estate" },
+
+  // Category Hubs
+  "health.html": { isHub: true, title: "Health & Wellness Tools" },
+  "education.html": { isHub: true, title: "Education & Academic Tools" },
+  "finance.html": { isHub: true, title: "Finance & Wealth Tools" },
+  "productivity.html": { isHub: true, title: "Productivity & Utility Tools" },
+  "business.html": { isHub: true, title: "Business & Freelance Tools" },
+  "real-estate.html": { isHub: true, title: "Real Estate & Housing Tools" },
+  "admissions.html": { isHub: true, title: "African Admissions Calculators", category: "Education Tools", categoryUrl: "/education" },
+  "widgets.html": { isHub: true, title: "All Tools Directory" },
+  "success-stories.html": { isHub: true, title: "User Success Stories" },
+
+  // Informative & Policy Pages
+  "about.html": { isHub: true, title: "About AfriWidget" },
+  "contact.html": { isHub: true, title: "Contact Us" },
+  "privacy-policy.html": { isHub: true, title: "Privacy Policy" },
+  "terms.html": { isHub: true, title: "Terms of Service" },
+  "cookie-policy.html": { isHub: true, title: "Cookie Policy" },
+  "adsense-disclaimer.html": { isHub: true, title: "AdSense & Advertising Disclaimer" },
+  "faq.html": { isHub: true, title: "Frequently Asked Questions" },
+  "404.html": { isHub: true, title: "Page Not Found (404)" },
+
+  // Home
+  "index.html": { isHome: true, title: "Free Online Tools & Calculators" }
+};
+
+function generateBreadcrumbHtml(filename, content) {
+  const slug = filename.replace(/\.html$/, '');
+  const config = categoryMap[filename] || { category: "Productivity Tools", categoryUrl: "/productivity" };
+
+  if (config.isHome) {
+    return `  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <span class="text-yellow-300 font-semibold inline-flex items-center gap-1.5" aria-current="page">
+              <svg class="w-3.5 h-3.5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </span>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-slate-400 font-medium truncate max-w-[280px] sm:max-w-none">Free Privacy-First Online Tools &amp; Calculators Directory</li>
+        </ol>
+      </nav>
+    </div>
+  </div>`;
+  }
+
+  // Extract title
+  let title = config.title;
+  if (!title) {
+    const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    if (h1Match) {
+      title = unescapeHtml(h1Match[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+    }
+  }
+  if (!title) {
+    const titleMatch = content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+    if (titleMatch) {
+      title = unescapeHtml(titleMatch[1].replace(/–.*$/, '').replace(/\|.*$/, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+    }
+  }
+  if (!title) {
+    title = slug.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+  }
+
+  const displayTitle = escapeHtml(title);
+  const categoryTitle = config.category ? escapeHtml(config.category) : '';
+
+  if (config.isHub && !config.category) {
+    return `  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">${displayTitle}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>`;
+  }
+
+  return `  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="${config.categoryUrl}" class="text-slate-400 hover:text-yellow-300 transition-colors">${categoryTitle}</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">${displayTitle}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>`;
+}
+
 // 1. Process markdown guide content
 const contentDir = path.join(process.cwd(), 'content');
 let tools = [
@@ -275,17 +478,24 @@ tools.forEach(({ htmlFile, mdKey }) => {
   let htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
   const guideRegex = /(<section\s+id="toolGuide"[^>]*>)([\s\S]*?)(<\/section>)/i;
+  const prerenderedDivRegex = /(<div\s+id="prerendered-guide"[^>]*>)([\s\S]*?)(<\/div>)/i;
+
   if (guideRegex.test(htmlContent)) {
     htmlContent = htmlContent.replace(guideRegex, (match, p1, p2, p3) => `${p1}${renderedHtml}${p3}`);
+    fs.writeFileSync(htmlPath, htmlContent, 'utf8');
+    console.log(`Successfully updated prerendered guide in ${htmlFile}`);
+  } else if (prerenderedDivRegex.test(htmlContent)) {
+    htmlContent = htmlContent.replace(prerenderedDivRegex, (match, p1, p2, p3) => `${p1}${renderedHtml}${p3}`);
     fs.writeFileSync(htmlPath, htmlContent, 'utf8');
     console.log(`Successfully updated prerendered guide in ${htmlFile}`);
   }
 });
 
-// 2. Prerender complete shared footer and navigation into ALL HTML files to eliminate Cumulative Layout Shift (CLS)
+// 2. Prerender complete shared footer, navigation, and breadcrumbs into ALL HTML files
 const allHtmlFiles = fs.readdirSync(process.cwd()).filter(f => f.endsWith('.html'));
 let footersUpdated = 0;
 let navsUpdated = 0;
+let breadcrumbsUpdated = 0;
 
 const navItems = [
   ['/', 'Home'],
@@ -376,13 +586,6 @@ allHtmlFiles.forEach(htmlFile => {
     return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
   }).join('\n        ');
 
-  const desktopNavRegex = /(<div[^>]*class=["'][^"']*\b(?:hidden\b[^"']*\bmd:flex|md:flex\b[^"']*\bhidden)\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i;
-  if (desktopNavRegex.test(content)) {
-    content = content.replace(desktopNavRegex, (match, p1, p2, p3) => `${p1}\n        ${desktopLinksHtml}\n      ${p3}`);
-    updated = true;
-  }
-
-  // Pre-render Mobile Navigation Menu
   const mobileLinksHtml = navItems.map(([href, label]) => {
     const isCurrent = href === pageSlug || (href === '/' && pageSlug === '/');
     const classes = 'block py-2 hover:text-yellow-300 transition-colors' + (isCurrent ? ' text-yellow-300 font-bold' : '');
@@ -391,9 +594,69 @@ allHtmlFiles.forEach(htmlFile => {
 
   const mobileMenuHtml = `<div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">\n    ${mobileLinksHtml}\n  </div>`;
 
+  const fullNavHtml = `  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        ${desktopLinksHtml}
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    ${mobileMenuHtml}
+  </nav>`;
+
+  // 1. If nav-placeholder is present, replace with full navigation
+  if (content.includes('<div id="nav-placeholder"></div>')) {
+    content = content.replace('<div id="nav-placeholder"></div>', fullNavHtml);
+    updated = true;
+  }
+
+  // 2. If no <nav tag exists, inject full navigation right after <body ...>
+  if (!content.includes('<nav')) {
+    content = content.replace(/(<body[^>]*>)/i, `$1\n${fullNavHtml}`);
+    updated = true;
+  }
+
+  const desktopNavRegex = /(<div[^>]*class=["'][^"']*\b(?:hidden\b[^"']*\bmd:flex|md:flex\b[^"']*\bhidden)\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i;
+  if (desktopNavRegex.test(content)) {
+    content = content.replace(desktopNavRegex, (match, p1, p2, p3) => `${p1}\n        ${desktopLinksHtml}\n      ${p3}`);
+    updated = true;
+  }
+
+  // Pre-render Mobile Navigation Menu
   const mobileNavRegex = /<div\s+id=["']mobileMenu["'][^>]*>([\s\S]*?)<\/div>/i;
   if (mobileNavRegex.test(content)) {
     content = content.replace(mobileNavRegex, mobileMenuHtml);
+    updated = true;
+  }
+
+  // Pre-render Shared Breadcrumbs
+  const breadcrumbHtml = generateBreadcrumbHtml(htmlFile, content);
+  content = content.replace(/\s*<!-- Visual Breadcrumb Navigation -->[\s\S]*?<\/div>\s*<\/div>/g, '');
+
+  const navCloseIndex = content.indexOf('</nav>');
+  if (navCloseIndex !== -1) {
+    const beforeNav = content.slice(0, navCloseIndex + 6);
+    const afterNav = content.slice(navCloseIndex + 6);
+    content = beforeNav + '\n' + breadcrumbHtml + afterNav;
+    updated = true;
+    breadcrumbsUpdated++;
+  }
+
+  // Ensure nav.js is included
+  if (!content.includes('nav.js')) {
+    content = content.replace('</body>', '  <script src="/nav.js" defer></script>\n</body>');
     updated = true;
   }
 
@@ -415,5 +678,4 @@ allHtmlFiles.forEach(htmlFile => {
   }
 });
 
-console.log(`Prerendered navigation and shared footer in ${navsUpdated} HTML files.`);
-
+console.log(`Prerendered navigation, breadcrumbs (${breadcrumbsUpdated} files), and shared footer in ${navsUpdated} HTML files.`);

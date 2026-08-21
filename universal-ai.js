@@ -11,6 +11,32 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   const FALLBACK_MESSAGE = 'Realtime AI is unavailable right now. Please try again later.';
   const endpoint = window.AFRIWIDGET_AI_ENDPOINT || '/.netlify/functions/groq-proxy';
 
+  function cleanClientAIOutput(rawText) {
+    if (!rawText || typeof rawText !== 'string') return '';
+    let text = rawText;
+    // Strip complete <think>...</think> blocks
+    text = text.replace(/<think>[\s\S]*?<\/think>/gi, '');
+    // Strip unclosed <think> blocks (e.g. if token limit cut off before </think>)
+    text = text.replace(/<think>[\s\S]*$/gi, '');
+    // Strip stray closing </think> tags
+    text = text.replace(/<\/think>/gi, '');
+    // Strip common reasoning preambles
+    text = text.replace(/^(Here'?s (a|the) (thinking process|rationale|analysis):?[\s\S]*?\n\n)/i, '');
+    text = text.replace(/^(Thinking Process:?[\s\S]*?\n\n)/i, '');
+    // Clean any accidental LaTeX syntax
+    text = text.replace(/\\(?:text|mathrm|mathbf)\{([^}]+)\}/g, '$1');
+    text = text.replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 / $2)');
+    text = text.replace(/\\(?:times|cdot)/g, '×');
+    text = text.replace(/\\(?:div)/g, '÷');
+    text = text.replace(/\\(?:approx)/g, '≈');
+    text = text.replace(/\\(?:leq)/g, '≤');
+    text = text.replace(/\\(?:geq)/g, '≥');
+    text = text.replace(/\$\$([\s\S]*?)\$\$/g, '$1');
+    text = text.replace(/\$([^$]+)\$/g, '$1');
+    text = text.replace(/\\(?:left|right|big|Big)[()\[\]|.]?/g, '');
+    return text.trim() || FALLBACK_MESSAGE;
+  }
+
   const PAGE_CONFIGS = {
     'age-calculator': { category: 'health', result: ['#ageResult', '#ageSummary'], host: '#ageResult' },
     'bece-aggregate-calculator': { category: 'education', result: ['#aggregateResult', '#resultMessage'], host: '#aggregateResult' },
@@ -30,6 +56,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'break-even-calculator': { category: 'business', result: ['#beUnits', '#beRevenue', '#contribMargin'], host: '#results' },
     'macro-calculator': { category: 'health', result: ['#dailyCalories', '#proteinGrams', '#carbsGrams', '#fatsGrams'], host: '#results' },
     'gpa-calculator': { category: 'education', result: ['#results'], host: '#results' },
+    'gcse-grade-calculator': { category: 'education', result: ['#resAverageGrade', '#resAttainment8', '#resPassCount', '#resTopGradeCount'], host: '#results' },
+    'degree-classification-calculator': { category: 'education', result: ['#resClassificationTitle', '#resFinalMark', '#resY2Avg', '#resY3Avg'], host: '#results' },
+    'ucas-points-calculator': { category: 'education', result: ['#totalPoints', '#resQualCount', '#resProfile', '#resAdmissionsTier'], host: '#results' },
+    'a-level-grade-calculator': { category: 'education', result: ['#finalGradeDisplay', '#weightedPercentageDisplay', '#resProfileCombo', '#resProfileTariff'], host: '#results' },
     'hourly-to-salary': { category: 'finance', result: ['#results'], host: '#results' },
     'igcse-alevel-gpa-converter': { category: 'education', result: ['#igcseGpaResult', '#igcseGpaMessage'], host: '#igcseGpaResult' },
     'image-resizer-webp-converter': { category: 'productivity', result: ['#imageStatus', '#imageDimensions'], host: '#imageStatus' },
@@ -59,7 +89,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'percentage-calculator': { category: 'finance', result: ['#results'], host: '#results' },
     'profit-margin-calculator': { category: 'finance', result: ['#results'], host: '#results' },
     'reading-time-speech-estimator': { category: 'productivity', result: ['#readingWords', '#silentTime'], host: '#readingWords' },
-    'rent-affordability': { category: 'finance', result: ['#results'], host: '#results' },
+    'rent-affordability': { category: 'finance', result: ['#maxRent', '#practicalMax', '#leftover', '#rentAdviceContent'], host: '#results' },
     'robots-txt-generator': { category: 'productivity', result: ['#robotsOutput', '#robotsStatus'], host: '#robotsOutput' },
     'seo-meta-generator': { category: 'productivity', result: ['#generatedTags', '#previewStatus'], host: '#generatedTags' },
     'south-african-aps-calculator': { category: 'education', result: ['#apsResult', '#apsMessage'], host: '#apsResult' },
@@ -197,7 +227,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       });
       if (!response.ok) return FALLBACK_MESSAGE;
       const payload = await response.json();
-      return payload?.ok && payload.text ? payload.text : (payload?.message || FALLBACK_MESSAGE);
+      const rawText = payload?.ok && payload.text ? payload.text : (payload?.message || FALLBACK_MESSAGE);
+      return cleanClientAIOutput(rawText);
     } catch {
       return FALLBACK_MESSAGE;
     }
@@ -232,16 +263,18 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
 
     let targetElement = null;
     if (config.host) {
-      const hostEl = $(config.host);
-      if (hostEl) {
-        targetElement = hostEl.closest('main > section') || hostEl.closest('section') || hostEl.closest('.tool-card') || hostEl.closest('main');
-      }
+      targetElement = $(config.host);
     }
     if (!targetElement) {
-      targetElement = $('main > section') || $('main') || document.body;
+      targetElement = $('#results') || $('#result') || $('main > .bg-white:last-of-type') || $('main > div:first-of-type');
     }
 
-    targetElement.insertAdjacentElement('afterend', assistant);
+    if (targetElement) {
+      targetElement.insertAdjacentElement('afterend', assistant);
+    } else {
+      const mainEl = $('main') || document.body;
+      mainEl.appendChild(assistant);
+    }
     return assistant;
   }
 

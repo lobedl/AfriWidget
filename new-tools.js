@@ -7,7 +7,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   }
 
   function number(id) {
-    var value = parseFloat(byId(id).value);
+    var el = byId(id);
+    if (!el) return 0;
+    var value = parseFloat(el.value);
     return Number.isFinite(value) ? value : 0;
   }
 
@@ -133,11 +135,15 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       var total = { years: 0, months: 0, days: 0 };
       var valid = 0;
       [1, 2, 3].forEach(function (index) {
-        var startValue = byId('jobStart' + index).value;
-        var endValue = byId('jobEnd' + index).value;
+        var startEl = byId('jobStart' + index);
+        var endEl = byId('jobEnd' + index);
+        var curEl = byId('jobCurrent' + index);
+        if (!startEl) return;
+        var startValue = startEl.value;
+        var endValue = endEl ? endEl.value : '';
         if (!startValue) return;
         var start = new Date(startValue + 'T00:00:00');
-        var end = byId('jobCurrent' + index).checked ? new Date() : new Date((endValue || startValue) + 'T00:00:00');
+        var end = (curEl && curEl.checked) ? new Date() : new Date((endValue || startValue) + 'T00:00:00');
         if (end <= start) return;
         addDuration(total, dateDifference(start, end));
         valid += 1;
@@ -154,10 +160,14 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       show('experienceResult');
     });
     [1, 2, 3].forEach(function (index) {
-      byId('jobCurrent' + index).addEventListener('change', function () {
-        byId('jobEnd' + index).disabled = this.checked;
-        if (this.checked) byId('jobEnd' + index).value = '';
-      });
+      var curEl = byId('jobCurrent' + index);
+      var endEl = byId('jobEnd' + index);
+      if (curEl && endEl) {
+        curEl.addEventListener('change', function () {
+          endEl.disabled = this.checked;
+          if (this.checked) endEl.value = '';
+        });
+      }
     });
   }
 

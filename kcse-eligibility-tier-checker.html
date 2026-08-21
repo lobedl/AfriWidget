@@ -180,6 +180,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -206,6 +229,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">KCSE Eligibility Tier Checker</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-slate-900 text-white px-4 py-16"><div class="max-w-5xl mx-auto"><span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">Kenya Academic Planning Tool</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">KCSE Eligibility Tier Checker</h1><p class="text-lg text-slate-300 max-w-3xl">Select your KCSE mean grade to see a simple planning tier for degree, diploma, craft, or artisan pathways.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Enter your KCSE mean grade</h2><p class="text-slate-600 mb-6">The selector includes the full KCSE mean-grade range from A to E. The result updates immediately when you choose a grade.</p><label class="block text-sm font-semibold">KCSE mean grade<select id="kcseMeanGrade" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none"><option value="">Choose a grade</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option><option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option></select></label><button id="kcseTierCheck" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Check eligibility tier</button></div><div class="lg:col-span-2 bg-white border-2 border-teal-100 rounded-2xl p-6 sm:p-8 shadow-lg" aria-live="polite"><p class="text-sm uppercase tracking-wider text-teal-700 font-bold">Eligibility planning tier</p><div id="kcseTierResult" class="text-2xl sm:text-3xl font-extrabold text-slate-900 my-5">Choose your KCSE mean grade</div><p id="kcseTierMessage" class="text-slate-600 leading-relaxed">Select a grade to see the planning tier.</p></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How the KCSE tier checker works</h2><p>This Kenya KCSE tool is designed for the first stage of academic planning. Instead of asking a student to remember several education pathways, it maps the entered mean grade to a broad tier: degree placement planning, diploma programmes, craft certificate programmes, or artisan certificate programmes. The grade list follows the familiar KCSE sequence from A through E and includes plus and minus bands.</p><p>For this planning model, C+ through A are shown as the degree-placement tier. That includes the commonly referenced minimum mean-grade level for many university degree routes, but it does not mean every course or every university will accept every C+ result. Subject clusters, cluster points, programme demand, application choices, and the current KUCCPS process still matter. A C+ student may meet a general threshold but remain below the competitive level for a particular programme.</p><h3 class="text-2xl font-bold text-slate-900">Diploma and technical pathways</h3><p>Grades C through C- are mapped to a diploma planning tier in this tool. A diploma can be a direct career qualification, a route into technical work, or a progression path to higher study. Students should compare the exact course entry requirements, institution accreditation, required subjects, and progression options before applying. The availability of a course can also vary by college, county, intake, and admissions cycle.</p><p>Grades D and D+ are mapped to craft certificate planning. These programmes often focus on practical and occupational skills. Grades D- and E are mapped to artisan certificate planning, where a learner may begin with a trade or practical skills route. The names and requirements of programmes can differ between TVET institutions, so the result is a guide for research rather than an official placement letter.</p><h3 class="text-2xl font-bold text-slate-900">What to check after using the tool</h3><p>Once you see a tier, open the current official KUCCPS, TVET, university, or college information for the course you want. Check application dates, minimum subjects, grade requirements, institution codes, fees, accommodation, accreditation, and whether the course is available in the current intake. For degree applications, check the programme’s cluster subjects and not only the overall mean grade.</p><p>Use the tool for scenario planning if your result is not final. You can compare how a projected grade changes your possible pathway, but wait for the official result and placement instructions before making a final decision. Keep copies of your result slip and application confirmation, and ask a teacher, career adviser, or admissions office when a programme rule is unclear.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does C+ guarantee a university degree place?</summary><p class="mt-3">No. C+ is used here as a broad degree-planning threshold. Programme clusters, competition, capacity, and official placement rules still decide the practical outcome.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Can a diploma lead to a degree?</summary><p class="mt-3">Some diplomas provide progression routes, but the route depends on the course, institution, grades, credit recognition, and university rules. Verify it before enrolling.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Are these official TVET classifications?</summary><p class="mt-3">They are simplified planning tiers based on the supplied brief. Confirm the exact current classification and course requirements with the relevant Kenyan institution.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-teal-50 border border-teal-100 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">Keep a record of your pathway research</h2><p class="text-slate-700 leading-relaxed mb-4">A useful pathway record includes the KCSE grade, the date you checked it, the institution name, course title, minimum subjects, application deadline, and official link. This prevents confusion when several colleges or universities use similar programme names. It also gives parents and students a clear list of questions to ask an admissions office.</p><p class="text-slate-700 leading-relaxed mt-4">If your grade falls into a lower tier, it is not a statement about your ability or future. It simply suggests that a different qualification route may be the practical next step. Compare training quality, progression, affordability, and employment relevance before choosing. Confirm every final requirement with the current Kenyan authority or institution.</p></div></section>
@@ -331,6 +379,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

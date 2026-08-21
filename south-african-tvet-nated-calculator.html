@@ -182,6 +182,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -208,6 +225,31 @@
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
   </div></div></nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">South African TVET NATED Pass Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <header class="bg-slate-900 text-white px-4 py-16"><div class="max-w-5xl mx-auto"><span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">South African TVET Calculator</span><h1 class="text-4xl sm:text-5xl font-extrabold mb-4">South African TVET NATED Pass Calculator</h1><p class="text-lg text-slate-300 max-w-3xl">Combine your ICASS internal mark and final examination mark using the 40% / 60% NATED weighting.</p></div></header>
   <main class="max-w-6xl mx-auto px-4 py-12"><section class="grid lg:grid-cols-5 gap-8 items-start"><div class="lg:col-span-3 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8"><h2 class="text-2xl font-bold text-slate-900 mb-2">Enter your marks</h2><p class="text-slate-600 mb-6">Use percentages from 0 to 100. The calculator updates instantly and checks both the overall pass mark and the examination sub-minimum.</p><div class="grid sm:grid-cols-2 gap-4"><label class="text-sm font-semibold">Internal ICASS mark (%)<input id="natedIcass" type="number" min="0" max="100" step="0.1" placeholder="e.g. 55" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none" /></label><label class="text-sm font-semibold">Final exam mark (%)<input id="natedExam" type="number" min="0" max="100" step="0.1" placeholder="e.g. 48" class="block mt-2 w-full bg-slate-50 border-2 border-slate-200 px-3 py-3 rounded-xl outline-none" /></label></div><button id="natedCalculate" type="button" class="w-full mt-6 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold py-3 rounded-xl">Calculate final mark</button></div><div id="natedCard" class="lg:col-span-2 bg-white border-2 border-slate-200 rounded-2xl p-6 sm:p-8 shadow-lg" aria-live="polite"><p class="text-sm uppercase tracking-wider text-teal-700 font-bold">NATED result</p><div id="natedResult" class="text-3xl font-extrabold text-slate-900 my-5">Enter both marks</div><p id="natedMessage" class="text-slate-600 leading-relaxed">Enter ICASS and final examination marks from 0 to 100.</p></div></section><article class="max-w-4xl mx-auto mt-16 space-y-6"><h2 class="text-3xl font-bold text-slate-900">How the NATED pass calculation works</h2><p>This calculator is for a common South African TVET NATED planning formula. It combines the internal ICASS mark, weighted at 40%, with the final examination mark, weighted at 60%. The calculation is: final mark equals ICASS multiplied by 0.40 plus examination mark multiplied by 0.60. Because the examination carries the larger weight, improving the exam mark can have a greater effect on the final total than an equal improvement in the internal mark.</p><p>A result is marked PASS only when two conditions are both satisfied. First, the weighted total must be at least 40%. Second, the final examination mark itself must be at least 40%. The second condition is the sub-minimum check. For example, an ICASS mark of 80% and an examination mark of 30% produces a weighted total of 50%, but it does not pass this rule because the exam mark is below 40%. The card makes that distinction visible instead of looking only at the total.</p><h3 class="text-2xl font-bold text-slate-900">Worked examples</h3><p>If ICASS is 55% and the examination is 48%, the weighted total is 22.0 plus 28.8, or 50.8%. The examination is above the 40% sub-minimum, so the supplied rule classifies the result as a pass. If ICASS is 70% and the examination is 35%, the weighted total is 49.0%, but the result remains below the sub-minimum requirement. These examples show why both inputs matter.</p><h3 class="text-2xl font-bold text-slate-900">Use the result carefully</h3><p>Enter the marks exactly as they appear on your statement or institutional record. Do not enter a fraction as a decimal unless your school presents it that way; use percentages such as 42.5. If a mark is missing, wait until the official record is available rather than treating a blank as zero. The tool performs no server upload and does not store your marks.</p><p>NATED programmes, subjects, examination sessions, and institutional policies can have additional rules. A pass result here is a calculation under the supplied weighting and pass criteria, not an official certificate, promotion decision, or transcript. Check the current Department of Higher Education and Training guidance, your TVET college instructions, and the rules for the specific N-level or subject.</p><h3 class="text-2xl font-bold text-slate-900">Frequently asked questions</h3><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Why can a total above 40% still fail?</summary><p class="mt-3">The supplied rule requires the examination mark itself to be at least 40%. A strong ICASS mark cannot compensate for an exam mark below the sub-minimum.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Is ICASS always exactly 40%?</summary><p class="mt-3">This page uses the 40% ICASS and 60% examination weighting specified in the brief. Confirm the current rule for your subject and institution.</p></details><details class="bg-white border border-slate-200 rounded-xl p-4"><summary class="font-bold cursor-pointer">Does AfriWidget issue an official result?</summary><p class="mt-3">No. It is a private browser calculator for planning. Your college, examination authority, or official statement remains authoritative.</p></details></article>
 <section class="max-w-4xl mx-auto px-4 pb-12"><div class="bg-teal-50 border border-teal-100 rounded-2xl p-6"><h2 class="text-2xl font-bold text-slate-900 mb-4">Plan improvement from the formula</h2><p class="text-slate-700 leading-relaxed mb-4">The weighting can help you set a realistic target. A ten-point improvement in the examination mark changes the final total by six points, while a ten-point improvement in ICASS changes it by four points. That does not replace study advice, but it explains why examination preparation matters in this particular calculation. Use the result to discuss revision, supplementary assessments, or support with your lecturer.</p><p class="text-slate-700 leading-relaxed mt-4">Enter one scenario at a time and write down the result before changing a mark. This makes it easier to compare possible outcomes without confusing a projected score with an official record. Always check the current college and examination rules for your subject, level, and session.</p><h3 class="text-xl font-bold text-slate-900 mt-5 mb-2">Before asking for help</h3><p class="text-slate-700 leading-relaxed">Have your statement, subject name, assessment session, and both component marks ready when speaking with a lecturer or college office. Ask whether the pass rule applies to your specific subject and whether any moderation or supplementary assessment changes the calculation. Keep these records together for clarity.</p></div></section>
@@ -333,6 +375,8 @@
           <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
          <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
          <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
          <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
          <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
          <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>

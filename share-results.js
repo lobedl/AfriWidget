@@ -16,10 +16,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       calculate: () => $('#jambCalculate')?.click()
     },
     'tertiary-gpa-cgpa-calculator': {
-      fields: () => [$('#gpaScale'), ...$$('.course-row input, .course-row select')],
+      fields: () => [$('#gpaScale'), ...$$('.course-row input, .course-row select')].filter(Boolean),
       restore(values) {
         const rows = values.filter(item => item.key.startsWith('course'));
-        $('#gpaScale').value = values.find(item => item.key === 'scale')?.value || $('#gpaScale').value;
+        const scaleEl = $('#gpaScale');
+        if (scaleEl) {
+          scaleEl.value = values.find(item => item.key === 'scale')?.value || scaleEl.value;
+        }
         if (!rows.length) return;
         const grouped = {};
         rows.forEach(item => {
@@ -30,9 +33,12 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
           const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
           if (!row) return;
-          $('.course-name', row).value = grouped[number].Name || '';
-          $('.credit-input', row).value = grouped[number].Credits || '';
-          $('.grade-select', row).value = grouped[number].Grade || '';
+          const nameEl = $('.course-name', row);
+          const credEl = $('.credit-input', row);
+          const gradeEl = $('.grade-select', row);
+          if (nameEl) nameEl.value = grouped[number].Name || '';
+          if (credEl) credEl.value = grouped[number].Credits || '';
+          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
         });
       },
       calculate: () => $('#gpaCalculate')?.click()
@@ -51,9 +57,12 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
           const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
           if (!row) return;
-          $('.course-name', row).value = grouped[number].Name || '';
-          $('.credit-input', row).value = grouped[number].Credits || '';
-          $('.grade-select', row).value = grouped[number].Grade || '';
+          const nameEl = $('.course-name', row);
+          const credEl = $('.credit-input', row);
+          const gradeEl = $('.grade-select', row);
+          if (nameEl) nameEl.value = grouped[number].Name || '';
+          if (credEl) credEl.value = grouped[number].Credits || '';
+          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
         });
       },
       calculate: () => $('#calcBtn')?.click()
@@ -157,9 +166,12 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
           const row = $$('.igcse-row')[index] || (add ? (add.click(), $$('.igcse-row').at(-1)) : null);
           if (!row) return;
-          $('.igcse-subject', row).value = grouped[number].Name || '';
-          $('.igcse-level', row).value = grouped[number].Level || '';
-          $('.igcse-grade', row).value = grouped[number].Grade || '';
+          const subEl = $('.igcse-subject', row);
+          const lvlEl = $('.igcse-level', row);
+          const grdEl = $('.igcse-grade', row);
+          if (subEl) subEl.value = grouped[number].Name || '';
+          if (lvlEl) lvlEl.value = grouped[number].Level || '';
+          if (grdEl) grdEl.value = grouped[number].Grade || '';
         });
       },
       calculate: () => $$('.igcse-row input, .igcse-row select').forEach(field => field.dispatchEvent(new Event('input', { bubbles: true })))
