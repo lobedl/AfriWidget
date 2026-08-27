@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>NSFAS Eligibility Checker (Bursary & Missing Middle Scheme) – AfriWidget</title>
+  
+  <meta name="description" content="Check your NSFAS bursary eligibility under the latest DHET guidelines. Verify SASSA status, household income caps, university or TVET funding, and the N+1 rule." />
+  <link rel="canonical" href="https://afriwidget.com/nsfas-eligibility-checker" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NSFAS Eligibility Checker (Bursary & Missing Middle Scheme) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/nsfas-eligibility-checker" />
+  <meta property="og:description" content="Check your NSFAS bursary eligibility under the latest DHET guidelines. Verify SASSA status, household income caps, university or TVET funding, and the N+1 rule." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NSFAS Eligibility Checker (Bursary & Missing Middle Scheme) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Check your NSFAS bursary eligibility under the latest DHET guidelines. Verify SASSA status, household income caps, university or TVET funding, and the N+1 rule." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="academic-tools.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "NSFAS Eligibility Checker",
+    "description": "Check your NSFAS bursary eligibility under the latest DHET guidelines. Verify SASSA status, household income caps, university or TVET funding, and the N+1 rule.",
+    "url": "https://afriwidget.com/nsfas-eligibility-checker",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-25",
+    "citation": [
+      "https://www.nsfas.org.za/",
+      "https://www.dhet.gov.za/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "NSFAS Eligibility Checker",
+        "item": "https://afriwidget.com/nsfas-eligibility-checker"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does NSFAS fund private colleges like Boston, Damelin, or Eduvos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Under current DHET legislation, NSFAS funding is exclusively allocated to students enrolled in South Africa's 26 Public Universities and 50 Public TVET Colleges. Private Higher Education Institutions (PHEIs) are not funded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the NSFAS Missing Middle Loan Scheme?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Missing Middle Scheme funds students whose gross annual household income is between R350,001 and R600,000. It covers tuition and accommodation, with up to 70% converting to a free bursary if the student maintains a 70%+ pass rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the NSFAS N+1 Rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The N+1 Rule means NSFAS funds a student for the minimum duration of their qualification (N years) plus one extra year to allow for module repeats. Students with disabilities are funded under the N+2 Rule."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+  <!-- Pre-rendered Static Global Navigation Header -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">NSFAS Eligibility Checker</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <header class="bg-gradient-to-br from-slate-900 via-emerald-950 to-teal-900 text-white py-14 px-4 shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-emerald-400/20 text-emerald-300 text-xs sm:text-sm font-bold px-3.5 py-1 rounded-full mb-4 border border-emerald-400/30">
+        <span>🇿🇦 South Africa DHET &amp; NSFAS 2026 Guidelines</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-white">NSFAS Eligibility Checker</h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+        Verify your financial qualification for South African NSFAS funding. Check SASSA grant bypass status, household income caps (R350k vs R600k), public institution rules, and the N+1 academic limit.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Calculator Workspace Grid -->
+    <section class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Input Form Card -->
+      <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8">
+        <div class="border-b border-slate-100 pb-5 mb-6">
+          <h2 class="text-2xl font-bold text-slate-900">Enter Your Financial &amp; Academic Details</h2>
+          <p class="text-slate-600 text-sm mt-1">Evaluates statutory eligibility for full bursaries and the Missing Middle loan scheme.</p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Citizenship -->
+          <div>
+            <label for="nsfasCitizen" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">South African Citizenship / Residency</label>
+            <select id="nsfasCitizen" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+              <option value="yes">South African Citizen or Permanent Resident (with 13-Digit ID)</option>
+              <option value="no">International Student / Non-Permanent Resident</option>
+            </select>
+          </div>
+
+          <!-- SASSA Grant Status -->
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-xl p-4">
+            <label for="nsfasSassa" class="block text-xs font-bold uppercase tracking-wider text-emerald-900 mb-1">SASSA Grant Beneficiary Status</label>
+            <p class="text-xs text-emerald-700 mb-2">Are you or your parent/guardian an active recipient of a SASSA grant (Child Support, Disability, Foster Care, Old Age)?</p>
+            <select id="nsfasSassa" class="w-full bg-white border-2 border-emerald-300 focus:border-emerald-600 rounded-lg px-3 py-2 text-sm font-bold text-slate-800 outline-none">
+              <option value="no">No — Not a SASSA Grant Beneficiary</option>
+              <option value="yes">Yes — Active SASSA Grant Beneficiary (Fast-Track Approval)</option>
+            </select>
+          </div>
+
+          <!-- Combined Gross Annual Household Income -->
+          <div id="nsfasIncomeContainer">
+            <label for="nsfasIncome" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Combined Annual Gross Household Income (ZAR)</label>
+            <p class="text-xs text-slate-500 mb-1.5">Total pre-tax annual income of all working family members in your household.</p>
+            <div class="relative">
+              <span class="absolute left-3.5 top-3 text-slate-400 font-bold text-sm">R</span>
+              <input id="nsfasIncome" type="number" min="0" max="5000000" step="5000" placeholder="e.g. 180000" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl pl-8 pr-4 py-2.5 text-sm font-bold text-slate-800 outline-none" />
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <button type="button" class="income-preset text-xs px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md text-slate-700 font-medium" data-val="0">R0 (Unemployed)</button>
+              <button type="button" class="income-preset text-xs px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md text-slate-700 font-medium" data-val="120000">R120,000 / yr</button>
+              <button type="button" class="income-preset text-xs px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md text-slate-700 font-medium" data-val="250000">R250,000 / yr</button>
+              <button type="button" class="income-preset text-xs px-2.5 py-1 bg-slate-100 hover:bg-slate-200 rounded-md text-slate-700 font-medium" data-val="450000">R450,000 (Missing Middle)</button>
+            </div>
+          </div>
+
+          <!-- Disability Status -->
+          <div>
+            <label for="nsfasDisability" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Disability Status</label>
+            <select id="nsfasDisability" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+              <option value="no">No certified permanent disability</option>
+              <option value="yes">Person with a certified permanent disability (Cap raised to R600,000)</option>
+            </select>
+          </div>
+
+          <!-- Target Institution & Study Level -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="nsfasInstitution" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Institution Type</label>
+              <select id="nsfasInstitution" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+                <option value="public_uni">Public South African University (26 Universities)</option>
+                <option value="public_tvet">Public TVET College (50 Colleges)</option>
+                <option value="private">Private College / Distance Institution (PHEI)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="nsfasQualification" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Qualification Level</label>
+              <select id="nsfasQualification" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+                <option value="first_undergrad">First Undergraduate Degree / Diploma / TVET</option>
+                <option value="pgce_mbchb">PGCE (Education) or MBChB (Medicine)</option>
+                <option value="postgrad">Other Postgraduate Degree (Honours / Masters / PhD)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- N+ Rule Check -->
+          <div>
+            <label for="nsfasYears" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Academic Progress &amp; N+ Rule Status</label>
+            <select id="nsfasYears" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-emerald-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+              <option value="first_year">First-Time Entering Student (Year 1)</option>
+              <option value="within_n">Continuing Student (Within N standard duration)</option>
+              <option value="n_plus_1">Repeating 1 Year (Within N+1 Rule)</option>
+              <option value="exceeded">Completed N+1 or more funded years (Exceeds limit)</option>
+            </select>
+          </div>
+
+          <div class="pt-4">
+            <button id="nsfasCheckBtn" type="button" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-base py-4 rounded-xl shadow-lg transition-all transform active:scale-[0.99] flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Check NSFAS Eligibility</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Display Panel -->
+      <div class="lg:col-span-5 space-y-6" aria-live="polite">
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+            <span class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Eligibility Status</span>
+            <span class="text-xs text-slate-400">DHET / NSFAS</span>
+          </div>
+
+          <div class="mb-6 text-center">
+            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Funding Determination</p>
+            <div id="nsfasVerdictDisplay" class="text-3xl sm:text-4xl font-black text-emerald-400 my-3 leading-tight">Ready to Check</div>
+            <p id="nsfasCategoryBadge" class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Enter details and click check</p>
+          </div>
+
+          <div id="nsfasResultDetails" class="space-y-4 text-sm text-slate-300 border-t border-slate-800 pt-5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Financial Verification:</span>
+              <span id="nsfasFinancialCheck" class="font-bold text-white">—</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Institution &amp; Course:</span>
+              <span id="nsfasCourseCheck" class="font-bold text-white">—</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">N+ Rule Compliance:</span>
+              <span id="nsfasNRuleCheck" class="font-bold text-white">—</span>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700/60 mt-4">
+              <p class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Entitlements &amp; Guidance</p>
+              <p id="nsfasSummaryText" class="text-xs text-slate-200 leading-relaxed">
+                Complete the questions on the left and click "Check NSFAS Eligibility" to view your statutory funding outcome.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Document Checklist Card -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Mandatory myNSFAS Application Documents</span>
+          </h3>
+          <ul class="text-xs text-slate-600 space-y-1.5 pl-4 list-disc">
+            <li>Certified copy of Applicant South African Smart ID or Green ID Book.</li>
+            <li>Signed NSFAS Consent Form (Home Affairs / SARS financial check).</li>
+            <li>Certified copies of Parent / Legal Guardian / Spouse IDs.</li>
+            <li>Proof of household income (3 months payslips, UIF / pension letter, or SAPS unemployment affidavit).</li>
+            <li>Completed Disability Annexure A form (if applying under disability quota).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Markdown Educational Guide Pre-rendered Section -->
+    <section id="toolGuide" class="max-w-4xl mx-auto mt-16 space-y-6 text-slate-700 leading-relaxed"><h2>Comprehensive Guide to South African NSFAS Funding Eligibility, Bursary Rules & the Missing Middle Scheme</h2><p>The <strong>National Student Financial Aid Scheme (NSFAS)</strong> is the South African government's primary financial assistance program administered under the <strong>Department of Higher Education and Training (DHET)</strong>. NSFAS provides comprehensive, fully subsidized bursaries and student loans to eligible South African citizens and permanent residents studying at public universities and Technical and Vocational Education and Training (TVET) colleges.</p><p>The <strong>AfriWidget NSFAS Eligibility Checker</strong> determines your funding qualification status under the latest <strong>DHET 2026 Funding Guidelines</strong>. It evaluates your household income bracket, SASSA grant beneficiary status, institution type, study level, and the statutory <strong>N+ Rule</strong> to confirm whether you qualify for a <strong>Full NSFAS Bursary</strong>, the <strong>NSFAS Missing Middle Comprehensive Loan / Grant Scheme</strong>, or alternative higher education financing.</p><hr class="my-6 border-slate-200" /><h2>1. Statutory NSFAS Financial Eligibility Criteria & Income Thresholds</h2><p>Financial qualification for NSFAS funding is governed by strict combined gross household income benchmarks verified via the <strong>South African Revenue Service (SARS)</strong>, <strong>Credit Bureaus</strong>, and the <strong>Department of Social Development (DSD)</strong>:</p><ul><li><strong>1. SASSA Beneficiary Fast-Track (Automatic Approval)</strong>:</li><li><strong>Income Standard</strong>: Automatic financial clearance with no proof of income required.</li><li><strong>Coverage</strong>: 100% Free Government Bursary with zero repayment obligation.</li><li><strong>Verification</strong>: Instant real-time database matching with DSD and Home Affairs.</li></ul><ul><li><strong>2. General Public Undergraduate Bursary (Income <= R350,000 / year)</strong>:</li><li><strong>Income Standard</strong>: Combined gross annual household income of all working adults up to R350,000.</li><li><strong>Coverage</strong>: 100% Full Bursary covering tuition, registration, campus residence/accredited private accommodation, monthly living food allowance, and learning materials/laptop.</li></ul><ul><li><strong>3. Students with Disabilities Quota (Income <= R600,000 / year)</strong>:</li><li><strong>Income Standard</strong>: Combined gross annual household income up to R600,000.</li><li><strong>Coverage</strong>: 100% Free Bursary plus specialized assistive devices (hearing aids, braille laptops, wheelchairs) and human support allowances (carer/scribe).</li></ul><ul><li><strong>4. Missing Middle Comprehensive Loan / Grant Scheme (Income R350,001 – R600,000 / year)</strong>:</li><li><strong>Income Standard</strong>: Households earning above R350k but below R600k (e.g. nurses, teachers, police officers).</li><li><strong>Coverage</strong>: Full tuition and accommodation funding. If the student maintains a 70% academic average, up to 70% converts into a permanent non-repayable bursary.</li></ul><ul><li><strong>5. High-Income Tier (> R600,000 / year)</strong>:</li><li><strong>Status</strong>: Ineligible for NSFAS bursaries and Missing Middle loans.</li><li><strong>Alternative Funding</strong>: Private commercial bank student loans, ISFAP bursary scheme, or institutional merit bursaries.</li></ul><hr class="my-6 border-slate-200" /><h2>2. The SASSA Grant Automatic Approval Fast-Track</h2><p>If an applicant or their parent/guardian is an active recipient of any grant from the <strong>South African Social Security Agency (SASSA)</strong>—including the <strong>Child Support Grant</strong>, <strong>Foster Child Grant</strong>, <strong>Care Dependency Grant</strong>, or <strong>Older Persons Grant</strong>:</p><ul><li><strong>Zero Means-Testing</strong>: NSFAS conducts immediate automated verification with the DSD database.</li><li><strong>Immediate Financial Clearance</strong>: SASSA beneficiaries do not need to submit parental payslips, tax certificates, or employment affidavits. Financial eligibility is cleared instantly upon identity validation.</li></ul><hr class="my-6 border-slate-200" /><h2>3. Comprehensive Breakdown of NSFAS Bursary Allowances</h2><p>For students attending public universities and TVET colleges under the standard full bursary tier (income <= R350,000), NSFAS covers the complete cost of study:</p><ul><li><strong>Tuition & Registration Fees</strong>: 100% covered as billed directly by the public university or TVET college.</li><li><strong>Student Accommodation</strong>: University-managed on-campus residence or accredited private off-campus accommodation (up to national/metro caps).</li><li><strong>Living / Food Allowance</strong>: Paid in 10 monthly disbursements (approx. R1,650/month) for groceries and sustenance.</li><li><strong>Learning Materials / Book Allowance</strong>: Annual allowance or an official NSFAS-issued high-performance laptop during the first year.</li><li><strong>Personal Care Allowance</strong>: Monthly personal care stipend for students residing in catered university residences.</li><li><strong>Disability Human Support Allowance</strong>: Medical assessments, sign language interpreters, scribes, and personal care assistants.</li></ul><hr class="my-6 border-slate-200" /><h2>4. The NSFAS Missing Middle Loan & Bursary Conversion Scheme</h2><p>Introduced by DHET for students whose families earn above the R350,000 threshold but below <strong>R600,000 per annum</strong>:</p><ul><li><strong>Target Audience</strong>: Children of civil servants, nurses, teachers, police officers, and private-sector middle earners who cannot afford upfront tuition fees but do not qualify for free social bursaries.</li><li><strong>Tuition & Residence Coverage</strong>: Covers full tuition fees and student accommodation.</li><li><strong>Academic Performance Incentive</strong>: If the student passes all registered modules with a minimum <strong>70% average</strong>, up to <strong>50% to 70% of the loan converts into a non-repayable bursary</strong>.</li><li><strong>Low-Interest Repayment</strong>: The remaining loan balance is repaid post-graduation at affordable interest rates only when the graduate secures formal employment earning above the national repayment threshold.</li></ul><hr class="my-6 border-slate-200" /><h2>5. Academic Eligibility, Course Rules & the N+ Rule</h2><p>Financial qualification is only valid if academic rules are met:</p><ul><li><strong>1. Eligible Institutions</strong>:</li><li>Must be enrolled or admitted to one of South Africa’s <strong>26 Public Universities</strong> or <strong>50 Public TVET Colleges</strong>.</li><li><strong>Private Higher Education Institutions (PHEIs)</strong> and private distance colleges are strictly excluded from NSFAS funding.</li></ul><ul><li><strong>2. First Undergraduate Qualification Only</strong>:</li><li>NSFAS only funds a student's first undergraduate degree, diploma, or certificate. Postgraduate studies (Honours, Masters, PhD, and Post-Graduate Diplomas) are not funded by NSFAS (apply via NRF instead).</li><li><em>Exception</em>: Initial Teacher Education PGCE (Postgraduate Certificate in Education) and MBChB medical degrees are funded.</li></ul><ul><li><strong>3. The Statutory N+1 and N+2 Rules</strong>:</li><li><strong>N+1 Rule (for students starting after 2018)</strong>: NSFAS funds a student for the minimum duration of the qualification (N years) plus <strong>one additional year</strong> to allow for module repeats (e.g., a 3-year BA degree receives maximum 4 years of funding).</li><li><strong>N+2 Rule</strong>: Applies to students with approved disabilities and students registered before 2018 (N + 2 additional academic years).</li></ul><hr class="my-6 border-slate-200" /><h2>6. How to Use the NSFAS Eligibility Checker</h2><ol><li><strong>Indicate South African Citizenship & ID Status</strong>:</li></ol><ul><li>Confirm valid South African Citizenship or Permanent Residency with a 13-digit National ID number.</li></ul><ol><li><strong>Select SASSA Grant Beneficiary Status</strong>:</li></ol><ul><li>Choose whether you or a household member receives SASSA grant support.</li></ul><ol><li><strong>Enter Combined Annual Gross Household Income</strong>:</li></ol><ul><li>Enter the total pre-tax annual income earned by all working adults in your household (salaries, wages, pensions, rental earnings).</li></ul><ol><li><strong>Indicate Disability Status</strong>:</li></ol><ul><li>Specify whether you have a certified permanent disability (which raises the income threshold to R600,000).</li></ul><ol><li><strong>Select Target Institution & Study Level</strong>:</li></ol><ul><li>Choose your institution type (<strong>Public University</strong> or <strong>Public TVET College</strong>) and confirm whether this is your first undergraduate qualification.</li></ul><ol><li><strong>Click "Check NSFAS Eligibility"</strong>:</li></ol><ul><li>The calculator instantly evaluates all parameters, outputs your official funding eligibility verdict, details your allowance entitlement, and provides a document preparation checklist.</li></ul><hr class="my-6 border-slate-200" /><h2>7. Worked Verification Examples</h2><h3>Example 1: Matriculant with Active SASSA Child Support Grant</h3><p>A Grade 12 learner from Soweto applies for a BSc in Biological Sciences at the University of the Witwatersrand (Wits):</p><ul><li><strong>Applicant Profile</strong>:</li><li>Citizenship: South African Citizen (Verified 13-digit ID)</li><li>SASSA Status: Active recipient of Child Support Grant (Automatic financial qualification)</li><li>Household Income: R48,000 / year (Well within the R350,000 baseline)</li><li>Target Institution: Wits University (Accredited Public University)</li><li>Study Level: First Undergraduate Degree (BSc)</li><li><strong>Eligibility Outcome</strong>:</li><li><strong>Verdict</strong>: <strong>100% Full NSFAS Comprehensive Bursary Awarded</strong></li><li><strong>Financial Package</strong>: 100% Tuition Fees + On-Campus Residence Accommodation + Monthly Living Food Allowance + Personal Care Allowance + First-Year NSFAS Laptop</li></ul><hr class="my-6 border-slate-200" /><h3>Example 2: Civil Servant Household in the Missing Middle Tier</h3><p>A student applying for BCom Accounting at the University of Johannesburg (UJ) whose parents work as a school teacher and administrative clerk:</p><ul><li><strong>Applicant Profile</strong>:</li><li>Citizenship: South African Citizen</li><li>SASSA Status: Non-SASSA household (Requires SARS financial means test)</li><li>Combined Gross Income: <strong>R460,000 per annum</strong> (Above R350k / Below R600k)</li><li>Target Institution: UJ (Accredited Public University)</li><li>Study Level: First Undergraduate Degree (BCom)</li><li><strong>Eligibility Outcome</strong>:</li><li><strong>Verdict</strong>: <strong>Eligible for the NSFAS Missing Middle Comprehensive Loan / Grant Scheme</strong></li><li><strong>Financial Package</strong>: 100% Tuition Fees + Accommodation / Transport Allowance. Up to 70% of total funding converts to a permanent non-repayable bursary upon maintaining a >= 70% academic course pass rate.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 3: Continuing Student Exceeding the N+1 Rule Limit</h3><p>A student registered for a 3-year National Diploma at a Public TVET College who has completed 4 years of funded study and is applying for a 5th year:</p><ul><li><strong>Applicant Profile</strong>:</li><li>Combined Gross Income: R180,000 / year (Financially eligible)</li><li>Target Institution: Public TVET College (Accredited)</li><li>Academic Duration: Registered for 5th Year (N = 3 years; maximum funding is N + 1 = 4 years)</li><li>Disability Status: No registered disability (Standard N+1 limit applies)</li><li><strong>Eligibility Outcome</strong>:</li><li><strong>Verdict</strong>: <strong>NSFAS Funding Denied due to N+1 Rule Policy Breach</strong></li><li><strong>Action Required</strong>: Student must submit an official <strong>NSFAS Academic Appeal</strong> via the myNSFAS portal providing certified medical certificates or institutional evidence of severe academic disruption, or seek institutional merit bursaries.</li></ul><hr class="my-6 border-slate-200" /><h2>8. Required Documents for myNSFAS Online Application</h2><p>To ensure your application is processed without delays:</p><ol><li><strong>Applicant South African ID</strong>: Certified copy of Smart ID Card (both sides) or Green Barcoded ID Book.</li><li><strong>Consent Form</strong>: Signed NSFAS Consent Form allowing financial verification with SARS and Home Affairs.</li><li><strong>Parents / Guardians ID Copies</strong>: Certified ID copies of both parents, legal guardians, or spouse.</li><li><strong>Proof of Income (Non-SASSA applicants)</strong>:</li></ol><ul><li>Latest 3 months payslips, employment letter, or audited financial statements (if self-employed).</li><li>If parents are unemployed, a certified affidavit confirming unemployment from the South African Police Service (SAPS).</li></ul><ol><li><strong>Disability Annexure A</strong>: For applicants with disabilities, completed by a registered medical practitioner.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>Does NSFAS fund private colleges like Boston, Damelin, or Eduvos?</summary><div><p>No. Under current DHET legislation, NSFAS funding is exclusively allocated to students enrolled in South Africa's <strong>26 Public Universities</strong> and <strong>50 Public TVET Colleges</strong>. Private Higher Education Institutions (PHEIs) are not funded.</p></div></details><details><summary>What happens to my NSFAS funding if I fail a module?</summary><div><p>Under the current academic eligibility framework, university students must pass at least <strong>50% to 60% of all registered modules</strong> and remain within the <strong>N+1 Rule</strong> to maintain their NSFAS bursary renewal for the following academic year.</p></div></details><details><summary>Do I have to reapply for NSFAS every year?</summary><div><p>No. Once approved as an undergraduate student, NSFAS funding renews automatically every academic year provided you continue to meet the academic pass requirements, remain within the N+1 rule, and remain enrolled at a public institution.</p></div></details><details><summary>Is the NSFAS bursary completely free, or do I have to pay it back?</summary><div><p>For students approved under the standard <strong>R350,000 household income threshold</strong> (and SASSA beneficiaries), the bursary is a <strong>100% free government grant</strong> with zero repayment obligations. Only students funded under the <strong>Missing Middle Loan Scheme</strong> (R350k to R600k) have a conditional repayable loan component.</p></div></details><details><summary>Can I apply for NSFAS while waiting for my Matric results?</summary><div><p>Yes. NSFAS applications open annually between September and January before Matric results are released. You should submit your application early on the <code>my.nsfas.org.za</code> portal; NSFAS will automatically match your application with your final NSC results and university admissions data.</p></div></details><details><summary>Does AfriWidget transmit my financial details or ID to NSFAS?</summary><div><p>No. AfriWidget is a 100% private, client-side educational planning tool operating entirely within your browser memory. No identity numbers, financial figures, or personal data are stored or sent to any server.</p></div></details></section>
+  </main>
+
+  <section class="max-w-4xl mx-auto px-4 pb-12">
+    <!-- AUTHORITY, CREDENTIALS & CITED SOURCES -->
+    <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+        <h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Academic Review &amp; Statutory Funding Authorities
+        </h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Financial thresholds, bursary parameters, allowance schedules, and the N+1 rule are reviewed in accordance with official ministerial directives published by the <strong>Department of Higher Education and Training (DHET)</strong> and the <strong>National Student Financial Aid Scheme (NSFAS)</strong>.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold block text-slate-900">Official Portals:</span>
+            <a href="https://www.nsfas.org.za/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">myNSFAS Portal</a> · <a href="https://www.dhet.gov.za/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">DHET Official Site</a>
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold block text-slate-900">Privacy Guarantee:</span>
+            <span>100% In-Browser Computation (POPIA &amp; GDPR Compliant)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+  <script src="/nav.js" defer></script>
+</body>
+</html>

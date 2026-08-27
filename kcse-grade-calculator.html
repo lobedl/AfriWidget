@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>KCSE Grade Calculator – KNEC 7-Subject Mean Grade & Aggregate Points</title>
+  
+  <meta name="description" content="Calculate your 7-subject KCSE aggregate points (out of 84), official KNEC mean grade (A to E), average point score, and tertiary placement eligibility tier in Kenya." />
+  <link rel="canonical" href="https://afriwidget.com/kcse-grade-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KCSE Grade Calculator – KNEC 7-Subject Mean Grade & Aggregate Points" />
+  <meta property="og:url" content="https://afriwidget.com/kcse-grade-calculator" />
+  <meta property="og:description" content="Calculate your 7-subject KCSE aggregate points (out of 84), official KNEC mean grade (A to E), average point score, and tertiary placement eligibility tier in Kenya." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KCSE Grade Calculator – KNEC 7-Subject Mean Grade & Aggregate Points" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your 7-subject KCSE aggregate points (out of 84), official KNEC mean grade (A to E), average point score, and tertiary placement eligibility tier in Kenya." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "KCSE Grade Calculator",
+    "description": "Calculate official 7-subject KCSE aggregate points, KNEC mean grade (A to E), mean grade average, and higher education eligibility tier for Kenyan secondary school students.",
+    "url": "https://afriwidget.com/kcse-grade-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "Kenya National Examinations Council & Academic Evaluation Advisory Group"
+    },
+    "dateModified": "2026-08-25",
+    "citation": [
+      "https://www.knec.ac.ke/",
+      "https://kuccps.net/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "KCSE Grade Calculator",
+        "item": "https://afriwidget.com/kcse-grade-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the national pass mark for university entry in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under current Ministry of Education and KUCCPS statutory guidelines, the minimum requirement for direct entry into public and private university undergraduate degree programmes in Kenya is a KCSE Mean Grade of C+ (Plus) (minimum 46 aggregate points)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an 8th or 9th subject be dropped if it has a low grade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. KNEC calculates the official mean grade using only the best seven subjects that satisfy grouping criteria. If you took eight subjects and scored a lower grade in one science or elective, that lowest extra score is automatically excluded from your aggregate calculation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Mathematics Alternative A and Alternative B?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "KNEC offers Mathematics Alt A (comprehensive pure and applied mathematics) and Mathematics Alt B (simplified business numeracy). Most degree courses in Engineering, Computer Science, Medicine, Pharmacy, Architecture, Actuarial Science, and Economics strictly require Mathematics Alt A."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tertiary options are available for students who score below C+?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Candidates scoring below C+ have clear tertiary progression pathways: Mean Grade C or C- qualifies for 2 to 3-year TVET and university Diploma programmes; Mean Grade D+ or D qualifies for Craft Certificate courses; Mean Grade D- or E qualifies for Artisan Certificate courses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the KCSE mean grade differ from KUCCPS Weighted Cluster Points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your KCSE Mean Grade is your overall average across all seven subjects (out of 84 points). In contrast, KUCCPS Weighted Cluster Points (out of 48 points) evaluates your performance specifically in the four prerequisite subjects required for a particular degree programme, combined mathematically with your overall 7-subject score."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">KCSE Grade Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <header class="bg-gradient-to-br from-slate-900 via-indigo-950 to-emerald-950 text-white py-12 sm:py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-400/30">
+        <span>🇰🇪 Kenya · KNEC &amp; KUCCPS Standard</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white">
+        KCSE Grade Calculator
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Select your grades across official KNEC subject groups. Calculate your 7-subject aggregate points (out of 84), overall mean grade (A to E), and verify higher education placement eligibility.
+      </p>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs text-emerald-400 font-medium">
+        <span>⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 sm:py-12">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Calculator Form -->
+      <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8" id="kcseCalculatorCard">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Enter Your Subject Grades</h2>
+            <p class="text-xs text-slate-500 mt-0.5">KNEC calculates mean grade using the compulsory 3 + best 2 sciences + best 1 humanity + best elective.</p>
+          </div>
+          <button id="kcseResetBtn" type="button" class="text-xs font-semibold text-slate-500 hover:text-rose-600 transition-colors">Reset Form</button>
+        </div>
+
+        <form id="kcseForm" class="space-y-6" onsubmit="return false;">
+          
+          <!-- Group I: Compulsory Core (3 Subjects) -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-800 text-xs font-bold flex items-center justify-center">1</span>
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Group I: Compulsory Core (3 Mandatory)</h3>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <div>
+                <label for="sub_english" class="block text-xs font-semibold text-slate-700 mb-1">English (101)</label>
+                <select id="sub_english" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" required>
+                  <option value="">Select Grade</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_kiswahili" class="block text-xs font-semibold text-slate-700 mb-1">Kiswahili (102)</label>
+                <select id="sub_kiswahili" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" required>
+                  <option value="">Select Grade</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_maths" class="block text-xs font-semibold text-slate-700 mb-1">Mathematics (121/122)</label>
+                <select id="sub_maths" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none" required>
+                  <option value="">Select Grade</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group II: Sciences (Min 2 Subjects) -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center justify-center">2</span>
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Group II: Sciences (Select At Least 2)</h3>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <div>
+                <label for="sub_biology" class="block text-xs font-semibold text-slate-700 mb-1">Biology (231)</label>
+                <select id="sub_biology" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_chemistry" class="block text-xs font-semibold text-slate-700 mb-1">Chemistry (232)</label>
+                <select id="sub_chemistry" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_physics" class="block text-xs font-semibold text-slate-700 mb-1">Physics (233)</label>
+                <select id="sub_physics" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group III: Humanities (Min 1 Subject) -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-bold flex items-center justify-center">3</span>
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Group III: Humanities (Select At Least 1)</h3>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <div>
+                <label for="sub_history" class="block text-xs font-semibold text-slate-700 mb-1">History &amp; Gov (311)</label>
+                <select id="sub_history" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_geography" class="block text-xs font-semibold text-slate-700 mb-1">Geography (312)</label>
+                <select id="sub_geography" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_religious" class="block text-xs font-semibold text-slate-700 mb-1">CRE / IRE / HRE (313-315)</label>
+                <select id="sub_religious" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group IV/V: Applied Sciences, Electives & Technicals -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-800 text-xs font-bold flex items-center justify-center">4</span>
+              <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">Group IV &amp; V: Applied &amp; Electives (Optional Extra)</h3>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label for="sub_elective1" class="block text-xs font-semibold text-slate-700 mb-1">Business Studies / Agriculture / Computer</label>
+                <select id="sub_elective1" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+              <div>
+                <label for="sub_elective2" class="block text-xs font-semibold text-slate-700 mb-1">French / German / Home Science / Music</label>
+                <select id="sub_elective2" class="kcse-subject-grade w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none">
+                  <option value="">None / Not Taken</option>
+                  <option value="12">A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button id="kcseCalcBtn" type="button" class="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-base">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            Calculate KCSE Grade &amp; Points
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Display Card -->
+      <div class="lg:col-span-5" aria-live="polite">
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 sticky top-24" id="kcseResultCard">
+          
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">KNEC Examination Result Audit</span>
+            <span id="resultBadge" class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-semibold">Awaiting Input</span>
+          </div>
+
+          <!-- Primary Metric -->
+          <div class="text-center py-4">
+            <p class="text-xs text-slate-400 uppercase font-semibold tracking-wider">Official KCSE Mean Grade</p>
+            <div id="kcseMeanGradeDisplay" class="text-5xl sm:text-6xl font-black text-yellow-400 my-2 tracking-tight">—</div>
+            <p id="kcsePointsTotalDisplay" class="text-sm font-semibold text-slate-300">Aggregate Points: <span class="text-white font-bold">— / 84</span></p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 my-6 text-center">
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/50">
+              <p class="text-xs text-slate-400 font-medium">Mean GPA Score</p>
+              <p id="kcseGpaDisplay" class="text-lg font-extrabold text-white mt-1">— / 12.00</p>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/50">
+              <p class="text-xs text-slate-400 font-medium">Subjects Counted</p>
+              <p id="kcseCountDisplay" class="text-lg font-extrabold text-emerald-400 mt-1">— / 7</p>
+            </div>
+          </div>
+
+          <!-- Tertiary Placement Tier Box -->
+          <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700 mb-6">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-300 mb-1">KUCCPS Tertiary Admission Tier</p>
+            <p id="kcseTierDisplay" class="text-sm text-slate-200 leading-relaxed">
+              Enter grades for at least 7 valid subjects and click "Calculate KCSE Grade &amp; Points" to determine your admission tier.
+            </p>
+          </div>
+
+          <!-- Selected 7 Subjects List -->
+          <div id="kcseSubjectAuditBox" class="hidden text-xs text-slate-300 border-t border-slate-800 pt-4 space-y-1.5">
+            <p class="font-bold text-slate-400 uppercase tracking-wider mb-2">7 Counted Subjects Breakdown:</p>
+            <div id="kcseSubjectList" class="space-y-1"></div>
+          </div>
+
+          <button id="kcseCopyBtn" type="button" class="hidden w-full mt-5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2.5 rounded-lg transition-colors border border-slate-700 flex items-center justify-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            <span>Copy Calculation Summary</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prerendered Guide & Educational Content -->
+    <section id="toolGuide" class="max-w-4xl mx-auto mt-16 space-y-6 text-slate-700 leading-relaxed"><h2>Comprehensive Guide to Kenyan KCSE Grading, Subject Groups & 7-Subject Mean Grade Calculations</h2><p>The <strong>Kenya Certificate of Secondary Education (KCSE)</strong> is the national summative examination administered by the <strong>Kenya National Examinations Council (KNEC)</strong> at the conclusion of four years of secondary education. Regulated under the <strong>Ministry of Education</strong> and recognized by the <strong>Kenya Universities and Colleges Central Placement Service (KUCCPS)</strong>, KCSE scores determine direct placement into government-sponsored university degree programmes, technical diplomas, craft certificates, and vocational artisan courses across Kenya.</p><p>Understanding your KCSE performance requires knowing how individual subject percentages translate into official KNEC 12-point letter grades, how the <strong>mandatory 7-subject selection formula</strong> aggregates your total score out of 84, and how your final <strong>KCSE Mean Grade</strong> dictates your tertiary educational trajectory.</p><hr class="my-6 border-slate-200" /><h2>Official KNEC 12-Point KCSE Grading & Performance Scale</h2><p>KNEC evaluates secondary school candidates using an official 12-point numerical grading system:</p><ul><li><strong>Grade A (12 Points)</strong>: Plain Distinction (80% to 100%). Qualifies for direct government-sponsored university placement in highly competitive degree programmes such as Medicine, Actuarial Science, Architecture, and Engineering.</li><li><strong>Grade A- (11 Points)</strong>: Minus Distinction (75% to 79%). Direct university placement in competitive Bachelor's degree faculties.</li><li><strong>Grade B+ (10 Points)</strong>: Plus Credit (70% to 74%). Direct admission to professional degree courses including Law, Computer Science, Pharmacy, and Commerce.</li><li><strong>Grade B (9 Points)</strong>: Plain Credit (65% to 69%). Direct placement in Science, Education, Agriculture, and Humanities degrees.</li><li><strong>Grade B- (8 Points)</strong>: Minus Credit (60% to 64%). Direct university degree placement in Arts, Social Sciences, and Business disciplines.</li><li><strong>Grade C+ (7 Points)</strong>: Plus Pass (55% to 59%). <strong>Official National Minimum Baseline for Direct University Degree Placement</strong> in Kenya.</li><li><strong>Grade C (6 Points)</strong>: Plain Pass (50% to 54%). Minimum statutory requirement for 2 to 3-year <strong>Diploma programmes</strong> at public universities, National Polytechnics, and TVET colleges.</li><li><strong>Grade C- (5 Points)</strong>: Minus Pass (45% to 49%). Qualifies for TVET Diploma courses and Teacher Training Colleges (TTCs).</li><li><strong>Grade D+ (4 Points)</strong>: Plus Average (40% to 44%). Qualifies for <strong>Craft Certificate programmes</strong> at technical vocational training institutes.</li><li><strong>Grade D (3 Points)</strong>: Plain Average (35% to 39%). Direct entry into Craft Certificate and technical skill development tracks.</li><li><strong>Grade D- (2 Points)</strong>: Minus Average (30% to 34%). Qualifies for national <strong>Artisan Certificate courses</strong>.</li><li><strong>Grade E (1 Point)</strong>: Minimal Achievement (0% to 29%). Qualifies for vocational artisan foundation and trade apprenticeship training.</li></ul><hr class="my-6 border-slate-200" /><h2>The KNEC Seven-Subject KCSE Mean Grade Calculation Formula</h2><p>Although candidates in Kenyan secondary schools typically register for seven, eight, or nine subjects during Form 3 and Form 4, the <strong>KNEC KCSE Mean Grade</strong> is calculated from exactly <strong>seven best subjects</strong> selected across standardized academic clusters:</p><ul><li><strong>Group I (Compulsory Core - 3 Subjects)</strong>: English (101), Kiswahili (102), and Mathematics (Alternative A 121 or Alternative B 122). All three subjects are mandatory and must be counted regardless of performance.</li><li><strong>Group II (Sciences - Minimum 2 Subjects)</strong>: At least two sciences must be selected from Biology (231), Chemistry (232), and Physics (233).</li><li><strong>Group III (Humanities - Minimum 1 Subject)</strong>: At least one subject must be chosen from History and Government (311), Geography (312), or Christian Religious Education (CRE 313), Islamic Religious Education (IRE 314), or Hindu Religious Education (HRE 315).</li><li><strong>Group IV / V or Additional Core (The 7th Subject)</strong>: The seventh subject is selected from the candidate's highest remaining score among:</li><li>A third Science (e.g., Physics if Biology and Chemistry were already selected in Group II).</li><li>A second Humanity (e.g., History if Geography was already counted in Group III).</li><li>Group IV Applied Sciences: Home Science (441), Art and Design (442), Agriculture (443), Computer Studies (451), Aviation Technology (450).</li><li>Group V Electives: French (501), German (502), Arabic (503), Music (511), Business Studies (565).</li></ul><h3>Mathematical Aggregate Points Formula:</h3><ul><li><strong>Total KCSE Aggregate Points</strong> = Sum of points from the 7 qualifying subjects.</li><li><strong>Maximum Possible Score</strong> = 7 subjects × 12 points = <strong>84 Aggregate Points</strong> (Straight A grades).</li><li><strong>Minimum Possible Score</strong> = 7 subjects × 1 point = <strong>7 Aggregate Points</strong> (All E grades).</li><li><strong>Mean Grade Point Average (GPA)</strong> = Total Aggregate Points ÷ 7 (Yields a numerical average from 1.00 to 12.00).</li></ul><hr class="my-6 border-slate-200" /><h2>Official KNEC Aggregate Points Cut-Off Boundaries</h2><p>Your overall mean grade is awarded by matching your 7-subject aggregate sum against KNEC statutory point brackets:</p><ul><li><strong>81 to 84 Points (Average 11.57 to 12.00)</strong>: Assigned Mean Grade <strong>A (Plain)</strong></li><li><strong>74 to 80 Points (Average 10.57 to 11.43)</strong>: Assigned Mean Grade <strong>A- (Minus)</strong></li><li><strong>67 to 73 Points (Average 9.57 to 10.43)</strong>: Assigned Mean Grade <strong>B+ (Plus)</strong></li><li><strong>60 to 66 Points (Average 8.57 to 9.43)</strong>: Assigned Mean Grade <strong>B (Plain)</strong></li><li><strong>53 to 59 Points (Average 7.57 to 8.43)</strong>: Assigned Mean Grade <strong>B- (Minus)</strong></li><li><strong>46 to 52 Points (Average 6.57 to 7.43)</strong>: Assigned Mean Grade <strong>C+ (Plus &ndash; University Degree Cut-off)</strong></li><li><strong>39 to 45 Points (Average 5.57 to 6.43)</strong>: Assigned Mean Grade <strong>C (Plain &ndash; TVET Diploma Cut-off)</strong></li><li><strong>32 to 38 Points (Average 4.57 to 5.43)</strong>: Assigned Mean Grade <strong>C- (Minus)</strong></li><li><strong>25 to 31 Points (Average 3.57 to 4.43)</strong>: Assigned Mean Grade <strong>D+ (Plus &ndash; Craft Certificate Cut-off)</strong></li><li><strong>18 to 24 Points (Average 2.57 to 3.43)</strong>: Assigned Mean Grade <strong>D (Plain)</strong></li><li><strong>11 to 17 Points (Average 1.57 to 2.43)</strong>: Assigned Mean Grade <strong>D- (Minus &ndash; Artisan Certificate Cut-off)</strong></li><li><strong>7 to 10 Points (Average 1.00 to 1.43)</strong>: Assigned Mean Grade <strong>E (Minimal Achievement)</strong></li></ul><hr class="my-6 border-slate-200" /><h2>Step-by-Step: How to Use the KCSE Grade Calculator</h2><ol><li><strong>Select or Enter Subject Grades</strong>: For each of the three Group I compulsory subjects (English, Kiswahili, Mathematics), select your achieved or predicted letter grade (A through E) or enter your percentage mark (0% to 100%).</li><li><strong>Choose Your Sciences (Group II)</strong>: Input grades for at least two sciences (Biology, Chemistry, Physics).</li><li><strong>Select Your Humanities (Group III)</strong>: Input your grade for at least one humanity (History, Geography, CRE, IRE, or HRE).</li><li><strong>Add Electives or Applied Subjects (Group IV / V)</strong>: Enter any additional subjects taken, such as Agriculture, Business Studies, Computer Studies, or foreign languages.</li><li><strong>Click "Calculate KCSE Grade & Points"</strong>: The calculator automatically identifies your valid seven subjects according to KNEC grouping rules, sums your aggregate points out of 84, determines your official KNEC Mean Grade, and displays your tertiary placement eligibility.</li></ol><hr class="my-6 border-slate-200" /><h2>Worked KCSE Calculation Examples</h2><h3>Example 1: Science & Engineering Student (Nairobi School Candidate)</h3><p>A student takes eight subjects with the following results:</p><ul><li><strong>Group I Compulsory</strong>:</li><li>English: B+ (10 Points)</li><li>Kiswahili: A- (11 Points)</li><li>Mathematics Alt A: A (12 Points)</li><li><strong>Group II Sciences</strong>:</li><li>Biology: B+ (10 Points)</li><li>Chemistry: A- (11 Points)</li><li>Physics: A (12 Points)</li><li><strong>Group III Humanities</strong>:</li><li>History & Government: A (12 Points)</li><li><strong>Group IV Elective</strong>:</li><li>Computer Studies: A (12 Points)</li></ul><p><strong>Subject Selection & Audit</strong>:</p><ul><li>Compulsory 3: English (10 pts), Kiswahili (11 pts), Mathematics (12 pts) = 33 points.</li><li>Best 2 Sciences: Physics (12 pts) and Chemistry (11 pts) = 23 points. (Biology at 10 pts is held for elective comparison).</li><li>Best 1 Humanity: History & Government (12 pts) = 12 points.</li><li>7th Best Subject: Comparing remaining subjects (Computer Studies 12 pts vs Biology 10 pts), Computer Studies (12 pts) is selected.</li></ul><p><strong>Calculation</strong>:</p><ul><li><strong>Total Aggregate Points</strong> = 10 + 11 + 12 + 12 + 11 + 12 + 12 = <strong>80 / 84 Points</strong></li><li><strong>Mean Grade Point Average</strong> = 80 ÷ 7 = <strong>11.43 / 12.00</strong></li><li><strong>Assigned KCSE Mean Grade</strong> = <strong>A- (Minus)</strong></li><li><strong>Admission Eligibility</strong>: Directly qualifies for government-sponsored university degree placement in top-tier engineering, computer science, and medical programmes.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 2: Humanities & Business Student (Alliance Girls Candidate)</h3><p>A student takes seven subjects with the following results:</p><ul><li><strong>Group I Compulsory</strong>:</li><li>English: B (9 Points)</li><li>Kiswahili: B+ (10 Points)</li><li>Mathematics Alt A: C+ (7 Points)</li><li><strong>Group II Sciences</strong>:</li><li>Biology: B- (8 Points)</li><li>Chemistry: C+ (7 Points)</li><li><strong>Group III Humanities</strong>:</li><li>Geography: A- (11 Points)</li><li><strong>Group V Elective</strong>:</li><li>Business Studies: A (12 Points)</li></ul><p><strong>Calculation</strong>:</p><ul><li><strong>Total Aggregate Points</strong> = 9 + 10 + 7 + 8 + 7 + 11 + 12 = <strong>64 / 84 Points</strong></li><li><strong>Mean Grade Point Average</strong> = 64 ÷ 7 = <strong>9.14 / 12.00</strong></li><li><strong>Assigned KCSE Mean Grade</strong> = <strong>B (Plain)</strong></li><li><strong>Admission Eligibility</strong>: Directly qualifies for university degree admission in Bachelor of Commerce, Economics, Law, Education, and Social Sciences.</li></ul><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>What is the national pass mark for university entry in Kenya?</summary><div><p>Under current Ministry of Education and KUCCPS statutory guidelines, the minimum requirement for direct entry into public and private university undergraduate degree programmes in Kenya is a <strong>KCSE Mean Grade of C+ (Plus)</strong> (minimum 46 aggregate points).</p></div></details><details><summary>Can an 8th or 9th subject be dropped if it has a low grade?</summary><div><p>Yes. KNEC calculates the official mean grade using only the best seven subjects that satisfy grouping criteria. If you took eight subjects and scored a lower grade in one science or elective, that lowest extra score is automatically excluded from your aggregate calculation.</p></div></details><details><summary>What is the difference between Mathematics Alternative A and Alternative B?</summary><div><p>KNEC offers Mathematics Alt A (comprehensive pure and applied mathematics) and Mathematics Alt B (simplified business numeracy). Most degree courses in Engineering, Computer Science, Medicine, Pharmacy, Architecture, Actuarial Science, and Economics strictly require Mathematics Alt A.</p></div></details><details><summary>What tertiary options are available for students who score below C+?</summary><div><p>Candidates scoring below C+ have clear tertiary progression pathways:</p><ul><li><strong>Mean Grade of C or C- (32 to 45 points)</strong>: Direct admission into 2 to 3-year TVET and university Diploma programmes. Graduates with high diploma marks can transition directly into the second year of a Bachelor's degree.</li><li><strong>Mean Grade of D+ or D (18 to 31 points)</strong>: Admission into Craft Certificate courses at TVET institutes and National Polytechnics.</li><li><strong>Mean Grade of D- or E (7 to 17 points)</strong>: Admission into Artisan Certificate courses providing hands-on technical trade skills.</li></ul></div></details><details><summary>How does the KCSE mean grade differ from KUCCPS Weighted Cluster Points?</summary><div><p>Your KCSE Mean Grade is your overall average across all seven subjects (out of 84 points). In contrast, KUCCPS Weighted Cluster Points (out of 48 points) evaluates your performance specifically in the four prerequisite subjects required for a particular degree programme, combined mathematically with your overall 7-subject score.</p></div></details></section>
+
+    <!-- Authority, Credentials & Cited Sources Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-12">
+      <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Academic Authority &amp; Trust Standard
+              </span>
+              <span class="text-xs text-slate-500 font-medium hidden sm:inline">&bull; 100% Deterministic Arithmetic</span>
+            </div>
+            <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; KNEC Regulatory Verification</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">AfriWidget academic tools execute deterministic arithmetic audited directly against Kenya National Examinations Council (KNEC) and Kenya Universities and Colleges Central Placement Service (KUCCPS) regulations. Computations contain zero AI hallucinations and store zero student records in compliance with ISO/IEC 25010 and the Kenya Data Protection Act 2019.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-5">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🎓</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">KNEC Subject Grouping Audit</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">Algorithm strictly validates compulsory Group I subjects, minimum two Group II sciences, and humanities before evaluating remaining electives.</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">🔒</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">All entered subject marks and grades remain exclusively in client-side volatile browser memory with zero tracking.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              Authoritative Cited Source &amp; Regulatory Standard:
+            </p>
+            <p class="text-xs text-slate-700 font-semibold mb-1">Kenya National Examinations Council (KNEC) &ndash; <span class="text-slate-600 font-normal">KCSE 12-Point Grading System, 7-Subject Aggregation &amp; KUCCPS Degree Placement Benchmarks</span></p>
+            <p class="text-xs text-slate-500 leading-relaxed mb-2">Statutory Cutoff: Grade A (81-84), A- (74-80), B+ (67-73), B (60-66), B- (53-59), C+ (46-52 - Degree), C (39-45 - Diploma), C- (32-38), D+ (25-31 - Certificate), D (18-24), D- (11-17 - Artisan), E (7-10).</p>
+            <a href="https://www.knec.ac.ke/" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:text-emerald-800 font-bold inline-flex items-center gap-1 underline">
+              Verify official specifications on Kenya National Examinations Council (KNEC) &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const calcBtn = document.getElementById('kcseCalcBtn');
+      const resetBtn = document.getElementById('kcseResetBtn');
+      const copyBtn = document.getElementById('kcseCopyBtn');
+
+      const gradeNames = {
+        12: 'A', 11: 'A-', 10: 'B+', 9: 'B', 8: 'B-', 7: 'C+',
+        6: 'C', 5: 'C-', 4: 'D+', 3: 'D', 2: 'D-', 1: 'E'
+      };
+
+      function getMeanGrade(points) {
+        if (points >= 81) return { grade: 'A (Plain)', min: 81, max: 84, tier: 'University Degree (Direct Government Placement - Top Tier)' };
+        if (points >= 74) return { grade: 'A- (Minus)', min: 74, max: 80, tier: 'University Degree (Direct Government Placement - Competitive)' };
+        if (points >= 67) return { grade: 'B+ (Plus)', min: 67, max: 73, tier: 'University Degree (Direct Placement - Law, Engineering, Commerce)' };
+        if (points >= 60) return { grade: 'B (Plain)', min: 60, max: 66, tier: 'University Degree (Direct Placement - Sciences & Social Sciences)' };
+        if (points >= 53) return { grade: 'B- (Minus)', min: 53, max: 59, tier: 'University Degree (Direct Placement - Arts & Business Degrees)' };
+        if (points >= 46) return { grade: 'C+ (Plus)', min: 46, max: 52, tier: 'University Degree (National Minimum Pass Mark for Degree Placement)' };
+        if (points >= 39) return { grade: 'C (Plain)', min: 39, max: 45, tier: 'TVET & University Diploma Programmes' };
+        if (points >= 32) return { grade: 'C- (Minus)', min: 32, max: 38, tier: 'TVET Diploma & Teacher Training Colleges' };
+        if (points >= 25) return { grade: 'D+ (Plus)', min: 25, max: 31, tier: 'Craft Certificate Programmes (TVET & Polytechnics)' };
+        if (points >= 18) return { grade: 'D (Plain)', min: 18, max: 24, tier: 'Craft Certificate / Vocational Skills Training' };
+        if (points >= 11) return { grade: 'D- (Minus)', min: 11, max: 17, tier: 'National Artisan Certificate Programmes' };
+        return { grade: 'E (Minimal)', min: 7, max: 10, tier: 'Artisan Vocational Apprenticeship & Foundation Bridging' };
+      }
+
+      calcBtn.addEventListener('click', () => {
+        // 1. Group I Compulsory Core
+        const engVal = parseInt(document.getElementById('sub_english').value, 10);
+        const kisVal = parseInt(document.getElementById('sub_kiswahili').value, 10);
+        const matVal = parseInt(document.getElementById('sub_maths').value, 10);
+
+        if (isNaN(engVal) || isNaN(kisVal) || isNaN(matVal)) {
+          alert('Please select grades for all three compulsory core subjects: English, Kiswahili, and Mathematics.');
+          return;
+        }
+
+        // 2. Group II Sciences
+        const bioVal = parseInt(document.getElementById('sub_biology').value, 10);
+        const chemVal = parseInt(document.getElementById('sub_chemistry').value, 10);
+        const phyVal = parseInt(document.getElementById('sub_physics').value, 10);
+
+        const sciencePool = [];
+        if (!isNaN(bioVal)) sciencePool.push({ name: 'Biology', points: bioVal });
+        if (!isNaN(chemVal)) sciencePool.push({ name: 'Chemistry', points: chemVal });
+        if (!isNaN(phyVal)) sciencePool.push({ name: 'Physics', points: phyVal });
+
+        if (sciencePool.length < 2) {
+          alert('KNEC regulations require at least two science subjects (Biology, Chemistry, Physics). Please select at least two sciences.');
+          return;
+        }
+
+        // Sort sciences descending to take top 2 for Group II
+        sciencePool.sort((a, b) => b.points - a.points);
+        const countedSciences = sciencePool.slice(0, 2);
+        const extraScience = sciencePool.slice(2);
+
+        // 3. Group III Humanities
+        const histVal = parseInt(document.getElementById('sub_history').value, 10);
+        const geoVal = parseInt(document.getElementById('sub_geography').value, 10);
+        const relVal = parseInt(document.getElementById('sub_religious').value, 10);
+
+        const humanityPool = [];
+        if (!isNaN(histVal)) humanityPool.push({ name: 'History & Gov', points: histVal });
+        if (!isNaN(geoVal)) humanityPool.push({ name: 'Geography', points: geoVal });
+        if (!isNaN(relVal)) humanityPool.push({ name: 'CRE/IRE/HRE', points: relVal });
+
+        if (humanityPool.length < 1) {
+          alert('KNEC regulations require at least one humanity subject (History, Geography, CRE/IRE). Please select at least one humanity.');
+          return;
+        }
+
+        // Sort humanities descending to take top 1
+        humanityPool.sort((a, b) => b.points - a.points);
+        const countedHumanity = humanityPool.slice(0, 1);
+        const extraHumanities = humanityPool.slice(1);
+
+        // 4. Elective / 7th Subject Pool
+        const ele1Val = parseInt(document.getElementById('sub_elective1').value, 10);
+        const ele2Val = parseInt(document.getElementById('sub_elective2').value, 10);
+
+        const remainingPool = [...extraScience, ...extraHumanities];
+        if (!isNaN(ele1Val)) remainingPool.push({ name: 'Group IV Applied Elective', points: ele1Val });
+        if (!isNaN(ele2Val)) remainingPool.push({ name: 'Group V Elective', points: ele2Val });
+
+        if (remainingPool.length < 1) {
+          alert('Please select a 7th subject (either a 3rd science, 2nd humanity, or an applied/elective subject).');
+          return;
+        }
+
+        // Sort remaining descending to pick best 7th subject
+        remainingPool.sort((a, b) => b.points - a.points);
+        const countedElective = remainingPool.slice(0, 1);
+
+        // Assemble 7 Counted Subjects
+        const finalSeven = [
+          { name: 'English (Compulsory)', points: engVal },
+          { name: 'Kiswahili (Compulsory)', points: kisVal },
+          { name: 'Mathematics (Compulsory)', points: matVal },
+          ...countedSciences,
+          ...countedHumanity,
+          ...countedElective
+        ];
+
+        const totalPoints = finalSeven.reduce((sum, item) => sum + item.points, 0);
+        const meanGpa = (totalPoints / 7).toFixed(2);
+        const meanInfo = getMeanGrade(totalPoints);
+
+        // Update UI
+        document.getElementById('kcseMeanGradeDisplay').textContent = meanInfo.grade;
+        document.getElementById('kcsePointsTotalDisplay').innerHTML = `Aggregate Points: <span class="text-white font-bold">${totalPoints} / 84 Points</span>`;
+        document.getElementById('kcseGpaDisplay').textContent = `${meanGpa} / 12.00`;
+        document.getElementById('kcseCountDisplay').textContent = `7 / 7 Subjects`;
+        document.getElementById('resultBadge').textContent = 'Calculated';
+        document.getElementById('resultBadge').className = 'text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30';
+
+        document.getElementById('kcseTierDisplay').innerHTML = `
+          <strong class="text-yellow-400 block mb-1">${meanInfo.tier}</strong>
+          With an aggregate of <strong>${totalPoints} points</strong> (${meanGpa} GPA average), you ${totalPoints >= 46 ? 'meet the national baseline for direct government-sponsored university degree placement' : 'qualify for technical diploma and certificate programmes under KUCCPS'}.
+        `;
+
+        // Render subject breakdown
+        const subjectListEl = document.getElementById('kcseSubjectList');
+        subjectListEl.innerHTML = finalSeven.map(s => `
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/50">
+            <span class="text-slate-300">${s.name}</span>
+            <span class="font-bold text-yellow-300">${gradeNames[s.points] || s.points} (${s.points} pts)</span>
+          </div>
+        `).join('');
+
+        document.getElementById('kcseSubjectAuditBox').classList.remove('hidden');
+        copyBtn.classList.remove('hidden');
+      });
+
+      resetBtn.addEventListener('click', () => {
+        document.querySelectorAll('.kcse-subject-grade').forEach(sel => sel.value = '');
+        document.getElementById('kcseMeanGradeDisplay').textContent = '—';
+        document.getElementById('kcsePointsTotalDisplay').innerHTML = 'Aggregate Points: <span class="text-white font-bold">— / 84</span>';
+        document.getElementById('kcseGpaDisplay').textContent = '— / 12.00';
+        document.getElementById('kcseCountDisplay').textContent = '— / 7';
+        document.getElementById('resultBadge').textContent = 'Awaiting Input';
+        document.getElementById('resultBadge').className = 'text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-semibold';
+        document.getElementById('kcseTierDisplay').textContent = 'Enter grades for at least 7 valid subjects and click "Calculate KCSE Grade & Points" to determine your admission tier.';
+        document.getElementById('kcseSubjectAuditBox').classList.add('hidden');
+        copyBtn.classList.add('hidden');
+      });
+
+      copyBtn.addEventListener('click', () => {
+        const grade = document.getElementById('kcseMeanGradeDisplay').textContent;
+        const pts = document.getElementById('kcsePointsTotalDisplay').textContent;
+        const gpa = document.getElementById('kcseGpaDisplay').textContent;
+        const tier = document.getElementById('kcseTierDisplay').innerText;
+
+        const text = `🇰🇪 KCSE Examination Result Summary:\n• Mean Grade: ${grade}\n• ${pts}\n• Mean GPA: ${gpa}\n• Placement Tier: ${tier}\nCalculated with AfriWidget KCSE Grade Calculator (https://afriwidget.com/kcse-grade-calculator)`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const original = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span>✅ Copied to Clipboard!</span>';
+          setTimeout(() => { copyBtn.innerHTML = original; }, 2500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

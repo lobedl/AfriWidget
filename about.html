@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -18,11 +23,6 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>About AfriWidget – Free Private Online Tools</title>
   
   <meta name="description" content="Learn about AfriWidget — a privacy-first platform providing fast, free, browser-based calculators and AI utilities for students, creators, and professionals." />
@@ -53,17 +53,39 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "About AfriWidget – Free Private Online Tools",
-    "description": "Learn about AfriWidget — our mission to democratise AI-powered health, finance, and education tools across Africa and the world.",
+    "@type": "AboutPage",
+    "name": "About AfriWidget – The Story of Founder Obed Avorlenu & Platform Mission",
+    "description": "Learn about AfriWidget, founded by 19-year-old Ghanaian web developer Obed Avorlenu to democratize free, private, client-side digital calculators and academic utilities.",
     "url": "https://afriwidget.com/about",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com",
+      "logo": "https://afriwidget.com/favicon-180.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Obed Avorlenu",
+        "jobTitle": "Founder & Lead Developer",
+        "nationality": "Ghanaian",
+        "description": "19-year-old self-taught Ghanaian web developer, creator and founder of AfriWidget, building free digital utilities to democratize access to education, finance, and productivity tools across Africa.",
+        "sameAs": [
+          "https://afriwidget.com/about",
+          "https://www.instagram.com/afriwidget"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Ghana"
+        }
+      },
+      "knowsAbout": [
+        "Client-Side Web Utilities",
+        "African Academic Examination Grading Systems (WAEC, JAMB, KUCCPS, ZIMSEC, UNEB, SA Matric)",
+        "Financial Mathematics & Loan Amortization",
+        "Privacy-by-Design & Zero-Server Data Retention Architecture"
+      ]
     }
   },
   {
@@ -79,13 +101,61 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "About AfriWidget – Free Private Online Tools",
+        "name": "About AfriWidget",
         "item": "https://afriwidget.com/about"
       }
     ]
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -208,89 +278,199 @@
   <main>
 
 
-  <section class="bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 text-white py-20 px-4 text-center">
-    <div class="max-w-3xl mx-auto">
-      <span class="inline-block bg-emerald-500 bg-opacity-20 text-emerald-300 text-sm font-semibold px-4 py-1 rounded-full mb-6 border border-emerald-500 border-opacity-30">About Us</span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">About AfriWidget – Free Private Online Tools</h1>
-      <p class="text-lg text-slate-300 max-w-xl mx-auto">AfriWidget is an independent, static-first web utility platform delivering fast, private, client-side calculators for health, finance, education, business, and daily work.</p>
+  <section class="bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 text-white py-20 px-4 text-center border-b border-slate-800">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-yellow-400/10 text-yellow-300 text-xs font-extrabold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6 border border-yellow-400/20">
+        Empowering Africa Through Innovation
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tight mb-6">
+        The Story Behind Afri<span class="text-yellow-300">Widget</span>
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Building fast, free, and completely private browser-based utilities to help students, creators, and professionals across Africa solve everyday problems in seconds.
+      </p>
     </div>
   </section>
 
   <article class="max-w-4xl mx-auto px-4 py-16">
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Our Story</h2>
-    <p class="text-slate-700 leading-relaxed mb-5 text-lg">AfriWidget was founded on a straightforward but urgent observation: in much of Africa and the developing world, access to personalised, high-quality guidance in health, finance, and education remains a privilege rather than a right. A student in Lagos has no affordable GPA tracking tool. A family in Nairobi has no free way to calculate whether their savings plan will cover their children's university fees. A young professional in Accra has no clinical-grade BMI and nutrition calculator designed with their context in mind.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">We built AfriWidget to change that. Our platform is a collection of free, browser-based, AI-enhanced tools that make calculations and practical explanations available to anyone, anywhere, on any device. Most results are calculated locally; Finance and Education tools can add Groq-powered insight through a secure proxy when the deployed AI service is available. No sign-up and no fee are required, and we do not maintain a database of calculator submissions.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">The name "AfriWidget" reflects our identity: rooted in Africa, but universally applicable. "Widget" speaks to our philosophy of building small, focused, powerful tools — each one purpose-built to solve a real problem in a specific domain.</p>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Our Mission</h2>
-    <p class="text-slate-700 leading-relaxed mb-5">AfriWidget's mission is to democratise access to intelligent, data-driven decision support for people across Africa and the developing world. We believe that every individual — regardless of geography, income level, or educational background — deserves access to the same quality of analytical tools that drive better decisions in wealthier parts of the world.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">We pursue this mission through three principles: accessibility (our tools work on low-end devices and slow connections), privacy (all computations happen locally in your browser — we never touch your data), and accuracy (we use internationally validated formulas and clinical standards so you can trust the results).</p>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">What We Build</h2>
-    <div class="grid md:grid-cols-3 gap-6 mb-10">
-      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+    <!-- FOUNDER SPOTLIGHT CARD -->
+    <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 sm:p-10 border border-slate-700/80 shadow-2xl mb-16 relative overflow-hidden">
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-yellow-400/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pb-8 border-b border-slate-750">
+        <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-yellow-400 to-amber-500 text-slate-950 font-black text-3xl flex items-center justify-center shadow-lg flex-shrink-0">
+          OA
         </div>
-        <h3 class="font-bold text-teal-700 mb-2">Health Tools</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Clinically validated BMI, BMR, and TDEE calculators with optional realtime AI guidance that explains your body metrics in plain language.</p>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 text-yellow-300 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-yellow-400/20">
+            Founder &amp; Lead Developer
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Obed Avorlenu</h2>
+          <p class="text-slate-300 text-sm mt-1">Self-taught Ghanaian Web Developer &amp; Creator of AfriWidget • Accra, Ghana</p>
+        </div>
       </div>
-      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="font-bold text-teal-700 mb-2">Finance Tools</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Compound interest calculators with multi-year growth tables and optional realtime financial AI guidance that helps ordinary savers model their futures with confidence.</p>
+
+      <div class="mt-8 space-y-6 text-slate-200 leading-relaxed text-base sm:text-lg">
+        <p class="text-yellow-300 font-semibold text-xl leading-snug">
+          Some people are born into opportunity. Others have to build it themselves.
+        </p>
+        
+        <p class="font-medium text-white">
+          Obed Avorlenu belongs to the second group.
+        </p>
+
+        <p>
+          At just 19 years old, Obed's journey has been defined by determination, self-learning, and an unwavering belief that technology can change lives. Coming from Ghana, he faced challenges that could have easily discouraged him, including financial obstacles that affected his educational path. Instead of allowing those difficulties to define his future, he chose to define it himself.
+        </p>
+
+        <p>
+          Without expensive resources, a large team, or outside funding, Obed taught himself web development and began turning ideas into reality. He spent countless hours learning, building, failing, improving, and trying again. Every challenge became a lesson. Every setback became motivation.
+        </p>
+
+        <p>
+          That persistence eventually led to the creation of <strong>AfriWidget</strong> — a platform built with a simple but powerful vision: to give people access to useful digital tools that can make life easier, work faster, and opportunities more accessible.
+        </p>
+
+        <p>
+          What makes AfriWidget special is not just the technology behind it. It is the purpose behind it.
+        </p>
+
+        <p>
+          Obed understands what it feels like to search for opportunities, to look for solutions, and to face limitations that many people encounter every day. That understanding shaped AfriWidget into more than just a website. It became a platform designed to help students plan their futures, freelancers grow their careers, professionals increase productivity, and everyday users solve problems within seconds.
+        </p>
+
+        <p>
+          Today, AfriWidget offers more than 100 tools across multiple categories, helping users save time, make smarter decisions, and access resources that would otherwise be difficult or expensive to obtain.
+        </p>
+
+        <p>
+          For Obed, success has never been only about building software. It is about creating impact.
+        </p>
+
+        <p>
+          His story is proof that where you start does not determine where you finish. A young person with a laptop, a vision, and the willingness to learn can create something meaningful that serves thousands of people.
+        </p>
+
+        <p>
+          As the founder of AfriWidget, Obed continues to build with a mission greater than himself: empowering people through technology, creating opportunities through innovation, and showing others that even the biggest dreams can begin with a single decision to start.
+        </p>
       </div>
-      <div class="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+
+      <!-- FOUNDER QUOTE CALLOUT -->
+      <div class="mt-8 p-6 bg-slate-950/60 rounded-2xl border-l-4 border-yellow-400">
+        <blockquote class="text-yellow-200 text-lg sm:text-xl font-bold italic leading-relaxed">
+          &ldquo;Your circumstances may shape your journey, but they do not have to limit your destination.&rdquo;
+        </blockquote>
+        <div class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wider">
+          — Obed Avorlenu, Founder of AfriWidget
         </div>
-        <h3 class="font-bold text-teal-700 mb-2">Education Tools</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Dynamic GPA calculators with credit-hour weighting, benchmark comparisons, and optional realtime academic AI guidance that helps students track and strategise their performance.</p>
       </div>
     </div>
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Our Values</h2>
-    <div class="space-y-5 mb-10">
-      <div class="flex gap-4">
-        <div class="w-8 h-8 bg-emerald-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm mt-0.5">1</div>
-        <div>
-          <h3 class="font-bold text-slate-900 mb-1">Privacy is Non-Negotiable</h3>
-          <p class="text-slate-600 leading-relaxed">We believe your health data, financial figures, and academic records are deeply personal. Calculations run locally, while Finance and Education AI insight requests use only the relevant calculation context through a secure proxy. We have no accounts, do not maintain a calculator-submission database, and do not use calculator inputs for advertising targeting.</p>
+    <!-- MISSION & VISION SECTION -->
+    <h2 class="text-3xl font-black text-slate-900 mb-6">Our Mission &amp; Purpose</h2>
+    <p class="text-slate-700 leading-relaxed mb-5 text-lg">
+      AfriWidget was created to solve an urgent structural problem: across Africa and the developing world, access to essential calculations in academics, business, health, and personal finance is frequently gated behind complex software, paywalls, high-bandwidth web pages, or expensive private consultants.
+    </p>
+    <p class="text-slate-700 leading-relaxed mb-10">
+      Whether it is a Ghanaian student trying to calculate their exact WASSCE university aggregate, a Kenyan applicant computing KUCCPS degree cluster points, a South African matriculant checking APS eligibility for NSFAS funding, or a freelance creator invoicing an international client — AfriWidget provides immediate, 100% free, deterministic mathematical tools that run instantly in the user's browser with zero sign-up friction.
+    </p>
+
+    <!-- WHAT MAKES AFRIWIDGET DIFFERENT -->
+    <h2 class="text-3xl font-black text-slate-900 mb-6">What We Build: Four Core Pillars</h2>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-4 text-amber-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
         </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">Education &amp; Academic Calculators</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          National examination grading tools rigorously calibrated against official standards from WAEC (West Africa), JAMB (Nigeria), KUCCPS &amp; KNEC (Kenya), ZIMSEC (Zimbabwe), UNEB (Uganda), and the South African Department of Higher Education &amp; Training (DHET).
+        </p>
       </div>
-      <div class="flex gap-4">
-        <div class="w-8 h-8 bg-teal-600 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm mt-0.5">2</div>
-        <div>
-          <h3 class="font-bold text-slate-900 mb-1">Accessibility Over Everything</h3>
-          <p class="text-slate-600 leading-relaxed">Our tools are built as lightweight, fast-loading static HTML pages. They work on 2G connections, older Android phones, and basic browsers. We refuse to let technical barriers exclude the people who need our tools most.</p>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 text-emerald-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">Finance &amp; Business Math</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Standardized loan amortization, compound interest modeling, freelance pricing calculators, VAT/GST estimates, and startup burn rate projections to empower entrepreneurs and savers with transparent, math-backed projections.
+        </p>
       </div>
-      <div class="flex gap-4">
-        <div class="w-8 h-8 bg-emerald-500 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm mt-0.5">3</div>
-        <div>
-          <h3 class="font-bold text-slate-900 mb-1">Scientific Rigour, Plain Language</h3>
-          <p class="text-slate-600 leading-relaxed">We use internationally validated, peer-reviewed formulas and clinical standards. But we translate results into plain, actionable language — because knowing your BMI number is only useful if you understand what it means and what to do about it.</p>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center mb-4 text-rose-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
         </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">Health &amp; Wellness Utilities</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Clinically grounded BMI, BMR (Mifflin-St Jeor), TDEE, water intake, and calorie deficit planners engineered strictly for general wellness awareness with clear clinical disclaimers.
+        </p>
       </div>
-      <div class="flex gap-4">
-        <div class="w-8 h-8 bg-teal-600 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm mt-0.5">4</div>
-        <div>
-          <h3 class="font-bold text-slate-900 mb-1">Free Forever</h3>
-          <p class="text-slate-600 leading-relaxed">AfriWidget will always be free. We sustain the platform through non-intrusive advertising and are committed to never introducing paywalls, subscription tiers, or premium features that restrict access to our core tools.</p>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">Productivity &amp; Web Utilities</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Clean in-browser tools including PDF Invoice/Receipt generators, QR Code builders, JSON formatters, text case modifiers, and reading-time estimators that require zero file uploads or account creations.
+        </p>
       </div>
     </div>
 
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Looking Ahead</h2>
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">How We Build Trust</h2>
-    <p class="text-slate-700 leading-relaxed mb-5">Trust is also about explaining what a result can and cannot say. A calculator should show its inputs, describe the method in ordinary language, and make uncertainty visible. That is especially important for health guidance and admissions estimates, where a number can be useful for preparation but cannot replace a clinician, school, examination board, or official institution. We aim to make those boundaries visible beside the tool rather than hiding them in fine print.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">We also treat feedback as part of the product. When a visitor reports an unclear label, a broken link, an outdated rule, or an accessibility barrier, that report helps us decide what deserves attention next. Our goal is not to create the largest possible collection of widgets; it is to make each page understandable enough that someone can use it confidently on a phone, revisit the result, and know when to verify it elsewhere.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">AfriWidget is still growing. Our roadmap includes expanded health tools covering nutrition tracking, diabetes risk calculators, and blood pressure monitoring guides; finance tools addressing loan amortisation, retirement planning, and currency-aware investment modelling for African markets; and education tools including study schedule optimisers, scholarship eligibility checkers, and university admission requirement databases for African institutions.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">We are also committed to expanding our language support, with plans to offer content and interfaces in Swahili, French, Hausa, Amharic, and other widely spoken African languages, ensuring our tools reach the widest possible audience across the continent's extraordinary linguistic diversity.</p>
-    <p class="text-slate-700 leading-relaxed">If you believe in what we are building, we welcome your feedback, suggestions, and contributions. Reach us through our <a href="contact" class="text-teal-700 hover:text-emerald-600 font-semibold underline">contact page</a> — every message helps us build a better AfriWidget.</p>
+    <!-- TECHNICAL DESIGN & PRIVACY COMMITMENT -->
+    <h2 class="text-3xl font-black text-slate-900 mb-6">Our Engineering &amp; Privacy Standards</h2>
+    <div class="space-y-6 mb-12">
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">✓</div>
+          <h3 class="font-bold text-slate-900 text-lg">100% Client-Side In-Memory Execution</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          All computations are executed directly inside your web browser via vanilla JavaScript. When you calculate your GPA, matric points, or mortgage payments, your private numbers are never transmitted to or stored in a backend server database.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">✓</div>
+          <h3 class="font-bold text-slate-900 text-lg">Low-Bandwidth &amp; Mobile-First Performance</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          In many African regions, mobile data costs are high and network coverage is variable. AfriWidget pages are optimized for near-instant rendering with static pre-rendered HTML, compressed CSS, and zero bloated JavaScript frameworks.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">✓</div>
+          <h3 class="font-bold text-slate-900 text-lg">Algorithmic Transparency &amp; Official Citations</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Every educational and financial formula is fully documented with step-by-step mathematical explanations, worked examples, and direct links to official governing bodies (such as WAEC, JAMB, KUCCPS, ZIMSEC, and the South African Government Gazette).
+        </p>
+      </div>
+    </div>
+
+    <!-- GET IN TOUCH & EDITORIAL CONTACT -->
+    <div class="bg-slate-900 text-white rounded-2xl p-8 border border-slate-800 text-center">
+      <h3 class="text-2xl font-bold mb-3">Connect With Us</h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+        AfriWidget is constantly expanding to meet the needs of users across the continent and beyond. If you have tool suggestions, feedback, or formula inquiries, we would love to hear from you.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="/contact" class="px-6 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-sm rounded-xl transition-colors shadow-md">
+          Send a Message
+        </a>
+        <a href="/widgets" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm rounded-xl transition-colors border border-slate-700">
+          Browse All 100+ Tools
+        </a>
+      </div>
+    </div>
+
   </article>
 
   
@@ -360,6 +540,14 @@
          <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
          <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
          <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
          <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
          <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
          <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>

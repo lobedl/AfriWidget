@@ -20,9 +20,15 @@
 .new-tool-page .guide ul,.new-tool-page .guide ol,.guide-content ul,.guide-content ol{margin:.75rem 0;padding-left:1.5rem;color:#334155;line-height:1.6}
 .new-tool-page .guide strong,.new-tool-page .guide b,.guide-content strong,.guide-content b{color:#0f172a;font-weight:700}
 .new-tool-page .guide blockquote,.guide-content blockquote{border-left:4px solid #facc15;padding:.6rem 1rem;background:#fffbeb;color:#713f12;margin:1rem 0;border-radius:0 .5rem .5rem 0}
-.new-tool-page .guide details,.guide-content details{border-top:1px solid #e2e8f0;padding:.85rem 0}
-.new-tool-page .guide summary,.guide-content summary{cursor:pointer;font-weight:800;color:#0f172a}
-.new-tool-page .guide details div,.guide-content details div{padding:.35rem 0}
+.new-tool-page .guide details,.guide-content details{background:#ffffff;border:1px solid #e2e8f0;border-radius:0.875rem;margin-bottom:0.85rem;overflow:hidden;transition:all 0.2s ease;box-shadow:0 1px 3px rgba(15,23,42,0.04)}
+.new-tool-page .guide details:hover,.guide-content details:hover{border-color:#cbd5e1;box-shadow:0 4px 12px rgba(15,23,42,0.06)}
+.new-tool-page .guide details[open],.guide-content details[open]{border-color:#facc15;box-shadow:0 6px 18px rgba(250,204,21,0.12)}
+.new-tool-page .guide summary,.guide-content summary{cursor:pointer;font-weight:700;font-size:1rem;color:#0f172a;background:#f8fafc;padding:1.1rem 1.35rem;display:flex;align-items:center;justify-content:space-between;list-style:none;user-select:none;transition:background 0.15s ease}
+.new-tool-page .guide summary::-webkit-details-marker,.guide-content summary::-webkit-details-marker{display:none}
+.new-tool-page .guide summary::after,.guide-content summary::after{content:"";display:inline-block;width:0.55rem;height:0.55rem;border-right:2.5px solid #64748b;border-bottom:2.5px solid #64748b;transform:rotate(45deg);transition:transform 0.25s ease,border-color 0.2s ease;margin-left:1rem;flex-shrink:0}
+.new-tool-page .guide details[open] summary,.guide-content details[open] summary{background:#fffbeb;color:#78350f;border-bottom:1px solid #fef3c7}
+.new-tool-page .guide details[open] summary::after,.guide-content details[open] summary::after{transform:rotate(-135deg);border-color:#b45309}
+.new-tool-page .guide details div,.guide-content details div{padding:1.2rem 1.35rem 1.35rem;color:#334155;font-size:0.95rem;line-height:1.7;background:#ffffff}
 .new-tool-page table{width:100%;border-collapse:collapse;font-size:.85rem}
 .new-tool-page th,.new-tool-page td{border-bottom:1px solid #e2e8f0;padding:.6rem;text-align:right;color:#334155}
 .new-tool-page th{color:#0f172a;font-weight:700}

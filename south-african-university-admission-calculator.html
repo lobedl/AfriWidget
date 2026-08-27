@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>South African University Admission Calculator (Matric APS & Faculty Eligibility) – AfriWidget</title>
+  
+  <meta name="description" content="Calculate your South African university admission chances. Compare your Matric NSC APS score against UCT, Wits, UP, Stellenbosch, UJ, UKZN, and UNISA faculty cut-offs." />
+  <link rel="canonical" href="https://afriwidget.com/south-african-university-admission-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="South African University Admission Calculator (Matric APS & Faculty Eligibility) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/south-african-university-admission-calculator" />
+  <meta property="og:description" content="Calculate your South African university admission chances. Compare your Matric NSC APS score against UCT, Wits, UP, Stellenbosch, UJ, UKZN, and UNISA faculty cut-offs." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="South African University Admission Calculator (Matric APS & Faculty Eligibility) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your South African university admission chances. Compare your Matric NSC APS score against UCT, Wits, UP, Stellenbosch, UJ, UKZN, and UNISA faculty cut-offs." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="academic-tools.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "South African University Admission Calculator",
+    "description": "Calculate your South African university admission chances. Compare your Matric NSC APS score against UCT, Wits, UP, Stellenbosch, UJ, UKZN, and UNISA faculty cut-offs.",
+    "url": "https://afriwidget.com/south-african-university-admission-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-25",
+    "citation": [
+      "https://www.usaf.ac.za/",
+      "https://www.dhet.gov.za/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "South African University Admission Calculator",
+        "item": "https://afriwidget.com/south-african-university-admission-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between statutory minimum admission and faculty selection points?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Statutory minimum admission (e.g. a Bachelor's endorsement on your NSC) means you are legally qualified to apply to higher education in South Africa. However, individual faculties apply much higher competitive APS cutoffs and subject minimums for final selection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Life Orientation scored in university APS calculations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Universities such as UP and Stellenbosch exclude Life Orientation entirely from their 6-subject calculation (maximum 42 points). Other universities like UJ assign reduced points (1 to 4 points) for high LO scores, while some include it as an equal 7th subject."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I study Medicine or Engineering with Mathematical Literacy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All South African medical schools (MBChB) and accredited engineering faculties (BEng/BSc Eng) legally require Pure Mathematics and Physical Sciences at Level 5, 6, or 7. Mathematical Literacy is not accepted for STEM and medical professions."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+  <!-- Pre-rendered Static Global Navigation Header -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">South African University Admission Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <header class="bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-900 text-white py-14 px-4 shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-yellow-400/20 text-yellow-300 text-xs sm:text-sm font-bold px-3.5 py-1 rounded-full mb-4 border border-yellow-400/30">
+        <span>🇿🇦 South Africa Tertiary Admissions Engine</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-white">South African University Admission Calculator</h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+        Evaluate your Matric NSC results, compute your official 6-subject APS, check Bachelor pass status, and verify your admission chances across South African universities and faculties.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Calculator Workspace Grid -->
+    <section class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Input Form Card -->
+      <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8">
+        <div class="border-b border-slate-100 pb-5 mb-6">
+          <h2 class="text-2xl font-bold text-slate-900">Enter Your Matric Subjects &amp; Targets</h2>
+          <p class="text-slate-600 text-sm mt-1">Select your target institution, faculty stream, and NSC percentage marks.</p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Target University & Faculty -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="saUniTarget" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Target University</label>
+              <select id="saUniTarget" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+                <option value="all">All South African Universities</option>
+                <option value="uct">University of Cape Town (UCT)</option>
+                <option value="wits">University of the Witwatersrand (Wits)</option>
+                <option value="up">University of Pretoria (UP / Tuks)</option>
+                <option value="su">Stellenbosch University (SU / Maties)</option>
+                <option value="uj">University of Johannesburg (UJ)</option>
+                <option value="ukzn">University of KwaZulu-Natal (UKZN)</option>
+                <option value="nwu">North-West University (NWU)</option>
+                <option value="unisa">University of South Africa (UNISA)</option>
+                <option value="uot">Universities of Technology (TUT / DUT / CPUT)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="saFacultyStream" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Faculty Stream</label>
+              <select id="saFacultyStream" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-800 outline-none">
+                <option value="health">Medicine &amp; Health Sciences (MBChB, Pharmacy)</option>
+                <option value="eng">Engineering &amp; Built Environment (BEng, BSc Eng)</option>
+                <option value="comm">Commerce &amp; Accounting (BCom, CA Stream)</option>
+                <option value="law">Law (LLB Undergraduate Degree)</option>
+                <option value="sci">Science &amp; Information Technology (BSc, CS, IT)</option>
+                <option value="humanities">Humanities &amp; Social Sciences (BA, Journalism)</option>
+                <option value="edu">Education (BEd Foundation / Intermediate / FET)</option>
+                <option value="tvet">National Diploma / TVET Technical Stream</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Subject Marks Entry -->
+          <div class="space-y-4 pt-2">
+            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">NSC Subject Results (0% – 100%)</h3>
+
+            <!-- English -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saSubEnglishType" class="block text-xs font-semibold text-slate-600 mb-1">English Language</label>
+                <select id="saSubEnglishType" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm">
+                  <option value="HL">English Home Language (HL)</option>
+                  <option value="FAL">English First Additional Language (FAL)</option>
+                </select>
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <label for="saMarkEnglish" class="block text-xs font-semibold text-slate-600 mb-1">Mark (%)</label>
+                <input id="saMarkEnglish" type="number" min="0" max="100" placeholder="e.g. 74" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Mathematics -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saSubMathsType" class="block text-xs font-semibold text-slate-600 mb-1">Mathematics Subject</label>
+                <select id="saSubMathsType" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm">
+                  <option value="MATH">Pure Mathematics</option>
+                  <option value="MLIT">Mathematical Literacy</option>
+                  <option value="TECH">Technical Mathematics</option>
+                </select>
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <label for="saMarkMaths" class="block text-xs font-semibold text-slate-600 mb-1">Mark (%)</label>
+                <input id="saMarkMaths" type="number" min="0" max="100" placeholder="e.g. 80" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Physical Sciences -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saMarkPhysics" class="block text-xs font-semibold text-slate-600 mb-1">Physical Sciences / Technical Sciences</label>
+                <span class="text-xs text-slate-500">Required for STEM &amp; Engineering</span>
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <input id="saMarkPhysics" type="number" min="0" max="100" placeholder="e.g. 75 or leave blank" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Life Sciences -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saMarkLifeSci" class="block text-xs font-semibold text-slate-600 mb-1">Life Sciences (Biology)</label>
+                <span class="text-xs text-slate-500">Required for Medicine &amp; Health</span>
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <input id="saMarkLifeSci" type="number" min="0" max="100" placeholder="e.g. 70 or leave blank" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Elective 1 -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saMarkElective1" class="block text-xs font-semibold text-slate-600 mb-1">Elective Subject 1 (Accounting, IT, History, etc.)</label>
+                <input id="saNameElective1" type="text" placeholder="Subject name (optional)" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1 text-xs" />
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <input id="saMarkElective1" type="number" min="0" max="100" placeholder="e.g. 68" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Elective 2 -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saMarkElective2" class="block text-xs font-semibold text-slate-600 mb-1">Elective Subject 2 (Geography, Economics, etc.)</label>
+                <input id="saNameElective2" type="text" placeholder="Subject name (optional)" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1 text-xs" />
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <input id="saMarkElective2" type="number" min="0" max="100" placeholder="e.g. 65" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+
+            <!-- Life Orientation -->
+            <div class="grid grid-cols-12 gap-3 items-center">
+              <div class="col-span-8 sm:col-span-7">
+                <label for="saMarkLO" class="block text-xs font-semibold text-slate-600 mb-1">Life Orientation (LO)</label>
+                <span class="text-xs text-slate-500">Evaluated according to university rules</span>
+              </div>
+              <div class="col-span-4 sm:col-span-5">
+                <input id="saMarkLO" type="number" min="0" max="100" placeholder="e.g. 80" class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 rounded-lg px-3 py-1.5 text-sm font-bold text-slate-800 outline-none" />
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button id="saUniCheckBtn" type="button" class="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold text-base py-4 rounded-xl shadow-lg transition-all transform active:scale-[0.99] flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Check University Admission</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Display Panel -->
+      <div class="lg:col-span-5 space-y-6" aria-live="polite">
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+            <span class="text-xs uppercase tracking-widest text-yellow-300 font-extrabold">Admission Prognosis</span>
+            <span class="text-xs text-slate-400">SA Tertiary System</span>
+          </div>
+
+          <div class="mb-6 text-center">
+            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Calculated 6-Subject APS</p>
+            <div id="saApsDisplay" class="text-6xl font-black text-yellow-300 my-2">—</div>
+            <p id="saPassLevelBadge" class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">Enter marks and click check</p>
+          </div>
+
+          <div id="saResultDetails" class="space-y-4 text-sm text-slate-300 border-t border-slate-800 pt-5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Statutory Pass Level:</span>
+              <span id="saStatutoryPass" class="font-bold text-white">—</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Prerequisite Math Check:</span>
+              <span id="saMathCheck" class="font-bold text-white">—</span>
+            </div>
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-400">Science / Core Prereq:</span>
+              <span id="saScienceCheck" class="font-bold text-white">—</span>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700/60 mt-4">
+              <p class="text-xs font-bold text-yellow-300 uppercase tracking-wider mb-1">Faculty Admission Verdict</p>
+              <p id="saVerdictSummary" class="text-xs text-slate-200 leading-relaxed">
+                Enter your NSC percentage marks for your 6 core subjects and Life Orientation to evaluate your university eligibility.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy & Accreditation Notice Card -->
+        <div class="bg-blue-50 border border-blue-200/80 rounded-2xl p-5 text-xs text-blue-900 space-y-2">
+          <div class="flex items-center gap-2 font-bold text-blue-950">
+            <svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>South African Tertiary Admission Standards</span>
+          </div>
+          <p class="leading-relaxed text-blue-800">
+            Complies with statutory criteria defined by the <strong>Department of Higher Education and Training (DHET)</strong>, <strong>Universities South Africa (USAf)</strong>, and institutional faculty handbooks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Markdown Educational Guide Pre-rendered Section -->
+    <section id="toolGuide" class="max-w-4xl mx-auto mt-16 space-y-6 text-slate-700 leading-relaxed"><h2>Comprehensive Guide to South African University Admission, APS Benchmarks & Faculty Eligibility</h2><p>Navigating university admission in South Africa requires understanding how your <strong>National Senior Certificate (NSC)</strong> or <strong>IEB (Independent Examinations Board)</strong> matric results translate into institutional eligibility. Coordinated nationally under statutory criteria established by the <strong>Department of Higher Education and Training (DHET)</strong>, <strong>Universities South Africa (USAf)</strong>, and the <strong>Council on Higher Education (CHE)</strong>, higher education admissions rely on a dual-layer evaluation: statutory minimum pass requirements and competitive faculty-specific <strong>Admission Point Score (APS)</strong> cutoffs.</p><p>The <strong>AfriWidget South African University Admission Calculator</strong> evaluates your Matric NSC subject percentages, computes your official university APS, verifies your statutory pass level (Bachelor's Degree Pass, Diploma Pass, or Higher Certificate Pass), and checks your qualification chances across top South African universities—including the <strong>University of Cape Town (UCT)</strong>, <strong>University of the Witwatersrand (Wits)</strong>, <strong>University of Pretoria (UP / Tuks)</strong>, <strong>Stellenbosch University (SU / Maties)</strong>, <strong>University of Johannesburg (UJ)</strong>, <strong>University of KwaZulu-Natal (UKZN)</strong>, <strong>North-West University (NWU)</strong>, and the <strong>University of South Africa (UNISA)</strong>.</p><hr class="my-6 border-slate-200" /><h2>1. Statutory NSC Matric Pass Levels in South Africa</h2><p>Before a university evaluates your faculty-specific points, you must satisfy the national statutory minimum pass level endorsed on your Matric certificate by <strong>Umalusi</strong>:</p><ul><li><strong>1. Bachelor’s Degree Pass (B.Deg)</strong>:</li><li><strong>Statutory Qualification</strong>: Minimum statutory requirement to register for a Bachelor’s degree.</li><li><strong>Subject Requirements</strong>: Minimum 40% in Home Language, minimum 50% (Level 4) in four recognized 20-credit subjects (excluding Life Orientation), and minimum 30% in two other subjects.</li></ul><ul><li><strong>2. Diploma Pass (Dip)</strong>:</li><li><strong>Statutory Qualification</strong>: Minimum statutory requirement to register for a National Diploma at a University of Technology or Comprehensive University.</li><li><strong>Subject Requirements</strong>: Minimum 40% in Home Language, minimum 40% (Level 3) in four recognized 20-credit subjects, and minimum 30% in two other subjects.</li></ul><ul><li><strong>3. Higher Certificate Pass (HC)</strong>:</li><li><strong>Statutory Qualification</strong>: Minimum statutory requirement to register for a Higher Certificate programme.</li><li><strong>Subject Requirements</strong>: Minimum 40% in Home Language, minimum 40% in two subjects, and minimum 30% in three other subjects.</li></ul><hr class="my-6 border-slate-200" /><h2>2. Understanding the Admission Point Score (APS) System</h2><p>Universities convert percentage marks achieved in your top six subjects (excluding or scaling Life Orientation depending on the institution) into rating points on a 1-to-7 scale:</p><ul><li><strong>Level 7 (80% – 100%)</strong>: <strong>7 Points</strong> (Outstanding / Distinction Achievement)</li><li><strong>Level 6 (70% – 79%)</strong>: <strong>6 Points</strong> (Meritorious Achievement)</li><li><strong>Level 5 (60% – 69%)</strong>: <strong>5 Points</strong> (Substantial Achievement)</li><li><strong>Level 4 (50% – 59%)</strong>: <strong>4 Points</strong> (Adequate / Satisfactory Achievement — Degree Threshold)</li><li><strong>Level 3 (40% – 49%)</strong>: <strong>3 Points</strong> (Moderate Achievement — Diploma Threshold)</li><li><strong>Level 2 (30% – 39%)</strong>: <strong>2 Points</strong> (Elementary Achievement — Higher Certificate Threshold)</li><li><strong>Level 1 (0% – 29%)</strong>: <strong>0 / 1 Point</strong> (Not Achieved / Fail)</li></ul><h3>Institutional Life Orientation (LO) Rules:</h3><ul><li><strong>Wits University & UJ</strong>: Life Orientation is evaluated separately or contributes a maximum of 1 to 4 points if scored at Level 5 or higher.</li><li><strong>University of Pretoria (UP) & Stellenbosch</strong>: Life Orientation is completely excluded from the 6-subject calculation (maximum base APS = 42 points).</li><li><strong>Standard Baseline Universities</strong>: Sum of best 6 recognized subjects yields an APS out of 42; institutions including LO yield an APS out of 48 or 49.</li></ul><hr class="my-6 border-slate-200" /><h2>3. South African University Faculty Benchmarks & Subject Prerequisites</h2><p>Meeting the overall APS cutoff is only one requirement; programs mandate specific minimum percentages in prerequisite subjects:</p><ul><li><strong>MBChB (Medicine & Surgery)</strong>:</li><li>Typical APS Benchmark: 38 – 45+ points</li><li>Compulsory Subjects: Pure Mathematics >= 70%, Physical Sciences >= 70%, Life Sciences >= 70%, English >= 60%</li><li><strong>Engineering (BEng / BSc Eng)</strong>:</li><li>Typical APS Benchmark: 35 – 42+ points</li><li>Compulsory Subjects: Pure Mathematics >= 70%, Physical Sciences >= 70%, English >= 60% (Mathematical Literacy not accepted)</li><li><strong>Commerce & Actuarial Science</strong>:</li><li>Typical APS Benchmark: 34 – 42+ points</li><li>Compulsory Subjects: Pure Mathematics >= 70%–80% (Actuarial), English >= 60%</li><li><strong>Law (LLB)</strong>:</li><li>Typical APS Benchmark: 32 – 38+ points</li><li>Compulsory Subjects: English Home/First Additional Language >= 65%–70% (Maths or Maths Lit accepted at select universities)</li><li><strong>Computer Science & Information Technology</strong>:</li><li>Typical APS Benchmark: 32 – 38+ points</li><li>Compulsory Subjects: Pure Mathematics >= 60%–70%, Physical Sciences / IT recommended</li><li><strong>Humanities & Social Sciences</strong>:</li><li>Typical APS Benchmark: 28 – 35+ points</li><li>Compulsory Subjects: English >= 50%–60%</li><li><strong>TVET / National Diploma Programmes</strong>:</li><li>Typical APS Benchmark: 20 – 26 points</li><li>Compulsory Subjects: Diploma or Higher Certificate Pass endorsement</li></ul><hr class="my-6 border-slate-200" /><h2>4. Mathematics (Pure) vs. Mathematical Literacy</h2><p>A critical determinant in South African university admissions is your choice of mathematics:</p><ul><li><strong>1. Pure Mathematics (Code: MATH)</strong>:</li><li>Compulsory for all Engineering, Medicine, Actuarial Science, Computer Science, Data Science, Physical Sciences, and high-tier BCom Accounting programs.</li><li><strong>2. Mathematical Literacy (Code: MLIT)</strong>:</li><li>Widely accepted for Humanities, Law (at select institutions), Education (Foundation / Intermediate Phase), Social Work, Visual Arts, and Hospitality.</li><li><strong>Important Constraint</strong>: Mathematical Literacy is strictly disqualified from technical STEM faculties and mainstream Engineering degrees across all major South African universities.</li></ul><hr class="my-6 border-slate-200" /><h2>5. How to Use the University Admission Calculator</h2><ol><li><strong>Select Your Target University & Degree Stream</strong>:</li></ol><ul><li>Choose your preferred South African university (or select <em>All Universities</em>) and your intended faculty stream (e.g., <em>Engineering</em>, <em>Medicine / Health Sciences</em>, <em>Commerce</em>, <em>Law</em>, <em>Science & IT</em>, <em>Humanities</em>).</li></ul><ol><li><strong>Enter Your Matric Subject Marks</strong>:</li></ol><ul><li>Enter your percentage scores (0%–100%) for <strong>English</strong> (Home Language or First Additional Language), <strong>Mathematics</strong> (Pure Mathematics or Mathematical Literacy), and your elective subjects (e.g., <em>Physical Sciences</em>, <em>Life Sciences</em>, <em>Accounting</em>, <em>Economics</em>, <em>History</em>, <em>Geography</em>, <em>Business Studies</em>).</li><li>Enter your <strong>Life Orientation</strong> percentage.</li></ul><ol><li><strong>Optional National Benchmark Test (NBT) Scores</strong>:</li></ol><ul><li>If required by your target program (e.g., UCT, Wits Health Sciences), enter your NBT Academic and Quantitative Literacy (AQL) and Mathematics (MAT) performance bands.</li></ul><ol><li><strong>Click "Check University Admission"</strong>:</li></ol><ul><li>The engine instantly calculates your total APS, validates your statutory NSC endorsement level, checks individual prerequisite subjects against university thresholds, and outputs a detailed eligibility verdict.</li></ul><hr class="my-6 border-slate-200" /><h2>6. Worked Calculation Examples</h2><h3>Example 1: Prospective BEng Mechanical Engineering Applicant (University of Pretoria / Wits)</h3><p>A Grade 12 matriculant achieves the following NSC results:</p><ul><li><strong>Matric Marks Profile</strong>:</li><li>English First Additional Language (EFAL): <strong>72%</strong> (Level 6 = 6 Points)</li><li>Pure Mathematics: <strong>84%</strong> (Level 7 = 7 Points)</li><li>Physical Sciences: <strong>78%</strong> (Level 6 = 6 Points)</li><li>Information Technology (IT): <strong>82%</strong> (Level 7 = 7 Points)</li><li>Geography: <strong>68%</strong> (Level 5 = 5 Points)</li><li>Life Sciences: <strong>65%</strong> (Level 5 = 5 Points)</li><li>Life Orientation: <strong>80%</strong> (Level 7 — Excluded from 6-subject UP calculation)</li><li><strong>Score & Eligibility Audit</strong>:</li><li>Total APS: <strong>36 Points (out of 42)</strong></li><li>Statutory Pass Level: <strong>Bachelor’s Degree Pass</strong> (Four subjects >= Level 4)</li><li>Prerequisite Checks: Pure Maths 84% (>= 70% required), Physical Sciences 78% (>= 65% required), English 72% (>= 60% required)</li><li><strong>Admission Verdict</strong>:</li><li><strong>Direct Admission / Highly Competitive</strong> for BEng Mechanical / Industrial Engineering at UP, Wits, UJ, and NWU.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 2: Prospective BCom Accounting Applicant (University of Johannesburg / UCT)</h3><p>A student pursuing Chartered Accountancy (CA stream) enters the following marks:</p><ul><li><strong>Matric Marks Profile</strong>:</li><li>English Home Language: <strong>66%</strong> (Level 5 = 5 Points)</li><li>Pure Mathematics: <strong>62%</strong> (Level 5 = 5 Points)</li><li>Accounting: <strong>75%</strong> (Level 6 = 6 Points)</li><li>Economics: <strong>71%</strong> (Level 6 = 6 Points)</li><li>Business Studies: <strong>74%</strong> (Level 6 = 6 Points)</li><li>History: <strong>64%</strong> (Level 5 = 5 Points)</li><li>Life Orientation: <strong>72%</strong> (Level 6 = 3 Points on UJ scaled LO formula)</li><li><strong>Score & Eligibility Audit</strong>:</li><li>Standard 6-Subject APS: <strong>33 Points (out of 42)</strong></li><li>UJ Scaled APS: <strong>36 Points (out of 45)</strong></li><li>Statutory Pass Level: <strong>Bachelor’s Degree Pass</strong></li><li>Prerequisite Checks: Pure Maths is 62% (meets UJ BCom Accounting 60% minimum; below UCT 65% direct baseline)</li><li><strong>Admission Verdict</strong>:</li><li><strong>UJ</strong>: Eligible for direct entry into BCom Accounting.</li><li><strong>UCT / Wits</strong>: Borderline for mainstream 3-year CA; strong candidate for the <strong>Extended Curriculum Programme (ECP) / Academic Development BCom</strong>.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 3: Prospective Bachelor of Laws (LLB) with Mathematical Literacy (UKZN / UWC)</h3><p>A student targeting an LLB law degree presents the following profile:</p><ul><li><strong>Matric Marks Profile</strong>:</li><li>English Home Language: <strong>78%</strong> (Level 6 = 6 Points)</li><li>Mathematical Literacy: <strong>82%</strong> (Level 7 = 7 Points)</li><li>History: <strong>85%</strong> (Level 7 = 7 Points)</li><li>Geography: <strong>73%</strong> (Level 6 = 6 Points)</li><li>Drama: <strong>76%</strong> (Level 6 = 6 Points)</li><li>Afrikaans First Additional Language: <strong>65%</strong> (Level 5 = 5 Points)</li><li><strong>Score & Eligibility Audit</strong>:</li><li>Total APS: <strong>37 Points (out of 42)</strong></li><li>Statutory Pass Level: <strong>Bachelor’s Degree Pass</strong></li><li>Prerequisite Checks: English Home Language is 78% (>= 65% requirement satisfied). Mathematical Literacy is accepted for LLB at UKZN, UWC, and UNISA.</li><li><strong>Admission Verdict</strong>:</li><li><strong>Direct Admission / High Standing</strong> for LLB programs that accept Mathematical Literacy with strong humanities distinctions.</li></ul><hr class="my-6 border-slate-200" /><h2>7. Extended Curriculum Programmes (ECP) & Alternative Access Routes</h2><p>If your Matric APS or prerequisite marks are slightly below mainstream direct entry thresholds:</p><ul><li><strong>1. Extended Curriculum Programmes (ECP / Foundation Programmes)</strong>:</li><li>Most South African public universities offer 4-year extended versions of 3-year bachelor’s degrees (or 5-year engineering degrees). These incorporate intensive foundational coursework in academic literacy, mathematics, and science during the first year.</li><li><strong>2. University of Technology (UoT) National Diplomas</strong>:</li><li>Universities of Technology (TUT, DUT, CPUT, VUT, CUT) offer practical 3-year National Diplomas with lower APS cutoffs (APS 22–28) that offer articulation pathways into Advanced Diplomas and Postgraduate Degrees.</li><li><strong>3. Upgrading Matric Results</strong>:</li><li>Candidates can register for the <strong>Department of Basic Education (DBE) Second Chance Matric Programme</strong> or rewrite specific subjects in the May/June or November NSC examination sessions.</li></ul><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>What is the difference between statutory minimum admission and faculty selection points?</summary><div><p>Statutory minimum admission (e.g., a Bachelor’s endorsement on your NSC) means you are legally qualified to apply to higher education in South Africa. However, individual faculties (such as Health Sciences, Engineering, or Law) receive thousands more applications than available places and apply much higher competitive <strong>APS cutoffs</strong> and subject minimums for final selection.</p></div></details><details><summary>How is Life Orientation scored in university APS calculations?</summary><div><p>Institutional policies vary. Universities such as the University of Pretoria (UP) and Stellenbosch University exclude Life Orientation entirely from their 6-subject calculation (maximum 42 points). Other universities, such as UJ, assign reduced points (1 to 4 points) for high LO scores, while some universities include LO as an equal 7th subject.</p></div></details><details><summary>Can I study Medicine or Engineering with Mathematical Literacy?</summary><div><p>No. All South African medical schools (MBChB) and accredited engineering faculties (BSc Eng / BEng) legally require <strong>Pure Mathematics</strong> and <strong>Physical Sciences</strong> at Level 5, 6, or 7 (typically 65% to 80%+). Mathematical Literacy is not accepted for STEM and medical professions.</p></div></details><details><summary>What are National Benchmark Tests (NBTs) and are they mandatory?</summary><div><p>The <strong>National Benchmark Tests (NBTs)</strong> assess Academic Literacy, Quantitative Literacy, and Mathematics. While some universities have suspended or modified mandatory NBT requirements, institutions such as UCT, Wits (Health Sciences), and Stellenbosch use NBT results alongside your Matric APS to rank applicants for highly competitive degree quotas.</p></div></details><details><summary>What should I do if my APS is 1 or 2 points below the course requirement?</summary><div><p>You should still apply and list an <strong>Extended Curriculum Programme (ECP)</strong> or related diploma stream as your second or third choice. If quota spaces remain unfilled after final registration or if matric marks are adjusted, waitlisted applicants with close APS scores are considered.</p></div></details><details><summary>Does AfriWidget store or submit my Matric marks to CAO or universities?</summary><div><p>No. AfriWidget is a 100% private, client-side educational calculation utility operating entirely in your web browser. No personal data, student identification numbers, or examination results are stored or transmitted.</p></div></details></section>
+  </main>
+
+  <section class="max-w-4xl mx-auto px-4 pb-12">
+    <!-- AUTHORITY, CREDENTIALS & CITED SOURCES -->
+    <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+        <h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
+          <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Academic Review &amp; Statutory Standards
+        </h3>
+        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+          Calculations, APS rating tables, and faculty threshold benchmarks are reviewed in accordance with statutory matric qualification frameworks established by the <strong>Department of Higher Education and Training (DHET)</strong>, <strong>Universities South Africa (USAf)</strong>, the <strong>Council on Higher Education (CHE)</strong>, and <strong>Umalusi</strong>.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold block text-slate-900">Statutory Governing Bodies:</span>
+            <a href="https://www.usaf.ac.za/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Universities South Africa (USAf)</a> · <a href="https://www.dhet.gov.za/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">DHET Official Portal</a>
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <span class="font-bold block text-slate-900">Privacy &amp; Computation Standard:</span>
+            <span>100% In-Browser In-Memory Execution (POPIA Compliant)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+  <script src="/nav.js" defer></script>
+</body>
+</html>

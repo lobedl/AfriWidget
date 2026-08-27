@@ -4,10 +4,34 @@
 /api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
+/reddit-video-downloader     /productivity   301
+/reddit-video-downloader.html /productivity   301
+/reddit-video-downloader-hd  /productivity   301
+/reddit-video-downloader-hd.html /productivity 301
+/privacy            /privacy-policy 301
+/privacy.html       /privacy-policy 301
 /tech-tool.html   /productivity   301
 /tech-tools.html  /productivity   301
 /tech-tool        /productivity   301
 /tech-tools       /productivity   301
+
+# Slug Migration Redirects
+/json-formatter                          /json-formatter-validator                 301
+/json-formatter.html                     /json-formatter-validator                 301
+/a-level-grade-calculator                /uk-a-level-grade-calculator             301
+/a-level-grade-calculator.html           /uk-a-level-grade-calculator             301
+/gcse-grade-calculator                   /uk-gcse-grade-calculator                301
+/gcse-grade-calculator.html              /uk-gcse-grade-calculator                301
+/degree-classification-calculator        /uk-degree-classification-calculator     301
+/degree-classification-calculator.html   /uk-degree-classification-calculator     301
+/uk-student-finance-calculator           /uk-student-loan-finance-calculator      301
+/uk-student-finance-calculator.html      /uk-student-loan-finance-calculator      301
+/uk-student-loan-calculator              /uk-student-loan-finance-calculator      301
+/uk-student-loan-calculator.html         /uk-student-loan-finance-calculator      301
+/uk-degree-calculator                    /uk-degree-classification-calculator     301
+/uk-degree-calculator.html               /uk-degree-classification-calculator     301
+/ucas-tariff-points-calculator           /ucas-points-calculator                  301
+/ucas-tariff-points-calculator.html      /ucas-points-calculator                  301
 
 # Clean URLs Rewrite: Map clean paths (e.g., /education, /gpa-calculator) to .html files
 /:page            /:page.html     200

@@ -89,7 +89,7 @@ When adding a new tool or page:
 3. **Pre-rendered HTML Content:** All headings, intro text, usage guides, and FAQ items MUST sit inside raw HTML markup (no empty root containers, no runtime template fetching for critical text).
 4. **Vanilla JS & 100% Client-Side:** Calculations run in vanilla JavaScript with zero framework overhead.
 5. **Google Analytics & Privacy Tag:** Include GA tracking and the privacy banner tag: `"⚡ 100% Free • No Signup • Private In-Browser Tool"`.
-6. **Site Integration:** Link the tool across homepage categories, category hubs (Health, Finance, Education, Productivity), `sitemap.xml`, and `llms.txt`.
+6. **Mandatory Homepage & Directory Integration:** ALWAYS and AUTOMATICALLY add the tool to the Homepage (`index.html`) under the correct category section with rich `data-search` tags, the relevant Category Hub page (`education.html`, `finance.html`, `health.html`, or `productivity.html`), the All Tools Directory (`widgets.html`), `footer.js` (and static HTML footer), `sitemap.xml`, `llms.txt`, and `universal-ai.js`. See `NEW_TOOL_INTEGRATION_RULES.md` for the complete standard.
 7. **Nav Script Inclusion:** Include `<script src="/nav.js" defer></script>` before `</body>`.
 
 ---
@@ -189,9 +189,70 @@ Directly under `<body ...>`:
 - All navigation and breadcrumbs must be statically present in raw HTML for instant rendering with 0 ms FOUC.
 - Include `<script src="/nav.js" defer></script>` before `</body>` to bind mobile menu controls and active route states.
 
+### 6.3 Strict Breadcrumb Category Alignment Mandate (Zero-Mismatch Policy)
+- **STRICT REQUIREMENT**: The intermediate breadcrumb item (`<a href="/...">`) MUST EXACTLY match the tool's true domain category (e.g. an education/exam tool MUST link to `/education` "Education Tools", NEVER `/productivity` or another copied category).
+- See **`BREADCRUMB_AND_NAVIGATION_STANDARDS.md`** for the canonical mapping matrix and automated verification script.
+
 ---
 
 ## 📖 7. Master Known Issues & Solutions Reference
 
 All reported bugs, layout anomalies, build failures, and SEO audit warnings are cataloged in **`KNOWN_ISSUES_AND_SOLUTIONS.md`**. Every agent must review this playbook to prevent regressions on Netlify stylesheets, SVG icon sizing, LaTeX bans, schema classifications, favicon consistency, mobile placeholder cards, and static header preservation.
+
+---
+
+## 🌐 8. Mandatory Homepage & Ecosystem Tool Integration Standard (Zero-Orphan Policy)
+
+**STRICT ZERO-ORPHAN REQUIREMENT**: When any new tool or calculator is created, the agent **MUST** integrate it across all 7 discovery endpoints in the **same turn**:
+1. **Homepage (`index.html`)**: Under the correct category section (`education`, `finance`, `health`, `productivity`, `business`, `everyday`) with complete `data-tool-card`, `data-category`, `data-search`, flag/icon, title, description, and link. Also include in the static footer list.
+2. **Category Hub (`education.html`, `finance.html`, etc.)**: In the `.category-tool-grid` and relevant guide cards.
+3. **Directory (`widgets.html`)**: In the full tools directory grid with appropriate tag chips.
+4. **Global Footer (`footer.js`)**: Linked in the relevant category column.
+5. **Sitemap (`sitemap.xml`)**: Added with `priority 0.9` and `changefreq weekly`.
+6. **LLM Reference (`llms.txt`)**: Documented with markdown link and concise description.
+7. **Universal AI (`universal-ai.js`)**: Registered in `TOOL_CONFIGS` with result and host selector mapping.
+
+*Refer to `NEW_TOOL_INTEGRATION_RULES.md` for full implementation details and card templates.*
+
+---
+
+## 🚫 9. Strict Prohibition of Auto-Generated Calculations (User-Initiated Action Mandate)
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: No tool, calculator, or converter may automatically process, compute, or display results on page load or on raw `input`/`change` events.
+1. **Explicit Action Trigger**: Calculations MUST ONLY run when the user explicitly clicks a dedicated button (e.g. `Calculate`, `Convert`, `Generate`, `Analyze`) or submits a form.
+2. **No Auto-Run on Page Load**: Never call `calculate()`, `calc()`, or specific calculator functions on script initialization or `DOMContentLoaded`.
+3. **No Reactive Keystroke Recalculation**: Do not attach calculation routines to `input` or `change` event listeners.
+4. **Initial Result State**: Results should remain hidden or display an informative placeholder (e.g., *"Enter your details and click Calculate to view results"*) until the user takes action.
+5. **Reference**: See `MANUAL_CALCULATION_USER_ACTION_MANDATE.md` for complete implementation details and code examples.
+
+---
+
+## 📋 10. Mandatory No-Tables Policy, Content Structure & Professional FAQ Standards
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: Never use raw Markdown tables (`| ... |`) or ASCII box grids in `.md` educational guide files, HTML pages, or scripts.
+1. **No Markdown Tables**: Markdown table syntax breaks mobile responsiveness and collapses into unformatted raw text.
+2. **Mobile-Optimized Structural Replacement**:
+   - Use structured specification lists (`- **Parameter**: Description`) for ratings, fee tiers, and criteria.
+   - Use multi-level definition blocks for multi-attribute tiers.
+   - Use step-by-step worked examples (`- **Matric Subject Breakdown**:`, `- **Score & Eligibility Audit**:`, `- **Admission Verdict**:`) for student scenarios.
+3. **Professional FAQ Architecture**:
+   - FAQ sections MUST start with `## Frequently Asked Questions (FAQ)`.
+   - Each FAQ item MUST use `### [Question]?` subheadings with concise answers.
+   - FAQ accordions are automatically compiled by `build-prerender.js` into interactive, styled `<details><summary>` cards with smooth rotating chevron animations and warm active accents.
+4. **Reference**: See `CONTENT_FORMATTING_AND_FAQ_STANDARDS.md` for the complete guide and code templates.
+
+---
+
+## 🔗 11. Mandatory Related Tools & Internal Linking Standard (Zero-Isolation Policy)
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: No newly created or modified tool may exist as an isolated island. Every tool MUST implement internal cross-linking across four mandatory layers:
+1. **Layer 1 (Post-Result Workflow Recommendation)**: Suggest the next logical calculator/tool within the dynamic calculation results container.
+2. **Layer 2 (Contextual In-Article Links)**: Embed natural keyword-rich links within the guide text and worked examples (never use generic "click here").
+3. **Layer 3 (Dedicated Related Tools Grid)**: Render a 3-to-4 card grid section before the FAQ/Footer with flags/icons, concise benefits, and direct clean URLs.
+4. **Layer 4 (Two-Way Reciprocal Linking)**: Update existing related cluster tools to link back to the newly created tool.
+5. **Reference**: See **`RELATED_TOOLS_AND_INTERNAL_LINKING_STANDARDS.md`** for the canonical topic cluster matrix, copyable HTML card templates, and integration checklist.
+
+
+
+
 

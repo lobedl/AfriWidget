@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<!-- Multi-Path Stylesheet Inclusion for Instant CSS Delivery -->
+  <title>Nigerian University CGPA Calculator (NUC 5.0 & 4.0 Scale) – AfriWidget</title>
+  <meta name="description" content="Calculate Nigerian university and polytechnic GPA/CGPA on the official NUC 5.0 CCMAS and NBTE 4.0 scales. Check degree honours classification, carryover impact, and target CGPA." />
+  <link rel="canonical" href="https://afriwidget.com/nigerian-university-cgpa-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nigerian University CGPA Calculator (NUC 5.0 & 4.0 Scale) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/nigerian-university-cgpa-calculator" />
+  <meta property="og:description" content="Calculate Nigerian university and polytechnic GPA/CGPA on the official NUC 5.0 CCMAS and NBTE 4.0 scales. Check degree honours classification, carryover impact, and target CGPA." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nigerian University CGPA Calculator (NUC 5.0 & 4.0 Scale) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate Nigerian university and polytechnic GPA/CGPA on the official NUC 5.0 CCMAS and NBTE 4.0 scales. Check degree honours classification, carryover impact, and target CGPA." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Nigerian University CGPA Calculator",
+      "url": "https://afriwidget.com/nigerian-university-cgpa-calculator",
+      "description": "Calculate Nigerian university semester GPA and Cumulative Grade Point Average (CGPA) based on official NUC 5.0 CCMAS benchmarks and NBTE 4.0 polytechnic scales with class of degree classification.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en-NG",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "AfriWidget Academic Research Unit",
+        "url": "https://afriwidget.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AfriWidget",
+        "url": "https://afriwidget.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://afriwidget.com/favicon-32.png"
+        }
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Nigerian Higher Education Academic Standards Review Board"
+      },
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "National Universities Commission (NUC) Core Curriculum and Minimum Academic Standards (CCMAS)",
+          "url": "https://www.nuc.edu.ng/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "National Board for Technical Education (NBTE) Grading and Certification Guidelines",
+          "url": "https://net.nbte.gov.ng/"
+        }
+      ],
+      "dateModified": "2026-08-23"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is CGPA calculated in Nigerian universities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Nigerian universities under the National Universities Commission (NUC) 5.0 grading scale, CGPA is calculated by dividing Total Cumulative Quality Points (TCQP) by Total Cumulative Credit Units (TCCU). Quality points for each course equal the course credit unit multiplied by the grade point (A=5, B=4, C=3, D=2, E=1, F=0)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the degree classifications on the NUC 5.0 CGPA scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under the NUC 5-point grading benchmark: First Class Honours is 4.50 to 5.00; Second Class Upper Division (2:1) is 3.50 to 4.49; Second Class Lower Division (2:2) is 2.40 to 3.49; Third Class Honours is 1.50 to 2.39; and Pass Degree is 1.00 to 1.49."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do carryover courses affect Nigerian university CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When a student fails a course (grade F with 0 quality points), the credit units remain part of the Total Credit Units Registered. When the course is retaken and passed, the new earned quality points and credit units are added to cumulative totals, meaning both the previous F attempt and new pass contribute to the denominator in the CGPA formula."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between GPA and CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grade Point Average (GPA) measures academic performance for a single specific semester (Total Quality Points in that semester divided by Total Units in that semester). Cumulative Grade Point Average (CGPA) aggregates all semesters completed to date across 100 Level through final year."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+  <!-- Pre-rendered Global Header & Navigation -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl" aria-label="Main Navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2" aria-label="AfriWidget Home">
+          <svg class="w-9 h-9" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Nigerian University CGPA Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    <!-- Top Hero Section -->
+    <section class="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🇳🇬 NUC 5.0 & NBTE 4.0 Standard Scale</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
+          Nigerian University <span class="text-yellow-300">CGPA Calculator</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Calculate your semester Grade Point Average (GPA), Cumulative CGPA, and degree honours classification in compliance with National Universities Commission (NUC) and polytechnic benchmarks.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> NUC 5-Point Scale</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> NBTE 4-Point Scale</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Honours Class Predictor</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 100% In-Browser & Private</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+        
+        <!-- Calculator Mode Tabs -->
+        <div class="bg-slate-100 p-3 border-b border-slate-200 flex flex-wrap gap-2 justify-center sm:justify-start" id="calcTabs">
+          <button type="button" id="tabSemester" class="px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-emerald-600 text-white shadow transition-all">
+            1. Semester GPA & CGPA
+          </button>
+          <button type="button" id="tabCumulative" class="px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-white text-slate-700 hover:bg-slate-200 transition-all">
+            2. Multi-Semester Summary
+          </button>
+          <button type="button" id="tabTarget" class="px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-white text-slate-700 hover:bg-slate-200 transition-all">
+            3. Target Honours Forecaster
+          </button>
+        </div>
+
+        <div class="p-4 sm:p-8">
+
+          <!-- Global Grading Scale Setting -->
+          <div class="mb-6 p-4 sm:p-5 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200 rounded-2xl">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <label for="gradingScale" class="text-sm sm:text-base font-extrabold text-slate-900 block mb-1">
+                  Select Grading System:
+                </label>
+                <p class="text-xs text-slate-600">
+                  Choose between the standard NUC 5-Point scale (Universities) or NBTE 4-Point scale (Polytechnics).
+                </p>
+              </div>
+              <select id="gradingScale" class="w-full md:w-72 bg-white border-2 border-emerald-600 rounded-xl px-3.5 py-2.5 text-sm font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm">
+                <option value="5.0" selected>Nigerian Universities (5.0 NUC Scale)</option>
+                <option value="4.0">Nigerian Polytechnics (4.0 NBTE Scale)</option>
+              </select>
+            </div>
+            <!-- Quick Scale Reference Bar -->
+            <div class="mt-4 pt-3 border-t border-emerald-200/70 flex flex-wrap items-center gap-2 text-xs" id="scalePillReference">
+              <span class="font-bold text-slate-700">Grading Points:</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-emerald-800">A = 5.0 (70%+)</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-blue-800">B = 4.0 (60-69%)</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-amber-800">C = 3.0 (50-59%)</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-orange-800">D = 2.0 (45-49%)</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-purple-800">E = 1.0 (40-44%)</span>
+              <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-rose-800">F = 0.0 (0-39%)</span>
+            </div>
+          </div>
+
+          <!-- TAB 1: Current Semester Course List -->
+          <div id="panelSemester">
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+              <div>
+                <h2 class="text-lg sm:text-xl font-black text-slate-900">Current Semester Course Registration</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Enter course codes, credit units (1 to 6), and your earned letter grades.</p>
+              </div>
+              <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button type="button" id="addCourseBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs sm:text-sm font-bold shadow-sm transition active:scale-95">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  Add Course
+                </button>
+                <button type="button" id="addFiveCoursesBtn" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold border border-slate-300 transition">
+                  +5 Courses
+                </button>
+              </div>
+            </div>
+
+            <!-- Error Banner (In-UI Feedback) -->
+            <div id="calcErrorBanner" class="hidden mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-semibold flex items-center gap-2">
+              <svg class="w-4 h-4 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span id="calcErrorMessage">Please enter valid courses and credit units.</span>
+            </div>
+
+            <!-- Desktop Table Header (Visible on md and up) -->
+            <div class="hidden md:grid md:grid-cols-12 gap-3 px-4 py-3 bg-slate-100 rounded-t-xl border border-slate-200 text-xs font-black uppercase tracking-wider text-slate-700">
+              <div class="col-span-1 text-center">#</div>
+              <div class="col-span-4">Course Code / Title</div>
+              <div class="col-span-2">Credit Units</div>
+              <div class="col-span-3">Earned Grade</div>
+              <div class="col-span-1 text-center">Quality Pts</div>
+              <div class="col-span-1 text-center">Remove</div>
+            </div>
+
+            <!-- Course Items List Container (Responsive Cards on Mobile / Table Rows on Desktop) -->
+            <div id="coursesListContainer" class="space-y-3 mb-6">
+              <!-- Initial 5 Courses inserted here -->
+            </div>
+
+            <!-- Optional: Prior Cumulative Academic History for Cumulative CGPA -->
+            <div class="mb-6 p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-2xl">
+              <div class="flex items-center gap-2 mb-1">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <h3 class="text-sm font-bold text-slate-900">Optional: Prior Semesters History (For Cumulative CGPA)</h3>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">If you are in 200 Level, 300 Level, or above, enter your accumulated units and quality points to compute your updated CGPA.</p>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="prevUnits" class="block text-xs font-bold text-slate-700 mb-1">Previous Total Credit Units (TCCU):</label>
+                  <input type="number" id="prevUnits" min="0" max="250" placeholder="e.g. 38 (Leave 0 if 100L 1st Sem)" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white shadow-sm" />
+                </div>
+                <div>
+                  <label for="prevPoints" class="block text-xs font-bold text-slate-700 mb-1">Previous Total Quality Points (TCQP):</label>
+                  <input type="number" id="prevPoints" step="0.1" min="0" max="1250" placeholder="e.g. 171.0 (Leave 0 if 100L 1st Sem)" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white shadow-sm" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="text-center pt-2">
+              <button type="button" id="calcCgpaBtn" class="w-full sm:w-auto px-10 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 mx-auto">
+                <svg class="w-5 h-5 text-emerald-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                Calculate Semester GPA & CGPA
+              </button>
+            </div>
+          </div>
+
+          <!-- TAB 2: Multi-Semester Summary Calculator -->
+          <div id="panelCumulative" class="hidden">
+            <div class="mb-4">
+              <h2 class="text-lg sm:text-xl font-black text-slate-900">Multi-Semester Transcript CGPA Aggregator</h2>
+              <p class="text-xs text-slate-500 mt-0.5">Enter each completed semester's Total Credit Units (TCU) and Semester GPA to calculate your overall cumulative grade.</p>
+            </div>
+
+            <div class="space-y-3 mb-6" id="semesterListContainer">
+              <!-- Semesters generated dynamically -->
+            </div>
+
+            <div class="flex items-center gap-3 mb-6">
+              <button type="button" id="addSemesterBtn" class="px-4 py-2.5 bg-slate-900 text-white rounded-xl text-xs sm:text-sm font-bold hover:bg-slate-800 transition shadow-sm">
+                + Add Another Semester
+              </button>
+            </div>
+
+            <div class="text-center">
+              <button type="button" id="calcMultiSemesterBtn" class="w-full sm:w-auto px-10 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95">
+                Calculate Multi-Semester CGPA
+              </button>
+            </div>
+          </div>
+
+          <!-- TAB 3: Target Honours Class Forecaster -->
+          <div id="panelTarget" class="hidden">
+            <div class="mb-4">
+              <h2 class="text-lg sm:text-xl font-black text-slate-900">Target Honours Degree Forecaster</h2>
+              <p class="text-xs text-slate-500 mt-0.5">Determine the exact minimum GPA required in remaining semesters to graduate with your desired degree classification.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label for="currentCgpa" class="block text-xs font-bold text-slate-700 mb-1">Current Cumulative CGPA:</label>
+                <input type="number" id="currentCgpa" step="0.01" min="0" max="5.0" placeholder="e.g. 3.42" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+              </div>
+              <div>
+                <label for="completedUnits" class="block text-xs font-bold text-slate-700 mb-1">Completed Credit Units to Date:</label>
+                <input type="number" id="completedUnits" min="1" max="220" placeholder="e.g. 72" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+              </div>
+              <div>
+                <label for="targetClass" class="block text-xs font-bold text-slate-700 mb-1">Target Graduation Classification:</label>
+                <select id="targetClass" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white">
+                  <option value="4.50">First Class Honours (4.50+ on 5.0 Scale)</option>
+                  <option value="3.50" selected>Second Class Upper 2:1 (3.50+ on 5.0 Scale)</option>
+                  <option value="2.40">Second Class Lower 2:2 (2.40+ on 5.0 Scale)</option>
+                </select>
+              </div>
+              <div>
+                <label for="remainingUnits" class="block text-xs font-bold text-slate-700 mb-1">Remaining Credit Units to Graduate:</label>
+                <input type="number" id="remainingUnits" min="1" max="150" placeholder="e.g. 64" class="w-full border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="button" id="calcTargetBtn" class="w-full sm:w-auto px-10 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95">
+                Forecast Required Target GPA
+              </button>
+            </div>
+          </div>
+
+          <!-- RESULTS CONTAINER (Hidden until calculated) -->
+          <div id="resultsContainer" class="hidden mt-8 pt-8 border-t-2 border-slate-200">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 rounded-2xl shadow-xl">
+              
+              <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-700">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Official Computation Summary</span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white mt-1" id="resTitle">Semester GPA & Cumulative CGPA</h3>
+                </div>
+                <div id="resHonoursBadge" class="px-4 py-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-sm font-bold rounded-xl shadow-sm">
+                  First Class Honours (4.50 – 5.00)
+                </div>
+              </div>
+
+              <!-- Primary Metric Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6 text-center">
+                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                  <div class="text-xs text-slate-400 font-semibold mb-1">Semester GPA</div>
+                  <div class="text-3xl sm:text-4xl font-black text-yellow-300" id="resGpaVal">4.57</div>
+                  <div class="text-[11px] text-slate-400 mt-1" id="resGpaUnits">14 Units Registered</div>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                  <div class="text-xs text-slate-400 font-semibold mb-1">Cumulative CGPA</div>
+                  <div class="text-3xl sm:text-4xl font-black text-emerald-400" id="resCgpaVal">4.52</div>
+                  <div class="text-[11px] text-slate-400 mt-1" id="resTotalUnits">52 Total Units</div>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                  <div class="text-xs text-slate-400 font-semibold mb-1">Quality Points (TQP)</div>
+                  <div class="text-2xl sm:text-3xl font-bold text-white" id="resTqpVal">235.0</div>
+                  <div class="text-[11px] text-slate-400 mt-1">Total Earned</div>
+                </div>
+                <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                  <div class="text-xs text-slate-400 font-semibold mb-1">Scale Standing</div>
+                  <div class="text-2xl sm:text-3xl font-bold text-sky-400" id="resScaleStanding">90.4%</div>
+                  <div class="text-[11px] text-slate-400 mt-1" id="resScaleLabel">5.0 Scale Index</div>
+                </div>
+              </div>
+
+              <!-- Recommendation & Academic Guidance -->
+              <div class="p-4 bg-slate-800/90 rounded-xl border border-slate-700 text-sm leading-relaxed" id="resAdviceBox">
+                <p class="font-bold text-yellow-300 mb-1" id="resAdviceHeading">Excellent Academic Standing:</p>
+                <p class="text-slate-300" id="resAdviceText">Your CGPA of 4.52 places you firmly in the First Class Honours category under NUC regulations.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Educational Guide Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8">
+        
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
+            How CGPA is Calculated in Nigerian Universities & Polytechnics
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed mb-4">
+            Under the guidelines established by the <strong>National Universities Commission (NUC)</strong> through the Core Curriculum and Minimum Academic Standards (CCMAS), tertiary institutions in Nigeria operate on a standard <strong>5-point Grade Point Average system</strong> (with selected polytechnics and colleges operating on the <strong>4-point NBTE system</strong>).
+          </p>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Academic standing is determined by two core parameters: the <strong>Credit Unit (CU)</strong> weighting assigned to each course and the <strong>Grade Point (GP)</strong> earned according to your percentage score in continuous assessments (CAs) and semester examinations.
+          </p>
+        </div>
+
+        <!-- Official NUC 5.0 vs NBTE 4.0 Tables -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- NUC Table -->
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-600"></span> NUC 5-Point University Grading Scale
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead>
+                  <tr class="border-b border-slate-300 text-slate-700 font-bold">
+                    <th class="py-2">Score (%)</th>
+                    <th class="py-2">Letter</th>
+                    <th class="py-2">Grade Point</th>
+                    <th class="py-2">Degree Classification</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-slate-600">
+                  <tr><td class="py-2">70 – 100%</td><td class="py-2 font-bold text-emerald-700">A</td><td class="py-2 font-semibold">5.0</td><td class="py-2 font-semibold text-emerald-700">First Class (4.50 – 5.00)</td></tr>
+                  <tr><td class="py-2">60 – 69%</td><td class="py-2 font-bold text-blue-700">B</td><td class="py-2 font-semibold">4.0</td><td class="py-2 font-semibold text-blue-700">2nd Class Upper (3.50 – 4.49)</td></tr>
+                  <tr><td class="py-2">50 – 59%</td><td class="py-2 font-bold text-amber-700">C</td><td class="py-2 font-semibold">3.0</td><td class="py-2 font-semibold text-amber-700">2nd Class Lower (2.40 – 3.49)</td></tr>
+                  <tr><td class="py-2">45 – 49%</td><td class="py-2 font-bold text-orange-700">D</td><td class="py-2 font-semibold">2.0</td><td class="py-2 font-semibold text-orange-700">Third Class (1.50 – 2.39)</td></tr>
+                  <tr><td class="py-2">40 – 44%</td><td class="py-2 font-bold text-purple-700">E</td><td class="py-2 font-semibold">1.0</td><td class="py-2 font-semibold text-purple-700">Pass (1.00 – 1.49)</td></tr>
+                  <tr><td class="py-2">0 – 39%</td><td class="py-2 font-bold text-rose-700">F</td><td class="py-2 font-semibold">0.0</td><td class="py-2 font-semibold text-rose-700">Fail</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- NBTE Table -->
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-blue-600"></span> NBTE 4-Point Polytechnic Scale
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead>
+                  <tr class="border-b border-slate-300 text-slate-700 font-bold">
+                    <th class="py-2">Score (%)</th>
+                    <th class="py-2">Letter</th>
+                    <th class="py-2">Grade Point</th>
+                    <th class="py-2">Diploma Classification</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-slate-600">
+                  <tr><td class="py-2">75 – 100%</td><td class="py-2 font-bold text-emerald-700">A</td><td class="py-2 font-semibold">4.0</td><td class="py-2 font-semibold text-emerald-700">Distinction (3.50 – 4.00)</td></tr>
+                  <tr><td class="py-2">70 – 74%</td><td class="py-2 font-bold text-teal-700">AB</td><td class="py-2 font-semibold">3.5</td><td class="py-2 font-semibold text-blue-700">Upper Credit (3.00 – 3.49)</td></tr>
+                  <tr><td class="py-2">60 – 69%</td><td class="py-2 font-bold text-blue-700">B</td><td class="py-2 font-semibold">3.0</td><td class="py-2 font-semibold text-blue-700">Upper Credit</td></tr>
+                  <tr><td class="py-2">50 – 59%</td><td class="py-2 font-bold text-amber-700">BC</td><td class="py-2 font-semibold">2.5</td><td class="py-2 font-semibold text-amber-700">Lower Credit (2.50 – 2.99)</td></tr>
+                  <tr><td class="py-2">40 – 49%</td><td class="py-2 font-bold text-orange-700">C</td><td class="py-2 font-semibold">2.0</td><td class="py-2 font-semibold text-orange-700">Pass (2.00 – 2.49)</td></tr>
+                  <tr><td class="py-2">0 – 39%</td><td class="py-2 font-bold text-rose-700">F</td><td class="py-2 font-semibold">0.0</td><td class="py-2 font-semibold text-rose-700">Fail</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulas Section -->
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Mathematical Formulas</h3>
+          <div class="space-y-4">
+            <div class="p-4 bg-emerald-50/70 border border-emerald-200 rounded-xl">
+              <p class="text-xs font-bold uppercase tracking-wide text-emerald-900 mb-1">1. Quality Point (QP) Per Course:</p>
+              <p class="text-sm font-mono text-emerald-950 font-semibold">
+                **QP** = Course Credit Units (CU) × Grade Point Earned (GP)
+              </p>
+              <p class="text-xs text-slate-600 mt-1">Example: A 3-unit course passed with an 'A' (5.0 points) yields 3 × 5.0 = 15.0 Quality Points.</p>
+            </div>
+
+            <div class="p-4 bg-blue-50/70 border border-blue-200 rounded-xl">
+              <p class="text-xs font-bold uppercase tracking-wide text-blue-900 mb-1">2. Semester Grade Point Average (GPA):</p>
+              <p class="text-sm font-mono text-blue-950 font-semibold">
+                **Semester GPA** = Total Semester Quality Points (TQP) ÷ Total Semester Credit Units Registered (TCU)
+              </p>
+            </div>
+
+            <div class="p-4 bg-amber-50/70 border border-amber-200 rounded-xl">
+              <p class="text-xs font-bold uppercase tracking-wide text-amber-900 mb-1">3. Cumulative Grade Point Average (CGPA):</p>
+              <p class="text-sm font-mono text-amber-950 font-semibold">
+                **CGPA** = Cumulative Total Quality Points (All Semesters) ÷ Cumulative Total Credit Units Registered (All Semesters)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step by Step Example -->
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Realistic 100-Level First Semester Example</h3>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm text-slate-700 space-y-2">
+            <p>Suppose a 100-level student registered 5 courses totaling 14 credit units:</p>
+            <ul class="list-disc list-inside space-y-1 text-slate-600 text-xs sm:text-sm pl-2">
+              <li><strong>GST 111 (2 Units):</strong> Grade A (5.0) = 2 × 5.0 = <strong>10.0 QP</strong></li>
+              <li><strong>MTH 101 (3 Units):</strong> Grade A (5.0) = 3 × 5.0 = <strong>15.0 QP</strong></li>
+              <li><strong>PHY 101 (3 Units):</strong> Grade B (4.0) = 3 × 4.0 = <strong>12.0 QP</strong></li>
+              <li><strong>CHM 101 (3 Units):</strong> Grade C (3.0) = 3 × 3.0 = <strong>9.0 QP</strong></li>
+              <li><strong>BIO 101 (3 Units):</strong> Grade A (5.0) = 3 × 5.0 = <strong>15.0 QP</strong></li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-slate-300 font-semibold text-slate-900">
+              <p>Total Quality Points = 10 + 15 + 12 + 9 + 15 = <strong>61.0</strong></p>
+              <p>Total Credit Units Registered = 2 + 3 + 3 + 3 + 3 = <strong>14</strong></p>
+              <p class="text-emerald-700 font-bold mt-1">Semester GPA = 61.0 ÷ 14 = <strong>4.36 (Second Class Upper Division)</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Authoritative Sources & Trust Signals -->
+        <div class="border-t border-slate-200 pt-6">
+          <h3 class="text-base font-bold text-slate-900 mb-2">Authoritative Governing Standards & Citations</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-3">
+            Academic calculations on this platform adhere strictly to federal statutory guidelines published by Nigerian higher education regulatory councils:
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs">
+            <a href="https://www.nuc.edu.ng/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline inline-flex items-center gap-1 font-semibold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              National Universities Commission (NUC CCMAS)
+            </a>
+            <a href="https://net.nbte.gov.ng/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline inline-flex items-center gap-1 font-semibold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              National Board for Technical Education (NBTE)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">What is the minimum CGPA required to graduate from a Nigerian university?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Under current NUC guidelines, the minimum CGPA required to graduate with a Pass degree is <strong>1.00</strong>. However, many universities have abolished the Pass degree, setting <strong>1.50 (Third Class Honours)</strong> as the minimum benchmark for graduation. Students with a CGPA below 1.00 or 1.50 after the maximum allowable duration (usually 1.5 times the standard program length) face academic probation or withdrawal.
+            </p>
+          </div>
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">How does an 'F' grade (Carryover) affect my CGPA?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              An 'F' grade carries <strong>0.0 Quality Points</strong>, but its credit units are added to your registered total. This causes a steep drop in your CGPA denominator. When you retake and pass the course, the new grade points and credit units are added to cumulative totals. Under standard NUC guidelines, both attempts remain on your official academic transcript and cumulative calculation.
+            </p>
+          </div>
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">Can I move from Second Class Lower (2:2) to First Class in 300 or 400 Level?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              While possible, raising a CGPA significantly in later years becomes mathematically harder because the accumulated credit unit denominator is already large. Use our <strong>Target Honours Forecaster</strong> tab above to calculate the exact semester GPA required in your remaining courses.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Are continuous assessment tests (CA) included in the final grade point?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Yes. In Nigerian universities, course grades typically combine <strong>Continuous Assessment (30% to 40%)</strong> — including tests, mid-semester exams, quizzes, and laboratory practicals — with the <strong>Final Semester Examination (60% to 70%)</strong> to form your total 100% mark.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Linking Related Academic Tools -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12">
+      <div class="bg-slate-100 rounded-2xl p-6 sm:p-8 border border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Related Nigerian Academic & Admission Tools</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a href="/jamb-score-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">UTME Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">JAMB Score Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">Calculate 4-subject UTME total score & institutional cut-off standing.</p>
+          </a>
+          <a href="/post-utme-aggregate-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">Admission Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">Post-UTME Aggregate Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">Screening aggregate for UNILAG, UI, UNIBEN, LASU & FUTO.</p>
+          </a>
+          <a href="/waec-grade-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">O'Level Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">WAEC Grade Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">Convert WAEC/NECO marks to 9-point letter grades & credit standing.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pre-rendered Global Shared Footer Placeholder -->
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="/nav.js" defer></script>
+  <script src="/footer.js" defer></script>
+
+  <!-- Interactive CGPA Calculator Logic -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Grade point mappings
+      const POINTS_5 = { A: 5.0, B: 4.0, C: 3.0, D: 2.0, E: 1.0, F: 0.0 };
+      const POINTS_4 = { A: 4.0, AB: 3.5, B: 3.0, BC: 2.5, C: 2.0, F: 0.0 };
+
+      // Elements
+      const tabSemester = document.getElementById('tabSemester');
+      const tabCumulative = document.getElementById('tabCumulative');
+      const tabTarget = document.getElementById('tabTarget');
+
+      const panelSemester = document.getElementById('panelSemester');
+      const panelCumulative = document.getElementById('panelCumulative');
+      const panelTarget = document.getElementById('panelTarget');
+
+      const gradingScaleSelect = document.getElementById('gradingScale');
+      const scalePillReference = document.getElementById('scalePillReference');
+      const addCourseBtn = document.getElementById('addCourseBtn');
+      const addFiveCoursesBtn = document.getElementById('addFiveCoursesBtn');
+      const coursesListContainer = document.getElementById('coursesListContainer');
+      const calcCgpaBtn = document.getElementById('calcCgpaBtn');
+
+      const calcErrorBanner = document.getElementById('calcErrorBanner');
+      const calcErrorMessage = document.getElementById('calcErrorMessage');
+
+      const prevUnitsInput = document.getElementById('prevUnits');
+      const prevPointsInput = document.getElementById('prevPoints');
+
+      const resultsContainer = document.getElementById('resultsContainer');
+      const resGpaVal = document.getElementById('resGpaVal');
+      const resGpaUnits = document.getElementById('resGpaUnits');
+      const resCgpaVal = document.getElementById('resCgpaVal');
+      const resTotalUnits = document.getElementById('resTotalUnits');
+      const resTqpVal = document.getElementById('resTqpVal');
+      const resScaleStanding = document.getElementById('resScaleStanding');
+      const resScaleLabel = document.getElementById('resScaleLabel');
+      const resHonoursBadge = document.getElementById('resHonoursBadge');
+      const resAdviceHeading = document.getElementById('resAdviceHeading');
+      const resAdviceText = document.getElementById('resAdviceText');
+
+      function showError(msg) {
+        if (calcErrorBanner && calcErrorMessage) {
+          calcErrorMessage.textContent = msg;
+          calcErrorBanner.classList.remove('hidden');
+          calcErrorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      function hideError() {
+        if (calcErrorBanner) {
+          calcErrorBanner.classList.add('hidden');
+        }
+      }
+
+      // Tab Switching
+      function switchTab(activeBtn, activePanel) {
+        [tabSemester, tabCumulative, tabTarget].forEach(btn => {
+          btn.className = 'px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-white text-slate-700 hover:bg-slate-200 transition-all';
+        });
+        activeBtn.className = 'px-4 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-emerald-600 text-white shadow transition-all';
+
+        [panelSemester, panelCumulative, panelTarget].forEach(p => p.classList.add('hidden'));
+        activePanel.classList.remove('hidden');
+        hideError();
+      }
+
+      tabSemester.addEventListener('click', () => switchTab(tabSemester, panelSemester));
+      tabCumulative.addEventListener('click', () => {
+        switchTab(tabCumulative, panelCumulative);
+        initMultiSemesterList();
+      });
+      tabTarget.addEventListener('click', () => switchTab(tabTarget, panelTarget));
+
+      // Build course item DOM element
+      function createCourseRow(index, code = '', units = 2, grade = 'A') {
+        const scale = gradingScaleSelect.value;
+        const is4Scale = (scale === '4.0');
+        const pointMap = is4Scale ? POINTS_4 : POINTS_5;
+        const ptVal = (pointMap[grade] !== undefined ? pointMap[grade] : (is4Scale ? 4.0 : 5.0));
+        const qualityPoints = (units * ptVal).toFixed(1);
+
+        let gradeOptionsHtml = '';
+        if (is4Scale) {
+          const options4 = [
+            { val: 'A', label: 'A (4.0 pts / Distinction)' },
+            { val: 'AB', label: 'AB (3.5 pts / Upper Credit)' },
+            { val: 'B', label: 'B (3.0 pts / Upper Credit)' },
+            { val: 'BC', label: 'BC (2.5 pts / Lower Credit)' },
+            { val: 'C', label: 'C (2.0 pts / Pass)' },
+            { val: 'F', label: 'F (0.0 pts / Fail)' }
+          ];
+          gradeOptionsHtml = options4.map(opt => `<option value="${opt.val}" ${opt.val === grade ? 'selected' : ''}>${opt.label}</option>`).join('');
+        } else {
+          const options5 = [
+            { val: 'A', label: 'A (5.0 pts / 70-100%)' },
+            { val: 'B', label: 'B (4.0 pts / 60-69%)' },
+            { val: 'C', label: 'C (3.0 pts / 50-59%)' },
+            { val: 'D', label: 'D (2.0 pts / 45-49%)' },
+            { val: 'E', label: 'E (1.0 pt / 40-44%)' },
+            { val: 'F', label: 'F (0.0 pts / 0-39%)' }
+          ];
+          gradeOptionsHtml = options5.map(opt => `<option value="${opt.val}" ${opt.val === grade ? 'selected' : ''}>${opt.label}</option>`).join('');
+        }
+
+        const unitOptions = [1, 2, 3, 4, 5, 6].map(u => `<option value="${u}" ${u === units ? 'selected' : ''}>${u} ${u === 1 ? 'Unit' : 'Units'}</option>`).join('');
+
+        const div = document.createElement('div');
+        div.className = 'course-row bg-white sm:bg-slate-50 border border-slate-200 rounded-2xl p-4 hover:border-emerald-400 transition-all shadow-sm';
+        div.innerHTML = `
+          <!-- Mobile Card Header (Visible on mobile only) -->
+          <div class="flex md:hidden items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-black text-xs flex items-center justify-center row-num">${index}</span>
+              <span class="font-extrabold text-slate-800 text-xs">Course #${index}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-black">
+                <span class="quality-pts-display">${qualityPoints}</span> QP
+              </span>
+              <button type="button" class="delete-row-btn p-1.5 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition" title="Remove course" aria-label="Remove course">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Responsive Inputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-3 items-center">
+            <!-- Desktop Index -->
+            <div class="hidden md:block md:col-span-1 text-center font-black text-slate-500 text-xs row-num-desktop">
+              ${index}
+            </div>
+
+            <!-- Course Code -->
+            <div class="md:col-span-4">
+              <label class="block md:hidden text-xs font-bold text-slate-700 mb-1">Course Code / Name:</label>
+              <input type="text" class="course-name w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none placeholder:text-slate-400" placeholder="e.g. GST 111" value="${code}" />
+            </div>
+
+            <!-- Credit Units -->
+            <div class="md:col-span-2">
+              <label class="block md:hidden text-xs font-bold text-slate-700 mb-1">Credit Units:</label>
+              <select class="course-units w-full border border-slate-300 rounded-xl px-2.5 py-2 text-xs sm:text-sm font-bold text-slate-800 bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                ${unitOptions}
+              </select>
+            </div>
+
+            <!-- Grade -->
+            <div class="md:col-span-3">
+              <label class="block md:hidden text-xs font-bold text-slate-700 mb-1">Earned Grade:</label>
+              <select class="course-grade w-full border border-slate-300 rounded-xl px-2.5 py-2 text-xs sm:text-sm font-bold text-emerald-900 bg-emerald-50/80 border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                ${gradeOptionsHtml}
+              </select>
+            </div>
+
+            <!-- Desktop Quality Points -->
+            <div class="hidden md:block md:col-span-1 text-center font-black text-slate-800 text-sm quality-pts-display-desktop">
+              ${qualityPoints}
+            </div>
+
+            <!-- Desktop Remove Action -->
+            <div class="hidden md:block md:col-span-1 text-center">
+              <button type="button" class="delete-row-btn p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-xl transition" title="Remove course" aria-label="Remove course">
+                <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </button>
+            </div>
+          </div>
+        `;
+        return div;
+      }
+
+      // Initial Course Preset
+      const initialCourses = [
+        { code: 'GST 111', units: 2, grade: 'A' },
+        { code: 'MTH 101', units: 3, grade: 'A' },
+        { code: 'PHY 101', units: 3, grade: 'B' },
+        { code: 'CHM 101', units: 3, grade: 'C' },
+        { code: 'BIO 101', units: 3, grade: 'A' }
+      ];
+
+      function renderInitialCourses() {
+        coursesListContainer.innerHTML = '';
+        initialCourses.forEach((c, idx) => {
+          coursesListContainer.appendChild(createCourseRow(idx + 1, c.code, c.units, c.grade));
+        });
+      }
+
+      renderInitialCourses();
+
+      // Recalculate Row Numbers and Quality Points for All Rows
+      function updateAllRows() {
+        const rows = coursesListContainer.querySelectorAll('.course-row');
+        const scale = gradingScaleSelect.value;
+        const pointMap = scale === '4.0' ? POINTS_4 : POINTS_5;
+
+        rows.forEach((row, index) => {
+          const mobileNum = row.querySelector('.row-num');
+          if (mobileNum) mobileNum.textContent = index + 1;
+          const desktopNum = row.querySelector('.row-num-desktop');
+          if (desktopNum) desktopNum.textContent = index + 1;
+
+          const units = parseFloat(row.querySelector('.course-units').value) || 0;
+          const grade = row.querySelector('.course-grade').value;
+          const pts = pointMap[grade] !== undefined ? pointMap[grade] : 0;
+          const qpStr = (units * pts).toFixed(1);
+
+          const mobileQp = row.querySelector('.quality-pts-display');
+          if (mobileQp) mobileQp.textContent = qpStr;
+          const desktopQp = row.querySelector('.quality-pts-display-desktop');
+          if (desktopQp) desktopQp.textContent = qpStr;
+        });
+      }
+
+      // Update Grading Scale Reference Pills & Dropdown Options
+      gradingScaleSelect.addEventListener('change', () => {
+        const scale = gradingScaleSelect.value;
+        if (scale === '4.0') {
+          scalePillReference.innerHTML = `
+            <span class="font-bold text-slate-700">NBTE Points:</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-emerald-800">A = 4.0 (Distinction 75%+)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-blue-800">AB = 3.5 (Upper Credit 70-74%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-cyan-800">B = 3.0 (Upper Credit 65-69%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-amber-800">BC = 2.5 (Lower Credit 60-64%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-orange-800">C = 2.0 (Pass 50-59%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-rose-800">F = 0.0 (Fail 0-49%)</span>
+          `;
+        } else {
+          scalePillReference.innerHTML = `
+            <span class="font-bold text-slate-700">NUC Points:</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-emerald-800">A = 5.0 (70%+)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-blue-800">B = 4.0 (60-69%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-amber-800">C = 3.0 (50-59%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-orange-800">D = 2.0 (45-49%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-purple-800">E = 1.0 (40-44%)</span>
+            <span class="px-2 py-0.5 rounded bg-white border border-emerald-200 font-semibold text-rose-800">F = 0.0 (0-39%)</span>
+          `;
+        }
+
+        // Re-render course items with new grade dropdowns while preserving course codes and units
+        const currentData = [];
+        coursesListContainer.querySelectorAll('.course-row').forEach(row => {
+          currentData.push({
+            code: row.querySelector('.course-name').value,
+            units: parseInt(row.querySelector('.course-units').value) || 2,
+            grade: row.querySelector('.course-grade').value
+          });
+        });
+
+        coursesListContainer.innerHTML = '';
+        currentData.forEach((c, idx) => {
+          coursesListContainer.appendChild(createCourseRow(idx + 1, c.code, c.units, (scale === '4.0' && ['D', 'E'].includes(c.grade)) ? 'C' : c.grade));
+        });
+
+        updateAllRows();
+      });
+
+      // Add single course
+      addCourseBtn.addEventListener('click', () => {
+        const count = coursesListContainer.querySelectorAll('.course-row').length;
+        coursesListContainer.appendChild(createCourseRow(count + 1, '', 2, 'A'));
+        updateAllRows();
+      });
+
+      // Add 5 courses
+      addFiveCoursesBtn.addEventListener('click', () => {
+        let count = coursesListContainer.querySelectorAll('.course-row').length;
+        for (let i = 0; i < 5; i++) {
+          count++;
+          coursesListContainer.appendChild(createCourseRow(count, '', 2, 'A'));
+        }
+        updateAllRows();
+      });
+
+      // Event delegation for deleting rows and changes
+      coursesListContainer.addEventListener('click', (e) => {
+        const delBtn = e.target.closest('.delete-row-btn');
+        if (delBtn) {
+          const rows = coursesListContainer.querySelectorAll('.course-row');
+          if (rows.length > 1) {
+            delBtn.closest('.course-row').remove();
+            updateAllRows();
+          } else {
+            showError('You must maintain at least one course row in your registration.');
+          }
+        }
+      });
+
+      coursesListContainer.addEventListener('change', () => {
+        updateAllRows();
+      });
+
+      // Calculate Classification
+      function getHonoursClassification(cgpa, maxScale) {
+        if (maxScale === 5.0) {
+          if (cgpa >= 4.50) return { title: 'First Class Honours (4.50 – 5.00)', badgeClass: 'bg-emerald-500/20 border-emerald-400/40 text-emerald-300', advice: 'Outstanding academic distinction. You qualify for university scholarships, international postgraduate funding, and automatic research fellowships.' };
+          if (cgpa >= 3.50) return { title: 'Second Class Honours: Upper Division [2:1] (3.50 – 4.49)', badgeClass: 'bg-blue-500/20 border-blue-400/40 text-blue-300', advice: 'Strong competitive academic performance. You comfortably meet standard entry benchmarks for top-tier master’s degree programs and corporate career pathways.' };
+          if (cgpa >= 2.40) return { title: 'Second Class Honours: Lower Division [2:2] (2.40 – 3.49)', badgeClass: 'bg-amber-500/20 border-amber-400/40 text-amber-300', advice: 'Good standing. Focus on scoring A and B grades in 3-unit and 4-unit departmental core courses in upcoming semesters to elevate your cumulative average.' };
+          if (cgpa >= 1.50) return { title: 'Third Class Honours (1.50 – 2.39)', badgeClass: 'bg-orange-500/20 border-orange-400/40 text-orange-300', advice: 'Academic warning territory. Seek departmental academic advisory support and target immediate grade improvements to protect your graduation eligibility.' };
+          return { title: 'Pass Degree / Probation (1.00 – 1.49)', badgeClass: 'bg-rose-500/20 border-rose-400/40 text-rose-300', advice: 'Critical academic standing. Retake carryover courses promptly to satisfy graduation requirements and avoid compulsory program transfer.' };
+        } else {
+          // 4.0 NBTE Scale
+          if (cgpa >= 3.50) return { title: 'Distinction (3.50 – 4.00)', badgeClass: 'bg-emerald-500/20 border-emerald-400/40 text-emerald-300', advice: 'Highest polytechnic diploma grade. Directly qualifies you for HND admission or direct entry university degree transfers.' };
+          if (cgpa >= 3.00) return { title: 'Upper Credit (3.00 – 3.49)', badgeClass: 'bg-blue-500/20 border-blue-400/40 text-blue-300', advice: 'High technical competence. Meets mandatory threshold for competitive HND programs and professional certifications.' };
+          if (cgpa >= 2.50) return { title: 'Lower Credit (2.50 – 2.99)', badgeClass: 'bg-amber-500/20 border-amber-400/40 text-amber-300', advice: 'Standard pass standing. Consider improving theoretical coursework marks in your final session.' };
+          return { title: 'Pass (2.00 – 2.49)', badgeClass: 'bg-orange-500/20 border-orange-400/40 text-orange-300', advice: 'Minimum technical pass threshold.' };
+        }
+      }
+
+      // TAB 1 Calculation Action
+      calcCgpaBtn.addEventListener('click', () => {
+        hideError();
+        const rows = coursesListContainer.querySelectorAll('.course-row');
+        const scale = parseFloat(gradingScaleSelect.value) || 5.0;
+        const pointMap = scale === 4.0 ? POINTS_4 : POINTS_5;
+
+        let semUnits = 0;
+        let semQualityPoints = 0;
+
+        rows.forEach(row => {
+          const units = parseFloat(row.querySelector('.course-units').value) || 0;
+          const grade = row.querySelector('.course-grade').value;
+          const gp = pointMap[grade] !== undefined ? pointMap[grade] : 0;
+          semUnits += units;
+          semQualityPoints += (units * gp);
+        });
+
+        if (semUnits <= 0) {
+          showError('Please enter at least one registered course with valid credit units (1 to 6).');
+          return;
+        }
+
+        const semGpa = semQualityPoints / semUnits;
+
+        // Prior history
+        const prevUnits = parseFloat(prevUnitsInput.value) || 0;
+        const prevPoints = parseFloat(prevPointsInput.value) || 0;
+
+        const totalUnits = semUnits + prevUnits;
+        const totalQualityPoints = semQualityPoints + prevPoints;
+        const cgpa = totalUnits > 0 ? (totalQualityPoints / totalUnits) : semGpa;
+
+        // Update UI
+        resGpaVal.textContent = semGpa.toFixed(2);
+        resGpaUnits.textContent = `${semUnits} Semester Units`;
+        resCgpaVal.textContent = cgpa.toFixed(2);
+        resTotalUnits.textContent = `${totalUnits} Total Units`;
+        resTqpVal.textContent = totalQualityPoints.toFixed(1);
+
+        const pct = ((cgpa / scale) * 100).toFixed(1) + '%';
+        resScaleStanding.textContent = pct;
+        resScaleLabel.textContent = `${scale.toFixed(1)} Scale Index`;
+
+        const honours = getHonoursClassification(cgpa, scale);
+        resHonoursBadge.textContent = honours.title;
+        resHonoursBadge.className = `px-4 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-sm border ${honours.badgeClass}`;
+
+        resAdviceHeading.textContent = `${honours.title}:`;
+        resAdviceText.textContent = honours.advice;
+
+        resultsContainer.classList.remove('hidden');
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // TAB 2: Multi-Semester Aggregator Init
+      const semesterListContainer = document.getElementById('semesterListContainer');
+      const addSemesterBtn = document.getElementById('addSemesterBtn');
+      const calcMultiSemesterBtn = document.getElementById('calcMultiSemesterBtn');
+
+      let semesterCount = 0;
+      function addSemesterRow(name, defUnits, defGpa) {
+        semesterCount++;
+        const div = document.createElement('div');
+        div.className = 'semester-item flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-300 transition-all';
+        div.innerHTML = `
+          <div class="font-extrabold text-sm text-slate-800 w-full sm:w-48">
+            ${name || `Semester ${semesterCount}`}
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <label class="text-xs text-slate-600 font-bold">Credit Units:</label>
+            <input type="number" min="1" max="40" value="${defUnits || 20}" class="sem-units w-24 border border-slate-300 rounded-xl px-3 py-2 text-xs font-bold bg-white" />
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <label class="text-xs text-slate-600 font-bold">Semester GPA:</label>
+            <input type="number" step="0.01" min="0" max="5.0" value="${defGpa || '4.00'}" class="sem-gpa w-28 border border-slate-300 rounded-xl px-3 py-2 text-xs font-black text-emerald-900 bg-white" />
+          </div>
+          <button type="button" class="remove-sem-btn p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-xl transition self-end sm:self-center" title="Remove semester" aria-label="Remove semester">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          </button>
+        `;
+        semesterListContainer.appendChild(div);
+      }
+
+      function initMultiSemesterList() {
+        if (semesterListContainer.children.length === 0) {
+          addSemesterRow('100L - 1st Semester', 22, '4.25');
+          addSemesterRow('100L - 2nd Semester', 20, '4.50');
+          addSemesterRow('200L - 1st Semester', 24, '4.10');
+          addSemesterRow('200L - 2nd Semester', 22, '4.40');
+        }
+      }
+
+      addSemesterBtn.addEventListener('click', () => {
+        addSemesterRow('', 20, '4.00');
+      });
+
+      semesterListContainer.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('.remove-sem-btn');
+        if (removeBtn) {
+          if (semesterListContainer.querySelectorAll('.semester-item').length > 1) {
+            removeBtn.closest('.semester-item').remove();
+          }
+        }
+      });
+
+      calcMultiSemesterBtn.addEventListener('click', () => {
+        hideError();
+        const items = semesterListContainer.querySelectorAll('.semester-item');
+        const scale = parseFloat(gradingScaleSelect.value) || 5.0;
+
+        let totalUnits = 0;
+        let totalPoints = 0;
+
+        items.forEach(item => {
+          const units = parseFloat(item.querySelector('.sem-units').value) || 0;
+          const gpa = parseFloat(item.querySelector('.sem-gpa').value) || 0;
+          totalUnits += units;
+          totalPoints += (units * gpa);
+        });
+
+        if (totalUnits <= 0) {
+          showError('Please enter valid credit units for your semesters.');
+          return;
+        }
+
+        const cgpa = totalPoints / totalUnits;
+
+        resGpaVal.textContent = (items.length > 0 ? parseFloat(items[items.length - 1].querySelector('.sem-gpa').value || 0).toFixed(2) : '—');
+        resGpaUnits.textContent = `Latest Semester`;
+        resCgpaVal.textContent = cgpa.toFixed(2);
+        resTotalUnits.textContent = `${totalUnits} Units (${items.length} Semesters)`;
+        resTqpVal.textContent = totalPoints.toFixed(1);
+
+        const pct = ((cgpa / scale) * 100).toFixed(1) + '%';
+        resScaleStanding.textContent = pct;
+        resScaleLabel.textContent = `${scale.toFixed(1)} Scale Index`;
+
+        const honours = getHonoursClassification(cgpa, scale);
+        resHonoursBadge.textContent = honours.title;
+        resHonoursBadge.className = `px-4 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-sm border ${honours.badgeClass}`;
+
+        resAdviceHeading.textContent = `Multi-Semester Classification:`;
+        resAdviceText.textContent = `Your aggregated Cumulative Grade Point Average across ${items.length} semesters is ${cgpa.toFixed(2)}, placing you in ${honours.title}.`;
+
+        resultsContainer.classList.remove('hidden');
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // TAB 3: Target Forecaster
+      const calcTargetBtn = document.getElementById('calcTargetBtn');
+      const currentCgpaInput = document.getElementById('currentCgpa');
+      const completedUnitsInput = document.getElementById('completedUnits');
+      const targetClassSelect = document.getElementById('targetClass');
+      const remainingUnitsInput = document.getElementById('remainingUnits');
+
+      calcTargetBtn.addEventListener('click', () => {
+        hideError();
+        const curCgpa = parseFloat(currentCgpaInput.value);
+        const compUnits = parseFloat(completedUnitsInput.value);
+        const targetCgpa = parseFloat(targetClassSelect.value);
+        const remUnits = parseFloat(remainingUnitsInput.value);
+        const scale = parseFloat(gradingScaleSelect.value) || 5.0;
+
+        if (isNaN(curCgpa) || isNaN(compUnits) || isNaN(remUnits) || remUnits <= 0 || compUnits <= 0) {
+          showError('Please enter your current CGPA, completed credit units, and remaining units.');
+          return;
+        }
+
+        const totalFinalUnits = compUnits + remUnits;
+        const requiredTotalPoints = targetCgpa * totalFinalUnits;
+        const currentEarnedPoints = curCgpa * compUnits;
+        const neededRemainingPoints = requiredTotalPoints - currentEarnedPoints;
+        const requiredAverageGpa = neededRemainingPoints / remUnits;
+
+        resGpaVal.textContent = curCgpa.toFixed(2);
+        resGpaUnits.textContent = `${compUnits} Completed Units`;
+        resCgpaVal.textContent = targetCgpa.toFixed(2);
+        resTotalUnits.textContent = `${totalFinalUnits} Projected Total Units`;
+        resTqpVal.textContent = (requiredAverageGpa <= scale ? requiredAverageGpa.toFixed(2) : 'Exceeds Max');
+
+        resScaleStanding.textContent = requiredAverageGpa <= scale ? requiredAverageGpa.toFixed(2) + ' GPA' : 'Impossible';
+        resScaleLabel.textContent = 'Required Average GPA';
+
+        if (requiredAverageGpa <= 0) {
+          resHonoursBadge.textContent = 'Target Already Secured!';
+          resHonoursBadge.className = 'px-4 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-sm border bg-emerald-500/20 border-emerald-400/40 text-emerald-300';
+          resAdviceHeading.textContent = 'Target Secured:';
+          resAdviceText.textContent = `You already have enough quality points to achieve ${targetCgpa.toFixed(2)} even with a 0.0 GPA in remaining semesters. Keep up the good work to finish higher!`;
+        } else if (requiredAverageGpa <= scale) {
+          resHonoursBadge.textContent = `Target Feasible: Need ${requiredAverageGpa.toFixed(2)} GPA`;
+          resHonoursBadge.className = 'px-4 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-sm border bg-blue-500/20 border-blue-400/40 text-blue-300';
+          resAdviceHeading.textContent = 'Forecast Roadmap:';
+          resAdviceText.textContent = `To graduate with a CGPA of ${targetCgpa.toFixed(2)}, you must maintain an average GPA of at least ${requiredAverageGpa.toFixed(2)} across your remaining ${remUnits} credit units.`;
+        } else {
+          resHonoursBadge.textContent = `Target Mathematically Unachievable (Max ${scale.toFixed(1)})`;
+          resHonoursBadge.className = 'px-4 py-2 text-xs sm:text-sm font-bold rounded-xl shadow-sm border bg-rose-500/20 border-rose-400/40 text-rose-300';
+          resAdviceHeading.textContent = 'Target Analysis:';
+          resAdviceText.textContent = `Achieving ${targetCgpa.toFixed(2)} would require a GPA of ${requiredAverageGpa.toFixed(2)}, which exceeds the maximum possible ${scale.toFixed(1)} scale. Consider setting your target to the next realistic tier.`;
+        }
+
+        resultsContainer.classList.remove('hidden');
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+    })();
+  </script>
+</body>
+</html>

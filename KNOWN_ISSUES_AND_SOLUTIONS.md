@@ -16,6 +16,7 @@
 8. [Issue 8: Brand Color Inconsistency (Old Emerald Green vs Official Gold/Yellow)](#issue-8-brand-color-inconsistency-old-emerald-green-vs-official-goldyellow)
 9. [Issue 9: Empty Result Placeholder Cards Causing Mobile Layout Gaps](#issue-9-empty-result-placeholder-cards-causing-mobile-layout-gaps)
 10. [Issue 10: Missing Site Header, Logo, Navigation & Breadcrumbs on New Tools](#issue-10-missing-site-header-logo-navigation--breadcrumbs-on-new-tools)
+11. [Issue 11: Breadcrumb Category Mismatch on Copied Templates](#issue-11-breadcrumb-category-mismatch-on-copied-templates)
 
 ---
 
@@ -194,4 +195,19 @@ The page was created using an empty placeholder tag `<div id="nav-placeholder"><
 2. **Visual Breadcrumb Bar**: Pre-render the visual breadcrumb bar immediately beneath `</nav>`.
 3. **Nav Script**: Add `<script src="/nav.js" defer></script>` before `</body>`.
 4. **Automated Build Guard**: `build-prerender.js` automatically checks all HTML files during `npm run build` and replaces any placeholder with the full pre-rendered navigation header and breadcrumbs.
+
+---
+
+## Issue 11: Breadcrumb Category Mismatch on Copied Templates
+
+### 🚨 The Problem:
+A newly added tool page displayed an incorrect parent category in its breadcrumb trail (e.g., displaying `Home > Productivity Tools > ZIMSEC O-Level Points Calculator` or `Home > Productivity Tools > Ghana University GPA & CWA Calculator` instead of `Education Tools`).
+
+### 🔍 Root Cause:
+When cloning an existing tool template, the developer or AI agent omitted updating the intermediate breadcrumb link (`<a href="/productivity">Productivity Tools</a>` to `<a href="/education">Education Tools</a>`).
+
+### ✅ The Solution:
+1. **Strict Category Matrix**: Always match the intermediate breadcrumb link directly with the tool's subject domain (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`).
+2. **Automated Audit**: Before finishing any turn, run the automated verification script defined in `BREADCRUMB_AND_NAVIGATION_STANDARDS.md`.
+3. **Canonical Reference**: Follow `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for all breadcrumb markup standards.
 

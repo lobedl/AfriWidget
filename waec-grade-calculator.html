@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>WAEC Grade Calculator (Nigerian WASSCE Marks &amp; 5-Credit Checker) – AfriWidget</title>
+  <meta name="description" content="Calculate your official WAEC letter grades (A1 to F9) from percentage marks across 9 subjects. Verify 5-credit Nigerian university admission eligibility instantly." />
+  <link rel="canonical" href="https://afriwidget.com/waec-grade-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="WAEC Grade Calculator (Nigerian WASSCE Marks &amp; 5-Credit Checker) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/waec-grade-calculator" />
+  <meta property="og:description" content="Calculate your official WAEC letter grades (A1 to F9) from percentage marks across 9 subjects. Verify 5-credit Nigerian university admission eligibility instantly." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WAEC Grade Calculator (Nigerian WASSCE Marks &amp; 5-Credit Checker) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your official WAEC letter grades (A1 to F9) from percentage marks across 9 subjects. Verify 5-credit Nigerian university admission eligibility instantly." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WAEC Grade Calculator",
+    "description": "Calculate official WAEC/WASSCE 9-point letter grades from examination percentage marks and check 5-credit qualification for Nigerian university admission.",
+    "url": "https://afriwidget.com/waec-grade-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "inLanguage": "en-NG",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Standards Committee",
+      "url": "https://afriwidget.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com"
+    },
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "West African Examinations Council (WAEC) Nigeria Grading Scheme",
+        "url": "https://www.waecnigeria.org"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Joint Admissions and Matriculation Board (JAMB) O'Level Requirements",
+        "url": "https://www.jamb.gov.ng"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the official WAEC 9-point grading scale in Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The official WAEC grading system in Nigeria is: A1 (Excellent, 75–100%), B2 (Very Good, 70–74%), B3 (Good, 65–69%), C4 (Credit, 60–64%), C5 (Credit, 55–59%), C6 (Credit, 50–54%), D7 (Pass, 45–49%), E8 (Pass, 40–44%), and F9 (Fail, 0–39%)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is considered a credit pass in WAEC in Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Grades A1, B2, B3, C4, C5, and C6 are classified as credit passes. A minimum of 5 credit passes (at C6 or better) including English Language and Mathematics is the statutory baseline for admission into Nigerian universities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can D7 or E8 be accepted for university admission in Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "D7 and E8 are ordinary passes. While some universities and polytechnics accept D7 in Mathematics for non-science courses (such as Literature or Theatre Arts), all core course requirements and English Language strictly require C6 or better."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are WAEC grades converted to points in Post-UTME screening?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In institutions utilizing O'Level point screening (like UNILAG or LASU), grades are assigned numerical values: A1 = 4.0 points, B2 = 3.6 points, B3 = 3.2 points, C4 = 2.8 points, C5 = 2.4 points, C6 = 2.0 points, with 5 subjects scaled to a maximum of 20 or 50 screening points."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <!-- Pre-rendered Static Site Header -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">WAEC Grade Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="bg-gradient-to-b from-slate-900 via-slate-850 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-yellow-400/10 text-yellow-300 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-yellow-400/20">
+        <span>🇳🇬 West African Senior School Certificate (Nigeria)</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+        WAEC Grade <span class="text-yellow-300">Calculator</span>
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Convert your WAEC / WASSCE percentage marks (0–100%) into official letter grades (A1 to F9). Verify 5-credit tertiary admission eligibility and distinction standing.
+      </p>
+      <div class="mt-4 flex items-center justify-center gap-4 text-xs text-slate-400 flex-wrap">
+        <span class="inline-flex items-center gap-1">⚡ 100% Free</span>
+        <span>•</span>
+        <span class="inline-flex items-center gap-1">🔒 Private In-Browser Tool</span>
+        <span>•</span>
+        <span class="inline-flex items-center gap-1">📜 Official WAEC Nigeria 9-Point Scale</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Calculator Container -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+      
+      <!-- Academic Track Presets -->
+      <div class="mb-6">
+        <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Quick Curriculum Preset</label>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <button type="button" id="presetScienceBtn" class="py-2 px-3 rounded-lg text-xs font-bold border border-yellow-400 bg-yellow-50 text-slate-900 transition-all">
+            🔬 Science Track
+          </button>
+          <button type="button" id="presetCommercialBtn" class="py-2 px-3 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-slate-300 transition-all">
+            💼 Commercial Track
+          </button>
+          <button type="button" id="presetArtsBtn" class="py-2 px-3 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-slate-300 transition-all">
+            🎨 Arts &amp; Humanities
+          </button>
+          <button type="button" id="presetGeneralBtn" class="py-2 px-3 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-slate-300 transition-all">
+            📚 General Track
+          </button>
+        </div>
+      </div>
+
+      <!-- Subject Input Form -->
+      <form id="waecForm" class="space-y-4" onsubmit="return false;">
+        <div class="border-b border-slate-200 pb-2 mb-4 flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Enter Exam Marks (0–100%) for 7 to 9 Subjects</span>
+          <span class="text-xs text-slate-500">A1=75%+, C6=50%+ (Credit)</span>
+        </div>
+
+        <div id="subjectRowsContainer" class="space-y-3">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-4">
+          <button type="button" id="calculateWaecBtn" class="flex-1 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer text-base">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Calculate WAEC Grades &amp; Verify Eligibility</span>
+          </button>
+          <button type="button" id="resetWaecBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Reset</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Output Results Display (Hidden Until Explicit Calculation) -->
+      <div id="waecResultsContainer" class="hidden mt-8 pt-8 border-t border-slate-200 space-y-6">
+        
+        <!-- Summary Banner -->
+        <div class="bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 rounded-2xl p-6 sm:p-8 text-white border border-slate-700 shadow-lg">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+              <span class="text-xs uppercase font-bold tracking-widest text-yellow-300">O'Level Academic Standing</span>
+              <div class="mt-2 flex items-baseline justify-center md:justify-start gap-3">
+                <span id="resTotalCredits" class="text-5xl sm:text-6xl font-black text-white">0</span>
+                <span class="text-2xl font-bold text-slate-400">Credit Passes (A1–C6)</span>
+              </div>
+              <p id="resAveragePercentage" class="text-sm text-slate-300 mt-1">Average Exam Mark: 0.0%</p>
+            </div>
+            
+            <div class="text-center md:text-right bg-slate-800/80 border border-slate-700 rounded-xl p-4 w-full md:w-auto">
+              <span class="text-xs text-slate-400 uppercase font-semibold block">University Admission Verdict</span>
+              <span id="resEligibilityBadge" class="inline-block mt-1 px-4 py-1.5 rounded-full text-xs font-black uppercase bg-yellow-400 text-slate-950">
+                Evaluating...
+              </span>
+              <p id="resEligibilitySubtext" class="text-xs text-slate-300 mt-2 max-w-xs">
+                Eligibility details.
+              </p>
+            </div>
+          </div>
+
+          <!-- Grade Count Metrics -->
+          <div class="grid grid-cols-4 gap-2 mt-6 pt-6 border-t border-slate-800 text-center">
+            <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700">
+              <span class="text-xs text-emerald-400 font-bold block">Distinctions (A1–B3)</span>
+              <span id="countDistinctions" class="text-xl font-black text-white">0</span>
+            </div>
+            <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700">
+              <span class="text-xs text-yellow-400 font-bold block">Credits (C4–C6)</span>
+              <span id="countCredits" class="text-xl font-black text-white">0</span>
+            </div>
+            <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700">
+              <span class="text-xs text-amber-400 font-bold block">Passes (D7–E8)</span>
+              <span id="countPasses" class="text-xl font-black text-white">0</span>
+            </div>
+            <div class="bg-slate-800/60 p-2.5 rounded-lg border border-slate-700">
+              <span class="text-xs text-rose-400 font-bold block">Fails (F9)</span>
+              <span id="countFails" class="text-xl font-black text-white">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Subject Grade Table -->
+        <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+          <div class="px-4 py-3 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Official WAEC 9-Point Grades by Subject</h3>
+            <span class="text-xs text-slate-500 font-medium">WAEC Nigeria Standards</span>
+          </div>
+          <div class="p-4 overflow-x-auto">
+            <table class="w-full text-left text-xs sm:text-sm">
+              <thead>
+                <tr class="border-b border-slate-200 text-slate-500">
+                  <th class="pb-2 font-semibold">Subject</th>
+                  <th class="pb-2 font-semibold">Exam Mark</th>
+                  <th class="pb-2 font-semibold">WAEC Grade</th>
+                  <th class="pb-2 font-semibold">Classification</th>
+                  <th class="pb-2 font-semibold">Admission Status</th>
+                </tr>
+              </thead>
+              <tbody id="waecGradeTableBody" class="divide-y divide-slate-200 text-slate-800">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Post-UTME Screening Points Estimate -->
+        <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-3">
+          <h4 class="text-sm font-bold text-slate-900 flex items-center justify-between">
+            <span>🏛️ Estimated Post-UTME O'Level Screening Points</span>
+            <span id="resScreeningPoints" class="text-yellow-700 font-black text-base">0.0 / 20.0 pts</span>
+          </h4>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Calculated from your best 5 relevant credit subjects using the standard Nigerian federal university conversion (A1 = 4.0, B2 = 3.6, B3 = 3.2, C4 = 2.8, C5 = 2.4, C6 = 2.0). Used during screening at universities like UNILAG, LASU, and OAU.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Complete Educational Guide & Authority Content -->
+    <section id="toolGuide" class="max-w-4xl mx-auto mt-16 space-y-6 text-slate-700 leading-relaxed"><h2>Comprehensive Guide to WAEC WASSCE Grading, 9-Point Scale &amp; University 5-Credit Admission</h2><p>In Nigeria and across English-speaking West Africa (Ghana, Sierra Leone, Liberia, and The Gambia), the <strong>West African Examinations Council (WAEC)</strong> administers the <strong>West African Senior School Certificate Examination (WASSCE)</strong>. For secondary school graduates in Nigeria, your WASSCE results represent the definitive academic credential required to satisfy baseline matriculation requirements set by the <strong>Joint Admissions and Matriculation Board (JAMB)</strong>, the <strong>National Universities Commission (NUC)</strong>, the <strong>National Board for Technical Education (NBTE)</strong>, and tertiary institutions nationwide.</p><p>The <strong>AfriWidget WAEC Grade Calculator</strong> provides a fast, deterministic assessment of your percentage marks across your nine examination subjects. It automatically translates raw marks into the official WAEC 9-point letter grading scale (A1 through F9), audits your results against the statutory Nigerian university <strong>5-credit admission threshold</strong> (including mandatory English Language and General Mathematics rules), and calculates your composite <strong>O’Level Post-UTME Screening Points</strong> (out of 20 points).</p><hr class="my-6 border-slate-200" /><h2>The Official WAEC 9-Point Grading Scheme in Nigeria</h2><p>WAEC evaluates candidate examination performance in secondary school subjects using a standardized 9-tier classification:</p><p>| WAEC Letter Grade | Percentage Score Range | Official Performance Descriptor | Tertiary Admission Status | Post-UTME Screening Points | | :--- | :--- | :--- | :--- | :--- | | <strong>A1</strong> | <strong>75% &ndash; 100%</strong> | <strong>Excellent (Distinction)</strong> | Full Degree Qualification | <strong>4.0 Points</strong> | | <strong>B2</strong> | <strong>70% &ndash; 74%</strong> | <strong>Very Good (Distinction)</strong> | Full Degree Qualification | <strong>3.6 Points</strong> | | <strong>B3</strong> | <strong>65% &ndash; 69%</strong> | <strong>Good (Distinction)</strong> | Full Degree Qualification | <strong>3.2 Points</strong> | | <strong>C4</strong> | <strong>60% &ndash; 64%</strong> | <strong>Credit (Credit Pass)</strong> | Full Degree Qualification | <strong>2.8 Points</strong> | | <strong>C5</strong> | <strong>55% &ndash; 59%</strong> | <strong>Credit (Credit Pass)</strong> | Full Degree Qualification | <strong>2.4 Points</strong> | | <strong>C6</strong> | <strong>50% &ndash; 54%</strong> | <strong>Credit (Credit Pass)</strong> | Minimum University Baseline | <strong>2.0 Points</strong> | | <strong>D7</strong> | <strong>45% &ndash; 49%</strong> | <strong>Pass (Ordinary Pass)</strong> | Non-Credit / Polytechnic Only | <strong>1.0 Point / 0.0 Points</strong> | | <strong>E8</strong> | <strong>40% &ndash; 44%</strong> | <strong>Pass (Ordinary Pass)</strong> | Non-Credit / Sub-Degree Only | <strong>0.5 Points / 0.0 Points</strong> | | <strong>F9</strong> | <strong>0% &ndash; 39%</strong> | <strong>Fail (Unsatisfactory)</strong> | Invalid for Admission | <strong>0.0 Points</strong> |</p><hr class="my-6 border-slate-200" /><h2>How the Official WAEC Calculation &amp; Admission Audit Works</h2><h3>1. Grade Conversion from Percentage Marks</h3><p>When WAEC marks examination scripts (combining Continuous Assessment Scores / CASS, Objective Multiple Choice papers, Theory/Essay papers, and Practical examinations), the total composite percentage mark is mapped to a letter grade:</p><ul><li><strong>Distinction Division (A1, B2, B3)</strong>: Marks between 65% and 100%. Represents high mastery of syllabus content.</li><li><strong>Credit Division (C4, C5, C6)</strong>: Marks between 50% and 64%. Represents sound conceptual comprehension that meets university prerequisite standards.</li><li><strong>Pass Division (D7, E8)</strong>: Marks between 40% and 49%. These are ordinary passes. They cannot be used as credit prerequisites for bachelor degree admissions.</li><li><strong>Fail Division (F9)</strong>: Marks below 40%. The candidate must retake the subject or substitute it with an acceptable sitting.</li></ul><h3>2. The Statutory 5-Credit University Baseline</h3><p>Under regulatory mandates established by the Federal Ministry of Education, JAMB, and the NUC, undergraduate degree candidates must satisfy the following criteria:</p><ul><li><strong>Five Relevant Credit Passes</strong>: Candidates must attain a minimum of five credits (grades A1 through C6) in subjects directly aligned with their intended faculty and department.</li><li><strong>Mandatory English Language</strong>: A minimum of grade C6 in English Language is compulsory for every degree programme across Nigerian federal, state, and private universities.</li><li><strong>Mandatory General Mathematics</strong>: A minimum of grade C6 in General Mathematics is compulsory for all programmes in the Sciences, Engineering, Technology, Medicine, Pharmacy, Agriculture, Social Sciences, Administration, and Management Sciences. Certain pure Humanities programmes (such as English Literature, Religious Studies, or Languages) may waive the Mathematics credit requirement at specific universities, provided five other relevant credits are presented.</li></ul><h3>3. Institutional Post-UTME O'Level Screening Points Scale</h3><p>Premier Nigerian universities (such as UNILAG, LASU, UI, OAU, UNIBEN, and FUTA) compute structured O'Level screening points from a candidate’s best five prerequisite subjects. The standard 20-point conversion operates as follows:</p><ul><li><strong>A1</strong> = 4.0 Points</li><li><strong>B2</strong> = 3.6 Points</li><li><strong>B3</strong> = 3.2 Points</li><li><strong>C4</strong> = 2.8 Points</li><li><strong>C5</strong> = 2.4 Points</li><li><strong>C6</strong> = 2.0 Points</li></ul><p><strong>Composite O’Level Screening Formula</strong>: <strong>Total Screening Points (out of 20)</strong> = Points(Subject 1) + Points(Subject 2) + Points(Subject 3) + Points(Subject 4) + Points(Subject 5)</p><p><em>(For institutions using a 50-point or 100-point scale, the 20-point sum is multiplied proportionally by 2.5 or 5.0).</em></p><hr class="my-6 border-slate-200" /><h2>How to Use the WAEC Grade Calculator</h2><ol><li><strong>Select an Academic Track Preset or Enter Custom Subjects</strong>:</li></ol><ul><li>Choose one of the preconfigured subject streams (<strong>Science</strong>, <strong>Commercial</strong>, <strong>Arts / Humanities</strong>, or <strong>General</strong>) to automatically populate the 9 standard subject fields. You can also customize individual subject titles to reflect your specific elective choices (e.g., Further Mathematics, Technical Drawing, Visual Arts, Arabic, or Food &amp; Nutrition).</li></ul><ol><li><strong>Enter Your Examination Marks (0 to 100%)</strong>:</li></ol><ul><li>In each subject row, type the actual percentage mark scored in your school mock examination, revision assessment, or final WAEC statement of result.</li></ul><ol><li><strong>Ensure English Language and Mathematics are Properly Configured</strong>:</li></ol><ul><li>Verify that your scores for the compulsory core subjects (English Language and General Mathematics) are entered accurately in rows 1 and 2.</li></ul><ol><li><strong>Click "Calculate Official Grades &amp; Eligibility"</strong>:</li></ol><ul><li>The calculator processes your nine marks through the deterministic WAEC grading algorithm.</li></ul><ol><li><strong>Review Your Results Dashboard</strong>:</li></ol><ul><li>Examine your <strong>Average Percentage Mark</strong>, total <strong>Credits count (A1&ndash;C6)</strong>, breakdown of Distinctions/Passes/Fails, <strong>5-Credit University Eligibility status</strong>, detailed 9-subject transcript table, and your <strong>Post-UTME O'Level Screening Points (out of 20.0)</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>Worked Calculation Examples</h2><h3>Example 1: Science Track Candidate &ndash; Medicine &amp; Surgery (UNILAG Applicant)</h3><p>A prospective medical student achieves the following marks across 9 WAEC subjects:</p><ol><li>General Mathematics: 78% &rarr; <strong>A1</strong> (4.0 pts)</li><li>English Language: 74% &rarr; <strong>B2</strong> (3.6 pts)</li><li>Biology: 82% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Chemistry: 76% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Physics: 71% &rarr; <strong>B2</strong> (3.6 pts)</li><li>Civic Education: 85% &rarr; <strong>A1</strong> (Elective)</li><li>Economics: 68% &rarr; <strong>B3</strong> (Elective)</li><li>Agricultural Science: 73% &rarr; <strong>B2</strong> (Elective)</li><li>Further Mathematics: 64% &rarr; <strong>C4</strong> (Elective)</li></ol><p><strong>Assessment &amp; Calculation</strong>:</p><ul><li><strong>Total Marks</strong>: 671 / 900 (Average: <strong>74.56%</strong>)</li><li><strong>Distinctions (A1&ndash;B3)</strong>: 8 subjects | <strong>Credits (C4&ndash;C6)</strong>: 1 subject | <strong>Passes / Fails</strong>: 0</li><li><strong>Total Credit Passes</strong>: 9 out of 9 (Comfortably satisfies the mandatory 5-credit threshold).</li><li><strong>Core Verification</strong>: English Language = B2 (Credit pass &check;), Mathematics = A1 (Credit pass &check;).</li><li><strong>Top 5 Prerequisite Screening Subjects (English, Maths, Biology, Chemistry, Physics)</strong>:</li><li>Points = 3.6 + 4.0 + 4.0 + 4.0 + 3.6 = <strong>19.20 / 20.00 Points</strong></li><li><strong>Admission Standing</strong>: Fully qualified for university degree admission and positioned in the top merit percentile for Medicine & Surgery.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 2: Commercial Track Candidate &ndash; Accounting &amp; Finance (UNIBEN Applicant)</h3><p>A candidate applying for Bachelor of Science in Accounting achieves:</p><ol><li>General Mathematics: 72% &rarr; <strong>B2</strong> (3.6 pts)</li><li>English Language: 68% &rarr; <strong>B3</strong> (3.2 pts)</li><li>Financial Accounting: 80% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Commerce: 71% &rarr; <strong>B2</strong> (3.6 pts)</li><li>Economics: 77% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Civic Education: 82% &rarr; <strong>A1</strong> (Elective)</li><li>Government: 63% &rarr; <strong>C4</strong> (Elective)</li><li>Marketing: 66% &rarr; <strong>B3</strong> (Elective)</li><li>Biology: 52% &rarr; <strong>C6</strong> (Elective)</li></ol><p><strong>Assessment &amp; Calculation</strong>:</p><ul><li><strong>Total Marks</strong>: 631 / 900 (Average: <strong>70.11%</strong>)</li><li><strong>Distinctions (A1&ndash;B3)</strong>: 7 subjects | <strong>Credits (C4&ndash;C6)</strong>: 2 subjects | <strong>Passes / Fails</strong>: 0</li><li><strong>Total Credit Passes</strong>: 9 out of 9 credits.</li><li><strong>Core Verification</strong>: English Language = B3 (&check;), Mathematics = B2 (&check;).</li><li><strong>Top 5 Commercial Prerequisite Screening Subjects (English, Maths, Accounting, Commerce, Economics)</strong>:</li><li>Points = 3.2 + 3.6 + 4.0 + 3.6 + 4.0 = <strong>18.40 / 20.00 Points</strong></li><li><strong>Admission Standing</strong>: Exceeds departmental O'Level requirements for Accounting, Banking & Finance, and Business Administration.</li></ul><hr class="my-6 border-slate-200" /><h3>Example 3: Arts Track Candidate &ndash; Law / Mass Communication (OAU Applicant)</h3><p>A candidate applying for Faculty of Law achieves:</p><ol><li>General Mathematics: 48% &rarr; <strong>D7</strong> (Pass)</li><li>English Language: 79% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Literature in English: 84% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Government: 76% &rarr; <strong>A1</strong> (4.0 pts)</li><li>Christian Religious Studies (CRS): 73% &rarr; <strong>B2</strong> (3.6 pts)</li><li>Civic Education: 80% &rarr; <strong>A1</strong> (Elective &rarr; 4.0 pts)</li><li>Economics: 62% &rarr; <strong>C4</strong> (Elective)</li><li>History: 70% &rarr; <strong>B2</strong> (Elective)</li><li>Biology: 56% &rarr; <strong>C5</strong> (Elective)</li></ol><p><strong>Assessment &amp; Calculation</strong>:</p><ul><li><strong>Total Marks</strong>: 628 / 900 (Average: <strong>69.78%</strong>)</li><li><strong>Total Credit Passes</strong>: 8 credit passes (A1 to C5) and 1 ordinary pass (D7 in Mathematics).</li><li><strong>Core Verification</strong>:</li><li>English Language = A1 (Outstanding &check;).</li><li>Mathematics = D7 (Ordinary Pass &cross;).</li><li><strong>Faculty Law Prerequisites (English, Literature, Government, CRS, Civic Education)</strong>:</li><li>Screening Points = 4.0 + 4.0 + 4.0 + 3.6 + 4.0 = <strong>19.60 / 20.00 Points</strong>.</li><li><strong>Admission Standing Advisory</strong>: While the candidate has an outstanding 19.60/20 screening profile in core Arts subjects and meets the general 5-credit threshold, institutions requiring a minimum C6 in Mathematics for Law (such as UNILAG or UI) will flag the D7. However, institutions that accept a D7 or pass in Mathematics for Pure Arts/Law (or those allowing WAEC/NECO combination) will grant full admission clearance.</li></ul><hr class="my-6 border-slate-200" /><h2>Single Sitting vs. Two Sittings (WAEC &amp; NECO Combination)</h2><p>In the Nigerian university system, admission screening recognizes two primary sitting configurations:</p><ol><li><strong>Single Sitting (One Result Slip)</strong>: All five mandatory credit passes are achieved in a single examination diet (e.g., WAEC May/June 2025). Many highly competitive faculties (especially College of Medicine at University of Ibadan) award bonus screening points or give strict priority to single-sitting candidates.</li><li><strong>Two Sittings (Combined Result Slips)</strong>: Candidates combine two separate examination results to complete their 5 core credits. Allowed combinations include:</li></ol><ul><li>WAEC May/June + WAEC GCE (November/December or January/February series)</li><li>WAEC May/June + NECO SSCE (June/July or November/December series)</li><li>NECO SSCE + NABTEB (for engineering, technology, and vocational faculties)</li></ul><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>What is the exact percentage required to score an A1 in WAEC?</summary><div><p>In the official WAEC Nigeria grading scheme, an <strong>A1 (Distinction - Excellent)</strong> is awarded for a composite final percentage mark of <strong>75% or higher</strong> (75% to 100%).</p></div></details><details><summary>Is a C6 grade considered a full credit pass for Nigerian university admission?</summary><div><p>Yes. Grade <strong>C6 (50% to 54%)</strong> is officially designated as a <strong>Credit Pass</strong>. It satisfies the statutory baseline requirements set by JAMB, NUC, and all Nigerian universities for degree admission.</p></div></details><details><summary>What is the difference between WAEC May/June and WAEC GCE?</summary><div><p>WAEC May/June (WASSCE for School Candidates) is written by registered final-year senior secondary students (SS3) within recognized secondary schools. WAEC GCE (WASSCE for Private Candidates, conducted in First Series in January/February and Second Series in August/September) is for independent candidates. Both certificates carry identical legal and academic value for university admission in Nigeria and internationally.</p></div></details><details><summary>Can a student with D7 in Mathematics gain admission into a Nigerian university?</summary><div><p>A grade of D7 is an ordinary pass, not a credit pass. Candidates cannot use D7 in Mathematics for Science, Engineering, Medical, Environmental, Social Science, or Management degree courses. However, certain universities (e.g., in Faculties of Arts, Humanities, Law, Languages, and Theatre Arts) accept a D7 in Mathematics provided the candidate has at least five credits in relevant Arts subjects including English Language and Literature in English.</p></div></details><details><summary>How do universities calculate O’Level Post-UTME screening points from WAEC grades?</summary><div><p>Most federal and state universities (such as UNILAG, LASU, and OAU) award points to your five primary course prerequisites: A1 = 4.0 pts, B2 = 3.6 pts, B3 = 3.2 pts, C4 = 2.8 pts, C5 = 2.4 pts, C6 = 2.0 pts. The sum of your five best relevant subjects yields a score out of 20 points, which is combined with your UTME score (out of 50 or 80) and Post-UTME CBT score (out of 30) for your final 100% aggregate score.</p></div></details><details><summary>How can I verify or retrieve my official digital WAEC certificate?</summary><div><p>WAEC Nigeria provides an official cloud-based platform at the <strong>WAEC Digital Certificate Portal</strong> (<code>waec.org</code> / <code>cert.waeconline.org.ng</code>). Candidates, educational institutions, and employers can create an account, enter their candidate examination number, year, and examination type, and retrieve or share verified digital certificates instantly.</p></div></details></section>
+  </main>
+
+  <!-- Client-Side Vanilla JS Calculator Logic (100% User-Action Driven) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const presets = {
+        science: [
+          { name: 'General Mathematics', mark: 76, compulsory: true },
+          { name: 'English Language', mark: 72, compulsory: true },
+          { name: 'Physics', mark: 68, compulsory: false },
+          { name: 'Chemistry', mark: 74, compulsory: false },
+          { name: 'Biology', mark: 80, compulsory: false },
+          { name: 'Civic Education', mark: 82, compulsory: false },
+          { name: 'Economics', mark: 65, compulsory: false },
+          { name: 'Agricultural Science', mark: 70, compulsory: false },
+          { name: 'Further Mathematics', mark: 62, compulsory: false }
+        ],
+        commercial: [
+          { name: 'General Mathematics', mark: 70, compulsory: true },
+          { name: 'English Language', mark: 75, compulsory: true },
+          { name: 'Financial Accounting', mark: 78, compulsory: false },
+          { name: 'Commerce', mark: 72, compulsory: false },
+          { name: 'Economics', mark: 80, compulsory: false },
+          { name: 'Civic Education', mark: 85, compulsory: false },
+          { name: 'Government', mark: 68, compulsory: false },
+          { name: 'Marketing / Bookkeeping', mark: 74, compulsory: false },
+          { name: 'Biology', mark: 60, compulsory: false }
+        ],
+        arts: [
+          { name: 'General Mathematics', mark: 58, compulsory: true },
+          { name: 'English Language', mark: 78, compulsory: true },
+          { name: 'Literature in English', mark: 82, compulsory: false },
+          { name: 'Government', mark: 75, compulsory: false },
+          { name: 'Christian Religious Studies (CRS)', mark: 80, compulsory: false },
+          { name: 'Civic Education', mark: 84, compulsory: false },
+          { name: 'Economics', mark: 65, compulsory: false },
+          { name: 'History / Yoruba / Igbo / Hausa', mark: 72, compulsory: false },
+          { name: 'Biology', mark: 55, compulsory: false }
+        ],
+        general: [
+          { name: 'General Mathematics', mark: 65, compulsory: true },
+          { name: 'English Language', mark: 70, compulsory: true },
+          { name: 'Civic Education', mark: 75, compulsory: false },
+          { name: 'Biology', mark: 62, compulsory: false },
+          { name: 'Economics', mark: 68, compulsory: false },
+          { name: 'Government', mark: 64, compulsory: false },
+          { name: 'Physics / Accounting', mark: 60, compulsory: false },
+          { name: 'Chemistry / Commerce', mark: 66, compulsory: false },
+          { name: 'Literature / Agric Science', mark: 70, compulsory: false }
+        ]
+      };
+
+      const rowsContainer = document.getElementById('subjectRowsContainer');
+      const calculateWaecBtn = document.getElementById('calculateWaecBtn');
+      const resetWaecBtn = document.getElementById('resetWaecBtn');
+      const waecResultsContainer = document.getElementById('waecResultsContainer');
+
+      const presetScienceBtn = document.getElementById('presetScienceBtn');
+      const presetCommercialBtn = document.getElementById('presetCommercialBtn');
+      const presetArtsBtn = document.getElementById('presetArtsBtn');
+      const presetGeneralBtn = document.getElementById('presetGeneralBtn');
+
+      function renderSubjects(subjectList) {
+        rowsContainer.innerHTML = '';
+        subjectList.forEach((subj, idx) => {
+          const row = document.createElement('div');
+          row.className = `p-3 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-3 ${subj.compulsory ? 'bg-yellow-50/60 border-yellow-200' : 'bg-slate-50 border-slate-200'}`;
+          row.innerHTML = `
+            <div class="flex items-center gap-2 w-full sm:w-1/2">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center flex-shrink-0">${idx + 1}</span>
+              <input type="text" value="${subj.name}" class="subj-name-input w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs sm:text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-yellow-400 focus:outline-none" ${subj.compulsory ? 'readonly' : ''} />
+              ${subj.compulsory ? '<span class="text-[10px] uppercase font-bold text-yellow-800 bg-yellow-200 px-1.5 py-0.5 rounded flex-shrink-0">Core</span>' : ''}
+            </div>
+            <div class="flex items-center gap-3 w-full sm:w-1/2 justify-end">
+              <label class="text-xs text-slate-600 font-medium whitespace-nowrap">Exam Mark (%):</label>
+              <input type="number" min="0" max="100" value="${subj.mark}" placeholder="0–100" class="subj-mark-input w-24 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs sm:text-sm font-bold text-slate-900 text-center focus:ring-2 focus:ring-yellow-400 focus:outline-none" required />
+            </div>
+          `;
+          rowsContainer.appendChild(row);
+        });
+      }
+
+      function setPresetActive(activeBtn) {
+        [presetScienceBtn, presetCommercialBtn, presetArtsBtn, presetGeneralBtn].forEach(btn => {
+          btn.className = 'py-2 px-3 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-600 hover:border-slate-300 transition-all';
+        });
+        activeBtn.className = 'py-2 px-3 rounded-lg text-xs font-bold border border-yellow-400 bg-yellow-50 text-slate-900 transition-all';
+      }
+
+      presetScienceBtn.addEventListener('click', function() {
+        setPresetActive(presetScienceBtn);
+        renderSubjects(presets.science);
+      });
+      presetCommercialBtn.addEventListener('click', function() {
+        setPresetActive(presetCommercialBtn);
+        renderSubjects(presets.commercial);
+      });
+      presetArtsBtn.addEventListener('click', function() {
+        setPresetActive(presetArtsBtn);
+        renderSubjects(presets.arts);
+      });
+      presetGeneralBtn.addEventListener('click', function() {
+        setPresetActive(presetGeneralBtn);
+        renderSubjects(presets.general);
+      });
+
+      // Initial Render
+      renderSubjects(presets.science);
+
+      // Grade Conversion Helper
+      function getWaecGrade(mark) {
+        if (mark >= 75) return { grade: 'A1', label: 'Excellent', type: 'distinction', points: 4.0 };
+        if (mark >= 70) return { grade: 'B2', label: 'Very Good', type: 'distinction', points: 3.6 };
+        if (mark >= 65) return { grade: 'B3', label: 'Good', type: 'distinction', points: 3.2 };
+        if (mark >= 60) return { grade: 'C4', label: 'Credit', type: 'credit', points: 2.8 };
+        if (mark >= 55) return { grade: 'C5', label: 'Credit', type: 'credit', points: 2.4 };
+        if (mark >= 50) return { grade: 'C6', label: 'Credit', type: 'credit', points: 2.0 };
+        if (mark >= 45) return { grade: 'D7', label: 'Pass', type: 'pass', points: 1.0 };
+        if (mark >= 40) return { grade: 'E8', label: 'Pass', type: 'pass', points: 0.5 };
+        return { grade: 'F9', label: 'Fail', type: 'fail', points: 0.0 };
+      }
+
+      // User Action: Calculate Button
+      calculateWaecBtn.addEventListener('click', function(e) {
+        if (e) e.preventDefault();
+
+        const nameInputs = document.querySelectorAll('.subj-name-input');
+        const markInputs = document.querySelectorAll('.subj-mark-input');
+
+        let totalMarks = 0;
+        let validSubjects = 0;
+        let creditCount = 0;
+        let countA = 0;
+        let countC = 0;
+        let countP = 0;
+        let countF = 0;
+
+        let hasMathCredit = false;
+        let hasEngCredit = false;
+        const subjectResults = [];
+
+        for (let i = 0; i < markInputs.length; i++) {
+          const name = nameInputs[i].value.trim() || `Subject ${i + 1}`;
+          const mark = parseFloat(markInputs[i].value);
+
+          if (isNaN(mark) || mark < 0 || mark > 100) {
+            alert(`Please enter a valid percentage mark between 0 and 100 for ${name}.`);
+            return;
+          }
+
+          validSubjects++;
+          totalMarks += mark;
+          const gradeInfo = getWaecGrade(mark);
+
+          if (gradeInfo.type === 'distinction') {
+            countA++;
+            creditCount++;
+          } else if (gradeInfo.type === 'credit') {
+            countC++;
+            creditCount++;
+          } else if (gradeInfo.type === 'pass') {
+            countP++;
+          } else {
+            countF++;
+          }
+
+          const lowerName = name.toLowerCase();
+          if (lowerName.includes('math') && gradeInfo.points >= 2.0) hasMathCredit = true;
+          if (lowerName.includes('english') && gradeInfo.points >= 2.0) hasEngCredit = true;
+
+          subjectResults.push({ name, mark, ...gradeInfo });
+        }
+
+        if (validSubjects === 0) return;
+
+        const averageMark = totalMarks / validSubjects;
+
+        // Populate Summary
+        document.getElementById('resTotalCredits').textContent = creditCount;
+        document.getElementById('resAveragePercentage').textContent = `Average Exam Mark: ${averageMark.toFixed(1)}% across ${validSubjects} subjects`;
+        document.getElementById('countDistinctions').textContent = countA;
+        document.getElementById('countCredits').textContent = countC;
+        document.getElementById('countPasses').textContent = countP;
+        document.getElementById('countFails').textContent = countF;
+
+        // University Verdict
+        const elBadge = document.getElementById('resEligibilityBadge');
+        const elSubtext = document.getElementById('resEligibilitySubtext');
+
+        if (creditCount >= 5 && hasMathCredit && hasEngCredit) {
+          elBadge.className = 'inline-block mt-1 px-4 py-1.5 rounded-full text-xs font-black uppercase bg-emerald-400 text-slate-950';
+          elBadge.textContent = 'Qualified for University Admission';
+          elSubtext.textContent = `Excellent! You meet the 5-credit statutory baseline including English and Mathematics.`;
+        } else if (creditCount >= 5 && (!hasMathCredit || !hasEngCredit)) {
+          elBadge.className = 'inline-block mt-1 px-4 py-1.5 rounded-full text-xs font-black uppercase bg-amber-400 text-slate-950';
+          elBadge.textContent = 'Core Subject Deficiency';
+          elSubtext.textContent = `You have ${creditCount} credits, but lack credit pass (C6+) in ${!hasEngCredit ? 'English Language' : 'Mathematics'}. Remedial required.`;
+        } else if (creditCount >= 4) {
+          elBadge.className = 'inline-block mt-1 px-4 py-1.5 rounded-full text-xs font-black uppercase bg-yellow-400 text-slate-950';
+          elBadge.textContent = 'Polytechnic / ND Qualified';
+          elSubtext.textContent = `Qualified for select National Diploma (ND) programmes requiring 4 credits. Needs 1 more credit for degree admission.`;
+        } else {
+          elBadge.className = 'inline-block mt-1 px-4 py-1.5 rounded-full text-xs font-black uppercase bg-rose-500 text-white';
+          elBadge.textContent = 'Ineligible for Direct Admission';
+          elSubtext.textContent = `Total of ${creditCount} credits is below the minimum threshold of 5 credits. WAEC GCE or NECO recommended.`;
+        }
+
+        // Subject Grade Table
+        const tbody = document.getElementById('waecGradeTableBody');
+        tbody.innerHTML = '';
+
+        subjectResults.forEach(subj => {
+          let gradeBadgeColor = 'bg-slate-200 text-slate-800';
+          let statusText = 'Fail';
+          let statusClass = 'text-rose-700 font-semibold';
+
+          if (subj.type === 'distinction') {
+            gradeBadgeColor = 'bg-emerald-100 text-emerald-800 border border-emerald-300';
+            statusText = 'Distinction (Credit)';
+            statusClass = 'text-emerald-700 font-bold';
+          } else if (subj.type === 'credit') {
+            gradeBadgeColor = 'bg-yellow-100 text-yellow-800 border border-yellow-300';
+            statusText = 'Credit Pass';
+            statusClass = 'text-yellow-700 font-bold';
+          } else if (subj.type === 'pass') {
+            gradeBadgeColor = 'bg-amber-100 text-amber-800 border border-amber-300';
+            statusText = 'Ordinary Pass (Non-Credit)';
+            statusClass = 'text-amber-700 font-medium';
+          }
+
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-100/50';
+          tr.innerHTML = `
+            <td class="py-2.5 font-medium text-slate-900">${subj.name}</td>
+            <td class="py-2.5 font-bold">${subj.mark}%</td>
+            <td class="py-2.5"><span class="px-2 py-0.5 rounded font-black text-xs ${gradeBadgeColor}">${subj.grade}</span></td>
+            <td class="py-2.5 text-slate-600">${subj.label}</td>
+            <td class="py-2.5 ${statusClass}">${statusText}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        // Calculate Best 5 Subject Screening Points
+        const sortedPoints = [...subjectResults].map(s => s.points).sort((a, b) => b - a);
+        const best5Sum = sortedPoints.slice(0, 5).reduce((acc, val) => acc + val, 0);
+        document.getElementById('resScreeningPoints').textContent = `${best5Sum.toFixed(1)} / 20.0 pts`;
+
+        // Show Results & Smooth Scroll
+        waecResultsContainer.classList.remove('hidden');
+        waecResultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // Reset Button
+      resetWaecBtn.addEventListener('click', function() {
+        document.querySelectorAll('.subj-mark-input').forEach(input => input.value = '');
+        waecResultsContainer.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <script src="/nav.js" defer></script>
+  <script src="/footer.js" defer></script>
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+</body>
+</html>

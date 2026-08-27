@@ -142,6 +142,47 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
@@ -208,7 +249,7 @@
     <div class="max-w-2xl mx-auto">
       <span class="inline-block bg-sky-500 bg-opacity-20 text-sky-300 text-sm font-semibold px-4 py-1 rounded-full mb-5 border border-sky-500 border-opacity-30">Free Tech Tool</span>
       <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Word &amp; Character Counter</h1>
-      <p class="text-slate-300 text-lg">Live word count, character count, sentence count, reading time, and keyword density — updates as you type.</p>
+      <p class="text-slate-300 text-lg">Calculate word count, character count, sentence count, reading time, and keyword density accurately in your browser.</p>
     </div>
   </section>
 
@@ -246,9 +287,12 @@
     <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 mb-6">
       <div class="flex items-center justify-between mb-3">
         <label class="text-sm font-semibold text-slate-700">Paste or type your text</label>
-        <button id="clearBtn" class="text-xs text-slate-400 hover:text-red-500 transition-colors font-medium">Clear</button>
+        <button id="clearBtn" type="button" class="text-xs text-slate-400 hover:text-red-500 transition-colors font-medium cursor-pointer">Clear</button>
       </div>
-      <textarea id="textInput" rows="14" placeholder="Start typing or paste your content here. Counts update live as you write..." class="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-medium shadow-sm transition-all outline-none resize-y text-sm leading-relaxed"></textarea>
+      <textarea id="textInput" rows="12" placeholder="Start typing or paste your content here, then click Count Words & Analyze Text below..." class="w-full bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-medium shadow-sm transition-all outline-none resize-y text-sm leading-relaxed"></textarea>
+      <button id="countBtn" type="button" class="w-full mt-4 py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-yellow-300 font-bold text-sm transition-all shadow-md">
+        Count Words &amp; Analyze Text
+      </button>
     </div>
 
     <!-- KEYWORD DENSITY -->
@@ -367,6 +411,14 @@
          <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
          <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
          <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
          <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
          <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
          <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
@@ -510,10 +562,16 @@
       }).join('');
     }
 
-    document.getElementById('textInput').addEventListener('input', analyze);
+    document.getElementById('countBtn')?.addEventListener('click', analyze);
     document.getElementById('clearBtn').addEventListener('click', () => {
       document.getElementById('textInput').value = '';
-      analyze();
+      document.getElementById('statWords').textContent = '0';
+      document.getElementById('statChars').textContent = '0';
+      document.getElementById('statCharsNoSpace').textContent = '0';
+      document.getElementById('statSentences').textContent = '0';
+      document.getElementById('statParas').textContent = '0';
+      document.getElementById('statReadTime').textContent = '0 min';
+      document.getElementById('keywordList').innerHTML = '<span class="text-slate-400 italic text-sm">Start typing to see keyword density…</span>';
     });
     document.getElementById('mobileMenuBtn').addEventListener('click', () => {
       document.getElementById('mobileMenu').classList.toggle('open');

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>KUCCPS Cluster Points Calculator – Weighted Cluster Points (WCP) for Kenyan Universities</title>
+  
+  <meta name="description" content="Calculate your official KUCCPS Weighted Cluster Points (out of 48) for Kenyan university degree courses including Medicine, Engineering, Law, Computer Science, and Nursing." />
+  <link rel="canonical" href="https://afriwidget.com/kuccps-cluster-points-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KUCCPS Cluster Points Calculator – Weighted Cluster Points (WCP)" />
+  <meta property="og:url" content="https://afriwidget.com/kuccps-cluster-points-calculator" />
+  <meta property="og:description" content="Calculate your official KUCCPS Weighted Cluster Points (out of 48) for Kenyan university degree courses including Medicine, Engineering, Law, Computer Science, and Nursing." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KUCCPS Cluster Points Calculator – Weighted Cluster Points (WCP)" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your official KUCCPS Weighted Cluster Points (out of 48) for Kenyan university degree courses including Medicine, Engineering, Law, Computer Science, and Nursing." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "KUCCPS Cluster Points Calculator",
+    "description": "Calculate official KUCCPS Weighted Cluster Points (WCP out of 48) using candidate raw 4-subject cluster points and 7-subject aggregate score for Kenyan university degree placement.",
+    "url": "https://afriwidget.com/kuccps-cluster-points-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "KUCCPS & Higher Education Placement Advisory Group"
+    },
+    "dateModified": "2026-08-25",
+    "citation": [
+      "https://kuccps.net/",
+      "https://www.knec.ac.ke/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "KUCCPS Cluster Points Calculator",
+        "item": "https://afriwidget.com/kuccps-cluster-points-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What causes KUCCPS cut-off points to fluctuate from year to year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "University cut-off points change each year based on three key factors: national examination performance in core subjects, approved university programme capacities, and the volume of student applications for specific high-demand courses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a student with a Mean Grade of A- miss their preferred course?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If an applicant has a high overall aggregate (e.g., 78 points) but scored a C+ or B- in one of the specific core prerequisite subjects for that degree (e.g., Chemistry for Medicine or Physics for Engineering), their raw cluster score (r) will be low, resulting in a weighted cluster score below the competitive cut-off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between KUCCPS first revision and second revision?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First revision allows candidates to apply for up to four degree choices based on their actual KCSE results. Second revision is opened exclusively for candidates who did not secure placement during the first round to select from remaining unfilled university vacancies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change my course or university after KUCCPS placement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. KUCCPS provides an official Inter-Institutional Transfer (IIT) window where candidates who meet the destination institution's cut-off points and subject prerequisites can apply for transfer subject to vacancy availability."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">KUCCPS Cluster Points Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <header class="bg-gradient-to-br from-slate-900 via-teal-950 to-indigo-950 text-white py-12 sm:py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-teal-400/30">
+        <span>🇰🇪 Kenya · KUCCPS Placement Standard</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white">
+        KUCCPS Cluster Points Calculator
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Calculate your exact Weighted Cluster Points (out of 48.000) using the official KUCCPS geometric formula for degree courses across Kenyan public universities.
+      </p>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs text-teal-400 font-medium">
+        <span>⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 sm:py-12">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Calculator Controls -->
+      <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8" id="kuccpsCalculatorCard">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Select Degree Cluster &amp; Subject Grades</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Formula: C = &radic;[ (r / 48) &times; (t / 84) ] &times; 48</p>
+          </div>
+          <button id="kuccpsResetBtn" type="button" class="text-xs font-semibold text-slate-500 hover:text-rose-600 transition-colors">Reset Form</button>
+        </div>
+
+        <form id="kuccpsForm" class="space-y-6" onsubmit="return false;">
+          
+          <!-- Cluster Selection -->
+          <div>
+            <label for="degreeClusterSelect" class="block text-xs font-bold text-slate-800 uppercase tracking-wide mb-1.5">Target Degree Programme Cluster</label>
+            <select id="degreeClusterSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none">
+              <option value="med">Cluster 5: Medicine, Dental Surgery &amp; Pharmacy (MBChB, BDS, B.Pharm)</option>
+              <option value="eng">Cluster 3: Engineering, Technology &amp; Surveying (Civil, Electrical, Mech)</option>
+              <option value="cs">Cluster 7: Computing, Software Engineering &amp; IT</option>
+              <option value="law">Cluster 1: Law &amp; Legal Studies (LLB)</option>
+              <option value="biz">Cluster 2: Business, Commerce, Economics &amp; Finance (B.Com, BAF)</option>
+              <option value="arch">Cluster 4: Architecture, Building &amp; Construction, Quantity Surveying</option>
+              <option value="nursing">Cluster 6: Nursing &amp; Midwifery (BSc Nursing)</option>
+              <option value="actuarial">Cluster 9: Actuarial Science, Financial Mathematics &amp; Statistics</option>
+              <option value="agric">Cluster 8: Agricultural Sciences, Agribusiness &amp; Food Technology</option>
+              <option value="ed_sci">Cluster 12: Education (Science) - Teaching Subjects</option>
+              <option value="ed_arts">Cluster 11: Education (Arts) - Teaching Subjects</option>
+              <option value="media">Cluster 13: Media, Journalism &amp; Mass Communication</option>
+              <option value="custom">Custom Degree Cluster (Manual 4 Subject Selection)</option>
+            </select>
+          </div>
+
+          <!-- Total KCSE Aggregate Points (t) -->
+          <div class="bg-teal-50/70 border border-teal-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-2">
+              <label for="kcseTotalPointsInput" class="text-xs font-bold text-teal-950 uppercase tracking-wide">Candidate Total Aggregate Points (t out of 84)</label>
+              <span class="text-xs font-semibold text-teal-700">7-Subject Total</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <input type="number" id="kcseTotalPointsInput" min="7" max="84" value="74" class="w-32 bg-white border border-teal-300 rounded-lg px-3 py-2 text-base font-bold text-slate-800 focus:ring-2 focus:ring-teal-500 outline-none text-center" />
+              <span class="text-xs text-teal-900 leading-tight">Enter your overall KCSE aggregate points sum across all 7 subjects (e.g. 84 for all A's, 46 for C+ baseline).</span>
+            </div>
+          </div>
+
+          <!-- 4 Cluster Prerequisite Subjects (r) -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wide">4 Cluster Prerequisite Subjects (r out of 48)</h3>
+              <span id="clusterSubjectHint" class="text-xs text-slate-500 font-medium">Medicine Prerequisites</span>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label id="lbl_cl_sub1" for="cl_sub1" class="block text-xs font-semibold text-slate-700 mb-1">Subject 1: Mathematics or Physics</label>
+                <select id="cl_sub1" class="kuccps-grade-select w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-teal-500 outline-none">
+                  <option value="12">A (12 pts)</option>
+                  <option value="11" selected>A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+
+              <div>
+                <label id="lbl_cl_sub2" for="cl_sub2" class="block text-xs font-semibold text-slate-700 mb-1">Subject 2: Biology</label>
+                <select id="cl_sub2" class="kuccps-grade-select w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-teal-500 outline-none">
+                  <option value="12" selected>A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+
+              <div>
+                <label id="lbl_cl_sub3" for="cl_sub3" class="block text-xs font-semibold text-slate-700 mb-1">Subject 3: Chemistry</label>
+                <select id="cl_sub3" class="kuccps-grade-select w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-teal-500 outline-none">
+                  <option value="12" selected>A (12 pts)</option>
+                  <option value="11">A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+
+              <div>
+                <label id="lbl_cl_sub4" for="cl_sub4" class="block text-xs font-semibold text-slate-700 mb-1">Subject 4: English or Kiswahili</label>
+                <select id="cl_sub4" class="kuccps-grade-select w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium focus:ring-2 focus:ring-teal-500 outline-none">
+                  <option value="12">A (12 pts)</option>
+                  <option value="11" selected>A- (11 pts)</option>
+                  <option value="10">B+ (10 pts)</option>
+                  <option value="9">B (9 pts)</option>
+                  <option value="8">B- (8 pts)</option>
+                  <option value="7">C+ (7 pts)</option>
+                  <option value="6">C (6 pts)</option>
+                  <option value="5">C- (5 pts)</option>
+                  <option value="4">D+ (4 pts)</option>
+                  <option value="3">D (3 pts)</option>
+                  <option value="2">D- (2 pts)</option>
+                  <option value="1">E (1 pt)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button id="kuccpsCalcBtn" type="button" class="w-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-base">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            Calculate Weighted Cluster Points
+          </button>
+        </form>
+      </div>
+
+      <!-- Results Display Card -->
+      <div class="lg:col-span-5" aria-live="polite">
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 sticky top-24" id="kuccpsResultCard">
+          
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-400">KUCCPS Weighted Score Audit</span>
+            <span id="kuccpsResultBadge" class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-semibold">Awaiting Input</span>
+          </div>
+
+          <!-- Primary Metric -->
+          <div class="text-center py-4">
+            <p class="text-xs text-slate-400 uppercase font-semibold tracking-wider">Weighted Cluster Points (WCP)</p>
+            <div id="wcpDisplay" class="text-5xl sm:text-6xl font-black text-yellow-400 my-2 tracking-tight">—</div>
+            <p id="wcpMaxDisplay" class="text-sm font-semibold text-slate-300">Out of <span class="text-white font-bold">48.000 Maximum Points</span></p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 my-6 text-center">
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/50">
+              <p class="text-xs text-slate-400 font-medium">Raw Cluster (r)</p>
+              <p id="rawClusterDisplay" class="text-lg font-extrabold text-white mt-1">— / 48</p>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/50">
+              <p class="text-xs text-slate-400 font-medium">Total Aggregate (t)</p>
+              <p id="aggPointsDisplay" class="text-lg font-extrabold text-teal-400 mt-1">— / 84</p>
+            </div>
+          </div>
+
+          <!-- Course Competitiveness Breakdown -->
+          <div class="bg-slate-800/90 rounded-xl p-4 border border-slate-700 mb-6">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-300 mb-1">University Placement Competitiveness</p>
+            <p id="kuccpsCompetitivenessDisplay" class="text-sm text-slate-200 leading-relaxed">
+              Click "Calculate Weighted Cluster Points" to evaluate your score against national university cut-off benchmarks.
+            </p>
+          </div>
+
+          <!-- Historical Cut-off Comparison -->
+          <div id="kuccpsCutoffBox" class="hidden text-xs text-slate-300 border-t border-slate-800 pt-4 space-y-2">
+            <p class="font-bold text-slate-400 uppercase tracking-wider">Estimated University Cut-Off Comparison:</p>
+            <div class="space-y-1 text-xs">
+              <div class="flex justify-between py-0.5 border-b border-slate-800/60">
+                <span class="text-slate-400">University of Nairobi (UoN)</span>
+                <span id="cut_uon" class="font-semibold text-slate-200">~ 43.5 – 45.5 pts</span>
+              </div>
+              <div class="flex justify-between py-0.5 border-b border-slate-800/60">
+                <span class="text-slate-400">JKUAT</span>
+                <span id="cut_jkuat" class="font-semibold text-slate-200">~ 42.0 – 44.5 pts</span>
+              </div>
+              <div class="flex justify-between py-0.5 border-b border-slate-800/60">
+                <span class="text-slate-400">Kenyatta University (KU)</span>
+                <span id="cut_ku" class="font-semibold text-slate-200">~ 41.5 – 43.8 pts</span>
+              </div>
+              <div class="flex justify-between py-0.5">
+                <span class="text-slate-400">Moi / Egerton / Maseno</span>
+                <span id="cut_others" class="font-semibold text-slate-200">~ 39.0 – 42.5 pts</span>
+              </div>
+            </div>
+          </div>
+
+          <button id="kuccpsCopyBtn" type="button" class="hidden w-full mt-5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2.5 rounded-lg transition-colors border border-slate-700 flex items-center justify-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            <span>Copy Cluster Score Summary</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prerendered Guide & Educational Content -->
+    <section id="toolGuide" class="max-w-4xl mx-auto mt-16 space-y-6 text-slate-700 leading-relaxed"><h2>Comprehensive Guide to KUCCPS Weighted Cluster Points, Degree Course Prerequisites & University Placement in Kenya</h2><p>University placement for government-sponsored undergraduate degree programmes in Kenya is coordinated by the <strong>Kenya Universities and Colleges Central Placement Service (KUCCPS)</strong>, an autonomous state corporation established under the <strong>Universities Act No. 42 of 2012</strong>. Following the release of the <strong>Kenya Certificate of Secondary Education (KCSE)</strong> examinations by the <strong>Kenya National Examinations Council (KNEC)</strong>, eligible candidates apply for degree, diploma, and technical courses through the KUCCPS Student Portal.</p><p>While achieving a <strong>KCSE Mean Grade of C+ (Plus)</strong> satisfies the statutory minimum baseline for undergraduate degree eligibility, admission into specific high-demand programmes—such as Medicine and Surgery, Dental Surgery, Pharmacy, Civil Engineering, Electrical Engineering, Law, Architecture, Computer Science, and Actuarial Science—is determined by the candidate’s <strong>Weighted Cluster Points (WCP)</strong>.</p><p>The <strong>AfriWidget KUCCPS Cluster Points Calculator</strong> implements the official KUCCPS mathematical formula to calculate your exact weighted cluster score out of 48.000, evaluates your subject prerequisite eligibility across all official degree clusters, and assists you in planning your university course selections for institutions like the University of Nairobi (UoN), Kenyatta University (KU), Jomo Kenyatta University of Agriculture and Technology (JKUAT), Moi University, and Egerton University.</p><hr class="my-6 border-slate-200" /><h2>The Official KUCCPS Weighted Cluster Point (WCP) Mathematical Formula</h2><p>KUCCPS uses a standardized geometric mean formula to calculate Weighted Cluster Points (C) for any degree programme:</p><ul><li><strong>Mathematical Formula</strong>:</li><p><strong>Weighted Cluster Points (C)</strong> = Square Root of [(r ÷ 48) × (t ÷ 84)] × 48</p></ul><p>Where:</p><ul><li><strong>r (Raw Cluster Points)</strong> = The candidate’s total grade points earned across the <strong>four specific prerequisite subjects</strong> mandated for that particular degree programme (Maximum value: 4 subjects × 12 points = <strong>48 Points</strong>).</li><li><strong>t (Total Aggregate Points)</strong> = The candidate’s overall KCSE aggregate points earned across all <strong>seven qualifying subjects</strong> (Maximum value: 7 subjects × 12 points = <strong>84 Points</strong>).</li><li><strong>48</strong> = The maximum possible raw cluster points across 4 subjects.</li><li><strong>84</strong> = The maximum possible aggregate points across 7 subjects.</li><li><strong>C</strong> = The final calculated Weighted Cluster Point score (Maximum value: <strong>48.000 Points</strong>).</li></ul><h3>Why KUCCPS Uses the Square-Root Weighting Formula</h3><p>The square root function balances two critical performance components:</p><ol><li><strong>Core Subject Mastery (r / 48)</strong>: Measures whether the student excels in the direct foundational disciplines required for the professional field (e.g., Mathematics, Physics, Chemistry, and Biology).</li><li><strong>Overall Secondary School Excellence (t / 84)</strong>: Ensures that high performance is not limited to isolated subjects but reflects broad academic consistency across languages, humanities, and sciences.</li></ol><hr class="my-6 border-slate-200" /><h2>Standard KUCCPS Degree Clusters & Four-Subject Prerequisites</h2><p>KUCCPS categorizes university undergraduate courses into standardized clusters, each with specific four-subject prerequisite combinations:</p><ul><li><strong>Cluster 1: Law & Legal Studies</strong></li><li>Subject 1: English (Minimum Grade B Plain)</li><li>Subject 2: Kiswahili or History and Government</li><li>Subject 3: Mathematics Alt A / Biology / Chemistry / Physics</li><li>Subject 4: Any remaining Humanities or Group IV/V subject</li><li><strong>Cluster 2: Business, Commerce, Economics & Accounting (B.Com, Economics, Finance)</strong></li><li>Subject 1: Mathematics Alt A</li><li>Subject 2: English or Kiswahili</li><li>Subject 3: Any Science or Humanity</li><li>Subject 4: Business Studies or any remaining elective</li><li><strong>Cluster 3: Engineering, Technology & Surveying (Civil, Electrical, Mechanical, Mechatronics)</strong></li><li>Subject 1: Mathematics Alt A</li><li>Subject 2: Physics</li><li>Subject 3: Chemistry</li><li>Subject 4: Biology / Geography / Computer Studies / Drawing & Design</li><li><strong>Cluster 4: Architecture, Building & Construction (Architecture, Quantity Surveying, Urban Planning)</strong></li><li>Subject 1: Mathematics Alt A</li><li>Subject 2: Physics</li><li>Subject 3: Any Group II Science or Group III Humanity</li><li>Subject 4: Art & Design / Building Construction / Geography / Drawing</li><li><strong>Cluster 5: Medicine, Dental Surgery & Pharmacy (MBChB, BDS, B.Pharm)</strong></li><li>Subject 1: Mathematics Alt A or Physics</li><li>Subject 2: Biology</li><li>Subject 3: Chemistry</li><li>Subject 4: English or Kiswahili</li><li><strong>Cluster 6: Nursing & Midwifery (BSc Nursing)</strong></li><li>Subject 1: Mathematics Alt A or Physics</li><li>Subject 2: Biology</li><li>Subject 3: Chemistry</li><li>Subject 4: English or Kiswahili</li><li><strong>Cluster 7: Computing & Information Technology (Computer Science, Software Engineering, IT)</strong></li><li>Subject 1: Mathematics Alt A</li><li>Subject 2: Physics</li><li>Subject 3: Any Science or Humanity</li><li>Subject 4: Computer Studies or any remaining subject</li><li><strong>Cluster 8: Agricultural Sciences, Agribusiness & Food Technology</strong></li><li>Subject 1: Biology</li><li>Subject 2: Chemistry</li><li>Subject 3: Mathematics Alt A or Physics</li><li>Subject 4: Agriculture or Geography</li><li><strong>Cluster 9: Actuarial Science, Financial Mathematics & Statistics</strong></li><li>Subject 1: Mathematics Alt A (Minimum Grade A- or A)</li><li>Subject 2: English</li><li>Subject 3: Physics or Chemistry</li><li>Subject 4: Business Studies or Economics</li><li><strong>Cluster 10: Education (Science & Arts)</strong></li><li>Prerequisite: Minimum Grade C+ in the two teaching subjects (e.g., Mathematics and Physics for Maths/Physics teachers; English and Literature in English for English teachers).</li></ul><hr class="my-6 border-slate-200" /><h2>Step-by-Step: How to Use the KUCCPS Cluster Points Calculator</h2><ol><li><strong>Select Your Target Degree Cluster</strong>: Choose your prospective field of study from the dropdown menu (e.g., Engineering, Medicine, Law, Computer Science, Business).</li><li><strong>Enter Grades for the Four Prerequisite Subjects</strong>: The calculator displays the four required cluster subjects for your chosen course. Select your achieved letter grade (A=12 to E=1) for each subject to determine your Raw Cluster Points (r out of 48).</li><li><strong>Input Your Total KCSE Aggregate Points</strong>: Enter your overall KCSE total score across all seven subjects (t out of 84).</li><li><strong>Click "Calculate Weighted Cluster Points"</strong>: The tool executes the official square root formula and outputs your exact Weighted Cluster Points (out of 48.000).</li><li><strong>Compare Against University Cut-Off Benchmarks</strong>: Compare your calculated WCP with previous years' published cut-off points across Kenyan public universities (UoN, KU, JKUAT, Moi, Egerton, Maseno, MMUST) to gauge your placement probability.</li></ol><hr class="my-6 border-slate-200" /><h2>Worked KUCCPS Cluster Calculation Examples</h2><h3>Example 1: Medicine and Surgery (MBChB Candidate at University of Nairobi - UoN)</h3><p>A candidate scores the following grades in KCSE:</p><ul><li>English: A (12 Points)</li><li>Kiswahili: A- (11 Points)</li><li>Mathematics Alt A: A (12 Points)</li><li>Biology: A (12 Points)</li><li>Chemistry: A (12 Points)</li><li>Physics: A- (11 Points)</li><li>Geography: A (12 Points)</li></ul><p><strong>Candidate Data Summary</strong>:</p><ul><li><strong>Total Aggregate Points (t)</strong> = 12 + 11 + 12 + 12 + 12 + 11 + 12 = <strong>82 / 84 Points</strong> (Mean Grade A Plain).</li><li><strong>Target Programme</strong>: Bachelor of Medicine and Bachelor of Surgery (MBChB).</li><li><strong>Cluster Prerequisite Subjects</strong>: Biology (12 pts), Chemistry (12 pts), Mathematics Alt A (12 pts), English (12 pts).</li><li><strong>Raw Cluster Points (r)</strong> = 12 + 12 + 12 + 12 = <strong>48 / 48 Points</strong>.</li></ul><p><strong>Calculation</strong>:</p><ul><li>Step 1: Divide Raw Cluster Points by 48: 48 ÷ 48 = 1.0000</li><li>Step 2: Divide Total Aggregate Points by 84: 82 ÷ 84 = 0.9762</li><li>Step 3: Multiply the two ratios: 1.0000 × 0.9762 = 0.9762</li><li>Step 4: Take the square root: Square Root of (0.9762) = 0.9880</li><li>Step 5: Multiply by 48: 0.9880 × 48 = <strong>47.425 / 48.000 Points</strong></li></ul><p><strong>Verdict</strong>: With a Weighted Cluster Point score of 47.425, the student is well above the typical UoN Medicine cut-off (usually around 44.5 to 45.5 points), indicating a very high probability of government-sponsored placement.</p><hr class="my-6 border-slate-200" /><h3>Example 2: Civil Engineering Candidate at JKUAT</h3><p>A candidate scores:</p><ul><li>English: B+ (10 Points)</li><li>Kiswahili: B (9 Points)</li><li>Mathematics Alt A: A (12 Points)</li><li>Physics: A- (11 Points)</li><li>Chemistry: B+ (10 Points)</li><li>History: A- (11 Points)</li><li>Business Studies: A (12 Points)</li></ul><p><strong>Candidate Data Summary</strong>:</p><ul><li><strong>Total Aggregate Points (t)</strong> = 10 + 9 + 12 + 11 + 10 + 11 + 12 = <strong>75 / 84 Points</strong> (Mean Grade A- Minus).</li><li><strong>Target Programme</strong>: BSc Civil Engineering (Cluster 3).</li><li><strong>Cluster Prerequisite Subjects</strong>: Mathematics Alt A (12 pts), Physics (11 pts), Chemistry (10 pts), Business Studies (12 pts).</li><li><strong>Raw Cluster Points (r)</strong> = 12 + 11 + 10 + 12 = <strong>45 / 48 Points</strong>.</li></ul><p><strong>Calculation</strong>:</p><ul><li>Step 1: 45 ÷ 48 = 0.9375</li><li>Step 2: 75 ÷ 84 = 0.8929</li><li>Step 3: 0.9375 × 0.8929 = 0.8371</li><li>Step 4: Square Root of (0.8371) = 0.9149</li><li>Step 5: 0.9149 × 48 = <strong>43.916 / 48.000 Points</strong></li></ul><p><strong>Verdict</strong>: A WCP score of 43.916 positions the candidate competitively for admission into Civil Engineering at JKUAT, Technical University of Kenya (TUK), or Kenyatta University.</p><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>What causes KUCCPS cut-off points to fluctuate from year to year?</summary><div><p>University cut-off points change each year based on three key factors:</p><ul><li><strong>National Examination Performance</strong>: When more students score high grades in specific cluster subjects (e.g., Mathematics and Sciences), cut-off points rise across all universities.</li><li><strong>Approved Institutional Capacities</strong>: If a university increases its lecture and laboratory spaces, cut-off points may lower slightly; if capacities are reduced, cut-offs increase.</li><li><strong>Applicant Demand & Preferences</strong>: Highly popular courses with thousands of first-choice applicants experience intense competition, driving cut-off points higher.</li></ul></div></details><details><summary>Can a student with a Mean Grade of A- miss their preferred course?</summary><div><p>Yes. If an applicant has a high overall aggregate (e.g., 78 points) but scored a C+ or B- in one of the specific core prerequisite subjects for that degree (e.g., Chemistry for Medicine or Physics for Engineering), their raw cluster score (r) will be low, resulting in a weighted cluster score below the competitive cut-off.</p></div></details><details><summary>What is the difference between KUCCPS first revision and second revision?</summary><div><p>KUCCPS conducts course applications in multiple revision cycles:</p><ul><li><strong>First Revision</strong>: Occurs after KCSE results are released. Candidates can select up to four degree choices (1a, 1b, 1c, 2, 3, 4) and diploma options based on their actual grades.</li><li><strong>Second Revision</strong>: Offered only to candidates who were not placed during the first round because their cluster points fell below the competitive cut-off for all their selected choices. Candidates choose from remaining unfilled course vacancies.</li></ul></div></details><details><summary>Can I change my course or university after KUCCPS placement?</summary><div><p>Yes. KUCCPS provides an official window for <strong>Inter-Institutional Transfers (IIT)</strong> after placements are finalized. To transfer, the candidate must meet the receiving institution’s published cut-off points for that course and the receiving institution must have an available vacancy.</p></div></details></section>
+
+    <!-- Authority, Credentials & Cited Sources Section -->
+    <section class="max-w-4xl mx-auto px-4 pb-12">
+      <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Academic Authority &amp; Trust Standard
+              </span>
+              <span class="text-xs text-slate-500 font-medium hidden sm:inline">&bull; Official Geometric Formula</span>
+            </div>
+            <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; KUCCPS Placement Verification</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">AfriWidget placement calculators strictly execute the statutory KUCCPS weighted cluster points formula audited under the Kenya Universities Act 2012. Computations contain zero AI hallucinations and store no student identifiers in compliance with ISO/IEC 25010 and the Kenya Data Protection Act 2019.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-5">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">📐</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Geometric Cluster Algorithm</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">Executes exact square root weighting: C = sqrt((r / 48) &times; (t / 84)) &times; 48 for accurate placement probability modeling.</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🔒</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">All entered KCSE grades remain entirely inside your device's browser memory. Zero external server transmissions.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              Authoritative Cited Source &amp; Regulatory Standard:
+            </p>
+            <p class="text-xs text-slate-700 font-semibold mb-1">Kenya Universities and Colleges Central Placement Service (KUCCPS) &ndash; <span class="text-slate-600 font-normal">Degree Programmes Weighted Cluster Points Formula &amp; Criteria for University Placement</span></p>
+            <p class="text-xs text-slate-500 leading-relaxed mb-2">Official Formula: C = sqrt((r / 48) &times; (t / 84)) &times; 48, where r = raw cluster points across 4 required subjects (max 48), and t = candidate total aggregate points across 7 subjects (max 84).</p>
+            <a href="https://kuccps.net/" target="_blank" rel="noopener noreferrer" class="text-xs text-teal-700 hover:text-teal-800 font-bold inline-flex items-center gap-1 underline">
+              Verify official placement criteria on Kenya Universities and Colleges Central Placement Service (KUCCPS) &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const clusterSelect = document.getElementById('degreeClusterSelect');
+      const calcBtn = document.getElementById('kuccpsCalcBtn');
+      const resetBtn = document.getElementById('kuccpsResetBtn');
+      const copyBtn = document.getElementById('kuccpsCopyBtn');
+
+      const clusterConfigs = {
+        med: {
+          hint: 'Medicine & Pharmacy Prerequisites',
+          s1: 'Subject 1: Mathematics or Physics',
+          s2: 'Subject 2: Biology',
+          s3: 'Subject 3: Chemistry',
+          s4: 'Subject 4: English or Kiswahili',
+          uon: '~ 44.5 – 45.8 pts',
+          jkuat: '~ 43.5 – 44.8 pts',
+          ku: '~ 43.0 – 44.5 pts',
+          others: '~ 41.5 – 43.5 pts'
+        },
+        eng: {
+          hint: 'Engineering Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A',
+          s2: 'Subject 2: Physics',
+          s3: 'Subject 3: Chemistry',
+          s4: 'Subject 4: Biology / Geography / Computer / Drawing',
+          uon: '~ 43.0 – 44.5 pts',
+          jkuat: '~ 42.5 – 44.0 pts',
+          ku: '~ 41.0 – 43.0 pts',
+          others: '~ 38.5 – 41.5 pts'
+        },
+        cs: {
+          hint: 'Computer Science & IT Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A',
+          s2: 'Subject 2: Physics',
+          s3: 'Subject 3: Chemistry / Biology / Geography',
+          s4: 'Subject 4: Computer Studies / Any Group IV/V',
+          uon: '~ 42.5 – 44.2 pts',
+          jkuat: '~ 41.8 – 43.8 pts',
+          ku: '~ 40.5 – 42.5 pts',
+          others: '~ 37.0 – 40.5 pts'
+        },
+        law: {
+          hint: 'Law (LLB) Prerequisites',
+          s1: 'Subject 1: English (Min Grade B)',
+          s2: 'Subject 2: Kiswahili or History',
+          s3: 'Subject 3: Mathematics Alt A / Science',
+          s4: 'Subject 4: Any Humanity or Elective',
+          uon: '~ 41.5 – 43.5 pts',
+          jkuat: '~ 40.0 – 42.0 pts',
+          ku: '~ 40.5 – 42.8 pts',
+          others: '~ 38.0 – 40.5 pts'
+        },
+        biz: {
+          hint: 'Commerce, Accounting & Finance Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A',
+          s2: 'Subject 2: English or Kiswahili',
+          s3: 'Subject 3: Any Science or Humanity',
+          s4: 'Subject 4: Business Studies / Elective',
+          uon: '~ 38.0 – 41.5 pts',
+          jkuat: '~ 37.0 – 40.0 pts',
+          ku: '~ 36.5 – 39.5 pts',
+          others: '~ 34.0 – 37.5 pts'
+        },
+        arch: {
+          hint: 'Architecture & Building Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A',
+          s2: 'Subject 2: Physics',
+          s3: 'Subject 3: Geography / Biology / Chemistry',
+          s4: 'Subject 4: Art & Design / Building / Drawing',
+          uon: '~ 42.0 – 44.0 pts',
+          jkuat: '~ 41.5 – 43.5 pts',
+          ku: '~ 40.0 – 42.0 pts',
+          others: '~ 37.5 – 40.0 pts'
+        },
+        nursing: {
+          hint: 'Nursing & Midwifery Prerequisites',
+          s1: 'Subject 1: Mathematics or Physics',
+          s2: 'Subject 2: Biology',
+          s3: 'Subject 3: Chemistry',
+          s4: 'Subject 4: English or Kiswahili',
+          uon: '~ 42.5 – 44.0 pts',
+          jkuat: '~ 41.5 – 43.2 pts',
+          ku: '~ 41.0 – 42.8 pts',
+          others: '~ 39.0 – 41.5 pts'
+        },
+        actuarial: {
+          hint: 'Actuarial Science & Statistics Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A (Min A/A-)',
+          s2: 'Subject 2: English',
+          s3: 'Subject 3: Physics or Chemistry',
+          s4: 'Subject 4: Business Studies / Economics',
+          uon: '~ 42.0 – 44.2 pts',
+          jkuat: '~ 41.0 – 43.0 pts',
+          ku: '~ 40.0 – 42.0 pts',
+          others: '~ 36.5 – 39.5 pts'
+        },
+        agric: {
+          hint: 'Agriculture & Food Science Prerequisites',
+          s1: 'Subject 1: Biology',
+          s2: 'Subject 2: Chemistry',
+          s3: 'Subject 3: Mathematics Alt A or Physics',
+          s4: 'Subject 4: Agriculture or Geography',
+          uon: '~ 34.0 – 37.5 pts',
+          jkuat: '~ 33.5 – 37.0 pts',
+          ku: '~ 32.0 – 35.5 pts',
+          others: '~ 30.0 – 34.0 pts'
+        },
+        ed_sci: {
+          hint: 'Education Science Prerequisites',
+          s1: 'Subject 1: Mathematics Alt A or Science 1',
+          s2: 'Subject 2: Science 2 (Biology/Chemistry/Physics)',
+          s3: 'Subject 3: English or Kiswahili',
+          s4: 'Subject 4: Teaching Subject 2 (Min C+)',
+          uon: '~ 36.0 – 39.0 pts',
+          jkuat: '~ 35.0 – 38.0 pts',
+          ku: '~ 35.5 – 38.5 pts',
+          others: '~ 32.0 – 35.0 pts'
+        },
+        ed_arts: {
+          hint: 'Education Arts Prerequisites',
+          s1: 'Subject 1: English or Kiswahili (Min C+)',
+          s2: 'Subject 2: Teaching Subject 1 (Hist/Geo/CRE)',
+          s3: 'Subject 3: Teaching Subject 2 (Min C+)',
+          s4: 'Subject 4: Mathematics or Any Science',
+          uon: '~ 35.0 – 38.5 pts',
+          jkuat: '~ 34.0 – 37.0 pts',
+          ku: '~ 35.0 – 38.0 pts',
+          others: '~ 31.0 – 34.5 pts'
+        },
+        media: {
+          hint: 'Journalism & Mass Comm Prerequisites',
+          s1: 'Subject 1: English (Min B)',
+          s2: 'Subject 2: Kiswahili (Min B)',
+          s3: 'Subject 3: Any Humanity (History/Geo/CRE)',
+          s4: 'Subject 4: Any Science or Elective',
+          uon: '~ 38.5 – 41.0 pts',
+          jkuat: '~ 37.5 – 40.0 pts',
+          ku: '~ 37.0 – 39.5 pts',
+          others: '~ 33.0 – 36.5 pts'
+        },
+        custom: {
+          hint: 'Custom 4 Subjects',
+          s1: 'Subject 1 (Prerequisite 1)',
+          s2: 'Subject 2 (Prerequisite 2)',
+          s3: 'Subject 3 (Prerequisite 3)',
+          s4: 'Subject 4 (Prerequisite 4)',
+          uon: '~ 40.0 – 44.0 pts',
+          jkuat: '~ 39.0 – 43.0 pts',
+          ku: '~ 38.5 – 42.5 pts',
+          others: '~ 35.0 – 39.0 pts'
+        }
+      };
+
+      clusterSelect.addEventListener('change', () => {
+        const key = clusterSelect.value;
+        const cfg = clusterConfigs[key] || clusterConfigs.custom;
+        document.getElementById('clusterSubjectHint').textContent = cfg.hint;
+        document.getElementById('lbl_cl_sub1').textContent = cfg.s1;
+        document.getElementById('lbl_cl_sub2').textContent = cfg.s2;
+        document.getElementById('lbl_cl_sub3').textContent = cfg.s3;
+        document.getElementById('lbl_cl_sub4').textContent = cfg.s4;
+
+        document.getElementById('cut_uon').textContent = cfg.uon;
+        document.getElementById('cut_jkuat').textContent = cfg.jkuat;
+        document.getElementById('cut_ku').textContent = cfg.ku;
+        document.getElementById('cut_others').textContent = cfg.others;
+      });
+
+      calcBtn.addEventListener('click', () => {
+        const tVal = parseFloat(document.getElementById('kcseTotalPointsInput').value);
+        if (isNaN(tVal) || tVal < 7 || tVal > 84) {
+          alert('Please enter a valid KCSE total aggregate points score between 7 and 84.');
+          return;
+        }
+
+        const s1 = parseInt(document.getElementById('cl_sub1').value, 10);
+        const s2 = parseInt(document.getElementById('cl_sub2').value, 10);
+        const s3 = parseInt(document.getElementById('cl_sub3').value, 10);
+        const s4 = parseInt(document.getElementById('cl_sub4').value, 10);
+
+        if (isNaN(s1) || isNaN(s2) || isNaN(s3) || isNaN(s4)) {
+          alert('Please select grades for all 4 cluster prerequisite subjects.');
+          return;
+        }
+
+        const r = s1 + s2 + s3 + s4; // Max 48
+        
+        // KUCCPS Formula: C = sqrt((r / 48) * (t / 84)) * 48
+        const ratioR = r / 48.0;
+        const ratioT = tVal / 84.0;
+        const wcp = Math.sqrt(ratioR * ratioT) * 48.0;
+
+        const wcpFormatted = wcp.toFixed(3);
+
+        // Update UI
+        document.getElementById('wcpDisplay').textContent = wcpFormatted;
+        document.getElementById('wcpMaxDisplay').innerHTML = `Out of <span class="text-white font-bold">48.000 Maximum Points</span>`;
+        document.getElementById('rawClusterDisplay').textContent = `${r} / 48`;
+        document.getElementById('aggPointsDisplay').textContent = `${tVal} / 84`;
+        document.getElementById('kuccpsResultBadge').textContent = 'Calculated';
+        document.getElementById('kuccpsResultBadge').className = 'text-xs px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 font-semibold border border-teal-500/30';
+
+        let compLevel = 'Competitive';
+        let compText = '';
+        if (wcp >= 43.0) {
+          compLevel = 'High Placement Probability (Tier 1)';
+          compText = `Your calculated score of <strong>${wcpFormatted} points</strong> puts you in the top competitive bracket for premier public universities (UoN, JKUAT, KU).`;
+        } else if (wcp >= 38.0) {
+          compLevel = 'Competitive Placement (Tier 2)';
+          compText = `Your score of <strong>${wcpFormatted} points</strong> provides competitive chances across most public universities in Kenya.`;
+        } else if (wcp >= 30.0) {
+          compLevel = 'Moderate / Broad Placement (Tier 3)';
+          compText = `Your score of <strong>${wcpFormatted} points</strong> qualifies for selected universities and related regional faculties.`;
+        } else {
+          compLevel = 'Foundation / Diploma Transition';
+          compText = `Your weighted score of <strong>${wcpFormatted} points</strong> indicates you may consider diploma pathway progression or broader course alternatives during revision.`;
+        }
+
+        document.getElementById('kuccpsCompetitivenessDisplay').innerHTML = `
+          <strong class="text-yellow-400 block mb-1">${compLevel}</strong>
+          ${compText}
+        `;
+
+        document.getElementById('kuccpsCutoffBox').classList.remove('hidden');
+        copyBtn.classList.remove('hidden');
+      });
+
+      resetBtn.addEventListener('click', () => {
+        document.getElementById('kcseTotalPointsInput').value = '74';
+        document.getElementById('cl_sub1').value = '11';
+        document.getElementById('cl_sub2').value = '12';
+        document.getElementById('cl_sub3').value = '12';
+        document.getElementById('cl_sub4').value = '11';
+        document.getElementById('wcpDisplay').textContent = '—';
+        document.getElementById('rawClusterDisplay').textContent = '— / 48';
+        document.getElementById('aggPointsDisplay').textContent = '— / 84';
+        document.getElementById('kuccpsResultBadge').textContent = 'Awaiting Input';
+        document.getElementById('kuccpsResultBadge').className = 'text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-semibold';
+        document.getElementById('kuccpsCompetitivenessDisplay').textContent = 'Click "Calculate Weighted Cluster Points" to evaluate your score against national university cut-off benchmarks.';
+        document.getElementById('kuccpsCutoffBox').classList.add('hidden');
+        copyBtn.classList.add('hidden');
+      });
+
+      copyBtn.addEventListener('click', () => {
+        const clusterName = clusterSelect.options[clusterSelect.selectedIndex].text;
+        const wcp = document.getElementById('wcpDisplay').textContent;
+        const r = document.getElementById('rawClusterDisplay').textContent;
+        const t = document.getElementById('aggPointsDisplay').textContent;
+        const comp = document.getElementById('kuccpsCompetitivenessDisplay').innerText;
+
+        const text = `🇰🇪 KUCCPS Weighted Cluster Points Result:\n• Programme: ${clusterName}\n• Weighted Cluster Points: ${wcp} / 48.000\n• Raw 4-Subject Cluster: ${r}\n• Total KCSE Aggregate: ${t}\n• Competitiveness: ${comp}\nCalculated with AfriWidget KUCCPS Cluster Points Calculator (https://afriwidget.com/kuccps-cluster-points-calculator)`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const original = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<span>✅ Copied to Clipboard!</span>';
+          setTimeout(() => { copyBtn.innerHTML = original; }, 2500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

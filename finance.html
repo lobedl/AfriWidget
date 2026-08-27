@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -18,11 +23,6 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Free Finance &amp; Wealth Calculators – AfriWidget</title>
   
   <meta name="description" content="Explore free financial calculators for loans, mortgages, compound interest, savings goals, student finance, and debt payoff strategies." />
@@ -86,6 +86,60 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -246,9 +300,12 @@
           <h2 id="finance-tools-title">Finance Tools</h2>
           <p class="mt-1 text-left">Clear calculators for saving, pricing, housing, and income planning.</p>
         </div>
-        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">23 tools</span>
+        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">24 tools</span>
       </div>
       <div class="category-tool-grid">
+        <a class="category-tool-card" href="zambia-student-budget-planner"><span class="category-tool-icon"><span class="text-xl">🇿🇲</span></span><h3>Zambia Student Budget Planner</h3><p>Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="tanzania-heslb-loan-calculator"><span class="category-tool-icon"><span class="text-xl">🇹🇿</span></span><h3>HESLB Loan Calculator</h3><p>Calculate Tanzania HESLB student loan allocation (Tuition, MA, FPT), 6% VRF, and statutory 15% salary repayment.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
+        <a class="category-tool-card" href="student-loan-repayment-calculator"><span class="category-tool-icon"><span class="text-xl">🇰🇪</span></span><h3>Student Loan Repayment (HELB)</h3><p>Calculate Kenya HELB monthly repayment deductions, 4.0% p.a. reducing balance interest, and debt payoff schedule.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="reverse-adsense-calculator"><span class="category-tool-icon">📈</span><h3>Reverse AdSense Calculator</h3><p>Calculate required monthly pageviews, daily traffic, and ad clicks to reach target ad revenue.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="website-valuation-calculator"><span class="category-tool-icon">🏛️</span><h3>Website Valuation Calculator</h3><p>Estimate market sale value and SDE multiples for content sites, SaaS, and e-commerce businesses.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="startup-burn-rate-calculator"><span class="category-tool-icon">🔥</span><h3>Startup Burn Rate Calculator</h3><p>Calculate gross and net monthly cash burn, financial runway in months, and zero cash date.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
@@ -402,6 +459,14 @@
          <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
          <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
          <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
          <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
          <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
          <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>

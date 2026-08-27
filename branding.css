@@ -1077,4 +1077,211 @@ html {
   overflow-x: auto;
 }
 
+/* ==========================================================================
+   Comprehensive Educational Guides & Professional FAQ Styling
+   ========================================================================== */
+
+#toolGuide,
+.guide-content,
+.new-tool-page .guide,
+article.prose {
+  color: #1e293b;
+  line-height: 1.75;
+}
+
+#toolGuide h2,
+.guide-content h2,
+.new-tool-page .guide h2,
+article.prose h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+#toolGuide h3,
+.guide-content h3,
+.new-tool-page .guide h3,
+article.prose h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+#toolGuide p,
+.guide-content p,
+.new-tool-page .guide p,
+article.prose p {
+  color: #334155;
+  margin: 0.75rem 0;
+  font-size: 0.965rem;
+  line-height: 1.7;
+}
+
+#toolGuide ul,
+#toolGuide ol,
+.guide-content ul,
+.guide-content ol,
+.new-tool-page .guide ul,
+.new-tool-page .guide ol,
+article.prose ul,
+article.prose ol {
+  margin: 0.85rem 0 1.25rem;
+  padding-left: 1.4rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+#toolGuide li,
+.guide-content li,
+.new-tool-page .guide li,
+article.prose li {
+  margin: 0.4rem 0;
+  font-size: 0.965rem;
+}
+
+#toolGuide strong,
+#toolGuide b,
+.guide-content strong,
+.guide-content b,
+.new-tool-page .guide strong,
+.new-tool-page .guide b,
+article.prose strong,
+article.prose b {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+#toolGuide blockquote,
+.guide-content blockquote,
+.new-tool-page .guide blockquote,
+article.prose blockquote {
+  border-left: 4px solid #facc15;
+  background: #fffbeb;
+  color: #78350f;
+  padding: 0.85rem 1.15rem;
+  border-radius: 0 0.65rem 0.65rem 0;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+}
+
+/* Modern Professional FAQ Accordions */
+#toolGuide details,
+.guide-content details,
+.new-tool-page .guide details,
+article details {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+#toolGuide details:hover,
+.guide-content details:hover,
+.new-tool-page .guide details:hover,
+article details:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+#toolGuide details[open],
+.guide-content details[open],
+.new-tool-page .guide details[open],
+article details[open] {
+  border-color: #facc15;
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.12);
+}
+
+#toolGuide details summary,
+.guide-content details summary,
+.new-tool-page .guide details summary,
+article details summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 1.35rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#toolGuide details summary::-webkit-details-marker,
+.guide-content details summary::-webkit-details-marker,
+.new-tool-page .guide details summary::-webkit-details-marker,
+article details summary::-webkit-details-marker {
+  display: none;
+}
+
+#toolGuide details summary::after,
+.guide-content details summary::after,
+.new-tool-page .guide details summary::after,
+article details summary::after {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2.5px solid #64748b;
+  border-bottom: 2.5px solid #64748b;
+  transform: rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+#toolGuide details[open] summary,
+.guide-content details[open] summary,
+.new-tool-page .guide details[open] summary,
+article details[open] summary {
+  background: #fffbeb;
+  color: #78350f;
+  border-bottom: 1px solid #fef3c7;
+}
+
+#toolGuide details[open] summary::after,
+.guide-content details[open] summary::after,
+.new-tool-page .guide details[open] summary::after,
+article details[open] summary::after {
+  transform: rotate(-135deg);
+  border-color: #b45309;
+}
+
+#toolGuide details div,
+.guide-content details div,
+.new-tool-page .guide details div,
+article details div {
+  padding: 1.2rem 1.35rem 1.35rem;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+#toolGuide details div p:first-child,
+.guide-content details div p:first-child,
+.new-tool-page .guide details div p:first-child,
+article details div p:first-child {
+  margin-top: 0;
+}
+
+#toolGuide details div p:last-child,
+.guide-content details div p:last-child,
+.new-tool-page .guide details div p:last-child,
+article details div p:last-child {
+  margin-bottom: 0;
+}
+
 

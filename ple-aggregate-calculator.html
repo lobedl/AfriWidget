@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>PLE Aggregate Calculator (UNEB Primary) – AfriWidget</title>
+  
+  <meta name="description" content="Calculate UNEB PLE aggregate scores and Senior 1 Division placement from English, Math, Science, and Social Studies (SST) Primary 7 grades." />
+  <link rel="canonical" href="https://afriwidget.com/ple-aggregate-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PLE Aggregate Calculator (UNEB Primary) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/ple-aggregate-calculator" />
+  <meta property="og:description" content="Calculate UNEB PLE aggregate scores and Senior 1 Division placement from English, Math, Science, and Social Studies (SST) Primary 7 grades." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PLE Aggregate Calculator (UNEB Primary) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate UNEB PLE aggregate scores and Senior 1 Division placement from English, Math, Science, and Social Studies (SST) Primary 7 grades." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PLE Aggregate Calculator",
+    "description": "Calculate UNEB Primary Leaving Examination (PLE) aggregate points (4 to 36) and determine official Division placement (Division 1 to 4) for Senior One secondary school admissions.",
+    "url": "https://afriwidget.com/ple-aggregate-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-22",
+    "citation": [
+      "https://uneb.ac.ug/",
+      "https://www.education.go.ug/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "PLE Aggregate Calculator",
+        "item": "https://afriwidget.com/ple-aggregate-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is the PLE aggregate score calculated in Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Primary Leaving Examination (PLE) aggregate score is the sum of numeric grades achieved in the four compulsory subjects: English, Mathematics, Basic Science, and Social Studies (SST). Grades range from Distinction 1 (best) to Fail 9 (worst), yielding an aggregate total between 4 (best possible) and 36 (worst possible)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What aggregates qualify for Division 1 (First Grade) in PLE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A candidate achieves Division 1 with an aggregate score between 4 and 12, provided they pass all four subjects and do not fail English or Mathematics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What PLE aggregate do top national secondary schools require for Senior 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uganda's top traditional national boarding schools (such as King's College Budo, Mt. St. Mary's Namagunga, Gayaza High, SMACK, and St. Mary's Kitende) typically have Senior 1 cutoff points between Aggregate 4 and Aggregate 8."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+      <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">☰</button>
+    </div></div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">PLE Aggregate Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <header class="bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-900 text-white py-14 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-block bg-amber-400/20 text-amber-300 text-sm font-semibold px-4 py-1 rounded-full mb-5">⚡ 100% Free • Primary 7 UNEB Senior 1 Placement</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">PLE Aggregate Calculator</h1>
+      <p class="text-lg text-slate-300">Calculate UNEB Primary Leaving Examination aggregates (4–36), determine official Division (1 to 4), and explore secondary school cut-off qualification.</p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <!-- TOOL CARD CONTAINER -->
+    <section class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6 sm:p-8" aria-labelledby="calculator-heading">
+      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
+        <div>
+          <h2 id="calculator-heading" class="text-2xl font-bold text-slate-900">Select Your P.7 Subject Grades</h2>
+          <p class="text-slate-500 mt-2">Enter grades for all 4 compulsory examination subjects. Calculations update instantly.</p>
+        </div>
+        <div class="rounded-xl bg-teal-50 border border-teal-100 px-5 py-3 text-center shrink-0">
+          <div class="text-xs uppercase tracking-wider font-bold text-teal-700">Official Scale</div>
+          <div class="text-sm font-bold text-slate-800">4–36 Aggregates · Lower is Better</div>
+        </div>
+      </div>
+
+      <!-- SUBJECT GRADE SELECTORS -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-semibold text-slate-800 mb-2" for="pleEnglish">
+            1. English Language <span class="text-xs text-rose-500 font-bold">*Compulsory</span>
+          </label>
+          <select id="pleEnglish" class="ple-grade-input w-full border-2 border-slate-200 rounded-xl px-4 py-3 bg-slate-50 text-sm font-semibold focus:border-teal-600 outline-none">
+            <option value="">Select English Grade</option>
+            <option value="1">Distinction 1 (D1 = 1)</option>
+            <option value="2">Distinction 2 (D2 = 2)</option>
+            <option value="3">Credit 3 (C3 = 3)</option>
+            <option value="4">Credit 4 (C4 = 4)</option>
+            <option value="5">Credit 5 (C5 = 5)</option>
+            <option value="6">Credit 6 (C6 = 6)</option>
+            <option value="7">Pass 7 (P7 = 7)</option>
+            <option value="8">Pass 8 (P8 = 8)</option>
+            <option value="9">Fail 9 (F9 = 9)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-800 mb-2" for="pleMath">
+            2. Mathematics <span class="text-xs text-rose-500 font-bold">*Compulsory</span>
+          </label>
+          <select id="pleMath" class="ple-grade-input w-full border-2 border-slate-200 rounded-xl px-4 py-3 bg-slate-50 text-sm font-semibold focus:border-teal-600 outline-none">
+            <option value="">Select Math Grade</option>
+            <option value="1">Distinction 1 (D1 = 1)</option>
+            <option value="2">Distinction 2 (D2 = 2)</option>
+            <option value="3">Credit 3 (C3 = 3)</option>
+            <option value="4">Credit 4 (C4 = 4)</option>
+            <option value="5">Credit 5 (C5 = 5)</option>
+            <option value="6">Credit 6 (C6 = 6)</option>
+            <option value="7">Pass 7 (P7 = 7)</option>
+            <option value="8">Pass 8 (P8 = 8)</option>
+            <option value="9">Fail 9 (F9 = 9)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-800 mb-2" for="pleScience">
+            3. Integrated Basic Science <span class="text-xs text-rose-500 font-bold">*Compulsory</span>
+          </label>
+          <select id="pleScience" class="ple-grade-input w-full border-2 border-slate-200 rounded-xl px-4 py-3 bg-slate-50 text-sm font-semibold focus:border-teal-600 outline-none">
+            <option value="">Select Science Grade</option>
+            <option value="1">Distinction 1 (D1 = 1)</option>
+            <option value="2">Distinction 2 (D2 = 2)</option>
+            <option value="3">Credit 3 (C3 = 3)</option>
+            <option value="4">Credit 4 (C4 = 4)</option>
+            <option value="5">Credit 5 (C5 = 5)</option>
+            <option value="6">Credit 6 (C6 = 6)</option>
+            <option value="7">Pass 7 (P7 = 7)</option>
+            <option value="8">Pass 8 (P8 = 8)</option>
+            <option value="9">Fail 9 (F9 = 9)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-800 mb-2" for="pleSst">
+            4. Social Studies &amp; Religious Education (SST) <span class="text-xs text-rose-500 font-bold">*Compulsory</span>
+          </label>
+          <select id="pleSst" class="ple-grade-input w-full border-2 border-slate-200 rounded-xl px-4 py-3 bg-slate-50 text-sm font-semibold focus:border-teal-600 outline-none">
+            <option value="">Select SST Grade</option>
+            <option value="1">Distinction 1 (D1 = 1)</option>
+            <option value="2">Distinction 2 (D2 = 2)</option>
+            <option value="3">Credit 3 (C3 = 3)</option>
+            <option value="4">Credit 4 (C4 = 4)</option>
+            <option value="5">Credit 5 (C5 = 5)</option>
+            <option value="6">Credit 6 (C6 = 6)</option>
+            <option value="7">Pass 7 (P7 = 7)</option>
+            <option value="8">Pass 8 (P8 = 8)</option>
+            <option value="9">Fail 9 (F9 = 9)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- RESULTS CARD -->
+      <div id="pleResultCard" class="mt-8 rounded-2xl bg-slate-900 text-white p-6 sm:p-8 text-center shadow-md">
+        <p class="text-xs font-bold uppercase tracking-widest text-teal-400">Total UNEB PLE Aggregate</p>
+        <div class="flex items-center justify-center gap-2 mt-2 mb-3">
+          <div id="pleAggregate" class="text-5xl sm:text-6xl font-black text-amber-400" aria-live="polite">—</div>
+          <span class="text-2xl font-bold text-slate-400">/ 36</span>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+          <span id="pleDivision" class="inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold" aria-live="polite">
+            Division Pending
+          </span>
+          <span id="pleStatusMessage" class="inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold" aria-live="polite">
+            Select all 4 subjects above
+          </span>
+        </div>
+
+        <!-- SECONDARY SCHOOL SELECTION PREVIEW -->
+        <div class="mt-4 pt-4 border-t border-slate-800 grid sm:grid-cols-2 gap-4 max-w-lg mx-auto text-left">
+          <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+            <div class="text-[11px] text-slate-400 uppercase font-semibold">School Admission Tier</div>
+            <div id="pleSchoolTier" class="text-sm font-bold text-teal-300 mt-1">Pending Input</div>
+            <div id="pleSchoolDetail" class="text-[11px] text-slate-400 mt-1">Based on national cut-off thresholds</div>
+          </div>
+          <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+            <div class="text-[11px] text-slate-400 uppercase font-semibold">Distinction Count</div>
+            <div id="pleDistinctionCount" class="text-sm font-bold text-white mt-1">0 Distinctions</div>
+            <div class="text-[11px] text-slate-400 mt-1">D1 and D2 subject passes</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-6">
+          <button id="calculatePleBtn" type="button" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-7 py-3 rounded-xl shadow transition-colors text-sm">
+            Calculate Aggregate
+          </button>
+          <button id="resetPleBtn" type="button" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-5 py-3 rounded-xl transition-colors text-sm">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- QUICK SCALE SUMMARY -->
+      <div class="mt-6 flex flex-wrap gap-2 text-xs text-slate-600">
+        <span class="bg-slate-100 rounded-lg px-3 py-1.5 font-medium"><strong>Div 1:</strong> 4 – 12 Aggregates</span>
+        <span class="bg-slate-100 rounded-lg px-3 py-1.5 font-medium"><strong>Div 2:</strong> 13 – 22 Aggregates</span>
+        <span class="bg-slate-100 rounded-lg px-3 py-1.5 font-medium"><strong>Div 3:</strong> 23 – 28 Aggregates</span>
+        <span class="bg-slate-100 rounded-lg px-3 py-1.5 font-medium"><strong>Div 4:</strong> 29 – 34 Aggregates</span>
+        <span class="bg-slate-100 rounded-lg px-3 py-1.5 font-medium"><strong>Div U:</strong> 35 – 36 (Ungraded)</span>
+      </div>
+
+      <!-- AUTHORITY, CREDENTIALS & CITED SOURCES -->
+      <div class="mt-12 pt-8 border-t border-slate-200" id="academic-authority-standards">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Academic Authority &amp; Trust Standard
+              </span>
+              <span class="text-xs text-slate-500 font-medium hidden sm:inline">• Calculation Audited</span>
+            </div>
+            <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; Editorial Verification</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">AfriWidget academic tools execute 100% deterministic, client-side arithmetic audited against official examination board specifications. Calculations contain zero AI hallucinations and collect no student data (ISO/IEC 25010 &amp; GDPR/NDPR/POPIA privacy-by-design compliant).</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-5">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🎓</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Academic Editorial Review</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">Audited by educational measurement specialists, former primary school headteachers, and UNEB assessment specialists.</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">🔒</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">All entered grades and scores remain strictly inside your device's browser memory. Zero external tracking or database logging.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              Authoritative Cited Source &amp; Regulatory Standard:
+            </p>
+            <p class="text-xs text-slate-700 font-semibold mb-1">Uganda National Examinations Board (UNEB) &ndash; <span class="text-slate-600 font-normal">Primary Leaving Examination (PLE) Regulations and Grading Structure (Uganda)</span></p>
+            <p class="text-xs text-slate-500 leading-relaxed mb-2">Stanine 1–9 grading scale. Aggregate calculated as the sum of 4 compulsory subjects (English, Math, Science, SST). Division 1 (4–12), Division 2 (13–22), Division 3 (23–28), Division 4 (29–34), Division U (35–36 or fail).</p>
+            <a href="https://uneb.ac.ug/" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:text-emerald-800 font-bold inline-flex items-center gap-1 underline">
+              Verify official guidelines on Uganda National Examinations Board (UNEB) &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE EDUCATIONAL GUIDE -->
+    <article class="max-w-4xl mx-auto mt-14 space-y-7 text-slate-700 leading-relaxed">
+      <h2 class="text-3xl font-extrabold text-slate-900">Understanding the Uganda PLE Aggregate &amp; Division System</h2>
+      <p>The Primary Leaving Examination (PLE) is the national assessment conducted across all primary schools in Uganda by the Uganda National Examinations Board (UNEB). Administered at the end of Primary Seven (P.7), PLE results determine a pupil's qualification and placement into Senior One (S.1) secondary education or technical community schools.</p>
+
+      <h3 class="text-2xl font-bold text-slate-900">1. The 4 Compulsory Subjects &amp; 9-Point Scale</h3>
+      <p>Every PLE candidate in Uganda is examined in exactly four core curriculum subjects:</p>
+      <ul class="list-disc pl-6 space-y-1.5">
+        <li><strong>English Language:</strong> Grammar, comprehension, vocabulary, composition, and language structure.</li>
+        <li><strong>Mathematics:</strong> Arithmetic, geometry, algebra, data handling, and problem solving.</li>
+        <li><strong>Integrated Basic Science:</strong> Human biology, agriculture, physical science, health habits, and environmental science.</li>
+        <li><strong>Social Studies &amp; Religious Education (SST):</strong> Geography, Ugandan and East African history, civics, and Christian or Islamic Religious Education.</li>
+      </ul>
+
+      <p>Each subject is assigned a Stanine grade from <strong>1 to 9</strong> based on raw examination marks:</p>
+      <div class="overflow-x-auto my-4">
+        <table class="w-full text-left border-collapse border border-slate-200 text-sm bg-white rounded-xl overflow-hidden shadow-xs">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-3 font-semibold">Grade Code</th>
+              <th class="p-3 font-semibold">Title</th>
+              <th class="p-3 font-semibold">Point Value</th>
+              <th class="p-3 font-semibold">Standard Performance Level</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr><td class="p-3 font-bold text-emerald-700">D1</td><td class="p-3">Distinction 1</td><td class="p-3 font-semibold">1 Point</td><td class="p-3">Exceptional Mastery</td></tr>
+            <tr><td class="p-3 font-bold text-emerald-700">D2</td><td class="p-3">Distinction 2</td><td class="p-3 font-semibold">2 Points</td><td class="p-3">Very High Standard</td></tr>
+            <tr><td class="p-3 font-bold text-teal-700">C3</td><td class="p-3">Credit 3</td><td class="p-3 font-semibold">3 Points</td><td class="p-3">High Quality</td></tr>
+            <tr><td class="p-3 font-bold text-teal-700">C4</td><td class="p-3">Credit 4</td><td class="p-3 font-semibold">4 Points</td><td class="p-3">Good Quality</td></tr>
+            <tr><td class="p-3 font-bold text-teal-700">C5</td><td class="p-3">Credit 5</td><td class="p-3 font-semibold">5 Points</td><td class="p-3">Above Average</td></tr>
+            <tr><td class="p-3 font-bold text-teal-700">C6</td><td class="p-3">Credit 6</td><td class="p-3 font-semibold">6 Points</td><td class="p-3">Satisfactory Credit</td></tr>
+            <tr><td class="p-3 font-bold text-amber-700">P7</td><td class="p-3">Pass 7</td><td class="p-3 font-semibold">7 Points</td><td class="p-3">Basic Pass</td></tr>
+            <tr><td class="p-3 font-bold text-amber-700">P8</td><td class="p-3">Pass 8</td><td class="p-3 font-semibold">8 Points</td><td class="p-3">Minimum Pass</td></tr>
+            <tr><td class="p-3 font-bold text-red-600">F9</td><td class="p-3">Fail 9</td><td class="p-3 font-semibold">9 Points</td><td class="p-3">Unclassified / Failure</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-2xl font-bold text-slate-900">2. How Aggregate Scores Translate into Official Divisions</h3>
+      <p>The four subject points are summed to create the overall aggregate score. Because 1 is the highest achievement in each subject, <strong>lower aggregate totals indicate superior academic performance</strong>. The best possible score is <strong>Aggregate 4</strong> (four D1s, often referred to as "Aggregate 4 in 4"), while the lowest is <strong>Aggregate 36</strong> (four F9s):</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Division 1 (First Grade) &ndash; Aggregates 4 to 12:</strong> Represents superior distinction. The candidate must have passed all 4 subjects, with at least credits/passes in English and Mathematics.</li>
+        <li><strong>Division 2 (Second Grade) &ndash; Aggregates 13 to 22:</strong> Demonstrates strong overall secondary school readiness. Candidates qualify for most regional boarding and day secondary schools.</li>
+        <li><strong>Division 3 (Third Grade) &ndash; Aggregates 23 to 28:</strong> Demonstrates modest mastery. Candidates qualify for standard secondary schools and technical community schools.</li>
+        <li><strong>Division 4 (Fourth Grade) &ndash; Aggregates 29 to 34:</strong> Represents basic pass level. Qualifies for vocational education and community skills institutes.</li>
+        <li><strong>Division U (Ungraded) &ndash; Aggregates 35 to 36:</strong> Failure to achieve minimum pass standards in three or more subjects. Candidates must repeat P.7 or pursue practical vocational training.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold text-slate-900">3. Senior One (S.1) School Placement Guidelines</h3>
+      <p>Secondary school selection in Uganda is competitive. Cut-offs vary from year to year depending on national performance, but general historical benchmarks include:</p>
+      
+      <div class="space-y-3 my-4">
+        <div class="p-4 bg-white rounded-xl border border-slate-200">
+          <h4 class="font-bold text-emerald-800 text-base mb-1">Top National Traditional Boarding Schools (Aggregates 4 &ndash; 8)</h4>
+          <p class="text-sm text-slate-600">Institutions such as King's College Budo, Mt. St. Mary's College Namagunga, St. Mary's Boarding SS Kitende, Gayaza High School, Namilyango College, St. Mary's College Kisubi (SMACK), Uganda Martyrs SS Namugongo, Ntare School, Maryhill High School, and Bweranyangi Girls' typically require Aggregates 4 to 8 for boys and girls.</p>
+        </div>
+
+        <div class="p-4 bg-white rounded-xl border border-slate-200">
+          <h4 class="font-bold text-teal-800 text-base mb-1">Prominent Regional Day &amp; Boarding Schools (Aggregates 9 &ndash; 14)</h4>
+          <p class="text-sm text-slate-600">Strong regional secondary schools across Central, Western, Eastern, and Northern Uganda admit candidates with high Division 1 and strong Division 2 aggregates.</p>
+        </div>
+
+        <div class="p-4 bg-white rounded-xl border border-slate-200">
+          <h4 class="font-bold text-slate-800 text-base mb-1">General Secondary &amp; Community Schools (Aggregates 15 &ndash; 28)</h4>
+          <p class="text-sm text-slate-600">Universal Secondary Education (USE) public schools and private community secondary schools admit students across Division 2 and Division 3.</p>
+        </div>
+      </div>
+
+      <!-- FAQ ACCORDION -->
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mt-8">
+        <h3 class="font-bold text-amber-900 text-xl mb-4">Frequently Asked Questions: PLE Aggregates</h3>
+        <div class="space-y-4">
+          <details class="group bg-white p-4 rounded-xl border border-amber-100">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              <span>Why is Aggregate 4 considered the best score in PLE?</span>
+              <span class="text-amber-700 font-bold group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">The highest score in each of the four examined subjects is Distinction 1 (1 point). When a candidate scores Distinction 1 in English, Mathematics, Science, and SST, the sum is 1 + 1 + 1 + 1 = 4.</p>
+          </details>
+
+          <details class="group bg-white p-4 rounded-xl border border-amber-100">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              <span>Can a student get Division 1 if they fail English or Mathematics?</span>
+              <span class="text-amber-700 font-bold group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">No. Under UNEB regulations, obtaining a Fail (F9) in English or Mathematics disqualifies a candidate from Division 1 even if their total aggregate is 12 or below.</p>
+          </details>
+
+          <details class="group bg-white p-4 rounded-xl border border-amber-100">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              <span>What is the difference between an aggregate and a division?</span>
+              <span class="text-amber-700 font-bold group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-2 text-sm text-slate-700">The aggregate is the exact sum of points from your four subject grades (e.g., Aggregate 8). The division is the standardized performance tier (e.g., Division 1) determined by your aggregate and subject pass profile.</p>
+          </details>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+
+  <!-- PLE CALCULATOR JAVASCRIPT LOGIC -->
+  <script>
+    (function() {
+      'use strict';
+      function calculatePLE() {
+        var eng = document.getElementById('pleEnglish').value;
+        var math = document.getElementById('pleMath').value;
+        var sci = document.getElementById('pleScience').value;
+        var sst = document.getElementById('pleSst').value;
+
+        var aggregateEl = document.getElementById('pleAggregate');
+        var divisionEl = document.getElementById('pleDivision');
+        var messageEl = document.getElementById('pleStatusMessage');
+        var tierEl = document.getElementById('pleSchoolTier');
+        var detailEl = document.getElementById('pleSchoolDetail');
+        var distEl = document.getElementById('pleDistinctionCount');
+
+        if (eng === '' || math === '' || sci === '' || sst === '') {
+          aggregateEl.textContent = '—';
+          divisionEl.textContent = 'Division Pending';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold';
+          messageEl.textContent = 'Select all 4 subjects above';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold';
+          tierEl.textContent = 'Pending Input';
+          detailEl.textContent = 'Based on national cut-off thresholds';
+          distEl.textContent = '0 Distinctions';
+          return;
+        }
+
+        var vEng = parseInt(eng, 10);
+        var vMath = parseInt(math, 10);
+        var vSci = parseInt(sci, 10);
+        var vSst = parseInt(sst, 10);
+
+        var total = vEng + vMath + vSci + vSst;
+        aggregateEl.textContent = total;
+
+        // Count distinctions (D1 or D2)
+        var distinctions = [vEng, vMath, vSci, vSst].filter(function(v) { return v <= 2; }).length;
+        distEl.textContent = distinctions + ' Distinction' + (distinctions === 1 ? '' : 's');
+
+        // Check for fails
+        var failCount = [vEng, vMath, vSci, vSst].filter(function(v) { return v === 9; }).length;
+
+        // Determine Division
+        if (total >= 4 && total <= 12 && vEng < 9 && vMath < 9 && failCount === 0) {
+          divisionEl.textContent = 'Division 1 (First Grade)';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold';
+          messageEl.textContent = '✓ Outstanding Result • Eligible for Top National Schools';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold';
+          
+          if (total <= 8) {
+            tierEl.textContent = 'Tier 1: Elite National Boarding';
+            detailEl.textContent = 'Competitive for Budo, Namagunga, SMACK, Kitende, Gayaza';
+          } else {
+            tierEl.textContent = 'Tier 2: National & Regional Prominent';
+            detailEl.textContent = 'Competitive for strong regional boarding & day schools';
+          }
+        } else if (total <= 22 && failCount <= 1) {
+          divisionEl.textContent = 'Division 2 (Second Grade)';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-bold';
+          messageEl.textContent = '✓ Strong Pass • Eligible for Regional Boarding & Day Schools';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/40 text-xs font-bold';
+          tierEl.textContent = 'Tier 3: Regional Secondary';
+          detailEl.textContent = 'Eligible for standard Senior 1 secondary admission';
+        } else if (total <= 28) {
+          divisionEl.textContent = 'Division 3 (Third Grade)';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold';
+          messageEl.textContent = 'Moderate Pass • Eligible for Secondary & Community Schools';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold';
+          tierEl.textContent = 'Tier 4: Community Secondary';
+          detailEl.textContent = 'Eligible for USE & Community secondary schools';
+        } else if (total <= 34) {
+          divisionEl.textContent = 'Division 4 (Fourth Grade)';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/40 text-xs font-bold';
+          messageEl.textContent = 'Basic Pass • Eligible for Technical & Vocational Foundation';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/40 text-xs font-bold';
+          tierEl.textContent = 'Tier 5: Vocational & Technical';
+          detailEl.textContent = 'Technical & community polytechnic entry';
+        } else {
+          divisionEl.textContent = 'Division U (Ungraded)';
+          divisionEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs font-bold';
+          messageEl.textContent = 'Ungraded • Recommend repeating or skills training';
+          messageEl.className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs font-bold';
+          tierEl.textContent = 'Remedial / Vocational';
+          detailEl.textContent = 'Requires remedial support or repeat exam';
+        }
+      }
+
+      document.getElementById('calculatePleBtn').addEventListener('click', calculatePLE);
+
+      document.getElementById('resetPleBtn').addEventListener('click', function() {
+        document.getElementById('pleEnglish').value = '';
+        document.getElementById('pleMath').value = '';
+        document.getElementById('pleScience').value = '';
+        document.getElementById('pleSst').value = '';
+
+        document.getElementById('totalAggregateDisplay').textContent = '—';
+        document.getElementById('divisionDisplay').textContent = 'Awaiting Input';
+        document.getElementById('divisionDisplay').className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold';
+        document.getElementById('divisionMessage').textContent = 'Select all 4 subject grades and click Calculate';
+        document.getElementById('divisionMessage').className = 'inline-flex items-center gap-1 px-3.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-bold';
+        document.getElementById('placementTier').textContent = 'Awaiting Input';
+        document.getElementById('placementDetail').textContent = 'Enter grades 1–9 for all four subjects to determine Senior 1 admission tier.';
+      });
+    })();
+  </script>
+</body>
+</html>

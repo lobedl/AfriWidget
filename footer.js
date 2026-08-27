@@ -68,11 +68,49 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
           <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
           <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
           <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
-           <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+          <li><a href="/ghana-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Ghana University GPA / CWA</a></li>
+          <li><a href="/ghana-nursing-training-admission-calculator" class="hover:text-emerald-400 transition-colors">Ghana Nursing Training Admission</a></li>
+          <li><a href="/zimsec-olevel-points-calculator" class="hover:text-emerald-400 transition-colors">ZIMSEC O-Level Points (Zimbabwe)</a></li>
+          <li><a href="/zimsec-alevel-points-calculator" class="hover:text-emerald-400 transition-colors">ZIMSEC A-Level Points (Zimbabwe)</a></li>
+          <li><a href="/zimbabwe-university-entry-points-calculator" class="hover:text-emerald-400 transition-colors">Zimbabwe University Entry</a></li>
+          <li><a href="/zimbabwe-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Zimbabwe University GPA</a></li>
+          <li><a href="/zimbabwe-study-timetable-generator" class="hover:text-emerald-400 transition-colors">Zimbabwe Study Timetable</a></li>
+          <li><a href="/uace-points-calculator" class="hover:text-emerald-400 transition-colors">UACE Points (Uganda)</a></li>
+          <li><a href="/ple-aggregate-calculator" class="hover:text-emerald-400 transition-colors">PLE Aggregate (Uganda)</a></li>
+          <li><a href="/uce-grade-calculator" class="hover:text-emerald-400 transition-colors">UCE Grade (Uganda)</a></li>
+          <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
            <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
            <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+           <li><a href="/jamb-score-calculator" class="hover:text-emerald-400 transition-colors">JAMB Score Calculator (Nigeria)</a></li>
+           <li><a href="/jamb-admission-chance-checker" class="hover:text-emerald-400 transition-colors">JAMB Admission Chance Checker</a></li>
+           <li><a href="/post-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">Post-UTME Aggregate Calculator</a></li>
+           <li><a href="/waec-grade-calculator" class="hover:text-emerald-400 transition-colors">WAEC Grade Calculator (Nigeria)</a></li>
+           <li><a href="/nigerian-university-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Nigerian University CGPA</a></li>
            <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
            <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+           <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+           <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+           <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+           <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+           <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+           <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+           <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+           <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+           <li><a href="/uganda-university-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Uganda University CGPA</a></li>
+           <li><a href="/uneb-results-estimator" class="hover:text-emerald-400 transition-colors">UNEB Results Estimator</a></li>
+           <li><a href="/form-four-gpa-calculator" class="hover:text-emerald-400 transition-colors">Form Four GPA (Tanzania CSEE)</a></li>
+           <li><a href="/acsee-points-calculator" class="hover:text-emerald-400 transition-colors">ACSEE Points (Tanzania Form 6)</a></li>
+           <li><a href="/tanzania-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Tanzania University Admission</a></li>
+           <li><a href="/tanzania-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Tanzania University GPA</a></li>
+           <li><a href="/tanzania-heslb-loan-calculator" class="hover:text-emerald-400 transition-colors">HESLB Loan (Tanzania)</a></li>
+           <li><a href="/zambia-grade-12-points-calculator" class="hover:text-emerald-400 transition-colors">ECZ Grade 12 Points (Zambia)</a></li>
+           <li><a href="/zambia-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Zambia University Admission</a></li>
+           <li><a href="/zambia-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Zambia University GPA</a></li>
+           <li><a href="/zambia-teveta-score-calculator" class="hover:text-emerald-400 transition-colors">Zambia TEVETA Score</a></li>
+           <li><a href="/zambia-student-budget-planner" class="hover:text-emerald-400 transition-colors">Zambia Student Budget Planner</a></li>
+            <li><a href="/atar-calculator" class="hover:text-emerald-400 transition-colors">ATAR Calculator (Australia)</a></li>
+            <li><a href="/university-course-finder" class="hover:text-emerald-400 transition-colors">University Course Finder (Australia)</a></li>
+            <li><a href="/student-budget-calculator" class="hover:text-emerald-400 transition-colors">Student Budget Calculator (Australia)</a></li>
            <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
            <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
            <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
@@ -86,7 +124,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
            <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
            <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
            <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
-           <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+           <li><a href="/uk-a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+           <li><a href="/uk-gcse-grade-calculator" class="hover:text-emerald-400 transition-colors">GCSE Grade Calculator</a></li>
+           <li><a href="/uk-degree-classification-calculator" class="hover:text-emerald-400 transition-colors">Degree Classification</a></li>
+           <li><a href="/uk-student-loan-finance-calculator" class="hover:text-emerald-400 transition-colors">UK Student Finance</a></li>
+           <li><a href="/uace-points-calculator" class="hover:text-emerald-400 transition-colors">UACE Points Calculator</a></li>
+           <li><a href="/ple-aggregate-calculator" class="hover:text-emerald-400 transition-colors">PLE Aggregate Calculator</a></li>
+           <li><a href="/uce-grade-calculator" class="hover:text-emerald-400 transition-colors">UCE Grade Calculator</a></li>
            <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
            <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
            <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
@@ -105,7 +149,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
-          <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+          <li><a href="/json-formatter-validator" class="hover:text-emerald-400 transition-colors">JSON Formatter &amp; Validator</a></li>
           <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
           <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
           <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>

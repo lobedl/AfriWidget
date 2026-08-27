@@ -24,10 +24,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Remote Salary Converter](https://afriwidget.com/remote-salary-converter) — Compare international remote salaries across countries using foreign exchange rates and purchasing power cost-of-living adjustments.
 
-## Reddit Video Downloader Browser
-
-[Reddit Video Downloader Browser](https://afriwidget.com/reddit-video-downloader) — Extract, preview, and download public Reddit videos with audio tracks in 1080p, 720p, and MP4 formats.
-
 ## User Success Stories & Impact Studies
 
 [User Success Stories & Impact Studies](https://afriwidget.com/success-stories) — Real-world case studies of students, entrepreneurs, freelancers, and healthcare workers across Africa utilizing AfriWidget's free privacy-first web tools for academic placement, debt payoff, freelance rate optimization, and clinical safety.
@@ -104,6 +100,21 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [JAMB UTME Aggregate Calculator](https://afriwidget.com/jamb-utme-aggregate-calculator) — Estimate a Nigerian JAMB UTME and O’Level aggregate for university admissions planning.
 
+## JAMB Score Calculator
+[JAMB Score Calculator](https://afriwidget.com/jamb-score-calculator) — Calculate total 4-subject JAMB UTME score, performance percentage, and institutional cutoff eligibility in Nigeria.
+
+## JAMB Admission Chance Checker
+[JAMB Admission Chance Checker](https://afriwidget.com/jamb-admission-chance-checker) — Evaluate Nigerian university admission probability modeling UTME score, course competitiveness, O'Level standing, and National Merit, Catchment, or ELDS quotas.
+
+## WAEC Grade Calculator
+[WAEC Grade Calculator](https://afriwidget.com/waec-grade-calculator) — Convert percentage examination marks into official WAEC Nigeria 9-point letter grades (A1 to F9) and verify 5-credit tertiary admission requirements.
+
+## Post-UTME Aggregate Calculator
+[Post-UTME Aggregate Calculator](https://afriwidget.com/post-utme-aggregate-calculator) — Calculate composite undergraduate admission screening aggregate scores across UNILAG, UI, UNIBEN, LASU, and FUTO formulas combining JAMB, CBT, and O'Level points.
+
+## Nigerian University CGPA Calculator
+[Nigerian University CGPA Calculator](https://afriwidget.com/nigerian-university-cgpa-calculator) — Calculate semester GPA and cumulative CGPA on NUC 5.0 and NBTE 4.0 polytechnic scales with class of degree honours classification.
+
 ## Tertiary GPA and CGPA Calculator
 
 [Tertiary GPA and CGPA Calculator](https://afriwidget.com/tertiary-gpa-cgpa-calculator) — Calculate semester GPA and cumulative CGPA using course grades and credit units on 4.0 or 5.0 scales.
@@ -111,6 +122,14 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## South African APS Calculator
 
 [South African APS Calculator](https://afriwidget.com/south-african-aps-calculator) — Estimate a South African Matric or NSC Admission Point Score from subject percentages, with optional Life Orientation points.
+
+## South African University Admission Calculator
+
+[South African University Admission Calculator](https://afriwidget.com/south-african-university-admission-calculator) — Calculate South African university admission chances, statutory Bachelor pass levels, and faculty prerequisite compatibility across UCT, Wits, UP, Stellenbosch, UJ, and more.
+
+## NSFAS Eligibility Checker
+
+[NSFAS Eligibility Checker](https://afriwidget.com/nsfas-eligibility-checker) — Check South African National Student Financial Aid Scheme (NSFAS) funding eligibility, SASSA fast-track status, Missing Middle loan scheme tier, and N+1 rule compliance.
 
 ## KCSE and KUCCPS Cluster Calculator
 
@@ -166,19 +185,19 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## A-Level Grade Calculator
 
-[A-Level Grade Calculator](https://afriwidget.com/a-level-grade-calculator) — Calculate weighted overall marks across papers and components for Cambridge International, Edexcel, and AQA A-Level examinations, with grade boundary forecasting and target mark planning.
+[A-Level Grade Calculator](https://afriwidget.com/uk-a-level-grade-calculator) — Calculate weighted overall marks across papers and components for Cambridge International, Edexcel, and AQA A-Level examinations, with grade boundary forecasting and target mark planning.
 
 ## GCSE Grade Calculator
 
-[GCSE Grade Calculator](https://afriwidget.com/gcse-grade-calculator) — Calculate 9–1 average GCSE grade, official DfE Attainment 8 scores, and Sixth Form / College admissions eligibility with EBacc grouping.
+[GCSE Grade Calculator](https://afriwidget.com/uk-gcse-grade-calculator) — Calculate 9–1 average GCSE grade, official DfE Attainment 8 scores, and Sixth Form / College admissions eligibility with EBacc grouping.
 
 ## Degree Classification Calculator
 
-[Degree Classification Calculator](https://afriwidget.com/degree-classification-calculator) — Calculate UK university undergraduate honours degree classification (First Class, Upper Second 2:1, Lower Second 2:2, Third) across Year 2 and Year 3 modular credits and weightings.
+[Degree Classification Calculator](https://afriwidget.com/uk-degree-classification-calculator) — Calculate UK university undergraduate honours degree classification (First Class, Upper Second 2:1, Lower Second 2:2, Third) across Year 2 and Year 3 modular credits and weightings.
 
 ## UK Student Finance & Loan Repayment Calculator
 
-[UK Student Finance & Loan Repayment Calculator](https://afriwidget.com/uk-student-finance-calculator) — Calculate means-tested UK Student Finance maintenance loan entitlements and forecast monthly Plan 5, Plan 2, and Postgraduate salary deductions.
+[UK Student Finance & Loan Repayment Calculator](https://afriwidget.com/uk-student-loan-finance-calculator) — Calculate means-tested UK Student Finance maintenance loan entitlements and forecast monthly Plan 5, Plan 2, and Postgraduate salary deductions.
 
 ## All AfriWidget Tools
 
@@ -340,9 +359,9 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [URL Slug Generator](https://afriwidget.com/url-slug-generator) — Turn page titles into lowercase, readable URL slugs with punctuation cleanup, separator options, and one-click copy.
 
-## JSON Formatter
+## JSON Formatter & Validator
 
-[JSON Formatter](https://afriwidget.com/json-formatter) — Format, validate, and minify JSON with syntax highlighting, error feedback, and local browser processing.
+[JSON Formatter & Validator](https://afriwidget.com/json-formatter-validator) — Format, validate, and minify JSON with syntax highlighting, error feedback, schema checking, and local browser processing.
 
 ## Markdown to HTML Converter
 
@@ -443,4 +462,129 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## Degree Classification Calculator
 
 [Degree Classification Calculator](https://afriwidget.com/degree-classification-calculator) — Calculate UK undergraduate degree classification (First-Class, Upper Second 2:1, Lower Second 2:2, Third-Class) across modular Year 2 and Year 3 weightings.
+
+## UACE Points Calculator
+
+[UACE Points Calculator](https://afriwidget.com/uace-points-calculator) — Calculate Uganda Advanced Certificate of Education (UACE) UNEB A-Level points (out of 20), Principal Passes, and Makerere PUJAB university cut-off weights.
+
+## PLE Aggregate Calculator
+
+[PLE Aggregate Calculator](https://afriwidget.com/ple-aggregate-calculator) — Calculate Uganda Primary Leaving Examination (PLE) aggregates (4–36), raw scores, and Senior 1 Division 1–4 placement.
+
+## UCE Grade Calculator
+
+[UCE Grade Calculator](https://afriwidget.com/uce-grade-calculator) — Calculate Uganda Certificate of Education (UCE) UNEB O-Level Best-8 aggregates (8–72), Division classification (1–4), and A-Level combination eligibility.
+
+## ZIMSEC O-Level Points Calculator
+
+[ZIMSEC O-Level Points Calculator](https://afriwidget.com/zimsec-olevel-points-calculator) — Calculate Zimbabwe School Examinations Council (ZIMSEC) Form 4 O-Level points (Best 5 &amp; total), 5-subject pass thresholds, and Form 5 Lower Sixth combination eligibility.
+
+## ZIMSEC A-Level Points Calculator
+
+[ZIMSEC A-Level Points Calculator](https://afriwidget.com/zimsec-alevel-points-calculator) — Calculate Zimbabwe School Examinations Council (ZIMSEC) Form 6 Advanced Level points on the standard 15-point scale, count Principal Passes, and evaluate undergraduate degree admission standing.
+
+## Zimbabwe University Entry Points Calculator
+
+[Zimbabwe University Entry Points Calculator](https://afriwidget.com/zimbabwe-university-entry-points-calculator) — Check undergraduate degree admission eligibility, faculty cut-off benchmarks (Conventional vs Parallel), and matriculation compliance across UZ, NUST, MSU, CUT, and HIT in Zimbabwe.
+
+## Zimbabwe University GPA Calculator
+
+[Zimbabwe University GPA Calculator](https://afriwidget.com/zimbabwe-university-gpa-calculator) — Calculate semester GPA and cumulative CGPA on official UZ, NUST, MSU, CUT, HIT, and GZU degree grading scales (4.0, 5.0, and percentage-weighted WAM) with honours degree classification.
+
+## Zimbabwe Study Timetable Generator
+
+[Zimbabwe Study Timetable Generator](https://afriwidget.com/zimbabwe-study-timetable-generator) — Generate a customized, spaced-repetition study timetable for ZIMSEC Form 4 O-Level, Form 6 A-Level, and University semester examinations in Zimbabwe with active recall blocks and past paper drilling.
+
+## Ghana University GPA Calculator
+
+[Ghana University GPA Calculator](https://afriwidget.com/ghana-university-gpa-calculator) — Calculate semester GPA (4.0 scale), Cumulative CGPA, or Cumulative Weighted Average (CWA percentage) for UG Legon, KNUST, UCC, UPSA, and UDS with official GTEC honours classification.
+
+## Ghana Nursing Training Admission Calculator
+
+[Ghana Nursing Training Admission Calculator](https://afriwidget.com/ghana-nursing-training-admission-calculator) — Calculate Ghana Ministry of Health (MoH) Health Training Institutions admission aggregate, verify WASSCE core/elective requirements, and check cut-off eligibility for Diploma (RGN, RM, CHN, RMN) and Certificate (NAC, NAP) nursing colleges.
+
+## KCSE Grade Calculator
+
+[KCSE Grade Calculator](https://afriwidget.com/kcse-grade-calculator) — Calculate official Kenyan KCSE 7-subject aggregate points (out of 84), mean grade (A to E), and average GPA on the KNEC 12-point grading scale with KUCCPS higher education tier eligibility.
+
+## KUCCPS Cluster Points Calculator
+
+[KUCCPS Cluster Points Calculator](https://afriwidget.com/kuccps-cluster-points-calculator) — Calculate Weighted Cluster Points (WCP out of 48) using the official Kenya KUCCPS square root formula with 4 key cluster subjects and 7-subject KCSE aggregate for university degree admissions.
+
+## Kenya University GPA Calculator
+
+[Kenya University GPA Calculator](https://afriwidget.com/kenya-university-gpa-calculator) — Calculate Semester GPA and Cumulative CGPA on Commission for University Education (CUE) 4.0 and 5.0 scales with First Class Honours degree classification for Kenyan universities.
+
+## KCPE Performance Calculator
+
+[KCPE Performance Calculator](https://afriwidget.com/kcpe-performance-calculator) — Calculate 5-subject Kenya Certificate of Primary Education (KCPE) aggregate marks (out of 500), mean percentage, letter grade (A to E), and secondary school placement category (National, Extra-County, County, Sub-County).
+
+## Student Loan Repayment Calculator (Kenya HELB)
+
+[Student Loan Repayment Calculator](https://afriwidget.com/student-loan-repayment-calculator) — Calculate Kenya Higher Education Loans Board (HELB) monthly salary deductions, 4.0% p.a. reducing balance interest, monthly KES 100 ledger fee, total interest paid, and debt payoff schedule for Kenyan graduates.
+
+## Uganda University Admission Calculator
+
+[Uganda University Admission Calculator](https://afriwidget.com/uganda-university-admission-calculator) — Calculate Public Universities Joint Admissions Board (PUJAB) weighted cut-off points for Makerere University, Kyambogo, MUBS, Gulu, Busitema, and MUST using UACE Advanced Level subject weights (Essential, Relevant, Desirable, Subsidiary), UCE O-Level distinctions/credits, and statutory affirmative action bonuses.
+
+## Uganda University CGPA Calculator
+
+[Uganda University CGPA Calculator](https://afriwidget.com/uganda-university-cgpa-calculator) — Calculate semester GPA and cumulative CGPA on the National Council for Higher Education (NCHE) 5.0 grading scale for Makerere University, Kyambogo, MUBS, UCU, and MUST, with official degree classification (First Class, Second Class Upper, Second Class Lower, Pass).
+
+## UNEB Results Estimator
+
+[UNEB Results Estimator](https://afriwidget.com/uneb-results-estimator) — Estimate official UNEB performance outcomes across Primary Leaving Examination (PLE 4–36 aggregates), Uganda Certificate of Education (UCE Best 8 aggregates & Division 1–4), and Uganda Advanced Certificate of Education (UACE 20-point scale) using continuous assessment, term mocks, or trial exam marks.
+
+## Form Four GPA Calculator (Tanzania NECTA)
+
+[Form Four GPA Calculator](https://afriwidget.com/form-four-gpa-calculator) — Calculate National Examinations Council of Tanzania (NECTA) Certificate of Secondary Education Examination (CSEE) Form Four GPA on the official 1.0–5.0 scale, determine Division standings (Division I, II, III, IV, 0) from the Best 7 subjects, and verify certificate pass eligibility.
+
+## ACSEE Points Calculator (Tanzania NECTA)
+
+[ACSEE Points Calculator](https://afriwidget.com/acsee-points-calculator) — Calculate NECTA Advanced Certificate of Secondary Education Examination (ACSEE) Form Six points (3–21 scale), Division classifications, Principal Pass counts, and direct Tanzania Commission for Universities (TCU) degree admission points across science, arts, and commercial combinations (PCM, PCB, HGL, HGE, EGM, CBG).
+
+## Tanzania University Admission Calculator (TCU)
+
+[Tanzania University Admission Calculator](https://afriwidget.com/tanzania-university-admission-calculator) — Calculate Tanzania Commission for Universities (TCU) admission points for direct ACSEE Form Six and Diploma equivalent entry routes, verify faculty prerequisite subject requirements, and check cut-off eligibility for UDSM, MUHAS, SUA, UDOM, and Mzumbe University.
+
+## Tanzania Student Loan Calculator (HESLB)
+
+[Tanzania Student Loan Calculator](https://afriwidget.com/tanzania-heslb-loan-calculator) — Calculate Tanzania Higher Education Students' Loans Board (HESLB) loan allocations across Tuition, Meals & Accommodation (MA), Books & Stationery (BS), Field Practical Training (FPT), and Research, compute the 6% Value Retention Fee (VRF), and model 15% statutory monthly salary repayment schedules.
+
+## Tanzania University GPA Calculator
+
+[Tanzania University GPA Calculator](https://afriwidget.com/tanzania-university-gpa-calculator) — Calculate semester GPA and cumulative CGPA on the official Tanzania Commission for Universities (TCU) 5.0 grading scale for UDSM, MUHAS, SUA, UDOM, and Mzumbe University, featuring official honours classification (First Class, Upper Second Class, Lower Second Class, Pass) and academic probation monitoring.
+
+## Zambia Grade 12 Points Calculator (ECZ)
+
+[Zambia Grade 12 Points Calculator](https://afriwidget.com/zambia-grade-12-points-calculator) — Calculate Examinations Council of Zambia (ECZ) Grade 12 School Certificate aggregate points across Best 6 and Best 5 subject models (1–9 grade scale where 1 is Distinction and 9 is Unsatisfactory), evaluate General Certificate of Education (GCE) vs. School Certificate status, and verify national university admission eligibility.
+
+## Zambia University Admission Calculator
+
+[Zambia University Admission Calculator](https://afriwidget.com/zambia-university-admission-calculator) — Evaluate undergraduate degree admission eligibility, compute quota and merit points, verify faculty prerequisites (English, Mathematics, Sciences, Commercials), and check competitive cut-off points across top Zambian institutions including the University of Zambia (UNZA), Copperbelt University (CBU), Mulungushi University, and Levy Mwanawasa Medical University (LMMU).
+
+## Zambia University GPA Calculator
+
+[Zambia University GPA Calculator](https://afriwidget.com/zambia-university-gpa-calculator) — Calculate semester Grade Point Average (GPA) and cumulative CGPA on official Zambian Higher Education Authority (HEA) 5.0 and 4.0 grading scales for UNZA, CBU, Mulungushi, Cavendish, and Eden University, with degree honours classification (Distinction, Merit, Credit, Pass) and academic standing tracking.
+
+## Zambia TEVETA Score Calculator
+
+[Zambia TEVETA Score Calculator](https://afriwidget.com/zambia-teveta-score-calculator) — Calculate Technical Education, Vocational and Entrepreneurship Training Authority (TEVETA) composite module scores, verify statutory Continuous Assessment (CA) and Final Examination pass mark hurdles (minimum 40%–50%), and determine TQF Level 3–6 overall award classifications (Distinction, Credit, Pass, Refer).
+
+## Zambia Student Budget Planner
+
+[Zambia Student Budget Planner](https://afriwidget.com/zambia-student-budget-planner) — Calculate monthly student income in Zambian Kwacha (ZMW) across Higher Education Authority (HEA) / HEASB upkeep loans, family allowances, bursaries, and side gigs against off-campus boarding house rent, ZESCO pre-paid electricity tokens, market food, mobile data bundles, and commuting costs.
+
+## ATAR Calculator (Australia)
+
+[ATAR Calculator](https://afriwidget.com/atar-calculator) — Calculate your Australian Tertiary Admission Rank (ATAR 0.00–99.95) across state senior certificates (HSC NSW, VCE VIC, QCE QLD, SACE SA, WACE WA), simulate scaled aggregate distributions, and check university admission competitiveness.
+
+## University Course Finder (Australia)
+
+[University Course Finder](https://afriwidget.com/university-course-finder) — Search and match Australian university bachelor degrees by state (NSW, VIC, QLD, WA, SA, ACT), study field, and ATAR cut-off thresholds across Group of Eight and regional universities.
+
+## Student Budget Calculator (Australia)
+
+[Student Budget Calculator](https://afriwidget.com/student-budget-calculator) — Calculate weekly and monthly student living expenses in Australian Dollars (AUD), estimate Youth Allowance, Austudy, or part-time earnings against rent, groceries, transport, utilities, and textbook costs with savings rate modeling.
+
 

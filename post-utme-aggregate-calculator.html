@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<!-- Multi-Path Stylesheet Inclusion for Instant CSS Delivery -->
+  <title>Post-UTME Aggregate Calculator (Nigerian Universities Screening) – AfriWidget</title>
+  <meta name="description" content="Calculate your Post-UTME admission screening aggregate for UNILAG, UI, UNIBEN, LASU, OAU, FUTO and Nigerian universities. Combine JAMB, Post-UTME CBT, and O'Level grades." />
+  <link rel="canonical" href="https://afriwidget.com/post-utme-aggregate-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Post-UTME Aggregate Calculator (Nigerian Universities Screening) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/post-utme-aggregate-calculator" />
+  <meta property="og:description" content="Calculate your Post-UTME admission screening aggregate for UNILAG, UI, UNIBEN, LASU, OAU, FUTO and Nigerian universities. Combine JAMB, Post-UTME CBT, and O'Level grades." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Post-UTME Aggregate Calculator (Nigerian Universities Screening) – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your Post-UTME admission screening aggregate for UNILAG, UI, UNIBEN, LASU, OAU, FUTO and Nigerian universities. Combine JAMB, Post-UTME CBT, and O'Level grades." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Post-UTME Aggregate Calculator",
+      "url": "https://afriwidget.com/post-utme-aggregate-calculator",
+      "description": "Calculate Nigerian university Post-UTME admission screening aggregates combining JAMB UTME score, Post-UTME CBT test, and WAEC/NECO O'Level points for UNILAG, UI, UNIBEN, LASU, OAU, and federal/state universities.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "inLanguage": "en-NG",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "AfriWidget Academic Research Unit",
+        "url": "https://afriwidget.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AfriWidget",
+        "url": "https://afriwidget.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://afriwidget.com/favicon-32.png"
+        }
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Nigerian University Admissions Advisory Panel"
+      },
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "Joint Admissions and Matriculation Board (JAMB CAPS)",
+          "url": "https://www.jamb.gov.ng/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "National Universities Commission (NUC)",
+          "url": "https://www.nuc.edu.ng/"
+        }
+      ],
+      "dateModified": "2026-08-23"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do Nigerian universities calculate Post-UTME aggregate scores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nigerian universities use different screening formulas. The 50:30:20 formula (UNILAG, UI, OAU) allocates 50% to JAMB UTME (Score ÷ 8), 30% to Post-UTME CBT (Score ÷ 100 × 30), and 20% to O'Level grades (5 subjects where A1=4.0, B2=3.6, B3=3.2, C4=2.8, C5=2.4, C6=2.0). The 50:50 formula (UNIBEN, UNN, FUTO) allocates 50% to JAMB (Score ÷ 8) and 50% to Post-UTME CBT (Score ÷ 2)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between JAMB score and Post-UTME aggregate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your JAMB score is the raw mark obtained in the 4-subject UTME examination out of 400. Your Post-UTME aggregate is the final composite admission screening score (usually out of 100%) calculated by your chosen university by combining your JAMB score, Post-UTME examination or screening assessment, and secondary school O'Level grades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does using two O'Level sittings reduce Post-UTME aggregate score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In select federal universities like the University of Lagos (UNILAG) and University of Ibadan (UI), candidates presenting five required credits in one single sitting receive full O'Level weighting, whereas candidates combining two sittings may face a deduction or point ceiling depending on institutional admission brochures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good Post-UTME aggregate score for competitive courses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For highly competitive courses like Medicine and Surgery, Pharmacy, Nursing Science, Law, and Computer Engineering in top federal universities, a competitive aggregate score is typically 75.0% to 85.0% or higher. For general sciences, education, and social sciences, aggregate cutoffs typically range between 55.0% and 68.0%."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+  <!-- Pre-rendered Global Header & Navigation -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl" aria-label="Main Navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2" aria-label="AfriWidget Home">
+          <svg class="w-9 h-9" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Post-UTME Aggregate Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-700">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>🇳🇬 Nigeria University Screening Models</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
+          Post-UTME <span class="text-yellow-300">Aggregate Calculator</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Calculate your official university admission screening aggregate. Accurately combines your JAMB UTME score, Post-UTME CBT exam mark, and O'Level points for UNILAG, UI, UNIBEN, LASU, OAU, FUTO, and federal institutions.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> UNILAG / UI / OAU (50:30:20)</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> UNIBEN / UNN / FUTO (50:50)</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> LASU / Point Screening</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Instant Merit Benchmarks</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+        
+        <!-- Institution Formula Selector -->
+        <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <label for="screeningModel" class="text-sm font-bold text-slate-900 block mb-1">Target University Screening Formula:</label>
+          <select id="screeningModel" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm font-bold text-slate-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm">
+            <option value="50_30_20" selected>UNILAG / UI / OAU Model (50% JAMB + 30% Post-UTME CBT + 20% O'Level)</option>
+            <option value="50_50">UNIBEN / UNN / FUTO / DELSU Model (50% JAMB + 50% Post-UTME CBT)</option>
+            <option value="lasu_point">LASU / State University Point Model (50 pts JAMB + 50 pts O'Level Grades)</option>
+            <option value="custom_60_40">Standard 60:40 Model (60% JAMB + 40% Post-UTME)</option>
+            <option value="jamb_only_o_level">Online Screening / Non-CBT Model (50% JAMB + 50% O'Level Points)</option>
+          </select>
+          <p class="text-xs text-slate-600 mt-2" id="formulaDesc">
+            Formula: (JAMB Score ÷ 8) + (Post-UTME Mark ÷ 100 × 30) + (O'Level 5 Subjects Score out of 20) = Total 100%.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          
+          <!-- Column 1: JAMB & Post-UTME CBT Scores -->
+          <div class="space-y-4 bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> 1. Examination Marks
+            </h2>
+            
+            <div>
+              <label for="jambScoreInput" class="block text-xs font-semibold text-slate-700 mb-1">
+                JAMB UTME Score (0 – 400):
+              </label>
+              <input type="number" id="jambScoreInput" min="0" max="400" placeholder="e.g. 285" value="275" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white" />
+              <span class="text-[11px] text-slate-500 mt-1 block">Your total mark across 4 subjects.</span>
+            </div>
+
+            <div id="postUtmeInputGroup">
+              <label for="postUtmeScoreInput" class="block text-xs font-semibold text-slate-700 mb-1">
+                Post-UTME CBT Score (0 – 100):
+              </label>
+              <input type="number" id="postUtmeScoreInput" min="0" max="100" placeholder="e.g. 74" value="70" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm font-bold text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white" />
+              <span class="text-[11px] text-slate-500 mt-1 block">Score obtained in your university CBT screening.</span>
+            </div>
+
+            <div>
+              <label for="sittingType" class="block text-xs font-semibold text-slate-700 mb-1">
+                O'Level Sittings Count:
+              </label>
+              <select id="sittingType" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white">
+                <option value="1" selected>One (1) Sitting – WAEC / NECO / GCE (Full points)</option>
+                <option value="2">Two (2) Sittings – Combined Results (-2 to -5 points penalty in some schools)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="courseCategory" class="block text-xs font-semibold text-slate-700 mb-1">
+                Target Department / Faculty:
+              </label>
+              <select id="courseCategory" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-xs font-semibold focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white">
+                <option value="medicine" selected>Medicine & Surgery / Dentistry (Cutoff ~ 78-85%)</option>
+                <option value="pharmacy">Pharmacy / Nursing / Medical Lab (Cutoff ~ 72-78%)</option>
+                <option value="law">Law / Jurisprudence (Cutoff ~ 72-80%)</option>
+                <option value="engineering">Engineering / Computer Science (Cutoff ~ 68-76%)</option>
+                <option value="commercial">Accounting / Finance / Economics (Cutoff ~ 62-70%)</option>
+                <option value="sciences">Pure Sciences / Microbiology / Biochemistry (Cutoff ~ 55-65%)</option>
+                <option value="arts">Arts, Languages & Humanities (Cutoff ~ 50-60%)</option>
+                <option value="education">Faculty of Education / Agriculture (Cutoff ~ 50-58%)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Column 2: O'Level 5 Best Subjects -->
+          <div class="space-y-3 bg-slate-50 p-5 rounded-xl border border-slate-200" id="oLevelContainer">
+            <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> 2. Five (5) Relevant O'Level Grades
+            </h2>
+            <p class="text-xs text-slate-500">Select grades for English, Mathematics, and 3 core departmental subjects.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <!-- Subject 1: English -->
+              <div>
+                <label class="block font-semibold text-slate-700 mb-0.5">1. English Language:</label>
+                <select class="olevel-grade w-full border border-slate-300 rounded px-2 py-1.5 font-bold text-emerald-800 bg-white">
+                  <option value="A1" selected>A1 (4.0 pts / 10 pts)</option>
+                  <option value="B2">B2 (3.6 pts / 9 pts)</option>
+                  <option value="B3">B3 (3.2 pts / 8 pts)</option>
+                  <option value="C4">C4 (2.8 pts / 7 pts)</option>
+                  <option value="C5">C5 (2.4 pts / 6 pts)</option>
+                  <option value="C6">C6 (2.0 pts / 5 pts)</option>
+                </select>
+              </div>
+
+              <!-- Subject 2: Mathematics -->
+              <div>
+                <label class="block font-semibold text-slate-700 mb-0.5">2. Mathematics:</label>
+                <select class="olevel-grade w-full border border-slate-300 rounded px-2 py-1.5 font-bold text-emerald-800 bg-white">
+                  <option value="A1" selected>A1 (4.0 pts / 10 pts)</option>
+                  <option value="B2">B2 (3.6 pts / 9 pts)</option>
+                  <option value="B3">B3 (3.2 pts / 8 pts)</option>
+                  <option value="C4">C4 (2.8 pts / 7 pts)</option>
+                  <option value="C5">C5 (2.4 pts / 6 pts)</option>
+                  <option value="C6">C6 (2.0 pts / 5 pts)</option>
+                </select>
+              </div>
+
+              <!-- Subject 3 -->
+              <div>
+                <label class="block font-semibold text-slate-700 mb-0.5">3. Major Subject 1 (e.g. Physics/Gov):</label>
+                <select class="olevel-grade w-full border border-slate-300 rounded px-2 py-1.5 font-bold text-emerald-800 bg-white">
+                  <option value="A1">A1 (4.0 pts / 10 pts)</option>
+                  <option value="B2" selected>B2 (3.6 pts / 9 pts)</option>
+                  <option value="B3">B3 (3.2 pts / 8 pts)</option>
+                  <option value="C4">C4 (2.8 pts / 7 pts)</option>
+                  <option value="C5">C5 (2.4 pts / 6 pts)</option>
+                  <option value="C6">C6 (2.0 pts / 5 pts)</option>
+                </select>
+              </div>
+
+              <!-- Subject 4 -->
+              <div>
+                <label class="block font-semibold text-slate-700 mb-0.5">4. Major Subject 2 (e.g. Chem/Lit):</label>
+                <select class="olevel-grade w-full border border-slate-300 rounded px-2 py-1.5 font-bold text-emerald-800 bg-white">
+                  <option value="A1">A1 (4.0 pts / 10 pts)</option>
+                  <option value="B2">B2 (3.6 pts / 9 pts)</option>
+                  <option value="B3" selected>B3 (3.2 pts / 8 pts)</option>
+                  <option value="C4">C4 (2.8 pts / 7 pts)</option>
+                  <option value="C5">C5 (2.4 pts / 6 pts)</option>
+                  <option value="C6">C6 (2.0 pts / 5 pts)</option>
+                </select>
+              </div>
+
+              <!-- Subject 5 -->
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-slate-700 mb-0.5">5. Major Subject 3 (e.g. Bio/Econs):</label>
+                <select class="olevel-grade w-full border border-slate-300 rounded px-2 py-1.5 font-bold text-emerald-800 bg-white">
+                  <option value="A1" selected>A1 (4.0 pts / 10 pts)</option>
+                  <option value="B2">B2 (3.6 pts / 9 pts)</option>
+                  <option value="B3">B3 (3.2 pts / 8 pts)</option>
+                  <option value="C4">C4 (2.8 pts / 7 pts)</option>
+                  <option value="C5">C5 (2.4 pts / 6 pts)</option>
+                  <option value="C6">C6 (2.0 pts / 5 pts)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="p-2.5 bg-blue-50/70 border border-blue-200 rounded text-[11px] text-blue-900 mt-2">
+              <strong>UNILAG / UI Grading Scale:</strong> A1 = 4.0 | B2 = 3.6 | B3 = 3.2 | C4 = 2.8 | C5 = 2.4 | C6 = 2.0 (Max 20.0 pts).
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Action Button (Manual Trigger Only) -->
+        <div class="text-center pt-2">
+          <button type="button" id="calcPostUtmeBtn" class="w-full sm:w-auto px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+            Calculate Post-UTME Aggregate Score
+          </button>
+        </div>
+
+        <!-- RESULTS SECTION (Initially Hidden) -->
+        <div id="postUtmeResultsContainer" class="hidden mt-8 pt-8 border-t-2 border-slate-200">
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-6 sm:p-8 rounded-2xl shadow-xl">
+            
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-700">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Official Screening Composite Result</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mt-1">Post-UTME Aggregate Score</h3>
+              </div>
+              <div id="resAggregateBadge" class="px-4 py-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-sm font-bold rounded-xl shadow-sm">
+                Strong Merit List Standing
+              </div>
+            </div>
+
+            <!-- Primary Metric Display -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6 text-center">
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                <div class="text-xs text-slate-400 font-semibold mb-1">Final Aggregate</div>
+                <div class="text-3xl sm:text-4xl font-black text-yellow-300" id="resTotalAggregate">74.18%</div>
+                <div class="text-[11px] text-slate-400 mt-1">Out of 100%</div>
+              </div>
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                <div class="text-xs text-slate-400 font-semibold mb-1">JAMB Contribution</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white" id="resJambPart">34.38 pts</div>
+                <div class="text-[11px] text-slate-400 mt-1" id="resJambPartLabel">50% Weighting</div>
+              </div>
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                <div class="text-xs text-slate-400 font-semibold mb-1">Post-UTME CBT</div>
+                <div class="text-2xl sm:text-3xl font-bold text-sky-400" id="resPostUtmePart">21.00 pts</div>
+                <div class="text-[11px] text-slate-400 mt-1" id="resPostUtmeLabel">30% Weighting</div>
+              </div>
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+                <div class="text-xs text-slate-400 font-semibold mb-1">O'Level Points</div>
+                <div class="text-2xl sm:text-3xl font-bold text-emerald-400" id="resOlevelPart">18.80 pts</div>
+                <div class="text-[11px] text-slate-400 mt-1" id="resOlevelLabel">20% Max Points</div>
+              </div>
+            </div>
+
+            <!-- Target Course Admission Chances -->
+            <div class="p-5 bg-slate-800/90 rounded-xl border border-slate-700 text-sm leading-relaxed space-y-2">
+              <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+                <span class="font-bold text-yellow-300" id="resTargetCourseTitle">Target Course: Medicine & Surgery</span>
+                <span class="text-xs font-semibold text-slate-400" id="resEstimatedCutoff">Historical Merit Cutoff: ~78.50%</span>
+              </div>
+              <p class="text-slate-300 pt-1" id="resAdmissionAdvice">
+                Your aggregate score of 74.18% gives you a strong chance on Catchment Area quota and Supplementary lists. For First Merit List in Medicine, candidates typically require 78%+.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Detailed Educational Explanation & Guides -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8">
+        
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
+            Understanding Nigerian University Post-UTME Screening Formulas
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed mb-4">
+            Following the JAMB Unified Tertiary Matriculation Examination (UTME), federal and state universities across Nigeria conduct mandatory screening exercises to derive a composite admission score out of 100%. Because individual universities exercise institutional autonomy over their screening modalities, multiple distinct mathematical models are used across the country.
+          </p>
+        </div>
+
+        <!-- Formula Breakdown Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 text-emerald-800">
+              1. The 50:30:20 Model (UNILAG, UI, OAU)
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Adopted by the University of Lagos, University of Ibadan, and Obafemi Awolowo University.
+            </p>
+            <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 font-mono">
+              <li>**JAMB UTME (50%)** = JAMB Score ÷ 8</li>
+              <li>**Post-UTME CBT (30%)** = CBT Mark ÷ 100 × 30</li>
+              <li>**O'Level Points (20%)** = Sum of 5 core subjects:</li>
+              <li class="pl-4">A1 = 4.0 | B2 = 3.6 | B3 = 3.2 | C4 = 2.8 | C5 = 2.4 | C6 = 2.0</li>
+              <li>**Aggregate** = (JAMB ÷ 8) + (CBT ÷ 100 × 30) + O'Level Points</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 text-blue-800">
+              2. The 50:50 Model (UNIBEN, UNN, FUTO, DELSU)
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Adopted by University of Benin, University of Nigeria Nsukka, and Federal University of Technology Owerri.
+            </p>
+            <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 font-mono">
+              <li>**JAMB UTME (50%)** = JAMB Score ÷ 8 (or JAMB ÷ 400 × 50)</li>
+              <li>**Post-UTME CBT (50%)** = Post-UTME Mark ÷ 2 (or Mark ÷ 100 × 50)</li>
+              <li>**Aggregate** = (JAMB Score ÷ 8) + (Post-UTME Score ÷ 2)</li>
+            </ul>
+            <p class="text-[11px] text-slate-500 mt-2">O'Level grades serve as a qualifying prerequisite (minimum 5 credits in 1 or 2 sittings) rather than scored points.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 text-amber-800">
+              3. Point Grading Model (LASU, UNIOSUN)
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Lagos State University and select state universities use point-based O'Level screening with no separate CBT examination.
+            </p>
+            <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 font-mono">
+              <li>**JAMB Part (50%)** = JAMB Score ÷ 8</li>
+              <li>**O'Level Part (50%)** = Sum of 5 subjects (A1=10, B2=9, B3=8, C4=7, C5=6, C6=5)</li>
+              <li>**Total Aggregate** = JAMB Points (50) + O'Level Points (50)</li>
+            </ul>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-5 bg-slate-50">
+            <h3 class="text-base font-bold text-slate-900 mb-2 text-purple-800">
+              4. Standard 60:40 Screening Model
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Used in various northern and eastern federal universities:
+            </p>
+            <ul class="list-disc list-inside text-xs text-slate-700 space-y-1 font-mono">
+              <li>**JAMB Part (60%)** = JAMB Score ÷ 400 × 60</li>
+              <li>**Post-UTME Part (40%)** = Post-UTME Mark ÷ 100 × 40</li>
+              <li>**Total Aggregate** = JAMB (60%) + CBT (40%)</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Worked Numerical Example -->
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Complete Worked Screening Calculation Example</h3>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm text-slate-700 space-y-2">
+            <p><strong>Candidate Profile:</strong> A student applying for Computer Engineering at UNILAG scores:</p>
+            <ul class="list-disc list-inside space-y-1 text-slate-600 text-xs sm:text-sm pl-2">
+              <li><strong>JAMB UTME Score:</strong> 280 / 400</li>
+              <li><strong>Post-UTME CBT Exam Mark:</strong> 74 / 100</li>
+              <li><strong>O'Level Grades (1 sitting):</strong> English (A1), Mathematics (A1), Physics (B2), Chemistry (B3), Further Maths (A1)</li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-slate-300 font-semibold text-slate-900 text-xs sm:text-sm space-y-1">
+              <p>1. JAMB Points (50%) = 280 ÷ 8 = <strong>35.00 points</strong></p>
+              <p>2. Post-UTME Points (30%) = 74 ÷ 100 × 30 = <strong>22.20 points</strong></p>
+              <p>3. O'Level Points (20%) = 4.0 + 4.0 + 3.6 + 3.2 + 4.0 = <strong>18.80 points</strong></p>
+              <p class="text-emerald-700 font-bold text-base mt-2">
+                Total Composite Aggregate = 35.00 + 22.20 + 18.80 = <strong>76.00% (High Merit Standing)</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Citations -->
+        <div class="border-t border-slate-200 pt-6">
+          <h3 class="text-base font-bold text-slate-900 mb-2">Authoritative Governing Portals & Citations</h3>
+          <p class="text-xs text-slate-500 leading-relaxed mb-3">
+            Institutional cut-offs and screening weightings are verified against official JAMB and university senate guidelines:
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs">
+            <a href="https://www.jamb.gov.ng/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline inline-flex items-center gap-1 font-semibold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              JAMB Official CAPS Portal
+            </a>
+            <a href="https://www.nuc.edu.ng/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline inline-flex items-center gap-1 font-semibold">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              National Universities Commission (NUC)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-6">
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">What happens if my aggregate is below the published Merit cutoff?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              If your aggregate is slightly below the Merit cutoff, you may still qualify through your state's <strong>Catchment Area quota</strong> (which has slightly lower cutoff thresholds) or the <strong>Educationally Less Developed States (ELDS) quota</strong>. You can also apply for supplementary change of course to related programs with available capacity.
+            </p>
+          </div>
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">How can I check my admission status after Post-UTME screening?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Admission status is published directly on the <strong>JAMB Central Admissions Processing System (CAPS)</strong> portal and your chosen university's undergraduate portal. Once offered admission, candidates must log in to JAMB CAPS to formally <strong>ACCEPT</strong> or <strong>REJECT</strong> the admission offer to receive their official JAMB Admission Letter.
+            </p>
+          </div>
+          <div class="border-b border-slate-200 pb-4">
+            <h3 class="text-base font-bold text-slate-900 mb-1">Are WAEC and NECO results weighted equally in Post-UTME screening?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Yes. All Nigerian universities treat WAEC (WASSCE), NECO (SSCE), and NABTEB grades identically on the standard 9-point scale (A1=4.0/10, B2=3.6/9, B3=3.2/8, C4=2.8/7, C5=2.4/6, C6=2.0/5).
+            </p>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Can I participate in Post-UTME if I used Awaiting Result (AR)?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Yes, you can register for Post-UTME with Awaiting Result. However, you must upload your verified O'Level grades to the JAMB CAPS portal immediately upon release to avoid forfeiture of admission consideration during institutional screening.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-Linking Related Academic Tools -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-12">
+      <div class="bg-slate-100 rounded-2xl p-6 sm:p-8 border border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Related Nigerian Academic & Admission Tools</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a href="/jamb-score-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">UTME Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">JAMB Score Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">Calculate 4-subject UTME total score & institutional cut-off standing.</p>
+          </a>
+          <a href="/nigerian-university-cgpa-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">Degree Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">Nigerian University CGPA Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">NUC 5.0 and NBTE 4.0 scale semester GPA, CGPA & honours classification.</p>
+          </a>
+          <a href="/waec-grade-calculator" class="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition group">
+            <span class="text-xs font-bold text-emerald-700 block mb-1">O'Level Tool</span>
+            <h4 class="font-bold text-slate-900 group-hover:text-emerald-700 text-sm">WAEC Grade Calculator</h4>
+            <p class="text-xs text-slate-500 mt-1">Convert WAEC/NECO marks to 9-point letter grades & credit standing.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pre-rendered Shared Footer -->
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="/nav.js" defer></script>
+  <script src="/footer.js" defer></script>
+
+  <!-- Interactive Post-UTME Aggregate Calculation Logic -->
+  <script>
+    (function () {
+      'use strict';
+
+      const OLEVEL_UNILAG_POINTS = { A1: 4.0, B2: 3.6, B3: 3.2, C4: 2.8, C5: 2.4, C6: 2.0 };
+      const OLEVEL_LASU_POINTS = { A1: 10.0, B2: 9.0, B3: 8.0, C4: 7.0, C5: 6.0, C6: 5.0 };
+
+      const CUTOFF_BENCHMARKS = {
+        medicine: { title: 'Medicine & Surgery / Dentistry', cutoff: 78.50, desc: 'Highly Competitive (Requires 78-85% for First Merit List)' },
+        pharmacy: { title: 'Pharmacy / Nursing / Medical Lab', cutoff: 72.00, desc: 'Very Competitive (Requires 72-78% for Merit List)' },
+        law: { title: 'Law / Jurisprudence', cutoff: 73.00, desc: 'Very Competitive (Requires 73-80% for Merit List)' },
+        engineering: { title: 'Engineering / Computer Science', cutoff: 68.00, desc: 'Competitive (Requires 68-76% for Merit List)' },
+        commercial: { title: 'Accounting / Finance / Economics', cutoff: 62.50, desc: 'Moderately Competitive (Requires 62-70%)' },
+        sciences: { title: 'Pure Sciences / Microbiology / Biochem', cutoff: 56.00, desc: 'Standard Competitive (Requires 55-65%)' },
+        arts: { title: 'Arts, Languages & Humanities', cutoff: 52.00, desc: 'Standard Cutoff (Requires 50-60%)' },
+        education: { title: 'Faculty of Education / Agriculture', cutoff: 50.00, desc: 'Baseline Cutoff (Requires 50-58%)' }
+      };
+
+      const screeningModelSelect = document.getElementById('screeningModel');
+      const formulaDesc = document.getElementById('formulaDesc');
+      const postUtmeInputGroup = document.getElementById('postUtmeInputGroup');
+      const jambScoreInput = document.getElementById('jambScoreInput');
+      const postUtmeScoreInput = document.getElementById('postUtmeScoreInput');
+      const sittingTypeSelect = document.getElementById('sittingType');
+      const courseCategorySelect = document.getElementById('courseCategory');
+      const calcPostUtmeBtn = document.getElementById('calcPostUtmeBtn');
+
+      const postUtmeResultsContainer = document.getElementById('postUtmeResultsContainer');
+      const resAggregateBadge = document.getElementById('resAggregateBadge');
+      const resTotalAggregate = document.getElementById('resTotalAggregate');
+      const resJambPart = document.getElementById('resJambPart');
+      const resJambPartLabel = document.getElementById('resJambPartLabel');
+      const resPostUtmePart = document.getElementById('resPostUtmePart');
+      const resPostUtmeLabel = document.getElementById('resPostUtmeLabel');
+      const resOlevelPart = document.getElementById('resOlevelPart');
+      const resOlevelLabel = document.getElementById('resOlevelLabel');
+      const resTargetCourseTitle = document.getElementById('resTargetCourseTitle');
+      const resEstimatedCutoff = document.getElementById('resEstimatedCutoff');
+      const resAdmissionAdvice = document.getElementById('resAdmissionAdvice');
+
+      // Update UI on Model Selection
+      screeningModelSelect.addEventListener('change', () => {
+        const model = screeningModelSelect.value;
+        if (model === '50_30_20') {
+          formulaDesc.textContent = "Formula: (JAMB Score ÷ 8) + (Post-UTME Mark ÷ 100 × 30) + (O'Level 5 Subjects Score out of 20) = Total 100%.";
+          postUtmeInputGroup.classList.remove('hidden');
+        } else if (model === '50_50') {
+          formulaDesc.textContent = "Formula: (JAMB Score ÷ 8) + (Post-UTME Mark ÷ 2) = Total 100%. O'Level serves as 5-credit qualifying prerequisite.";
+          postUtmeInputGroup.classList.remove('hidden');
+        } else if (model === 'lasu_point') {
+          formulaDesc.textContent = "Formula: (JAMB Score ÷ 8) + (O'Level 5 Best Grades out of 50 pts) = Total 100%. No CBT test needed.";
+          postUtmeInputGroup.classList.add('hidden');
+        } else if (model === 'custom_60_40') {
+          formulaDesc.textContent = "Formula: (JAMB Score ÷ 400 × 60) + (Post-UTME Mark ÷ 100 × 40) = Total 100%.";
+          postUtmeInputGroup.classList.remove('hidden');
+        } else if (model === 'jamb_only_o_level') {
+          formulaDesc.textContent = "Formula: (JAMB Score ÷ 8) + (O'Level Points scaled to 50) = Total 100%.";
+          postUtmeInputGroup.classList.add('hidden');
+        }
+      });
+
+      // Manual Action Trigger
+      calcPostUtmeBtn.addEventListener('click', () => {
+        const jamb = parseFloat(jambScoreInput.value);
+        const postUtme = parseFloat(postUtmeScoreInput.value) || 0;
+        const model = screeningModelSelect.value;
+        const sitting = parseInt(sittingTypeSelect.value, 10);
+        const courseKey = courseCategorySelect.value;
+        const courseInfo = CUTOFF_BENCHMARKS[courseKey] || CUTOFF_BENCHMARKS.medicine;
+
+        if (isNaN(jamb) || jamb < 0 || jamb > 400) {
+          alert('Please enter a valid JAMB UTME score between 0 and 400.');
+          return;
+        }
+
+        const olevelGrades = Array.from(document.querySelectorAll('.olevel-grade')).map(s => s.value);
+
+        let jambContrib = 0;
+        let postUtmeContrib = 0;
+        let olevelContrib = 0;
+        let totalAggregate = 0;
+
+        let jambLabel = '50% Weighting';
+        let postUtmeLabel = '30% Weighting';
+        let olevelLabel = '20% Max Points';
+
+        if (model === '50_30_20') {
+          jambContrib = jamb / 8; // Max 50
+          postUtmeContrib = (postUtme / 100) * 30; // Max 30
+          olevelContrib = olevelGrades.reduce((sum, g) => sum + (OLEVEL_UNILAG_POINTS[g] || 0), 0); // Max 20
+          if (sitting === 2) {
+            olevelContrib = Math.max(0, olevelContrib - 1.0); // 1 point deduction for 2 sittings in some models
+          }
+          totalAggregate = jambContrib + postUtmeContrib + olevelContrib;
+          jambLabel = '50% Weighting';
+          postUtmeLabel = '30% Weighting';
+          olevelLabel = '20% Max Points';
+        } else if (model === '50_50') {
+          jambContrib = jamb / 8; // Max 50
+          postUtmeContrib = postUtme / 2; // Max 50
+          olevelContrib = 0; // Qualifying prerequisite
+          totalAggregate = jambContrib + postUtmeContrib;
+          jambLabel = '50% Weighting';
+          postUtmeLabel = '50% Weighting';
+          olevelLabel = '5 Credits Pass (Prerequisite)';
+        } else if (model === 'lasu_point') {
+          jambContrib = jamb / 8; // Max 50
+          postUtmeContrib = 0;
+          olevelContrib = olevelGrades.reduce((sum, g) => sum + (OLEVEL_LASU_POINTS[g] || 0), 0); // Max 50
+          totalAggregate = jambContrib + olevelContrib;
+          jambLabel = '50% (JAMB ÷ 8)';
+          postUtmeLabel = 'N/A (No CBT)';
+          olevelLabel = '50% (Max 50 pts)';
+        } else if (model === 'custom_60_40') {
+          jambContrib = (jamb / 400) * 60; // Max 60
+          postUtmeContrib = (postUtme / 100) * 40; // Max 40
+          olevelContrib = 0;
+          totalAggregate = jambContrib + postUtmeContrib;
+          jambLabel = '60% Weighting';
+          postUtmeLabel = '40% Weighting';
+          olevelLabel = 'Prerequisite';
+        } else if (model === 'jamb_only_o_level') {
+          jambContrib = jamb / 8; // Max 50
+          const rawOlevel = olevelGrades.reduce((sum, g) => sum + (OLEVEL_UNILAG_POINTS[g] || 0), 0);
+          olevelContrib = (rawOlevel / 20) * 50; // Scaled to 50
+          postUtmeContrib = 0;
+          totalAggregate = jambContrib + olevelContrib;
+          jambLabel = '50% Weighting';
+          postUtmeLabel = 'N/A (No CBT)';
+          olevelLabel = '50% Scaled';
+        }
+
+        // Cap at 100
+        totalAggregate = Math.min(100, Math.max(0, totalAggregate));
+
+        // Update UI displays
+        resTotalAggregate.textContent = totalAggregate.toFixed(2) + '%';
+        resJambPart.textContent = jambContrib.toFixed(2) + ' pts';
+        resJambPartLabel.textContent = jambLabel;
+
+        resPostUtmePart.textContent = postUtmeContrib > 0 ? postUtmeContrib.toFixed(2) + ' pts' : '—';
+        resPostUtmeLabel.textContent = postUtmeLabel;
+
+        resOlevelPart.textContent = olevelContrib > 0 ? olevelContrib.toFixed(2) + ' pts' : 'Verified';
+        resOlevelLabel.textContent = olevelLabel;
+
+        resTargetCourseTitle.textContent = `Target Course: ${courseInfo.title}`;
+        resEstimatedCutoff.textContent = `Historical Benchmark: ~${courseInfo.cutoff.toFixed(2)}%`;
+
+        // Classification & Advice
+        if (totalAggregate >= courseInfo.cutoff) {
+          resAggregateBadge.textContent = 'High Merit List Standing';
+          resAggregateBadge.className = 'px-4 py-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-sm font-bold rounded-xl shadow-sm';
+          resAdmissionAdvice.textContent = `Your composite aggregate of ${totalAggregate.toFixed(2)}% comfortably surpasses the historical merit cutoff (~${courseInfo.cutoff.toFixed(2)}%) for ${courseInfo.title}. Ensure your O'Level results are verified on JAMB CAPS to secure your First Merit List admission offer.`;
+        } else if (totalAggregate >= (courseInfo.cutoff - 5.0)) {
+          resAggregateBadge.textContent = 'Catchment / 2nd List Standing';
+          resAggregateBadge.className = 'px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-300 text-sm font-bold rounded-xl shadow-sm';
+          resAdmissionAdvice.textContent = `Your composite aggregate of ${totalAggregate.toFixed(2)}% is within striking distance of the Merit cutoff (~${courseInfo.cutoff.toFixed(2)}%). You stand a strong competitive chance via state Catchment Area quotas, ELDS quotas, or subsequent batch admission releases.`;
+        } else if (totalAggregate >= 50.0) {
+          resAggregateBadge.textContent = 'Supplementary / Change of Course';
+          resAggregateBadge.className = 'px-4 py-2 bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm font-bold rounded-xl shadow-sm';
+          resAdmissionAdvice.textContent = `Your aggregate of ${totalAggregate.toFixed(2)}% is below the competitive threshold for ${courseInfo.title}, but exceeds the university minimum pass mark (50%). Consider monitoring supplementary lists or executing an intra-faculty change of course to related disciplines with lower cutoffs.`;
+        } else {
+          resAggregateBadge.textContent = 'Below Admission Cutoff';
+          resAggregateBadge.className = 'px-4 py-2 bg-rose-500/20 border border-rose-400/40 text-rose-300 text-sm font-bold rounded-xl shadow-sm';
+          resAdmissionAdvice.textContent = `Your aggregate of ${totalAggregate.toFixed(2)}% is below the standard university 50% screening threshold. We recommend exploring pre-degree, JUPEB/IJMB direct entry foundation programs, or applying to state polytechnics and colleges.`;
+        }
+
+        postUtmeResultsContainer.classList.remove('hidden');
+        postUtmeResultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+    })();
+  </script>
+</body>
+</html>

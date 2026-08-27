@@ -1030,6 +1030,370 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     });
   }
 
+  function getApsPointsFromPercentage(mark) {
+    if (mark === null || mark === undefined || isNaN(mark)) return 0;
+    if (mark >= 80) return 7;
+    if (mark >= 70) return 6;
+    if (mark >= 60) return 5;
+    if (mark >= 50) return 4;
+    if (mark >= 40) return 3;
+    if (mark >= 30) return 2;
+    return mark > 0 ? 1 : 0;
+  }
+
+  function initSaUniversityAdmissionCalculator() {
+    const checkBtn = $('#saUniCheckBtn');
+    if (!checkBtn) return;
+
+    const calculate = () => {
+      const targetUni = $('#saUniTarget')?.value || 'all';
+      const faculty = $('#saFacultyStream')?.value || 'sci';
+      const engType = $('#saSubEnglishType')?.value || 'HL';
+      const mathsType = $('#saSubMathsType')?.value || 'MATH';
+
+      const rawEng = $('#saMarkEnglish')?.value.trim();
+      const rawMaths = $('#saMarkMaths')?.value.trim();
+      const rawPhys = $('#saMarkPhysics')?.value.trim();
+      const rawLife = $('#saMarkLifeSci')?.value.trim();
+      const rawEl1 = $('#saMarkElective1')?.value.trim();
+      const rawEl2 = $('#saMarkElective2')?.value.trim();
+      const rawLO = $('#saMarkLO')?.value.trim();
+
+      if (!rawEng || !rawMaths) {
+        set('#saApsDisplay', '—');
+        set('#saPassLevelBadge', 'Please enter English and Mathematics marks');
+        set('#saVerdictSummary', 'Enter your percentage marks for English, Mathematics, and your other NSC subjects to calculate admission chances.');
+        return;
+      }
+
+      const engMark = Math.min(100, Math.max(0, Number(rawEng) || 0));
+      const mathsMark = Math.min(100, Math.max(0, Number(rawMaths) || 0));
+      const physMark = rawPhys !== '' ? Math.min(100, Math.max(0, Number(rawPhys) || 0)) : null;
+      const lifeMark = rawLife !== '' ? Math.min(100, Math.max(0, Number(rawLife) || 0)) : null;
+      const el1Mark = rawEl1 !== '' ? Math.min(100, Math.max(0, Number(rawEl1) || 0)) : null;
+      const el2Mark = rawEl2 !== '' ? Math.min(100, Math.max(0, Number(rawEl2) || 0)) : null;
+      const loMark = rawLO !== '' ? Math.min(100, Math.max(0, Number(rawLO) || 0)) : null;
+
+      // Compile subject list for 6-subject calculation
+      const subjects = [
+        { name: 'English', mark: engMark, pts: getApsPointsFromPercentage(engMark) },
+        { name: 'Mathematics', mark: mathsMark, pts: getApsPointsFromPercentage(mathsMark) }
+      ];
+
+      if (physMark !== null) subjects.push({ name: 'Physical Sciences', mark: physMark, pts: getApsPointsFromPercentage(physMark) });
+      if (lifeMark !== null) subjects.push({ name: 'Life Sciences', mark: lifeMark, pts: getApsPointsFromPercentage(lifeMark) });
+      if (el1Mark !== null) subjects.push({ name: 'Elective 1', mark: el1Mark, pts: getApsPointsFromPercentage(el1Mark) });
+      if (el2Mark !== null) subjects.push({ name: 'Elective 2', mark: el2Mark, pts: getApsPointsFromPercentage(el2Mark) });
+
+      // Sort remaining non-core subjects by highest points
+      const core = subjects.slice(0, 2);
+      const electives = subjects.slice(2).sort((a, b) => b.pts - a.pts);
+      const top6 = core.concat(electives.slice(0, 4));
+
+      const totalAps = top6.reduce((sum, s) => sum + s.pts, 0);
+
+      // Life Orientation points (if university evaluates LO e.g. UJ)
+      let loPts = 0;
+      if (loMark !== null) {
+        if (targetUni === 'uj') {
+          if (loMark >= 80) loPts = 4;
+          else if (loMark >= 70) loPts = 3;
+          else if (loMark >= 60) loPts = 2;
+          else if (loMark >= 50) loPts = 1;
+        } else if (targetUni !== 'up' && targetUni !== 'su' && targetUni !== 'wits') {
+          loPts = getApsPointsFromPercentage(loMark);
+        }
+      }
+
+      // Check Statutory Pass Level
+      const allMarks = [engMark, mathsMark];
+      if (physMark !== null) allMarks.push(physMark);
+      if (lifeMark !== null) allMarks.push(lifeMark);
+      if (el1Mark !== null) allMarks.push(el1Mark);
+      if (el2Mark !== null) allMarks.push(el2Mark);
+      if (loMark !== null) allMarks.push(loMark);
+
+      const countL4 = allMarks.filter(m => m >= 50).length;
+      const countL3 = allMarks.filter(m => m >= 40).length;
+      const countL2 = allMarks.filter(m => m >= 30).length;
+
+      let passCategory = 'National Senior Certificate Pass';
+      if (engMark >= 40 && countL4 >= 4 && countL2 >= 2) {
+        passCategory = "Bachelor's Degree Pass (B.Deg)";
+      } else if (engMark >= 40 && countL3 >= 4 && countL2 >= 2) {
+        passCategory = 'Diploma Pass (Dip)';
+      } else if (engMark >= 40 && countL3 >= 2 && countL2 >= 3) {
+        passCategory = 'Higher Certificate Pass (HC)';
+      }
+
+      set('#saStatutoryPass', passCategory);
+
+      // Check Faculty Prerequisite Thresholds
+      let mathStatus = 'Valid';
+      let scienceStatus = 'Satisfied';
+      let verdict = '';
+      let badgeClass = 'bg-emerald-500 text-slate-950';
+
+      if (faculty === 'health') {
+        // MBChB / Pharmacy
+        if (mathsType === 'MLIT') {
+          mathStatus = '❌ Pure Mathematics Required (Maths Lit Disqualified)';
+          scienceStatus = physMark !== null && physMark >= 70 ? 'Physics Valid' : 'Physical Sciences >= 70% Required';
+          verdict = 'Ineligible for Medicine (MBChB). Medical faculties strictly require Pure Mathematics (>=70%), Physical Sciences (>=70%), and Life Sciences (>=70%). Consider Health Sciences diplomas or alternative programs.';
+          badgeClass = 'bg-red-500 text-white';
+        } else if (mathsMark < 70 || (physMark !== null && physMark < 70) || (lifeMark !== null && lifeMark < 70) || engMark < 60) {
+          mathStatus = mathsMark >= 70 ? 'Pure Maths >= 70% ✓' : `Pure Maths ${mathsMark}% (Needs >= 70%)`;
+          scienceStatus = `Physics: ${physMark || 0}%, Life Sci: ${lifeMark || 0}%`;
+          verdict = `Prerequisite marks below standard medical school baselines (typically Pure Maths 70%+, Physics 70%+, Life Sciences 70%+). With an APS of ${totalAps}, consider BSc Biological Sciences or Nursing.`;
+          badgeClass = 'bg-amber-500 text-slate-950';
+        } else if (totalAps >= 38) {
+          mathStatus = `Pure Maths ${mathsMark}% (Exceeds Prereq) ✓`;
+          scienceStatus = 'Physics & Life Sciences Satisfied ✓';
+          verdict = `Highly Competitive for Medicine & Health Sciences (MBChB, Pharmacy, Physiotherapy). Your APS of ${totalAps} and prerequisite scores satisfy competitive thresholds for UCT, Wits, UP, and Stellenbosch. Ensure NBTs are completed if required.`;
+          badgeClass = 'bg-emerald-400 text-slate-950';
+        } else {
+          mathStatus = `Pure Maths ${mathsMark}% ✓`;
+          scienceStatus = 'Prerequisites Met ✓';
+          verdict = `Competitive Candidate. Your APS of ${totalAps} is near the MBChB cutoff. Consider listing BSc Medical Science or Biotechnology as a high-probability second choice.`;
+          badgeClass = 'bg-emerald-500 text-slate-950';
+        }
+      } else if (faculty === 'eng') {
+        // Engineering
+        if (mathsType === 'MLIT') {
+          mathStatus = '❌ Pure Maths Required (Maths Lit Disqualified)';
+          scienceStatus = physMark !== null && physMark >= 65 ? 'Physics Valid' : 'Physical Sciences Required';
+          verdict = 'Ineligible for Engineering (BEng / BSc Eng). All accredited South African engineering faculties require Pure Mathematics (>=70%) and Physical Sciences (>=65%). Consider National Diplomas at Universities of Technology (TUT, DUT, CPUT).';
+          badgeClass = 'bg-red-500 text-white';
+        } else if (mathsMark < 65 || (physMark !== null && physMark < 65) || engMark < 60) {
+          mathStatus = mathsMark >= 65 ? 'Maths Met' : `Pure Maths ${mathsMark}% (Needs >= 65%)`;
+          scienceStatus = physMark !== null && physMark >= 65 ? 'Physics Met' : `Physics ${physMark || 0}% (Needs >= 65%)`;
+          verdict = `Prerequisite STEM thresholds not fully met for direct BEng entry. With APS ${totalAps}, you are a prime candidate for an Extended Curriculum Programme (ECP 5-year BEng) or National Diploma in Engineering.`;
+          badgeClass = 'bg-amber-500 text-slate-950';
+        } else if (totalAps >= 35) {
+          mathStatus = `Pure Maths ${mathsMark}% (High Standing) ✓`;
+          scienceStatus = `Physical Sciences ${physMark}% ✓`;
+          verdict = `High Probability Direct Admission for Engineering (BEng Mechanical, Electrical, Civil, Chemical). Your APS of ${totalAps} and strong STEM distinctions qualify for direct placement at UP, Wits, UJ, Stellenbosch, and NWU.`;
+          badgeClass = 'bg-emerald-400 text-slate-950';
+        } else {
+          mathStatus = `Pure Maths ${mathsMark}% ✓`;
+          scienceStatus = `Physical Sciences ${physMark || 0}% ✓`;
+          verdict = `Eligible Candidate. Your APS of ${totalAps} qualifies for BEng / BSc Eng streams and Extended Curriculum Programmes at major South African universities.`;
+          badgeClass = 'bg-emerald-500 text-slate-950';
+        }
+      } else if (faculty === 'comm') {
+        // Commerce & Accounting
+        if (mathsType === 'MLIT' && mathsMark < 70) {
+          mathStatus = 'Maths Lit accepted for General BCom only (>=70%)';
+          scienceStatus = 'Accounting / Economics Recommended';
+          verdict = 'Mathematical Literacy qualifies for General BCom (Human Resource Management, Marketing, Public Management) at UJ, UNISA, and UKZN. Pure Mathematics is required for Chartered Accounting (CA stream) and Actuarial Science.';
+          badgeClass = 'bg-amber-500 text-slate-950';
+        } else if (totalAps >= 34 && (mathsType === 'MATH' && mathsMark >= 60)) {
+          mathStatus = `Pure Maths ${mathsMark}% (CA Qualified) ✓`;
+          scienceStatus = 'Commerce Electives Valid ✓';
+          verdict = `Direct Admission Standing for BCom Accounting / Finance / Economics. Your APS of ${totalAps} and mathematics level satisfy leading commerce faculty benchmarks across SA universities.`;
+          badgeClass = 'bg-emerald-400 text-slate-950';
+        } else {
+          mathStatus = `${mathsType === 'MATH' ? 'Pure Maths' : 'Maths Lit'} ${mathsMark}%`;
+          scienceStatus = 'Commercial Subjects Valid';
+          verdict = `Eligible for BCom Business Management, Economics, or Extended BCom Curriculum. APS of ${totalAps} meets admission thresholds at UJ, UKZN, NWU, and UNISA.`;
+          badgeClass = 'bg-emerald-500 text-slate-950';
+        }
+      } else if (faculty === 'law') {
+        // Law LLB
+        if (engMark < 65) {
+          mathStatus = 'Maths / Maths Lit Checked';
+          scienceStatus = 'Humanities Subjects Valid';
+          verdict = `English mark (${engMark}%) is below the preferred 65%–70% benchmark for Law (LLB). With APS ${totalAps}, consider a BA Law or BCom Law pathway to articulate into LLB.`;
+          badgeClass = 'bg-amber-500 text-slate-950';
+        } else if (totalAps >= 32) {
+          mathStatus = `${mathsType} ${mathsMark}% ✓`;
+          scienceStatus = 'English Requirement Met ✓';
+          verdict = `High Probability for LLB (Bachelor of Laws). Your APS of ${totalAps} and English mark of ${engMark}% exceed the baseline entry criteria for UKZN, UWC, UJ, UP, and UNISA.`;
+          badgeClass = 'bg-emerald-400 text-slate-950';
+        } else {
+          mathStatus = `${mathsType} ${mathsMark}%`;
+          scienceStatus = 'English Valid';
+          verdict = `Eligible for BA Law, BCom Law, or Law Extended Curriculum Programmes (APS ${totalAps}).`;
+          badgeClass = 'bg-emerald-500 text-slate-950';
+        }
+      } else {
+        // General Science, Humanities, Education, TVET
+        mathStatus = `${mathsType} ${mathsMark}% ✓`;
+        scienceStatus = 'Requirements Evaluated ✓';
+        if (totalAps >= 30) {
+          verdict = `Direct Admission Standing. Your APS of ${totalAps} satisfies statutory Bachelor's degree and faculty requirements across major South African public universities.`;
+          badgeClass = 'bg-emerald-400 text-slate-950';
+        } else if (totalAps >= 24) {
+          verdict = `Eligible for Diploma, Extended Curriculum (ECP), and Bachelor's programs at universities of technology and comprehensive institutions (APS ${totalAps}).`;
+          badgeClass = 'bg-emerald-500 text-slate-950';
+        } else {
+          verdict = `Eligible for National Diploma or Higher Certificate programs at TVET Colleges and Universities of Technology (APS ${totalAps}).`;
+          badgeClass = 'bg-blue-500 text-white';
+        }
+      }
+
+      set('#saMathCheck', mathStatus);
+      set('#saScienceCheck', scienceStatus);
+      set('#saApsDisplay', `${totalAps}`);
+      set('#saPassLevelBadge', `${passCategory} · ${top6.length} Subjects Evaluated`);
+      const badgeEl = $('#saPassLevelBadge');
+      if (badgeEl) badgeEl.className = `inline-block text-xs font-bold px-3 py-1 rounded-full ${badgeClass}`;
+      set('#saVerdictSummary', verdict);
+    };
+
+    checkBtn.addEventListener('click', calculate);
+  }
+
+  function initNsfasEligibilityChecker() {
+    const checkBtn = $('#nsfasCheckBtn');
+    if (!checkBtn) return;
+
+    // Handle income presets
+    $$('.income-preset').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-val');
+        const input = $('#nsfasIncome');
+        if (input && val !== null) {
+          input.value = val;
+        }
+      });
+    });
+
+    const calculate = () => {
+      const citizen = $('#nsfasCitizen')?.value || 'yes';
+      const sassa = $('#nsfasSassa')?.value || 'no';
+      const rawIncome = $('#nsfasIncome')?.value.trim();
+      const disability = $('#nsfasDisability')?.value || 'no';
+      const institution = $('#nsfasInstitution')?.value || 'public_uni';
+      const qualification = $('#nsfasQualification')?.value || 'first_undergrad';
+      const nRule = $('#nsfasYears')?.value || 'first_year';
+
+      if (citizen === 'no') {
+        set('#nsfasVerdictDisplay', 'Funding Ineligible');
+        set('#nsfasCategoryBadge', 'Non-Citizen / International Status');
+        set('#nsfasFinancialCheck', 'Ineligible (SA Citizens / Permanent Residents Only)');
+        set('#nsfasCourseCheck', 'Public Higher Education');
+        set('#nsfasNRuleCheck', 'Not Applicable');
+        set('#nsfasSummaryText', 'NSFAS funding is exclusively restricted by South African statutory law to South African citizens and verified permanent residents with a valid 13-digit national ID.');
+        const badge = $('#nsfasCategoryBadge');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-red-500 text-white';
+        return;
+      }
+
+      if (institution === 'private') {
+        set('#nsfasVerdictDisplay', 'Institution Ineligible');
+        set('#nsfasCategoryBadge', 'Private College (PHEI) Excluded');
+        set('#nsfasFinancialCheck', sassa === 'yes' ? 'SASSA Cleared' : 'Income Evaluated');
+        set('#nsfasCourseCheck', '❌ Private Institutions Not Funded');
+        set('#nsfasNRuleCheck', 'Standard Framework');
+        set('#nsfasSummaryText', 'Under DHET legislation, NSFAS funding is exclusively allocated to students enrolled in South Africa\'s 26 Public Universities and 50 Public TVET Colleges. Private colleges (such as Boston, Damelin, Eduvos, Mancosa) are not funded by NSFAS.');
+        const badge = $('#nsfasCategoryBadge');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-red-500 text-white';
+        return;
+      }
+
+      if (qualification === 'postgrad') {
+        set('#nsfasVerdictDisplay', 'Course Level Ineligible');
+        set('#nsfasCategoryBadge', 'Postgraduate Excluded');
+        set('#nsfasFinancialCheck', 'Financial Criteria Passed');
+        set('#nsfasCourseCheck', '❌ Postgraduate (Honours/Masters/PhD)');
+        set('#nsfasNRuleCheck', 'First Degree Rule');
+        set('#nsfasSummaryText', 'NSFAS only funds a student\'s first undergraduate degree, diploma, or TVET qualification. Postgraduate studies (Honours, Masters, PhD) must apply for postgraduate funding through the National Research Foundation (NRF) or university merit bursaries.');
+        const badge = $('#nsfasCategoryBadge');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-amber-500 text-slate-950';
+        return;
+      }
+
+      if (nRule === 'exceeded') {
+        set('#nsfasVerdictDisplay', 'N+1 Rule Exceeded');
+        set('#nsfasCategoryBadge', 'Funded Years Limit Reached');
+        set('#nsfasFinancialCheck', 'Financially Eligible');
+        set('#nsfasCourseCheck', 'Accredited Public Institution');
+        set('#nsfasNRuleCheck', '❌ Exceeded Maximum Allowable Years');
+        set('#nsfasSummaryText', 'You have exceeded the statutory N+1 rule (or N+2 for students with disabilities). To continue receiving funding, you must lodge an official academic appeal via the myNSFAS portal with supporting medical or institutional evidence.');
+        const badge = $('#nsfasCategoryBadge');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-red-500 text-white';
+        return;
+      }
+
+      const income = rawIncome !== '' ? Number(rawIncome) : (sassa === 'yes' ? 0 : null);
+      if (sassa === 'no' && (income === null || isNaN(income))) {
+        set('#nsfasVerdictDisplay', 'Enter Income');
+        set('#nsfasCategoryBadge', 'Income Required');
+        set('#nsfasFinancialCheck', 'Awaiting gross household income');
+        set('#nsfasSummaryText', 'Please enter your combined annual gross household income or select SASSA beneficiary status to evaluate financial eligibility.');
+        return;
+      }
+
+      const badge = $('#nsfasCategoryBadge');
+
+      if (sassa === 'yes') {
+        // Fast-track SASSA
+        set('#nsfasVerdictDisplay', '100% Full Bursary Approved');
+        set('#nsfasCategoryBadge', 'SASSA Beneficiary Fast-Track');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-emerald-400 text-slate-950';
+        set('#nsfasFinancialCheck', '✓ SASSA Clearance (Zero Means-Testing)');
+        set('#nsfasCourseCheck', `✓ ${institution === 'public_uni' ? 'Public University' : 'Public TVET College'} Approved`);
+        set('#nsfasNRuleCheck', '✓ Within Allowable N+ Limit');
+        set('#nsfasSummaryText', 'Full Free NSFAS Bursary Awarded! As an active SASSA beneficiary, you receive 100% tuition coverage, accommodation/residence allowance, monthly food stipend (R1,650/mo), personal care, and learning materials/laptop with no repayment required.');
+        return;
+      }
+
+      // Non-SASSA Financial Assessment
+      const effectiveIncome = income || 0;
+
+      if (disability === 'yes') {
+        if (effectiveIncome <= 600000) {
+          set('#nsfasVerdictDisplay', 'Full Disability Bursary Approved');
+          set('#nsfasCategoryBadge', 'Disability Quota (Income <= R600k)');
+          if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-emerald-400 text-slate-950';
+          set('#nsfasFinancialCheck', `✓ Gross Income R${effectiveIncome.toLocaleString()} <= R600,000 Cap`);
+          set('#nsfasCourseCheck', '✓ Public Higher Education Approved');
+          set('#nsfasNRuleCheck', '✓ Funded under N+2 Framework');
+          set('#nsfasSummaryText', 'Approved for Full Comprehensive Disability Bursary. Package covers 100% tuition, accommodation, living stipend, medical assistive devices (wheelchairs, hearing aids), scribes, and human support allowance.');
+        } else {
+          set('#nsfasVerdictDisplay', 'Funding Ineligible');
+          set('#nsfasCategoryBadge', 'Exceeds R600,000 Income Cap');
+          if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-red-500 text-white';
+          set('#nsfasFinancialCheck', `❌ Income R${effectiveIncome.toLocaleString()} > R600,000 Cap`);
+          set('#nsfasCourseCheck', 'Accredited Institution');
+          set('#nsfasNRuleCheck', 'Within Duration');
+          set('#nsfasSummaryText', 'Your household income exceeds the statutory R600,000 threshold for disability funding. Consider private bursary funds such as ISFAP or commercial student loans.');
+        }
+        return;
+      }
+
+      // Standard Non-Disability
+      if (effectiveIncome <= 350000) {
+        set('#nsfasVerdictDisplay', '100% Full Bursary Approved');
+        set('#nsfasCategoryBadge', `Full Bursary Tier (Income <= R350k)`);
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-emerald-400 text-slate-950';
+        set('#nsfasFinancialCheck', `✓ Gross Income R${effectiveIncome.toLocaleString()} <= R350,000 Cap`);
+        set('#nsfasCourseCheck', `✓ ${institution === 'public_uni' ? 'Public University' : 'Public TVET College'} Approved`);
+        set('#nsfasNRuleCheck', '✓ Within N+1 Rule Limit');
+        set('#nsfasSummaryText', 'Full Free NSFAS Bursary Awarded! 100% of your tuition fees, university residence or accredited private accommodation, monthly living allowance (R1,650/mo), and book/laptop allowance are fully covered with zero debt or repayment obligation.');
+      } else if (effectiveIncome <= 600000) {
+        set('#nsfasVerdictDisplay', 'Missing Middle Loan Scheme');
+        set('#nsfasCategoryBadge', 'Missing Middle Tier (R350k – R600k)');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-blue-400 text-slate-950';
+        set('#nsfasFinancialCheck', `✓ Gross Income R${effectiveIncome.toLocaleString()} (Missing Middle Tier)`);
+        set('#nsfasCourseCheck', `✓ ${institution === 'public_uni' ? 'Public University' : 'Public TVET College'} Approved`);
+        set('#nsfasNRuleCheck', '✓ Within N+1 Rule Limit');
+        set('#nsfasSummaryText', 'Eligible for the DHET/NSFAS Missing Middle Comprehensive Loan & Bursary Scheme! Covers 100% tuition fees and accommodation. Up to 70% of the loan automatically converts into a non-repayable bursary if you achieve a >=70% course pass rate.');
+      } else {
+        set('#nsfasVerdictDisplay', 'Funding Ineligible');
+        set('#nsfasCategoryBadge', 'Household Income > R600,000');
+        if (badge) badge.className = 'inline-block text-xs font-bold px-3 py-1 rounded-full bg-red-500 text-white';
+        set('#nsfasFinancialCheck', `❌ Income R${effectiveIncome.toLocaleString()} > R600,000 Cap`);
+        set('#nsfasCourseCheck', 'Accredited Institution');
+        set('#nsfasNRuleCheck', 'Within Duration');
+        set('#nsfasSummaryText', 'Your combined household income exceeds the NSFAS and Missing Middle maximum threshold of R600,000 per annum. You are encouraged to apply for commercial student loans (Standard Bank, FNB, Absa, Nedbank, Capitec) or corporate bursary programmes.');
+      }
+    };
+
+    checkBtn.addEventListener('click', calculate);
+  }
+
   onReady(() => {
     initJamb();
     initGpa();
@@ -1040,5 +1404,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     initTargetMarkCalculator();
     initNsfasCalculator();
     initMatricSbaExamCalculator();
+    initSaUniversityAdmissionCalculator();
+    initNsfasEligibilityChecker();
   });
 })();

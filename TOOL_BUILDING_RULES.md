@@ -53,3 +53,12 @@ Any AI agent working on AfriWidget must read and follow these rules before build
   `<link rel="stylesheet" href="styles.css" />`
   `<link rel="stylesheet" href="/dist/styles.css" />`
 - Always verify that all inline SVG elements have explicit sizing classes (`w-5 h-5`, etc.) to prevent unstyled layout shifts and maintain 100% PageSpeed scores.
+
+### 9. Related Tools & Topic Cluster Interlinking Standard
+
+- Every new tool MUST implement the 4-layer internal linking framework:
+  1. Post-result workflow recommendation CTA.
+  2. Contextual in-article anchor links with descriptive keywords.
+  3. Pre-rendered "Related Tools" 3-to-4 card grid section before FAQ/Footer.
+  4. Reciprocal two-way linking from existing tools in the same cluster.
+- See **`RELATED_TOOLS_AND_INTERNAL_LINKING_STANDARDS.md`** for full templates and canonical cluster maps.

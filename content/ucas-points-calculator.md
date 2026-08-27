@@ -1,14 +1,14 @@
-## Comprehensive Guide to UCAS Tariff Points and UK University Admissions
+## Comprehensive Guide to UCAS Tariff Points, Qualification Conversions, and University Entry
 
-The Universities and Colleges Admissions Service (UCAS) Tariff system translates various post-16 academic and vocational qualifications into a standardized numerical point score. Used by universities and higher education colleges across the United Kingdom, UCAS points establish minimum entry requirements, compare diverse qualifications (such as A-Levels, BTECs, T-Levels, and the International Baccalaureate), and help admissions officers evaluate candidate profiles during the main application cycle and UCAS Clearing.
+The **Universities and Colleges Admissions Service (UCAS)** Tariff system translates a wide variety of post-16 academic and vocational qualifications into a standardized numerical point score. Used by higher education institutions across the United Kingdom, UCAS points establish minimum course entry requirements, enable fair comparisons between diverse qualifications (such as A-Levels, BTECs, T-Levels, and the International Baccalaureate), and assist university admissions tutors in evaluating candidate profiles during both the main application cycle and UCAS Clearing.
 
-AfriWidget’s **UCAS Points Calculator** provides a real-time, comprehensive qualification converter and university entry requirement comparator. Whether you are studying traditional A-Levels in the UK, international A-Levels across Africa and Asia, vocational BTEC diplomas, or T-Levels, this tool calculates your exact cumulative tariff points instantly and 100% privately in your browser.
+AfriWidget’s **UCAS Tariff Points Calculator** provides a real-time, comprehensive qualification converter and university entry requirement comparator. Whether you are completing traditional GCE A-Levels in the UK, international A-Levels across Africa, Pearson BTEC National diplomas, vocational T-Levels, or the International Baccalaureate, this tool calculates your exact cumulative tariff points instantly and 100% privately in your browser.
 
 ---
 
-## Official UCAS Tariff Points Conversion Table (2026 / 2027)
+## Official UCAS Tariff Points Conversion Tables (2026 / 2027)
 
-Under the official UCAS Tariff framework, points are allocated based on qualification size (guided learning hours) and grade achieved. Below are the official point allocations for the most common qualifications:
+Under the official UCAS Tariff framework, points are allocated based on qualification size (guided learning hours) and grade achieved.
 
 ### 1. GCE A-Levels & International A-Levels (AQA, Edexcel, OCR, CAIE, WJEC)
 - **A\*** = **56 points**
@@ -17,24 +17,25 @@ Under the official UCAS Tariff framework, points are allocated based on qualific
 - **C** = **32 points**
 - **D** = **24 points**
 - **E** = **16 points**
-- *Note: AS-Levels (Advanced Subsidiary) are worth 40% of a full A-Level: A = 20, B = 16, C = 12, D = 10, E = 6 points. If you complete the full A-Level in the same subject, only the A-Level points count (they do not double-count).*
+
+*Note on AS-Levels (Advanced Subsidiary): A = 20, B = 16, C = 12, D = 10, E = 6 points. If you complete the full A-Level in the same subject, only the full A-Level points are counted—they do not double-count.*
 
 ### 2. T-Levels (Technical Levels)
-- **Distinction\* (A\* on Core)** = **168 points** (equivalent to 3 A\* at A-Level)
-- **Distinction** = **144 points** (equivalent to 3 A grades at A-Level)
-- **Merit** = **120 points** (equivalent to 3 B grades at A-Level)
-- **Pass (C or above on Core)** = **96 points** (equivalent to 3 C grades at A-Level)
-- **Pass (D or E on Core)** = **72 points** (equivalent to 3 D grades at A-Level)
+- **Distinction\* (Grade A\* on Core)** = **168 points** (Equivalent to 3 A\* grades at A-Level)
+- **Distinction** = **144 points** (Equivalent to 3 A grades at A-Level)
+- **Merit** = **120 points** (Equivalent to 3 B grades at A-Level)
+- **Pass (Grade C or above on Core)** = **96 points** (Equivalent to 3 C grades at A-Level)
+- **Pass (Grade D or E on Core)** = **72 points** (Equivalent to 3 D grades at A-Level)
 
 ### 3. Pearson BTEC Nationals (RQF Level 3)
-- **BTEC Extended Diploma (1080 Guided Learning Hours - 3 A-Level Equivalent)**:
+- **BTEC National Extended Diploma (1080 GLH — 3 A-Level Equivalent)**:
   - D\*D\*D\* = **168 points** | D\*D\*D = **160 points** | D\*DD = **152 points**
   - DDD = **144 points** | DDM = **128 points** | DMM = **112 points**
   - MMM = **96 points** | MMP = **80 points** | MPP = **64 points** | PPP = **48 points**
-- **BTEC National Diploma (720 Guided Learning Hours - 2 A-Level Equivalent)**:
+- **BTEC National Diploma (720 GLH — 2 A-Level Equivalent)**:
   - D\*D\* = **112 points** | D\*D = **104 points** | DD = **96 points**
   - DM = **80 points** | MM = **64 points** | MP = **48 points** | PP = **32 points**
-- **BTEC National Extended Certificate (360 Guided Learning Hours - 1 A-Level Equivalent)**:
+- **BTEC National Extended Certificate (360 GLH — 1 A-Level Equivalent)**:
   - D\* = **56 points** | D = **48 points** | M = **32 points** | P = **16 points**
 
 ### 4. International Baccalaureate (IB) Diploma
@@ -59,85 +60,90 @@ Under the official UCAS Tariff framework, points are allocated based on qualific
 
 ## Formula for Calculating Total UCAS Tariff Points
 
-The formula for cumulative tariff points is the sum of points earned across all eligible, non-overlapping qualifications:
+The formula for cumulative tariff points is the sum of points earned across all non-overlapping qualifications:
 
-<div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto">
-  <p class="font-semibold text-amber-400 mb-2">Total UCAS Points =</p>
-  <p class="pl-4">Points(Qualification 1) + Points(Qualification 2) + Points(Qualification 3) + ... + Points(Supplementary Quals)</p>
-</div>
+**Total UCAS Tariff Points** = Points(Qualification 1) + Points(Qualification 2) + Points(Qualification 3) + ... + Points(Supplementary Qualifications)
 
-### Representative Student Profile Examples
+### The Non-Duplication Rule
+If a student holds an AS-Level and a full A-Level in the same subject (e.g. AS History Grade A = 20 points, and A-Level History Grade A = 48 points), only the higher qualification (A-Level History = 48 points) is included in the total.
 
-#### Example 1: Standard 3 A-Level Combination
-- **Mathematics**: Grade A &rarr; **48 points**
-- **Physics**: Grade B &rarr; **40 points**
-- **Economics**: Grade B &rarr; **40 points**
-- **Total UCAS Points** = 48 + 40 + 40 = **128 points** (Meets standard requirements for leading UK universities).
+---
 
-#### Example 2: Combined A-Levels + EPQ
-- **Biology**: Grade A\* &rarr; **56 points**
-- **Chemistry**: Grade A &rarr; **48 points**
-- **Psychology**: Grade A &rarr; **48 points**
-- **Extended Project Qualification (EPQ)**: Grade A &rarr; **24 points**
-- **Total UCAS Points** = 56 + 48 + 48 + 24 = **176 points** (Competitive for top-tier competitive programs).
+## How to Use the UCAS Tariff Points Calculator
 
-#### Example 3: BTEC National Extended Diploma
-- **BTEC Extended Diploma in Computing**: Grade DDM &rarr; **128 points**
+1. **Add Your Enrolled Qualifications**:
+   - Select your qualification type (A-Level, BTEC Extended Diploma, T-Level, IB Higher Level, EPQ, etc.).
+   - Enter the subject title (e.g. Mathematics, Biology, Business).
+2. **Select Your Achieved or Predicted Grades**:
+   - Choose your letter grade (A\*, A, B, etc.) or BTEC combination (DDD, DDM, etc.).
+3. **Use Quick Presets (Optional)**:
+   - Click presets like *Standard 3 A-Levels (AAB)*, *BTEC National Extended Diploma (DDM)*, or *A-Levels + EPQ* to populate typical pathways with one click.
+4. **Click "Calculate UCAS Points"**:
+   - The calculator sums your total points and checks your profile against national university admission bands.
+5. **Review University Admission Tiers**:
+   - Inspect which higher education tier your point score qualifies you for, copy your summary, or share results with university advisors.
 
 ---
 
 ## UK University Entry Requirement Tiers
 
-While specific course entry requirements vary, UK universities generally fall into four primary tariff bands:
+While specific university courses may require specific subject grades (e.g. AAA with an A in Chemistry), UK institutions generally align with four primary tariff bands:
 
 1. **Ultra-Competitive & Top Russell Group (152 to 168+ Points)**:
    - Typical Offers: A\*A\*A to A\*AA or D\*D\*D\* in BTEC.
-   - Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Edinburgh, Bristol.
-   - *Note: Many Russell Group universities make offers based on specific grades (e.g., AAA with an A in Maths) rather than raw points alone.*
-
+   - Examples: University of Oxford, University of Cambridge, Imperial College London, LSE, UCL, Durham, Warwick, Bristol, Edinburgh.
 2. **Selective & High-Ranking Universities (120 to 144 Points)**:
    - Typical Offers: AAB to BBB or DDD / DDM in BTEC.
    - Examples: University of Manchester, Leeds, Sheffield, Nottingham, Southampton, Birmingham, Exeter, York, Queen Mary.
-
-3. **Mid-Tier & Comprehensive Universities (96 to 112 Points)**:
-   - Typical Offers: BBC to CCC or DMM / MMM in BTEC.
-   - Examples: University of Sussex, Portsmouth, Oxford Brookes, Swansea, Strathclyde, Coventry, Nottingham Trent.
-
-4. **Widening Participation & Flexible Entry (64 to 88 Points)**:
-   - Typical Offers: CCD to DDD or MMP in BTEC.
-   - Ideal for foundation years, access programs, and vocational pathways.
+3. **Mid-Tariff & Broad Entry Universities (96 to 112 Points)**:
+   - Typical Offers: CCC to BCC or MMM in BTEC.
+   - Examples: Oxford Brookes, Nottingham Trent, Manchester Met, UWE Bristol, Portsmouth, Coventry, Kingston.
+4. **Foundation Year & Gateway Programs (48 to 80 Points)**:
+   - Typical Offers: CDD to EEE or PPP in BTEC.
+   - Designed for career changers, non-traditional qualifications, and foundation year progression pathways.
 
 ---
 
-## Key Rules for UCAS Points Calculation
+## Realistic Worked Examples
 
-Adhere to these critical UCAS guidelines when calculating your score:
+### Worked Example 1: Standard 3 A-Level Candidate
 
-1. **Avoid Double-Counting (AS and A-Level)**: If you achieve a B in AS Mathematics and later achieve an A in the full A-Level Mathematics, count only the 48 points from the full A-Level, not 48 + 16.
-2. **Subject-Specific Requirements**: Certain degree disciplines (such as Medicine, Engineering, Computer Science, and Law) mandate specific grades in required subjects (e.g., Grade A in A-Level Chemistry) in addition to overall tariff totals.
-3. **Maximum Point Caps**: Some universities place a cap on the number of qualifications they will count towards your tariff (e.g., "maximum of 3 A-Levels or equivalent plus EPQ").
-4. **General Studies & Critical Thinking**: Check individual university policies, as some institutions exclude General Studies or Critical Thinking from their points total.
+A student completes three A-Levels:
+- A-Level Mathematics: Grade A &rarr; **48 points**
+- A-Level Physics: Grade B &rarr; **40 points**
+- A-Level Economics: Grade B &rarr; **40 points**
+- **Total UCAS Points** = 48 + 40 + 40 = **128 points**
+- **Admissions Standing**: Fully eligible for Selective Russell Group and High-Ranking university courses requiring 120–128 Tariff points.
+
+### Worked Example 2: Combined A-Levels + EPQ
+
+A student completes two A-Levels, one BTEC Subsidiary, and an EPQ:
+- A-Level Biology: Grade A &rarr; **48 points**
+- A-Level Chemistry: Grade A &rarr; **48 points**
+- BTEC National Extended Certificate in Applied Science: Grade Distinction (D) &rarr; **48 points**
+- Extended Project Qualification (EPQ): Grade A &rarr; **24 points**
+- **Total UCAS Points** = 48 + 48 + 48 + 24 = **168 points**
+- **Admissions Standing**: Equivalent to three A\* grades at A-Level; qualifies for top-tier competitive admissions across the UK.
+
+### Worked Example 3: BTEC National Extended Diploma
+
+A student completes a Pearson BTEC Level 3 National Extended Diploma in Information Technology:
+- Grade Achieved: **DDM** (Distinction, Distinction, Merit)
+- **Total UCAS Points** = **128 points**
+- **Admissions Standing**: Matches the 128-point requirement for BSc Computer Science and Software Engineering degree programs across selective UK universities.
 
 ---
 
 ## Frequently Asked Questions
 
-### Do all UK universities use the UCAS Tariff system?
+### Do all UK universities use UCAS points for offers?
+Not all. While most UK universities make conditional offers in terms of UCAS Tariff points (e.g. "128 points from a minimum of three A-Levels"), highly competitive universities (such as Oxford, Cambridge, Imperial, and LSE) make specific subject grade offers (e.g. "A\*AA with an A\* in Mathematics").
 
-No. Many highly selective universities (such as Oxford, Cambridge, Imperial, and LSE) specify entry requirements in terms of specific letter grades (e.g., A\*AA or AAA) rather than tariff points. However, the majority of UK universities and polytechnics use UCAS points as their primary entry criteria or as a flexible benchmark during UCAS Clearing.
+### Can I include GCSEs in my UCAS Tariff total?
+No. GCSEs are Level 2 qualifications and do not carry UCAS Tariff points. The UCAS Tariff is reserved exclusively for Level 3 qualifications (A-Levels, BTECs, T-Levels, IB, Highers). However, passing GCSE English Language and Mathematics at Grade 4 or above is almost universally required alongside your Level 3 points.
 
-### Can I combine BTEC qualifications and A-Levels for UCAS points?
+### What is the maximum number of UCAS points I can present?
+There is no statutory maximum cap on total points; however, many universities specify that points must be achieved from a maximum of three or four discrete qualifications (e.g. "128 points from three A-Levels or equivalent, excluding General Studies").
 
-Yes. The UCAS Tariff system is designed specifically to combine diverse qualifications. For example, a student taking one BTEC National Diploma (DD = 96 points) plus one A-Level (Grade B = 40 points) earns a total of 136 UCAS points.
-
-### What is the highest number of UCAS points possible from 3 A-Levels?
-
-The maximum tariff score from three A-Levels is 168 points (3 &times; A\* grades at 56 points each). Students taking four A-Levels can achieve up to 224 points (4 &times; A\*).
-
-### Does an Extended Project Qualification (EPQ) count towards UCAS points?
-
-Yes. An EPQ is worth up to 28 UCAS points for an A\* grade (24 points for an A, 20 for a B). Many universities also make dual or reduced alternative offers for applicants holding a strong EPQ grade (e.g., offering ABB instead of AAB if you achieve an A in EPQ).
-
-### How do Scottish Highers translate into UCAS points?
-
-Scottish Advanced Highers award points identical to full A-Levels (A = 56, B = 48, C = 40, D = 32). Standard Scottish Highers award 33 points for an A, 27 for a B, 21 for a C, and 15 for a D.
+### Do International A-Levels (CAIE) receive the same UCAS points as UK A-Levels?
+Yes. Cambridge International (CAIE) A-Levels and Pearson Edexcel International A-Levels are awarded identical UCAS Tariff points (A\* = 56, A = 48, B = 40, C = 32, D = 24, E = 16) as domestic UK A-Levels.

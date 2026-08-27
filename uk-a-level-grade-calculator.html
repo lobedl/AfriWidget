@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- Google AdSense Official Script Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
+<title>A-Level Grade Calculator &amp; Paper Weighting Predictor – AfriWidget</title>
+  
+  <meta name="description" content="Calculate weighted A-Level grades from exam components and papers (Cambridge CAIE, Edexcel, AQA, OCR). Forecast marks needed for an A* or A and convert to UCAS points." />
+  <link rel="canonical" href="https://afriwidget.com/a-level-grade-calculator" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A-Level Grade Calculator &amp; Paper Weighting Predictor – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/a-level-grade-calculator" />
+  <meta property="og:description" content="Calculate weighted A-Level grades from exam components and papers (Cambridge CAIE, Edexcel, AQA, OCR). Forecast marks needed for an A* or A and convert to UCAS points." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A-Level Grade Calculator &amp; Paper Weighting Predictor – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate weighted A-Level grades from exam components and papers (Cambridge CAIE, Edexcel, AQA, OCR). Forecast marks needed for an A* or A and convert to UCAS points." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <script src="nav.js" defer></script>
+  <script src="footer.js" defer></script>
+  <script src="new-tools.js" defer></script>
+  <script src="share-results.js" defer></script>
+  <script src="universal-ai.js" defer></script>
+
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "A-Level Grade Calculator",
+    "description": "Calculate overall weighted A-Level percentage marks from exam papers, determine required marks for target grades (A*, A, B), and convert A-Level profiles into UCAS Tariff points.",
+    "url": "https://afriwidget.com/a-level-grade-calculator",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Editorial Board",
+      "url": "https://afriwidget.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://afriwidget.com/og-image.jpg"
+      }
+    },
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "AfriWidget Academic Measurement & Evaluation Committee"
+    },
+    "dateModified": "2026-08-20",
+    "citation": [
+      "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-advanced/cambridge-international-as-and-a-levels/",
+      "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels.html",
+      "https://www.ofqual.gov.uk/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://afriwidget.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education Tools",
+        "item": "https://afriwidget.com/education"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "A-Level Grade Calculator",
+        "item": "https://afriwidget.com/a-level-grade-calculator"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between raw marks and UMS in A-Levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Raw marks are the actual points scored on an exam paper (e.g., 62 out of 80). Because exam difficulty varies slightly between sessions, exam boards convert raw marks into Uniform Mark Scale (UMS) points or scaled marks using statistical grade boundaries to ensure fair grading across different years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is an A* awarded in modular A-Levels vs. linear A-Levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In modular A-Levels (such as Cambridge International or Edexcel IAL), an A* requires achieving an overall Grade A (80%+ overall) PLUS at least 90% across the final A2-Level units. In linear A-Levels (UK AQA/OCR/Edexcel), an A* is determined by a single composite raw mark threshold set for the combined total across all papers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an AS-Level mark be combined with A2 in linear UK A-Levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the UK linear system (since the 2015 reforms), standalone AS-Levels do not count towards the final full A-Level grade. All content is examined at the end of Year 2. However, in Cambridge International (CAIE) and Edexcel International (IAL), AS-Levels remain modular and carry a 50% weighting toward the full A-Level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I score just 1 mark below a grade boundary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your final mark is 1 mark below a grade boundary, your school's examination officer can request an official Review of Marking (Enquiry About Results) from the exam board. If your grade changes, the board issues an updated certificate and refunds the review fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do universities view 4 A-Levels compared to 3 A-Levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost all UK universities, including Oxford and Cambridge, base standard conditional offers on 3 A-Levels. Taking a 4th A-Level demonstrates academic breadth and gives you additional UCAS tariff points, but universities generally prefer top grades in 3 subjects (e.g., A*AA) over slightly lower grades across 4 subjects (e.g., AABB)."
+        }
+      }
+    ]
+  }
+]
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">A-Level Grade Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO & TOOL HEADER -->
+  <header class="bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 text-white py-10 px-4 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-indigo-500/30">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        Cambridge CAIE, Pearson Edexcel, AQA &amp; OCR
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">A-Level Grade Calculator</h1>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
+        Calculate weighted subject marks from exam papers, predict marks needed on upcoming components for an A* or A, and evaluate your multi-subject UCAS profile.
+      </p>
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-amber-300">
+        <span class="inline-flex items-center gap-1 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+        <span class="inline-flex items-center gap-1 bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700">📊 Component Weighting &amp; Target Deficit Engine</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 pt-4 pb-12 flex-grow w-full">
+
+    <!-- MODE TABS -->
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <button type="button" id="tabModeSubject" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-indigo-900 text-white shadow-md cursor-pointer">
+        📝 Single Subject Paper Weighting
+      </button>
+      <button type="button" id="tabModeProfile" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">
+        🎓 3 or 4-Subject Profile &amp; UCAS
+      </button>
+    </div>
+
+    <!-- CALCULATOR CONTAINER -->
+    <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 sm:p-8">
+
+      <!-- MODE 1: SINGLE SUBJECT PAPER WEIGHTING -->
+      <div id="modeSubjectContainer" class="space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Exam Papers &amp; Component Weighting</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Enter your achieved or mock marks and syllabus weights for each paper.</p>
+          </div>
+          <div class="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200">
+            <label for="targetGradeSelect" class="text-xs font-bold text-slate-700">Target Grade:</label>
+            <select id="targetGradeSelect" class="bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs font-bold text-indigo-900 outline-none focus:border-indigo-600">
+              <option value="A*" selected>Grade A* (90%)</option>
+              <option value="A">Grade A (80%)</option>
+              <option value="B">Grade B (70%)</option>
+              <option value="C">Grade C (60%)</option>
+              <option value="D">Grade D (50%)</option>
+              <option value="E">Grade E (40%)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- COMPONENT ROWS -->
+        <div id="componentList" class="space-y-3">
+          <!-- Dynamically inserted component rows -->
+        </div>
+
+        <!-- ADD COMPONENT & PRESETS -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-2">
+          <button type="button" id="addComponentBtn" class="inline-flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-indigo-200 transition-all cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+            + Add Paper / Coursework
+          </button>
+
+          <div class="flex items-center gap-1.5 text-xs text-slate-500">
+            <span class="font-medium">Presets:</span>
+            <button type="button" id="presetSciencesBtn" class="underline hover:text-indigo-700 cursor-pointer">Sciences (3 Papers)</button>
+            <span>•</span>
+            <button type="button" id="presetMathsBtn" class="underline hover:text-indigo-700 cursor-pointer">Maths (Pure + Applied)</button>
+          </div>
+        </div>
+
+        <!-- WEIGHT SUM INDICATOR -->
+        <div id="weightWarning" class="hidden p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <span id="weightWarningText">Total weight currently equals 0%. Completed components will be calculated based on entered weights.</span>
+        </div>
+
+        <button type="button" id="calcSubjectBtn" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base py-3.5 sm:py-4 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m-6 4h6m-6 4h6M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Calculate Weighted Subject Grade</span>
+        </button>
+      </div>
+
+      <!-- MODE 2: MULTI-SUBJECT PROFILE -->
+      <div id="modeProfileContainer" class="hidden space-y-6">
+        <div class="pb-4 border-b border-slate-100">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Multi-Subject A-Level Profile</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Add your 3 or 4 A-Level subjects to evaluate your composite grade profile and UCAS tariff equivalent.</p>
+        </div>
+
+        <div id="subjectProfileList" class="space-y-3">
+          <!-- Dynamically inserted subject rows -->
+        </div>
+
+        <div class="pt-2">
+          <button type="button" id="addProfileSubjectBtn" class="inline-flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-indigo-200 transition-all cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+            + Add Another A-Level Subject
+          </button>
+        </div>
+
+        <button type="button" id="calcProfileBtn" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base py-3.5 sm:py-4 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m-6 4h6m-6 4h6M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Calculate Profile &amp; UCAS Score</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- OUTPUT RESULTS (Hidden until calculated) -->
+    <div id="results" class="mt-8 space-y-6 hidden">
+
+      <!-- MODE 1 RESULT HIGHLIGHT -->
+      <div id="resSubjectCard" class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center shadow-2xl border border-slate-800 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <span class="text-xs sm:text-sm font-bold text-indigo-400 uppercase tracking-wider block">Estimated Subject Grade</span>
+        <div id="finalGradeDisplay" class="text-6xl sm:text-8xl font-black text-amber-300 tracking-tight my-2">A*</div>
+        <div id="weightedPercentageDisplay" class="text-xl sm:text-2xl font-bold text-slate-100">92.4% Weighted Overall</div>
+
+        <!-- DEFICIT FORECAST / TARGET GUIDANCE -->
+        <div class="mt-6 max-w-lg mx-auto bg-slate-800/90 rounded-xl p-4 border border-slate-700 text-left">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-1">Target Grade Forecast (<span id="targetGradeLabel">A*</span>)</span>
+          <p id="targetDeficitText" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            You need to average at least <strong>88.5%</strong> across your remaining uncompleted papers to achieve Grade A*.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 pt-6 border-t border-slate-800 text-left">
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">Completed Weight</span>
+            <span id="resCompletedWeight" class="text-lg sm:text-xl font-extrabold text-white mt-1 block">100%</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">Cambridge PUM / UMS</span>
+            <span id="resPUM" class="text-lg sm:text-xl font-extrabold text-indigo-300 mt-1 block">92 / 100</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">UCAS Tariff Equivalent</span>
+            <span id="resUCAS" class="text-lg sm:text-xl font-extrabold text-emerald-300 mt-1 block">56 Points</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODE 2 RESULT HIGHLIGHT -->
+      <div id="resProfileCard" class="hidden bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center shadow-2xl border border-slate-800 relative overflow-hidden">
+        <span class="text-xs sm:text-sm font-bold text-indigo-400 uppercase tracking-wider block">Composite A-Level Profile</span>
+        <div id="resProfileCombo" class="text-5xl sm:text-7xl font-black text-amber-300 tracking-tight my-2">A*AA</div>
+        <div id="resProfileTariff" class="text-xl sm:text-2xl font-bold text-slate-100">152 UCAS Tariff Points</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-6 pt-6 border-t border-slate-800 text-left">
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">University Admissions Band</span>
+            <span id="resProfileTier" class="text-lg sm:text-xl font-extrabold text-indigo-300 mt-1 block">Russell Group Elite</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-3.5 sm:p-4 border border-slate-700/50">
+            <span class="text-[11px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider block">Typical Course Match</span>
+            <span id="resProfileMatch" class="text-lg sm:text-xl font-extrabold text-emerald-300 mt-1 block">Top Engineering / Law / Medicine</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRADE BOUNDARIES REFERENCE CARD -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-md p-5 sm:p-6">
+        <h3 class="text-base font-extrabold text-slate-900 mb-3 flex items-center gap-2">
+          <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-800 text-xs font-black flex items-center justify-center">📐</span>
+          Standard A-Level Grade Thresholds &amp; Descriptors
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-center text-xs">
+          <div class="p-2.5 rounded-xl border border-emerald-200 bg-emerald-50">
+            <span class="font-black text-emerald-900 block text-base">A*</span>
+            <span class="text-emerald-700 font-semibold mt-0.5 block">90% - 100%</span>
+            <span class="text-[10px] text-emerald-600 block mt-0.5">56 UCAS pts</span>
+          </div>
+          <div class="p-2.5 rounded-xl border border-indigo-200 bg-indigo-50">
+            <span class="font-black text-indigo-900 block text-base">A</span>
+            <span class="text-indigo-700 font-semibold mt-0.5 block">80% - 89%</span>
+            <span class="text-[10px] text-indigo-600 block mt-0.5">48 UCAS pts</span>
+          </div>
+          <div class="p-2.5 rounded-xl border border-blue-200 bg-blue-50">
+            <span class="font-black text-blue-900 block text-base">B</span>
+            <span class="text-blue-700 font-semibold mt-0.5 block">70% - 79%</span>
+            <span class="text-[10px] text-blue-600 block mt-0.5">40 UCAS pts</span>
+          </div>
+          <div class="p-2.5 rounded-xl border border-teal-200 bg-teal-50">
+            <span class="font-black text-teal-900 block text-base">C</span>
+            <span class="text-teal-700 font-semibold mt-0.5 block">60% - 69%</span>
+            <span class="text-[10px] text-teal-600 block mt-0.5">32 UCAS pts</span>
+          </div>
+          <div class="p-2.5 rounded-xl border border-amber-200 bg-amber-50">
+            <span class="font-black text-amber-900 block text-base">D</span>
+            <span class="text-amber-700 font-semibold mt-0.5 block">50% - 59%</span>
+            <span class="text-[10px] text-amber-600 block mt-0.5">24 UCAS pts</span>
+          </div>
+          <div class="p-2.5 rounded-xl border border-slate-200 bg-slate-100">
+            <span class="font-black text-slate-800 block text-base">E</span>
+            <span class="text-slate-600 font-semibold mt-0.5 block">40% - 49%</span>
+            <span class="text-[10px] text-slate-500 block mt-0.5">16 UCAS pts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ADSENSE PLACEHOLDER: MID-PAGE BANNER -->
+    <div class="my-10 text-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2239061398283474"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </main>
+
+  <!-- AUTHORITATIVE EDUCATIONAL CONTENT & TRUST SIGNALS -->
+  <section id="toolGuide" class="max-w-4xl mx-auto px-4 py-12 text-slate-800 space-y-8"><h2>Comprehensive Guide to GCE A-Level Grading, Component Paper Weightings, and Grade Boundaries</h2><p>The General Certificate of Education Advanced Level (GCE A-Level) is the premier post-16 school-leaving qualification across the United Kingdom and international British curriculum schools worldwide. Regulated by <strong>Ofqual</strong> and administered by major examination boards—including <strong>AQA</strong>, <strong>Pearson Edexcel</strong>, <strong>OCR</strong>, <strong>WJEC Eduqas</strong>, and <strong>Cambridge Assessment International Education (CAIE)</strong>—A-Levels serve as the primary academic benchmark for undergraduate admissions into UK universities, medical schools, and international higher education institutions.</p><p>AfriWidget’s <strong>UK A-Level Grade Calculator</strong> provides a private, client-side tool to calculate your weighted composite mark across all examination components and coursework, forecast your achieved letter grade against official exam board grade boundaries, and determine the exact target marks required in remaining papers to secure your desired university entry grade.</p><hr class="my-6 border-slate-200" /><h2>Linear A-Levels vs Modular International A-Levels</h2><p>The assessment architecture differs between domestic UK qualifications and international variants:</p><h3>1. Linear A-Levels (England, AQA, Edexcel, OCR, Eduqas)</h3><ul><li>All examinations and practical components are sat at the end of Year 13 (A2 year).</li><li>AS-Level is decoupled from the full A-Level and does not contribute marks toward the final A-Level award.</li><li>Grades are determined by summing raw component paper marks weighted by their allocated contribution percentage.</li></ul><h3>2. Modular A-Levels (Cambridge International CAIE & Edexcel IAL)</h3><ul><li>Candidates sit AS-Level units at the end of Year 12 (50% contribution) and A2-Level units at the end of Year 13 (50% contribution).</li><li>Raw marks from individual units are converted into standardized <strong>Uniform Mark Scale (UMS)</strong> points before aggregation.</li><li>An <strong>A\</strong>* grade in Cambridge International / Edexcel IAL requires achieving an overall Grade A (80%+ cumulative UMS) <strong>and</strong> at least <strong>90% on the A2 components</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>Official A-Level Grading Scale & Performance Standards</h2><p>A-Level qualifications are graded on a 6-point scale from <strong>A\</strong>* (highest) down to <strong>E</strong> (minimum pass standard):</p><p>| A-Level Grade | Standard Raw Boundary (Typical Linear) | Modular UMS Benchmark | UCAS Tariff Points | Performance Standard | | :--- | :--- | :--- | :--- | :--- | | <strong>A\</strong>* | <strong>~75% – 85%+</strong> (varies by subject) | Overall 80% + <strong>90% in A2 units</strong> | <strong>56 Points</strong> | Exceptional Academic Distinction | | <strong>A</strong> | <strong>~65% – 75%</strong> | <strong>80% UMS</strong> (384 / 480 or 480 / 600) | <strong>48 Points</strong> | High Academic Merit (Russell Group Baseline) | | <strong>B</strong> | <strong>~55% – 65%</strong> | <strong>70% UMS</strong> (336 / 480 or 420 / 600) | <strong>40 Points</strong> | Strong Pass (Standard University Prerequisite) | | <strong>C</strong> | <strong>~45% – 55%</strong> | <strong>60% UMS</strong> (288 / 480 or 360 / 600) | <strong>32 Points</strong> | Good Pass (Meets standard tertiary entry) | | <strong>D</strong> | <strong>~38% – 45%</strong> | <strong>50% UMS</strong> (240 / 480 or 300 / 600) | <strong>24 Points</strong> | Minimum Pass (HE Certificate / Foundation level) | | <strong>E</strong> | <strong>~30% – 38%</strong> | <strong>40% UMS</strong> (192 / 480 or 240 / 600) | <strong>16 Points</strong> | Lowest Recognised Pass Threshold | | <strong>U</strong> | Below 30% | Below 40% UMS | <strong>0 Points</strong> | Ungraded / Unclassified |</p><p><em>Note: Raw mark grade boundaries fluctuate slightly every examination series to account for paper difficulty variations, governed by Ofqual's comparable outcomes policy.</em></p><hr class="my-6 border-slate-200" /><h2>Component Paper Weighting & Mathematical Formula</h2><p>To calculate your overall composite percentage mark across multiple examination papers and non-exam assessment (NEA / coursework):</p><h3>Step 1: Calculate Weighted Contribution for Each Component</h3><p>For each paper, calculate its weighted contribution:</p><p><strong>Component Contribution (%)</strong> = (Raw Mark Scored ÷ Maximum Raw Mark Available) × Component Weight Percentage</p><h3>Step 2: Sum Contributions to Determine Overall Mark</h3><p>Sum the contributions across all papers to find the composite percentage mark:</p><p><strong>Overall Composite Mark (%)</strong> = Sum of all Component Contributions (%)</p><h3>Step 3: Target Mark Planning for Remaining Papers</h3><p>If you have completed some papers and want to determine what mark you need on your remaining paper to achieve target grade <em>T</em>:</p><p><strong>Required Mark on Remaining Paper</strong> = [Target Mark Needed - Already Secured Weighted Points] ÷ (Remaining Component Weight ÷ 100)</p><hr class="my-6 border-slate-200" /><h2>How to Use the UK A-Level Grade Calculator</h2><ol><li><strong>Select Assessment Type & Examination Board</strong>:</li></ol><ul><li>Choose <strong>Linear A-Level (Raw Marks & Weights)</strong> or <strong>Modular A-Level (UMS Points)</strong>.</li><li>Select your examination board (AQA, Pearson Edexcel, OCR, Eduqas, Cambridge CAIE).</li></ul><ol><li><strong>Select Subject Preset or Add Custom Components</strong>:</li></ol><ul><li>Use built-in subject presets (e.g. <em>AQA A-Level Chemistry: 3 Papers 35%/35%/30%</em>, <em>Edexcel Mathematics: 3 Papers 33.3% each</em>, <em>OCR Physics A: 3 Papers 37%/37%/26%</em>, <em>Cambridge CAIE Economics</em>).</li><li>Alternatively, add custom rows for individual papers, practical endorsements, or coursework.</li></ul><ol><li><strong>Input Achieved Marks & Component Weights</strong>:</li></ol><ul><li>Enter your achieved raw score and the maximum available mark for each component.</li><li>For upcoming papers, leave marks blank or enter realistic trial marks.</li></ul><ol><li><strong>Set Your Target A-Level Grade</strong>:</li></ol><ul><li>Select your target grade (A\*, A, B, C, D, or E).</li></ul><ol><li><strong>Click "Calculate A-Level Grade & Target"</strong>:</li></ol><ul><li>Review your overall composite score, forecast grade, and exact marks needed on remaining papers.</li></ul><hr class="my-6 border-slate-200" /><h2>Realistic Worked Examples</h2><h3>Worked Example 1: Linear AQA A-Level Chemistry (3 Papers)</h3><p>An AQA A-Level Chemistry candidate has sat Paper 1 and Paper 2, aiming for an <strong>A Grade (Target: 68%)</strong>:</p><ul><li><strong>Paper 1 (Inorganic & Physical Chemistry)</strong>: Max Mark = 105. Scored = 78 marks. Weight = 35%.</li><li>Contribution = (78 ÷ 105) × 35% = 0.7429 × 35% = <strong>26.00%</strong></li><li><strong>Paper 2 (Organic & Physical Chemistry)</strong>: Max Mark = 105. Scored = 74 marks. Weight = 35%.</li><li>Contribution = (74 ÷ 105) × 35% = 0.7048 × 35% = <strong>24.67%</strong></li><li><strong>Paper 3 (Practical Skills & Synoptic)</strong>: Max Mark = 90. Weight = 30%. (Yet to be sat).</li></ul><p><strong>Progress Analysis</strong>:</p><ul><li>Points secured so far from Papers 1 & 2 = 26.00% + 24.67% = <strong>50.67%</strong>.</li><li>Points needed to reach 68.0% (Grade A) = 68.00% - 50.67% = <strong>17.33%</strong> out of the 30% available on Paper 3.</li><li><strong>Required Raw Mark on Paper 3</strong> = (17.33 ÷ 30) × 90 marks = 0.5777 × 90 = <strong>52.0 marks out of 90 (57.8%)</strong>.</li><li><strong>Conclusion</strong>: The student needs to achieve at least 52 out of 90 marks on Paper 3 to secure an overall Grade A.</li></ul><h3>Worked Example 2: Edexcel A-Level Mathematics (3 Equal Papers)</h3><p>A student sits Pearson Edexcel A-Level Mathematics (3 papers of 100 marks each, 33.33% weight each):</p><ul><li><strong>Paper 1 (Pure Mathematics 1)</strong>: 82 / 100 &rarr; 82 × (1/3) = <strong>27.33%</strong></li><li><strong>Paper 2 (Pure Mathematics 2)</strong>: 78 / 100 &rarr; 78 × (1/3) = <strong>26.00%</strong></li><li><strong>Paper 3 (Statistics & Mechanics)</strong>: 65 / 100 &rarr; 65 × (1/3) = <strong>21.67%</strong></li><li><strong>Total Composite Percentage</strong> = 27.33 + 26.00 + 21.67 = <strong>75.00%</strong> (225 / 300 total raw marks).</li><li><strong>Exam Board Grade Boundary Match</strong>: 75.0% satisfies the historical threshold for <strong>Grade A\</strong>* in Edexcel Mathematics.</li></ul><hr class="my-6 border-slate-200" /><h2>Key Rules & Guidelines</h2><ol><li><strong>Practical Endorsement / Non-Examined Assessment</strong>: In science subjects (Biology, Chemistry, Physics), the Practical Endorsement is reported separately on your certificate as a <em>Pass</em> or <em>Not Reported</em>. It does not contribute raw marks to your 9–1 / A\*–E grade, but top universities require a Practical Endorsement pass as a conditional offer requirement.</li><li><strong>Comparable Outcomes Policy</strong>: Regulated by Ofqual, statistical alignment ensures that it is not easier or harder to secure a specific grade across different exam boards (AQA vs Edexcel vs OCR).</li><li><strong>Special Consideration & Remarking</strong>: If you are within 1 or 2 raw marks of a higher grade boundary, schools can request an official Review of Marking (ROM) through the examination board.</li></ol><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions</h2><details><summary>What is the difference between an A and an A* at A-Level?</summary><div><p>For linear UK A-Levels, Grade A\<em> requires achieving a higher overall raw mark boundary set by the exam board (typically between 72% and 82% depending on the subject). For modular international A-Levels (CAIE/Edexcel IAL), Grade A\</em> specifically requires an overall Grade A (80%+ UMS) combined with at least 90% UMS on the A2 units.</p></div></details><details><summary>Do AS-Level grades count toward my final A-Level in England?</summary><div><p>No. In England, standalone AS-Levels taken under reformed linear specifications are completely decoupled from the full A-Level and do not count toward your final A-Level grade. However, in Cambridge International (CAIE) and Edexcel International (IAL), the AS-Level constitutes exactly 50% of the full A-Level qualification.</p></div></details><details><summary>Can I drop my lowest paper mark?</summary><div><p>No. All prescribed component papers and compulsory coursework units must be completed and combined to award a full A-Level qualification.</p></div></details><details><summary>How do universities view A-Level resits?</summary><div><p>Most UK universities (including Russell Group institutions) accept resit grades for admissions. However, highly competitive courses like Medicine, Dentistry, and Veterinary Science at Oxford, Cambridge, and Imperial may specify that all grades must be achieved in a single exam sitting, unless extenuating circumstances are approved.</p></div></details></section>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    const GRADE_THRESHOLDS = [
+      { grade: 'A*', min: 90, ucas: 56 },
+      { grade: 'A', min: 80, ucas: 48 },
+      { grade: 'B', min: 70, ucas: 40 },
+      { grade: 'C', min: 60, ucas: 32 },
+      { grade: 'D', min: 50, ucas: 24 },
+      { grade: 'E', min: 40, ucas: 16 },
+      { grade: 'U', min: 0, ucas: 0 }
+    ];
+
+    const TARIFF_POINTS_MAP = {
+      'A*': 56,
+      'A': 48,
+      'B': 40,
+      'C': 32,
+      'D': 24,
+      'E': 16,
+      'U': 0
+    };
+
+    function onReady(fn) {
+      if (document.readyState !== 'loading') fn();
+      else document.addEventListener('DOMContentLoaded', fn);
+    }
+
+    onReady(() => {
+      let currentMode = 'subject'; // 'subject' or 'profile'
+      let hasCalculatedSubject = false;
+      let hasCalculatedProfile = false;
+
+      const tabSubject = document.getElementById('tabModeSubject');
+      const tabProfile = document.getElementById('tabModeProfile');
+      const modeSubjectContainer = document.getElementById('modeSubjectContainer');
+      const modeProfileContainer = document.getElementById('modeProfileContainer');
+      const resultsDiv = document.getElementById('results');
+      const resSubjectCard = document.getElementById('resSubjectCard');
+      const resProfileCard = document.getElementById('resProfileCard');
+      const componentList = document.getElementById('componentList');
+      const subjectProfileList = document.getElementById('subjectProfileList');
+      const targetGradeSelect = document.getElementById('targetGradeSelect');
+
+      // Mode switching
+      tabSubject.addEventListener('click', () => {
+        currentMode = 'subject';
+        tabSubject.className = 'px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-indigo-900 text-white shadow-md cursor-pointer';
+        tabProfile.className = 'px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer';
+        modeSubjectContainer.classList.remove('hidden');
+        modeProfileContainer.classList.add('hidden');
+        
+        if (hasCalculatedSubject) {
+          resultsDiv.classList.remove('hidden');
+          resSubjectCard.classList.remove('hidden');
+          resProfileCard.classList.add('hidden');
+        } else {
+          resultsDiv.classList.add('hidden');
+        }
+      });
+
+      tabProfile.addEventListener('click', () => {
+        currentMode = 'profile';
+        tabProfile.className = 'px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-indigo-900 text-white shadow-md cursor-pointer';
+        tabSubject.className = 'px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer';
+        modeProfileContainer.classList.remove('hidden');
+        modeSubjectContainer.classList.add('hidden');
+        
+        if (hasCalculatedProfile) {
+          resultsDiv.classList.remove('hidden');
+          resProfileCard.classList.remove('hidden');
+          resSubjectCard.classList.add('hidden');
+        } else {
+          resultsDiv.classList.add('hidden');
+        }
+      });
+
+      // MODE 1: COMPONENT ROW CREATOR
+      function createComponentRow(name = '', weight = 33.33, score = '', max = 100) {
+        const row = document.createElement('div');
+        row.className = 'comp-row bg-slate-50 border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 transition-all hover:border-indigo-300';
+        row.innerHTML = `
+          <div class="w-full sm:w-2/5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Paper / Component Name</label>
+            <input type="text" class="comp-name w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-semibold text-slate-800 outline-none focus:border-indigo-600" placeholder="e.g. Paper 1 (Multiple Choice)" value="${name}" />
+          </div>
+          <div class="w-full sm:w-1/5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Weight (%)</label>
+            <input type="number" class="comp-weight w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-bold text-slate-800 outline-none focus:border-indigo-600" placeholder="35" min="1" max="100" step="0.5" value="${weight}" />
+          </div>
+          <div class="w-full sm:w-1/5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Score Achieved</label>
+            <input type="number" class="comp-score w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-bold text-indigo-900 outline-none focus:border-indigo-600" placeholder="Leave blank if future" min="0" max="1000" step="0.5" value="${score}" />
+          </div>
+          <div class="w-full sm:w-1/5">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Max Marks</label>
+            <input type="number" class="comp-max w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-semibold text-slate-700 outline-none focus:border-indigo-600" placeholder="100" min="1" max="1000" value="${max}" />
+          </div>
+          <div class="sm:self-end pb-1 flex justify-end">
+            <button type="button" class="del-comp text-slate-400 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors cursor-pointer" title="Remove paper">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `;
+
+        row.querySelector('.del-comp').addEventListener('click', () => {
+          row.remove();
+          checkWeights();
+          if (hasCalculatedSubject) calculateSubject();
+        });
+
+        row.querySelectorAll('input').forEach(inp => {
+          inp.addEventListener('input', () => {
+            checkWeights();
+            if (hasCalculatedSubject) calculateSubject();
+          });
+        });
+
+        componentList.appendChild(row);
+        checkWeights();
+      }
+
+      function checkWeights() {
+        const rows = document.querySelectorAll('.comp-row');
+        let totalW = 0;
+        rows.forEach(r => {
+          const w = parseFloat(r.querySelector('.comp-weight').value) || 0;
+          totalW += w;
+        });
+
+        const warningEl = document.getElementById('weightWarning');
+        const warningText = document.getElementById('weightWarningText');
+        if (Math.abs(totalW - 100) > 0.5) {
+          warningEl.classList.remove('hidden');
+          warningText.textContent = `Total component weights currently equal ${totalW.toFixed(1)}% (Standard A-Level total is 100%).`;
+        } else {
+          warningEl.classList.add('hidden');
+        }
+      }
+
+      // Populate default Science components
+      function setSciencePreset() {
+        componentList.innerHTML = '';
+        createComponentRow('Paper 1 (Multiple Choice)', 15.5, 34, 40);
+        createComponentRow('Paper 2 (Structured Theory)', 23, 48, 60);
+        createComponentRow('Paper 3 (Practical / Advanced)', 11.5, 32, 40);
+        createComponentRow('Paper 4 (A2 Structured Theory)', 38.5, 78, 100);
+        createComponentRow('Paper 5 (Planning & Evaluation)', 11.5, 24, 30);
+      }
+
+      function setMathsPreset() {
+        componentList.innerHTML = '';
+        createComponentRow('Pure Mathematics 1 (P1)', 30, 65, 75);
+        createComponentRow('Pure Mathematics 3 (P3)', 30, 62, 75);
+        createComponentRow('Mechanics (M1)', 20, 42, 50);
+        createComponentRow('Probability & Statistics (S1)', 20, 44, 50);
+      }
+
+      setSciencePreset();
+
+      document.getElementById('addComponentBtn').addEventListener('click', () => {
+        createComponentRow('New Paper', 20, '', 100);
+      });
+
+      document.getElementById('presetSciencesBtn').addEventListener('click', () => {
+        setSciencePreset();
+        if (hasCalculatedSubject) calculateSubject();
+      });
+
+      document.getElementById('presetMathsBtn').addEventListener('click', () => {
+        setMathsPreset();
+        if (hasCalculatedSubject) calculateSubject();
+      });
+
+      targetGradeSelect.addEventListener('change', () => {
+        if (hasCalculatedSubject) calculateSubject();
+      });
+
+      function calculateSubject() {
+        const rows = document.querySelectorAll('.comp-row');
+        let completedWeightedSum = 0;
+        let completedWeightTotal = 0;
+        let uncompletedWeightTotal = 0;
+
+        rows.forEach(r => {
+          const w = parseFloat(r.querySelector('.comp-weight').value) || 0;
+          const scoreVal = r.querySelector('.comp-score').value.trim();
+          const max = parseFloat(r.querySelector('.comp-max').value) || 100;
+
+          if (scoreVal !== '') {
+            const score = parseFloat(scoreVal) || 0;
+            const pct = Math.min(100, Math.max(0, (score / max) * 100));
+            completedWeightedSum += (pct * (w / 100));
+            completedWeightTotal += w;
+          } else {
+            uncompletedWeightTotal += w;
+          }
+        });
+
+        // If partially completed, normalize to 100% for currently achieved percentage
+        let currentOverallPct = completedWeightTotal > 0 ? (completedWeightedSum / (completedWeightTotal / 100)) : 0;
+        currentOverallPct = Math.min(100, Math.max(0, currentOverallPct));
+
+        // Determine grade
+        let achievedGrade = 'U';
+        let ucasPoints = 0;
+        for (const t of GRADE_THRESHOLDS) {
+          if (currentOverallPct >= t.min) {
+            achievedGrade = t.grade;
+            ucasPoints = t.ucas;
+            break;
+          }
+        }
+
+        document.getElementById('finalGradeDisplay').textContent = achievedGrade;
+        document.getElementById('weightedPercentageDisplay').textContent = `${currentOverallPct.toFixed(1)}% Weighted Score`;
+        document.getElementById('resCompletedWeight').textContent = `${completedWeightTotal.toFixed(1)}%`;
+        document.getElementById('resPUM').textContent = `${Math.round(currentOverallPct)} / 100`;
+        document.getElementById('resUCAS').textContent = `${ucasPoints} Points`;
+
+        // Deficit calculation for target grade
+        const targetG = targetGradeSelect.value;
+        const targetObj = GRADE_THRESHOLDS.find(t => t.grade === targetG) || GRADE_THRESHOLDS[0];
+        const targetMin = targetObj.min;
+        document.getElementById('targetGradeLabel').textContent = targetG;
+
+        const targetDeficitText = document.getElementById('targetDeficitText');
+        if (uncompletedWeightTotal <= 0) {
+          if (currentOverallPct >= targetMin) {
+            targetDeficitText.innerHTML = `🎉 <strong>Target Achieved!</strong> Your completed components achieve <strong>${currentOverallPct.toFixed(1)}%</strong>, securing your target <strong>Grade ${targetG}</strong>.`;
+          } else {
+            const diff = (targetMin - currentOverallPct).toFixed(1);
+            targetDeficitText.innerHTML = `⚠️ Your final score of <strong>${currentOverallPct.toFixed(1)}%</strong> is <strong>${diff}%</strong> below the threshold for Grade ${targetG} (${targetMin}%).`;
+          }
+        } else {
+          // Calculate needed mark on remaining
+          const pointsNeeded = targetMin - completedWeightedSum;
+          const requiredPctOnRemaining = (pointsNeeded / (uncompletedWeightTotal / 100));
+
+          if (requiredPctOnRemaining <= 0) {
+            targetDeficitText.innerHTML = `🎉 You have already mathematically secured <strong>Grade ${targetG}</strong> with your completed papers!`;
+          } else if (requiredPctOnRemaining > 100) {
+            targetDeficitText.innerHTML = `⚠️ Mathematically challenging: You would need over <strong>100% (${requiredPctOnRemaining.toFixed(1)}%)</strong> on remaining papers (${uncompletedWeightTotal.toFixed(1)}% weight) to reach Grade ${targetG}.`;
+          } else {
+            targetDeficitText.innerHTML = `You need to average at least <strong>${requiredPctOnRemaining.toFixed(1)}%</strong> across your remaining ${uncompletedWeightTotal.toFixed(1)}% uncompleted papers to secure <strong>Grade ${targetG}</strong>.`;
+          }
+        }
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate', { event_category: 'calculator', event_label: 'A-Level Subject Grade Calculator', value: Math.round(currentOverallPct) });
+        }
+      }
+
+      document.getElementById('calcSubjectBtn').addEventListener('click', () => {
+        hasCalculatedSubject = true;
+        calculateSubject();
+        resultsDiv.classList.remove('hidden');
+        resSubjectCard.classList.remove('hidden');
+        resProfileCard.classList.add('hidden');
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // MODE 2: MULTI-SUBJECT PROFILE
+      function createProfileRow(subjectName = '', grade = 'A') {
+        const row = document.createElement('div');
+        row.className = 'prof-row bg-slate-50 border border-slate-200 rounded-xl p-3 sm:p-4 flex items-center justify-between gap-3';
+        row.innerHTML = `
+          <div class="flex-grow">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">A-Level Subject</label>
+            <input type="text" class="prof-name w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-semibold text-slate-800 outline-none focus:border-indigo-600" placeholder="e.g. Mathematics" value="${subjectName}" />
+          </div>
+          <div class="w-28 sm:w-36">
+            <label class="text-[11px] font-bold text-slate-500 uppercase block mb-1">Grade</label>
+            <select class="prof-grade w-full bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs sm:text-sm font-bold text-indigo-900 outline-none focus:border-indigo-600">
+              <option value="A*" ${grade === 'A*' ? 'selected' : ''}>A* (56 pts)</option>
+              <option value="A" ${grade === 'A' ? 'selected' : ''}>A (48 pts)</option>
+              <option value="B" ${grade === 'B' ? 'selected' : ''}>B (40 pts)</option>
+              <option value="C" ${grade === 'C' ? 'selected' : ''}>C (32 pts)</option>
+              <option value="D" ${grade === 'D' ? 'selected' : ''}>D (24 pts)</option>
+              <option value="E" ${grade === 'E' ? 'selected' : ''}>E (16 pts)</option>
+            </select>
+          </div>
+          <div class="self-end pb-1">
+            <button type="button" class="del-prof text-slate-400 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors cursor-pointer" title="Remove subject">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `;
+
+        row.querySelector('.del-prof').addEventListener('click', () => {
+          row.remove();
+          if (hasCalculatedProfile) calculateProfile();
+        });
+
+        row.querySelectorAll('input, select').forEach(el => {
+          el.addEventListener('change', () => {
+            if (hasCalculatedProfile) calculateProfile();
+          });
+        });
+
+        subjectProfileList.appendChild(row);
+      }
+
+      // Default 3 subjects
+      createProfileRow('Mathematics', 'A*');
+      createProfileRow('Physics', 'A');
+      createProfileRow('Chemistry', 'A');
+
+      document.getElementById('addProfileSubjectBtn').addEventListener('click', () => {
+        createProfileRow('', 'B');
+        if (hasCalculatedProfile) calculateProfile();
+      });
+
+      function calculateProfile() {
+        const rows = document.querySelectorAll('.prof-row');
+        let totalTariff = 0;
+        const grades = [];
+
+        rows.forEach(r => {
+          const g = r.querySelector('.prof-grade').value;
+          grades.push(g);
+          totalTariff += (TARIFF_POINTS_MAP[g] || 0);
+        });
+
+        const combo = grades.join('');
+        document.getElementById('resProfileCombo').textContent = combo || '—';
+        document.getElementById('resProfileTariff').textContent = `${totalTariff} UCAS Tariff Points`;
+
+        let tier = 'Modern / Foundation Access';
+        let match = 'Flexible Degree Pathways';
+        if (totalTariff >= 160) {
+          tier = 'Russell Group Ultra-Elite';
+          match = 'Oxford, Cambridge, Imperial, Top Medicine';
+        } else if (totalTariff >= 144) {
+          tier = 'Leading Russell Group Tier';
+          match = 'UCL, LSE, Warwick, Manchester, Edinburgh';
+        } else if (totalTariff >= 128) {
+          tier = 'Selective Research Universities';
+          match = 'Leeds, Sheffield, Birmingham, Southampton';
+        } else if (totalTariff >= 112) {
+          tier = 'Mid-Tier Comprehensive';
+          match = 'Sussex, Swansea, Portsmouth, Oxford Brookes';
+        }
+
+        document.getElementById('resProfileTier').textContent = tier;
+        document.getElementById('resProfileMatch').textContent = match;
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate', { event_category: 'calculator', event_label: 'A-Level Multi-Subject Profile', value: totalTariff });
+        }
+      }
+
+      document.getElementById('calcProfileBtn').addEventListener('click', () => {
+        hasCalculatedProfile = true;
+        calculateProfile();
+        resultsDiv.classList.remove('hidden');
+        resProfileCard.classList.remove('hidden');
+        resSubjectCard.classList.add('hidden');
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+  <script src="/nav.js" defer></script>
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
+</body>
+</html>

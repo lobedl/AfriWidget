@@ -142,6 +142,47 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
   <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="/" class="flex items-center space-x-2">
@@ -284,6 +325,14 @@
          <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
          <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
          <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
          <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
          <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
          <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
@@ -383,11 +432,9 @@
     function escapeXml(value){return value.replace(/[<>&'"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));}
     function updateSitemap(){const urls=$('siteUrls').value.split(/\r?\n/).map(u=>u.trim()).filter(Boolean);const priority=$('priority').value;const frequency=$('frequency').value;const date=new Date().toISOString().slice(0,10);let lines=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];urls.forEach(url=>{lines.push('  <url>','    <loc>'+escapeXml(url)+'</loc>');if($('includeDate').checked)lines.push('    <lastmod>'+date+'</lastmod>');lines.push('    <changefreq>'+frequency+'</changefreq>','    <priority>'+priority+'</priority>','  </url>');});lines.push('</urlset>');$('sitemapOutput').textContent=lines.join('\n');$('sitemapStatus').textContent=urls.length+' URL'+(urls.length===1?'':'s')+' included';}
     function downloadFile(name,text){const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([text],{type:'application/xml'}));link.download=name;link.click();URL.revokeObjectURL(link.href);}
-    ['siteUrls','priority','frequency','includeDate'].forEach(id=>$(id).addEventListener('input',updateSitemap));['priority','frequency','includeDate'].forEach(id=>$(id).addEventListener('change',updateSitemap));
-     $('generateSitemap').addEventListener('click',()=>{updateSitemap();$('sitemapCopyStatus').textContent='sitemap.xml generated locally.';});
-     $('copySitemap').addEventListener('click',()=>navigator.clipboard.writeText($('sitemapOutput').textContent).then(()=>$('sitemapCopyStatus').textContent='XML copied to your clipboard.').catch(()=>$('sitemapCopyStatus').textContent='Copy was unavailable; select the XML manually.'));
+    $('generateSitemap').addEventListener('click',()=>{updateSitemap();$('sitemapCopyStatus').textContent='sitemap.xml generated locally.';});
+    $('copySitemap').addEventListener('click',()=>navigator.clipboard.writeText($('sitemapOutput').textContent).then(()=>$('sitemapCopyStatus').textContent='XML copied to your clipboard.').catch(()=>$('sitemapCopyStatus').textContent='Copy was unavailable; select the XML manually.'));
     $('downloadSitemap').addEventListener('click',()=>downloadFile('sitemap.xml',$('sitemapOutput').textContent));
-    onReady(()=>{updateSitemap();});
   </script>
 </body>
 </html>

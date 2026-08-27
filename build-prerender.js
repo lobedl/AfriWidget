@@ -181,6 +181,14 @@ const sharedFooterMarkup = `<footer class="bg-slate-900 text-slate-300 pt-14 pb-
          <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
          <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
          <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
          <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
          <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
          <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
@@ -261,98 +269,54 @@ const sharedFooterMarkup = `<footer class="bg-slate-900 text-slate-300 pt-14 pb-
 </footer>`;
 
 // Category Mapping for Breadcrumb Generation
-const categoryMap = {
-  // Health Tools
-  "bmi-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "body-fat-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "daily-calorie-needs-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "calorie-burn-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "calorie-deficit-planner.html": { category: "Health Tools", categoryUrl: "/health" },
-  "ideal-weight-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "healthy-weight-range-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "pediatric-dosage-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "ovulation-cycle-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "water-intake-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "hydration-reminder-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "blood-donation-eligibility-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-  "macro-calculator.html": { category: "Health Tools", categoryUrl: "/health" },
-
-  // Education & Admissions Tools
-  "gpa-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "tertiary-gpa-cgpa-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "wassce-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "bece-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "bece-cssps-placement-estimator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "jamb-utme-aggregate-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "kcse-kuccps-cluster-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "kcse-eligibility-tier-checker.html": { category: "Education Tools", categoryUrl: "/education" },
-  "south-african-aps-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "matric-sba-exam-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "icass-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "south-african-tvet-nated-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "tvet-exam-target-mark-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "tvet-ncv-pass-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "nsfas-tvet-allowance-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "igcse-alevel-gpa-converter.html": { category: "Education Tools", categoryUrl: "/education" },
-  "ucas-points-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "a-level-grade-calculator.html": { category: "Education Tools", categoryUrl: "/education" },
-  "olevel-subject-combination-checker.html": { category: "Education Tools", categoryUrl: "/education" },
-  "university-cutoff-eligibility-checker.html": { category: "Education Tools", categoryUrl: "/education" },
-
-  // Finance Tools
-  "loan-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "mortgage-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "compound-interest.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "savings-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "savings-goal-timeline-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "debt-payoff-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "roi-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "paypal-fee-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "currency-converter.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "percentage-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "hourly-to-salary.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "remote-salary-converter.html": { category: "Finance Tools", categoryUrl: "/finance" },
-  "creator-sponsorship-calculator.html": { category: "Finance Tools", categoryUrl: "/finance" },
-
-  // Business & Freelance Tools
-  "profit-margin-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "break-even-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "startup-burn-rate-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "startup-cost-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "freelance-rate-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "freelance-hourly-rate-pricing-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "pricing-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "invoice-receipt-generator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "website-valuation-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-  "reverse-adsense-calculator.html": { category: "Business Tools", categoryUrl: "/business" },
-
-  // Real Estate Tools
-  "rent-affordability.html": { category: "Real Estate Tools", categoryUrl: "/real-estate" },
-
-  // Category Hubs
-  "health.html": { isHub: true, title: "Health & Wellness Tools" },
-  "education.html": { isHub: true, title: "Education & Academic Tools" },
-  "finance.html": { isHub: true, title: "Finance & Wealth Tools" },
-  "productivity.html": { isHub: true, title: "Productivity & Utility Tools" },
-  "business.html": { isHub: true, title: "Business & Freelance Tools" },
-  "real-estate.html": { isHub: true, title: "Real Estate & Housing Tools" },
-  "admissions.html": { isHub: true, title: "African Admissions Calculators", category: "Education Tools", categoryUrl: "/education" },
-  "widgets.html": { isHub: true, title: "All Tools Directory" },
-  "success-stories.html": { isHub: true, title: "User Success Stories" },
-
-  // Informative & Policy Pages
-  "about.html": { isHub: true, title: "About AfriWidget" },
-  "contact.html": { isHub: true, title: "Contact Us" },
-  "privacy-policy.html": { isHub: true, title: "Privacy Policy" },
-  "terms.html": { isHub: true, title: "Terms of Service" },
-  "cookie-policy.html": { isHub: true, title: "Cookie Policy" },
-  "adsense-disclaimer.html": { isHub: true, title: "AdSense & Advertising Disclaimer" },
-  "faq.html": { isHub: true, title: "Frequently Asked Questions" },
-  "404.html": { isHub: true, title: "Page Not Found (404)" },
-
-  // Home
-  "index.html": { isHome: true, title: "Free Online Tools & Calculators" }
+const catUrlMap = {
+  health: { name: "Health Tools", url: "/health" },
+  education: { name: "Education Tools", url: "/education" },
+  finance: { name: "Finance Tools", url: "/finance" },
+  business: { name: "Business Tools", url: "/business" },
+  productivity: { name: "Productivity Tools", url: "/productivity" },
+  tech: { name: "Productivity Tools", url: "/productivity" },
+  realestate: { name: "Real Estate Tools", url: "/real-estate" },
+  "real-estate": { name: "Real Estate Tools", url: "/real-estate" }
 };
+
+// Build category map from widgets.html data-category attributes
+const categoryMap = {};
+
+try {
+  const widgetsHtml = fs.readFileSync(path.join(process.cwd(), 'widgets.html'), 'utf8');
+  const cardMatches = widgetsHtml.matchAll(/<a[^>]+href=["\x27]\/?([a-z0-9-]+)(?:\.html)?["\x27][^>]*data-category=["\x27]([a-z-]+)["\x27]/g);
+  for (const m of cardMatches) {
+    const slug = m[1];
+    const cat = m[2];
+    const info = catUrlMap[cat] || { name: "Productivity Tools", url: "/productivity" };
+    categoryMap[slug + ".html"] = { category: info.name, categoryUrl: info.url };
+  }
+} catch (e) {
+  console.warn("Could not read widgets.html for categoryMap:", e.message);
+}
+
+// Special Hubs and Policy Pages
+categoryMap["health.html"] = { isHub: true, title: "Health & Wellness Tools" };
+categoryMap["education.html"] = { isHub: true, title: "Education & Academic Tools" };
+categoryMap["finance.html"] = { isHub: true, title: "Finance & Wealth Tools" };
+categoryMap["productivity.html"] = { isHub: true, title: "Productivity & Utility Tools" };
+categoryMap["business.html"] = { isHub: true, title: "Business & Freelance Tools" };
+categoryMap["real-estate.html"] = { isHub: true, title: "Real Estate & Housing Tools" };
+categoryMap["admissions.html"] = { isHub: true, title: "African Admissions Calculators", category: "Education Tools", categoryUrl: "/education" };
+categoryMap["widgets.html"] = { isHub: true, title: "All Tools Directory" };
+categoryMap["success-stories.html"] = { isHub: true, title: "User Success Stories" };
+
+categoryMap["about.html"] = { isHub: true, title: "About AfriWidget" };
+categoryMap["contact.html"] = { isHub: true, title: "Contact Us" };
+categoryMap["privacy-policy.html"] = { isHub: true, title: "Privacy Policy" };
+categoryMap["terms.html"] = { isHub: true, title: "Terms of Service" };
+categoryMap["cookie-policy.html"] = { isHub: true, title: "Cookie Policy" };
+categoryMap["adsense-disclaimer.html"] = { isHub: true, title: "AdSense & Advertising Disclaimer" };
+categoryMap["faq.html"] = { isHub: true, title: "Frequently Asked Questions" };
+categoryMap["404.html"] = { isHub: true, title: "Page Not Found (404)" };
+
+categoryMap["index.html"] = { isHome: true, title: "Free Online Tools & Calculators" };
 
 function generateBreadcrumbHtml(filename, content) {
   const slug = filename.replace(/\.html$/, '');
@@ -541,6 +505,7 @@ allHtmlFiles.forEach(htmlFile => {
 
     // Ensure CSS links are clean
     headInner = headInner.replace(/<!--\s*Multi-Path CSS Inclusion[\s\S]*?-->/gi, '');
+    headInner = headInner.replace(/<link\s+rel=["']preload["'][^>]*styles\.css["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?(?:dist\/)?styles\.css["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?branding\.css["'][^>]*\/?>\s*/gi, '');
     headInner = headInner.replace(/<link\s+rel=["']stylesheet["']\s+href=["']\/?cards\.css["'][^>]*\/?>\s*/gi, '');
@@ -552,6 +517,11 @@ allHtmlFiles.forEach(htmlFile => {
     const optimizedHeadPrefix = `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -567,11 +537,6 @@ allHtmlFiles.forEach(htmlFile => {
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 `;
 
     headInner = optimizedHeadPrefix + headInner.trimStart();
@@ -643,7 +608,10 @@ allHtmlFiles.forEach(htmlFile => {
 
   // Pre-render Shared Breadcrumbs
   const breadcrumbHtml = generateBreadcrumbHtml(htmlFile, content);
-  content = content.replace(/\s*<!-- Visual Breadcrumb Navigation -->[\s\S]*?<\/div>\s*<\/div>/g, '');
+  // Robustly remove any existing breadcrumbs (regardless of comment syntax or formatting)
+  content = content.replace(/\s*<!--\s*(?:Visual|Pre-rendered|Shared)?\s*Breadcrumb(?:\s*Navigation)?\s*-->[\s\S]*?<nav\s+aria-label=["']Breadcrumb["']>[\s\S]*?<\/nav>\s*<\/div>\s*<\/div>/gi, '');
+  content = content.replace(/\s*<div\s+class=["']bg-slate-900\s+border-b\s+border-slate-800\/80["']>[\s\S]*?<nav\s+aria-label=["']Breadcrumb["']>[\s\S]*?<\/nav>\s*<\/div>\s*<\/div>/gi, '');
+  content = content.replace(/\s*<!--\s*(?:Visual|Pre-rendered|Shared)?\s*Breadcrumb(?:\s*Navigation)?\s*-->[\s\S]*?<\/div>\s*<\/div>/gi, '');
 
   const navCloseIndex = content.indexOf('</nav>');
   if (navCloseIndex !== -1) {
