@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -18,11 +23,6 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
 <title>Zambia TEVETA Score Calculator – Vocational, Trade &amp; Diploma Grades</title>
   <meta name="description" content="Calculate Zambia TEVETA continuous assessment (CA), final examination, and overall module competence marks for Trade Tests, Craft Certificates, and Diplomas." />
   <link rel="canonical" href="https://afriwidget.com/zambia-teveta-score-calculator" />
@@ -120,15 +120,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
 
   <!-- Static Global Site Header -->
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl" aria-label="Main Navigation">
+        <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
-          <svg class="w-9 h-9" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
             <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
             <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
@@ -143,8 +155,24 @@
         <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
         <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
         <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
       </div>
-        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700 focus:outline-none" aria-label="Open navigation menu">
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -157,6 +185,17 @@
     <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
     <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
     <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
   </div>
   </nav>
   <!-- Visual Breadcrumb Navigation -->

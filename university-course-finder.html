@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -18,12 +23,7 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
-  <title>Australian University Course Finder &amp; ATAR Cutoffs (2026/2027) – AfriWidget</title>
+<title>Australian University Course Finder &amp; ATAR Cutoffs (2026/2027) – AfriWidget</title>
   
   <meta name="description" content="Search and compare 60+ Australian university degrees, 2026 ATAR selection rank cutoffs, CSP tuition fees, prerequisites, and graduate salaries across Go8 and ATN institutions." />
   <link rel="canonical" href="https://afriwidget.com/university-course-finder" />
@@ -168,9 +168,106 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
-  <div id="nav-placeholder"></div>
+          <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Australian University Course Finder</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
     <!-- Hero Header -->
@@ -388,9 +485,7 @@
     </section>
 
     <!-- Comprehensive Educational Guide Section (Prerendered from content/university-course-finder.md) -->
-    <section id="toolGuide" class="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 prose max-w-none text-slate-700">
-      <!-- Prerender script will populate this container -->
-    </section>
+    <section id="toolGuide" class="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 prose max-w-none text-slate-700"><h2>Comprehensive Guide to Australian University Degrees, Selection Ranks, CSP Fees, and Course Prerequisities</h2><p>Selecting the right undergraduate degree program in Australia requires understanding how university admissions centers evaluate applicants, how government-subsidized tuition fee bands work under the <strong>Higher Education Support Act</strong>, and how prerequisite subject requirements determine eligibility.</p><p>AfriWidget’s <strong>Australian University Course Finder</strong> enables secondary school leavers, mature-age students, and international applicants to search, filter, and compare accredited Australian undergraduate degrees across all states and territories (NSW, Victoria, Queensland, Western Australia, South Australia, ACT, Tasmania, and the Northern Territory). You can filter courses by study field, minimum selection rank / ATAR cutoff, campus location, Commonwealth Supported Place (CSP) fee bands, and university groupings (such as the Group of Eight and Australian Technology Network).</p><hr class="my-6 border-slate-200" /><h2>The Australian Higher Education Admissions Framework</h2><p>Australian undergraduate admissions are managed through state-based tertiary admissions centers (TACs) and direct university applications:</p><h3>1. The Admissions Centres Matrix</h3><ul><li><strong>NSW & ACT</strong>: Universities Admissions Centre (UAC)</li><li><strong>Victoria</strong>: Victorian Tertiary Admissions Centre (VTAC)</li><li><strong>Queensland</strong>: Queensland Tertiary Admissions Centre (QTAC)</li><li><strong>Western Australia</strong>: Tertiary Institutions Service Centre (TISC)</li><li><strong>South Australia & Northern Territory</strong>: South Australian Tertiary Admissions Centre (SATAC)</li><li><strong>Tasmania</strong>: Direct admissions via University of Tasmania (UTAS)</li></ul><h3>2. Lowest Selection Rank (LSR) vs Guaranteed ATAR</h3><p>When exploring course listings, you will encounter two primary admission thresholds:</p><ul><li><strong>Lowest Selection Rank (LSR)</strong>: The minimum selection rank (ATAR + adjustment factors) achieved by an applicant who received an offer into the course in the most recent admissions cycle. This provides a realistic benchmark for course competitiveness.</li><li><strong>Guaranteed ATAR / Early Offer Rank</strong>: An institutional promise where achieving a specific rank (e.g. 75.00) guarantees an offer for that course, provided all prerequisite subjects are satisfied.</li></ul><hr class="my-6 border-slate-200" /><h2>Commonwealth Supported Places (CSP) and HECS-HELP Student Loans</h2><p>For Australian citizens, permanent humanitarian visa holders, and eligible New Zealand special category visa holders, most undergraduate university places are <strong>Commonwealth Supported Places (CSP)</strong>. Under a CSP, the Australian Federal Government pays a substantial portion of your tuition costs directly to the university, while you pay a subsidized <strong>Student Contribution Amount</strong>.</p><h3>Official Australian CSP Student Contribution Bands (2025 / 2026)</h3><ul><li><strong>Band 1 (Highest Government Subsidy — Student pays approx. $4,445 AUD / year)</strong>:</li><li>Fields: Nursing, Teaching / Education, Agriculture, English, Mathematics, Clinical Psychology, Indigenous Studies, Languages.</li><li><strong>Band 2 (Medium Subsidy — Student pays approx. $8,948 AUD / year)</strong>:</li><li>Fields: Allied Health (Physiotherapy, Occupational Therapy, Speech Pathology), Science, Engineering, Information Technology, Architecture, Built Environment.</li><li><strong>Band 3 (Moderate Subsidy — Student pays approx. $12,720 AUD / year)</strong>:</li><li>Fields: Medical Studies (MBBS / MD), Dentistry, Veterinary Science.</li><li><strong>Band 4 (Lowest Government Subsidy — Student pays approx. $16,329 AUD / year)</strong>:</li><li>Fields: Law (LLB), Commerce, Business, Economics, Accounting, Communications, Society & Culture, Creative Arts.</li></ul><h3>HECS-HELP Loan Facility</h3><p>Eligible domestic students do not need to pay their Student Contribution upfront. Through the Australian Government’s <strong>HECS-HELP loan scheme</strong>, your fees are deferred and indexed annually to the Consumer Price Index (CPI). You only begin repaying the loan through the Australian Taxation Office (ATO) once your annual taxable income reaches the statutory minimum compulsory repayment threshold (approx. $54,435 AUD for the 2024–2025/2026 tax years).</p><hr class="my-6 border-slate-200" /><h2>Australian University Clusters & Institutional Profiles</h2><p>Australian higher education institutions are recognized globally for research excellence and graduate employability. They are organized into distinct university alliances:</p><h3>1. Group of Eight (Go8) — Australia’s Premier Research-Intensive Universities</h3><ul><li><strong>Member Institutions</strong>: The University of Sydney (USYD), University of Melbourne (UniMelb), The Australian National University (ANU), UNSW Sydney, The University of Queensland (UQ), Monash University, The University of Western Australia (UWA), The University of Adelaide.</li><li><strong>Key Characteristics</strong>: Highest ATAR cutoffs (frequently 85.00 to 99.00+), world top-100 global rankings, premier medical and law schools, and extensive international research partnerships.</li></ul><h3>2. Australian Technology Network (ATN) — Industry-Focused Innovation</h3><ul><li><strong>Member Institutions</strong>: University of Technology Sydney (UTS), RMIT University, Queensland University of Technology (QUT), Curtin University, University of South Australia (UniSA), Deakin University.</li><li><strong>Key Characteristics</strong>: High graduate employment rates, integrated work placements (internships/co-op), strong technology, engineering, design, and architecture faculties.</li></ul><h3>3. Innovative Research Universities (IRU) & Regional Universities Network (RUN)</h3><ul><li><strong>Member Institutions</strong>: Griffith University, Flinders University, La Trobe University, Western Sydney University, James Cook University, University of Wollongong, University of Newcastle, Charles Sturt, UNE, USQ, CQUniversity.</li><li><strong>Key Characteristics</strong>: Flexible study modes (online and hybrid), strong community and regional industry connections, accessible entry pathways, and dedicated healthcare training facilities.</li></ul><hr class="my-6 border-slate-200" /><h2>How to Use the Australian University Course Finder</h2><ol><li><strong>Enter Your Target ATAR / Selection Rank</strong>:</li></ol><ul><li>Input your estimated or achieved ATAR (e.g. 82.50). The course finder automatically categorizes degrees into <strong>Safe / High Chance</strong>, <strong>Target Match</strong>, <strong>Competitive Reach</strong>, or <strong>Pathway Required</strong>.</li></ul><ol><li><strong>Filter by Study Area & Discipline</strong>:</li></ol><ul><li>Choose your field of interest: Health & Medicine, Engineering & IT, Business & Commerce, Law & Justice, Science & Math, Arts & Design, Education, or Built Environment.</li></ul><ol><li><strong>Filter by State or Study Mode</strong>:</li></ol><ul><li>Narrow courses to your preferred location (e.g., NSW, Victoria, Queensland, Western Australia, or 100% Online Degrees).</li></ul><ol><li><strong>Compare Key Metrics Side-by-Side</strong>:</li></ol><ul><li>Review prerequisite subject units, course duration (3 or 4 years), annual CSP fee bands, campus locations, and graduate starting salaries.</li></ul><ol><li><strong>Shortlist and Compare Selected Courses</strong>:</li></ol><ul><li>Select up to 3 courses to generate a comparative side-by-side audit of entry requirements, professional accreditations, and long-term career outcomes.</li></ul><hr class="my-6 border-slate-200" /><h2>Step-by-Step Degree Comparison Scenarios</h2><h3>Scenario 1: Sydney High School Leaver Seeking a Cyber Security / Computer Science Degree</h3><p>A student in New South Wales with an estimated ATAR of <strong>88.00</strong> wants to study Computer Science in Sydney:</p><ul><li><strong>Option A: UNSW Sydney — Bachelor of Science (Computer Science)</strong>:</li><li>Lowest Selection Rank: <strong>90.00</strong></li><li>Duration: 3 Years Full-Time (Kensington Campus)</li><li>CSP Student Contribution: Band 2 (Approx. $8,948 AUD / year)</li><li>Prerequisite: Mathematics Extension 1 or Mathematics Advanced (Band 5+)</li><li>Verdict: <strong>Target Reach</strong> (Requires 2 EAS/SEAS bonus points or guaranteed early entry offer).</li><li><strong>Option B: University of Technology Sydney (UTS) — Bachelor of Computing Science (Honours)</strong>:</li><li>Lowest Selection Rank: <strong>84.00</strong></li><li>Duration: 4 Years Full-Time (City Campus, Ultimo)</li><li>CSP Student Contribution: Band 2 (Approx. $8,948 AUD / year)</li><li>Prerequisite: Mathematics Advanced (Band 4+)</li><li>Verdict: <strong>Guaranteed / High Chance</strong> (ATAR 88.00 exceeds the 84.00 cutoff).</li></ul><hr class="my-6 border-slate-200" /><h3>Scenario 2: Victorian Student Targeting Physiotherapy vs Nursing</h3><p>A student in Melbourne with an ATAR of <strong>78.50</strong> evaluates healthcare degree pathways:</p><ul><li><strong>Course Comparison Audit</strong>:</li><li><strong>Monash University — Bachelor of Physiotherapy (Honours)</strong>: Cutoff is <strong>94.50</strong> ATAR with prerequisite Units 3 and 4 in English and two of Biology, Chemistry, or Physics. Status: <strong>Unlikely direct entry</strong> (Pathway via Bachelor of Science / Biomedical Science required).</li><li><strong>Deakin University — Bachelor of Nursing / Bachelor of Psychological Science</strong>: Cutoff is <strong>72.00</strong> ATAR with prerequisite Units 3 and 4 English. Status: <strong>Direct Guaranteed Admission</strong> (ATAR 78.50 comfortably exceeds threshold).</li><li><strong>Australian Catholic University (ACU Melbourne) — Bachelor of Nursing</strong>: Cutoff is <strong>65.00</strong> ATAR. Status: <strong>Safe Admission Offer</strong>.</li></ul><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>What is the difference between an ATAR prerequisite and an assumed knowledge requirement?</summary><div><p>A <strong>Prerequisite</strong> is a mandatory subject you must have satisfactorily completed in Year 12 (often with a minimum study score, such as a 25 in English) to be legally eligible for an admission offer. <strong>Assumed Knowledge</strong> means the university assumes you have mastered high-school level material in that subject (such as Chemistry or Specialist Math), but you will not be denied an offer if you have not studied it; however, you may be required to take a non-credit bridging course during your first semester.</p></div></details><details><summary>What are university adjustment factors (bonus points)?</summary><div><p>Adjustment factors are additional points added to your base ATAR by universities or tertiary admissions centres. Common adjustment categories include Educational Access Schemes (EAS / SEAS) for financial or medical disadvantage, regional and rural school bonuses, elite athlete programs, and subject-based adjustments (e.g., earning an extra 2 to 3 points for achieving a Band 5 or 6 in Advanced Mathematics or Languages).</p></div></details><details><summary>Can international students in Australia use this course finder?</summary><div><p>Yes. While international students do not qualify for Commonwealth Supported Places (CSP) or HECS-HELP loans and instead pay full international tuition fees (typically $34,000 to $52,000 AUD per year), the ATAR cutoffs, course structures, English language requirements (IELTS / PTE Academic), and professional accreditations apply equally.</p></div></details><details><summary>What is an Honours degree in Australia?</summary><div><p>In Australia, an <strong>Honours degree</strong> is either an integrated 4-year undergraduate program (common in Engineering, Law, and Psychology) or a competitive 1-year standalone research program completed after a standard 3-year Bachelor degree. Honours graduates with First Class or Upper Second Class standing are eligible for direct admission into a Ph.D. or Master of Philosophy without completing a Master’s degree first.</p></div></details><details><summary>How does HECS-HELP repayment work if I move overseas?</summary><div><p>Under Australian tax law, Australian citizens and permanent residents with a HECS-HELP debt who reside and work overseas must report their worldwide income to the Australian Taxation Office (ATO) and make compulsory repayments if their global earnings exceed the minimum Australian repayment threshold.</p><hr class="my-6 border-slate-200" /></div></details><h2>Official Regulatory Bodies and Course Directories</h2><ul><li><strong>Tertiary Education Quality and Standards Agency (TEQSA)</strong>: [National Register of Higher Education Providers](https://www.teqsa.gov.au/national-register)</li><li><strong>Quality Indicators for Learning and Teaching (QILT)</strong>: [Official Australian Graduate Salary & Employment Data](https://www.qilt.edu.au/)</li><li><strong>Study Australia (Australian Trade and Investment Commission)</strong>: [Official Australian University Portal](https://www.studyaustralia.gov.au/)</li><li><strong>Department of Education</strong>: [Commonwealth Supported Places (CSP) & HECS-HELP Allocations](https://www.studyassist.gov.au/)</li><li><strong>Universities Australia</strong>: [Peak Body for Australia’s 39 Universities](https://www.universitiesaustralia.edu.au/)</li></ul></section>
 
   </main>
 
@@ -961,5 +1056,155 @@
       // No auto-run on script load! Let user click search or explore.
     });
   </script>
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 </body>
 </html>

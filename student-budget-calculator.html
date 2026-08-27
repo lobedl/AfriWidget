@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
@@ -18,12 +23,7 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading -->
-  <link rel="stylesheet" href="branding.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/dist/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/dist/styles.css" /></noscript>
-  <title>Australian Student Budget Calculator (2026 AUD Living Costs) – AfriWidget</title>
+<title>Australian Student Budget Calculator (2026 AUD Living Costs) – AfriWidget</title>
   
   <meta name="description" content="Calculate your student living budget in Australia (AUD). Plan rent, groceries, transport, Centrelink Youth Allowance, casual work limits, and Home Affairs visa requirements." />
   <link rel="canonical" href="https://afriwidget.com/student-budget-calculator" />
@@ -168,9 +168,106 @@
   }
 ]
   </script>
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
-  <div id="nav-placeholder"></div>
+          <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/finance" class="text-slate-400 hover:text-yellow-300 transition-colors">Finance Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Australian Student Budget Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
     <!-- Header Hero -->
@@ -593,9 +690,7 @@
     </section>
 
     <!-- Comprehensive Educational Guide Section (Prerendered from content/student-budget-calculator.md) -->
-    <section id="toolGuide" class="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 prose max-w-none text-slate-700">
-      <!-- Prerender script will populate this container -->
-    </section>
+    <section id="toolGuide" class="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 prose max-w-none text-slate-700"><h2>Comprehensive Guide to Australian Student Living Costs, Budgeting, and Financial Planning</h2><p>Studying at an Australian university or TAFE institution requires managing realistic living expenses across housing, groceries, transport, utility bills, health cover, and academic supplies. Australia is renowned for world-class educational institutions and vibrant student cities; however, major metropolitan hubs like Sydney, Melbourne, Brisbane, and Perth have experienced substantial increases in private rental rates and day-to-day consumer costs.</p><p>AfriWidget’s <strong>Australian Student Budget Calculator</strong> provides domestic and international students with an accurate, customizable financial planning engine tailored to Australian cities. It models weekly, monthly, semester, and annual cash flows, calculates living cost distributions, compares your budget against the official <strong>Department of Home Affairs Subclass 500 Financial Capacity Benchmark ($29,710 AUD per year)</strong>, and models income from casual jobs (under Fair Work Australia award rates) alongside Centrelink Youth Allowance and Rent Assistance.</p><hr class="my-6 border-slate-200" /><h2>Average Student Living Costs Across Australian Cities (2025 / 2026 Estimates)</h2><p>Living expenses vary significantly depending on your host city and chosen accommodation model:</p><h3>1. City-by-City Cost of Living Spectrum (Weekly Benchmarks)</h3><ul><li><strong>Sydney (NSW)</strong>: $580 – $780 AUD / week (Highest rental market; high public transport and dining costs).</li><li><strong>Melbourne (VIC)</strong>: $520 – $710 AUD / week (Moderate-to-high rent; extensive tram and train network with student concessions).</li><li><strong>Brisbane & Gold Coast (QLD)</strong>: $460 – $640 AUD / week (Fast-growing student hubs with slightly lower utility expenses).</li><li><strong>Canberra (ACT)</strong>: $490 – $680 AUD / week (High proportion of purpose-built on-campus student residences).</li><li><strong>Perth (WA)</strong>: $440 – $620 AUD / week (Competitive rental costs and strong casual job market).</li><li><strong>Adelaide (SA) & Hobart (TAS)</strong>: $410 – $580 AUD / week (Most affordable capital cities for housing and daily transport).</li><li><strong>Regional Australia (e.g. Wollongong, Newcastle, Geelong, Townsville)</strong>: $360 – $520 AUD / week (Significant savings on rent, parking, and lifestyle).</li></ul><hr class="my-6 border-slate-200" /><h2>Breakdown of Key Student Expense Categories</h2><h3>1. Accommodation & Housing (45% – 60% of Total Budget)</h3><ul><li><strong>Shared House / Flatshare (Private Room)</strong>: $220 – $420 AUD / week (Most common choice for domestic and international students; utilities shared among 2–4 housemates).</li><li><strong>Purpose-Built Student Accommodation (PBSA / UniLodge / Scape / Iglu)</strong>: $380 – $650 AUD / week (All-inclusive furnished studio or multi-share room with Wi-Fi, electricity, gym, and security).</li><li><strong>On-Campus University Residential College</strong>: $420 – $750 AUD / week (Often includes fully catered meals, academic tutoring, and collegiate social events).</li><li><strong>Homestay with Australian Family</strong>: $320 – $450 AUD / week (Includes private furnished room and 2–3 daily home-cooked meals).</li><li><strong>Living with Parents / Family</strong>: $50 – $150 AUD / week (Minimal board and personal expenses).</li></ul><h3>2. Food, Groceries & Dining Out (15% – 25% of Total Budget)</h3><ul><li><strong>Weekly Supermarket Groceries (Coles, Woolworths, Aldi)</strong>: $90 – $160 AUD / week (Cooking fresh meals at home, meal prepping, and purchasing home-brand staples).</li><li><strong>Campus Meals & Dining Out / Takeaways</strong>: $50 – $120 AUD / week (Buying coffee, campus cafeteria lunches, and weekend dining with friends).</li></ul><h3>3. Public Transport & Commuting (5% – 10% of Total Budget)</h3><ul><li><strong>Public Transport Concession (Opal NSW, Myki VIC, Go Card QLD, SmartRider WA, MetroCARD SA)</strong>: $25 – $55 AUD / week.</li><li><em>Note for International Students</em>: Concession eligibility varies by state. Victoria and Queensland offer international tertiary student concessions; NSW offers specific multi-pass discounts (iPass), while Western Australia and South Australia extend full local student concession rates to all enrolled international students.</li><li><strong>Car Ownership & Fuel / Insurance</strong>: $70 – $130 AUD / week (Fuel, comprehensive insurance, registration, maintenance, and campus parking fees).</li></ul><h3>4. Utilities, Phone & Internet (5% – 8% of Total Budget)</h3><ul><li><strong>Mobile Phone Plan (SIM-only with generous data)</strong>: $7 – $15 AUD / week ($30 – $60 AUD / month with providers like Boost, Optus, Telstra, Belong, or Felix).</li><li><strong>Shared Home Electricity, Gas, & NBN Internet</strong>: $20 – $45 AUD / week per person.</li></ul><h3>5. Study Materials & Discretionary Personal Spending (10% – 15% of Total Budget)</h3><ul><li><strong>Textbooks, Software, Printing & SSAF Fee</strong>: $15 – $35 AUD / week (Student Services and Amenities Fee is approx. $350 AUD / year).</li><li><strong>Overseas Student Health Cover (OSHC)</strong>: Approx. $12 – $18 AUD / week ($600 – $900 AUD / year mandatory medical insurance for international visa holders).</li><li><strong>Social, Fitness & Entertainment</strong>: $40 – $90 AUD / week (Gym memberships, movies, sports, clothing, and leisure activities).</li></ul><hr class="my-6 border-slate-200" /><h2>Student Income Sources & Australian Regulatory Limits</h2><h3>1. Casual and Part-Time Employment (Fair Work Australia Standards)</h3><ul><li><strong>National Minimum Casual Wage</strong>: Approx. <strong>$28.26 to $32.50+ AUD per hour</strong> (including the mandatory 25% casual loading under General Retail, Fast Food, or Hospitality Awards). Weekend and public holiday shifts frequently pay penalty rates of 150% to 250% ($38 – $65+ AUD / hour).</li><li><strong>International Student Visa (Subclass 500) Work Limit</strong>: International students may work up to <strong>48 hours per fortnight</strong> during active university semesters, and unlimited hours during scheduled term breaks and summer holidays.</li><li><strong>Australian Tax-Free Threshold</strong>: Every Australian resident for tax purposes pays <strong>$0 tax on their first $18,200 AUD of annual earnings</strong>.</li></ul><h3>2. Government Income Support (Centrelink — Domestic Students Only)</h3><ul><li><strong>Youth Allowance / Austudy</strong>: Eligible domestic students enrolled in full-time approved courses receive between $380 and $680+ AUD per fortnight, depending on age, living arrangements, and parental income tests.</li><li><strong>Commonwealth Rent Assistance (CRA)</strong>: Additional non-taxable payment of up to approx. $180 AUD per fortnight for eligible students paying private rent.</li><li><strong>Student Income Bank</strong>: Allows Centrelink recipients to accumulate up to $12,000 AUD in income credits, meaning casual summer earnings do not reduce fortnightly payments immediately.</li></ul><hr class="my-6 border-slate-200" /><h2>How to Use the Australian Student Budget Calculator</h2><ol><li><strong>Select Your Study Location and Housing Arrangement</strong>:</li></ol><ul><li>Choose your city (Sydney, Melbourne, Brisbane, Perth, Adelaide, Canberra, or Regional) and living situation (Flatshare, PBSA, On-Campus College, or Living at Home).</li></ul><ol><li><strong>Input Your Income and Financial Support</strong>:</li></ol><ul><li>Enter your weekly casual work hours and hourly rate.</li><li>Enter fortnightly Centrelink Youth Allowance / Rent Assistance payments (for domestic students) or parental living allowances / scholarship stipends (for international students).</li></ul><ol><li><strong>Customize Your Expense Lines</strong>:</li></ol><ul><li>Adjust weekly rent, grocery bills, public transport fares, phone/internet plans, and entertainment expenses.</li></ul><ol><li><strong>Use Quick Realistic Presets (Optional)</strong>:</li></ol><ul><li>Click presets like <em>Sydney Shared Flat</em>, <em>Melbourne PBSA Studio</em>, <em>Adelaide Frugal Student</em>, or <em>Living with Parents</em> to populate instant realistic baselines.</li></ul><ol><li><strong>Click "Calculate Student Budget"</strong>:</li></ol><ul><li>The calculator analyzes your weekly and monthly surplus or deficit, calculates your expense proportions, checks your visa work hour safety, and compares your annual spending against Department of Home Affairs guidelines.</li></ul><hr class="my-6 border-slate-200" /><h2>Step-by-Step Worked Student Budget Scenarios</h2><h3>Scenario 1: International Student Living in a Melbourne Shared Flat</h3><p>An international postgraduate student at RMIT University shares a 3-bedroom apartment in Carlton, Melbourne:</p><ul><li><strong>Weekly Income Audit</strong>:</li><li>Casual Barista Job (18 hours/week at $30.00 AUD/hour): <strong>$540.00 AUD</strong></li><li>Monthly Family Financial Support ($400 AUD/month): <strong>$92.30 AUD / week</strong></li><li><strong>Total Weekly Income: $632.30 AUD</strong></li><li><strong>Weekly Expense Audit</strong>:</li><li>Rent (Private room in 3-bed flatshare): <strong>$275.00 AUD</strong></li><li>Shared Utilities & NBN Wi-Fi: <strong>$25.00 AUD</strong></li><li>Supermarket Groceries (Aldi & Queen Vic Market): <strong>$105.00 AUD</strong></li><li>Public Transport (Concession Myki Pass): <strong>$32.00 AUD</strong></li><li>Mobile Phone Plan (SIM-only 40GB): <strong>$8.00 AUD</strong></li><li>OSHC Health Insurance (Annual amortized): <strong>$14.00 AUD</strong></li><li>Social Outings & Personal Care: <strong>$65.00 AUD</strong></li><li>Textbooks & Academic Printing: <strong>$15.00 AUD</strong></li><li><strong>Total Weekly Expenses: $539.00 AUD</strong></li><li><strong>Financial Health Verdict</strong>:</li><li><strong>Net Weekly Surplus: +$93.30 AUD</strong> ($404.30 AUD / month savings reserve)</li><li><strong>Visa Compliance</strong>: 18 hours/week (36 hours/fortnight) is safely below the 48-hour fortnightly Subclass 500 visa cap.</li></ul><hr class="my-6 border-slate-200" /><h3>Scenario 2: Domestic Undergraduate in Sydney Receiving Youth Allowance</h3><p>A first-year undergraduate student at UNSW Sydney rents a room in Kingsford:</p><ul><li><strong>Weekly Income Audit</strong>:</li><li>Centrelink Youth Allowance (Fortnightly $560 AUD / 2): <strong>$280.00 AUD</strong></li><li>Commonwealth Rent Assistance (Fortnightly $140 AUD / 2): <strong>$70.00 AUD</strong></li><li>Casual Retail Job (10 hours/week at $29.50 AUD/hour): <strong>$295.00 AUD</strong></li><li><strong>Total Weekly Income: $645.00 AUD</strong></li><li><strong>Weekly Expense Audit</strong>:</li><li>Rent (Shared student house in Kingsford): <strong>$320.00 AUD</strong></li><li>Electricity, Water & Internet: <strong>$30.00 AUD</strong></li><li>Groceries & Home Cooking: <strong>$110.00 AUD</strong></li><li>Opal Card Public Transport: <strong>$28.00 AUD</strong></li><li>Phone Plan & Subscriptions: <strong>$12.00 AUD</strong></li><li>Social Outings, Gym & Coffee: <strong>$60.00 AUD</strong></li><li>Study Expenses & SSAF: <strong>$15.00 AUD</strong></li><li><strong>Total Weekly Expenses: $575.00 AUD</strong></li><li><strong>Financial Health Verdict</strong>:</li><li><strong>Net Weekly Surplus: +$70.00 AUD</strong> ($303.33 AUD / month buffer for emergencies).</li></ul><hr class="my-6 border-slate-200" /><h2>Frequently Asked Questions (FAQ)</h2><details><summary>How much money do I need annually to study in Australia as an international student?</summary><div><p>As of 2024–2026, the Australian <strong>Department of Home Affairs</strong> requires international student visa (Subclass 500) applicants to prove they have access to at least <strong>$29,710 AUD per year</strong> in genuine living funds (excluding university tuition fees and travel costs). This benchmark reflects realistic average living expenses across Australian metropolitan areas.</p></div></details><details><summary>What is the maximum number of hours international students can work in Australia?</summary><div><p>Under Australian student visa condition 8105, international students may work a maximum of <strong>48 hours per fortnight</strong> while their course of study is in session. During officially recognized university vacation periods, term breaks, and summer holidays, international students may work unlimited hours without restriction.</p></div></details><details><summary>Do Australian university students pay tax on casual earnings?</summary><div><p>Yes, but most students pay very little or zero income tax. If you are an Australian resident for tax purposes, you do not pay any income tax on the first <strong>$18,200 AUD</strong> you earn each financial year (July 1 to June 30). Even if your employer withholds tax from your weekly paychecks, you will receive a full tax refund after lodging your annual tax return via myGov with the Australian Taxation Office (ATO).</p></div></details><details><summary>How can Australian students reduce grocery and food costs?</summary><div><p>Students can reduce weekly grocery expenses by shopping at discount supermarkets like Aldi, shopping at wholesale fresh produce markets (e.g. Queen Victoria Market in Melbourne, Paddy’s Market in Sydney, Adelaide Central Market), buying private-label generic products, meal prepping in batches, and leveraging student discount platforms such as UNiDAYS and Student Beans for restaurant dining.</p></div></details><details><summary>What is the Student Services and Amenities Fee (SSAF)?</summary><div><p>The SSAF is a compulsory non-academic fee charged by Australian universities (up to approx. $351 AUD per year for full-time students) to fund student services, campus clubs, legal advice, counseling, sporting facilities, and advocacy. Eligible domestic students can defer this fee onto an <strong>SA-HELP loan</strong>, adding it to their HECS-HELP balance with zero upfront payment.</p><hr class="my-6 border-slate-200" /></div></details><h2>Official Regulatory Citations and Student Support Resources</h2><ul><li><strong>Australian Government Department of Home Affairs</strong>: [Student Visa Financial Capacity Requirements (Subclass 500)](https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500)</li><li><strong>Services Australia (Centrelink)</strong>: [Youth Allowance & Austudy Payments for Students](https://www.servicesaustralia.gov.au/youth-allowance-for-students-and-australian-apprentices)</li><li><strong>Fair Work Ombudsman</strong>: [National Minimum Wage and Casual Loading Rights](https://www.fairwork.gov.au/pay-and-wages/minimum-wages)</li><li><strong>Australian Taxation Office (ATO)</strong>: [Student Tax Rates & $18,200 Tax-Free Threshold](https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/tax-free-threshold)</li><li><strong>Study Australia</strong>: [Official Living Costs in Australia Calculator](https://www.studyaustralia.gov.au/en/life-in-australia/living-costs)</li></ul></section>
 
   </main>
 
@@ -841,5 +936,155 @@
       // No auto-run on page load!
     });
   </script>
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+  </div>
+</footer>
 </body>
 </html>

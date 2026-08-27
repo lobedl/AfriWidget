@@ -471,6 +471,15 @@ const navItems = [
   ['/widgets', 'All Tools Directory']
 ];
 
+const legalNavItems = [
+  ['/privacy-policy', 'Privacy Policy'],
+  ['/terms', 'Terms of Service'],
+  ['/cookie-policy', 'Cookie Policy'],
+  ['/adsense-disclaimer', 'AdSense Disclaimer'],
+  ['/about', 'About Us'],
+  ['/contact', 'Contact']
+];
+
 allHtmlFiles.forEach(htmlFile => {
   const htmlPath = path.join(process.cwd(), htmlFile);
   let content = fs.readFileSync(htmlPath, 'utf8');
@@ -544,20 +553,55 @@ allHtmlFiles.forEach(htmlFile => {
     updated = true;
   }
 
+  const isLegalPage = legalNavItems.some(([href]) => href === pageSlug);
+
   // Pre-render Desktop Navigation Links
-  const desktopLinksHtml = navItems.map(([href, label]) => {
+  const primaryDesktopLinksHtml = navItems.map(([href, label]) => {
     const isCurrent = href === pageSlug || (href === '/' && pageSlug === '/');
     const classes = 'transition-colors hover:text-yellow-300' + (isCurrent ? ' text-yellow-300 font-bold' : '');
     return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
   }).join('\n        ');
 
-  const mobileLinksHtml = navItems.map(([href, label]) => {
+  const legalDropdownLinksHtml = legalNavItems.map(([href, label]) => {
+    const isCurrent = href === pageSlug;
+    const classes = 'block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors' + (isCurrent ? ' text-yellow-300 font-bold bg-slate-800/60' : '');
+    return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
+  }).join('\n            ');
+
+  const desktopNavInnerHtml = `${primaryDesktopLinksHtml}
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none${isLegalPage ? ' text-yellow-300 font-bold' : ''}" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            ${legalDropdownLinksHtml}
+            </div>
+          </div>
+        </div>`;
+
+  const primaryMobileLinksHtml = navItems.map(([href, label]) => {
     const isCurrent = href === pageSlug || (href === '/' && pageSlug === '/');
     const classes = 'block py-2 hover:text-yellow-300 transition-colors' + (isCurrent ? ' text-yellow-300 font-bold' : '');
     return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
   }).join('\n    ');
 
-  const mobileMenuHtml = `<div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">\n    ${mobileLinksHtml}\n  </div>`;
+  const legalMobileLinksHtml = legalNavItems.map(([href, label]) => {
+    const isCurrent = href === pageSlug;
+    const classes = 'py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors' + (isCurrent ? ' text-yellow-300 font-bold bg-slate-800/60' : '');
+    return `<a href="${href}" class="${classes}">${escapeHtml(label)}</a>`;
+  }).join('\n        ');
+
+  const mobileMenuHtml = `<div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    ${primaryMobileLinksHtml}
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        ${legalMobileLinksHtml}
+      </div>
+    </div>
+  </div>`;
 
   const fullNavHtml = `  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -571,7 +615,7 @@ allHtmlFiles.forEach(htmlFile => {
           <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        ${desktopLinksHtml}
+        ${desktopNavInnerHtml}
       </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -587,22 +631,13 @@ allHtmlFiles.forEach(htmlFile => {
     updated = true;
   }
 
-  // 2. If no <nav tag exists, inject full navigation right after <body ...>
-  if (!content.includes('<nav')) {
+  // 2. If a top-level nav tag exists (excluding breadcrumbs), cleanly replace the entire primary navbar block
+  const navBlockRegex = /<nav(?!\s+aria-label=["']Breadcrumb["'])[^>]*>[\s\S]*?<\/nav>/i;
+  if (navBlockRegex.test(content)) {
+    content = content.replace(navBlockRegex, fullNavHtml);
+    updated = true;
+  } else if (!content.includes('<nav')) {
     content = content.replace(/(<body[^>]*>)/i, `$1\n${fullNavHtml}`);
-    updated = true;
-  }
-
-  const desktopNavRegex = /(<div[^>]*class=["'][^"']*\b(?:hidden\b[^"']*\bmd:flex|md:flex\b[^"']*\bhidden)\b[^"']*["'][^>]*>)([\s\S]*?)(<\/div>)/i;
-  if (desktopNavRegex.test(content)) {
-    content = content.replace(desktopNavRegex, (match, p1, p2, p3) => `${p1}\n        ${desktopLinksHtml}\n      ${p3}`);
-    updated = true;
-  }
-
-  // Pre-render Mobile Navigation Menu
-  const mobileNavRegex = /<div\s+id=["']mobileMenu["'][^>]*>([\s\S]*?)<\/div>/i;
-  if (mobileNavRegex.test(content)) {
-    content = content.replace(mobileNavRegex, mobileMenuHtml);
     updated = true;
   }
 

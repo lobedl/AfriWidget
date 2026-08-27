@@ -134,6 +134,21 @@ header a span.font-extrabold span,
   }
 }
 
+/* Navigation Dropdown Fail-safe Styling */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  display: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  display: block;
+}
+
 /* Core Structural Layout Helpers */
 .flex { display: flex; }
 .hidden { display: none; }
