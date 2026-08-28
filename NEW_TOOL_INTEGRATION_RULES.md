@@ -78,19 +78,30 @@ The tool **MUST** be added under its respective category section in `index.html`
 
 ---
 
-### 8. Static Header & Zero-Mismatch Breadcrumb Bar
+### 8. Share Results Adapter (`share-results.js`)
+- Register the tool slug under `TOOL_ADAPTERS` in `share-results.js` with input field selectors and the calculate trigger button function.
+- Include the in-result share and clipboard copy action buttons.
+
+---
+
+### 9. Static Header & Zero-Mismatch Breadcrumb Bar
 - The tool page itself **MUST** contain the static pre-rendered `<nav>` header and a visual breadcrumb bar.
 - The intermediate breadcrumb item **MUST** link to the tool's matching parent category (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`). Never leave a copied category slug like `/productivity` on an education or finance tool.
 - See `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for full requirements and the automated audit script.
 
 ---
 
-### 9. Dedicated Related Tools Section & Reciprocal Cluster Linking
+### 10. Dedicated Related Tools Section & Reciprocal Cluster Linking
 - Every new tool **MUST** include a dedicated "Related Tools" 3-to-4 card grid section before the FAQ/Footer.
 - Embed 2+ contextual anchor text links in the educational guide copy.
 - Display a next-step recommendation CTA in or after the result calculation state.
 - Update existing related tools in the same cluster to link back to the new tool.
 - See **`RELATED_TOOLS_AND_INTERNAL_LINKING_STANDARDS.md`** for the complete cluster matrix and copyable HTML templates.
+
+---
+
+## 🏆 Master Standard Reference
+For the complete 9-phase protocol covering HTML `<head>` tags, E-E-A-T schemas, no-LaTeX rules, no-tables mobile policies, manual action mandates, and build commands, always consult **`MASTER_NEW_TOOL_STANDARDS.md`**.
 
 ---
 

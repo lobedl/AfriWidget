@@ -587,4 +587,12 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Student Budget Calculator](https://afriwidget.com/student-budget-calculator) — Calculate weekly and monthly student living expenses in Australian Dollars (AUD), estimate Youth Allowance, Austudy, or part-time earnings against rent, groceries, transport, utilities, and textbook costs with savings rate modeling.
 
+## HECS-HELP Repayment Calculator (Australia)
+
+[HECS-HELP Repayment Calculator](https://afriwidget.com/hecs-help-repayment-calculator) — Calculate compulsory Australian student loan repayments, paycheck PAYG withholding, indexation caps (lower of CPI and WPI), and debt payoff schedules under official Australian Taxation Office (ATO) and StudyAssist thresholds.
+
+## Australia Scholarship Finder
+
+[Australia Scholarship Finder](https://afriwidget.com/australia-scholarship-finder) — Search and match Australian university scholarships, merit grants, regional relocation payments (Tertiary Access Payment - TAP), and equity bursaries across Go8 and national institutions matching your ATAR, state, study field, and background.
+
 

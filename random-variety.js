@@ -105,9 +105,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyEmails').addEventListener('click', function () {
-        var text = document.getElementById('emailOutput').value || run().join(',\n');
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyEmails')?.addEventListener('click', function () {
+        var text = document.getElementById('emailOutput')?.value || run().join(',\n');
         copy(text, document.getElementById('emailStatus'), 'Copied the varied email list to your clipboard.');
       });
       run();
@@ -154,8 +154,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyUsernames').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyUsernames')?.addEventListener('click', function () {
         var values = [].map.call(document.querySelectorAll('#usernameOutput [data-variety-value]'), function (node) { return node.getAttribute('data-variety-value'); });
         copy((values.length ? values : run()).join('\n'), document.getElementById('usernameStatus'), 'Copied the varied username ideas.');
       });
@@ -217,8 +217,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyBusiness').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyBusiness')?.addEventListener('click', function () {
         var values = [].map.call(document.querySelectorAll('#businessOutput [data-variety-value]'), function (node) { return node.getAttribute('data-variety-value'); });
         copy((values.length ? values : run()).join('\n'), document.getElementById('businessStatus'), 'Copied the varied business name ideas.');
       });
@@ -256,8 +256,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyTeams').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyTeams')?.addEventListener('click', function () {
         var values = [].map.call(document.querySelectorAll('#teamOutput [data-variety-value]'), function (node) { return node.getAttribute('data-variety-value'); });
         copy((values.length ? values : run()).join('\n'), document.getElementById('teamStatus'), 'Copied the varied team name ideas.');
       });
@@ -293,8 +293,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyNicknames').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyNicknames')?.addEventListener('click', function () {
         var values = [].map.call(document.querySelectorAll('#nicknameOutput [data-variety-value]'), function (node) { return node.getAttribute('data-variety-value'); });
         copy((values.length ? values : run()).join('\n'), document.getElementById('nicknameStatus'), 'Copied the varied nickname ideas.');
       });
@@ -337,8 +337,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyAddresses').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyAddresses')?.addEventListener('click', function () {
         var cards = [].map.call(document.querySelectorAll('#addressOutput .address-card'), function (node) { return node.textContent; });
         copy((cards.length ? cards : run()).join('\n'), document.getElementById('addressStatus'), 'Copied the varied mock addresses.');
       });
@@ -376,8 +376,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     };
     onReady(function () {
       form = resetForm(form);
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyColors').addEventListener('click', function () {
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyColors')?.addEventListener('click', function () {
         var text = [].map.call(document.querySelectorAll('#colorOutput .color-card'), function (node) { return node.textContent.trim().replace(/\n+/g, ' | '); }).join('\n');
         copy(text || [].map.call(run(), function (color) { return color.hex + ' | ' + color.rgb + ' | ' + color.hsl; }).join('\n'), document.getElementById('colorStatus'), 'Copied the varied color palette.');
       });
@@ -417,9 +417,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         status.textContent = values.length + ' varied dates generated locally between ' + startValue + ' and ' + endValue + '.';
         return values;
       };
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyDates').addEventListener('click', function () {
-        var text = document.getElementById('dateOutput').value || run().join('\n');
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyDates')?.addEventListener('click', function () {
+        var text = document.getElementById('dateOutput')?.value || run().join('\n');
         copy(text, document.getElementById('dateStatus'), 'Copied the varied dates.');
       });
       run();
@@ -452,9 +452,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         document.getElementById('phoneStatus').textContent = values.length + ' varied fictional phone numbers generated locally.';
         return values;
       };
-      form.addEventListener('submit', function (event) { event.preventDefault(); run(); });
-      document.getElementById('copyPhones').addEventListener('click', function () {
-        var text = document.getElementById('phoneOutput').value || run().join('\n');
+      form?.addEventListener('submit', function (event) { event.preventDefault(); run(); });
+      document.getElementById('copyPhones')?.addEventListener('click', function () {
+        var text = document.getElementById('phoneOutput')?.value || run().join('\n');
         copy(text, document.getElementById('phoneStatus'), 'Copied the varied mock phone numbers.');
       });
       run();

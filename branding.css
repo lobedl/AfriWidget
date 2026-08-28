@@ -1299,4 +1299,103 @@ article details div p:last-child {
   margin-bottom: 0;
 }
 
+/* ==========================================================================
+   Responsive AI Assistant & Share Result Interface (TV, PC, Tablet, Mobile)
+   ========================================================================== */
+
+#ai-live-insight {
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+#ai-live-insight #universalAiInsight {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+#universalAiQuickChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ai-quick-chip {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ai-quick-chip:hover {
+  transform: translateY(-1px);
+}
+
+.ai-quick-chip:active {
+  transform: translateY(0);
+}
+
+#shareResultBar {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+#shareResultBar button {
+  min-height: 44px;
+}
+
+/* Large TV & 4K Ultra-wide Display Enhancements */
+@media (min-width: 1536px) {
+  #ai-live-insight {
+    padding: 2.5rem;
+    border-radius: 1.75rem;
+  }
+
+  #ai-live-insight #universalAiInsight {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  #shareResultBar {
+    padding: 1.75rem 2.25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  #ai-live-insight,
+  #shareResultBar {
+    max-width: 88rem;
+  }
+}
+
+/* Share Modal Smooth Transitions */
+#afriwidgetShareModal {
+  animation: modalBackdropFade 0.2s ease-out;
+}
+
+#afriwidgetShareModal > div {
+  animation: modalContentZoom 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalContentZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
 

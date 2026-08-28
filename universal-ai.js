@@ -60,18 +60,18 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'uk-degree-classification-calculator': { category: 'education', result: ['#resClassificationTitle', '#resFinalMark', '#resY2Avg', '#resY3Avg'], host: '#results' },
     'ucas-points-calculator': { category: 'education', result: ['#totalPoints', '#resQualCount', '#resProfile', '#resAdmissionsTier'], host: '#results' },
     'uk-a-level-grade-calculator': { category: 'education', result: ['#finalGradeDisplay', '#weightedPercentageDisplay', '#resProfileCombo', '#resProfileTariff'], host: '#results' },
-    'uk-student-loan-finance-calculator': { category: 'finance', result: ['#totalRepayment', '#debtForgivenBadge', '#monthlyRepaymentStart', '#lifetimeCost'], host: '#results' },
+    'uk-student-loan-finance-calculator': { category: 'finance', result: ['#resultMaintenanceTotal', '#resultTermlyPayment', '#resultTotalPackage', '#resultMonthlyRepayment', '#resultAnnualRepayment'], host: '#resultMaintenanceTotal' },
     'hourly-to-salary': { category: 'finance', result: ['#results'], host: '#results' },
     'igcse-alevel-gpa-converter': { category: 'education', result: ['#igcseGpaResult', '#igcseGpaMessage'], host: '#igcseGpaResult' },
     'image-resizer-webp-converter': { category: 'productivity', result: ['#imageStatus', '#imageDimensions'], host: '#imageStatus' },
     'icass-calculator': { category: 'education', result: ['#icassScore', '#icassBand'], host: '#icassResult' },
     'invoice-receipt-generator': { category: 'productivity', result: ['#invoiceGrandTotal', '#invoicePreviewTotal'], host: '#invoicePreview' },
     'jamb-utme-aggregate-calculator': { category: 'education', result: ['#jambResult', '#jambMessage'], host: '#jambResult' },
-    'jamb-score-calculator': { category: 'education', result: ['#resTotalScore', '#resScorePercentage', '#resCutoffStatus'], host: '#resultsContainer' },
+    'jamb-score-calculator': { category: 'education', result: ['#resTotalScore', '#resPercentage', '#resTierBadge', '#resTierDescription'], host: '#resultsContainer' },
     'jamb-admission-chance-checker': { category: 'education', result: ['#resProbabilityScore', '#resStatusBadge'], host: '#chanceResultsContainer' },
     'post-utme-aggregate-calculator': { category: 'education', result: ['#resTotalAggregate', '#resAggregateBadge'], host: '#postUtmeResultsContainer' },
     'waec-grade-calculator': { category: 'education', result: ['#resTotalCredits', '#resEligibilityBadge'], host: '#waecResultsContainer' },
-    'nigerian-university-cgpa-calculator': { category: 'education', result: ['#resCgpaValue', '#resHonoursBadge'], host: '#resultsCard' },
+    'nigerian-university-cgpa-calculator': { category: 'education', result: ['#resCgpaVal', '#resHonoursBadge', '#resGpaVal', '#resTqpVal'], host: '#resultsContainer' },
     'loan-calculator': { category: 'finance', result: ['#loanPayment', '#loanTotal', '#loanInterest'], host: '#loanResult' },
     'json-formatter-validator': { category: 'productivity', result: ['#formatted', '#successBlock', '#errorBlock'], host: '#formatted' },
     'kcse-eligibility-tier-checker': { category: 'education', result: ['#kcseTierResult', '#kcseTierMessage'], host: '#kcseTierResult' },
@@ -80,7 +80,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'mortgage-calculator': { category: 'finance', result: ['#results'], host: '#results' },
     'olevel-subject-combination-checker': { category: 'education', result: ['#olevelResultTitle', '#olevelCritical'], host: '#olevelResultTitle' },
     'ovulation-cycle-calculator': { category: 'health', result: ['#cycleResult', '#cycleMessage'], host: '#cycleResult' },
-    'password-generator': { category: 'productivity', result: ['#results', '#passwordOutput'], host: '#results' },
+    'password-generator': { category: 'productivity', result: ['#passwordList', '#results'], host: '#results' },
     'random-email-generator': { category: 'productivity', result: ['#emailOutput'], host: '#emailOutput' },
     'random-business-name-generator': { category: 'productivity', result: ['#businessOutput'], host: '#businessOutput' },
     'random-team-name-generator': { category: 'productivity', result: ['#teamOutput'], host: '#teamOutput' },
@@ -116,7 +116,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'unit-converter': { category: 'productivity', result: ['#conversionResult'], host: '#conversionResult' },
     'university-cutoff-eligibility-checker': { category: 'education', result: ['#eligibilityCard', '#eligibilityStatus', '#eligibilityMessage'], host: '#eligibilityCard' },
     'wassce-aggregate-calculator': { category: 'education', result: ['#aggregateResult', '#resultMessage'], host: '#aggregateResult' },
-    'water-intake-calculator': { category: 'health', result: ['#waterResult', '#waterMessage'], host: '#waterResult' },
+    'water-intake-calculator': { category: 'health', result: ['#waterLitres', '#waterMl', '#waterBottles'], host: '#waterResults' },
     'whatsapp-direct-link-qr-generator': { category: 'productivity', result: ['#whatsappOutput', '#whatsappStatus'], host: '#whatsappOutput' },
     'qr-code-generator': { category: 'productivity', result: ['#qrStatus'], host: '#qrCanvas' },
     'word-counter': { category: 'productivity', result: ['#statWords', '#statChars', '#keywordList'], host: '#keywordList' },
@@ -125,7 +125,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'zimsec-olevel-points-calculator': { category: 'education', result: ['#best5Points', '#totalPoints', '#passCountBadge', '#certificateStatusBadge', '#form5Status'], host: '#olevelResultCard' },
     'zimsec-alevel-points-calculator': { category: 'education', result: ['#alevelPoints', '#principalPassBadge', '#admissionsTierTitle', '#admissionsTierDesc'], host: '#alevelResultCard' },
     'zimbabwe-university-entry-points-calculator': { category: 'education', result: ['#uniPointsDisplay', '#uniTargetHeadline', '#chanceHeading', '#chanceExplanation', '#conventionalStatus', '#parallelStatus'], host: '#uniResultCard' },
-    'zimbabwe-university-gpa-calculator': { category: 'education', result: ['#resSemesterGpa', '#resCumulativeCgpa', '#resDegreeClass', '#resDegreeExplanation'], host: '#gpaResultCard' },
+    'zimbabwe-university-gpa-calculator': { category: 'education', result: ['#resSemesterGpa', '#resCumulativeCgpa', '#resHonoursTitle', '#resAcademicStanding'], host: '#gpaResultCard' },
     'zimbabwe-study-timetable-generator': { category: 'education', result: ['#resScheduleTitle', '#resWeeklyHours', '#resSubjectsCovered', '#resPastPaperDrills'], host: '#timetableResultCard' },
     'ghana-university-gpa-calculator': { category: 'education', result: ['#valSemesterScore', '#valCumulativeScore', '#titleHonoursClass', '#descHonoursClass', '#valQualityPoints'], host: '#gpaResultCard' },
     'ghana-nursing-training-admission-calculator': { category: 'education', result: ['#valNetAggregate', '#badgeStatusVerdict', '#titleStatusHeading', '#descStatusExplanation', '#checkInterviewProb'], host: '#nursingResultCard' },
@@ -137,19 +137,21 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'uganda-university-admission-calculator': { category: 'education', result: ['#valTotalWeightedPoints', '#valRawUacePoints', '#valPrincipalPassCount', '#valUceWeightedScore', '#valAffirmativePoints'], host: '#ugandaAdmissionResultCard' },
     'uganda-university-cgpa-calculator': { category: 'education', result: ['#valSemesterGpa', '#valCumulativeCgpa', '#valSemesterQp', '#txtHonoursStanding', '#valSemesterCu'], host: '#ugandaGpaResultCard' },
     'uneb-results-estimator': { category: 'education', result: ['#valMainScore', '#valDivisionStanding', '#valTierStanding', '#valAdmissionPathway', '#txtPlacementAdvice'], host: '#unebResultCard' },
-    'form-four-gpa-calculator': { category: 'education', result: ['#valCseeGpa', '#valCseeDivision', '#valBest7Points', '#valCertificateStatus'], host: '#cseeResultCard' },
-    'acsee-points-calculator': { category: 'education', result: ['#valTotalAcseePoints', '#valAcseeDivision', '#valTcuPoints', '#valTwoSubjectPoints'], host: '#acseeResultCard' },
+    'form-four-gpa-calculator': { category: 'education', result: ['#valNectaGpa', '#valDivisionResult', '#valBest7Points', '#valAlevelStatus'], host: '#formFourResultCard' },
+    'acsee-points-calculator': { category: 'education', result: ['#valAcseePointsResult', '#valAcseeDivisionResult', '#valTcuPoints', '#valTcuDegreeStatus'], host: '#acseeResultCard' },
     'tanzania-university-admission-calculator': { category: 'education', result: ['#valTcuScoreDisplay', '#valBenchmarkCutoff', '#valTwoSubjectCore', '#valTcuRuleStatus'], host: '#tanzaniaAdmissionResultCard' },
     'tanzania-heslb-loan-calculator': { category: 'finance', result: ['#res-total-debt', '#res-monthly-deduction', '#res-annual-loan'], host: '#results-card' },
-    'tanzania-university-gpa-calculator': { category: 'education', result: ['#res-gpa-display', '#res-class-badge', '#res-quality-points'], host: '#results-card' },
+    'tanzania-university-gpa-calculator': { category: 'education', result: ['#res-gpa-value', '#res-degree-class', '#res-final-cgpa'], host: '#results-card' },
     'zambia-grade-12-points-calculator': { category: 'education', result: ['#resBest6Points', '#resBest5Points', '#resCertificateBadge', '#resCreditCount'], host: '#resultsCard' },
     'zambia-university-admission-calculator': { category: 'education', result: ['#resAdmissionPoints', '#resAdmissionStatusBadge', '#resSelectedFacultyTitle'], host: '#resultsCard' },
     'zambia-university-gpa-calculator': { category: 'education', result: ['#resSemesterGpa', '#resCumulativeCgpa', '#resHonoursBadge', '#resTotalQualityPoints'], host: '#resultsCard' },
-    'zambia-teveta-score-calculator': { category: 'education', result: ['#resOverallMark', '#resAwardBadge', '#resTqfLevelBadge'], host: '#resultsCard' },
-    'zambia-student-budget-planner': { category: 'finance', result: ['#resNetBalance', '#resTotalIncome', '#resTotalExpenses', '#resSavingsRate'], host: '#resultsCard' },
-    'atar-calculator': { category: 'education', result: ['#atarResultDisplay', '#atarPercentileBadge', '#scaledAggregateDisplay', '#admissionTierBadge'], host: '#atarResultCard' },
-    'university-course-finder': { category: 'education', result: ['#matchedCountBadge', '#resultsList'], host: '#courseResultsSection' },
-    'student-budget-calculator': { category: 'finance', result: ['#resNetCashFlow', '#resTotalIncome', '#resTotalExpenses', '#resSavingsRate'], host: '#resultsCard' }
+    'zambia-teveta-score-calculator': { category: 'education', result: ['#resFinalScore', '#resAwardBadge', '#resClassificationText', '#resZaqfLevelText'], host: '#resultsCard' },
+    'zambia-student-budget-planner': { category: 'finance', result: ['#resNetBalance', '#resTotalMonthlyIncome', '#resTotalMonthlyCost', '#resBudgetStatusBadge'], host: '#resultsCard' },
+    'atar-calculator': { category: 'education', result: ['#resAtarScore', '#resSelectionRank', '#resAggregateScore', '#resUnitsCounted', '#resPercentileText'], host: '#resultsCard' },
+    'university-course-finder': { category: 'education', result: ['#resultsCountBadge', '#coursesGridContainer'], host: '#coursesGridContainer' },
+    'student-budget-calculator': { category: 'finance', result: ['#resNetWeekly', '#resTotalIncome', '#resTotalExpense', '#resMonthlySummary'], host: '#budgetResultsCard' },
+    'hecs-help-repayment-calculator': { category: 'education', result: ['#resAnnualRepayment', '#resRepaymentRateText', '#resPaycheckDeduction', '#resYearsToPayoff'], host: '#resultsCard' },
+    'australia-scholarship-finder': { category: 'education', result: ['#resMatchCountBadge', '#resTotalFundingValue', '#resTopCategory'], host: '#resultsCard' }
   };
 
   const CATEGORY_NAMES = {
@@ -276,28 +278,86 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   function buildAssistant(config) {
     const assistant = document.createElement('section');
     assistant.id = 'ai-live-insight';
-    assistant.className = 'hidden mt-8 w-full rounded-2xl border border-emerald-200 bg-white p-6 sm:p-8 shadow-md text-left';
+    assistant.className = 'hidden mt-10 w-full max-w-7xl mx-auto rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 lg:p-9 shadow-xl shadow-slate-900/5 text-left transition-all duration-300 relative overflow-hidden';
     const categoryName = CATEGORY_NAMES[config.category] || CATEGORY_NAMES.tools;
     assistant.innerHTML = `
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-black text-sm shadow-sm" aria-hidden="true">AI</div>
-        <div>
-          <h2 class="font-extrabold text-slate-900 text-lg">AfriWidget AI ${categoryName} Assistant</h2>
-          <p class="text-xs text-slate-500 font-medium">Friendly, practical guidance based on this result</p>
+      <!-- Header with Status Badge -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-slate-950 text-amber-300 flex items-center justify-center font-black text-base shadow-lg shadow-slate-950/15 border border-slate-800 flex-shrink-0" aria-hidden="true">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <h2 class="font-black text-slate-950 text-xl sm:text-2xl tracking-tight">AfriWidget AI ${categoryName} Assistant</h2>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 text-xs font-bold shadow-2xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Live AI Analysis</span>
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Instant personalized guidance, context explanation, and actionable strategy tailored to your calculation.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <span class="text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-xl shadow-2xs">⚡ Private In-Browser AI</span>
         </div>
       </div>
-      <p id="universalAiInsight" class="text-slate-700 leading-relaxed text-base bg-slate-50 border border-slate-100 p-4 sm:p-5 rounded-xl" aria-live="polite">${FALLBACK_MESSAGE}</p>
-      <div class="mt-6 pt-5 border-t border-slate-200">
-        <label for="universalAiQuestion" class="block text-sm font-semibold text-slate-800 mb-2">Ask a follow-up question</label>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <input id="universalAiQuestion" type="text" maxlength="500" class="flex-1 bg-slate-50 border-2 border-slate-200 focus:border-emerald-500 px-4 py-3 rounded-xl outline-none text-slate-800 text-sm font-medium" placeholder="Ask about this result…" />
-          <button id="universalAiAsk" type="button" class="bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-300 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm shadow-sm cursor-pointer">Ask AI</button>
+
+      <!-- Responsive 2-Column Desktop / TV Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Column: Primary AI Narrative Insight & Quick Suggestions (7 cols on PC/TV) -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Calculated Context &amp; Key Takeaways</span>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/70 px-2.5 py-0.5 rounded-full" id="aiStatusPill">✓ Instant Synthesis</span>
+          </div>
+          <div class="relative rounded-2xl bg-slate-50/90 border border-slate-200/90 p-5 sm:p-7 shadow-xs">
+            <div class="text-slate-900 leading-relaxed text-base sm:text-lg font-normal" id="universalAiInsight" aria-live="polite">${FALLBACK_MESSAGE}</div>
+          </div>
+          
+          <!-- Quick Prompt Suggestion Chips -->
+          <div class="pt-2">
+            <span class="block text-xs font-bold text-slate-500 mb-2">💡 One-Click Questions to Ask AI:</span>
+            <div class="flex flex-wrap gap-2" id="universalAiQuickChips">
+              <button type="button" data-prompt="What are my best next actionable steps based on this calculated result?" class="ai-quick-chip text-xs font-semibold px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
+                🎯 What are my best next steps?
+              </button>
+              <button type="button" data-prompt="How can I optimize and improve this calculated outcome or score?" class="ai-quick-chip text-xs font-semibold px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
+                📈 How can I optimize this result?
+              </button>
+              <button type="button" data-prompt="Explain the official criteria, grading standards, or underlying formulas used for this calculation." class="ai-quick-chip text-xs font-semibold px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
+                🔍 Explain official criteria &amp; rules
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="mt-2 flex flex-wrap justify-between gap-2 text-xs text-slate-500">
-          <span id="universalAiCounter"></span>
-          <span id="universalAiReset"></span>
+
+        <!-- Right Column: Interactive Follow-up Question Console (5 cols on PC/TV) -->
+        <div class="lg:col-span-5 bg-slate-50/70 border border-slate-200/90 rounded-2xl p-5 sm:p-6 shadow-xs space-y-4">
+          <div>
+            <label for="universalAiQuestion" class="block text-sm font-bold text-slate-950 mb-1">Ask a Custom Follow-Up Question</label>
+            <p class="text-xs text-slate-500 mb-3">Ask anything about admissions, repayments, budgeting, or criteria.</p>
+            <div class="space-y-3">
+              <div class="relative">
+                <textarea id="universalAiQuestion" rows="3" maxlength="500" class="w-full bg-white border border-slate-200 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/10 p-3.5 rounded-xl outline-none text-slate-900 text-sm font-medium transition-all placeholder:text-slate-400 resize-none shadow-2xs" placeholder="Type your question about this calculation…"></textarea>
+              </div>
+              <div class="flex items-center justify-between gap-3">
+                <div class="text-[11px] font-semibold text-slate-500">
+                  <span id="universalAiCounter" class="block">5 / 5 questions remaining</span>
+                  <span id="universalAiReset" class="block text-[10px] text-slate-400"></span>
+                </div>
+                <button id="universalAiAsk" type="button" class="bg-slate-950 hover:bg-slate-800 disabled:bg-slate-300 text-white font-extrabold px-6 py-2.5 rounded-xl transition-all text-sm shadow-md shadow-slate-950/15 cursor-pointer flex items-center gap-1.5 flex-shrink-0 active:scale-[0.99]">
+                  <span>Ask AI</span>
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Response Container -->
+          <div id="universalAiAnswer" class="hidden rounded-xl bg-slate-950 text-slate-100 p-4 sm:p-5 text-sm leading-relaxed border border-slate-800 shadow-inner space-y-2" aria-live="polite">
+          </div>
         </div>
-        <p id="universalAiAnswer" class="hidden mt-4 rounded-xl bg-emerald-50 border border-emerald-100 p-4 text-sm text-emerald-950 leading-relaxed" aria-live="polite"></p>
       </div>`;
 
     let targetElement = null;
@@ -305,14 +365,28 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       targetElement = $(config.host);
     }
     if (!targetElement) {
-      targetElement = $('#results') || $('#result') || $('main > .bg-white:last-of-type') || $('main > div:first-of-type');
+      targetElement = $('#resultsCard') || $('#budgetResultsCard') || $('#gpaResultCard') || $('#resultsContainer') || $('#results') || $('#result') || $('#results-card') || $('#calculatorCard') || $('#formFourResultCard') || $('#acseeResultCard');
+    }
+    if (!targetElement) {
+      targetElement = $('main .grid:first-of-type') || $('main form') || $('main > div:first-of-type');
     }
 
     if (targetElement) {
-      targetElement.insertAdjacentElement('afterend', assistant);
+      // Smart Full-Width Placement: If inside a grid column, place after the entire grid so it spans 100% width on Desktop/TV
+      const parentGrid = targetElement.closest('main > .grid, main > div > .grid, .grid');
+      if (parentGrid && parentGrid.parentElement) {
+        parentGrid.insertAdjacentElement('afterend', assistant);
+      } else {
+        targetElement.insertAdjacentElement('afterend', assistant);
+      }
     } else {
       const mainEl = $('main') || document.body;
-      mainEl.appendChild(assistant);
+      const firstSection = mainEl.querySelector('section, article, div:nth-of-type(2)');
+      if (firstSection) {
+        firstSection.insertAdjacentElement('beforebegin', assistant);
+      } else {
+        mainEl.appendChild(assistant);
+      }
     }
     return assistant;
   }
@@ -337,15 +411,17 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     const updateQuotaUi = () => {
       const quota = readQuota();
       const left = Math.max(0, MAX_CUSTOM_QUESTIONS - quota.count);
-      counter.textContent = `${left} / ${MAX_CUSTOM_QUESTIONS} questions left`;
-      reset.textContent = formatCountdown(quota.resetAt);
+      if (counter) counter.textContent = `${left} / ${MAX_CUSTOM_QUESTIONS} questions left`;
+      if (reset) reset.textContent = formatCountdown(quota.resetAt);
       const disabled = left === 0;
-      question.disabled = disabled;
-      askButton.disabled = disabled;
-      question.placeholder = disabled
-        ? 'Your questions will be available after the reset timer.'
-        : 'Ask about this result…';
-      if (disabled) answer.textContent = 'You have reached the five-question limit. Check back after the reset timer.';
+      if (question) {
+        question.disabled = disabled;
+        question.placeholder = disabled
+          ? 'Your questions will be available after the reset timer.'
+          : 'Ask about this result…';
+      }
+      if (askButton) askButton.disabled = disabled;
+      if (disabled && answer) answer.textContent = 'You have reached the five-question limit. Check back after the reset timer.';
     };
 
     const runInsight = async () => {
@@ -355,10 +431,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       if (signature === lastSignature) return;
       lastSignature = signature;
       const currentRequest = ++requestVersion;
-      assistant.classList.remove('hidden');
-      insight.textContent = 'Preparing your AI insight…';
+      if (assistant) assistant.classList.remove('hidden');
+      if (insight) insight.textContent = 'Preparing your AI insight…';
       const text = await askAI('insight', context);
-      if (currentRequest === requestVersion) insight.textContent = text;
+      if (currentRequest === requestVersion && insight) insight.textContent = text;
     };
 
     const triggerInsightOnClick = () => {
@@ -391,7 +467,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       triggerInsightOnClick();
     });
 
-    askButton.addEventListener('click', async () => {
+    askButton?.addEventListener('click', async () => {
+      if (!question || !askButton || !answer) return;
       const prompt = question.value.trim();
       const quota = readQuota();
       if (!prompt || quota.count >= MAX_CUSTOM_QUESTIONS) {
@@ -409,9 +486,19 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       updateQuotaUi();
     });
 
-    question.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
+    question?.addEventListener('keydown', event => {
+      if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
+        askButton?.click();
+      }
+    });
+
+    assistant?.addEventListener('click', event => {
+      const chip = event.target.closest('.ai-quick-chip');
+      if (!chip || !question || !askButton) return;
+      const prompt = chip.getAttribute('data-prompt');
+      if (prompt) {
+        question.value = prompt;
         askButton.click();
       }
     });

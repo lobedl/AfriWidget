@@ -152,6 +152,26 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       fields: () => $$('.matric-input'),
       calculate: () => $('#matricCalculate')?.click()
     },
+    'atar-calculator': {
+      fields: () => [$('#adjustmentScheme'), $('#customAdjInput'), ...$$('.subject-score-input, .subject-units-select, .subject-state-select')],
+      calculate: () => $('#calculateAtarBtn')?.click()
+    },
+    'hecs-help-repayment-calculator': {
+      fields: () => [$('#repaymentIncome'), $('#hecsDebtBalance'), $('#indexationRate'), $('#voluntaryRepayment'), $('#incomeFrequency')],
+      calculate: () => $('#calculateHecsBtn')?.click()
+    },
+    'australia-scholarship-finder': {
+      fields: () => [$('#userState'), $('#userStudyArea'), $('#userDegreeLevel'), $('#userAtarScore'), $('#userStudyMode'), $('#userCitizenship'), $('#equityFinancial'), $('#equityRural'), $('#equityIndigenous'), $('#equityFirstGen'), $('#equityDisability'), $('#meritLeadership')],
+      calculate: () => $('#filterScholarshipsBtn')?.click()
+    },
+    'student-budget-calculator': {
+      fields: () => [$('#livingCity'), $('#housingType'), $('#incomeYouthAllowance'), $('#incomeJob'), $('#incomeFamily'), $('#incomeScholarship'), $('#costRent'), $('#costGroceries'), $('#costUtilities'), $('#costTransport'), $('#costPhone'), $('#costAcademic'), $('#costPersonal')],
+      calculate: () => $('#calcBudgetBtn')?.click()
+    },
+    'university-course-finder': {
+      fields: () => [$('#filterState'), $('#filterArea'), $('#filterDegreeLevel'), $('#filterMaxAtar'), $('#filterInstitutionType'), $('#courseSearchInput')],
+      calculate: () => $('#applyFiltersBtn')?.click()
+    },
     'igcse-alevel-gpa-converter': {
       fields: () => $$('.igcse-row input, .igcse-row select'),
       restore(values) {
@@ -253,19 +273,21 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'shareToast';
-      toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-2xl transition-opacity duration-200';
+      toast.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[120] flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-2xl transition-all duration-300 border border-slate-700/80';
       document.body.appendChild(toast);
     }
-    toast.textContent = message;
-    toast.classList.remove('opacity-0');
+    toast.innerHTML = `<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>${message}</span>`;
+    toast.classList.remove('opacity-0', 'translate-y-4');
     clearTimeout(toast._timer);
-    toast._timer = setTimeout(() => toast.classList.add('opacity-0'), 2400);
+    toast._timer = setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-4');
+    }, 2800);
   }
 
   async function copyUrl(url) {
     try {
       await navigator.clipboard.writeText(url);
-      showToast('Link copied to clipboard!');
+      showToast('Shareable calculation link copied to clipboard!');
     } catch {
       const textarea = document.createElement('textarea');
       textarea.value = url;
@@ -275,18 +297,90 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       textarea.select();
       document.execCommand('copy');
       textarea.remove();
-      showToast('Link copied to clipboard!');
+      showToast('Shareable calculation link copied to clipboard!');
     }
   }
 
+  function openShareModal(url, adapterConfig) {
+    let modal = $('#afriwidgetShareModal');
+    if (modal) modal.remove();
+
+    const title = document.title.replace(/\s*[|—-]\s*AfriWidget.*$/i, '').trim();
+    const encodedUrl = encodeURIComponent(url);
+    const shareText = encodeURIComponent(`Check out my calculation on AfriWidget (${title}): `);
+
+    modal = document.createElement('div');
+    modal.id = 'afriwidgetShareModal';
+    modal.className = 'fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 bg-slate-950/70 backdrop-blur-xs transition-opacity duration-200';
+    modal.innerHTML = `
+      <div class="relative w-full max-w-lg rounded-3xl bg-white p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6 text-left animate-in fade-in zoom-in-95 duration-150">
+        <button id="closeShareModal" type="button" class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Close share dialog">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold mb-2">
+            <span>⚡ Share &amp; Save Calculation</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Share Your Result</h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Anyone opening this link will see your exact inputs and computed results loaded instantly in their browser.
+          </p>
+        </div>
+
+        <!-- Copy Link Box -->
+        <div class="space-y-2">
+          <label for="shareLinkInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Direct Shareable Link</label>
+          <div class="flex items-center gap-2">
+            <input id="shareLinkInput" type="text" readonly value="${url}" class="flex-1 bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl text-xs sm:text-sm text-slate-800 font-mono select-all focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+            <button id="modalCopyBtn" type="button" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold px-5 py-3 rounded-xl transition-all text-xs sm:text-sm shadow-sm flex items-center gap-1.5 flex-shrink-0 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1-Click Social Sharing -->
+        <div class="space-y-2 pt-2 border-t border-slate-100">
+          <span class="block text-xs font-bold uppercase tracking-wider text-slate-500">Share Directly To:</span>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+            <a href="https://api.whatsapp.com/send?text=${shareText}${encodedUrl}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-bold transition-all">
+              <span>💬 WhatsApp</span>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${encodedUrl}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all">
+              <span>✖ Post on X</span>
+            </a>
+            <a href="mailto:?subject=${encodeURIComponent(title)}&body=${shareText}${encodedUrl}" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-all">
+              <span>✉ Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeBtn = $('#closeShareModal', modal);
+    closeBtn?.addEventListener('click', () => modal.remove());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.remove();
+    });
+
+    const copyBtn = $('#modalCopyBtn', modal);
+    copyBtn?.addEventListener('click', () => {
+      copyUrl(url);
+    });
+  }
+
   function bindShareButton(button, adapterConfig) {
-    button.addEventListener('click', async () => {
+    if (!button) return;
+    button.addEventListener('click', async (e) => {
+      e.preventDefault();
       const url = shareUrl(adapterConfig);
       const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
       if (isMobile && navigator.share) {
         try {
           await navigator.share({
-            title: 'My Result',
+            title: document.title.replace(/\s*[|—-]\s*AfriWidget.*$/i, '').trim(),
             text: 'Check out my calculated score on AfriWidget!',
             url
           });
@@ -295,12 +389,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
           if (error?.name === 'AbortError') return;
         }
       }
-      copyUrl(url);
+      openShareModal(url, adapterConfig);
     });
   }
 
   function resultHost() {
-    return $('#statusBanner')?.closest('.rounded-2xl, section, div') ||
+    return $('#resultsCard') ||
+      $('#statusBanner')?.closest('.rounded-2xl, section, div') ||
       $('#gpaResult')?.closest('.bg-white, .rounded-2xl, section') ||
       $('#jambResult')?.closest('.bg-white, .rounded-2xl, section') ||
       $('#apsResult')?.closest('.bg-white, .rounded-2xl, section') ||
@@ -320,15 +415,39 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   }
 
   function injectShareControl(adapterConfig) {
-    if (!adapterConfig || $('#shareResultButton')) return;
+    if (!adapterConfig || $('#shareResultButton') || $('#shareResultBar')) return;
     const host = resultHost();
     if (!host) return;
+
     const bar = document.createElement('div');
     bar.id = 'shareResultBar';
-    bar.className = 'mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4';
-    bar.innerHTML = '<div><p class="font-bold text-emerald-900">Share your result</p><p class="text-sm text-emerald-800">Send this calculation to someone or save a link to reopen it.</p></div><button id="shareResultButton" type="button" class="w-full sm:w-auto rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white shadow-md transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-200 cursor-pointer">Share Result</button>';
+    bar.className = 'mt-8 w-full max-w-7xl mx-auto rounded-3xl border border-emerald-200/90 bg-gradient-to-r from-emerald-50/90 via-teal-50/70 to-emerald-50/90 p-5 sm:p-6 lg:p-7 shadow-xs flex flex-col md:flex-row items-center justify-between gap-5 transition-all text-left';
+    bar.innerHTML = `
+      <div class="flex items-center gap-3.5 w-full md:w-auto">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm flex-shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-slate-900 text-base sm:text-lg">Share &amp; Save Calculation</h3>
+          <p class="text-xs sm:text-sm text-slate-600">Send this completed result to mentors, family, or save a permanent bookmark link.</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-start md:justify-end">
+        <button id="shareResultButton" type="button" class="flex-1 sm:flex-initial rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 px-5 py-3 font-extrabold text-white text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <span>Copy Shareable Link</span>
+        </button>
+        <button id="shareModalButton" type="button" class="flex-1 sm:flex-initial rounded-xl bg-white hover:bg-slate-50 active:scale-95 border border-slate-200 px-4 py-3 font-bold text-slate-700 text-xs sm:text-sm shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>More Options…</span>
+        </button>
+      </div>
+    `;
 
-    if (host.id === 'results' && host.firstElementChild) {
+    // Smart full-width responsive insertion:
+    const parentGrid = host.closest('.grid');
+    if (parentGrid && parentGrid.parentElement) {
+      parentGrid.insertAdjacentElement('afterend', bar);
+    } else if (host.id === 'results' && host.firstElementChild) {
       host.firstElementChild.insertAdjacentElement('afterend', bar);
     } else if (host.tagName === 'MAIN' && host.firstElementChild) {
       const target = host.querySelector('section, form, div.grid') || host.firstElementChild;
@@ -338,6 +457,12 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     }
 
     bindShareButton($('#shareResultButton'), adapterConfig);
+    bindShareButton($('#shareModalButton'), adapterConfig);
+    
+    // Also bind any other share buttons on the page (e.g. data-share-btn or #shareResultsBtn)
+    $$('[data-share-btn], #shareResultsBtn, .share-btn').forEach(btn => {
+      bindShareButton(btn, adapterConfig);
+    });
   }
 
   function restoreField(field, value) {

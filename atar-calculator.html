@@ -179,9 +179,14 @@
 
 
 
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
-        <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -272,71 +277,71 @@
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
     <!-- Header Title and Privacy Badge -->
     <div class="mb-8 text-center max-w-3xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold mb-3">
-        <span>🇦🇺</span>
-        <span>Official Australian Scaling Standards (UAC • VTAC • QTAC • TISC • SATAC)</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-slate-100 text-xs font-bold mb-3 shadow-xs border border-slate-800">
+        <span class="text-sm">🇦🇺</span>
+        <span class="tracking-wide">Official Australian Scaling Standards (UAC • VTAC • QTAC • TISC • SATAC)</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">ATAR Calculator Australia</h1>
-      <p class="mt-3 text-base sm:text-lg text-slate-600">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">ATAR Calculator Australia</h1>
+      <p class="mt-3 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
         Calculate your indicative Australian Tertiary Admission Rank (ATAR) across NSW HSC, Victorian VCE, Queensland QCE, WA WACE, and SA SACE scaled study scores.
       </p>
-      <div class="mt-3 flex items-center justify-center gap-2 text-xs font-semibold text-emerald-700">
-        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <div class="mt-3.5 flex items-center justify-center gap-2 text-xs font-semibold text-emerald-800 bg-emerald-50/80 border border-emerald-200/80 py-1 px-3.5 rounded-full w-fit mx-auto shadow-2xs">
+        <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
         <span>⚡ 100% Free • No Signup • Private In-Browser Calculation</span>
       </div>
     </div>
 
     <!-- Main Calculator Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <!-- Input Panel (Left Column) -->
       <div class="lg:col-span-7 space-y-6">
-        <div id="calculatorCard" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-7">
+        <div id="calculatorCard" class="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-900/5 p-6 sm:p-8">
           
           <!-- State Selection Tabs -->
           <div class="mb-6">
-            <label for="stateSelect" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Select Your State &amp; Secondary Certificate</label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              <button type="button" class="state-btn active px-3 py-2.5 rounded-xl border text-xs sm:text-sm font-bold transition-all text-center" data-state="nsw">
-                <span class="block">NSW (HSC)</span>
-                <span class="text-[10px] font-normal text-slate-500">UAC Scaling</span>
+            <label for="stateSelect" class="block text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">Select Your State &amp; Secondary Certificate</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <button type="button" class="state-btn active px-3.5 py-3 rounded-2xl border text-xs sm:text-sm font-bold transition-all text-center cursor-pointer" data-state="nsw">
+                <span class="block text-inherit">NSW (HSC)</span>
+                <span class="state-sub text-[10px] font-medium opacity-80">UAC Scaling</span>
               </button>
-              <button type="button" class="state-btn px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold transition-all text-center" data-state="vic">
-                <span class="block">VIC (VCE)</span>
-                <span class="text-[10px] font-normal text-slate-500">VTAC Primary 4</span>
+              <button type="button" class="state-btn px-3.5 py-3 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-slate-100/80 text-slate-700 text-xs sm:text-sm font-bold transition-all text-center cursor-pointer shadow-2xs" data-state="vic">
+                <span class="block text-inherit">VIC (VCE)</span>
+                <span class="state-sub text-[10px] font-normal text-slate-500">VTAC Primary 4</span>
               </button>
-              <button type="button" class="state-btn px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold transition-all text-center" data-state="qld">
-                <span class="block">QLD (QCE)</span>
-                <span class="text-[10px] font-normal text-slate-500">QTAC Best 5</span>
+              <button type="button" class="state-btn px-3.5 py-3 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-slate-100/80 text-slate-700 text-xs sm:text-sm font-bold transition-all text-center cursor-pointer shadow-2xs" data-state="qld">
+                <span class="block text-inherit">QLD (QCE)</span>
+                <span class="state-sub text-[10px] font-normal text-slate-500">QTAC Best 5</span>
               </button>
-              <button type="button" class="state-btn px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold transition-all text-center" data-state="wa">
-                <span class="block">WA (WACE)</span>
-                <span class="text-[10px] font-normal text-slate-500">TISC TEA (400)</span>
+              <button type="button" class="state-btn px-3.5 py-3 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-slate-100/80 text-slate-700 text-xs sm:text-sm font-bold transition-all text-center cursor-pointer shadow-2xs" data-state="wa">
+                <span class="block text-inherit">WA (WACE)</span>
+                <span class="state-sub text-[10px] font-normal text-slate-500">TISC TEA (400)</span>
               </button>
-              <button type="button" class="state-btn px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold transition-all text-center" data-state="sa">
-                <span class="block">SA / NT (SACE)</span>
-                <span class="text-[10px] font-normal text-slate-500">SATAC Aggregate</span>
+              <button type="button" class="state-btn px-3.5 py-3 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-slate-100/80 text-slate-700 text-xs sm:text-sm font-bold transition-all text-center cursor-pointer shadow-2xs" data-state="sa">
+                <span class="block text-inherit">SA / NT (SACE)</span>
+                <span class="state-sub text-[10px] font-normal text-slate-500">SATAC Aggregate</span>
               </button>
-              <button type="button" class="state-btn px-3 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm font-bold transition-all text-center" data-state="national">
-                <span class="block">National / Direct</span>
-                <span class="text-[10px] font-normal text-slate-500">Scaled Aggregate</span>
+              <button type="button" class="state-btn px-3.5 py-3 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-slate-100/80 text-slate-700 text-xs sm:text-sm font-bold transition-all text-center cursor-pointer shadow-2xs" data-state="national">
+                <span class="block text-inherit">National / Direct</span>
+                <span class="state-sub text-[10px] font-normal text-slate-500">Scaled Aggregate</span>
               </button>
             </div>
           </div>
 
           <!-- Quick Presets -->
-          <div class="mb-6 p-3.5 bg-slate-50 rounded-xl border border-slate-200/80">
-            <span class="block text-xs font-bold text-slate-600 mb-2">🎯 Quick Target Profiles (One-Click Populate):</span>
+          <div class="mb-6 p-4 bg-slate-50/80 rounded-2xl border border-slate-200/80">
+            <span class="block text-xs font-bold text-slate-600 mb-2.5">🎯 Quick Target Profiles (One-Click Populate):</span>
             <div class="flex flex-wrap gap-2">
-              <button type="button" id="presetMed" class="preset-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-yellow-400 hover:bg-yellow-50 text-slate-700 transition-colors">
+              <button type="button" id="presetMed" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
                 🩺 Medicine / Law (99.00+ Target)
               </button>
-              <button type="button" id="presetEng" class="preset-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-yellow-400 hover:bg-yellow-50 text-slate-700 transition-colors">
+              <button type="button" id="presetEng" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
                 💻 Engineering / CompSci (88.00+ Target)
               </button>
-              <button type="button" id="presetCom" class="preset-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-yellow-400 hover:bg-yellow-50 text-slate-700 transition-colors">
+              <button type="button" id="presetCom" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
                 📈 Commerce / Business (80.00+ Target)
               </button>
-              <button type="button" id="presetNur" class="preset-btn text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-yellow-400 hover:bg-yellow-50 text-slate-700 transition-colors">
+              <button type="button" id="presetNur" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 hover:text-slate-950 shadow-2xs transition-all cursor-pointer">
                 🏥 Nursing / Education (68.00+ Target)
               </button>
             </div>
@@ -344,7 +349,7 @@
 
           <!-- Subject Input Rows Header -->
           <div class="flex items-center justify-between mb-3">
-            <h2 class="text-sm font-extrabold text-slate-900 uppercase tracking-wider">Subject Scores &amp; Units</h2>
+            <h2 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Subject Scores &amp; Units</h2>
             <span id="scaleGuideText" class="text-xs text-slate-500 font-medium">Scaled score scale: 0 to 50 per subject</span>
           </div>
 
@@ -355,11 +360,11 @@
 
           <!-- Add Subject & Reset Actions -->
           <div class="flex flex-wrap items-center justify-between gap-3 pt-2 pb-4 border-b border-slate-100 mb-5">
-            <button type="button" id="addSubjectBtn" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-slate-950 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors">
+            <button type="button" id="addSubjectBtn" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-slate-950 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200/90 border border-slate-200/80 shadow-2xs transition-all cursor-pointer">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
               <span>Add Another Subject</span>
             </button>
-            <button type="button" id="resetSubjectsBtn" class="text-xs font-semibold text-slate-400 hover:text-rose-600 transition-colors">
+            <button type="button" id="resetSubjectsBtn" class="text-xs font-semibold text-slate-400 hover:text-rose-600 transition-colors cursor-pointer">
               Reset All Fields
             </button>
           </div>
@@ -367,14 +372,14 @@
           <!-- Adjustment Factors / Bonus Points -->
           <div class="mb-6">
             <div class="flex items-center justify-between mb-2">
-              <label for="adjustmentPoints" class="block text-xs font-bold text-slate-700">
+              <label for="adjustmentScheme" class="block text-xs font-bold text-slate-800">
                 Institutional Adjustment Factors / Bonus Points (EAS / SEAS / Regional)
               </label>
-              <span class="text-xs font-bold text-yellow-600" id="adjPointsLabel">+0.00 pts</span>
+              <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80" id="adjPointsLabel">+0.00 pts</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <select id="adjustmentScheme" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium text-slate-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                <select id="adjustmentScheme" class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-medium text-slate-800 focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:outline-none shadow-2xs">
                   <option value="0">No adjustments (Raw ATAR only)</option>
                   <option value="2">Educational Access Scheme (EAS / SEAS Category 1) (+2 pts)</option>
                   <option value="4">Severe Disadvantage / Financial Hardship (+4 pts)</option>
@@ -385,7 +390,7 @@
                 </select>
               </div>
               <div id="customAdjWrapper" class="hidden">
-                <input type="number" id="customAdjInput" min="0" max="15" step="0.5" placeholder="Enter bonus points (e.g. 3)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium text-slate-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+                <input type="number" id="customAdjInput" min="0" max="15" step="0.5" placeholder="Enter bonus points (e.g. 3)" class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-medium text-slate-800 focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:outline-none shadow-2xs" />
               </div>
             </div>
             <p class="text-[11px] text-slate-500 mt-1.5">Adjustment factors increase your Selection Rank at specific universities; they do not alter your official base ATAR certificate.</p>
@@ -393,8 +398,8 @@
 
           <!-- Calculate Action Button -->
           <div class="pt-2">
-            <button type="button" id="calculateAtarBtn" class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 active:scale-[0.99] text-white font-extrabold text-base shadow-lg shadow-slate-900/10 transition-all flex items-center justify-center gap-2">
-              <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            <button type="button" id="calculateAtarBtn" class="w-full py-4 px-6 rounded-2xl bg-slate-950 hover:bg-slate-800 active:scale-[0.99] text-white font-extrabold text-base shadow-xl shadow-slate-950/15 border border-slate-800 transition-all flex items-center justify-center gap-2.5 cursor-pointer">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
               <span>Calculate Estimated ATAR</span>
             </button>
           </div>
@@ -406,78 +411,89 @@
       <div class="lg:col-span-5 space-y-6">
         
         <!-- Results Container (Hidden until calculated) -->
-        <div id="resultsCard" class="hidden bg-white rounded-2xl border-2 border-yellow-300 shadow-md p-6 sm:p-7 transition-all">
+        <div id="resultsCard" class="hidden bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-900/5 p-6 sm:p-7 transition-all relative overflow-hidden">
           <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
             <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Calculation Results</span>
-            <span id="resultBadgeState" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700">NSW HSC</span>
+            <span id="resultBadgeState" class="px-3 py-1 rounded-full text-xs font-bold bg-slate-950 text-amber-300 shadow-2xs">NSW HSC</span>
           </div>
 
           <!-- Primary ATAR Display Hero -->
-          <div class="text-center py-4 px-3 bg-slate-900 rounded-2xl text-white shadow-inner mb-5">
-            <span class="block text-xs uppercase tracking-widest text-yellow-300 font-bold mb-1">Estimated Indicative ATAR</span>
+          <div class="text-center py-6 px-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 rounded-2xl text-white shadow-xl shadow-slate-950/20 border border-slate-800 mb-5 relative overflow-hidden">
+            <span class="block text-xs uppercase tracking-widest text-amber-300 font-bold mb-1">Estimated Indicative ATAR</span>
             <div class="flex items-baseline justify-center gap-2">
-              <span id="resAtarScore" class="text-4xl sm:text-5xl font-black text-white tracking-tight">88.45</span>
+              <span id="resAtarScore" class="text-5xl sm:text-6xl font-black text-white tracking-tight">88.45</span>
               <span class="text-xs font-bold text-slate-400">/ 99.95</span>
             </div>
             <p id="resPercentileText" class="mt-2 text-xs text-slate-300 font-medium">Top 11.55% of the Australian Year 12 age cohort</p>
           </div>
 
           <!-- Selection Rank (with Adjustments) -->
-          <div id="selectionRankBox" class="p-3.5 bg-yellow-50/80 rounded-xl border border-yellow-200 mb-5 flex items-center justify-between">
+          <div id="selectionRankBox" class="p-4 bg-amber-50/60 rounded-2xl border border-amber-200/80 mb-5 flex items-center justify-between shadow-2xs">
             <div>
-              <span class="block text-xs font-bold text-yellow-900">Total Selection Rank (with Bonus Points)</span>
-              <span class="text-[11px] text-yellow-700" id="selectionRankSubtext">Includes +0.00 EAS/SEAS adjustments</span>
+              <span class="block text-xs font-bold text-amber-950">Total Selection Rank (with Bonus Points)</span>
+              <span class="text-[11px] text-amber-800 font-medium" id="selectionRankSubtext">Includes +0.00 EAS/SEAS adjustments</span>
             </div>
-            <span id="resSelectionRank" class="text-2xl font-black text-yellow-900">88.45</span>
+            <span id="resSelectionRank" class="text-2xl font-black text-amber-950">88.45</span>
           </div>
 
           <!-- Aggregate & Scoring Details Grid -->
           <div class="grid grid-cols-2 gap-3 mb-5 text-center">
-            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+            <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-200/80 shadow-2xs">
               <span class="block text-[11px] font-bold text-slate-500 uppercase">State Aggregate Score</span>
-              <span id="resAggregateScore" class="text-lg font-extrabold text-slate-900">386.40</span>
-              <span id="resAggregateMax" class="block text-[10px] text-slate-400">out of 500.00</span>
+              <span id="resAggregateScore" class="text-lg font-black text-slate-950">386.40</span>
+              <span id="resAggregateMax" class="block text-[10px] text-slate-400 font-medium">out of 500.00</span>
             </div>
-            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80">
+            <div class="p-3.5 bg-slate-50/80 rounded-2xl border border-slate-200/80 shadow-2xs">
               <span class="block text-[11px] font-bold text-slate-500 uppercase">Counted Units / Subjects</span>
-              <span id="resUnitsCounted" class="text-lg font-extrabold text-slate-900">10 Units</span>
-              <span id="resEnglishStatus" class="block text-[10px] text-emerald-600 font-semibold">✓ English Satisfied</span>
+              <span id="resUnitsCounted" class="text-lg font-black text-slate-950">10 Units</span>
+              <span id="resEnglishStatus" class="block text-[10px] text-emerald-700 font-bold">✓ English Satisfied</span>
             </div>
           </div>
 
           <!-- Admission Tier & University Prospects -->
           <div class="mb-5">
-            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-2">University Admission Prospects</h3>
-            <div id="resProspectsContainer" class="p-4 rounded-xl border text-xs leading-relaxed space-y-2">
+            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">University Admission Prospects</h3>
+            <div id="resProspectsContainer" class="p-4 rounded-2xl border text-xs leading-relaxed space-y-2 bg-slate-50/50">
               <!-- Dynamically populated -->
             </div>
           </div>
 
           <!-- Subject Contributions Breakdown -->
           <div class="mb-5">
-            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-2">Subject Scaling Breakdown</h3>
-            <div id="resSubjectBreakdown" class="space-y-1.5 text-xs">
+            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2.5">Subject Scaling Breakdown</h3>
+            <div id="resSubjectBreakdown" class="space-y-1.5 text-xs bg-slate-50/50 p-3.5 rounded-2xl border border-slate-200/80">
               <!-- Dynamically populated -->
             </div>
+          </div>
+
+          <!-- Action Bar: Share & Copy Results -->
+          <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <button type="button" id="shareResultsBtn" data-share-btn class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-slate-950 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200/90 border border-slate-200/80 shadow-2xs transition-all cursor-pointer">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+              <span>Share Results</span>
+            </button>
+            <button type="button" id="copySummaryBtn" class="inline-flex items-center gap-1 text-xs font-bold text-slate-800 hover:text-slate-950 bg-slate-50 hover:bg-slate-100 border border-slate-200/80 px-4 py-2.5 rounded-xl shadow-2xs transition-all cursor-pointer">
+              <span>📋 Copy Summary</span>
+            </button>
           </div>
 
           <!-- Next Step Recommendations (Zero-Orphan Layer 1) -->
           <div class="mt-6 pt-4 border-t border-slate-100">
             <span class="block text-xs font-bold text-slate-500 uppercase mb-2">Recommended Next Actions:</span>
             <div class="space-y-2">
-              <a href="/university-course-finder" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-yellow-50 border border-slate-200 hover:border-yellow-300 transition-colors group">
+              <a href="/university-course-finder" class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50/80 hover:bg-slate-100 border border-slate-200/80 hover:border-slate-300 transition-all group shadow-2xs">
                 <div>
-                  <span class="block text-xs font-bold text-slate-900 group-hover:text-yellow-800">Explore Australian Degrees with this ATAR</span>
+                  <span class="block text-xs font-bold text-slate-950 group-hover:text-amber-700 transition-colors">Explore Australian Degrees with this ATAR</span>
                   <span class="text-[11px] text-slate-500">Filter Go8, ATN, and regional degrees matching your score</span>
                 </div>
-                <span class="text-sm font-bold text-slate-400 group-hover:text-yellow-700">→</span>
+                <span class="text-sm font-bold text-slate-400 group-hover:text-amber-700 transition-colors">→</span>
               </a>
-              <a href="/student-budget-calculator" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-yellow-50 border border-slate-200 hover:border-yellow-300 transition-colors group">
+              <a href="/student-budget-calculator" class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50/80 hover:bg-slate-100 border border-slate-200/80 hover:border-slate-300 transition-all group shadow-2xs">
                 <div>
-                  <span class="block text-xs font-bold text-slate-900 group-hover:text-yellow-800">Calculate University Student Budget</span>
+                  <span class="block text-xs font-bold text-slate-950 group-hover:text-amber-700 transition-colors">Calculate University Student Budget</span>
                   <span class="text-[11px] text-slate-500">Estimate living costs in Sydney, Melbourne, Brisbane &amp; Perth</span>
                 </div>
-                <span class="text-sm font-bold text-slate-400 group-hover:text-yellow-700">→</span>
+                <span class="text-sm font-bold text-slate-400 group-hover:text-amber-700 transition-colors">→</span>
               </a>
             </div>
           </div>
@@ -485,52 +501,37 @@
         </div>
 
         <!-- Initial Placeholder Card (shown before calculation) -->
-        <div id="placeholderCard" class="bg-white rounded-2xl border border-slate-200 p-6 text-center">
-          <div class="w-12 h-12 rounded-2xl bg-yellow-100 text-yellow-700 flex items-center justify-center mx-auto mb-3">
+        <div id="placeholderCard" class="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-900/5 p-6 sm:p-8 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-slate-950 text-amber-300 flex items-center justify-center mx-auto mb-3.5 shadow-md shadow-slate-950/10 border border-slate-800">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h3 class="text-base font-bold text-slate-900">Ready to Estimate Your ATAR</h3>
-          <p class="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
+          <h3 class="text-base font-bold text-slate-950">Ready to Estimate Your ATAR</h3>
+          <p class="text-xs text-slate-500 mt-1.5 max-w-xs mx-auto leading-relaxed">
             Select your state, enter your scaled subject scores, and click <strong>Calculate Estimated ATAR</strong> to view your indicative percentile rank and university admission eligibility.
           </p>
         </div>
 
-        <!-- Universal AI Insight Host Card -->
-        <div id="aiInsightCard" class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-5 text-white shadow-md">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-yellow-400 font-black text-sm">✦</span>
-            <span class="text-xs font-bold uppercase tracking-wider text-yellow-300">AI Admissions Insights</span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Get instant AI analysis of your subject combinations, high-scaling elective suggestions, and pathway advice for competitive Australian university faculties.
-          </p>
-          <div id="aiResponseContainer" class="mt-3 text-xs text-slate-200 space-y-2 hidden"></div>
-          <button type="button" id="requestAiAnalysisBtn" class="mt-3 w-full py-2 px-3 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
-            <span>Analyze My Subject Combination with AI</span>
-          </button>
-        </div>
-
         <!-- Official Authority Trust Signals -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-3">
+        <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-900/5 p-6 space-y-3">
           <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Official Admissions Authorities</h4>
-          <div class="space-y-2 text-xs text-slate-600">
-            <div class="flex items-start gap-2">
+          <div class="space-y-2.5 text-xs text-slate-600">
+            <div class="flex items-start gap-2.5">
               <span class="text-emerald-600 font-bold">✓</span>
               <span><strong>NSW &amp; ACT</strong>: Universities Admissions Centre (UAC) HSC Scaling Protocol</span>
             </div>
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2.5">
               <span class="text-emerald-600 font-bold">✓</span>
               <span><strong>Victoria</strong>: VTAC VCE Aggregate &amp; Primary 4 Rules</span>
             </div>
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2.5">
               <span class="text-emerald-600 font-bold">✓</span>
               <span><strong>Queensland</strong>: QTAC QCE Inter-Subject Scaling Architecture</span>
             </div>
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2.5">
               <span class="text-emerald-600 font-bold">✓</span>
               <span><strong>Western Australia</strong>: TISC Tertiary Entrance Aggregate (TEA 400)</span>
             </div>
-            <div class="flex items-start gap-2">
+            <div class="flex items-start gap-2.5">
               <span class="text-emerald-600 font-bold">✓</span>
               <span><strong>South Australia &amp; NT</strong>: SATAC SACE 90-Credit Tertiary Aggregate</span>
             </div>
@@ -544,10 +545,10 @@
     <section class="mt-14 mb-10">
       <div class="flex items-center justify-between mb-6">
         <div>
-          <h2 class="text-xl font-extrabold text-slate-900">Related Academic &amp; University Tools</h2>
-          <p class="text-xs text-slate-500 mt-1">Explore companion calculators for Australian degrees, UCAS tariffs, and student finances</p>
+          <h2 class="text-xl font-extrabold text-slate-950">Related Academic &amp; University Tools</h2>
+          <p class="text-xs text-slate-500 mt-1 font-medium">Explore companion calculators for Australian degrees, UCAS tariffs, and student finances</p>
         </div>
-        <a href="/education" class="text-xs font-bold text-yellow-600 hover:text-yellow-700 hidden sm:inline-flex items-center gap-1">
+        <a href="/education" class="text-xs font-bold text-amber-700 hover:text-amber-800 hidden sm:inline-flex items-center gap-1">
           <span>All Education Tools</span>
           <span>→</span>
         </a>
@@ -555,47 +556,47 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <!-- Card 1: University Course Finder -->
-        <a href="/university-course-finder" class="group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-400 bg-white p-4 hover:shadow-md transition-all">
+        <a href="/university-course-finder" class="group rounded-3xl border border-slate-200/90 bg-white p-5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all">
           <div class="flex items-start justify-between mb-3">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800 text-sm font-bold">🇦🇺</span>
-            <span class="text-[10px] font-bold text-slate-400">Australia</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-800 text-sm font-bold shadow-2xs">🇦🇺</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Australia</span>
           </div>
-          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-yellow-700 transition-colors">University Course Finder</h3>
-          <p class="mt-1 text-xs text-slate-600 line-clamp-2">Search 60+ Australian degrees, selection rank cutoffs, CSP tuition fees, and Go8 requirements.</p>
-          <span class="mt-3 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-yellow-700">Find Courses →</span>
+          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-amber-700 transition-colors">University Course Finder</h3>
+          <p class="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">Search 60+ Australian degrees, selection rank cutoffs, CSP tuition fees, and Go8 requirements.</p>
+          <span class="mt-3.5 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-amber-700 transition-colors">Find Courses →</span>
         </a>
 
         <!-- Card 2: Student Budget Calculator -->
-        <a href="/student-budget-calculator" class="group rounded-2xl border border-slate-200 border-l-4 border-l-emerald-500 bg-white p-4 hover:shadow-md transition-all">
+        <a href="/student-budget-calculator" class="group rounded-3xl border border-slate-200/90 bg-white p-5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all">
           <div class="flex items-start justify-between mb-3">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100 text-emerald-800 text-sm font-bold">💰</span>
-            <span class="text-[10px] font-bold text-slate-400">Australia Living</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200/70 text-sm font-bold shadow-2xs">💰</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Living Costs</span>
           </div>
           <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-emerald-700 transition-colors">Student Budget Calculator</h3>
-          <p class="mt-1 text-xs text-slate-600 line-clamp-2">Calculate living costs in Sydney, Melbourne, Brisbane, Centrelink Youth Allowance, and casual work limits.</p>
-          <span class="mt-3 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-emerald-700">Plan Budget →</span>
+          <p class="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">Calculate living costs in Sydney, Melbourne, Brisbane, Centrelink Youth Allowance, and casual work limits.</p>
+          <span class="mt-3.5 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-emerald-700 transition-colors">Plan Budget →</span>
         </a>
 
-        <!-- Card 3: UCAS Points Calculator -->
-        <a href="/ucas-points-calculator" class="group rounded-2xl border border-slate-200 border-l-4 border-l-blue-500 bg-white p-4 hover:shadow-md transition-all">
+        <!-- Card 3: HECS-HELP Repayment Calculator -->
+        <a href="/hecs-help-repayment-calculator" class="group rounded-3xl border border-slate-200/90 bg-white p-5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all">
           <div class="flex items-start justify-between mb-3">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100 text-blue-800 text-sm font-bold">🇬🇧</span>
-            <span class="text-[10px] font-bold text-slate-400">UK Tariff</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-800 border border-blue-200/70 text-sm font-bold shadow-2xs">🇦🇺</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">ATO Student Loans</span>
           </div>
-          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-blue-700 transition-colors">UCAS Points Calculator</h3>
-          <p class="mt-1 text-xs text-slate-600 line-clamp-2">Calculate official UCAS tariff points from A-Levels, BTECs, IB, and T-Levels for UK admissions.</p>
-          <span class="mt-3 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-blue-700">Calculate UCAS →</span>
+          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-blue-700 transition-colors">HECS-HELP Calculator</h3>
+          <p class="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">Calculate compulsory HECS student loan deductions, ATO salary brackets, and payoff horizon.</p>
+          <span class="mt-3.5 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-blue-700 transition-colors">Calculate HECS →</span>
         </a>
 
-        <!-- Card 4: South African APS Calculator -->
-        <a href="/south-african-aps-calculator" class="group rounded-2xl border border-slate-200 border-l-4 border-l-purple-500 bg-white p-4 hover:shadow-md transition-all">
+        <!-- Card 4: Australia Scholarship Finder -->
+        <a href="/australia-scholarship-finder" class="group rounded-3xl border border-slate-200/90 bg-white p-5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all">
           <div class="flex items-start justify-between mb-3">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-100 text-purple-800 text-sm font-bold">🇿🇦</span>
-            <span class="text-[10px] font-bold text-slate-400">South Africa</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-800 border border-purple-200/70 text-sm font-bold shadow-2xs">🎓</span>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Grants &amp; Awards</span>
           </div>
-          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-purple-700 transition-colors">South African APS Calculator</h3>
-          <p class="mt-1 text-xs text-slate-600 line-clamp-2">Calculate Matric NSC Admission Point Scores across 42-point and 49-point university scales.</p>
-          <span class="mt-3 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-purple-700">Calculate APS →</span>
+          <h3 class="text-sm font-extrabold text-slate-950 group-hover:text-purple-700 transition-colors">Scholarship Finder</h3>
+          <p class="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">Find eligible Australian university scholarships, merit grants, and TAP regional relocation aid.</p>
+          <span class="mt-3.5 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 group-hover:text-purple-700 transition-colors">Find Scholarships →</span>
         </a>
       </div>
     </section>
@@ -709,14 +710,14 @@
 
         subjects.forEach((subj, idx) => {
           const row = document.createElement('div');
-          row.className = 'subject-row p-3.5 bg-slate-50 rounded-xl border border-slate-200/90 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 transition-all';
+          row.className = 'subject-row p-3.5 bg-slate-50/80 rounded-2xl border border-slate-200/90 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 transition-all shadow-2xs';
           
           let unitsSelectHtml = '';
           if (currentState === 'nsw') {
             unitsSelectHtml = `
               <div class="w-full sm:w-24">
-                <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden">Units</label>
-                <select class="subj-units w-full bg-white border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-semibold text-slate-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden mb-1">Units</label>
+                <select class="subj-units w-full bg-white border border-slate-200 rounded-xl px-2.5 py-2 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:outline-none shadow-2xs">
                   <option value="2" ${subj.units === 2 ? 'selected' : ''}>2 Units</option>
                   <option value="1" ${subj.units === 1 ? 'selected' : ''}>1 Unit</option>
                 </select>
@@ -726,23 +727,23 @@
 
           row.innerHTML = `
             <div class="flex-grow">
-              <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden">Subject Name</label>
-              <input type="text" value="${escapeText(subj.name)}" placeholder="Subject Title" class="subj-name w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+              <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden mb-1">Subject Name</label>
+              <input type="text" value="${escapeText(subj.name)}" placeholder="Subject Title" class="subj-name w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-900 focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:outline-none shadow-2xs" />
             </div>
             ${unitsSelectHtml}
             <div class="w-full sm:w-32">
-              <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden">Scaled Score (Max ${config.scaleMax})</label>
+              <label class="block text-[10px] font-bold text-slate-400 uppercase sm:hidden mb-1">Scaled Score (Max ${config.scaleMax})</label>
               <div class="relative">
-                <input type="number" min="0" max="${config.scaleMax}" step="${currentState === 'sa' ? '0.1' : '1'}" value="${subj.score}" placeholder="0-${config.scaleMax}" class="subj-score w-full bg-white border border-slate-200 rounded-lg pl-3 pr-8 py-1.5 text-xs font-extrabold text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
-                <span class="absolute right-2.5 top-1.5 text-[10px] font-bold text-slate-400">/${config.scaleMax}</span>
+                <input type="number" min="0" max="${config.scaleMax}" step="${currentState === 'sa' ? '0.1' : '1'}" value="${subj.score}" placeholder="0-${config.scaleMax}" class="subj-score w-full bg-white border border-slate-200 rounded-xl pl-3 pr-8 py-2 text-xs font-black text-slate-950 focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 focus:outline-none shadow-2xs" />
+                <span class="absolute right-2.5 top-2 text-[10px] font-bold text-slate-400">/${config.scaleMax}</span>
               </div>
             </div>
             <div class="flex items-center justify-between sm:justify-start gap-2">
-              <label class="inline-flex items-center gap-1 text-[11px] font-bold ${subj.isEnglish ? 'text-yellow-700 bg-yellow-100' : 'text-slate-500 bg-slate-200/60'} px-2 py-1 rounded-md cursor-pointer select-none">
+              <label class="inline-flex items-center gap-1 text-[11px] font-bold ${subj.isEnglish ? 'text-amber-900 bg-amber-100/80 border border-amber-300/80 shadow-2xs' : 'text-slate-500 bg-white border border-slate-200/80'} px-2.5 py-1.5 rounded-xl cursor-pointer select-none transition-all">
                 <input type="radio" name="englishGroup" class="subj-english hidden" ${subj.isEnglish ? 'checked' : ''} />
                 <span>${subj.isEnglish ? '★ Compulsory English' : 'Elective'}</span>
               </label>
-              <button type="button" class="remove-subj-btn text-slate-400 hover:text-rose-600 p-1 rounded-md hover:bg-rose-50 transition-colors" title="Remove subject">
+              <button type="button" class="remove-subj-btn text-slate-400 hover:text-rose-600 p-1.5 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer" title="Remove subject">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
               </button>
             </div>
@@ -796,11 +797,21 @@
           if (state === currentState) return;
 
           stateBtns.forEach(b => {
-            b.classList.remove('active', 'border-yellow-400', 'bg-yellow-50', 'text-yellow-950');
-            b.classList.add('border-slate-200');
+            b.classList.remove('active', 'bg-slate-950', 'text-white', 'border-slate-950', 'shadow-md', 'shadow-slate-950/10');
+            b.classList.add('border-slate-200/90', 'bg-slate-50/50', 'text-slate-700');
+            const sub = b.querySelector('.state-sub');
+            if (sub) {
+              sub.classList.remove('text-amber-300');
+              sub.classList.add('text-slate-500');
+            }
           });
-          this.classList.add('active', 'border-yellow-400', 'bg-yellow-50', 'text-yellow-950');
-          this.classList.remove('border-slate-200');
+          this.classList.add('active', 'bg-slate-950', 'text-white', 'border-slate-950', 'shadow-md', 'shadow-slate-950/10');
+          this.classList.remove('border-slate-200/90', 'bg-slate-50/50', 'text-slate-700');
+          const activeSub = this.querySelector('.state-sub');
+          if (activeSub) {
+            activeSub.classList.add('text-amber-300');
+            activeSub.classList.remove('text-slate-500');
+          }
 
           currentState = state;
           subjects = JSON.parse(JSON.stringify(STATE_CONFIGS[state].defaultSubjects));
@@ -1203,33 +1214,6 @@
         const resultsEl = document.getElementById('resultsCard');
         resultsEl.classList.remove('hidden');
         resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-
-      // AI Analysis Button Handler
-      document.getElementById('requestAiAnalysisBtn').addEventListener('click', function() {
-        const results = computeAtarEngine();
-        const aiContainer = document.getElementById('aiResponseContainer');
-        aiContainer.classList.remove('hidden');
-        aiContainer.innerHTML = `
-          <div class="p-3 bg-slate-800 rounded-lg border border-slate-700 animate-pulse">
-            <span class="text-yellow-400 font-bold">🤖 Generating AI Admissions Analysis...</span>
-          </div>
-        `;
-
-        setTimeout(() => {
-          aiContainer.innerHTML = `
-            <div class="p-3.5 bg-slate-800/90 rounded-xl border border-slate-700/80 space-y-2">
-              <span class="block font-bold text-yellow-300">Analysis for ${STATE_CONFIGS[currentState].name} Profile:</span>
-              <p class="text-[11px] text-slate-200">
-                Your estimated ATAR of <strong>${results.atar.toFixed(2)}</strong> reflects solid performance across quantitative and humanities disciplines.
-              </p>
-              <div class="text-[11px] text-slate-300 space-y-1">
-                <div>• <strong>Subject Optimization</strong>: Mathematics and Science sequences are scaling favorably. Raising your lowest elective by +3 marks would boost your aggregate by approx. +0.85 ATAR points.</div>
-                <div>• <strong>Adjustment Schemes</strong>: Apply early for UAC EAS / VTAC SEAS to secure up to 4 additional bonus points before round 1 offers.</div>
-              </div>
-            </div>
-          `;
-        }, 600);
       });
 
       // Initial Render of Subject Rows

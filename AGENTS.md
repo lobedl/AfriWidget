@@ -279,6 +279,23 @@ All reported bugs, layout anomalies, build failures, and SEO audit warnings are 
 4. **Layer 4 (Two-Way Reciprocal Linking)**: Update existing related cluster tools to link back to the newly created tool.
 5. **Reference**: See **`RELATED_TOOLS_AND_INTERNAL_LINKING_STANDARDS.md`** for the canonical topic cluster matrix, copyable HTML card templates, and integration checklist.
 
+---
+
+## 🏆 12. Master Protocol for New Tools Mandate (Zero-Omission Standard)
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: Any developer or AI agent building a new tool MUST adhere strictly to all 9 phases in **`MASTER_NEW_TOOL_STANDARDS.md`**:
+1. **Head & Schema**: Multi-path CSS (`branding.css`, `styles.css`, `/dist/styles.css`), GA4, and complete E-E-A-T WebApplication JSON-LD.
+2. **Pre-rendered Nav & Breadcrumbs**: Exact category alignment linking to the correct parent hub (`/education`, `/finance`, `/health`, etc.).
+3. **Manual Action Mandate**: Calculation runs strictly upon user click; never on page load or keystrokes.
+4. **Share Results System**: Registered in `share-results.js` with share button, clipboard copy, modal, and toasts.
+5. **Universal AI Assistant**: Registered in `universal-ai.js` with full-width responsive 2-column layout and 1-click prompt chips.
+6. **No-LaTeX & No-Tables**: Clean mathematical notations (`×`, `÷`, `+`, `-`, `=`) and mobile-friendly structured lists.
+7. **4-Layer Linking**: Next-step recommendation, in-article links, 3-to-4 card related grid, and reciprocal backlinks.
+8. **8-Point Ecosystem Integration**: `index.html`, category hub, `widgets.html`, `footer.js`, `sitemap.xml`, `llms.txt`, `universal-ai.js`, and `share-results.js`.
+9. **Build & Lint Verification**: `npm run build:css` and `npm run lint` with 100% PageSpeed compliance.
+
+*Master Reference Document: See **`MASTER_NEW_TOOL_STANDARDS.md`**.*
+
 
 
 

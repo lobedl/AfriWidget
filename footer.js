@@ -108,8 +108,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
            <li><a href="/zambia-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Zambia University GPA</a></li>
            <li><a href="/zambia-teveta-score-calculator" class="hover:text-emerald-400 transition-colors">Zambia TEVETA Score</a></li>
            <li><a href="/zambia-student-budget-planner" class="hover:text-emerald-400 transition-colors">Zambia Student Budget Planner</a></li>
-            <li><a href="/atar-calculator" class="hover:text-emerald-400 transition-colors">ATAR Calculator (Australia)</a></li>
-            <li><a href="/university-course-finder" class="hover:text-emerald-400 transition-colors">University Course Finder (Australia)</a></li>
+           <li><a href="/atar-calculator" class="hover:text-emerald-400 transition-colors">ATAR Calculator (Australia)</a></li>
+           <li><a href="/hecs-help-repayment-calculator" class="hover:text-emerald-400 transition-colors">HECS-HELP Repayments (Australia)</a></li>
+           <li><a href="/australia-scholarship-finder" class="hover:text-emerald-400 transition-colors">Scholarship Finder (Australia)</a></li>
+           <li><a href="/university-course-finder" class="hover:text-emerald-400 transition-colors">University Course Finder (Australia)</a></li>
             <li><a href="/student-budget-calculator" class="hover:text-emerald-400 transition-colors">Student Budget Calculator (Australia)</a></li>
            <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
            <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>

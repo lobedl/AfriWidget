@@ -62,3 +62,12 @@ Any AI agent working on AfriWidget must read and follow these rules before build
   3. Pre-rendered "Related Tools" 3-to-4 card grid section before FAQ/Footer.
   4. Reciprocal two-way linking from existing tools in the same cluster.
 - See **`RELATED_TOOLS_AND_INTERNAL_LINKING_STANDARDS.md`** for full templates and canonical cluster maps.
+
+### 10. Universal Share Results System & Social Modal
+
+- Every new tool must be registered in `share-results.js` with its form input selectors and calculate trigger.
+- Add in-result action buttons for "Share Results" and "Copy Summary" with toast confirmation.
+
+### 11. Master Protocol Compliance
+
+- For the exhaustive 9-phase master checklist, consult **`MASTER_NEW_TOOL_STANDARDS.md`**. All rules are non-negotiable.
