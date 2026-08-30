@@ -195,6 +195,18 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         });
       },
       calculate: () => $$('.igcse-row input, .igcse-row select').forEach(field => field.dispatchEvent(new Event('input', { bubbles: true })))
+    },
+    'canada-gpa-calculator': {
+      fields: () => [$('#priorCgpaInput'), $('#priorCreditsInput'), ...$$('.course-row input, .course-row select')],
+      calculate: () => $('#calculateGpaBtn')?.click()
+    },
+    'canada-university-admission-chance-calculator': {
+      fields: () => [$('#targetUniversity'), $('#targetProgram'), $('#suppTier'), $('#adjFactor'), ...$$('.subj-input')],
+      calculate: () => $('#calcAdmissionsBtn')?.click()
+    },
+    'canada-student-loan-repayment-calculator': {
+      fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
+      calculate: () => $('#calcLoanBtn')?.click()
     }
   };
 
@@ -421,7 +433,8 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
 
     const bar = document.createElement('div');
     bar.id = 'shareResultBar';
-    bar.className = 'mt-8 w-full max-w-7xl mx-auto rounded-3xl border border-emerald-200/90 bg-gradient-to-r from-emerald-50/90 via-teal-50/70 to-emerald-50/90 p-5 sm:p-6 lg:p-7 shadow-xs flex flex-col md:flex-row items-center justify-between gap-5 transition-all text-left';
+    // Hidden initially to prevent layout shift / content jump on initial page load
+    bar.className = 'hidden mt-8 w-full max-w-7xl mx-auto rounded-3xl border border-emerald-200/90 bg-gradient-to-r from-emerald-50/90 via-teal-50/70 to-emerald-50/90 p-5 sm:p-6 lg:p-7 shadow-xs flex flex-col md:flex-row items-center justify-between gap-5 transition-all text-left';
     bar.innerHTML = `
       <div class="flex items-center gap-3.5 w-full md:w-auto">
         <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm flex-shrink-0">
@@ -463,6 +476,24 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     $$('[data-share-btn], #shareResultsBtn, .share-btn').forEach(btn => {
       bindShareButton(btn, adapterConfig);
     });
+
+    const revealShareBar = () => {
+      if (bar.classList.contains('hidden')) {
+        bar.classList.remove('hidden');
+      }
+    };
+
+    document.addEventListener('submit', () => setTimeout(revealShareBar, 100), true);
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button, input[type="submit"], input[type="button"]');
+      if (btn && !btn.closest('#shareResultBar') && !btn.closest('#afriwidgetShareModal')) {
+        setTimeout(revealShareBar, 150);
+      }
+    }, true);
+
+    if (hasSharedInputs) {
+      setTimeout(revealShareBar, 200);
+    }
   }
 
   function restoreField(field, value) {

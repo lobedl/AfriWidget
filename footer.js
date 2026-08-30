@@ -130,6 +130,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
            <li><a href="/uk-gcse-grade-calculator" class="hover:text-emerald-400 transition-colors">GCSE Grade Calculator</a></li>
            <li><a href="/uk-degree-classification-calculator" class="hover:text-emerald-400 transition-colors">Degree Classification</a></li>
            <li><a href="/uk-student-loan-finance-calculator" class="hover:text-emerald-400 transition-colors">UK Student Finance</a></li>
+            <li><a href="/canada-gpa-calculator" class="hover:text-emerald-400 transition-colors">Canada GPA Calculator</a></li>
+            <li><a href="/canada-university-admission-chance-calculator" class="hover:text-emerald-400 transition-colors">Canada University Admission Calculator</a></li>
+            <li><a href="/canada-student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Canada Student Loan Repayment</a></li>
            <li><a href="/uace-points-calculator" class="hover:text-emerald-400 transition-colors">UACE Points Calculator</a></li>
            <li><a href="/ple-aggregate-calculator" class="hover:text-emerald-400 transition-colors">PLE Aggregate Calculator</a></li>
            <li><a href="/uce-grade-calculator" class="hover:text-emerald-400 transition-colors">UCE Grade Calculator</a></li>

@@ -49,8 +49,9 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       var legalButton = desktopMenu.querySelector('.nav-dropdown button');
       var existingLinks = desktopMenu.querySelectorAll('a');
 
-      // Highlight active link without re-rendering DOM if fully rendered
-      if (existingLinks.length >= (navigationItems.length + legalItems.length)) {
+      // If the static HTML already contains navigation links, simply update active classes
+      // NEVER wipe out desktopMenu.innerHTML when links are present to prevent flashing
+      if (existingLinks.length > 0) {
         existingLinks.forEach(function (link) {
           var href = link.getAttribute('href');
           var isCurrent = (href === page) || (href === '/' && page === '/');
@@ -97,7 +98,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
 
     var page = currentPage();
     var existingLinks = menu.querySelectorAll('a');
-    if (existingLinks.length >= (navigationItems.length + legalItems.length)) {
+
+    // If mobile menu already contains pre-rendered links, just update active classes
+    // NEVER wipe out menu.innerHTML when links are present to prevent flashing
+    if (existingLinks.length > 0) {
       existingLinks.forEach(function (link) {
         var href = link.getAttribute('href');
         var isCurrent = (href === page) || (href === '/' && page === '/');

@@ -17,6 +17,7 @@
 9. [Issue 9: Empty Result Placeholder Cards Causing Mobile Layout Gaps](#issue-9-empty-result-placeholder-cards-causing-mobile-layout-gaps)
 10. [Issue 10: Missing Site Header, Logo, Navigation & Breadcrumbs on New Tools](#issue-10-missing-site-header-logo-navigation--breadcrumbs-on-new-tools)
 11. [Issue 11: Breadcrumb Category Mismatch on Copied Templates](#issue-11-breadcrumb-category-mismatch-on-copied-templates)
+12. [Issue 12: Page-to-Page Navigation Flashing, Freezing & Dynamic Layout Shifts](#issue-12-page-to-page-navigation-flashing-freezing--dynamic-layout-shifts)
 
 ---
 
@@ -210,4 +211,26 @@ When cloning an existing tool template, the developer or AI agent omitted updati
 1. **Strict Category Matrix**: Always match the intermediate breadcrumb link directly with the tool's subject domain (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`).
 2. **Automated Audit**: Before finishing any turn, run the automated verification script defined in `BREADCRUMB_AND_NAVIGATION_STANDARDS.md`.
 3. **Canonical Reference**: Follow `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for all breadcrumb markup standards.
+
+---
+
+## Issue 12: Page-to-Page Navigation Flashing, Freezing & Dynamic Layout Shifts
+
+### 🚨 The Problem:
+Visitors noticed the top navigation bar blanked out/flashed when transitioning between pages, content jumped downwards abruptly after load (CLS), and the browser occasionally stuttered or froze during rapid scrolling.
+
+### 🔍 Root Cause:
+1. **DOM Destruction**: `nav.js` was indiscriminately overwriting `desktopMenu.innerHTML` and `menu.innerHTML` even when static navigation links were already present in HTML.
+2. **Dynamic Component CLS**: `share-results.js` injected a ~120px tall block into the DOM immediately on page load in an unhidden state, shifting all content down.
+3. **CSS Selectors**: Expensive `:has()` parent selectors in `branding.css` forced repetitive GPU/CPU re-traversals during scroll frames.
+4. **Font Jitter**: `text-rendering: optimizeSpeed` disabled subpixel font kerning.
+5. **Idle Timers**: Unthrottled 1-second intervals running across every page.
+
+### ✅ The Solution:
+1. **Zero-Flicker Class Toggling**: `nav.js` never wipes `innerHTML` if links exist; it only toggles active state classes.
+2. **Hidden Injected Components**: Injected elements (`#shareResultBar`, etc.) initialize with `hidden` and only reveal when calculation results are generated.
+3. **Hardware Acceleration**: Promote sticky headers to GPU compositor layers with `transform: translateZ(0); will-change: transform;`.
+4. **Legibility Font Smoothing**: Standardize `text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;`.
+5. **Idle-Safe Timers**: Pause intervals when widgets are hidden or document visibility changes.
+6. **Detailed Reference**: See `PERFORMANCE_AND_ZERO_FLICKER_STANDARDS.md` for full implementation rules.
 

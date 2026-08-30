@@ -132,11 +132,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-yellow-400 selection:text-slate-950">
 
   <!-- Static Pre-rendered Global Header & Navigation -->
-        <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                            <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -224,38 +234,28 @@
     </div>
   </div>
 
-  <!-- Main Container -->
-  <main class="flex-grow py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
-
-    <!-- Privacy & Offline Tag -->
-    <div class="mb-6 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-xs font-semibold text-slate-300 shadow-sm">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">✓</span>
-        <span>⚡ 100% Free • No Signup Required • Private In-Browser Generator</span>
-      </div>
-      <div class="flex items-center gap-2 text-slate-400">
-        <span>🇿🇼 ZIMSEC O/A-Level &amp; Higher Education Examination Schedules</span>
-      </div>
-    </div>
-
-    <!-- Header Section -->
-    <div class="mb-8 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-extrabold uppercase tracking-wider mb-3">
-        <span>🇿🇼 Zimbabwe Examination Revision &amp; Study Schedule Builder</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-        Zimbabwe Study Timetable Generator
-      </h1>
-      <p class="mt-3 text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-yellow-300/10 text-yellow-200 text-xs sm:text-sm font-semibold px-4 py-1 rounded-full mb-4 border border-yellow-300/30">🇿🇼 Zimbabwe Examination Revision &amp; Study Schedule Builder</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3">Zimbabwe Study Timetable Generator</h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
         Build a high-impact, spaced-repetition weekly study timetable tailored for ZIMSEC Form 4 O-Level, Form 6 Advanced Level, and university semester examinations. Automatically balance challenging subjects, past paper drilling sessions, and active recall rest intervals.
       </p>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>⚡ 100% Free • No Signup • Private In-Browser Calculation</span>
+      </div>
     </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
 
     <!-- Interactive Planner Form & Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12">
       
       <!-- Planner Form Controls (5 Cols) -->
-      <div class="lg:col-span-5 bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+      <div class="lg:col-span-5 bg-slate-800/90 border border-slate-700/80 rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 lg:p-8 shadow-xl backdrop-blur-sm">
         <form id="timetableForm" class="space-y-5">
           
           <!-- Education Level -->

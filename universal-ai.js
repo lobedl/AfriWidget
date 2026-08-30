@@ -151,7 +151,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'university-course-finder': { category: 'education', result: ['#resultsCountBadge', '#coursesGridContainer'], host: '#coursesGridContainer' },
     'student-budget-calculator': { category: 'finance', result: ['#resNetWeekly', '#resTotalIncome', '#resTotalExpense', '#resMonthlySummary'], host: '#budgetResultsCard' },
     'hecs-help-repayment-calculator': { category: 'education', result: ['#resAnnualRepayment', '#resRepaymentRateText', '#resPaycheckDeduction', '#resYearsToPayoff'], host: '#resultsCard' },
-    'australia-scholarship-finder': { category: 'education', result: ['#resMatchCountBadge', '#resTotalFundingValue', '#resTopCategory'], host: '#resultsCard' }
+    'australia-scholarship-finder': { category: 'education', result: ['#resMatchCountBadge', '#resTotalFundingValue', '#resTopCategory'], host: '#resultsCard' },
+    'canada-gpa-calculator': { category: 'education', result: ['#resGpaDisplay', '#resHonoursBadge', '#resTermGpa', '#resCumulativeCgpa'], host: '#resultsCard' },
+    'canada-university-admission-chance-calculator': { category: 'education', result: ['#resProbabilityScore', '#resTargetHeader', '#resAvgDisplay', '#resStrategyText'], host: '#admissionsResultsCard' },
+    'canada-student-loan-repayment-calculator': { category: 'finance', result: ['#resMonthlyDisplay', '#resRapBadge', '#resTotalInterest', '#resPayoffTimeline'], host: '#loanResultsCard' }
   };
 
   const CATEGORY_NAMES = {
@@ -424,6 +427,18 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       if (disabled && answer) answer.textContent = 'You have reached the five-question limit. Check back after the reset timer.';
     };
 
+    const startCountdown = () => {
+      if (countdownTimer) return;
+      countdownTimer = window.setInterval(updateQuotaUi, 1000);
+    };
+
+    const stopCountdown = () => {
+      if (countdownTimer) {
+        window.clearInterval(countdownTimer);
+        countdownTimer = null;
+      }
+    };
+
     const runInsight = async () => {
       if (!activitySeen || !hasValidResult(config)) return;
       const context = contextFor(config);
@@ -431,7 +446,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       if (signature === lastSignature) return;
       lastSignature = signature;
       const currentRequest = ++requestVersion;
-      if (assistant) assistant.classList.remove('hidden');
+      if (assistant) {
+        assistant.classList.remove('hidden');
+        startCountdown();
+      }
       if (insight) insight.textContent = 'Preparing your AI insight…';
       const text = await askAI('insight', context);
       if (currentRequest === requestVersion && insight) insight.textContent = text;
@@ -473,11 +491,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       const quota = readQuota();
       if (!prompt || quota.count >= MAX_CUSTOM_QUESTIONS) {
         updateQuotaUi();
+        startCountdown();
         return;
       }
       quota.count += 1;
       writeQuota(quota);
       updateQuotaUi();
+      startCountdown();
       askButton.disabled = true;
       answer.classList.remove('hidden');
       answer.textContent = 'Thinking through your question…';
@@ -504,9 +524,16 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     });
 
     updateQuotaUi();
-    countdownTimer = window.setInterval(updateQuotaUi, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopCountdown();
+      } else if (assistant && !assistant.classList.contains('hidden')) {
+        updateQuotaUi();
+        startCountdown();
+      }
+    });
     window.addEventListener('pagehide', () => {
-      window.clearInterval(countdownTimer);
+      stopCountdown();
       window.clearTimeout(scheduled);
     }, { once: true });
   }

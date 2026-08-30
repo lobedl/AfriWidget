@@ -136,11 +136,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
 
   <!-- Static Global Site Header -->
-              <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -245,25 +255,28 @@
     </div>
   </div>
 
-  <!-- Main Content Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-1">
-    
-    <!-- Hero / Title Header -->
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold mb-3">
-        <span>🇹🇿 Tanzania Higher Education Academic Grading Scale</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Tanzania University GPA &amp; CGPA Calculator</h1>
-      <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-yellow-300/10 text-yellow-200 text-xs sm:text-sm font-semibold px-4 py-1 rounded-full mb-4 border border-yellow-300/30">🇹🇿 Tanzania Higher Education Academic Grading Scale</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3">Tanzania University GPA &amp; CGPA Calculator</h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
         Calculate your semester Grade Point Average (GPA), Cumulative CGPA, and degree classification (First Class, Upper Second, Lower Second, Pass) across Tanzanian universities on the official 5.0 scale.
       </p>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>⚡ 100% Free • No Signup • Private In-Browser Calculation</span>
+      </div>
     </div>
+  </header>
 
+  <!-- Main Content Container -->
+  <main class="flex-grow w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+    
     <!-- Calculator Card & Output Container Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
       
       <!-- Input Configuration Panel (7 Cols) -->
-      <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm" id="calculator-input-card">
+      <div class="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 lg:p-8 border border-slate-200/90 shadow-xl" id="calculator-input-card">
         
         <!-- Calculator Mode Selection -->
         <div class="flex flex-wrap border-b border-slate-200 pb-4 mb-6 gap-2">

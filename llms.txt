@@ -595,4 +595,17 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Australia Scholarship Finder](https://afriwidget.com/australia-scholarship-finder) — Search and match Australian university scholarships, merit grants, regional relocation payments (Tertiary Access Payment - TAP), and equity bursaries across Go8 and national institutions matching your ATAR, state, study field, and background.
 
+## Canada GPA Calculator
+
+[Canada GPA Calculator](https://afriwidget.com/canada-gpa-calculator) — Calculate semester GPA and cumulative CGPA across major Canadian university grading systems including OMSAS 4.0 (Ontario Medical Schools / U of T), UBC & McGill 4.33, York 9.0, and McMaster 12.0 scales with weighted course credit hours and cumulative GPA forecasting.
+
+## Canada University Admission Chance Calculator
+
+[Canada University Admission Chance Calculator](https://afriwidget.com/canada-university-admission-chance-calculator) — Calculate Canadian undergraduate admission chances, evaluate Top 6 / Top 5 Grade 12 academic averages (Ontario OSS Grade 12 U/M, BC Grade 12, Alberta 30-level), factor in supplementary applications (AIF, video interviews), and apply Waterloo-style high school adjustment factors for U of T, UBC, Waterloo, McGill, McMaster, and Queen's.
+
+## Canada Student Loan Repayment Calculator
+
+[Canada Student Loan Repayment Calculator](https://afriwidget.com/canada-student-loan-repayment-calculator) — Calculate monthly student loan repayments for Canada Student Loans (CSLP / CSFA) and provincial programs (OSAP Ontario, StudentAid BC, Alberta Student Aid), incorporate permanent 0% federal interest savings, model voluntary prepayments, and evaluate zero-payment relief under the Repayment Assistance Plan (RAP).
+
+
 
