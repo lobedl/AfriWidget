@@ -17,9 +17,38 @@ Because `wrangler.toml` is present in the root directory, Cloudflare Pages will 
 | Setting | Value | Notes |
 | :--- | :--- | :--- |
 | **Framework Preset** | `None` | Static site with pre-rendering |
-| **Build Command** | `npm run build` | Builds CSS, OG assets, and pre-renders guides |
+| **Build Command** | `npm run build` (or `bun run build`) | Builds CSS, OG assets, and pre-renders guides |
 | **Build Output Directory** | `.` | Root directory containing HTML & static assets |
 | **Root Directory** | `/` | Leave default (repository root) |
+| **Deploy Command** | *(Leave Empty)* or `npx wrangler pages deploy .` | **CRITICAL**: Do NOT use `npx wrangler deploy` (see Troubleshooting below) |
+
+---
+
+## ⚠️ Troubleshooting: "Missing entry-point to Worker script or to assets directory"
+
+If your build logs show:
+```
+Executing user deploy command: npx wrangler deploy
+▲ [WARNING] It seems that you have run `wrangler deploy` on a Pages project, `wrangler pages deploy` should be used instead.
+✘ [ERROR] Missing entry-point to Worker script or to assets directory
+```
+
+### Why This Happens
+In Cloudflare's new dashboard, when connecting a repository or editing build settings, Cloudflare sometimes auto-fills the **Deploy command** field with `npx wrangler deploy`.
+- `npx wrangler deploy` is meant for standalone **Cloudflare Workers** (looking for a `main = "src/index.ts"` entrypoint).
+- For **Cloudflare Pages**, Cloudflare automatically deploys the static build output directory (`.`), so a deploy command is **not required**.
+
+### How to Fix (30-Second Fix)
+1. In the **Cloudflare Dashboard**, open your **AfriWidget** project.
+2. Go to **Settings** → **Builds & deployments** → **Build configuration** (click **Edit**).
+3. Look at the **Deploy command** input:
+   - **Option A (Recommended)**: Clear the box completely so it is **empty**. Cloudflare Pages will automatically deploy your static assets.
+   - **Option B**: If your dashboard requires a command, change it to:
+     ```bash
+     npx wrangler pages deploy .
+     ```
+4. Click **Save**.
+5. Trigger a new deployment (or push a commit) — the build will now succeed immediately!
 
 ### 3. Environment Variables & Secrets
 Navigate to **Settings** → **Environment Variables** in your Cloudflare Pages project and add the following:
