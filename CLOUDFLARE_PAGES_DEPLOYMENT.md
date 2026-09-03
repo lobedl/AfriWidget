@@ -24,31 +24,17 @@ Because `wrangler.toml` is present in the root directory, Cloudflare Pages will 
 
 ---
 
-## ⚠️ Troubleshooting: "Missing entry-point to Worker script or to assets directory"
+## ⚠️ Troubleshooting & Deployment Fixes
 
-If your build logs show:
-```
-Executing user deploy command: npx wrangler deploy
-▲ [WARNING] It seems that you have run `wrangler deploy` on a Pages project, `wrangler pages deploy` should be used instead.
-✘ [ERROR] Missing entry-point to Worker script or to assets directory
-```
+### Fix 1: "Configuration file for Pages projects does not support 'build'"
+- **Cause**: Cloudflare Pages does not allow a `[build]` section inside `wrangler.toml` (unlike Cloudflare Workers). Build commands for Pages are managed via the dashboard build settings or git hooks.
+- **Fix**: The `[build]` section has been removed from `wrangler.toml`. It now purely contains valid Pages keys (`name`, `pages_build_output_dir`, `compatibility_date`, `compatibility_flags`).
 
-### Why This Happens
-In Cloudflare's new dashboard, when connecting a repository or editing build settings, Cloudflare sometimes auto-fills the **Deploy command** field with `npx wrangler deploy`.
-- `npx wrangler deploy` is meant for standalone **Cloudflare Workers** (looking for a `main = "src/index.ts"` entrypoint).
-- For **Cloudflare Pages**, Cloudflare automatically deploys the static build output directory (`.`), so a deploy command is **not required**.
-
-### How to Fix (30-Second Fix)
-1. In the **Cloudflare Dashboard**, open your **AfriWidget** project.
-2. Go to **Settings** → **Builds & deployments** → **Build configuration** (click **Edit**).
-3. Look at the **Deploy command** input:
-   - **Option A (Recommended)**: Clear the box completely so it is **empty**. Cloudflare Pages will automatically deploy your static assets.
-   - **Option B**: If your dashboard requires a command, change it to:
-     ```bash
-     npx wrangler pages deploy .
-     ```
-4. Click **Save**.
-5. Trigger a new deployment (or push a commit) — the build will now succeed immediately!
+### Fix 2: "Deploy command" in Cloudflare Pages Dashboard
+In Cloudflare Pages Git deployments:
+- **Best Practice**: In **Settings** → **Builds & deployments** → **Build configuration**, leave the **Deploy command** field **completely empty**.
+- When empty, Cloudflare Pages automatically takes the files from the build output directory (`.`) and deploys them to its edge network as soon as `bun run build` succeeds.
+- If you do use `npx wrangler pages deploy .`, it will now also succeed because `wrangler.toml` has been cleaned up and validated.
 
 ### 3. Environment Variables & Secrets
 Navigate to **Settings** → **Environment Variables** in your Cloudflare Pages project and add the following:
