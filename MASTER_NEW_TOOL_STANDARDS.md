@@ -181,26 +181,29 @@ Open `universal-ai.js` and register the tool slug in `TOOL_CONFIGS`:
 
 ---
 
-## 📚 Phase 6: Educational Content, Worked Examples & Trust Signals
+## 📚 Phase 6: Educational Content, Worked Examples & Trust Signals (Minimum 800+ Words Mandate)
 
 Below the interactive tool widget, provide comprehensive, authoritative editorial content:
 
-### 6.1 Strict Prohibition of LaTeX Syntax
+### 6.1 Minimum 800+ Words & Unique Content Mandate
+- **Strict Minimum Word Count**: Every tool page MUST contain at least **800+ words** of substantive, high-value educational content (typically 1,000–1,500+ words).
+- **100% Unique Examples & FAQs**: All worked examples, student profiles, numerical scenarios, and FAQ questions/answers **MUST BE 100% UNIQUE to that specific tool/page**. Under no circumstances should examples or FAQs be cloned or reused from other tools.
+- **Dedicated Markdown Guide File**: Every tool MUST maintain a dedicated `/content/[tool-slug].md` file. The build prerender pipeline (`build-prerender.js`) automatically compiles this markdown into interactive styled FAQ accordions and semantic HTML inside `<article class="...">`.
+
+### 6.2 Strict Prohibition of LaTeX Syntax
 - **NEVER use LaTeX notation** (`$...$`, `\frac{...}`, `\text{...}`).
 - Always use clean plain text math symbols: `×`, `÷`, `+`, `-`, `=`, `**Bold Variables**`, and standard parenthetical expressions (e.g. `**APS** = Sum of 6 best NSC subject achievement levels`).
 
-### 6.2 Strict Prohibition of Markdown Tables
+### 6.3 Strict Prohibition of Markdown Tables
 - **NEVER use Markdown tables (`| ... |`)** because they collapse on mobile viewports.
 - Use mobile-optimized **structured definition lists** (`- **Parameter**: Details`) and step-by-step bulleted audits.
 
-### 6.3 Mandatory Content Sections
-1. **About the Tool & Governing Framework**: Regulatory backdrop, target audience, and accredited syllabus standards.
-2. **Official Calculation Methodology & Formulas**: Clear breakdown of formulas in plain text math.
-3. **2 Realistic Worked Examples**:
-   - *Worked Example 1*: High-achieving candidate scenario with itemized breakdown and admissions verdict.
-   - *Worked Example 2*: Balanced pass / average scenario with recovery guidance.
-4. **Official Authoritative Sources & Citations**: Live external links to official portals (e.g. WAEC, JAMB, KUCCPS, DHET, AACRAO, ATO, WHO, CDC).
-5. **Interactive FAQ Accordion (`<details><summary>`)**: 4 to 6 comprehensive, realistic questions with authoritative answers.
+### 6.4 Mandatory 4-Pillar Content Coverage
+1. **How to Use the Tool**: Step-by-step manual detailing interface inputs, dropdown levels, dynamic row operations, and result breakdown.
+2. **How the Calculation Works**: In-depth theoretical, mathematical, and statutory methodology breakdown with plain text math formulas.
+3. **Step-by-Step Worked Student Examples**: At least 2–3 realistic, distinct candidate profiles with concrete subject marks and admissions/financial verdicts.
+4. **Frequently Asked Questions (FAQ)**: 4 to 6 comprehensive, realistic questions with authoritative answers addressing institutional edge cases and policy nuances.
+5. **Official Authoritative Sources & Citations**: Live external links to official portals (e.g. WAEC, JAMB, KUCCPS, DHET, AACRAO, DNEA, MoEAC, WHO, CDC).
 
 ---
 

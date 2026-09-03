@@ -10,15 +10,14 @@ The **AfriWidget IGCSE &amp; A-Level GPA Converter** converts **International Ge
 
 Under standard international admissions protocols (such as guidelines from **AACRAO**, **WES &ndash; World Education Services**, and **College Board**), British-patterned letter grades map to standard 4.0 grade point values:
 
-| Qualification Tier | Examination Letter Grade | Base 4.0 Grade Point Value | Weighted GPA Value (+0.5 Advanced Rigor) | Equivalent US High School Standard |
-| :--- | :--- | :--- | :--- | :--- |
-| **IGCSE / AS / A-Level** | **A\* (90% &ndash; 100%)** | **4.00** | **4.50 (A-Level)** | Exceptional / Honors A+ |
-| **IGCSE / AS / A-Level** | **A (80% &ndash; 89%)** | **4.00** | **4.50 (A-Level)** | Excellent / Superior A |
-| **IGCSE / AS / A-Level** | **B (70% &ndash; 79%)** | **3.00** | **3.50 (A-Level)** | Above Average / Good B |
-| **IGCSE / AS / A-Level** | **C (60% &ndash; 69%)** | **2.00** | **2.50 (A-Level)** | Satisfactory / Average C |
-| **IGCSE / AS / A-Level** | **D (50% &ndash; 59%)** | **1.00** | **1.50 (A-Level)** | Passing / Below Average D |
-| **IGCSE / AS / A-Level** | **E (40% &ndash; 49%)** | **0.00 / 0.50** | **0.50 (A-Level)** | Minimum Pass (Conditional) |
-| **IGCSE / AS / A-Level** | **U / Ungraded (< 40%)** | **0.00** | **0.00** | Fail / No Credit |
+### Cambridge & International Examination Grade Point Standards
+- **Grade A* (90% – 100%)**: Base 4.00 Grade Points | A-Level Weighted: **4.50 GPA** | US High School Equivalent: Exceptional Distinction (A+)
+- **Grade A (80% – 89%)**: Base 4.00 Grade Points | A-Level Weighted: **4.50 GPA** | US High School Equivalent: Superior (A)
+- **Grade B (70% – 79%)**: Base 3.00 Grade Points | A-Level Weighted: **3.50 GPA** | US High School Equivalent: Above Average (B)
+- **Grade C (60% – 69%)**: Base 2.00 Grade Points | A-Level Weighted: **2.50 GPA** | US High School Equivalent: Average / Satisfactory (C)
+- **Grade D (50% – 59%)**: Base 1.00 Grade Points | A-Level Weighted: **1.50 GPA** | US High School Equivalent: Passing (D)
+- **Grade E (40% – 49%)**: Base 0.50 Grade Points | A-Level Weighted: **0.50 GPA** | US High School Equivalent: Conditional Pass (E)
+- **Grade U (< 40%)**: Base 0.00 Grade Points | A-Level Weighted: **0.00 GPA** | US High School Equivalent: Ungraded / No Credit
 
 ---
 
@@ -26,21 +25,10 @@ Under standard international admissions protocols (such as guidelines from **AAC
 
 A fundamental distinction in international credential evaluation is the academic depth and curriculum level of the qualification:
 
-```
-+-------------------------------------------------------------------------+
-|                  QUALIFICATION RIGOR & WEIGHTING MATRIX                 |
-+------------------------------------+------------------------------------+
-| 1. IGCSE / O-Level                 | Standard Secondary Curriculum      |
-|                                    | (Grades 9–10): Base 4.0 Scale.     |
-+------------------------------------+------------------------------------+
-| 2. AS-Level (Advanced Subsidiary)  | Introductory Post-16 Curriculum    |
-|                                    | (Grade 11): Base 4.0 Scale.        |
-+------------------------------------+------------------------------------+
-| 3. A-Level (Advanced Level)        | Advanced University-Prep (Grade 12)|
-|                                    | AP / IB Higher Level Equivalent.   |
-|                                    | +0.50 Weighted Honor Bonus.        |
-+------------------------------------+------------------------------------+
-```
+### Qualification Rigor & Honors Weighting Benchmarks
+- **1. Cambridge IGCSE / O-Level (Grades 9–10)**: Standard secondary school academic baseline evaluated on the unweighted 4.0 GPA scale.
+- **2. Cambridge AS-Level (Grade 11)**: Advanced Subsidiary introductory post-16 curriculum evaluated on the unweighted 4.0 GPA scale.
+- **3. Cambridge A-Level (Grade 12 / Year 13)**: Advanced pre-university curriculum awarded **+0.50 weighted GPA honors credit**, matching AP (Advanced Placement) and IB Higher Level standards.
 
 Because **Cambridge A-Levels** represent 360+ guided learning hours of advanced, specialized study equivalent to **Advanced Placement (AP)** or **International Baccalaureate (IB) Higher Level** courses, North American admissions offices grant honors weighting (typically +0.50 to +1.00 points) to reflect the demanding intellectual rigor. Furthermore, most US universities award up to **3 to 8 semester credits per A-Level subject** passed with grade C or higher.
 
@@ -79,12 +67,12 @@ The conversion calculation follows a transparent, deterministic mathematical pro
 ### Example 1: Three Cambridge A-Level Subjects (Competitive US College Applicant)
 An applicant from St. George’s College in Harare, Zimbabwe sits for three Cambridge International A-Level subjects:
 
-| Subject Name | Qualification Level | Official Grade | Base Points | Rigor Weighting | Final Quality Points |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Mathematics (9709)** | A-Level | **A\*** | 4.00 | +0.50 | **4.50** |
-| **Physics (9702)** | A-Level | **A** | 4.00 | +0.50 | **4.50** |
-| **Chemistry (9701)** | A-Level | **B** | 3.00 | +0.50 | **3.50** |
-| **Totals** | **3 Subjects** | &mdash; | &mdash; | &mdash; | **12.50 Total Points** |
+
+- **Mathematics (9709)** | Qualification Level: A-Level | Official Grade: **A\*** | Base Points: 4.00 | Rigor Weighting: +0.50 | Final Quality Points: **4.50**
+- **Physics (9702)** | Qualification Level: A-Level | Official Grade: **A** | Base Points: 4.00 | Rigor Weighting: +0.50 | Final Quality Points: **4.50**
+- **Chemistry (9701)** | Qualification Level: A-Level | Official Grade: **B** | Base Points: 3.00 | Rigor Weighting: +0.50 | Final Quality Points: **3.50**
+- **Totals** | Qualification Level: **3 Subjects** | Official Grade: &mdash; | Base Points: &mdash; | Rigor Weighting: &mdash; | Final Quality Points: **12.50 Total Points**
+
 
 **GPA Calculation**:
 - **Total Points** = 4.50 + 4.50 + 3.50 = **12.50**
@@ -96,17 +84,17 @@ An applicant from St. George’s College in Harare, Zimbabwe sits for three Camb
 ### Example 2: Complete 8-Subject IGCSE Secondary Profile (Grade 10 Graduation)
 A student at an international school in Nairobi, Kenya completes 8 Cambridge IGCSE examinations:
 
-| Subject Name | Level | Grade | Points |
-| :--- | :--- | :--- | :--- |
-| **English First Language (0500)** | IGCSE | **A** | **4.00** |
-| **Mathematics (Without Coursework &ndash; 0580)** | IGCSE | **A\*** | **4.00** |
-| **Biology (0610)** | IGCSE | **A** | **4.00** |
-| **Chemistry (0620)** | IGCSE | **B** | **3.00** |
-| **Computer Science (0478)** | IGCSE | **A** | **4.00** |
-| **Economics (0455)** | IGCSE | **B** | **3.00** |
-| **Geography (0460)** | IGCSE | **B** | **3.00** |
-| **French Foreign Language (0520)** | IGCSE | **C** | **2.00** |
-| **Totals** | **8 Subjects** | &mdash; | **27.00 Total Points** |
+
+- **English First Language (0500)** | Level: IGCSE | Grade: **A** | Points: **4.00**
+- **Mathematics (Without Coursework &ndash; 0580)** | Level: IGCSE | Grade: **A\*** | Points: **4.00**
+- **Biology (0610)** | Level: IGCSE | Grade: **A** | Points: **4.00**
+- **Chemistry (0620)** | Level: IGCSE | Grade: **B** | Points: **3.00**
+- **Computer Science (0478)** | Level: IGCSE | Grade: **A** | Points: **4.00**
+- **Economics (0455)** | Level: IGCSE | Grade: **B** | Points: **3.00**
+- **Geography (0460)** | Level: IGCSE | Grade: **B** | Points: **3.00**
+- **French Foreign Language (0520)** | Level: IGCSE | Grade: **C** | Points: **2.00**
+- **Totals** | Level: **8 Subjects** | Grade: &mdash; | Points: **27.00 Total Points**
+
 
 **GPA Calculation**:
 - **Total Points** = 4.0 + 4.0 + 4.0 + 3.0 + 4.0 + 3.0 + 3.0 + 2.0 = **27.00**

@@ -12,13 +12,16 @@ In all accredited public and private TVET colleges across South Africa (e.g., Fa
 
 ```
 +-------------------------------------------------------------------------+
-|                  NATED FINAL MARK COMPOSITE BREAKDOWN                   |
+
+
 +------------------------------------+------------------------------------+
-| 1. Internal ICASS Term Mark (40%)  | Derived from college tests, practical|
-|                                    | tasks, and internal trial exams.   |
+
+- **** | Derived from college tests, practical: tasks, and internal trial exams.
+
 +------------------------------------+------------------------------------+
-| 2. National Examination Mark (60%) | External national examination set  |
-|                                    | and moderated by DHET and Umalusi. |
+
+- **** | External national examination set: and moderated by DHET and Umalusi.
+
 +------------------------------------+------------------------------------+
 ```
 
@@ -37,13 +40,13 @@ To be awarded a recognized pass in any NATED (N1 through N6) subject, a candidat
    - The candidate must achieve a raw score of at least **40.0%** in the final external national examination paper.
    - **Crucial Rule**: Even if a student achieves an exceptional ICASS score (e.g., 90%), if the final examination mark falls below 40.0% (e.g., 38%), the overall result is formally classified as **"Failed &ndash; Exam Sub-Minimum Not Met"**. A high internal continuous assessment mark cannot compensate for an unfulfilled examination sub-minimum.
 
-| Achievement Classification | Composite Final Mark Range | Statutory Requirements | Academic Progression Standing |
-| :--- | :--- | :--- | :--- |
-| **Pass with Distinction** | **75% &ndash; 100%** | Exam Mark &ge; 40% | Full Subject Credit (Eligible for Merit Awards) |
-| **Standard Pass** | **50% &ndash; 74%** | Exam Mark &ge; 40% | Full Subject Credit (Clear Progression to Next N-Level) |
-| **Condoned / Minimum Pass** | **40% &ndash; 49%** | Exam Mark &ge; 40% | Subject Credit (Meets Baseline Certificate Threshold) |
-| **Sub-Minimum Failure** | Total &ge; 40%, but Exam < 40% | Exam Mark < 40% | **Fail** (Must rewrite National Examination) |
-| **Outright Failure** | Final Total < 40% | Any | **Fail** (Must repeat or write supplementary if eligible) |
+
+- **Pass with Distinction** | Composite Final Mark Range: **75% &ndash; 100%** | Statutory Requirements: Exam Mark &ge; 40% | Academic Progression Standing: Full Subject Credit (Eligible for Merit Awards)
+- **Standard Pass** | Composite Final Mark Range: **50% &ndash; 74%** | Statutory Requirements: Exam Mark &ge; 40% | Academic Progression Standing: Full Subject Credit (Clear Progression to Next N-Level)
+- **Condoned / Minimum Pass** | Composite Final Mark Range: **40% &ndash; 49%** | Statutory Requirements: Exam Mark &ge; 40% | Academic Progression Standing: Subject Credit (Meets Baseline Certificate Threshold)
+- **Sub-Minimum Failure** | Composite Final Mark Range: Total &ge; 40%, but Exam < 40% | Statutory Requirements: Exam Mark < 40% | Academic Progression Standing: **Fail** (Must rewrite National Examination)
+- **Outright Failure** | Composite Final Mark Range: Final Total < 40% | Statutory Requirements: Any | Academic Progression Standing: **Fail** (Must repeat or write supplementary if eligible)
+
 
 ---
 

@@ -82,13 +82,13 @@ To calculate the required examination mark (**E**) for a desired target final ma
 
 ## Target Feasibility Ratings Matrix
 
-| Calculated Exam Mark Needed | Feasibility Rating | Strategic Advice |
-| :--- | :--- | :--- |
-| **40.0% – 49.9%** | **Highly Achievable** | Focus on past exam papers, master key definitions, and complete revision checklists. |
-| **50.0% – 64.9%** | **Realistic & Attainable** | Consistent 2-hour daily study sessions; practice past 3 exam cycles under timed conditions. |
-| **65.0% – 79.9%** | **Challenging (High Effort)** | Attend lecturer revision classes, join peer study groups, and review memorandums. |
-| **80.0% – 100.0%** | **Intense Revision Required** | Deep subject mastery required; prioritize high-weighting syllabus modules and formulas. |
-| **> 100.0%** | **Mathematically Unreachable** | Adjust target to a realistic grade tier (e.g. 50% or 60% pass). |
+
+- **40.0% – 49.9%** | Feasibility Rating: **Highly Achievable** | Strategic Advice: Focus on past exam papers, master key definitions, and complete revision checklists.
+- **50.0% – 64.9%** | Feasibility Rating: **Realistic & Attainable** | Strategic Advice: Consistent 2-hour daily study sessions; practice past 3 exam cycles under timed conditions.
+- **65.0% – 79.9%** | Feasibility Rating: **Challenging (High Effort)** | Strategic Advice: Attend lecturer revision classes, join peer study groups, and review memorandums.
+- **80.0% – 100.0%** | Feasibility Rating: **Intense Revision Required** | Strategic Advice: Deep subject mastery required; prioritize high-weighting syllabus modules and formulas.
+- **> 100.0%** | Feasibility Rating: **Mathematically Unreachable** | Strategic Advice: Adjust target to a realistic grade tier (e.g. 50% or 60% pass).
+
 
 ---
 

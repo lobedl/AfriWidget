@@ -35,12 +35,12 @@ To determine daily macronutrient targets, the calculator first determines your *
 
 ## Popular Macronutrient Ratio Distributions
 
-| Macro Strategy | Protein % | Carbohydrates % | Fats % | Ideal Fitness Goal |
-| --- | --- | --- | --- | --- |
-| **Balanced Baseline** | 30% | 40% | 30% | General fitness, steady energy, sustainable lifestyle |
-| **High Protein (Bodybuilding)** | 40% | 35% | 25% | Maximum muscle retention during fat loss cuts |
-| **Low Carb / Keto** | 30%–35% | 10%–15% | 55%–60% | Rapid insulin sensitivity control & ketogenic adaptation |
-| **Endurance Athlete** | 25% | 55% | 20% | Marathon runners, cyclists, intense glycogen loading |
+
+- **Balanced Baseline** | Protein %: 30% | Carbohydrates %: 40% | Fats %: 30% | Ideal Fitness Goal: General fitness, steady energy, sustainable lifestyle
+- **High Protein (Bodybuilding)** | Protein %: 40% | Carbohydrates %: 35% | Fats %: 25% | Ideal Fitness Goal: Maximum muscle retention during fat loss cuts
+- **Low Carb / Keto** | Protein %: 30%–35% | Carbohydrates %: 10%–15% | Fats %: 55%–60% | Ideal Fitness Goal: Rapid insulin sensitivity control & ketogenic adaptation
+- **Endurance Athlete** | Protein %: 25% | Carbohydrates %: 55% | Fats %: 20% | Ideal Fitness Goal: Marathon runners, cyclists, intense glycogen loading
+
 
 ---
 

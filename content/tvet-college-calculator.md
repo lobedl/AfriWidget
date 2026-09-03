@@ -44,14 +44,14 @@ Practical trade apprenticeships lead to the official National Trade Test:
 
 ## TVET Minimum Entry Requirements by Stream
 
-| TVET Qualification Stream | Minimum Prior Grade Required | Key Subject Benchmarks | NQF Level Earned |
-| :--- | :--- | :--- | :--- |
-| **NC(V) Level 2** | Grade 9 Pass | 40%+ in Languages and Mathematics | NQF Level 2 |
-| **NATED Engineering N1** | Grade 9 Pass | 40%+ in Mathematics and Natural Science | NQF Level 2 |
-| **NATED Engineering N4** | Grade 12 (Matric) or N3 Pass | Pure Maths (40%+) & Physical Science (40%+) | NQF Level 5 |
-| **NATED Business N4** | Grade 12 (Matric) Pass | 40%+ in Home Language & Accounting/Maths Lit | NQF Level 5 |
-| **Artisan Trade Test (Red Seal)** | N2 Certificate or NC(V) Level 3 | 4 passed N2 trade subjects + Workplace logbook | NQF Level 4 |
-| **National N-Diploma (DHET)** | Completed N6 + Workplace Exp | 18 to 24 months logged practical work | NQF Level 6 |
+
+- **NC(V) Level 2** | Minimum Prior Grade Required: Grade 9 Pass | Key Subject Benchmarks: 40%+ in Languages and Mathematics | NQF Level Earned: NQF Level 2
+- **NATED Engineering N1** | Minimum Prior Grade Required: Grade 9 Pass | Key Subject Benchmarks: 40%+ in Mathematics and Natural Science | NQF Level Earned: NQF Level 2
+- **NATED Engineering N4** | Minimum Prior Grade Required: Grade 12 (Matric) or N3 Pass | Key Subject Benchmarks: Pure Maths (40%+) & Physical Science (40%+) | NQF Level Earned: NQF Level 5
+- **NATED Business N4** | Minimum Prior Grade Required: Grade 12 (Matric) Pass | Key Subject Benchmarks: 40%+ in Home Language & Accounting/Maths Lit | NQF Level Earned: NQF Level 5
+- **Artisan Trade Test (Red Seal)** | Minimum Prior Grade Required: N2 Certificate or NC(V) Level 3 | Key Subject Benchmarks: 4 passed N2 trade subjects + Workplace logbook | NQF Level Earned: NQF Level 4
+- **National N-Diploma (DHET)** | Minimum Prior Grade Required: Completed N6 + Workplace Exp | Key Subject Benchmarks: 18 to 24 months logged practical work | NQF Level Earned: NQF Level 6
+
 
 ---
 

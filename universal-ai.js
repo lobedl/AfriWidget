@@ -154,7 +154,30 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     'australia-scholarship-finder': { category: 'education', result: ['#resMatchCountBadge', '#resTotalFundingValue', '#resTopCategory'], host: '#resultsCard' },
     'canada-gpa-calculator': { category: 'education', result: ['#resGpaDisplay', '#resHonoursBadge', '#resTermGpa', '#resCumulativeCgpa'], host: '#resultsCard' },
     'canada-university-admission-chance-calculator': { category: 'education', result: ['#resProbabilityScore', '#resTargetHeader', '#resAvgDisplay', '#resStrategyText'], host: '#admissionsResultsCard' },
-    'canada-student-loan-repayment-calculator': { category: 'finance', result: ['#resMonthlyDisplay', '#resRapBadge', '#resTotalInterest', '#resPayoffTimeline'], host: '#loanResultsCard' }
+    'canada-student-loan-repayment-calculator': { category: 'finance', result: ['#resMonthlyDisplay', '#resRapBadge', '#resTotalInterest', '#resPayoffTimeline'], host: '#loanResultsCard' },
+    'canada-scholarship-finder': { category: 'education', result: ['#resMatchCountBadge', '#resTotalFundingValue', '#resAverageAward', '#resMatchesList'], host: '#resultsCard' },
+    'canada-study-planner': { category: 'education', result: ['#resScheduleTitle', '#resWeeklyHours', '#resDailyPomodoros', '#resTopPriorityCourse', '#resStrategySummary'], host: '#resultsCard' },
+    'switzerland-grade-calculator': { category: 'education', result: ['#resultsCard'], host: '#resultsCard' },
+    'switzerland-university-cost-calculator': { category: 'education', result: ['#costResultsCard'], host: '#costResultsCard' },
+    'switzerland-language-learning-planner': { category: 'education', result: ['#planResultsCard', '#timetableWrapper'], host: '#planResultsCard' },
+    'norway-student-budget-calculator': { category: 'finance', result: ['#resTotalIncome', '#resTotalExpenses', '#resNetValue', '#resGrantStatusBadge'], host: '#norwayBudgetResults' },
+    'norway-gpa-calculator': { category: 'education', result: ['#resNorGpa', '#resNorLetter', '#resUsGpa', '#resTotalCredits', '#resSkolepoeng', '#resKonkurransepoeng'], host: '#norwayGpaResults' },
+    'norway-study-planner': { category: 'education', result: ['#resTotalWeeklyHours', '#resSelfStudyHours', '#resTotalWorkload', '#resDailyTarget', '#resLoadStatus'], host: '#norwayPlannerResults' },
+    'botswana-student-expense-calculator': { category: 'finance', result: ['#resTotalIncome', '#resTotalExpenses', '#resNetBalance', '#resSemesterTotal'], host: '#expenseResults' },
+    'botswana-study-planner': { category: 'education', result: ['#resTotalWeeklyHours', '#resContactHours', '#resSelfStudyHours', '#resLoadStatus'], host: '#studyResults' },
+    'botswana-bgcse-points-calculator': { category: 'education', result: ['#resBest6Points', '#resDtefStatus', '#resTargetChance', '#resOverallSummary'], host: '#bgcseResults' },
+    'namibia-nssc-points-calculator': { category: 'education', result: ['#resBest5Points', '#resBest6Points', '#resNsfafStatus', '#resOverallStanding'], host: '#nsscResults' },
+    'namibia-university-admission-calculator': { category: 'education', result: ['#resEligibilityTitle', '#resUnamStatus', '#resNustStatus', '#resIumStatus'], host: '#admissionResults' },
+    'namibia-gpa-calculator': { category: 'education', result: ['#resClassificationDisplay', '#resWamValue', '#resUsGpa', '#resDeansList'], host: '#gpaResults' },
+    'malawi-msce-grade-calculator': { category: 'education', result: ['#resBest6Points', '#resCertificatePass', '#resUniversityEligibility', '#resCreditCount', '#resDistinctionCount'], host: '#msceResults' },
+    'malawi-university-admission-calculator': { category: 'education', result: ['#resOverallEligibility', '#resUnimaStatus', '#resMubasStatus', '#resLuanarStatus', '#resMustStatus'], host: '#admissionResults' },
+    'malawi-gpa-calculator': { category: 'education', result: ['#resHonoursClassification', '#resSemesterGpa', '#resCumulativeCgpa', '#resTotalCredits', '#resDeansList'], host: '#gpaResults' },
+    'new-zealand-ncea-credits-calculator': { category: 'education', result: ['#resRankScore', '#resCertEndorsement', '#resUeStatus', '#resCertCreditsSummary'], host: '#nceaResults' },
+    'new-zealand-student-loan-calculator': { category: 'finance', result: ['#resPayoffDuration', '#resFortnightlyRepayment', '#resTotalInterest', '#resNetFortnightly'], host: '#loanResults' },
+    'new-zealand-study-planner': { category: 'education', result: ['#resWeeklyAcademicDemand', '#resTotalSemesterHours', '#resSelfStudyDemand', '#resStudyLinkStatus'], host: '#studyResults' },
+    'germany-abitur-grade-calculator': { category: 'education', result: ['#resAbiturGrade', '#resAbiturPoints', '#resUsGpa', '#resEctsEquivalent'], host: '#abiturResults' },
+    'germany-university-admission-checker': { category: 'education', result: ['#resChanceTitle', '#resVerfahrensnote', '#resBonusTotal', '#resTypicalCutoff'], host: '#admissionResults' },
+    'germany-gpa-converter': { category: 'education', result: ['#resGermanGrade', '#resGermanRatingText', '#resEctsGrade', '#resMasterEligible'], host: '#gpaResults' }
   };
 
   const CATEGORY_NAMES = {

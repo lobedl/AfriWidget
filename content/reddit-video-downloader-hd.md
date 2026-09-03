@@ -30,13 +30,13 @@ AfriWidget’s engine resolves this separation through automated stream reconcil
 
 ## Comparison of Supported Output Formats & Resolutions
 
-| Output Format | Resolution / Bitrate | Video Codec | Audio Codec | Primary Use Case |
-| :--- | :--- | :--- | :--- | :--- |
-| **MP4 Full HD (1080p)** | 1920 × 1080 (~4.5 Mbps) | H.264 / AVC | AAC Stereo (128 kbps) | Archiving, high-resolution desktop playback, video editing. |
-| **MP4 HD (720p)** | 1280 × 720 (~2.2 Mbps) | H.264 / AVC | AAC Stereo (128 kbps) | Balanced quality and file size for social media sharing. |
-| **MP4 SD (480p)** | 854 × 480 (~1.1 Mbps) | H.264 / AVC | AAC Stereo (96 kbps) | Mobile devices, low-bandwidth data connections. |
-| **MP4 Mobile (360p)** | 640 × 360 (~600 kbps) | H.264 / AVC | AAC Mono/Stereo (64 kbps) | Messaging apps (WhatsApp, Telegram) with strict size limits. |
-| **Audio-Only MP3 / AAC** | N/A (128 kbps) | None | AAC / MP3 (44.1 kHz) | Podcasts, music clips, commentary, speeches. |
+
+- **MP4 Full HD (1080p)** | Resolution / Bitrate: 1920 × 1080 (~4.5 Mbps) | Video Codec: H.264 / AVC | Audio Codec: AAC Stereo (128 kbps) | Primary Use Case: Archiving, high-resolution desktop playback, video editing.
+- **MP4 HD (720p)** | Resolution / Bitrate: 1280 × 720 (~2.2 Mbps) | Video Codec: H.264 / AVC | Audio Codec: AAC Stereo (128 kbps) | Primary Use Case: Balanced quality and file size for social media sharing.
+- **MP4 SD (480p)** | Resolution / Bitrate: 854 × 480 (~1.1 Mbps) | Video Codec: H.264 / AVC | Audio Codec: AAC Stereo (96 kbps) | Primary Use Case: Mobile devices, low-bandwidth data connections.
+- **MP4 Mobile (360p)** | Resolution / Bitrate: 640 × 360 (~600 kbps) | Video Codec: H.264 / AVC | Audio Codec: AAC Mono/Stereo (64 kbps) | Primary Use Case: Messaging apps (WhatsApp, Telegram) with strict size limits.
+- **Audio-Only MP3 / AAC** | Resolution / Bitrate: N/A (128 kbps) | Video Codec: None | Audio Codec: AAC / MP3 (44.1 kHz) | Primary Use Case: Podcasts, music clips, commentary, speeches.
+
 
 ---
 

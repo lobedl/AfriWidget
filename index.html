@@ -222,11 +222,63 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="home-layout bg-slate-50 text-slate-800 font-sans">
 
   <!-- NAVIGATION -->
-                                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                                                          <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -311,20 +363,22 @@
 
 
   <!-- HERO -->
-  <section id="hero" class="relative overflow-hidden bg-slate-950 text-white px-4 py-16 sm:py-24 lg:py-28" style="background: radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.08) 0%, transparent 45%), radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 45%), #020617;">
+  <section id="hero" class="relative overflow-hidden bg-slate-950 text-white px-3 sm:px-6 lg:px-8 pt-4 pb-8 sm:pt-14 sm:pb-20 lg:py-24" style="background: radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.08) 0%, transparent 45%), radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 45%), #020617;">
     <!-- Lightweight Geometric Grid -->
     <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
     
     <div class="relative max-w-6xl mx-auto">
       <div class="max-w-3xl">
         <!-- Live Trust & Privacy Badge -->
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm">
-          <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
-          <span>⚡ 100% Free • Private In-Browser Tools • Zero Data Storage</span>
+        <div class="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-full border border-yellow-400/30 bg-slate-900/90 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10.5px] sm:text-xs font-semibold text-yellow-300 shadow-sm">
+          <svg class="h-3.5 w-3.5 text-yellow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <span class="truncate sm:whitespace-normal tracking-wide">100% Free • Private In-Browser Tools • Zero Data Storage</span>
         </div>
 
         <!-- Catchy, Smart & Professional Heading -->
-        <h1 class="mt-5 text-3xl font-black leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl text-white">
+        <h1 class="mt-4 sm:mt-5 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.18] sm:leading-[1.15] tracking-tight text-white break-words">
           Smart Online Calculators &amp; Utilities
           <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1 sm:mt-2">
             Built for Speed &amp; Total Privacy.
@@ -332,89 +386,89 @@
         </h1>
 
         <!-- Welcoming & Clear Value Proposition -->
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+        <p class="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed text-slate-300">
           AfriWidget delivers verified, instant calculations for education, finance, health, business, and daily productivity. Everything runs 100% locally in your browser with zero registration and zero cloud tracking.
         </p>
 
         <!-- High-Impact Smart Search Bar -->
-        <form id="toolSearchForm" class="search-ring mt-7 flex max-w-2xl items-center gap-2 rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20" role="search">
+        <form id="toolSearchForm" class="search-ring mt-5 sm:mt-7 flex max-w-2xl items-center gap-1.5 sm:gap-2 rounded-2xl border border-white/20 bg-white p-1.5 sm:p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20" role="search">
           <label for="toolSearch" class="sr-only">Search all AfriWidget tools</label>
-          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="7" stroke-width="2"/>
             <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
           </svg>
-          <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-2 py-2.5 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search 100+ tools (e.g. GPA, BMI, Mortgage, UCAS, Invoices...)" aria-label="Search all AfriWidget tools" autocomplete="off">
-          <button type="submit" class="flex items-center gap-1.5 rounded-xl bg-yellow-400 px-5 py-3 text-sm font-extrabold text-slate-950 transition-all hover:bg-yellow-300 active:scale-95 shadow-sm shrink-0">
-            <span>Find a tool</span>
-            <svg class="h-4 w-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1.5 sm:px-2 py-2 sm:py-2.5 text-xs sm:text-base font-medium text-slate-900 outline-none placeholder:text-slate-400" placeholder="Search 100+ tools (e.g. GPA, BMI, Mortgage...)" aria-label="Search all AfriWidget tools" autocomplete="off">
+          <button type="submit" class="flex items-center gap-1 sm:gap-1.5 rounded-xl bg-yellow-400 px-3 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-extrabold text-slate-950 transition-all hover:bg-yellow-300 active:scale-95 shadow-sm shrink-0">
+            <span>Find tool</span>
+            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </button>
         </form>
 
         <!-- Smart Quick Suggestions / Popular Search Chips -->
-        <div class="mt-3.5 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
-          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
-            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="mt-3 sm:mt-3.5 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs">
+          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-0.5 sm:mr-1">
+            <svg class="h-3.5 w-3.5 text-yellow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Popular:
           </span>
-          <button type="button" data-quick-search="student finance" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🎓 Student Finance</button>
-          <button type="button" data-quick-search="gpa" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📊 GPA &amp; CGPA</button>
-          <button type="button" data-quick-search="atar" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🇦🇺 ATAR &amp; HECS</button>
-          <button type="button" data-quick-search="ucas" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🇬🇧 UCAS Points</button>
-          <button type="button" data-quick-search="bmi" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💪 BMI &amp; BMR</button>
-          <button type="button" data-quick-search="mortgage" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💰 Mortgage &amp; Loan</button>
-          <button type="button" data-quick-search="invoice" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🧾 Invoice Builder</button>
-          <button type="button" data-quick-search="reading time" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">⏱️ Reading Time</button>
+          <button type="button" data-quick-search="student finance" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🎓 Student Finance</button>
+          <button type="button" data-quick-search="gpa" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📊 GPA &amp; CGPA</button>
+          <button type="button" data-quick-search="atar" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🇦🇺 ATAR &amp; HECS</button>
+          <button type="button" data-quick-search="ucas" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🇬🇧 UCAS Points</button>
+          <button type="button" data-quick-search="bmi" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💪 BMI &amp; BMR</button>
+          <button type="button" data-quick-search="mortgage" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💰 Mortgage &amp; Loan</button>
+          <button type="button" data-quick-search="invoice" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🧾 Invoice Builder</button>
+          <button type="button" data-quick-search="reading time" class="quick-chip rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-slate-200 hover:border-yellow-400/80 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">⏱️ Reading Time</button>
         </div>
 
         <!-- 4-Pillar Trust & Performance Grid -->
-        <div class="mt-8 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
-          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300">
-              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="mt-6 sm:mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+          <div class="flex items-center gap-2 sm:gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2 sm:p-3">
+            <div class="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300">
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-bold text-white">Instant Speed</div>
-              <div class="text-[11px] text-slate-400">Sub-millisecond</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400">
-              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <div>
-              <div class="text-xs font-bold text-white">100% Private</div>
-              <div class="text-[11px] text-slate-400">In-browser engine</div>
+            <div class="min-w-0">
+              <div class="text-[11px] sm:text-xs font-bold text-white truncate">Instant Speed</div>
+              <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">Sub-millisecond</div>
             </div>
           </div>
-          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300">
-              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <div class="flex items-center gap-2 sm:gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2 sm:p-3">
+            <div class="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400">
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-bold text-white">Verified Math</div>
-              <div class="text-[11px] text-slate-400">Official syllabi</div>
+            <div class="min-w-0">
+              <div class="text-[11px] sm:text-xs font-bold text-white truncate">100% Private</div>
+              <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">In-browser engine</div>
             </div>
           </div>
-          <div class="flex items-center gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2.5 sm:p-3">
-            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300">
-              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="flex items-center gap-2 sm:gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2 sm:p-3">
+            <div class="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300">
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-bold text-white">No Signups</div>
-              <div class="text-[11px] text-slate-400">Free forever</div>
+            <div class="min-w-0">
+              <div class="text-[11px] sm:text-xs font-bold text-white truncate">Verified Math</div>
+              <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">Official syllabi</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 sm:gap-2.5 rounded-xl border border-slate-800 bg-slate-900/90 p-2 sm:p-3">
+            <div class="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300">
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="min-w-0">
+              <div class="text-[11px] sm:text-xs font-bold text-white truncate">No Signups</div>
+              <div class="text-[10px] sm:text-[11px] text-slate-400 truncate">Free forever</div>
             </div>
           </div>
         </div>
 
         <!-- Featured & Recognized Badges -->
-        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 pt-5 border-t border-slate-800/80">
-          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Featured &amp; Recognized On:</span>
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="https://launchstag.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800" title="Featured on Launchstag">
-              <img src="https://launchstag.com/badge-light.svg" alt="Featured on Launchstag" width="198" height="62" class="h-8 w-auto max-h-[36px] object-contain" loading="lazy" decoding="async" />
+        <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-slate-800/80">
+          <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Featured &amp; Recognized On:</span>
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <a href="https://launchstag.com" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1 sm:p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800" title="Featured on Launchstag">
+              <img src="https://launchstag.com/badge-light.svg" alt="Featured on Launchstag" width="198" height="62" class="h-6 sm:h-8 w-auto max-h-[32px] sm:max-h-[36px] object-contain" loading="lazy" decoding="async" />
             </a>
-            <a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800">
-              <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" class="h-8 w-auto max-h-[36px] object-contain" loading="lazy" decoding="async" />
+            <a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" title="Featured on LaunchBuff" class="inline-flex items-center rounded-xl bg-slate-900 border border-slate-800 p-1 sm:p-1.5 transition-all hover:border-slate-700 hover:bg-slate-800">
+              <img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="256" height="80" class="h-6 sm:h-8 w-auto max-h-[32px] sm:max-h-[36px] object-contain" loading="lazy" decoding="async" />
             </a>
           </div>
         </div>
@@ -423,31 +477,31 @@
   </section>
 
   <!-- ALL TOOLS MATRIX -->
-  <section id="toolsMatrix" class="bg-slate-50 px-4 py-16 sm:py-20">
+  <section id="toolsMatrix" class="bg-slate-50 px-3 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
     <div class="mx-auto max-w-7xl">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <div class="flex flex-col gap-4 sm:gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p class="text-xs font-extrabold uppercase tracking-[.2em] text-slate-500">The complete toolkit</p>
-          <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">Find the right tool, fast.</h2>
-          <p class="mt-3 max-w-2xl text-slate-600">Every AfriWidget calculator and utility is organized below, with a clear starting point for whatever you are working on.</p>
+          <p class="text-[11px] sm:text-xs font-extrabold uppercase tracking-[.2em] text-slate-500">The complete toolkit</p>
+          <h2 class="mt-1 text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-950">Find the right tool, fast.</h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600">Every AfriWidget calculator and utility is organized below, with a clear starting point for whatever you are working on.</p>
         </div>
-        <a href="widgets" class="inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 hover:text-yellow-700">View directory <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+        <a href="widgets" class="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-extrabold text-slate-950 hover:text-yellow-700">View directory <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
       </div>
-      <div class="mt-8 flex flex-wrap gap-2" id="categoryFilters" aria-label="Filter tools by category">
-        <button type="button" data-filter="all" class="category-filter rounded-full border border-slate-950 bg-slate-950 px-4 py-2 text-sm font-bold text-white">All tools</button>
-        <button type="button" data-filter="education" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Education</button>
-        <button type="button" data-filter="finance" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Finance</button>
-        <button type="button" data-filter="business" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Business</button>
-        <button type="button" data-filter="health" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Health</button>
-        <button type="button" data-filter="productivity" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Productivity &amp; business</button>
-        <button type="button" data-filter="everyday" class="category-filter rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-yellow-400">Everyday</button>
+      <div class="mt-6 sm:mt-8 flex flex-wrap gap-1.5 sm:gap-2" id="categoryFilters" aria-label="Filter tools by category">
+        <button type="button" data-filter="all" class="category-filter rounded-full border border-slate-950 bg-slate-950 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white transition-all shadow-sm">All tools</button>
+        <button type="button" data-filter="education" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Education</button>
+        <button type="button" data-filter="finance" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Finance</button>
+        <button type="button" data-filter="business" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Business</button>
+        <button type="button" data-filter="health" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Health</button>
+        <button type="button" data-filter="productivity" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Productivity &amp; business</button>
+        <button type="button" data-filter="everyday" class="category-filter rounded-full border border-slate-300 bg-white px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-slate-700 hover:border-yellow-400 transition-all">Everyday</button>
       </div>
-      <p id="toolSearchStatus" class="mt-5 hidden text-sm font-semibold text-slate-600" aria-live="polite"></p>
+      <p id="toolSearchStatus" class="mt-4 sm:mt-5 hidden text-xs sm:text-sm font-semibold text-slate-600" aria-live="polite"></p>
 
-      <div class="mt-10 space-y-14" id="toolSections">
+      <div class="mt-8 sm:mt-10 space-y-10 sm:space-y-14" id="toolSections">
         <div class="category-section" data-category-section="education">
-          <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
-            <div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">01 / Learn &amp; qualify</p><h3 class="mt-1 text-2xl font-black text-slate-950">Education &amp; admissions</h3></div>
+          <div class="mb-4 sm:mb-5 flex items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-3 sm:pb-4">
+            <div><p class="text-[11px] sm:text-xs font-bold uppercase tracking-[.18em] text-yellow-700">01 / Learn &amp; qualify</p><h3 class="mt-1 text-xl sm:text-2xl font-black text-slate-950">Education &amp; admissions</h3></div>
             <a href="education" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore education hub →</a>
           </div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -509,13 +563,33 @@
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="canada gpa calculator university omsas 4.0 u of t ubc mcgill 4.33 york 9.0 mcmaster 12.0 semester cgpa credit hours honours standing letter grade convert" href="canada-gpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇦</span></span><span class="text-xs font-bold text-slate-400">Canada GPA</span></div><h4 class="text-lg font-extrabold text-slate-950">Canada GPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate semester GPA and cumulative CGPA across OMSAS 4.0, 4.33, York 9.0, and McMaster 12.0 scales with weighted credits.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate GPA <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="canada university admission chance calculator top 6 grade 12 average u of t ubc waterloo mcgill mcmaster queens high school adjustment factor aif video interview competitiveness" href="canada-university-admission-chance-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇦</span></span><span class="text-xs font-bold text-slate-400">Canada Admissions</span></div><h4 class="text-lg font-extrabold text-slate-950">Canada Admission Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Evaluate Top 6 / Top 5 Grade 12 averages, Waterloo adjustment factors, and admission chances for top Canadian universities.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Chances <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="canada student loan repayment calculator cslp csfa osap ontario studentaid bc alberta student aid permanent 0% federal interest rap repayment assistance plan monthly payment" href="canada-student-loan-repayment-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇦</span></span><span class="text-xs font-bold text-slate-400">Canada Loans</span></div><h4 class="text-lg font-extrabold text-slate-950">Canada Student Loan Repayment</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate monthly loan repayments for Canada Student Loans, OSAP, StudentAid BC, permanent 0% federal interest savings, and RAP relief.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Repayment <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="canada scholarship finder entrance major merit awards loran schulich td community national scholarships bursaries u of t ubc waterloo mcgill mcmaster queens tuition funding" href="canada-scholarship-finder"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇦</span></span><span class="text-xs font-bold text-slate-400">Canada Grants</span></div><h4 class="text-lg font-extrabold text-slate-950">Canada Scholarship Finder</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Search entrance scholarships, major merit awards (Loran, Schulich), and need bursaries across top Canadian universities.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Find Scholarships <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="canada study planner timetable generator exam revision spaced repetition pomodoro high school ossd bc dogwood alberta 30 cegep university semester schedule" href="canada-study-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇦</span></span><span class="text-xs font-bold text-slate-400">Canada Planner</span></div><h4 class="text-lg font-extrabold text-slate-950">Canada Study Planner</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate a customized spaced-repetition study schedule, daily Pomodoro session targets, and exam countdown revision blocks for Canadian courses.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Create Study Plan <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="switzerland grade calculator conversion scale 6.0 scale ects us gpa 4.0 percentage eth zurich epfl unige uzh unibas unil pass mark 4.0 weighted average" href="switzerland-grade-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇭</span></span><span class="text-xs font-bold text-slate-400">Swiss Grades</span></div><h4 class="text-lg font-extrabold text-slate-950">Switzerland Grade Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert grades between the Swiss 6.0 scale (4.0 pass), ECTS letter grades (A–F), US 4.0 GPA, and percentage marks.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert Swiss Grades <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="switzerland university cost calculator chf tuition fees living expenses eth zurich epfl uzh unige unibas health insurance accommodation cantonal budget" href="switzerland-university-cost-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇭</span></span><span class="text-xs font-bold text-slate-400">Swiss Costs</span></div><h4 class="text-lg font-extrabold text-slate-950">Switzerland University Cost Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate semester and annual university expenses across Swiss cantons in CHF, covering tuition, student housing, mandatory health insurance, and food.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate University Costs <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="switzerland language learning planner cefr a1 a2 b1 b2 c1 german french italian romansh fide test fide certification study timetable" href="switzerland-language-learning-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇨🇭</span></span><span class="text-xs font-bold text-slate-400">Swiss Languages</span></div><h4 class="text-lg font-extrabold text-slate-950">Switzerland Language Learning Planner</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Plan your German, French, Italian, or Romansh study roadmap tailored to Swiss canton requirements, CEFR tiers, and fide certification.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan Language Study <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="norway gpa calculator university ects credits a to f scale pass grade c master degree admission samordna opptak skolepoeng konkurransepoeng vgs uio ntnu uib nhh nmbu" href="norway-gpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇴</span></span><span class="text-xs font-bold text-slate-400">Norway GPA</span></div><h4 class="text-lg font-extrabold text-slate-950">Norway GPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate ECTS-weighted grade average on Norway's A–F university scale, convert to US 4.0 GPA, and compute Samordna opptak VGS admission points.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Norway GPA <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="norway study planner ects study workload timetable generator university weekly schedule lectures pensum self study arbeidskrav inspera digital exam countdown" href="norway-study-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇴</span></span><span class="text-xs font-bold text-slate-400">Norway Study Plan</span></div><h4 class="text-lg font-extrabold text-slate-950">Norway Study Planner</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate a personalized weekly timetable balanced for 30 ECTS semester workloads (27 hrs/credit), lectures, syllabus reading, and assignments.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate Study Plan <span aria-hidden="true">→</span></span></a>            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="new zealand ncea credits calculator level 1 2 3 merit excellence endorsement university entrance ue rank score 320 points nzqa auckland otago victoria canterbury aut" href="new-zealand-ncea-credits-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇿</span></span><span class="text-xs font-bold text-slate-400">NZ NCEA</span></div><h4 class="text-lg font-extrabold text-slate-950">NZ NCEA Credits Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate NCEA Level 1–3 credits, Merit/Excellence endorsements, University Entrance (UE), and University Rank Scores.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate NCEA Credits <span aria-hidden="true">→</span></span></a>            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="new zealand study planner efts workload timetable nzqa credit hours 10 hours per credit studylink full time 0.8 efts university weekly schedule lectures tutorials labs" href="new-zealand-study-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇿</span></span><span class="text-xs font-bold text-slate-400">NZ Planner</span></div><h4 class="text-lg font-extrabold text-slate-950">NZ Study Planner &amp; Timetable</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Build a personalized weekly study timetable based on NZQA credit workload (10 hrs/pt) and StudyLink EFTS requirements.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate NZ Timetable <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="germany abitur grade calculator abiturnote rechner kmk points 900 300 600 oberstufe gpa ects" href="germany-abitur-grade-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇩🇪</span></span><span class="text-xs font-bold text-slate-400">Germany Abitur</span></div><h4 class="text-lg font-extrabold text-slate-950">Germany Abitur Grade Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate your German Abitur grade (Abiturnote 1.0–4.0) from Block I and II points with official KMK formula and US GPA conversion.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Abitur Grade <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="germany university admission checker nc numerus clausus hochschulstart dosv tms medicine law cs business verfahrensnote" href="germany-university-admission-checker"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇩🇪</span></span><span class="text-xs font-bold text-slate-400">Germany Admission</span></div><h4 class="text-lg font-extrabold text-slate-950">Germany University Admission</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Check admission chances for Medicine, Law, CS, and Business across Hochschulstart &amp; DoSV quotas with TMS bonuses.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Check Admission Chances <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="germany gpa converter modified bavarian formula bayerische formel uni-assist daad us 4.0 uk india 10 cgpa nigeria 5.0" href="germany-gpa-converter"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇩🇪</span></span><span class="text-xs font-bold text-slate-400">Germany GPA</span></div><h4 class="text-lg font-extrabold text-slate-950">Germany GPA Converter</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Convert international GPAs (US 4.0, UK %, India 10.0, Nigeria 5.0) to the German 1.0–4.0 scale with the Modified Bavarian Formula.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Convert German GPA <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="zambia teveta score calculator vocational trade test craft certificate diploma nortec evelyn hone lbtc continuous assessment national exam" href="zambia-teveta-score-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇿🇲</span></span><span class="text-xs font-bold text-slate-400">Zambia TEVETA</span></div><h4 class="text-lg font-extrabold text-slate-950">TEVETA Score Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate continuous assessment (CA), final trade exams, and module competence awards across Level 3–6 qualifications.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate TEVETA Score <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="botswana bgcse points calculator bec grade scale a* to g top 6 best subjects 48 points university of botswana ub biust buan bac admission dtef sponsorship" href="botswana-bgcse-points-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇧🇼</span></span><span class="text-xs font-bold text-slate-400">Botswana BGCSE</span></div><h4 class="text-lg font-extrabold text-slate-950">Botswana BGCSE Points Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate BEC BGCSE Best 6 points out of 48, evaluate DTEF sponsorship thresholds, and check UB and BIUST admission cut-offs.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate BGCSE Points <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="botswana study planner university weekly timetable bqa credit hours continuous assessment ub biust buan bac bgcse revision pomodoro blocks" href="botswana-study-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇧🇼</span></span><span class="text-xs font-bold text-slate-400">Botswana Planner</span></div><h4 class="text-lg font-extrabold text-slate-950">Botswana Study Planner &amp; Timetable</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Generate a personalized weekly study timetable based on BQA credit workloads (10 hrs/credit), CA milestones, and semester exam targets.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Generate Study Timetable <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="namibia nssc points calculator dnea moeac nssco nsscas ordinary advanced subsidiary level best 5 best 6 unam nust ium admission nsfaf funding eligibility" href="namibia-nssc-points-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇦</span></span><span class="text-xs font-bold text-slate-400">Namibia NSSC</span></div><h4 class="text-lg font-extrabold text-slate-950">Namibia NSSC Points Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate Best 5 and Best 6 DNEA points across NSSCO and NSSCAS subjects and evaluate NSFAF funding qualification.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate NSSC Points <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="namibia university admission calculator unam nust ium entry requirements cutoff points engineering medicine law instem bridging pre-entry" href="namibia-university-admission-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇦</span></span><span class="text-xs font-bold text-slate-400">Namibia Admission</span></div><h4 class="text-lg font-extrabold text-slate-950">Namibia University Admission Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Check university entry chances across UNAM, NUST, and IUM with faculty-specific subject requirements and InSTEM pathways.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Check Admission Chances <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="namibia gpa calculator university weighted average mark wam unam nust ium distinction first class honours nqf credit points grading scale" href="namibia-gpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇦</span></span><span class="text-xs font-bold text-slate-400">Namibia GPA</span></div><h4 class="text-lg font-extrabold text-slate-950">Namibia University GPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate semester and cumulative NQF credit-weighted WAM, distinction honors classification, and US 4.0 GPA for UNAM &amp; NUST.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate GPA &amp; WAM <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="malawi msce grade points calculator maneb malawi school certificate of education best 6 subjects aggregate english distinction credit pass unima mubas luanar must admission" href="malawi-msce-grade-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇲🇼</span></span><span class="text-xs font-bold text-slate-400">Malawi MSCE</span></div><h4 class="text-lg font-extrabold text-slate-950">Malawi MSCE Grade Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate your MANEB Best 6 points aggregate (including compulsory English), tally credits and distinctions, and verify certificate pass.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate MSCE Points <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="malawi university admission calculator nche unima mubas luanar must mzuni kuhes entry requirements cutoff points engineering medicine law district quota heslgb loan" href="malawi-university-admission-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇲🇼</span></span><span class="text-xs font-bold text-slate-400">Malawi Admission</span></div><h4 class="text-lg font-extrabold text-slate-950">Malawi University Admission Checker</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Check university entry eligibility and faculty cut-offs across UNIMA, MUBAS, LUANAR, MUST, and KUHeS under NCHE selection.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Check Admission Chances <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="education" data-search="malawi gpa calculator university cgpa unima mubas luanar must mzuni kuhes semester gpa cumulative cgpa quality points credit units degree honours distinction" href="malawi-gpa-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇲🇼</span></span><span class="text-xs font-bold text-slate-400">Malawi GPA</span></div><h4 class="text-lg font-extrabold text-slate-950">Malawi University GPA Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate semester GPA, cumulative CGPA, and degree honours classification across UNIMA, MUBAS, LUANAR, and MUST.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate GPA &amp; CGPA <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
 
         <div class="category-section" data-category-section="finance">
           <div class="mb-5 flex items-center justify-between gap-4 border-b border-slate-200 pb-4"><div><p class="text-xs font-bold uppercase tracking-[.18em] text-yellow-700">02 / Plan ahead</p><h3 class="mt-1 text-2xl font-black text-slate-950">Finance &amp; housing</h3></div><a href="finance" class="hidden text-sm font-bold text-slate-600 hover:text-yellow-700 sm:block">Explore finance hub →</a></div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="botswana student expense calculator cost of living bwp pula dtef monthly allowance off campus rent combi fares food budget gaborone francistown palapye" href="botswana-student-expense-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇧🇼</span></span><span class="text-xs font-bold text-slate-400">Botswana Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Botswana Student Expense Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Estimate monthly student living costs in Pula (BWP), compare off-campus rent vs DTEF allowance, and track semester deficits.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan Budget in BWP <span aria-hidden="true">→</span></span></a>
+            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="norway student budget calculator nok cost of living lanekassen basic support stipend 40% conversion frikort 70000 limit sio sammen sit student housing oslo bergen trondheim" href="norway-student-budget-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇴</span></span><span class="text-xs font-bold text-slate-400">Norway Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Norway Student Budget Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Model monthly student living costs in NOK, track Lånekassen support (kr 151,690/yr), 40% grant conversion rules, and the Skatteetaten tax frikort.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan Budget in NOK <span aria-hidden="true">→</span></span></a>            <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="new zealand student loan calculator ird inland revenue 12 percent repayment threshold 24128 studylink zero interest overseas interest rates payoff timeline fortnightly deduction" href="new-zealand-student-loan-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇳🇿</span></span><span class="text-xs font-bold text-slate-400">NZ Student Loan</span></div><h4 class="text-lg font-extrabold text-slate-950">NZ Student Loan Calculator</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate compulsory 12% IRD salary deductions above $24,128, 0% interest resident savings, and debt payoff schedule.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate Loan Repayments <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="zambia student budget planner cost of living calculator zmw kwacha unza cbu mulungushi heasb meal allowance boarding house rent zesco tokens groceries" href="zambia-student-budget-planner"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇿🇲</span></span><span class="text-xs font-bold text-slate-400">Zambia Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Zambia Student Budget Planner</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan Student Budget <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="student budget calculator australia cost of living aud youth allowance austudy rent sharehouse groceries transport textbooks unimelb usyd monash unsw uq" href="student-budget-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-xl">🇦🇺</span></span><span class="text-xs font-bold text-slate-400">Australia Finance</span></div><h4 class="text-lg font-extrabold text-slate-950">Student Budget Calculator (Australia)</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Plan weekly and monthly student living costs in AUD, model Centrelink Youth Allowance and part-time earnings vs rent and expenses.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Plan Budget in AUD <span aria-hidden="true">→</span></span></a>
             <a class="tool-card group rounded-2xl border border-slate-200 border-l-4 border-l-yellow-300 bg-white p-5" data-tool-card data-category="finance" data-search="tanzania heslb loan calculator student loan higher education students loans board repayment vrf salary deduction tzs" href="tanzania-heslb-loan-calculator"><div class="mb-5 flex items-start justify-between"><span class="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-100 text-yellow-800"><span class="text-sm font-black">🇹🇿</span></span><span class="text-xs font-bold text-slate-400">Tanzania HESLB</span></div><h4 class="text-lg font-extrabold text-slate-950">HESLB Student Loan (Tanzania)</h4><p class="mt-2 min-h-12 text-sm leading-6 text-slate-600">Calculate Tanzania HESLB loan allocation (Tuition, MA, FPT), 6% VRF, and statutory 15% salary repayment.</p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-slate-950 group-hover:text-yellow-700">Calculate HESLB Loan <span aria-hidden="true">→</span></span></a>
@@ -650,22 +724,22 @@
 
   
   <!-- USER SUCCESS STORIES BANNER -->
-  <section class="py-16 px-4 bg-slate-900 text-white border-y border-slate-800">
+  <section class="py-10 sm:py-16 px-3 sm:px-6 lg:px-8 bg-slate-900 text-white border-y border-slate-800">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-10">
         <div>
-          <span class="px-3 py-1 bg-yellow-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-full">Real Impact Stories</span>
-          <h2 class="text-3xl font-black text-white mt-3">Empowering Students, Creators &amp; Professionals Across Africa</h2>
-          <p class="text-slate-400 text-sm mt-1 max-w-xl">See how students, freelancers, and small business owners use AfriWidget's 100% free, private web tools to achieve real results.</p>
+          <span class="px-3 py-1 bg-yellow-400 text-slate-950 font-extrabold text-[11px] sm:text-xs uppercase tracking-wider rounded-full">Real Impact Stories</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-2.5 sm:mt-3">Empowering Students, Creators &amp; Professionals Across Africa</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl">See how students, freelancers, and small business owners use AfriWidget's 100% free, private web tools to achieve real results.</p>
         </div>
-        <a href="success-stories" class="inline-flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md">
+        <a href="success-stories" class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md w-full sm:w-auto">
           <span>Read All Success Stories</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div class="bg-slate-800/80 p-4 sm:p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-bold text-yellow-400">🇰🇪 Kenya • Academic</span>
@@ -679,7 +753,7 @@
           </div>
         </div>
 
-        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+        <div class="bg-slate-800/80 p-4 sm:p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-bold text-yellow-400">🇿🇦 South Africa • Finance</span>
@@ -693,7 +767,7 @@
           </div>
         </div>
 
-        <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
+        <div class="bg-slate-800/80 p-4 sm:p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-bold text-yellow-400">🇳🇬 Nigeria • Freelance</span>
@@ -711,38 +785,38 @@
   </section>
 
 <!-- ABOUT AFRIWIDGET -->
-  <section id="aboutSection" class="py-20 px-4 bg-white">
+  <section id="aboutSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">What Is AfriWidget?</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-8 rounded"></div>
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">What Is AfriWidget?</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-6 sm:mb-8 rounded"></div>
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-center">
         <div>
-          <p class="text-slate-700 text-lg leading-relaxed mb-4">
+          <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-3 sm:mb-4">
             AfriWidget is a free, browser-based platform that puts practical calculations and intelligent explanations directly into your hands — with no app downloads, no sign-ups, and absolutely no hidden fees. We believe that access to high-quality information and useful tools should not be a privilege reserved for a few.
           </p>
-          <p class="text-slate-700 text-lg leading-relaxed mb-4">
+          <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-3 sm:mb-4">
             Whether you are planning a WASSCE or BECE aggregate, calculating your cumulative GPA, understanding your child's body mass index, or planning a savings strategy, AfriWidget provides the calculations, explanations, and insights you need to make confident, data-informed decisions.
           </p>
-          <p class="text-slate-700 text-lg leading-relaxed">
+          <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed">
             Our platform was born from the recognition that millions of Africans — and people worldwide — lack access to the personalized financial advisors, nutrition coaches, and academic counselors that wealthier demographics take for granted. AfriWidget closes that gap, one smart widget at a time.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-extrabold text-teal-700 mb-1">100%</div>
-            <div class="text-sm text-slate-600 font-medium">Free Forever</div>
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-4 sm:p-6 text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-teal-700 mb-1">100%</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium">Free Forever</div>
           </div>
-          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-extrabold text-emerald-600 mb-1">0</div>
-            <div class="text-sm text-slate-600 font-medium">Data Sold</div>
+          <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 sm:p-6 text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">0</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium">Data Sold</div>
           </div>
-          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
-             <div class="text-4xl font-extrabold text-slate-700 mb-1">100+</div>
-            <div class="text-sm text-slate-600 font-medium">Smart Tools</div>
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-6 text-center">
+             <div class="text-3xl sm:text-4xl font-extrabold text-slate-700 mb-1">100+</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium">Smart Tools</div>
           </div>
-          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
-             <div class="text-4xl font-extrabold text-teal-700 mb-1">6</div>
-            <div class="text-sm text-slate-600 font-medium">Core Categories</div>
+          <div class="bg-teal-50 border border-teal-100 rounded-2xl p-4 sm:p-6 text-center">
+             <div class="text-3xl sm:text-4xl font-extrabold text-teal-700 mb-1">6</div>
+            <div class="text-xs sm:text-sm text-slate-600 font-medium">Core Categories</div>
           </div>
         </div>
       </div>
@@ -750,106 +824,106 @@
   </section>
 
   <!-- MISSION & PRIVACY -->
-  <section id="missionSection" class="py-20 px-4 bg-slate-900 text-white">
+  <section id="missionSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-slate-900 text-white">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-center">Our Mission &amp; Privacy Promise</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-10 rounded"></div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-800 rounded-2xl p-8">
-          <div class="w-12 h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center">Our Mission &amp; Privacy Promise</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-8 sm:mb-10 rounded"></div>
+      <div class="grid md:grid-cols-3 gap-4 sm:gap-8">
+        <div class="bg-slate-800 rounded-2xl p-5 sm:p-8">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-emerald-400 mb-3">Privacy First</h3>
-          <p class="text-slate-300 leading-relaxed">Most calculations stay in your browser. Finance and Education tools may send limited calculation context through our secure Groq proxy for an AI insight, but we have no user accounts or calculator-submission database and do not use calculator inputs for advertising targeting.</p>
+          <h3 class="text-lg sm:text-xl font-bold text-emerald-400 mb-2 sm:mb-3">Privacy First</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Most calculations stay in your browser. Finance and Education tools may send limited calculation context through our secure Groq proxy for an AI insight, but we have no user accounts or calculator-submission database and do not use calculator inputs for advertising targeting.</p>
         </div>
-        <div class="bg-slate-800 rounded-2xl p-8">
-          <div class="w-12 h-12 bg-teal-600 bg-opacity-30 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+        <div class="bg-slate-800 rounded-2xl p-5 sm:p-8">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-teal-600 bg-opacity-30 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-teal-400 mb-3">Accessible to All</h3>
-          <p class="text-slate-300 leading-relaxed">AfriWidget is built for users across Africa and the developing world. Our tools work on low-bandwidth connections and older devices. No app store. No premium tier. No paywalls. Just knowledge, freely accessible.</p>
+          <h3 class="text-lg sm:text-xl font-bold text-teal-400 mb-2 sm:mb-3">Accessible to All</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">AfriWidget is built for users across Africa and the developing world. Our tools work on low-bandwidth connections and older devices. No app store. No premium tier. No paywalls. Just knowledge, freely accessible.</p>
         </div>
-        <div class="bg-slate-800 rounded-2xl p-8">
-          <div class="w-12 h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="bg-slate-800 rounded-2xl p-5 sm:p-8">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 bg-opacity-20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-emerald-400 mb-3">AI-Powered Insights</h3>
-          <p class="text-slate-300 leading-relaxed">Our tools go beyond simple math. Local logic and Groq-powered Finance and Education insights explain what your results mean, why they matter, and what steps you can take next — translating numbers into real-world guidance.</p>
+          <h3 class="text-lg sm:text-xl font-bold text-emerald-400 mb-2 sm:mb-3">AI-Powered Insights</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Our tools go beyond simple math. Local logic and Groq-powered Finance and Education insights explain what your results mean, why they matter, and what steps you can take next — translating numbers into real-world guidance.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CORE CATEGORIES -->
-  <section id="categoriesSection" class="py-20 px-4 bg-white">
+  <section id="categoriesSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Explore Our Core Categories</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-4 rounded"></div>
-      <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">AfriWidget organizes its tools into six powerful domains, each packed with calculators, guides, and optional realtime AI guidance designed to move you forward.</p>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-        <a href="health" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
-            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">Explore Our Core Categories</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-3 sm:mb-4 rounded"></div>
+      <p class="text-center text-slate-600 text-xs sm:text-sm md:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">AfriWidget organizes its tools into six powerful domains, each packed with calculators, guides, and optional realtime AI guidance designed to move you forward.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+        <a href="health" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-emerald-100 transition-colors">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Health &amp; Wellness</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Understand your body metrics with clinical-grade calculators. Track BMI, compute your BMR, find your ideal caloric intake, and receive browser-based health guidance based on WHO standards.</p>
-          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Health Tools →</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-700 transition-colors">Health &amp; Wellness</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Understand your body metrics with clinical-grade calculators. Track BMI, compute your BMR, find your ideal caloric intake, and receive browser-based health guidance based on WHO standards.</p>
+          <span class="text-teal-700 font-semibold text-xs sm:text-sm group-hover:text-emerald-600 transition-colors">Explore Health Tools →</span>
         </a>
-        <a href="finance" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-teal-100 transition-colors">
-            <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <a href="finance" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-teal-100 transition-colors">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Finance &amp; Wealth</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Plan your financial future with precision. Compute compound interest, model investment growth, analyze savings milestones, and unlock optional Groq-powered strategies for building wealth at any income level.</p>
-          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Finance Tools →</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-700 transition-colors">Finance &amp; Wealth</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Plan your financial future with precision. Compute compound interest, model investment growth, analyze savings milestones, and unlock optional Groq-powered strategies for building wealth at any income level.</p>
+          <span class="text-teal-700 font-semibold text-xs sm:text-sm group-hover:text-emerald-600 transition-colors">Explore Finance Tools →</span>
         </a>
-        <a href="real-estate" class="app-card group block bg-white border-2 border-slate-100 hover:border-amber-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-100 transition-colors">
-            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <a href="real-estate" class="app-card group block bg-white border-2 border-slate-100 hover:border-amber-300 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Real Estate &amp; Housing</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate mortgage payments, estimate rent affordability using the 30% rule and 50/30/20 framework, and receive AI-powered insights on housing costs, debt-to-income ratios, and smart home-buying decisions.</p>
-          <span class="text-amber-600 font-semibold text-sm group-hover:text-amber-500 transition-colors">Explore Housing Tools →</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-amber-700 transition-colors">Real Estate &amp; Housing</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Calculate mortgage payments, estimate rent affordability using the 30% rule and 50/30/20 framework, and receive AI-powered insights on housing costs, debt-to-income ratios, and smart home-buying decisions.</p>
+          <span class="text-amber-600 font-semibold text-xs sm:text-sm group-hover:text-amber-500 transition-colors">Explore Housing Tools →</span>
         </a>
-        <a href="business" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        <a href="business" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-violet-100 transition-colors">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Business &amp; Freelance</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate payment processor fees for PayPal, Stripe, and Square. Compute profit margins and markups. Convert hourly rates to annual salary equivalents — essential tools for entrepreneurs, freelancers, and e-commerce sellers.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Explore Business Tools →</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-violet-700 transition-colors">Business &amp; Freelance</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Calculate payment processor fees for PayPal, Stripe, and Square. Compute profit margins and markups. Convert hourly rates to annual salary equivalents — essential tools for entrepreneurs, freelancers, and e-commerce sellers.</p>
+          <span class="text-violet-600 font-semibold text-xs sm:text-sm group-hover:text-violet-500 transition-colors">Explore Business Tools →</span>
         </a>
-        <a href="invoice-receipt-generator" class="app-card group block bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-           <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5 text-amber-700"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Free Invoice &amp; Receipt PDF</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Create a polished invoice with line items, tax, discount, currency, and a browser-generated PDF.</p>
-          <span class="text-amber-700 font-semibold text-sm group-hover:text-amber-600 transition-colors">Create an Invoice →</span>
+        <a href="invoice-receipt-generator" class="app-card group block bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 text-amber-700"><svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></div>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-amber-700 transition-colors">Free Invoice &amp; Receipt PDF</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Create a polished invoice with line items, tax, discount, currency, and a browser-generated PDF.</p>
+          <span class="text-amber-700 font-semibold text-xs sm:text-sm group-hover:text-amber-600 transition-colors">Create an Invoice →</span>
         </a>
-        <a href="education" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
-            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+        <a href="education" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-emerald-100 transition-colors">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-700 transition-colors">Education &amp; Academics</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Empower your academic journey with our cumulative GPA calculator, course-load optimizer, and study planning tools. Receive personalized AI suggestions to maintain scholarship eligibility and achieve your goals.</p>
-          <span class="text-teal-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Explore Education Tools →</span>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-teal-700 transition-colors">Education &amp; Academics</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Empower your academic journey with our cumulative GPA calculator, course-load optimizer, and study planning tools. Receive personalized AI suggestions to maintain scholarship eligibility and achieve your goals.</p>
+          <span class="text-teal-700 font-semibold text-xs sm:text-sm group-hover:text-emerald-600 transition-colors">Explore Education Tools →</span>
         </a>
-        <a href="admissions" class="app-card group block bg-gradient-to-br from-amber-50 to-indigo-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-           <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-200 transition-colors"><svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m3 10 9-5 9 5-9 5-9-5Zm3 2v4c3 2 9 2 12 0v-4M12 15v5"/></svg></div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Admissions &amp; Aggregate Planning</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Plan WASSCE tertiary admission, BECE placement, KCSE pathways, O’Level subjects, NATED passes, and international GPA decisions with focused academic tools.</p>
-          <span class="text-amber-700 font-semibold text-sm group-hover:text-amber-600 transition-colors">Explore Admissions Tools →</span>
+        <a href="admissions" class="app-card group block bg-gradient-to-br from-amber-50 to-indigo-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all">
+           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-amber-200 transition-colors"><svg class="w-6 h-6 sm:w-7 sm:h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m3 10 9-5 9 5-9 5-9-5Zm3 2v4c3 2 9 2 12 0v-4M12 15v5"/></svg></div>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-amber-700 transition-colors">Admissions &amp; Aggregate Planning</h3>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">Plan WASSCE tertiary admission, BECE placement, KCSE pathways, O’Level subjects, NATED passes, and international GPA decisions with focused academic tools.</p>
+          <span class="text-amber-700 font-semibold text-xs sm:text-sm group-hover:text-amber-600 transition-colors">Explore Admissions Tools →</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- CALCULATORS SHOWCASE -->
-  <section class="legacy-showcase py-20 px-4 bg-slate-50">
+  <section class="legacy-showcase py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-slate-50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Interactive AI Calculators</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-4 rounded"></div>
-      <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">Our calculators do more than crunch numbers. After a result is calculated, the realtime AI assistant can explain it in plain language and suggest a practical next step.</p>
-      <div class="grid sm:grid-cols-3 gap-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">Interactive AI Calculators</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-3 sm:mb-4 rounded"></div>
+      <p class="text-center text-slate-600 text-xs sm:text-sm md:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">Our calculators do more than crunch numbers. After a result is calculated, the realtime AI assistant can explain it in plain language and suggest a practical next step.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <a href="bmi-calculator" class="app-card bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-teal-200 transition-all group">
           <div class="mb-4 text-3xl"><svg class="h-8 w-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 12h4l2-6 4 12 2-6h4"/></svg></div>
           <h3 class="font-bold text-lg text-slate-800 group-hover:text-teal-700 transition-colors">BMI, BMR &amp; TDEE</h3>
@@ -951,67 +1025,96 @@
     </div>
   </section>
 
+  <!-- FOUNDER SPOTLIGHT ON HOMEPAGE -->
+  <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 border border-slate-800 p-6 sm:p-10 shadow-2xl">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="relative flex-shrink-0">
+          <img src="/obed-avorlenu.jpg" alt="Obed Avorlenu – Founder of AfriWidget" class="w-36 h-48 sm:w-44 sm:h-60 rounded-2xl object-cover border-2 border-yellow-400/60 shadow-2xl" referrerpolicy="no-referrer" />
+          <div class="absolute -bottom-2.5 right-1 sm:-right-2 bg-yellow-400 text-slate-950 text-xs font-black uppercase px-2.5 py-1 rounded-full shadow-lg">
+            Founder
+          </div>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 text-xs font-bold uppercase tracking-wider mb-3 border border-yellow-400/30">
+            <span>✨ The Vision Behind AfriWidget</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mb-2">Practical tools. Real solutions. For everyday people.</h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+            Founded by Ghanaian web developer <strong class="text-white">Obed Avorlenu</strong>, AfriWidget is built on the belief that geography and finances should never restrict access to essential educational, financial, and productivity calculations. 100% free, private, and calculated in-browser.
+          </p>
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-1">
+            <a href="/about" class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 text-slate-950 font-bold rounded-xl text-sm hover:bg-yellow-300 transition-colors shadow">
+              Read Founder Story <span aria-hidden="true">→</span>
+            </a>
+            <span class="text-xs text-slate-400">Accra, Ghana • Zero Data Harvesting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ ACCORDION -->
-  <section id="faqSection" class="py-20 px-4 bg-white">
+  <section id="faqSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Frequently Asked Questions</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-12 rounded"></div>
-      <div class="space-y-4" id="faqContainer">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">Frequently Asked Questions</h2>
+      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-8 sm:mb-12 rounded"></div>
+      <div class="space-y-3 sm:space-y-4" id="faqContainer">
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>Is AfriWidget completely free to use?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Yes, AfriWidget is 100% free for all users. Every calculator, category page, and realtime AI assistant is available without any subscription, registration, or payment. We are supported by non-intrusive advertising and believe that access to smart, AI-powered tools is a right, not a premium feature.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, AfriWidget is 100% free for all users. Every calculator, category page, and realtime AI assistant is available without any subscription, registration, or payment. We are supported by non-intrusive advertising and believe that access to smart, AI-powered tools is a right, not a premium feature.</div>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>Does AfriWidget store my personal data?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">AfriWidget has no user accounts and does not use calculator inputs for advertising targeting. Most calculations run locally in your browser. Finance and Education tools may send the relevant calculation context through a secure server-side proxy to generate a Groq-powered AI insight; do not include names or other personal identifiers in calculator fields. We do not maintain a database of calculator submissions.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">AfriWidget has no user accounts and does not use calculator inputs for advertising targeting. Most calculations run locally in your browser. Finance and Education tools may send the relevant calculation context through a secure server-side proxy to generate a Groq-powered AI insight; do not include names or other personal identifiers in calculator fields. We do not maintain a database of calculator submissions.</div>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>How accurate are the calculator results?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Our calculators use internationally recognised, clinically and academically validated formulas. Our BMI tool follows WHO guidelines, our BMR calculator uses the Mifflin-St Jeor equation (considered the gold standard), and our GPA tool reflects standard 4.0-scale grading conventions. However, our tools are for informational purposes only and should not replace advice from qualified medical, financial, or academic professionals.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Our calculators use internationally recognised, clinically and academically validated formulas. Our BMI tool follows WHO guidelines, our BMR calculator uses the Mifflin-St Jeor equation (considered the gold standard), and our GPA tool reflects standard 4.0-scale grading conventions. However, our tools are for informational purposes only and should not replace advice from qualified medical, financial, or academic professionals.</div>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>Who is AfriWidget designed for?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">AfriWidget is designed for everyone, with a particular focus on users across Africa and other developing regions who may lack access to premium advisory services. Our tools work on older smartphones, slow internet connections, and a wide range of devices and browsers. We are committed to digital inclusion and believe that geography should never determine access to quality decision-making tools.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">AfriWidget is designed for everyone, with a particular focus on users across Africa and other developing regions who may lack access to premium advisory services. Our tools work on older smartphones, slow internet connections, and a wide range of devices and browsers. We are committed to digital inclusion and believe that geography should never determine access to quality decision-making tools.</div>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>How does the realtime AI assistant work?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">The shared realtime assistant waits for a completed tool result, then sends the relevant calculation context through the secure server-side proxy for a concise explanation and practical next step. The proxy keeps the Groq key out of the browser. If the deployed AI endpoint is unavailable, the assistant clearly reports that realtime AI is unavailable rather than presenting a locally generated response.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">The shared realtime assistant waits for a completed tool result, then sends the relevant calculation context through the secure server-side proxy for a concise explanation and practical next step. The proxy keeps the Groq key out of the browser. If the deployed AI endpoint is unavailable, the assistant clearly reports that realtime AI is unavailable rather than presenting a locally generated response.</div>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button class="accordion-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+          <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
             <span>Can I use AfriWidget on my mobile phone?</span>
-            <svg class="w-5 h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-teal-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="accordion-content px-6 pb-5 text-slate-600 leading-relaxed">Yes. AfriWidget is fully responsive and optimised for mobile, tablet, and desktop browsers. Every page is designed with a mobile-first approach using modern Tailwind CSS layouts, touch-friendly controls, and fast-loading static HTML so it feels native on any device without requiring an app download.</div>
+          <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. AfriWidget is fully responsive and optimised for mobile, tablet, and desktop browsers. Every page is designed with a mobile-first approach using modern Tailwind CSS layouts, touch-friendly controls, and fast-loading static HTML so it feels native on any device without requiring an app download.</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section id="finalCta" class="bg-gradient-to-r from-slate-900 to-slate-800 py-16 px-4 text-white text-center">
+  <section id="finalCta" class="bg-gradient-to-r from-slate-900 to-slate-800 py-10 sm:py-16 px-3 sm:px-6 text-white text-center">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-4">Ready to Make Smarter Decisions?</h2>
-      <p class="text-teal-100 mb-8 text-lg">Start with any of our free AI-powered tools and transform how you approach health, money, and education today.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="bmi-calculator" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Check Your BMI</a>
-        <a href="compound-interest" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Grow Your Wealth</a>
-        <a href="gpa-calculator" class="bg-white text-teal-800 font-bold px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg">Track Your GPA</a>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to Make Smarter Decisions?</h2>
+      <p class="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg">Start with any of our free AI-powered tools and transform how you approach health, money, and education today.</p>
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+        <a href="bmi-calculator" class="bg-white text-teal-800 font-bold px-6 sm:px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg text-sm sm:text-base">Check Your BMI</a>
+        <a href="compound-interest" class="bg-white text-teal-800 font-bold px-6 sm:px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg text-sm sm:text-base">Grow Your Wealth</a>
+        <a href="gpa-calculator" class="bg-white text-teal-800 font-bold px-6 sm:px-8 py-3 rounded-xl hover:bg-teal-50 transition-colors shadow-lg text-sm sm:text-base">Track Your GPA</a>
       </div>
     </div>
   </section>

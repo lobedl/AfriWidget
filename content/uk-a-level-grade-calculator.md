@@ -26,15 +26,14 @@ The assessment architecture differs between domestic UK qualifications and inter
 
 A-Level qualifications are graded on a 6-point scale from **A\*** (highest) down to **E** (minimum pass standard):
 
-| A-Level Grade | Standard Raw Boundary (Typical Linear) | Modular UMS Benchmark | UCAS Tariff Points | Performance Standard |
-| :--- | :--- | :--- | :--- | :--- |
-| **A\*** | **~75% – 85%+** (varies by subject) | Overall 80% + **90% in A2 units** | **56 Points** | Exceptional Academic Distinction |
-| **A** | **~65% – 75%** | **80% UMS** (384 / 480 or 480 / 600) | **48 Points** | High Academic Merit (Russell Group Baseline) |
-| **B** | **~55% – 65%** | **70% UMS** (336 / 480 or 420 / 600) | **40 Points** | Strong Pass (Standard University Prerequisite) |
-| **C** | **~45% – 55%** | **60% UMS** (288 / 480 or 360 / 600) | **32 Points** | Good Pass (Meets standard tertiary entry) |
-| **D** | **~38% – 45%** | **50% UMS** (240 / 480 or 300 / 600) | **24 Points** | Minimum Pass (HE Certificate / Foundation level) |
-| **E** | **~30% – 38%** | **40% UMS** (192 / 480 or 240 / 600) | **16 Points** | Lowest Recognised Pass Threshold |
-| **U** | Below 30% | Below 40% UMS | **0 Points** | Ungraded / Unclassified |
+### GCE A-Level Grade Boundaries & UCAS Tariff Equivalencies
+- **Grade A***: Typical Raw Boundary: **~75% – 85%+** | UMS: Overall 80% with **90% in A2 units** | UCAS Tariff: **56 Points** | Level: Exceptional Academic Distinction
+- **Grade A**: Typical Raw Boundary: **~65% – 75%** | UMS: **80% (384/480 or 480/600)** | UCAS Tariff: **48 Points** | Level: High Academic Merit (Russell Group Baseline)
+- **Grade B**: Typical Raw Boundary: **~55% – 65%** | UMS: **70% (336/480 or 420/600)** | UCAS Tariff: **40 Points** | Level: Strong Pass (Standard University Prerequisite)
+- **Grade C**: Typical Raw Boundary: **~45% – 55%** | UMS: **60% (288/480 or 360/600)** | UCAS Tariff: **32 Points** | Level: Good Pass (Meets degree entry requirements)
+- **Grade D**: Typical Raw Boundary: **~38% – 45%** | UMS: **50% (240/480 or 300/600)** | UCAS Tariff: **24 Points** | Level: Pass (Higher Education Certificate / Foundation baseline)
+- **Grade E**: Typical Raw Boundary: **~30% – 38%** | UMS: **40% (192/480 or 240/600)** | UCAS Tariff: **16 Points** | Level: Minimum Passing Standard
+- **Grade U**: Raw Boundary: Below 30% | UMS: Below 40% | UCAS Tariff: **0 Points** | Level: Ungraded / Unclassified
 
 *Note: Raw mark grade boundaries fluctuate slightly every examination series to account for paper difficulty variations, governed by Ofqual's comparable outcomes policy.*
 

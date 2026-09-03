@@ -33,9 +33,11 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
   ];
 
   function currentPage() {
-    var page = window.location.pathname.replace(/\/+$/, '').split('/').pop() || 'index.html';
-    if (page === 'index.html' || page === 'index') return '/';
-    return page.replace(/\.html$/i, '');
+    var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+    var segment = pathname.split('/').pop() || 'index.html';
+    if (segment === 'index.html' || segment === 'index' || pathname === '/') return '/';
+    var clean = segment.replace(/\.html$/i, '');
+    return '/' + clean;
   }
 
   function renderDesktopMenu() {

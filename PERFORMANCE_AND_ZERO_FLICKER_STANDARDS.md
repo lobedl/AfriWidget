@@ -72,17 +72,33 @@ To ensure silky-smooth 60fps scrolling on 120Hz mobile displays and desktops:
 - Never use `:has()` on `body`, `html`, `main`, or generic `div` tags in global stylesheets.
 - Use direct class targeting (e.g. `body.homepage-branding main article.prose` instead of `body.homepage-branding:has(...)`).
 
-### Rule 4.2: Hardware Accelerate Sticky Navigation
-- Sticky navigation headers must be promoted to their own GPU compositor layer:
+### Rule 4.2: Zero-Flicker Sticky Navigation
+- Sticky navigation headers must avoid `will-change: transform` or `transform: translateZ(0)` because transforms conflict with sticky positioning coordinates and cause GPU layer invalidation flashing during scroll:
   ```css
+  /* ✅ CORRECT: Clean zero-flicker sticky containment */
   nav.sticky, nav[class*="sticky"] {
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    contain: paint;
   }
   ```
 
-### Rule 4.3: Professional Anti-Aliased Font Rendering
+### Rule 4.3: Viewport Scrolling & Overflow Safety
+- Use `overflow-x: clip` on `html` and `overflow-x: hidden` on `body` to avoid double-overflow container trapping and scroll jank:
+  ```css
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  ```
+
+### Rule 4.4: Professional Anti-Aliased Font Rendering
 - Always use legibility-optimized typography smoothing:
   ```css
   html {

@@ -12,19 +12,24 @@ Under policies enacted by the **Ministry of Education** and **KUCCPS**, tertiary
 
 ```
 +-------------------------------------------------------------------------+
-|                  KENYAN TERTIARY PLACEMENT PATHWAYS                     |
+
+
 +------------------------------------+------------------------------------+
-| 1. University Degree (KNQA Level 7)| Minimum KCSE Mean Grade: C+ (Plus) |
-|                                    | Grades: A, A-, B+, B, B-, C+       |
+
+- **** | Minimum KCSE Mean Grade: C+ (Plus): Grades: A, A-, B+, B, B-, C+
+
 +------------------------------------+------------------------------------+
-| 2. TVET Diploma (KNQA Level 6)     | Minimum KCSE Mean Grade: C- (Minus)|
-|                                    | Grades: C, C-                      |
+
+- **** | Minimum KCSE Mean Grade: C- (Minus): Grades: C, C-
+
 +------------------------------------+------------------------------------+
-| 3. Craft Certificate (KNQA Level 5)| Minimum KCSE Mean Grade: D (Plain) |
-|                                    | Grades: D+, D                      |
+
+- **** | Minimum KCSE Mean Grade: D (Plain): Grades: D+, D
+
 +------------------------------------+------------------------------------+
-| 4. Artisan Certificate (Level 4)   | Minimum KCSE Mean Grade: E         |
-|                                    | Grades: D-, E                      |
+
+- **** | Minimum KCSE Mean Grade: E: Grades: D-, E
+
 +------------------------------------+------------------------------------+
 ```
 

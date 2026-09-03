@@ -10,17 +10,16 @@ The **AfriWidget WAEC Grade Calculator** provides a fast, deterministic assessme
 
 WAEC evaluates candidate examination performance in secondary school subjects using a standardized 9-tier classification:
 
-| WAEC Letter Grade | Percentage Score Range | Official Performance Descriptor | Tertiary Admission Status | Post-UTME Screening Points |
-| :--- | :--- | :--- | :--- | :--- |
-| **A1** | **75% &ndash; 100%** | **Excellent (Distinction)** | Full Degree Qualification | **4.0 Points** |
-| **B2** | **70% &ndash; 74%** | **Very Good (Distinction)** | Full Degree Qualification | **3.6 Points** |
-| **B3** | **65% &ndash; 69%** | **Good (Distinction)** | Full Degree Qualification | **3.2 Points** |
-| **C4** | **60% &ndash; 64%** | **Credit (Credit Pass)** | Full Degree Qualification | **2.8 Points** |
-| **C5** | **55% &ndash; 59%** | **Credit (Credit Pass)** | Full Degree Qualification | **2.4 Points** |
-| **C6** | **50% &ndash; 54%** | **Credit (Credit Pass)** | Minimum University Baseline | **2.0 Points** |
-| **D7** | **45% &ndash; 49%** | **Pass (Ordinary Pass)** | Non-Credit / Polytechnic Only | **1.0 Point / 0.0 Points** |
-| **E8** | **40% &ndash; 44%** | **Pass (Ordinary Pass)** | Non-Credit / Sub-Degree Only | **0.5 Points / 0.0 Points** |
-| **F9** | **0% &ndash; 39%** | **Fail (Unsatisfactory)** | Invalid for Admission | **0.0 Points** |
+### WAEC 9-Point Grading Scale & Screening Point Weights
+- **Grade A1 (75% – 100%)**: Excellent (Distinction) | University Admission Status: Full Degree Qualification | Post-UTME Screening: **4.0 Points**
+- **Grade B2 (70% – 74%)**: Very Good (Distinction) | University Admission Status: Full Degree Qualification | Post-UTME Screening: **3.6 Points**
+- **Grade B3 (65% – 69%)**: Good (Distinction) | University Admission Status: Full Degree Qualification | Post-UTME Screening: **3.2 Points**
+- **Grade C4 (60% – 64%)**: Credit (Credit Pass) | University Admission Status: Full Degree Qualification | Post-UTME Screening: **2.8 Points**
+- **Grade C5 (55% – 59%)**: Credit (Credit Pass) | University Admission Status: Full Degree Qualification | Post-UTME Screening: **2.4 Points**
+- **Grade C6 (50% – 54%)**: Credit (Credit Pass) | University Admission Status: Minimum University Degree Baseline | Post-UTME Screening: **2.0 Points**
+- **Grade D7 (45% – 49%)**: Pass (Ordinary Pass) | University Admission Status: Polytechnic / Monotechnic Only | Post-UTME Screening: **1.0 Point**
+- **Grade E8 (40% – 44%)**: Pass (Ordinary Pass) | University Admission Status: Sub-Degree / Certificate Only | Post-UTME Screening: **0.5 Points**
+- **Grade F9 (0% – 39%)**: Fail (Unsatisfactory) | University Admission Status: Disqualified / No Credit | Post-UTME Screening: **0.0 Points**
 
 ---
 

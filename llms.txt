@@ -607,5 +607,95 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Canada Student Loan Repayment Calculator](https://afriwidget.com/canada-student-loan-repayment-calculator) — Calculate monthly student loan repayments for Canada Student Loans (CSLP / CSFA) and provincial programs (OSAP Ontario, StudentAid BC, Alberta Student Aid), incorporate permanent 0% federal interest savings, model voluntary prepayments, and evaluate zero-payment relief under the Repayment Assistance Plan (RAP).
 
+## Canada Scholarship Finder
 
+[Canada Scholarship Finder](https://afriwidget.com/canada-scholarship-finder) — Search and match prestigious Canadian undergraduate entrance scholarships, major merit awards (Loran, Schulich Leader, TD Community Leaders, National Scholarships), STEM grants, and need-based bursaries across top universities (U of T, UBC, Waterloo, McGill, McMaster, Queen's, Western, Alberta, Calgary) based on Grade 12 Top 6 admission average, province, and target field of study.
+
+## Canada Study Planner & Timetable Generator
+
+[Canada Study Planner & Timetable Generator](https://afriwidget.com/canada-study-planner) — Generate a personalized, spaced-repetition study schedule, daily Pomodoro session targets, and exam countdown revision blocks for Canadian High School (Grade 11/12 OSSD, BC Dogwood, Alberta 30-level), CEGEP, and Canadian University undergraduate courses.
+
+## Switzerland Grade Conversion & GPA Calculator
+
+[Switzerland Grade Conversion & GPA Calculator](https://afriwidget.com/switzerland-grade-calculator) — Calculate Swiss university weighted semester grades and cumulative GPA on the official Swiss 1.0–6.0 grading scale (ETH Zurich, EPFL, UZH, UNIGE, HSG), factor in ECTS course credits, and convert Swiss marks to US 4.0 GPA, ECTS letter grades (A–F), and the German 1.0–5.0 system.
+
+## Switzerland University Cost Calculator
+
+[Switzerland University Cost Calculator](https://afriwidget.com/switzerland-university-cost-calculator) — Estimate comprehensive Swiss higher education tuition and living costs across Swiss universities (ETH Zurich, EPFL, UZH, UNIGE, HSG, Basel, Bern), modeling WG student room rent by canton, student health insurance exemptions (Swisscare/Scorestudies), SBB Halbtax transport, and cantonal Permit B visa financial solvency proof (CHF 21,000–24,000).
+
+## Switzerland Language Learning Planner
+
+[Switzerland Language Learning Planner](https://afriwidget.com/switzerland-language-learning-planner) — Plan a structured CEFR study timetable and daily Pomodoro revision routine for German (Goethe C1 / telc C1 for ETH/UZH), French (DELF B2 / DALF C1 for EPFL/UNIGE), Italian, and the official Swiss Fide language examination for Permit B/C residence and citizenship.
+
+## Norway Student Budget Calculator
+
+[Norway Student Budget Calculator](https://afriwidget.com/norway-student-budget-calculator) — Calculate monthly and annual higher education living costs in Norwegian Krone (NOK), model official Lånekassen basic support (kr 151,690/year), assess the 40% educational grant conversion criteria, track the Skatteetaten tax-free frikort ceiling (kr 70,000) and Lånekassen annual income limit (kr 214,213), and compare student housing (SiO, Sammen, SiT) across Oslo, Bergen, Trondheim, Tromsø, and Stavanger.
+
+## Norway GPA Calculator (ECTS & Samordna Opptak)
+
+[Norway GPA Calculator](https://afriwidget.com/norway-gpa-calculator) — Compute ECTS-weighted grade point averages on the official Norwegian higher education A–F scale (UiO, NTNU, UiB, NHH, NMBU), convert marks to the US 4.0 GPA scale (WES / AACRAO standards), verify Master's degree admission C-grade thresholds, and calculate Samordna opptak VGS admission points including Skolepoeng (Førstegangsvitnemål kvote) and Konkurransepoeng (Ordinær kvote with realfagspoeng, språkgodkjenning, and military/age bonus points).
+
+## Norway Study Planner & ECTS Workload Timetable
+
+[Norway Study Planner](https://afriwidget.com/norway-study-planner) — Generate a structured weekly study timetable based on Norwegian university ECTS workload metrics (25–30 total hours per ECTS credit, ~40 hrs/week for a standard 30 ECTS semester), distribute lecture time, self-study reading (pensum), mandatory assignments (arbeidskrav / øvinger), and part-time jobs, with an integrated semester countdown to Inspera digital examinations.
+
+## Botswana Student Expense Calculator (DTEF & Living Costs)
+
+[Botswana Student Expense Calculator](https://afriwidget.com/botswana-student-expense-calculator) — Calculate monthly student living costs in Botswana Pula (BWP), compare off-campus accommodation rent and combi transport fares in Gaborone, Francistown, and Palapye against the official DTEF monthly living allowance (BWP 1,420 - 1,920), track groceries and utility contributions, and forecast semester financial deficits or surplus savings.
+
+## Botswana Study Planner & Workload Timetable
+
+[Botswana Study Planner](https://afriwidget.com/botswana-study-planner) — Build a customized weekly academic schedule tailored for Botswana university students (UB, BIUST, BUAN, BAC) and BGCSE candidates, calculating required independent study hours based on Botswana Qualifications Authority (BQA) credit values (10 notional hours per credit), continuous assessment (CA) weighting, and active Pomodoro time-blocking.
+
+## Botswana BGCSE Points Calculator (BEC 48-Point Scale)
+
+[Botswana BGCSE Points Calculator](https://afriwidget.com/botswana-bgcse-points-calculator) — Calculate Botswana Examinations Council (BEC) BGCSE Best 6 subject points on the official 48-point scale (A*=8 down to G=1), determine government tertiary sponsorship eligibility under the Department of Tertiary Education Financing (DTEF 36+ points standard), and check cut-off admission standings for competitive programmes at the University of Botswana (UB) and BIUST.
+
+## Namibia NSSC Points Calculator (DNEA NSSCO & NSSCAS)
+
+[Namibia NSSC Points Calculator](https://afriwidget.com/namibia-nssc-points-calculator) — Compute official Directorate of National Examinations and Assessment (DNEA) admission points for Grade 11 NSSCO (A*=8 to G=1) and Grade 12 NSSCAS (a=10 to e=6) curriculums, calculate Best 5 and Best 6 aggregates, verify NSFAF tertiary financial loan eligibility (25+ points with Grade C in English), and evaluate UNAM and NUST general qualification readiness.
+
+## Namibia University Admission Checker (UNAM, NUST & IUM)
+
+[Namibia University Admission Checker](https://afriwidget.com/namibia-university-admission-calculator) — Check admission eligibility for the University of Namibia (UNAM), Namibia University of Science and Technology (NUST), and the International University of Management (IUM), validating mandatory faculty prerequisites across Engineering, Medicine & Surgery (MBChB), Law (LLB), and Computer Science with InSTEM bridging pathway guidance.
+
+## Namibia University GPA & WAM Calculator (NQF Weighted)
+
+[Namibia University GPA Calculator](https://afriwidget.com/namibia-gpa-calculator) — Calculate semester and cumulative Weighted Average Mark (WAM) and Grade Point Average (GPA) across UNAM, NUST, and IUM based on NQF module credit allocations, determine academic degree classifications (Distinction/First Class 75%+, Merit 70-74%, Credit 60-69%, Pass 50-59%), Dean's List qualification, and international US 4.0 scale conversions.
+
+## Malawi MSCE Grade Calculator (MANEB Points & Best 6)
+
+[Malawi MSCE Grade Calculator](https://afriwidget.com/malawi-msce-grade-calculator) — Calculate official Malawi National Examinations Board (MANEB) MSCE points aggregate on the Best 6 subjects scale (where lower points reflect superior performance, Grade 1 to Grade 9), incorporating compulsory English Language/Literature, tallying credit passes (Grades 1 to 6) and distinctions (Grades 1 and 2), and verifying official Certificate Pass criteria (6 subjects passed including English).
+
+## Malawi University Admission Checker (NCHE Selection & Cut-Offs)
+
+[Malawi University Admission Checker](https://afriwidget.com/malawi-university-admission-calculator) — Evaluate university admission eligibility and competitive selection points across public universities in Malawi (UNIMA, MUBAS, LUANAR, MUST, MZUNI, and KUHeS) under National Council for Higher Education (NCHE) harmonized guidelines, checking faculty-specific prerequisites in Engineering, Medicine & Surgery (MBBS), Law (LLB), Nursing, and Agriculture alongside national quota and Higher Education Students’ Loans and Grants Board (HESLGB) financing criteria.
+
+## Malawi University GPA & CGPA Calculator (4.0 Scale & Honours)
+
+[Malawi University GPA Calculator](https://afriwidget.com/malawi-gpa-calculator) — Compute credit-weighted Semester Grade Point Average (GPA), cumulative Grade Point Average (CGPA), and academic degree honours classifications (Pass with Distinction/First Class Honours 3.60+, Pass with Credit/Upper Second 3.00-3.59, Pass/Lower Second 2.50-2.99, Third Class Pass 2.00-2.49) for higher education institutions in Malawi including UNIMA, MUBAS, LUANAR, and MUST.
+
+## New Zealand NCEA Credits & Rank Score Calculator
+
+[New Zealand NCEA Credits Calculator](https://afriwidget.com/new-zealand-ncea-credits-calculator) — Calculate total NCEA Level 1, 2, and 3 credits, verify Certificate and Course Endorsements with Merit/Excellence, evaluate official University Entrance (UE) criteria, and compute your University Rank Score (out of 320) for competitive undergraduate admissions at Auckland, Otago, Victoria, and Canterbury.
+
+## New Zealand Student Loan & IRD Repayment Calculator
+
+[New Zealand Student Loan Calculator](https://afriwidget.com/new-zealand-student-loan-calculator) — Calculate compulsory 12% IRD student loan repayments on earnings above the $24,128 annual threshold, compare permanent 0% interest for NZ tax residents against overseas interest rates (3.9%), model voluntary repayments, and simulate complete debt-free payoff timelines.
+
+## New Zealand Study Planner & Workload Timetable
+
+[New Zealand Study Planner](https://afriwidget.com/new-zealand-study-planner) — Create a personalized university and NCEA study timetable based on official NZQA / EFTS workload guidelines (10 hours per credit, 40 hours/week for full-time 60-point semesters), plan lecture attendance, self-directed reading, and assignment milestones, and check StudyLink full-time EFTS eligibility.
+
+## Germany Abitur Grade Calculator (Abiturnote Rechner)
+
+[Germany Abitur Grade Calculator](https://afriwidget.com/germany-abitur-grade-calculator) — Calculate your official German Abitur grade (Abiturnote 1.0–4.0) from Block I coursework points (out of 600) and Block II final examination points (out of 300) using the official Standing Conference of Ministers of Education (KMK) formula N = 1 + (900 - P) / 180, evaluate pass criteria, and convert Abitur points to international US GPA and ECTS scales.
+
+## Germany University Admission & NC Chance Checker
+
+[Germany University Admission Checker](https://afriwidget.com/germany-university-admission-checker) — Check your admission chances across German universities (Universitäten & Fachhochschulen) for Medicine, Dentistry, Pharmacy, Law, Psychology, CS, and Business, calculate your selection procedure grade (Verfahrensnote), and evaluate Hochschulstart national quotas (Abiturbesten 30%, ZEQ 10%, AdH 60%) with TMS bonuses, vocational qualifications, and voluntary service credits.
+
+## Germany GPA Converter (Modified Bavarian Formula)
+
+[Germany GPA Converter](https://afriwidget.com/germany-gpa-converter) — Convert international university and high school GPAs (US 4.0, UK percentages, India 10.0 CGPA, Nigeria 5.0 CGPA, and European systems) to the German 1.0–4.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel) recognized by uni-assist, DAAD, and the KMK for Master's and Bachelor's degree admissions.
 

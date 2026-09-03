@@ -133,6 +133,29 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
             <li><a href="/canada-gpa-calculator" class="hover:text-emerald-400 transition-colors">Canada GPA Calculator</a></li>
             <li><a href="/canada-university-admission-chance-calculator" class="hover:text-emerald-400 transition-colors">Canada University Admission Calculator</a></li>
             <li><a href="/canada-student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Canada Student Loan Repayment</a></li>
+            <li><a href="/canada-scholarship-finder" class="hover:text-emerald-400 transition-colors">Canada Scholarship Finder</a></li>
+            <li><a href="/canada-study-planner" class="hover:text-emerald-400 transition-colors">Canada Study Planner</a></li>
+            <li><a href="/switzerland-grade-calculator" class="hover:text-emerald-400 transition-colors">Switzerland Grade Calculator</a></li>
+            <li><a href="/switzerland-university-cost-calculator" class="hover:text-emerald-400 transition-colors">Switzerland University Cost</a></li>
+            <li><a href="/switzerland-language-learning-planner" class="hover:text-emerald-400 transition-colors">Switzerland Language Planner</a></li>
+            <li><a href="/norway-student-budget-calculator" class="hover:text-emerald-400 transition-colors">Norway Student Budget Calculator</a></li>
+            <li><a href="/norway-gpa-calculator" class="hover:text-emerald-400 transition-colors">Norway GPA Calculator</a></li>
+            <li><a href="/norway-study-planner" class="hover:text-emerald-400 transition-colors">Norway Study Planner</a></li>
+            <li><a href="/botswana-student-expense-calculator" class="hover:text-emerald-400 transition-colors">Botswana Student Expense Calculator</a></li>
+            <li><a href="/botswana-study-planner" class="hover:text-emerald-400 transition-colors">Botswana Study Planner</a></li>
+            <li><a href="/botswana-bgcse-points-calculator" class="hover:text-emerald-400 transition-colors">Botswana BGCSE Points Calculator</a></li>
+            <li><a href="/namibia-nssc-points-calculator" class="hover:text-emerald-400 transition-colors">Namibia NSSC Points Calculator</a></li>
+            <li><a href="/namibia-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Namibia University Admission Checker</a></li>
+            <li><a href="/namibia-gpa-calculator" class="hover:text-emerald-400 transition-colors">Namibia University GPA Calculator</a></li>
+            <li><a href="/malawi-msce-grade-calculator" class="hover:text-emerald-400 transition-colors">Malawi MSCE Grade Calculator</a></li>
+            <li><a href="/malawi-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Malawi University Admission Calculator</a></li>
+            <li><a href="/malawi-gpa-calculator" class="hover:text-emerald-400 transition-colors">Malawi University GPA Calculator</a></li>
+            <li><a href="/new-zealand-ncea-credits-calculator" class="hover:text-emerald-400 transition-colors">NZ NCEA Credits Calculator</a></li>
+            <li><a href="/new-zealand-student-loan-calculator" class="hover:text-emerald-400 transition-colors">NZ Student Loan Calculator</a></li>
+            <li><a href="/new-zealand-study-planner" class="hover:text-emerald-400 transition-colors">NZ Study Planner</a></li>
+            <li><a href="/germany-abitur-grade-calculator" class="hover:text-emerald-400 transition-colors">Germany Abitur Calculator</a></li>
+            <li><a href="/germany-university-admission-checker" class="hover:text-emerald-400 transition-colors">Germany Admission Checker</a></li>
+            <li><a href="/germany-gpa-converter" class="hover:text-emerald-400 transition-colors">Germany GPA Converter</a></li>
            <li><a href="/uace-points-calculator" class="hover:text-emerald-400 transition-colors">UACE Points Calculator</a></li>
            <li><a href="/ple-aggregate-calculator" class="hover:text-emerald-400 transition-colors">PLE Aggregate Calculator</a></li>
            <li><a href="/uce-grade-calculator" class="hover:text-emerald-400 transition-colors">UCE Grade Calculator</a></li>

@@ -307,9 +307,26 @@ All reported bugs, layout anomalies, build failures, and SEO audit warnings are 
 **STRICT ZERO-EXCEPTION REQUIREMENT**: To prevent header flashing, layout shifts (CLS), and scroll freezes:
 1. **Zero-Flicker Navigation**: `nav.js` MUST NOT overwrite `innerHTML` when static navigation links exist; it must only toggle active CSS classes.
 2. **Zero-CLS Injected Components**: Injected assistants (`share-results.js`, `universal-ai.js`) MUST initialize with `hidden` class and only reveal upon explicit calculation.
-3. **60fps Scroll Acceleration**: Sticky navigation headers must use GPU compositing (`transform: translateZ(0)`). Never use `:has()` on root containers.
+3. **Zero-Flicker Sticky Header & Scroll Containment**: Sticky navigation headers must use `contain: paint` without transforms. Viewport scrolling uses `overflow-x: clip` on `html` and `overflow-x: hidden` on `body`. Never use `:has()` on root containers.
 4. **Idle-Safe Timers**: Pause intervals when tab is hidden or assistant is not active.
 5. **Reference**: See **`PERFORMANCE_AND_ZERO_FLICKER_STANDARDS.md`** for complete specifications.
+
+---
+
+## 📚 15. Mandatory 800+ Words Educational Content, Worked Examples & Unique FAQ Standards
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: Every tool, calculator, planner, and generator page on the AfriWidget platform **MUST** contain at least **800+ words of unique, authoritative educational content**:
+1. **Mandatory 4-Pillar Educational Depth**:
+   - **How to Use the Tool**: Step-by-step user interaction manual.
+   - **How the Calculation Works**: Detailed mathematical formulas (using plain text operators `×`, `÷`, `+`, `-`, `=`), scoring algorithms, and statutory policy standards.
+   - **Step-by-Step Worked Examples**: Real-world realistic user/student profiles with concrete calculations and clear verdicts.
+   - **Frequently Asked Questions (FAQ)**: Distinct, insightful questions answering specific user edge cases and institutional exceptions.
+2. **Zero-Duplication & 100% Unique Policy**:
+   - Worked examples and FAQs must be 100% unique to that specific tool/page. Never copy-paste, clone, or reuse generic examples across different tools.
+3. **Markdown Guide Integration**:
+   - Store content in `/content/[tool-slug].md`. The build prerender pipeline automatically compiles this markdown into interactive styled FAQ accordions and semantic HTML inside `<article class="...">`.
+4. **Reference**: See **`MANDATORY_EDUCATIONAL_CONTENT_AND_WORD_COUNT_STANDARDS.md`** for complete specifications and templates.
+
 
 
 

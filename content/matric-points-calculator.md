@@ -44,15 +44,15 @@ The minimum legal pass to receive a Matric certificate without tertiary endorsem
 
 The Department of Basic Education converts percentage marks into achievement levels:
 
-| Level | Percentage Mark Range | Points Allocated | Rating Description |
-| :--- | :--- | :--- | :--- |
-| **Level 7** | **80% &ndash; 100%** | **7 Points** | Outstanding Achievement (Subject Distinction) |
-| **Level 6** | **70% &ndash; 79%** | **6 Points** | Meritorious Achievement |
-| **Level 5** | **60% &ndash; 69%** | **5 Points** | Substantial Achievement |
-| **Level 4** | **50% &ndash; 59%** | **4 Points** | Moderate Achievement |
-| **Level 3** | **40% &ndash; 49%** | **3 Points** | Adequate Achievement |
-| **Level 2** | **30% &ndash; 39%** | **2 Points** | Elementary Achievement |
-| **Level 1** | **0% &ndash; 29%** | **1 Point** (or 0 pts) | Not Achieved |
+
+- **Level 7** | Percentage Mark Range: **80% &ndash; 100%** | Points Allocated: **7 Points** | Rating Description: Outstanding Achievement (Subject Distinction)
+- **Level 6** | Percentage Mark Range: **70% &ndash; 79%** | Points Allocated: **6 Points** | Rating Description: Meritorious Achievement
+- **Level 5** | Percentage Mark Range: **60% &ndash; 69%** | Points Allocated: **5 Points** | Rating Description: Substantial Achievement
+- **Level 4** | Percentage Mark Range: **50% &ndash; 59%** | Points Allocated: **4 Points** | Rating Description: Moderate Achievement
+- **Level 3** | Percentage Mark Range: **40% &ndash; 49%** | Points Allocated: **3 Points** | Rating Description: Adequate Achievement
+- **Level 2** | Percentage Mark Range: **30% &ndash; 39%** | Points Allocated: **2 Points** | Rating Description: Elementary Achievement
+- **Level 1** | Percentage Mark Range: **0% &ndash; 29%** | Points Allocated: **1 Point** (or 0 pts) | Rating Description: Not Achieved
+
 
 ---
 

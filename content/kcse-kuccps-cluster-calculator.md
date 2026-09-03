@@ -10,20 +10,20 @@ The **AfriWidget KCSE Grade &amp; KUCCPS Cluster Calculator** translates your in
 
 KNEC evaluates secondary school candidates across a 12-point numerical grading hierarchy:
 
-| KCSE Letter Grade | Numerical Grade Point | Performance Classification | Standard Degree Placement Eligibility |
-| :--- | :--- | :--- | :--- |
-| **A** | **12 Points** | Plain Distinction | Direct Government Placement (Highly Competitive Degrees) |
-| **A-** | **11 Points** | Minus Distinction | Direct Government Placement (Competitive Degrees) |
-| **B+** | **10 Points** | Plus Credit | Direct Placement (Engineering, Law, Nursing, Commerce) |
-| **B** | **9 Points** | Plain Credit | Direct Placement (Science, Education, Computer Science) |
-| **B-** | **8 Points** | Minus Credit | Direct Placement (Broad Arts, Humanities, Social Sciences) |
-| **C+** | **7 Points** | Plus Pass | **Minimum National Baseline for University Degree Admission** |
-| **C** | **6 Points** | Plain Pass | Minimum for Diploma Programmes (TVET &amp; Colleges) |
-| **C-** | **5 Points** | Minus Pass | Diploma Programmes (Universities &amp; TVET Colleges) |
-| **D+** | **4 Points** | Plus Average | Certificate Programmes (Technical Colleges) |
-| **D** | **3 Points** | Plain Average | Certificate Programmes / Artisan Skills |
-| **D-** | **2 Points** | Minus Average | Artisan National Certificate Courses |
-| **E** | **1 Point** | Minimal Achievement | Foundation &amp; Vocational Artisan Bridging |
+
+- **A** | Numerical Grade Point: **12 Points** | Performance Classification: Plain Distinction | Standard Degree Placement Eligibility: Direct Government Placement (Highly Competitive Degrees)
+- **A-** | Numerical Grade Point: **11 Points** | Performance Classification: Minus Distinction | Standard Degree Placement Eligibility: Direct Government Placement (Competitive Degrees)
+- **B+** | Numerical Grade Point: **10 Points** | Performance Classification: Plus Credit | Standard Degree Placement Eligibility: Direct Placement (Engineering, Law, Nursing, Commerce)
+- **B** | Numerical Grade Point: **9 Points** | Performance Classification: Plain Credit | Standard Degree Placement Eligibility: Direct Placement (Science, Education, Computer Science)
+- **B-** | Numerical Grade Point: **8 Points** | Performance Classification: Minus Credit | Standard Degree Placement Eligibility: Direct Placement (Broad Arts, Humanities, Social Sciences)
+- **C+** | Numerical Grade Point: **7 Points** | Performance Classification: Plus Pass | Standard Degree Placement Eligibility: **Minimum National Baseline for University Degree Admission**
+- **C** | Numerical Grade Point: **6 Points** | Performance Classification: Plain Pass | Standard Degree Placement Eligibility: Minimum for Diploma Programmes (TVET &amp; Colleges)
+- **C-** | Numerical Grade Point: **5 Points** | Performance Classification: Minus Pass | Standard Degree Placement Eligibility: Diploma Programmes (Universities &amp; TVET Colleges)
+- **D+** | Numerical Grade Point: **4 Points** | Performance Classification: Plus Average | Standard Degree Placement Eligibility: Certificate Programmes (Technical Colleges)
+- **D** | Numerical Grade Point: **3 Points** | Performance Classification: Plain Average | Standard Degree Placement Eligibility: Certificate Programmes / Artisan Skills
+- **D-** | Numerical Grade Point: **2 Points** | Performance Classification: Minus Average | Standard Degree Placement Eligibility: Artisan National Certificate Courses
+- **E** | Numerical Grade Point: **1 Point** | Performance Classification: Minimal Achievement | Standard Degree Placement Eligibility: Foundation &amp; Vocational Artisan Bridging
+
 
 ---
 
@@ -45,20 +45,20 @@ In the Kenyan KCSE curriculum, a candidate's aggregate score is computed from th
 
 ## Official KNEC Mean Grade Cut-Off Thresholds
 
-| Total Aggregate Points (7 Subjects) | Mean Grade Point Average | Assigned KCSE Mean Grade |
-| :--- | :--- | :--- |
-| **81 &ndash; 84 Points** | 11.57 &ndash; 12.00 | **A (Plain)** |
-| **74 &ndash; 80 Points** | 10.57 &ndash; 11.43 | **A- (Minus)** |
-| **67 &ndash; 73 Points** | 9.57 &ndash; 10.43 | **B+ (Plus)** |
-| **60 &ndash; 66 Points** | 8.57 &ndash; 9.43 | **B (Plain)** |
-| **53 &ndash; 59 Points** | 7.57 &ndash; 8.43 | **B- (Minus)** |
-| **46 &ndash; 52 Points** | 6.57 &ndash; 7.43 | **C+ (Plus &ndash; Degree Cut-off)** |
-| **39 &ndash; 45 Points** | 5.57 &ndash; 6.43 | **C (Plain &ndash; Diploma Cut-off)** |
-| **32 &ndash; 38 Points** | 4.57 &ndash; 5.43 | **C- (Minus)** |
-| **25 &ndash; 31 Points** | 3.57 &ndash; 4.43 | **D+ (Plus &ndash; Certificate Cut-off)** |
-| **18 &ndash; 24 Points** | 2.57 &ndash; 3.43 | **D (Plain)** |
-| **11 &ndash; 17 Points** | 1.57 &ndash; 2.43 | **D- (Minus)** |
-| **7 &ndash; 10 Points** | 1.00 &ndash; 1.43 | **E (Minimal)** |
+
+- **81 &ndash; 84 Points** | Mean Grade Point Average: 11.57 &ndash; 12.00 | Assigned KCSE Mean Grade: **A (Plain)**
+- **74 &ndash; 80 Points** | Mean Grade Point Average: 10.57 &ndash; 11.43 | Assigned KCSE Mean Grade: **A- (Minus)**
+- **67 &ndash; 73 Points** | Mean Grade Point Average: 9.57 &ndash; 10.43 | Assigned KCSE Mean Grade: **B+ (Plus)**
+- **60 &ndash; 66 Points** | Mean Grade Point Average: 8.57 &ndash; 9.43 | Assigned KCSE Mean Grade: **B (Plain)**
+- **53 &ndash; 59 Points** | Mean Grade Point Average: 7.57 &ndash; 8.43 | Assigned KCSE Mean Grade: **B- (Minus)**
+- **46 &ndash; 52 Points** | Mean Grade Point Average: 6.57 &ndash; 7.43 | Assigned KCSE Mean Grade: **C+ (Plus &ndash; Degree Cut-off)**
+- **39 &ndash; 45 Points** | Mean Grade Point Average: 5.57 &ndash; 6.43 | Assigned KCSE Mean Grade: **C (Plain &ndash; Diploma Cut-off)**
+- **32 &ndash; 38 Points** | Mean Grade Point Average: 4.57 &ndash; 5.43 | Assigned KCSE Mean Grade: **C- (Minus)**
+- **25 &ndash; 31 Points** | Mean Grade Point Average: 3.57 &ndash; 4.43 | Assigned KCSE Mean Grade: **D+ (Plus &ndash; Certificate Cut-off)**
+- **18 &ndash; 24 Points** | Mean Grade Point Average: 2.57 &ndash; 3.43 | Assigned KCSE Mean Grade: **D (Plain)**
+- **11 &ndash; 17 Points** | Mean Grade Point Average: 1.57 &ndash; 2.43 | Assigned KCSE Mean Grade: **D- (Minus)**
+- **7 &ndash; 10 Points** | Mean Grade Point Average: 1.00 &ndash; 1.43 | Assigned KCSE Mean Grade: **E (Minimal)**
+
 
 ---
 

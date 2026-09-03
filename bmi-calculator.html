@@ -23,9 +23,9 @@
   </script>
   <!-- Google AdSense Official Script Tag -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
-<title>BMI, BMR &amp; TDEE Calculator – AfriWidget</title>
+<title>BMI, BMR &amp; TDEE Calculator (WHO &amp; Mifflin-St Jeor) – AfriWidget</title>
   
-  <meta name="description" content="Calculate Body Mass Index (BMI), prime index, and healthy weight ranges for adults using metric (kg/cm) and imperial (lbs/inches) units." />
+  <meta name="description" content="Calculate Body Mass Index (BMI), BMI Prime, BMR (Mifflin-St Jeor), TDEE, and healthy weight ranges for adults using metric and imperial units. 100% private." />
   <link rel="canonical" href="https://afriwidget.com/bmi-calculator" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -35,17 +35,17 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="BMI, BMR &amp; TDEE Calculator – AfriWidget" />
+  <meta property="og:title" content="BMI, BMR &amp; TDEE Calculator (WHO &amp; Mifflin-St Jeor) – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/bmi-calculator" />
-  <meta property="og:description" content="Calculate your Body Mass Index (BMI) and discover your ideal healthy weight range." />
+  <meta property="og:description" content="Calculate Body Mass Index (BMI), BMI Prime, BMR (Mifflin-St Jeor), TDEE, and healthy weight ranges for adults using metric and imperial units." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BMI, BMR &amp; TDEE Calculator – AfriWidget" />
+  <meta name="twitter:title" content="BMI, BMR &amp; TDEE Calculator (WHO &amp; Mifflin-St Jeor) – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Calculate your Body Mass Index (BMI) and discover your ideal healthy weight range." />
+  <meta name="twitter:description" content="Calculate Body Mass Index (BMI), BMI Prime, BMR (Mifflin-St Jeor), TDEE, and healthy weight ranges for adults using metric and imperial units." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
@@ -54,8 +54,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "BMI, BMR &amp; TDEE Calculator",
-    "description": "Calculate your BMI, BMR, and TDEE instantly with our 100% free tool. No signup, no email required, and no hidden paywalls.",
+    "name": "BMI, BMR & TDEE Calculator",
+    "description": "Calculate Body Mass Index (BMI), BMI Prime, BMR (Mifflin-St Jeor), TDEE, and healthy weight ranges for adults using metric and imperial units. 100% private in-browser tool.",
     "url": "https://afriwidget.com/bmi-calculator",
     "applicationCategory": "HealthApplication",
     "operatingSystem": "All",
@@ -64,7 +64,72 @@
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "AfriWidget Health & Exercise Physiology Board",
+      "url": "https://afriwidget.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AfriWidget",
+      "url": "https://afriwidget.com"
+    },
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "World Health Organization (WHO) Body Mass Index Classification Standards",
+        "url": "https://www.who.int"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Centers for Disease Control and Prevention (CDC) Adult BMI Clinical Guidelines",
+        "url": "https://www.cdc.gov/bmi"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Mifflin-St Jeor Equation for Resting Metabolic Rate (AJCN 1990)",
+        "url": "https://academic.oup.com/ajcn"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the primary difference between BMI and Body Fat Percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Body Mass Index (BMI) measures total body weight scaled to height squared, providing an indirect estimation of body mass. Body fat percentage measures the exact proportion of adipose tissue relative to total mass (including bones, water, muscles, and organs). An individual can have a high BMI due to muscular hypertrophy while maintaining a low, healthy body fat percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is the Mifflin-St Jeor equation considered more accurate than Harris-Benedict?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Extensive clinical studies demonstrate that the Mifflin-St Jeor equation predicts Resting Metabolic Rate (RMR) within 10% of measured indirect calorimetry in over 82% of individuals, outperforming the older Harris-Benedict formulas which tend to overestimate caloric needs by 5% to 15%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does BMI Prime work and what does a score of 1.0 mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI Prime expresses your actual BMI as a decimal ratio of the upper threshold of normal weight (25.0 kg/m²). A BMI Prime of 1.00 indicates your body weight is exactly at the boundary between normal weight and overweight. A score below 0.74 indicates underweight, 0.74 to 0.99 represents healthy normal weight, and 1.00 or higher indicates overweight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to consume fewer calories than my Basal Metabolic Rate (BMR)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consuming significantly fewer calories than your BMR for extended periods is generally not recommended without physician supervision. Your BMR represents the minimum energy required to sustain vital organ functions. Extended deficits below BMR trigger metabolic adaptation, lethargy, muscle catabolism, and micronutrient deficiencies."
+        }
+      }
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -79,7 +144,13 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "BMI, BMR &amp; TDEE Calculator",
+        "name": "Health Tools",
+        "item": "https://afriwidget.com/health"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "BMI, BMR & TDEE Calculator",
         "item": "https://afriwidget.com/bmi-calculator"
       }
     ]
@@ -135,89 +206,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-                            <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -305,13 +297,12 @@
     </div>
   </div>
 
-
   <!-- HERO & TOOL HEADER -->
   <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block bg-emerald-500/20 text-emerald-300 text-xs sm:text-sm font-semibold px-4 py-1 rounded-full mb-4 border border-emerald-500/30">Free Health Tool</span>
+      <span class="inline-block bg-emerald-500/20 text-emerald-300 text-xs sm:text-sm font-semibold px-4 py-1 rounded-full mb-4 border border-emerald-500/30">Clinical Health &amp; Energetics Calculator</span>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3">BMI, BMR &amp; TDEE Calculator</h1>
-      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Enter your details below for instant, clinically grounded body metrics with AI-powered health insights.</p>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">Calculate your Body Mass Index (BMI), BMI Prime, Resting BMR (Mifflin-St Jeor), Total Daily Energy Expenditure (TDEE), and healthy weight range with instant, private in-browser precision.</p>
       <div class="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span>⚡ 100% Free • No Signup • Private In-Browser Calculation</span>
@@ -321,26 +312,38 @@
 
   <main class="flex-grow w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
     <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/90 p-3.5 sm:p-6 lg:p-8">
-      <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6">Your Body Metrics</h2>
+      
+      <!-- Unit System Toggle -->
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Your Body Parameters</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Choose measurement system and enter your physical metrics.</p>
+        </div>
+        <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold">
+          <button type="button" id="unitMetric" class="px-3.5 py-1.5 rounded-lg bg-emerald-700 text-white shadow-sm transition-all cursor-pointer">Metric (kg/cm)</button>
+          <button type="button" id="unitImperial" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer">Imperial (lbs/in)</button>
+        </div>
+      </div>
+
       <form id="bmiForm" class="space-y-5">
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm font-semibold text-slate-700 mb-2">Age (years)</label>
-            <input type="number" id="age" min="1" max="120" placeholder="e.g. 28" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
+            <input type="number" id="age" min="15" max="120" placeholder="e.g. 28" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">Sex</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Biological Sex</label>
             <div class="grid grid-cols-2 gap-3">
               <label class="relative cursor-pointer">
-                <input type="radio" name="sex" value="male" class="sr-only peer" required />
-                <div class="flex items-center justify-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <input type="radio" name="sex" value="male" class="sr-only peer" checked required />
+                <div class="flex items-center justify-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-emerald-700 peer-checked:border-emerald-600 peer-checked:text-white peer-checked:shadow-md hover:border-emerald-700/50 cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                   Male
                 </div>
               </label>
               <label class="relative cursor-pointer">
                 <input type="radio" name="sex" value="female" class="sr-only peer" />
-                <div class="flex items-center justify-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-[#0F766E] peer-checked:border-[#10B981] peer-checked:text-white peer-checked:shadow-lg hover:border-[#0F766E]/50 cursor-pointer">
+                <div class="flex items-center justify-center gap-2 p-3.5 rounded-xl border-2 border-slate-200 bg-slate-50 font-semibold text-slate-600 text-sm transition-all peer-checked:bg-emerald-700 peer-checked:border-emerald-600 peer-checked:text-white peer-checked:shadow-md hover:border-emerald-700/50 cursor-pointer">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                   Female
                 </div>
@@ -348,143 +351,201 @@
             </div>
           </div>
         </div>
-        <div class="grid sm:grid-cols-2 gap-5">
+
+        <!-- Metric Inputs -->
+        <div id="metricInputContainer" class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm font-semibold text-slate-700 mb-2">Weight (kg)</label>
-            <input type="number" id="weight" min="1" max="500" step="0.1" placeholder="e.g. 70.5" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
+            <input type="number" id="weightKg" min="25" max="350" step="0.1" placeholder="e.g. 70.5" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
           </div>
           <div>
             <label class="block text-sm font-semibold text-slate-700 mb-2">Height (cm)</label>
-            <input type="number" id="height" min="50" max="300" step="0.1" placeholder="e.g. 175" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
+            <input type="number" id="heightCm" min="90" max="250" step="0.1" placeholder="e.g. 175" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" required />
           </div>
         </div>
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-2">Activity Level</label>
-          <div class="relative">
-            <select id="activity" class="appearance-none bg-slate-50 border-2 border-slate-200 focus:border-[#0F766E] focus:bg-white focus:ring-4 focus:ring-[#10B981]/20 rounded-xl px-4 py-3 pr-10 text-slate-800 font-semibold shadow-sm w-full transition-all outline-none cursor-pointer" required>
-              <option value="">Select your activity level</option>
-              <option value="1.2">Sedentary – little or no exercise</option>
-              <option value="1.375">Lightly active – light exercise 1–3 days/week</option>
-              <option value="1.55">Moderately active – moderate exercise 3–5 days/week</option>
-              <option value="1.725">Very active – hard exercise 6–7 days/week</option>
-              <option value="1.9">Extra active – very hard exercise, physical job</option>
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-              <svg class="w-5 h-5 text-[#0F766E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+
+        <!-- Imperial Inputs (Hidden by default) -->
+        <div id="imperialInputContainer" class="grid sm:grid-cols-2 gap-5 hidden">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Weight (lbs)</label>
+            <input type="number" id="weightLbs" min="50" max="750" step="0.1" placeholder="e.g. 155" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-4 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Height</label>
+            <div class="grid grid-cols-2 gap-3">
+              <input type="number" id="heightFeet" min="3" max="8" placeholder="Feet (e.g. 5)" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-3 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
+              <input type="number" id="heightInches" min="0" max="11.9" step="0.1" placeholder="Inches (e.g. 9)" class="w-full appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-3 py-3 text-slate-800 font-semibold shadow-sm transition-all outline-none" />
             </div>
           </div>
         </div>
-        <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 text-lg tracking-wide">Calculate</button>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Physical Activity Level (PAL)</label>
+          <div class="relative">
+            <select id="activity" class="appearance-none bg-slate-50 border-2 border-slate-200 focus:border-emerald-700 focus:bg-white focus:ring-4 focus:ring-emerald-500/20 rounded-xl px-4 py-3 pr-10 text-slate-800 font-semibold shadow-sm w-full transition-all outline-none cursor-pointer" required>
+              <option value="">Select your weekly activity level</option>
+              <option value="1.2">Sedentary (1.20) – Desk job, minimal walking, no structured exercise</option>
+              <option value="1.375">Lightly Active (1.375) – Light walking / exercise 1–3 days/week</option>
+              <option value="1.55">Moderately Active (1.55) – Moderate gym workouts or sports 3–5 days/week</option>
+              <option value="1.725">Very Active (1.725) – Hard athletic training 6–7 days/week</option>
+              <option value="1.9">Extra Active (1.90) – Physical construction job or twice-daily sports</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+              <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95 text-lg tracking-wide cursor-pointer">Calculate Clinical Metrics</button>
       </form>
     </div>
 
-    <!-- RESULTS -->
-    <div id="results" class="mt-8 hidden">
-      <h2 class="text-2xl font-bold text-slate-900 mb-5">Your Results</h2>
-      <div class="grid sm:grid-cols-3 gap-4 mb-6">
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">BMI</div>
-          <div id="bmiValue" class="text-4xl font-extrabold text-teal-700 mb-1">—</div>
-          <div id="bmiCategory" class="text-sm font-semibold text-slate-600">—</div>
-        </div>
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">BMR</div>
-          <div id="bmrValue" class="text-4xl font-extrabold text-emerald-600 mb-1">—</div>
-          <div class="text-sm font-semibold text-slate-600">kcal / day</div>
-        </div>
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">TDEE</div>
-          <div id="tdeeValue" class="text-4xl font-extrabold text-teal-700 mb-1">—</div>
-          <div class="text-sm font-semibold text-slate-600">kcal / day</div>
-        </div>
-      </div>
-
-      <!-- WEIGHT GOALS -->
-      <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-6">
-        <h3 class="font-bold text-slate-800 mb-4">Caloric Targets by Goal</h3>
-        <div class="grid sm:grid-cols-3 gap-4 text-center text-sm">
-          <div class="bg-red-50 rounded-xl p-4">
-            <div class="font-bold text-red-700 mb-1">Lose Weight</div>
-            <div id="loseCalories" class="text-xl font-extrabold text-red-600">—</div>
-            <div class="text-slate-500 text-xs mt-1">500 kcal deficit / day</div>
+    <!-- RESULTS SECTION -->
+    <div id="results" class="mt-8 hidden space-y-6">
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-xl border border-slate-700">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-700/80 pb-4 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Clinical Evaluation</span>
+            <h2 class="text-2xl sm:text-3xl font-black text-white">Your Health &amp; Energy Profile</h2>
           </div>
-          <div class="bg-emerald-50 rounded-xl p-4">
-            <div class="font-bold text-emerald-700 mb-1">Maintain Weight</div>
-            <div id="maintainCalories" class="text-xl font-extrabold text-emerald-600">—</div>
-            <div class="text-slate-500 text-xs mt-1">= Your TDEE</div>
-          </div>
-          <div class="bg-blue-50 rounded-xl p-4">
-            <div class="font-bold text-blue-700 mb-1">Gain Muscle</div>
-            <div id="gainCalories" class="text-xl font-extrabold text-blue-600">—</div>
-            <div class="text-slate-500 text-xs mt-1">500 kcal surplus / day</div>
+          <div id="bmiCategoryBadge" class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wide bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 self-start sm:self-auto">
+            Normal Weight
           </div>
         </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700 text-center">
+            <span class="text-xs font-semibold text-slate-400 block uppercase">BMI</span>
+            <span id="bmiValue" class="text-3xl sm:text-4xl font-black text-white mt-1 block">—</span>
+            <span id="bmiPrimeDisplay" class="text-xs text-slate-400 mt-1 block">Prime: —</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700 text-center">
+            <span class="text-xs font-semibold text-slate-400 block uppercase">Healthy Weight Range</span>
+            <span id="healthyWeightRange" class="text-lg sm:text-xl font-bold text-emerald-400 mt-1 block">—</span>
+            <span class="text-xs text-slate-400 mt-1 block">BMI 18.5 – 24.9</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700 text-center">
+            <span class="text-xs font-semibold text-slate-400 block uppercase">BMR (Mifflin-St Jeor)</span>
+            <span id="bmrValue" class="text-3xl sm:text-4xl font-black text-yellow-400 mt-1 block">—</span>
+            <span class="text-xs text-slate-400 mt-1 block">kcal / day (Resting)</span>
+          </div>
+          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700 text-center">
+            <span class="text-xs font-semibold text-slate-400 block uppercase">TDEE (Maintenance)</span>
+            <span id="tdeeValue" class="text-3xl sm:text-4xl font-black text-emerald-400 mt-1 block">—</span>
+            <span class="text-xs text-slate-400 mt-1 block">kcal / day (Active)</span>
+          </div>
+        </div>
+
+        <!-- Clinical Risk & Interpretation Notice -->
+        <div id="clinicalInterpretationBox" class="bg-slate-800/90 rounded-xl p-4 border border-slate-700 text-sm text-slate-200 leading-relaxed">
+          <span class="font-bold text-white block mb-1">Clinical Interpretation:</span>
+          <p id="clinicalInterpretationText">—</p>
+        </div>
       </div>
 
-    </div>
-
-    <!-- EXPLAINER -->
-    <div class="mt-12 space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900">About These Calculations</h2>
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">Body Mass Index (BMI)</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">BMI = weight (kg) ÷ height² (m²). Categories: Underweight &lt;18.5, Normal 18.5–24.9, Overweight 25–29.9, Obese ≥30. Source: World Health Organisation (WHO).</p>
-      </div>
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">Basal Metabolic Rate (BMR) — Mifflin-St Jeor</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">Men: BMR = (10 × kg) + (6.25 × cm) − (5 × age) + 5. Women: BMR = (10 × kg) + (6.25 × cm) − (5 × age) − 161. This is the gold-standard equation validated in multiple independent clinical studies.</p>
-      </div>
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">Total Daily Energy Expenditure (TDEE)</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">TDEE = BMR × Activity Factor. Your TDEE represents the total calories you burn daily including all physical activity. It is the most useful figure for setting a caloric intake target aligned with your health goals.</p>
-      </div>
-
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">How to Use This BMI Calculator</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">Enter your age, select the sex used by the Mifflin-St Jeor equation, and provide your weight in kilograms and height in centimetres. Choose the activity level that best describes your usual week rather than an unusually active or inactive day. After you submit the form, the calculator shows BMI, estimated BMR, TDEE, and example calorie targets. If you normally use pounds and inches, convert them before entering your measurements: 1 inch equals 2.54 centimetres and 1 pound equals about 0.454 kilograms.</p>
-      </div>
-
-      <div class="bg-emerald-50 rounded-xl border border-emerald-100 p-6">
-        <h3 class="font-bold text-emerald-800 mb-2">Example: Understanding a Result</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">A person who is 175 cm tall and weighs 70 kg has a BMI of about 22.9, calculated as 70 ÷ 1.75². That number falls within the adult “normal” reference range, but it does not describe muscle mass, bone density, body-fat distribution, or overall fitness. The BMR estimate represents energy used at rest, while TDEE adds an activity estimate. Treat the calorie targets as a starting point and adjust gradually using real changes in weight, energy, and professional guidance.</p>
-      </div>
-
-      <div class="bg-amber-50 rounded-xl border border-amber-100 p-6">
-        <h3 class="font-bold text-amber-800 mb-2">Important Limitations</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">BMI is a population-level screening measure, not a diagnosis. It can misclassify athletes with high muscle mass, older adults, pregnant people, and some children. BMR and TDEE are estimates because metabolism, body composition, sleep, medication, and daily movement vary from person to person. Do not use the calculator to set an extreme diet or to replace advice from a doctor, registered dietitian, or other qualified health professional.</p>
+      <!-- CALORIC GOALS & TARGETS -->
+      <div class="bg-white rounded-2xl p-5 sm:p-7 shadow-md border border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900 mb-2">Evidence-Based Daily Caloric Targets by Goal</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mb-5">Adjusted daily energy intake based on your calculated maintenance expenditure (TDEE).</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+          <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4">
+            <span class="text-xs font-bold text-emerald-800 uppercase block mb-1">Maintain Weight</span>
+            <span id="maintainCalories" class="text-2xl font-black text-emerald-700 block">—</span>
+            <span class="text-xs text-slate-500 mt-1 block">Matches TDEE baseline</span>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+            <span class="text-xs font-bold text-blue-800 uppercase block mb-1">Mild Fat Loss (-250 kcal)</span>
+            <span id="mildLossCalories" class="text-2xl font-black text-blue-700 block">—</span>
+            <span class="text-xs text-slate-500 mt-1 block">~0.25 kg loss / week</span>
+          </div>
+          <div class="bg-amber-50 border border-amber-100 rounded-xl p-4">
+            <span class="text-xs font-bold text-amber-800 uppercase block mb-1">Standard Fat Loss (-500 kcal)</span>
+            <span id="loseCalories" class="text-2xl font-black text-amber-700 block">—</span>
+            <span class="text-xs text-slate-500 mt-1 block">~0.5 kg loss / week</span>
+          </div>
+          <div class="bg-purple-50 border border-purple-100 rounded-xl p-4">
+            <span class="text-xs font-bold text-purple-800 uppercase block mb-1">Lean Hypertrophy (+250 kcal)</span>
+            <span id="gainCalories" class="text-2xl font-black text-purple-700 block">—</span>
+            <span class="text-xs text-slate-500 mt-1 block">Muscle synthesis surplus</span>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">Using Your Results Responsibly</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">For a more useful comparison, take measurements under similar conditions and focus on trends over several weeks instead of reacting to one result. Weight can change because of hydration, food, clothing, and the time of day. If your goal is weight loss, a modest and sustainable calorie change is generally more practical than a severe restriction. Pair the numbers with sleep, strength, energy, blood pressure, and other health indicators. People with a medical condition, a history of disordered eating, or a rapidly changing weight should discuss goals with a qualified health professional.</p>
-      </div>
-
-      <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm">
-        <h3 class="font-bold text-teal-700 mb-2">Metric Differences Across People</h3>
-        <p class="text-slate-700 text-sm leading-relaxed">Two people with the same BMI can have very different muscle, fat, and fitness levels. Likewise, two people with the same weight may have different energy needs because of height, age, body composition, activity, and health status. Use these metrics as conversation starters and planning estimates, not as labels or a score of personal worth. For children and teenagers, adult BMI categories are not appropriate; age- and sex-specific growth charts should be interpreted by a clinician.</p>
-      </div>
-
-      <div class="pt-2">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">BMI, BMR and TDEE Questions</h2>
-        <div class="space-y-3 text-sm">
-          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
-            <summary class="font-semibold text-slate-800 cursor-pointer">Is BMI the same as body fat percentage?</summary>
-            <p class="text-slate-600 leading-relaxed mt-3">No. BMI uses height and weight only. Body-fat percentage requires a different measurement method and can also have an error range.</p>
-          </details>
-          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
-            <summary class="font-semibold text-slate-800 cursor-pointer">Why does my TDEE change when I select another activity level?</summary>
-            <p class="text-slate-600 leading-relaxed mt-3">TDEE multiplies estimated BMR by an activity factor. More movement generally increases the estimated calories needed to maintain body weight.</p>
-          </details>
-          <details class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
-            <summary class="font-semibold text-slate-800 cursor-pointer">How often should I recalculate?</summary>
-            <p class="text-slate-600 leading-relaxed mt-3">Recalculate after a meaningful change in weight or routine, rather than several times a day. Use the result together with longer-term trends and professional advice.</p>
-          </details>
+      <!-- Layer 1: Post-Result Next-Step Recommendation Banner -->
+      <div class="bg-gradient-to-r from-teal-900 to-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-md border border-teal-700/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-yellow-300 block mb-1">Next Step in Your Health Journey</span>
+          <p class="text-sm text-slate-200">Convert your daily calories into exact protein, carbohydrate, and healthy fat grams tailored to your fitness objectives.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 flex-shrink-0">
+          <a href="/macro-calculator" class="bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-all shadow-sm">Macro Calculator &rarr;</a>
+          <a href="/body-fat-calculator" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-all border border-slate-600">Body Fat Calculator &rarr;</a>
         </div>
       </div>
     </div>
-  
 
-</main>
+    <!-- PRE-RENDERED CLINICAL GUIDE CONTENT -->
+    <section id="toolGuide" class="guide mt-12" data-content-key="bmi-calculator" aria-label="BMI and metabolic calculation guide">
+<h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Clinical Body Mass Index (BMI), Basal Metabolic Rate (BMR) & Daily Energy Expenditure (TDEE) Guide</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Body Mass Index (BMI) remains the worldwide frontline clinical screening tool utilized by healthcare providers, public health organizations, and epidemiologists to categorize adult body weight relative to stature. When combined with <strong>Basal Metabolic Rate (BMR)</strong> calculations and <strong>Total Daily Energy Expenditure (TDEE)</strong> modeling, these metrics provide an evidence-based foundation for understanding energy balance, personal health risks, and sustainable nutritional planning.</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget’s <strong>BMI, BMR & TDEE Calculator</strong> combines the World Health Organization (WHO) adult anthropometric classification matrix with the clinically validated Mifflin-St Jeor metabolic equations. All calculations execute 100% locally in your web browser, ensuring zero transmission of personal health metrics while delivering precise physiological estimates.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Clinical BMI Classification & Health Risk Stratification</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) establish standard Body Mass Index categories for adults aged 20 and older. BMI evaluates weight-for-height ratio and correlates strongly with total body fat at a population level:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Severe Underweight (BMI < 16.0 kg/m²)</strong>: Substantially elevated risk of severe nutritional deficiencies, compromised immune function, cardiac arrhythmias, muscle wasting, and osteoporosis.</li><li class="leading-relaxed"><strong>Moderate Underweight (BMI 16.0 – 16.9 kg/m²)</strong>: Moderate clinical risk of hormonal imbalances, chronic fatigue, and delayed wound healing.</li><li class="leading-relaxed"><strong>Mild Underweight (BMI 17.0 – 18.4 kg/m²)</strong>: Mild risk; may reflect constitutional thinness or insufficient caloric and macronutrient intake.</li><li class="leading-relaxed"><strong>Normal Healthy Weight (BMI 18.5 – 24.9 kg/m²)</strong>: Statistically associated with the lowest all-cause morbidity and mortality rates in longitudinal epidemiological cohorts.</li><li class="leading-relaxed"><strong>Overweight / Pre-Obesity (BMI 25.0 – 29.9 kg/m²)</strong>: Increased statistical risk of developing essential hypertension, atherogenic dyslipidemia, insulin resistance, non-alcoholic fatty liver disease (NAFLD), and osteoarthritis.</li><li class="leading-relaxed"><strong>Class 1 Obesity (BMI 30.0 – 34.9 kg/m²)</strong>: Moderate obesity; significantly elevated risk of Type 2 Diabetes Mellitus, cardiovascular disease, obstructive sleep apnea, and gallbladder disease.</li><li class="leading-relaxed"><strong>Class 2 Obesity (BMI 35.0 – 39.9 kg/m²)</strong>: Severe obesity; high risk of metabolic syndrome, coronary artery disease, and structural joint deterioration.</li><li class="leading-relaxed"><strong>Class 3 Obesity / Morbid Obesity (BMI ≥ 40.0 kg/m²)</strong>: Very severe obesity; severe risk of life-threatening comorbidities and reduced life expectancy.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">International & Ethnic-Specific Cutoff Variations</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Clinical evidence compiled by the WHO Expert Consultation highlights that specific ethnic populations—particularly Asian, South Asian, and African populations—often exhibit higher percentages of visceral and total body fat at lower BMI numbers than European populations:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Asian & South Asian Cutoffs</strong>: Overweight classification begins at <strong>BMI ≥ 23.0 kg/m²</strong>, and Obesity classification begins at <strong>BMI ≥ 27.5 kg/m²</strong> due to increased cardiometabolic risks at lower body mass thresholds.</li><li class="leading-relaxed"><strong>Polynesian & Pacific Island Cutoffs</strong>: Higher lean mass distributions often shift obesity thresholds higher (e.g., BMI ≥ 32.0 kg/m²).</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Mathematical Formulations & Energetic Equations</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Understanding the mathematical equations behind these clinical indices ensures transparent and accurate health tracking.</p><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">1. Body Mass Index (BMI) Formulas</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Metric System Formula</strong>:</li><li class="leading-relaxed"><strong>BMI</strong> = Weight (kg) ÷ [Height (m) × Height (m)]</li><li class="leading-relaxed"><strong>Imperial System Formula</strong>:</li><li class="leading-relaxed"><strong>BMI</strong> = [Weight (lbs) × 703] ÷ [Height (inches) × Height (inches)]</li><li class="leading-relaxed"><strong>BMI Prime</strong>:</li><li class="leading-relaxed"><strong>BMI Prime</strong> = Actual BMI ÷ 25.0 (Upper normal limit)</li><li class="leading-relaxed">A BMI Prime less than 0.74 indicates underweight; 0.74 to 0.99 represents normal weight; 1.00 or higher indicates overweight.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">2. Basal Metabolic Rate (BMR): The Mifflin-St Jeor Equation</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The Mifflin-St Jeor equation, published in 1990, remains the clinical gold standard for predicting resting energy expenditure (REE) in healthy individuals without specialized laboratory calorimetry equipment:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>For Adult Males</strong>:</li><li class="leading-relaxed"><strong>BMR</strong> = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5</li><li class="leading-relaxed"><strong>For Adult Females</strong>:</li><li class="leading-relaxed"><strong>BMR</strong> = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">3. Total Daily Energy Expenditure (TDEE) & Physical Activity Levels (PAL)</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Your Total Daily Energy Expenditure represents the aggregate caloric burn required to maintain your current body weight under your habitual activity routine:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>TDEE</strong> = BMR × Physical Activity Factor (PAL)</li><li class="leading-relaxed"><strong>Sedentary (Multiplier: 1.200)</strong>: Desk job, minimal active movement, no structured exercise.</li><li class="leading-relaxed"><strong>Lightly Active (Multiplier: 1.375)</strong>: Light walking, household chores, or light exercise 1 to 3 days per week.</li><li class="leading-relaxed"><strong>Moderately Active (Multiplier: 1.550)</strong>: Moderate sports or dedicated gym training 3 to 5 days per week.</li><li class="leading-relaxed"><strong>Very Active (Multiplier: 1.725)</strong>: Hard athletic conditioning or intense resistance training 6 to 7 days per week.</li><li class="leading-relaxed"><strong>Extra Active (Multiplier: 1.900)</strong>: Heavy daily physical construction/farming labor or twice-daily competitive athletic training.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Components of Daily Energy Expenditure</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Basal Metabolic Rate (BMR)</strong>: 60%–75% of total daily energy. Energy expended maintaining vital cellular, respiratory, cardiac, and organ functions at complete rest.</li><li class="leading-relaxed"><strong>Thermic Effect of Food (TEF)</strong>: 8%–12% of total daily energy. Metabolic cost of digesting, absorbing, and assimilating nutrients. Protein has the highest TEF (20%–30%), followed by carbohydrates (5%–10%) and fats (0%–3%).</li><li class="leading-relaxed"><strong>Non-Exercise Activity Thermogenesis (NEAT)</strong>: 10%–20% of total daily energy. Spontaneous physical movement including fidgeting, typing, standing, and walking around the home or workplace.</li><li class="leading-relaxed"><strong>Exercise Activity Thermogenesis (EAT)</strong>: 5%–15% of total daily energy. Planned workouts, running, swimming, and weightlifting.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Step-by-Step Clinical Calculation Scenarios</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Review these two real-world clinical examples to understand how individual physiological factors influence metabolic outcomes:</p><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Scenario A: 34-Year-Old Female Sedentary Professional</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Demographics</strong>: Female, 34 years old</li><li class="leading-relaxed"><strong>Measurements</strong>: Height = 168 cm (1.68 m), Weight = 72.5 kg</li><li class="leading-relaxed"><strong>Activity Level</strong>: Sedentary (PAL = 1.200)</li><li class="leading-relaxed"><strong>Calculations</strong>:</li><li class="leading-relaxed"><strong>BMI</strong>: 72.5 ÷ (1.68 × 1.68) = 72.5 ÷ 2.8224 = <strong>25.69 kg/m²</strong> (Classified as Overweight / Pre-Obesity, BMI Prime = 1.03)</li><li class="leading-relaxed"><strong>Normal Weight Range for 168 cm</strong>: 52.2 kg to 70.3 kg (based on BMI 18.5 to 24.9)</li><li class="leading-relaxed"><strong>BMR</strong>: (10 × 72.5) + (6.25 × 168) - (5 × 34) - 161 = 725 + 1050 - 170 - 161 = <strong>1,444 kcal/day</strong></li><li class="leading-relaxed"><strong>TDEE</strong>: 1,444 × 1.200 = <strong>1,733 kcal/day</strong></li><li class="leading-relaxed"><strong>Target for Sustainable Fat Loss (20% Deficit)</strong>: 1,733 - 347 = <strong>1,386 kcal/day</strong> (Projected rate of loss: ~0.35 kg per week)</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Scenario B: 27-Year-Old Male Strength Athlete</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Demographics</strong>: Male, 27 years old</li><li class="leading-relaxed"><strong>Measurements</strong>: Height = 180 cm (1.80 m), Weight = 86.0 kg</li><li class="leading-relaxed"><strong>Activity Level</strong>: Very Active (PAL = 1.725)</li><li class="leading-relaxed"><strong>Calculations</strong>:</li><li class="leading-relaxed"><strong>BMI</strong>: 86.0 ÷ (1.80 × 1.80) = 86.0 ÷ 3.24 = <strong>26.54 kg/m²</strong> (Technically categorized as Overweight)</li><li class="leading-relaxed"><strong>Clinical Context</strong>: Athletic body fat testing indicates 13% body fat with high skeletal muscle mass. A Waist-to-Height Ratio (WHtR) of 0.44 confirms absence of excess visceral fat.</li><li class="leading-relaxed"><strong>BMR</strong>: (10 × 86.0) + (6.25 × 180) - (5 × 27) + 5 = 860 + 1125 - 135 + 5 = <strong>1,855 kcal/day</strong></li><li class="leading-relaxed"><strong>TDEE</strong>: 1,855 × 1.725 = <strong>3,200 kcal/day</strong></li><li class="leading-relaxed"><strong>Target for Lean Muscle Hypertrophy (10% Surplus)</strong>: 3,200 + 320 = <strong>3,520 kcal/day</strong></li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Biomechanical Limitations & Complementary Adiposity Metrics</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">While BMI is an indispensable epidemiological metric, it has recognized clinical limitations when evaluating individual patients:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Muscle vs. Adipose Tissue Inability</strong>: BMI does not differentiate between fat mass, skeletal muscle mass, bone density, or intracellular water. Highly trained muscular individuals often register in overweight or obese categories despite having low body fat.</li><li class="leading-relaxed"><strong>Sarcopenic Obesity in Aging Populations</strong>: Elderly individuals may lose lean muscle tissue while accumulating abdominal visceral fat, registering a "normal" BMI despite elevated cardiometabolic health risks.</li><li class="leading-relaxed"><strong>Pediatric and Adolescent Cohorts</strong>: Adult BMI classifications must never be applied to children and adolescents aged 2 to 19. Clinicians use age-and-sex-specific CDC/WHO BMI percentiles on standardized growth curves.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Essential Complementary Screening Metrics</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">To gain a complete clinical picture of body composition, practitioners recommend coupling BMI with complementary anthropometric tools:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Waist-to-Height Ratio (WHtR)</strong>: A leading predictor of cardiovascular risk. Maintaining a waist circumference less than half your height (WHtR < 0.50) strongly protects against cardiometabolic dysfunction.</li><li class="leading-relaxed"><strong>Waist Circumference (WC)</strong>: Independent indicator of visceral adiposity. Increased risk is recognized at waist circumferences above 94 cm (37 inches) for men and 80 cm (31.5 inches) for women; substantially increased risk begins at 102 cm (40 inches) for men and 88 cm (35 inches) for women.</li><li class="leading-relaxed"><strong>Waist-to-Hip Ratio (WHR)</strong>: Evaluates android (apple) versus gynoid (pear) fat distribution. WHO benchmarks recommend WHR below 0.90 for men and below 0.85 for women.</li><li class="leading-relaxed"><strong>Direct Body Composition Analysis</strong>: Dual-energy X-ray absorptiometry (DEXA), hydrostatic weighing, bioelectrical impedance analysis (BIA), and skinfold caliper measurements.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Evidence-Based Nutrition & Calorie Target Strategies</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Translating your BMR and TDEE figures into actionable health milestones requires evidence-based nutritional principles:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Calorie Deficit Principles for Fat Loss</strong>: Create a moderate deficit of 300 to 500 kcal below your TDEE. This yields a safe, sustainable fat loss rate of 0.25 to 0.5 kg (0.5 to 1.0 lb) per week while sparing lean muscle mass and preventing metabolic slowdown.</li><li class="leading-relaxed"><strong>Avoid Severe Caloric Restriction</strong>: Restricting intake below basal requirements (e.g., diets under 1,200 kcal for women or 1,500 kcal for men without medical supervision) triggers compensatory reductions in thyroid hormones (T3), decreases leptin, elevates cortisol, and accelerates muscle catabolism.</li><li class="leading-relaxed"><strong>Adequate Dietary Protein</strong>: During caloric deficits, consume 1.6 to 2.2 grams of protein per kilogram of body weight to maximize muscle protein synthesis and promote satiety.</li><li class="leading-relaxed"><strong>Hydration and Sleep Architecture</strong>: Inadequate sleep (under 7 hours) increases ghrelin (hunger hormone) and impairs insulin sensitivity, skewing perceived caloric needs.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Authoritative Clinical References & Cited Sources</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget adheres to international medical standards and cites peer-reviewed clinical research and public health authorities:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>World Health Organization (WHO)</strong>: Global Database on Body Mass Index and Anthropometric Reference Standards. Live resource: [who.int/data/gho/data/themes/theme-details/GHO/body-mass-index-bmi](https://www.who.int).</li><li class="leading-relaxed"><strong>Centers for Disease Control and Prevention (CDC)</strong>: Division of Nutrition, Physical Activity, and Obesity — Adult BMI Guidelines. Live resource: [cdc.gov/bmi](https://www.cdc.gov/bmi).</li><li class="leading-relaxed"><strong>National Health Service (NHS)</strong>: Clinical Weight Management and Health Assessment Protocols. Live resource: [nhs.uk/live-well/healthy-weight](https://www.nhs.uk).</li><li class="leading-relaxed"><strong>American Heart Association (AHA)</strong>: Scientific Statement on Obesity and Cardiovascular Disease. Live resource: [heart.org](https://www.heart.org).</li><li class="leading-relaxed"><strong>Harvard T.H. Chan School of Public Health</strong>: The Nutrition Source — Body Mass Index and Health Risk Assessment. Live resource: [hsph.harvard.edu/nutritionsource](https://www.hsph.harvard.edu/nutritionsource).</li><li class="leading-relaxed"><strong>Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO (1990)</strong>: <em>A new predictive equation for resting energy expenditure in healthy individuals</em>, American Journal of Clinical Nutrition, 51(2), 241-247.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Editorial Oversight, Clinical Review Board & Software Accuracy Standards</h2><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>ISO/IEC 25010 Software Quality Compliance</strong>: All underlying mathematical calculation functions adhere to rigorous ISO/IEC 25010 numerical precision standards, executing floating-point arithmetic verified against standardized clinical reference models.</li><li class="leading-relaxed"><strong>Interdisciplinary Editorial Oversight</strong>: Health tools undergo annual review by certified exercise physiologists, registered dietitians, and public health researchers.</li><li class="leading-relaxed"><strong>100% In-Browser Privacy Certification</strong>: In full compliance with GDPR, NDPR, and POPIA privacy mandates, all physical parameters, age, height, weight, and results are processed exclusively in client-side volatile memory. Zero health records are stored, logged, or transmitted across external networks.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-10 mb-6 flex items-center gap-2.5"><span>❓</span><span>Frequently Asked Questions (FAQ)</span></h2><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the primary difference between BMI and Body Fat Percentage?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Body Mass Index (BMI) measures total body weight scaled to height squared, providing an indirect estimation of body mass. Body fat percentage measures the exact proportion of adipose tissue relative to total mass (including bones, water, muscles, and organs). An individual can have a high BMI due to muscular hypertrophy while maintaining a low, healthy body fat percentage.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Why is the Mifflin-St Jeor equation considered more accurate than Harris-Benedict?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Extensive clinical studies published in the <em>Journal of the Academy of Nutrition and Dietetics</em> demonstrate that the Mifflin-St Jeor equation predicts Resting Metabolic Rate (RMR) within 10% of measured indirect calorimetry in more than 82% of individuals, outperforming the original 1919 and revised 1984 Harris-Benedict formulas which tend to overestimate caloric needs by 5% to 15%.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>How does BMI Prime work and what does a score of 1.0 mean?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">BMI Prime expresses your actual BMI as a decimal ratio of the upper threshold of normal weight (25.0 kg/m²). A BMI Prime of 1.00 indicates your body weight is exactly at the boundary between normal weight and overweight. A BMI Prime of 0.85 indicates you are at 85% of the upper limit (healthy normal weight), whereas a score of 1.20 indicates you are 20% above the normal weight ceiling.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can BMI accurately assess health risks for elderly individuals?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">In adults aged 65 and older, mild overweight status (BMI 25.0 to 27.0 kg/m²) is frequently associated with lower mortality rates compared to strict "normal" ranges—a phenomenon known in geriatric medicine as the "obesity paradox." This modest buffer protects against nutritional depletion, hip fractures, and muscle wasting during acute illness.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What should I do if my BMI indicates I am overweight but I lift weights regularly?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">If you engage in regular resistance training, evaluate your waist circumference and Waist-to-Height Ratio (WHtR). If your waist measurement remains under half your height (WHtR < 0.50) and your blood pressure, lipid panel, and blood glucose levels remain in optimal ranges, your higher BMI is likely reflecting healthy skeletal muscle hypertrophy rather than excess visceral adiposity.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Why does my daily calorie target change when I alter my activity level?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Physical activity constitutes the most variable component of your Total Daily Energy Expenditure (TDEE). Increasing your physical activity level from Sedentary (1.20) to Moderately Active (1.55) increases your total caloric expenditure by almost 30%, raising the daily caloric intake required to maintain, lose, or gain body weight.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Is it safe to consume fewer calories than my Basal Metabolic Rate (BMR)?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Consuming significantly fewer calories than your BMR for extended periods is generally not recommended without physician supervision. Your BMR represents the minimum energy required to sustain vital organ functions (heart, brain, kidneys, lungs). Extended deficits below BMR trigger metabolic adaptation, lethargy, muscle catabolism, and micronutrient deficiencies.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>How frequently should I recalculate my BMI, BMR, and TDEE?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Recalculate your body metrics every 4 to 6 weeks or whenever your body weight changes by 2.5 to 5.0 kg (5 to 10 lbs). As you lose or gain weight, your body mass and surface area change, requiring updated metabolic baselines to sustain continued progress toward your health goals.</p></div></details>
+</section>
+
+    <!-- Layer 3: Dedicated Related Tools Grid -->
+    <section class="mt-14 pt-10 border-t border-slate-200" aria-labelledby="related-tools-title">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <h2 id="related-tools-title" class="text-2xl sm:text-3xl font-black text-slate-900">Explore Complementary Health Calculators</h2>
+        <p class="text-slate-600 text-sm mt-2">Pair your Body Mass Index results with specialized metabolic, dietary, and body composition tools.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1: Macro Calculator -->
+        <a href="/macro-calculator" class="group bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-emerald-700 transition-colors">Macro Calculator</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate exact daily protein, carb, and fat targets in grams for fat loss or muscle hypertrophy.</p>
+          </div>
+          <span class="text-xs font-bold text-emerald-700 mt-4 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">Calculate Macros &rarr;</span>
+        </a>
+
+        <!-- Card 2: Body Fat Calculator -->
+        <a href="/body-fat-calculator" class="group bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-teal-700 transition-colors">Body Fat Calculator</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate your body fat percentage using the US Navy tape method to distinguish muscle from fat.</p>
+          </div>
+          <span class="text-xs font-bold text-teal-700 mt-4 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">Check Body Fat &rarr;</span>
+        </a>
+
+        <!-- Card 3: Daily Calorie Needs -->
+        <a href="/daily-calorie-needs-calculator" class="group bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-700 transition-colors">Daily Calorie Needs</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Determine your precise energetic burn across varying weekly workout and cardio regimens.</p>
+          </div>
+          <span class="text-xs font-bold text-amber-700 mt-4 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">Calculate Calories &rarr;</span>
+        </a>
+
+        <!-- Card 4: Ideal Weight Calculator -->
+        <a href="/ideal-weight-calculator" class="group bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-blue-700 transition-colors">Ideal Weight Calculator</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare Devine, Robinson, Miller, and Hamwi equations to find your healthy target weight.</p>
+          </div>
+          <span class="text-xs font-bold text-blue-700 mt-4 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">Find Ideal Weight &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
@@ -637,68 +698,181 @@
   </div>
 </footer>
 
-  <!-- COOKIE CONSENT BANNER -->
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
-    </p>
-    <div class="flex gap-3 flex-shrink-0">
-      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
-      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
-    </div>
-  </div>
-</div>
-
-
-  
-  </div>
-
   <script>
     function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 
     onReady(() => {
-      document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
+      let isMetric = true;
+
+      const unitMetricBtn = document.getElementById('unitMetric');
+      const unitImperialBtn = document.getElementById('unitImperial');
+      const metricContainer = document.getElementById('metricInputContainer');
+      const imperialContainer = document.getElementById('imperialInputContainer');
+
+      const weightKgInput = document.getElementById('weightKg');
+      const heightCmInput = document.getElementById('heightCm');
+      const weightLbsInput = document.getElementById('weightLbs');
+      const heightFeetInput = document.getElementById('heightFeet');
+      const heightInchesInput = document.getElementById('heightInches');
+
+      unitMetricBtn.addEventListener('click', () => {
+        if (isMetric) return;
+        isMetric = true;
+        unitMetricBtn.className = 'px-3.5 py-1.5 rounded-lg bg-emerald-700 text-white shadow-sm transition-all cursor-pointer';
+        unitImperialBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer';
+        metricContainer.classList.remove('hidden');
+        imperialContainer.classList.add('hidden');
+
+        weightKgInput.setAttribute('required', 'required');
+        heightCmInput.setAttribute('required', 'required');
+        weightLbsInput.removeAttribute('required');
+        heightFeetInput.removeAttribute('required');
+
+        // Convert values if present
+        const lbs = parseFloat(weightLbsInput.value);
+        if (lbs > 0) weightKgInput.value = (lbs * 0.45359237).toFixed(1);
+
+        const ft = parseFloat(heightFeetInput.value) || 0;
+        const inches = parseFloat(heightInchesInput.value) || 0;
+        if (ft > 0 || inches > 0) {
+          const totalInches = (ft * 12) + inches;
+          heightCmInput.value = (totalInches * 2.54).toFixed(1);
+        }
+      });
+
+      unitImperialBtn.addEventListener('click', () => {
+        if (!isMetric) return;
+        isMetric = false;
+        unitImperialBtn.className = 'px-3.5 py-1.5 rounded-lg bg-emerald-700 text-white shadow-sm transition-all cursor-pointer';
+        unitMetricBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer';
+        imperialContainer.classList.remove('hidden');
+        metricContainer.classList.add('hidden');
+
+        weightLbsInput.setAttribute('required', 'required');
+        heightFeetInput.setAttribute('required', 'required');
+        weightKgInput.removeAttribute('required');
+        heightCmInput.removeAttribute('required');
+
+        // Convert values if present
+        const kg = parseFloat(weightKgInput.value);
+        if (kg > 0) weightLbsInput.value = (kg / 0.45359237).toFixed(1);
+
+        const cm = parseFloat(heightCmInput.value);
+        if (cm > 0) {
+          const totalInches = cm / 2.54;
+          const feet = Math.floor(totalInches / 12);
+          const remainingInches = totalInches % 12;
+          heightFeetInput.value = feet;
+          heightInchesInput.value = remainingInches.toFixed(1);
+        }
+      });
 
       document.getElementById('bmiForm').addEventListener('submit', (e) => {
         e.preventDefault();
         const age = parseFloat(document.getElementById('age').value);
-        const sex = document.querySelector('input[name="sex"]:checked')?.value || '';
-        const weight = parseFloat(document.getElementById('weight').value);
-        const height = parseFloat(document.getElementById('height').value);
+        const sex = document.querySelector('input[name="sex"]:checked')?.value || 'male';
         const activity = parseFloat(document.getElementById('activity').value);
 
-        if (!age || !sex || !weight || !height || !activity) return;
+        let weightKg = 0;
+        let heightCm = 0;
 
-        // BMI calculation
-        const heightM = height / 100;
-        const bmi = weight / (heightM * heightM);
+        if (isMetric) {
+          weightKg = parseFloat(weightKgInput.value);
+          heightCm = parseFloat(heightCmInput.value);
+        } else {
+          const lbs = parseFloat(weightLbsInput.value);
+          const ft = parseFloat(heightFeetInput.value) || 0;
+          const inches = parseFloat(heightInchesInput.value) || 0;
+          const totalInches = (ft * 12) + inches;
 
-        let bmiCat, bmiColor;
-        if (bmi < 18.5) { bmiCat = 'Underweight'; bmiColor = '#3b82f6'; }
-        else if (bmi < 25) { bmiCat = 'Normal Weight'; bmiColor = '#10b981'; }
-        else if (bmi < 30) { bmiCat = 'Overweight'; bmiColor = '#f59e0b'; }
-        else { bmiCat = 'Obese'; bmiColor = '#ef4444'; }
+          weightKg = lbs * 0.45359237;
+          heightCm = totalInches * 2.54;
+        }
 
-        // BMR — Mifflin-St Jeor
-        let bmr;
-        if (sex === 'male') bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-        else bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        if (!age || !weightKg || !heightCm || !activity) return;
 
+        // BMI Calculation
+        const heightM = heightCm / 100;
+        const bmi = weightKg / (heightM * heightM);
+        const bmiPrime = bmi / 25.0;
+
+        // Healthy Weight Range for height (BMI 18.5 to 24.9)
+        const minHealthyKg = 18.5 * (heightM * heightM);
+        const maxHealthyKg = 24.9 * (heightM * heightM);
+        const minHealthyLbs = minHealthyKg / 0.45359237;
+        const maxHealthyLbs = maxHealthyKg / 0.45359237;
+
+        let bmiCat = '';
+        let badgeBg = '';
+        let badgeBorder = '';
+        let badgeText = '';
+        let clinicalNote = '';
+
+        if (bmi < 16.0) {
+          bmiCat = 'Severe Underweight';
+          badgeBg = 'bg-red-500/20'; badgeBorder = 'border-red-500/30'; badgeText = 'text-red-300';
+          clinicalNote = 'Your BMI is significantly below clinical reference baselines. Consult a physician or registered dietitian to screen for underlying micronutrient deficiencies, thyroid function, and metabolic health.';
+        } else if (bmi < 18.5) {
+          bmiCat = 'Underweight';
+          badgeBg = 'bg-blue-500/20'; badgeBorder = 'border-blue-500/30'; badgeText = 'text-blue-300';
+          clinicalNote = 'Your BMI falls into the mild underweight category. Increasing nutrient-dense, protein-rich foods along with resistance training can safely restore optimal lean body mass.';
+        } else if (bmi < 25.0) {
+          bmiCat = 'Normal Healthy Weight';
+          badgeBg = 'bg-emerald-500/20'; badgeBorder = 'border-emerald-500/30'; badgeText = 'text-emerald-300';
+          clinicalNote = 'Your BMI sits comfortably within the World Health Organization (WHO) normal reference range, statistically associated with the lowest all-cause cardiometabolic risk.';
+        } else if (bmi < 30.0) {
+          bmiCat = 'Overweight (Pre-Obesity)';
+          badgeBg = 'bg-amber-500/20'; badgeBorder = 'border-amber-500/30'; badgeText = 'text-amber-300';
+          clinicalNote = 'Your BMI indicates moderate excess mass. If you engage in heavy strength training, higher muscle mass can elevate BMI. For sedentary individuals, a moderate 300–500 kcal deficit helps shed visceral adiposity.';
+        } else if (bmi < 35.0) {
+          bmiCat = 'Class 1 Obesity';
+          badgeBg = 'bg-orange-500/20'; badgeBorder = 'border-orange-500/30'; badgeText = 'text-orange-300';
+          clinicalNote = 'Class 1 Obesity increases statistical risks of hypertension, lipid abnormalities, and insulin resistance. A structured, progressive nutritional and cardiovascular plan is recommended.';
+        } else {
+          bmiCat = 'Class 2/3 Obesity';
+          badgeBg = 'bg-red-500/20'; badgeBorder = 'border-red-500/30'; badgeText = 'text-red-300';
+          clinicalNote = 'Clinical guidelines recommend consulting a medical healthcare provider for comprehensive metabolic screening, lipid profiling, and supervised lifestyle interventions.';
+        }
+
+        // BMR — Mifflin-St Jeor Clinical Formula
+        let bmr = 0;
+        if (sex === 'male') {
+          bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5;
+        } else {
+          bmr = (10 * weightKg) + (6.25 * heightCm) - (5 * age) - 161;
+        }
+
+        // TDEE — Total Daily Energy Expenditure
         const tdee = bmr * activity;
 
-        // Display results
+        // Render Outputs
         document.getElementById('bmiValue').textContent = bmi.toFixed(1);
-        document.getElementById('bmiValue').style.color = bmiColor;
-        document.getElementById('bmiCategory').textContent = bmiCat;
-        document.getElementById('bmrValue').textContent = Math.round(bmr);
-        document.getElementById('tdeeValue').textContent = Math.round(tdee);
-        document.getElementById('loseCalories').textContent = Math.max(1200, Math.round(tdee - 500)) + ' kcal';
-        document.getElementById('maintainCalories').textContent = Math.round(tdee) + ' kcal';
-        document.getElementById('gainCalories').textContent = Math.round(tdee + 500) + ' kcal';
+        document.getElementById('bmiPrimeDisplay').textContent = `Prime: ${bmiPrime.toFixed(2)}`;
 
-        document.getElementById('results').classList.remove('hidden');
-        setTimeout(() => document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        const badge = document.getElementById('bmiCategoryBadge');
+        badge.className = `inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wide border self-start sm:self-auto ${badgeBg} ${badgeBorder} ${badgeText}`;
+        badge.textContent = bmiCat;
+
+        if (isMetric) {
+          document.getElementById('healthyWeightRange').textContent = `${minHealthyKg.toFixed(1)} – ${maxHealthyKg.toFixed(1)} kg`;
+        } else {
+          document.getElementById('healthyWeightRange').textContent = `${minHealthyLbs.toFixed(1)} – ${maxHealthyLbs.toFixed(1)} lbs`;
+        }
+
+        document.getElementById('bmrValue').textContent = Math.round(bmr).toLocaleString();
+        document.getElementById('tdeeValue').textContent = Math.round(tdee).toLocaleString();
+        document.getElementById('clinicalInterpretationText').textContent = clinicalNote;
+
+        // Caloric Target Cards
+        const safeFloor = (sex === 'female') ? 1200 : 1500;
+        document.getElementById('maintainCalories').textContent = `${Math.round(tdee).toLocaleString()} kcal`;
+        document.getElementById('mildLossCalories').textContent = `${Math.max(safeFloor, Math.round(tdee - 250)).toLocaleString()} kcal`;
+        document.getElementById('loseCalories').textContent = `${Math.max(safeFloor, Math.round(tdee - 500)).toLocaleString()} kcal`;
+        document.getElementById('gainCalories').textContent = `${Math.round(tdee + 250).toLocaleString()} kcal`;
+
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.classList.remove('hidden');
+        setTimeout(() => resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
       });
     });
   </script>

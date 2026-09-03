@@ -10,14 +10,13 @@ Understanding how individual module credits, stage weighting ratios, and borderl
 
 UK undergraduate degrees are classified according to standardized percentage mark boundaries recognized across academia, civil service fast streams, and global graduate employers:
 
-| Honours Classification | Abbreviation | Overall Mark Range | US GPA Equivalence | Academic & Professional Standing |
-| :--- | :--- | :--- | :--- | :--- |
-| **First-Class Honours** | **1st** | **70.0% – 100.0%** | ~3.8 – 4.0 | Highest academic distinction; eligible for elite PhD scholarships & top graduate programs. |
-| **Upper Second-Class Honours** | **2:1** (*Two-One*) | **60.0% – 69.9%** | ~3.3 – 3.7 | Standard minimum requirement for top corporate graduate schemes, law firms, and Master's entry. |
-| **Lower Second-Class Honours** | **2:2** (*Two-Two*) | **50.0% – 59.9%** | ~2.7 – 3.2 | Satisfactory honours performance; qualifying benchmark for many corporate and technical roles. |
-| **Third-Class Honours** | **3rd** | **40.0% – 49.9%** | ~2.0 – 2.6 | Lowest honours pass level; satisfies degree completion without honours distinction. |
-| **Pass / Ordinary Degree** | **Non-Honours** | **35.0% – 39.9%** | ~1.5 – 1.9 | Unclassified ordinary bachelor's degree (below honours standard). |
-| **Fail** | **Fail** | **Below 35.0%** | <1.5 | Unsuccessful; eligible for Certificate / Diploma of Higher Education (CertHE / DipHE). |
+### UK University Honours Classification Framework
+- **First-Class Honours (1st)**: Overall Weighted Average **70.0% – 100.0%** (US GPA ~3.8–4.0) — Highest academic distinction; eligible for elite PhD scholarships and competitive corporate leadership schemes.
+- **Upper Second-Class Honours (2:1)**: Overall Weighted Average **60.0% – 69.9%** (US GPA ~3.3–3.7) — Benchmark prerequisite for UK postgraduate master's programs, top law firms, and corporate graduate jobs.
+- **Lower Second-Class Honours (2:2)**: Overall Weighted Average **50.0% – 59.9%** (US GPA ~2.7–3.2) — Qualifying standard for many technical and professional positions across the UK and internationally.
+- **Third-Class Honours (3rd)**: Overall Weighted Average **40.0% – 49.9%** (US GPA ~2.0–2.6) — Lowest honours degree pass standard.
+- **Pass / Ordinary Degree (Non-Honours)**: Overall Weighted Average **35.0% – 39.9%** (US GPA ~1.5–1.9) — Degree award without honours classification.
+- **Fail**: Overall Weighted Average **Below 35.0%** — Candidate eligible for Certificate or Diploma of Higher Education (CertHE/DipHE).
 
 ---
 

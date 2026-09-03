@@ -38,7 +38,7 @@ function renderMarkdown(markdown) {
     if (!paragraph.length) return;
     var text = paragraph.join(' ').trim();
     if (text === '---') {
-      html.push('<hr class="my-6 border-slate-200" />');
+      html.push('<hr class="my-8 border-slate-200" />');
       paragraph = [];
       return;
     }
@@ -46,7 +46,7 @@ function renderMarkdown(markdown) {
       html.push(text);
     } else {
       text = formatInline(text);
-      html.push('<p>' + text + '</p>');
+      html.push('<p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">' + text + '</p>');
     }
     paragraph = [];
   }
@@ -72,21 +72,32 @@ function renderMarkdown(markdown) {
       closeList();
       return;
     }
-    var heading = trimmed.match(/^(#{2,3})\s+(.+)$/);
+    var heading = trimmed.match(/^(#{1,4})\s+(.+)$/);
     if (heading) {
       flushParagraph();
       closeList();
-      if (heading[1].length === 2 && /frequently asked questions|faq/i.test(heading[2])) {
+      var level = heading[1].length;
+      var headingText = heading[2];
+      if (level === 1) {
+        closeFaq();
+        html.push('<h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-8 mb-4">' + formatInline(headingText) + '</h2>');
+      } else if (level === 2 && /frequently asked questions|faq/i.test(headingText)) {
         closeFaq();
         inFaq = true;
-        html.push('<h2>' + formatInline(heading[2]) + '</h2>');
-      } else if (inFaq && heading[1].length === 3) {
+        html.push('<h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-10 mb-6 flex items-center gap-2.5"><span>❓</span><span>' + formatInline(headingText) + '</span></h2>');
+      } else if (inFaq && (level === 3 || level === 4)) {
         closeFaq();
         openFaq = true;
-        html.push('<details><summary>' + formatInline(heading[2]) + '</summary><div>');
-      } else {
-        if (heading[1].length === 2) closeFaq();
-        html.push('<h' + heading[1].length + '>' + formatInline(heading[2]) + '</h' + heading[1].length + '>');
+        html.push('<details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>' + formatInline(headingText) + '</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">');
+      } else if (level === 2) {
+        closeFaq();
+        html.push('<h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">' + formatInline(headingText) + '</h2>');
+      } else if (level === 3) {
+        closeFaq();
+        html.push('<h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">' + formatInline(headingText) + '</h3>');
+      } else if (level === 4) {
+        closeFaq();
+        html.push('<h4 class="text-base sm:text-lg font-bold text-slate-800 mt-4 mb-2">' + formatInline(headingText) + '</h4>');
       }
       return;
     }
@@ -97,15 +108,19 @@ function renderMarkdown(markdown) {
       if (listType !== nextType) {
         closeList();
         listType = nextType;
-        html.push('<' + listType + '>');
+        if (listType === 'ol') {
+          html.push('<ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1">');
+        } else {
+          html.push('<ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1">');
+        }
       }
-      html.push('<li>' + formatInline(list[2]) + '</li>');
+      html.push('<li class="leading-relaxed">' + formatInline(list[2]) + '</li>');
       return;
     }
     if (/^>\s?/.test(trimmed)) {
       flushParagraph();
       closeList();
-      html.push('<blockquote>' + formatInline(trimmed.replace(/^>\s?/, '')) + '</blockquote>');
+      html.push('<blockquote class="p-4 my-5 bg-slate-50 border-l-4 border-yellow-400 text-sm text-slate-700 rounded-r-xl italic leading-relaxed">' + formatInline(trimmed.replace(/^>\s?/, '')) + '</blockquote>');
       return;
     }
     paragraph.push(trimmed);
@@ -441,17 +456,31 @@ tools.forEach(({ htmlFile, mdKey }) => {
   const renderedHtml = renderMarkdown(markdown);
   let htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
-  const guideRegex = /(<section\s+id="toolGuide"[^>]*>)([\s\S]*?)(<\/section>)/i;
-  const prerenderedDivRegex = /(<div\s+id="prerendered-guide"[^>]*>)([\s\S]*?)(<\/div>)/i;
+  const guideRegex = /(<section\s+id=["']toolGuide["'][^>]*>)([\s\S]*?)(<\/section>)/i;
+  const guideContentDivRegex = /(<div\s+id=["']guide-content["'][^>]*>)([\s\S]*?)(<\/div>)/i;
+  const prerenderedDivRegex = /(<div\s+id=["']prerendered-guide["'][^>]*>)([\s\S]*?)(<\/div>)/i;
+  const articleRegex = /(<article\s+class=["'][^"']*(?:max-w-3xl|bg-white|prose|space-y|text-slate)[^"']*["'][^>]*>)([\s\S]*?)(<\/article>)/i;
 
-  if (guideRegex.test(htmlContent)) {
-    htmlContent = htmlContent.replace(guideRegex, (match, p1, p2, p3) => `${p1}${renderedHtml}${p3}`);
-    fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-    console.log(`Successfully updated prerendered guide in ${htmlFile}`);
+  let injected = false;
+  if (guideContentDivRegex.test(htmlContent)) {
+    htmlContent = htmlContent.replace(guideContentDivRegex, (match, p1, p2, p3) => `${p1}\n${renderedHtml}\n${p3}`);
+    injected = true;
+  } else if (guideRegex.test(htmlContent)) {
+    htmlContent = htmlContent.replace(guideRegex, (match, p1, p2, p3) => `${p1}\n${renderedHtml}\n${p3}`);
+    injected = true;
   } else if (prerenderedDivRegex.test(htmlContent)) {
-    htmlContent = htmlContent.replace(prerenderedDivRegex, (match, p1, p2, p3) => `${p1}${renderedHtml}${p3}`);
+    htmlContent = htmlContent.replace(prerenderedDivRegex, (match, p1, p2, p3) => `${p1}\n${renderedHtml}\n${p3}`);
+    injected = true;
+  } else if (articleRegex.test(htmlContent)) {
+    htmlContent = htmlContent.replace(articleRegex, (match, p1, p2, p3) => `${p1}\n${renderedHtml}\n${p3}`);
+    injected = true;
+  }
+
+  if (injected) {
     fs.writeFileSync(htmlPath, htmlContent, 'utf8');
     console.log(`Successfully updated prerendered guide in ${htmlFile}`);
+  } else {
+    console.warn(`No guide container found in ${htmlFile}`);
   }
 });
 

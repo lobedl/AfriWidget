@@ -10,14 +10,14 @@ The **AfriWidget Tertiary GPA &amp; CGPA Calculator** provides an instant, mathe
 
 Under standard university academic regulations, letter grades achieved in semester examinations correspond to numerical grade point values:
 
-| Percentage Score Band | Letter Grade | 5.0 Scale Grade Point Value (NUC / West Africa) | 4.0 Scale Grade Point Value (GTEC / US / Global) | Qualitative Standing |
-| :--- | :--- | :--- | :--- | :--- |
-| **70% &ndash; 100%** | **A** | **5.00** | **4.00** | Excellent / Distinction |
-| **60% &ndash; 69%** | **B** | **4.00** | **3.00** | Very Good / Credit |
-| **50% &ndash; 59%** | **C** | **3.00** | **2.00** | Good / Satisfactory |
-| **45% &ndash; 49%** | **D** | **2.00** | **1.00** | Pass / Baseline Minimum |
-| **40% &ndash; 44%** | **E** | **1.00** | **0.00 / Marginal** | Narrow Pass (5.0 Scale) |
-| **0% &ndash; 39%** | **F** | **0.00** | **0.00** | Fail / Deficient |
+
+- **70% &ndash; 100%** | Letter Grade: **A** | 5.0 Scale Grade Point Value (NUC / West Africa): **5.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **4.00** | Qualitative Standing: Excellent / Distinction
+- **60% &ndash; 69%** | Letter Grade: **B** | 5.0 Scale Grade Point Value (NUC / West Africa): **4.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **3.00** | Qualitative Standing: Very Good / Credit
+- **50% &ndash; 59%** | Letter Grade: **C** | 5.0 Scale Grade Point Value (NUC / West Africa): **3.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **2.00** | Qualitative Standing: Good / Satisfactory
+- **45% &ndash; 49%** | Letter Grade: **D** | 5.0 Scale Grade Point Value (NUC / West Africa): **2.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **1.00** | Qualitative Standing: Pass / Baseline Minimum
+- **40% &ndash; 44%** | Letter Grade: **E** | 5.0 Scale Grade Point Value (NUC / West Africa): **1.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **0.00 / Marginal** | Qualitative Standing: Narrow Pass (5.0 Scale)
+- **0% &ndash; 39%** | Letter Grade: **F** | 5.0 Scale Grade Point Value (NUC / West Africa): **0.00** | 4.0 Scale Grade Point Value (GTEC / US / Global): **0.00** | Qualitative Standing: Fail / Deficient
+
 
 ---
 
@@ -27,18 +27,23 @@ The computation of grade point average is fundamentally a **weighted arithmetic 
 
 ```
 +-------------------------------------------------------------------------+
-|                  CORE GRADE POINT AVERAGE DEFINITIONS                   |
+
+
 +------------------------------------+------------------------------------+
-| 1. Quality Points (QP) per Course  | Course Credit Units × Grade Points |
+
+
 +------------------------------------+------------------------------------+
-| 2. Total Quality Points (TQP)      | Sum of Quality Points across all   |
-|                                    | registered courses in the term.    |
+
+- **** | Sum of Quality Points across all: registered courses in the term.
+
 +------------------------------------+------------------------------------+
-| 3. Total Credit Units (TCU)        | Sum of Credit Units for all        |
-|                                    | registered courses in the term.    |
+
+- **** | Sum of Credit Units for all: registered courses in the term.
+
 +------------------------------------+------------------------------------+
-| 4. Grade Point Average (GPA)       | Total Quality Points (TQP) ÷ Total |
-|                                    | Credit Units (TCU)                 |
+
+- **** | Total Quality Points (TQP) ÷ Total: Credit Units (TCU)
+
 +------------------------------------+------------------------------------+
 ```
 
@@ -90,15 +95,15 @@ Universities categorize graduating degree honours based on cumulative final CGPA
 ### Example 1: 5.0 Scale Single-Semester Engineering Student (100 Level Semester 1)
 A first-year Computer Engineering undergraduate registers for 6 courses with the following outcomes:
 
-| Course Code &amp; Title | Credit Units (CU) | Grade Achieved | Grade Point (GP) | Quality Points (CU &times; GP) |
-| :--- | :--- | :--- | :--- | :--- |
-| **MTH 101**: Elementary Mathematics I | 4 | **A** | 5.0 | 4 &times; 5.0 = **20.0** |
-| **PHY 101**: General Physics I | 3 | **A** | 5.0 | 3 &times; 5.0 = **15.0** |
-| **CHM 101**: General Chemistry I | 3 | **B** | 4.0 | 3 &times; 4.0 = **12.0** |
-| **ENG 101**: General Engineering Drawing | 2 | **A** | 5.0 | 2 &times; 5.0 = **10.0** |
-| **GST 101**: Use of English &amp; Communication | 2 | **B** | 4.0 | 2 &times; 4.0 = **8.0** |
-| **PHY 107**: Physics Practical Laboratory | 1 | **A** | 5.0 | 1 &times; 5.0 = **5.0** |
-| **Totals** | **15 Credits** | &mdash; | &mdash; | **70.0 Quality Points** |
+
+- **MTH 101: Elementary Mathematics I** | Credit Units (CU): 4 | Grade Achieved: **A** | Grade Point (GP): 5.0 | Quality Points (CU &times; GP): 4 &times; 5.0 = **20.0**
+- **PHY 101: General Physics I** | Credit Units (CU): 3 | Grade Achieved: **A** | Grade Point (GP): 5.0 | Quality Points (CU &times; GP): 3 &times; 5.0 = **15.0**
+- **CHM 101: General Chemistry I** | Credit Units (CU): 3 | Grade Achieved: **B** | Grade Point (GP): 4.0 | Quality Points (CU &times; GP): 3 &times; 4.0 = **12.0**
+- **ENG 101: General Engineering Drawing** | Credit Units (CU): 2 | Grade Achieved: **A** | Grade Point (GP): 5.0 | Quality Points (CU &times; GP): 2 &times; 5.0 = **10.0**
+- **GST 101: Use of English &amp; Communication** | Credit Units (CU): 2 | Grade Achieved: **B** | Grade Point (GP): 4.0 | Quality Points (CU &times; GP): 2 &times; 4.0 = **8.0**
+- **PHY 107: Physics Practical Laboratory** | Credit Units (CU): 1 | Grade Achieved: **A** | Grade Point (GP): 5.0 | Quality Points (CU &times; GP): 1 &times; 5.0 = **5.0**
+- **Totals** | Credit Units (CU): **15 Credits** | Grade Achieved: &mdash; | Grade Point (GP): &mdash; | Quality Points (CU &times; GP): **70.0 Quality Points**
+
 
 **GPA Calculation**:
 - **Total Quality Points (TQP)** = 20.0 + 15.0 + 12.0 + 10.0 + 8.0 + 5.0 = **70.0**
@@ -124,14 +129,14 @@ The same student completes Semester 2 with 18 credit units and earns 75.0 Qualit
 ### Example 3: 4.0 Scale Social Sciences Undergraduate (Ghana / GTEC Standard)
 A second-year Economics student at the University of Ghana takes 5 courses in a 4.0-scale system:
 
-| Course Code &amp; Title | Credit Hours (CH) | Grade Achieved | Grade Point (GP) | Quality Points (CH &times; GP) |
-| :--- | :--- | :--- | :--- | :--- |
-| **ECON 201**: Microeconomic Theory I | 3 | **A** | 4.0 | 3 &times; 4.0 = **12.0** |
-| **ECON 203**: Macroeconomic Theory I | 3 | **B** | 3.0 | 3 &times; 3.0 = **9.0** |
-| **STAT 201**: Statistical Methods | 3 | **A** | 4.0 | 3 &times; 4.0 = **12.0** |
-| **POLI 201**: Introduction to Political Science | 3 | **B** | 3.0 | 3 &times; 3.0 = **9.0** |
-| **UGBS 201**: Business Communication | 3 | **C** | 2.0 | 3 &times; 2.0 = **6.0** |
-| **Totals** | **15 Credits** | &mdash; | &mdash; | **48.0 Quality Points** |
+
+- **ECON 201: Microeconomic Theory I** | Credit Hours (CH): 3 | Grade Achieved: **A** | Grade Point (GP): 4.0 | Quality Points (CH &times; GP): 3 &times; 4.0 = **12.0**
+- **ECON 203: Macroeconomic Theory I** | Credit Hours (CH): 3 | Grade Achieved: **B** | Grade Point (GP): 3.0 | Quality Points (CH &times; GP): 3 &times; 3.0 = **9.0**
+- **STAT 201: Statistical Methods** | Credit Hours (CH): 3 | Grade Achieved: **A** | Grade Point (GP): 4.0 | Quality Points (CH &times; GP): 3 &times; 4.0 = **12.0**
+- **POLI 201: Introduction to Political Science** | Credit Hours (CH): 3 | Grade Achieved: **B** | Grade Point (GP): 3.0 | Quality Points (CH &times; GP): 3 &times; 3.0 = **9.0**
+- **UGBS 201: Business Communication** | Credit Hours (CH): 3 | Grade Achieved: **C** | Grade Point (GP): 2.0 | Quality Points (CH &times; GP): 3 &times; 2.0 = **6.0**
+- **Totals** | Credit Hours (CH): **15 Credits** | Grade Achieved: &mdash; | Grade Point (GP): &mdash; | Quality Points (CH &times; GP): **48.0 Quality Points**
+
 
 **GPA Calculation**:
 - **Total Quality Points (TQP)** = 12.0 + 9.0 + 12.0 + 9.0 + 6.0 = **48.0**

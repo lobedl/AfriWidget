@@ -12,16 +12,20 @@ Under the legal framework established by the Federal Ministry of Education and i
 
 ```
 +-------------------------------------------------------------------------+
-|                  FEDERAL UNIVERSITY ADMISSION QUOTAS                    |
+
+
 +------------------------------------+------------------------------------+
-| 1. National Merit Quota (45%)      | Awarded strictly to top candidates |
-|                                    | nationwide, regardless of origin.  |
+
+- **** | Awarded strictly to top candidates: nationwide, regardless of origin.
+
 +------------------------------------+------------------------------------+
-| 2. Catchment Area Quota (35%)      | Reserved for applicants from the   |
-|                                    | university's geopolitical zone.    |
+
+- **** | Reserved for applicants from the: university's geopolitical zone.
+
 +------------------------------------+------------------------------------+
-| 3. ELDS Quota (20%)                | Allocated to 23 Educationally Less |
-|                                    | Developed States in Nigeria.       |
+
+- **** | Allocated to 23 Educationally Less: Developed States in Nigeria.
+
 +------------------------------------+------------------------------------+
 ```
 
@@ -42,12 +46,12 @@ The remaining 20% is reserved for candidates from 23 officially gazetted Educati
 
 The actual threshold required for admission is determined by candidate demand volume relative to departmental quota capacity:
 
-| Competitiveness Tier | Representative Disciplines | Typical UTME Merit Benchmark | Demand-to-Quota Ratio |
-| :--- | :--- | :--- | :--- |
-| **Tier 1: Ultra-High Demand** | Medicine &amp; Surgery, Pharmacy, Nursing Science, Law, Computer Science, Dentistry, Software Engineering | **270 &ndash; 330+ Marks** | Exceeds 25:1 Applicants per Slot |
-| **Tier 2: High Demand** | Medical Laboratory Science, Mechanical / Electrical Engineering, Accounting, Economics, Mass Communication | **230 &ndash; 270 Marks** | 10:1 to 18:1 Applicants per Slot |
-| **Tier 3: Moderate Demand** | Microbiology, Biochemistry, Business Administration, Political Science, Civil Engineering, Radiography | **190 &ndash; 230 Marks** | 4:1 to 8:1 Applicants per Slot |
-| **Tier 4: Standard / Low Demand** | Agricultural Science, Botany, Zoology, Physics, Chemistry, Linguistics, History, Education Courses | **160 &ndash; 190 Marks** | Less than 3:1 Applicants per Slot |
+
+- **Tier 1: Ultra-High Demand** | Representative Disciplines: Medicine &amp; Surgery, Pharmacy, Nursing Science, Law, Computer Science, Dentistry, Software Engineering | Typical UTME Merit Benchmark: **270 &ndash; 330+ Marks** | Demand-to-Quota Ratio: Exceeds 25:1 Applicants per Slot
+- **Tier 2: High Demand** | Representative Disciplines: Medical Laboratory Science, Mechanical / Electrical Engineering, Accounting, Economics, Mass Communication | Typical UTME Merit Benchmark: **230 &ndash; 270 Marks** | Demand-to-Quota Ratio: 10:1 to 18:1 Applicants per Slot
+- **Tier 3: Moderate Demand** | Representative Disciplines: Microbiology, Biochemistry, Business Administration, Political Science, Civil Engineering, Radiography | Typical UTME Merit Benchmark: **190 &ndash; 230 Marks** | Demand-to-Quota Ratio: 4:1 to 8:1 Applicants per Slot
+- **Tier 4: Standard / Low Demand** | Representative Disciplines: Agricultural Science, Botany, Zoology, Physics, Chemistry, Linguistics, History, Education Courses | Typical UTME Merit Benchmark: **160 &ndash; 190 Marks** | Demand-to-Quota Ratio: Less than 3:1 Applicants per Slot
+
 
 ---
 

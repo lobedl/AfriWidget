@@ -10,18 +10,17 @@ This numerical framework creates finer distinctions between candidate achievemen
 
 Under the Reformed GCSE framework, numerical grades map directly to performance standards established by Ofqual and national examination boards including **AQA**, **Pearson Edexcel**, **OCR**, **WJEC Eduqas**, and **Cambridge Assessment International Education (CAIE)**.
 
-| 9–1 Numerical Grade | Legacy Alphabetical Equivalent | Attainment 8 Points | Performance Level & DfE Classification |
-| :--- | :--- | :--- | :--- |
-| **Grade 9** | Exceptional performance (top 20% above A\*) | **9.0** | Exceptional High Achievement |
-| **Grade 8** | High Grade A\* | **8.0** | Outstanding Distinction |
-| **Grade 7** | Standard Grade A | **7.0** | Advanced Academic Merit (Grammar Benchmark) |
-| **Grade 6** | High Grade B | **6.0** | Good Pass (Typical A-Level Subject Prerequisite) |
-| **Grade 5** | High Grade C / Low Grade B | **5.0** | **Strong Pass** (DfE School Performance Measure) |
-| **Grade 4** | Standard Grade C | **4.0** | **Standard Pass** (Level 3 Post-16 Minimum Threshold) |
-| **Grade 3** | Grade D | **3.0** | Below Standard (Compulsory Post-16 Resit in England) |
-| **Grade 2** | Grade E / High Grade F | **2.0** | Level 1 Foundation Pass |
-| **Grade 1** | Grade F / Grade G | **1.0** | Level 1 Basic Achievement |
-| **Grade U** | Ungraded (Below Grade 1) | **0.0** | Unclassified / No Credit Awarded |
+### UK 9–1 GCSE Grading Scale & Attainment 8 Values
+- **Grade 9**: Top 20% achievement above legacy A* | Attainment 8 Score: **9.0** | Performance: Exceptional Distinction
+- **Grade 8**: High Grade A* equivalent | Attainment 8 Score: **8.0** | Performance: Outstanding Achievement
+- **Grade 7**: Grade A equivalent | Attainment 8 Score: **7.0** | Performance: Advanced Academic Merit (Grammar school Sixth Form baseline)
+- **Grade 6**: High Grade B equivalent | Attainment 8 Score: **6.0** | Performance: Good Pass (Typical A-Level subject prerequisite)
+- **Grade 5**: High Grade C / Low Grade B | Attainment 8 Score: **5.0** | Performance: **Strong Pass** (DfE headline school performance benchmark)
+- **Grade 4**: Grade C standard pass | Attainment 8 Score: **4.0** | Performance: **Standard Pass** (Level 3 post-16 minimum qualifying floor)
+- **Grade 3**: Grade D equivalent | Attainment 8 Score: **3.0** | Performance: Below Standard Pass (Requires compulsory resit in English & Maths)
+- **Grade 2**: Grade E / High F equivalent | Attainment 8 Score: **2.0** | Performance: Level 1 Foundation Pass
+- **Grade 1**: Grade F / G equivalent | Attainment 8 Score: **1.0** | Performance: Level 1 Basic Achievement
+- **Grade U**: Ungraded | Attainment 8 Score: **0.0** | Performance: No credit awarded
 
 ### Standard Pass (Grade 4) vs Strong Pass (Grade 5)
 The Department for Education distinguishes between two critical benchmarks:

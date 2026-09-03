@@ -31,17 +31,14 @@ Maintenance Loans are paid directly into your personal bank account in three ter
 
 Under Student Finance England regulations, household income is evaluated using the gross taxable income of the parents, guardians, or cohabiting partner with whom the student normally resides:
 
-| Taxable Household Income | Living at Home | Living Away (Outside London) | Living Away (In London) | Expected Parental Contribution |
-| :--- | :--- | :--- | :--- | :--- |
-| **£25,000 or below** | **£8,610** (Maximum) | **£10,227** (Maximum) | **£13,348** (Maximum) | £0 / year |
-| **£30,000** | £7,915 | £9,532 | £12,653 | ~£695 / year |
-| **£35,000** | £7,220 | £8,837 | £11,958 | ~£1,390 / year |
-| **£40,000** | £6,525 | £8,142 | £11,263 | ~£2,085 / year |
-| **£45,000** | £5,830 | £7,447 | £10,568 | ~£2,780 / year |
-| **£50,000** | £5,135 | £6,752 | £9,873 | ~£3,475 / year |
-| **£55,000** | £4,440 | £6,057 | £9,178 | ~£4,170 / year |
-| **£62,311+ (Outside London Cut-off)** | £3,790 (Minimum) | **£4,767** (Minimum) | £7,888 | ~£5,460 / year |
-| **£70,040+ (London Cut-off)** | £3,790 (Minimum) | £4,767 (Minimum) | **£6,485** (Minimum) | ~£6,863 / year |
+### Student Finance England (SFE) Maximum Maintenance Loan Tiers (2024/2025)
+- **Household Income £25,000 or below**: Living at Home: **£8,610** | Living Away Outside London: **£10,227** | Living in London: **£13,348** (Assessed Parental Contribution: £0)
+- **Household Income £30,000**: Living at Home: **£7,915** | Living Away Outside London: **£9,532** | Living in London: **£12,653** (Assessed Parental Contribution: ~£695)
+- **Household Income £35,000**: Living at Home: **£7,220** | Living Away Outside London: **£8,837** | Living in London: **£11,958** (Assessed Parental Contribution: ~£1,390)
+- **Household Income £40,000**: Living at Home: **£6,525** | Living Away Outside London: **£8,142** | Living in London: **£11,263** (Assessed Parental Contribution: ~£2,085)
+- **Household Income £50,000**: Living at Home: **£5,135** | Living Away Outside London: **£6,752** | Living in London: **£9,873** (Assessed Parental Contribution: ~£3,475)
+- **Household Income £62,311+ (Outside London Non-Means-Tested Floor)**: Living Away Outside London: **£4,767**
+- **Household Income £70,040+ (London Non-Means-Tested Floor)**: Living in London: **£6,485**
 
 *Note: The difference between the maximum statutory maintenance loan and your assessed allocation represents the government-calculated **Expected Parental Contribution**.*
 
@@ -53,12 +50,11 @@ Student loans in the UK function like a graduate income tax rather than standard
 
 ### Comparison of Student Loan Repayment Plans
 
-| Feature | Plan 5 (New Starters from Aug 2023 onwards) | Plan 2 (Started between 2012 and July 2023) | Plan 1 (Pre-2012 England/Wales, & NI) | Postgraduate Loan (Master's / Doctoral) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Repayment Threshold** | **£25,000 / year** (£2,083 / month) | **£27,295 / year** (£2,274 / month) | **£24,990 / year** (£2,082 / month) | **£21,000 / year** (£1,750 / month) |
-| **Repayment Rate** | **9%** of income above threshold | **9%** of income above threshold | **9%** of income above threshold | **6%** of income above threshold |
-| **Write-Off Horizon** | **40 years** after graduation | **30 years** after graduation | **25 years** (or age 65) | **30 years** after graduation |
-| **Interest Rate Formula** | **RPI only** (No real interest charge) | RPI + up to 3.0% (variable based on salary) | Lower of RPI or Bank of England Base + 1% | RPI + 3.0% |
+### UK Student Loan Repayment Plan Comparison
+- **Plan 5 (Undergraduate courses starting from August 2023 onwards)**: Repayment Threshold: **£25,000/year** (£2,083/month) | Repayment Rate: **9%** of income above threshold | Write-Off Period: **40 years** | Interest Rate: **RPI only** (zero real interest).
+- **Plan 2 (Undergraduate courses started between September 2012 and July 2023)**: Repayment Threshold: **£27,295/year** (£2,274/month) | Repayment Rate: **9%** of income above threshold | Write-Off Period: **30 years** | Interest Rate: RPI + up to 3.0%.
+- **Plan 1 (Pre-2012 England/Wales, all Northern Ireland students)**: Repayment Threshold: **£24,990/year** (£2,082/month) | Repayment Rate: **9%** of income above threshold | Write-Off Period: **25 years** (or age 65) | Interest Rate: Lower of RPI or Bank of England base rate + 1%.
+- **Postgraduate Master's / Doctoral Loan**: Repayment Threshold: **£21,000/year** (£1,750/month) | Repayment Rate: **6%** of income above threshold | Write-Off Period: **30 years** | Interest Rate: RPI + 3.0%.
 
 ---
 

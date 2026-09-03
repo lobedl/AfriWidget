@@ -10,15 +10,15 @@ The **AfriWidget JAMB UTME Aggregate Calculator** provides a transparent, standa
 
 Nigerian tertiary institutions award structured point values for O’Level grades (WAEC, NECO, NABTEB, or GCE) presented in a candidate’s primary sitting:
 
-| WAEC / NECO Grade | Grade Performance Descriptor | O’Level Points Awarded (Standard Scale) | O’Level Points (20-Point Scale) |
-| :--- | :--- | :--- | :--- |
-| **A1** | **Distinction (Excellent)** | **10 Points** | **4.0 Points** |
-| **B2** | **Distinction (Very Good)** | **9 Points** | **3.6 Points** |
-| **B3** | **Credit (Good)** | **8 Points** | **3.2 Points** |
-| **C4** | **Credit (Credit)** | **7 Points** | **2.8 Points** |
-| **C5** | **Credit (Credit)** | **6 Points** | **2.4 Points** |
-| **C6** | **Credit (Credit)** | **5 Points** | **2.0 Points** |
-| **D7 / E8 / F9** | **Pass / Fail (Below Credit)** | **0 Points** (Not recognized for degree admission) | **0.0 Points** |
+
+- **A1** | Grade Performance Descriptor: **Distinction (Excellent)** | O’Level Points Awarded (Standard Scale): **10 Points** | O’Level Points (20-Point Scale): **4.0 Points**
+- **B2** | Grade Performance Descriptor: **Distinction (Very Good)** | O’Level Points Awarded (Standard Scale): **9 Points** | O’Level Points (20-Point Scale): **3.6 Points**
+- **B3** | Grade Performance Descriptor: **Credit (Good)** | O’Level Points Awarded (Standard Scale): **8 Points** | O’Level Points (20-Point Scale): **3.2 Points**
+- **C4** | Grade Performance Descriptor: **Credit (Credit)** | O’Level Points Awarded (Standard Scale): **7 Points** | O’Level Points (20-Point Scale): **2.8 Points**
+- **C5** | Grade Performance Descriptor: **Credit (Credit)** | O’Level Points Awarded (Standard Scale): **6 Points** | O’Level Points (20-Point Scale): **2.4 Points**
+- **C6** | Grade Performance Descriptor: **Credit (Credit)** | O’Level Points Awarded (Standard Scale): **5 Points** | O’Level Points (20-Point Scale): **2.0 Points**
+- **D7 / E8 / F9** | Grade Performance Descriptor: **Pass / Fail (Below Credit)** | O’Level Points Awarded (Standard Scale): **0 Points** (Not recognized for degree admission) | O’Level Points (20-Point Scale): **0.0 Points**
+
 
 *Note: For degree admission in Nigeria, candidates must present a minimum of five (5) credit passes (C6 or higher) in relevant subjects, including English Language and Mathematics (for science/social science streams).*
 

@@ -46,12 +46,12 @@ Popularized by personal finance authors, the Debt Snowball strategy prioritizes 
 
 ## Avalanche vs. Snowball: Which Strategy Is Right for You?
 
-| Feature / Criteria | Debt Avalanche Method | Debt Snowball Method |
-| --- | --- | --- |
-| **Primary Focus** | Highest Interest Rate (APR %) | Smallest Total Balance ($) |
-| **Financial Goal** | Minimize Total Interest Charges | Maximize Psychological Motivation |
-| **Mathematical Outcome** | Lowest Total Cost & Shortest Time | Fast Early Victories |
-| **Best Suited For** | Analytical & Discipline-Driven Payers | Those Seeking Early Wins & Simplicity |
+
+- **Primary Focus** | Debt Avalanche Method: Highest Interest Rate (APR %) | Debt Snowball Method: Smallest Total Balance ($)
+- **Financial Goal** | Debt Avalanche Method: Minimize Total Interest Charges | Debt Snowball Method: Maximize Psychological Motivation
+- **Mathematical Outcome** | Debt Avalanche Method: Lowest Total Cost & Shortest Time | Debt Snowball Method: Fast Early Victories
+- **Best Suited For** | Debt Avalanche Method: Analytical & Discipline-Driven Payers | Debt Snowball Method: Those Seeking Early Wins & Simplicity
+
 
 ### Case Study Example
 Imagine carrying three debts:

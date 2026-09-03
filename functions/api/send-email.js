@@ -1,0 +1,56 @@
+import { handler as sendEmailHandler } from '../../netlify/functions/send-email.js';
+
+export async function onRequestOptions() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS'
+    }
+  });
+}
+
+export async function onRequest(context) {
+  if (context.request.method === 'OPTIONS') {
+    return onRequestOptions();
+  }
+
+  // Populate environment variables from Cloudflare Pages context.env into process.env
+  if (context.env) {
+    for (const [key, value] of Object.entries(context.env)) {
+      if (typeof value === 'string' && value) {
+        process.env[key] = value;
+      }
+    }
+  }
+
+  try {
+    const bodyText = await context.request.text();
+    const event = {
+      httpMethod: context.request.method,
+      body: bodyText
+    };
+
+    const res = await sendEmailHandler(event);
+    return new Response(res.body, {
+      status: res.statusCode || 200,
+      headers: res.headers || {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+  } catch (err) {
+    console.error('[Cloudflare Pages send-email] Error:', err);
+    return new Response(
+      JSON.stringify({ ok: false, message: err?.message || 'Error delivering email' }),
+      {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
+    );
+  }
+}

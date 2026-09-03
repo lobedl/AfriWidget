@@ -28,12 +28,12 @@ To be strictly valid according to RFC 8259, a JSON payload must adhere to rigoro
 
 ## JSON Formatting Modes: Pretty-Print vs Minification
 
-| Formatting Mode | Primary Use Case | Advantages | Technical Characteristics |
-| :--- | :--- | :--- | :--- |
-| **Pretty-Print (2 Spaces)** | Code reviews, API debugging, documentation, Git diffs. | Maximizes visual readability and logical hierarchy while maintaining compact horizontal span. | Standard modern convention across GitHub, npm packages, and REST APIs. |
-| **Pretty-Print (4 Spaces)** | Python / backend environments, high-contrast displays. | High visual distinction between nested object scopes. | Traditional IDE formatting standard. |
-| **Pretty-Print (Tabs)** | User-configured editor environments. | Respects individual developer tab-width preferences. | Uses single `\t` character per indentation level. |
-| **Minification (Compact)** | Production API payloads, network caching, database storage. | Reduces payload file size by 20% to 50% by stripping whitespace and line breaks. | Single contiguous string; minimizes bandwidth consumption. |
+
+- **Pretty-Print (2 Spaces)** | Primary Use Case: Code reviews, API debugging, documentation, Git diffs. | Advantages: Maximizes visual readability and logical hierarchy while maintaining compact horizontal span. | Technical Characteristics: Standard modern convention across GitHub, npm packages, and REST APIs.
+- **Pretty-Print (4 Spaces)** | Primary Use Case: Python / backend environments, high-contrast displays. | Advantages: High visual distinction between nested object scopes. | Technical Characteristics: Traditional IDE formatting standard.
+- **Pretty-Print (Tabs)** | Primary Use Case: User-configured editor environments. | Advantages: Respects individual developer tab-width preferences. | Technical Characteristics: Uses single `\t` character per indentation level.
+- **Minification (Compact)** | Primary Use Case: Production API payloads, network caching, database storage. | Advantages: Reduces payload file size by 20% to 50% by stripping whitespace and line breaks. | Technical Characteristics: Single contiguous string; minimizes bandwidth consumption.
+
 
 ---
 

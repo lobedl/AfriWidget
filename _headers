@@ -16,7 +16,23 @@
 /.netlify/functions/*
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
 
+/api/*
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/*.png
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
+/*.jpg
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
+/og-image.*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
 /og-image.png
+  Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400, must-revalidate
 
 /favicon.svg
