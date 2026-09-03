@@ -68,18 +68,15 @@ Netlify serves static files from the project root. If the HTML page only linked 
 ## Issue 3: Netlify 404s on Clean URLs & Invalid Wildcards in `_redirects`
 
 ### 🚨 The Problem:
-Navigating to clean paths like `/education` or `/wassce-aggregate-calculator` returned a "Site not found" 404 error on Netlify.
+Navigating to clean paths like `/education` or `/wassce-aggregate-calculator` resulted in `ERR_TOO_MANY_REDIRECTS` on Cloudflare Pages, or a 404 error when invalid wildcards were present.
 
 ### 🔍 Root Cause:
-Netlify requires an explicit rewrite rule to serve `.html` files for extensionless URLs. Adding invalid wildcards like `/*/nav.js` or `/*/*.js` broke Netlify's routing engine entirely.
+Cloudflare Pages has built-in canonical asset routing: it automatically strips `.html` from URLs and issues a 308 redirect from `/page.html` to `/page`. If `_redirects` contains `/:page /:page.html 200`, Cloudflare rewrites `/page` to `/page.html`, which triggers Cloudflare's automatic 308 redirect back to `/page`, resulting in an infinite redirect loop (`ERR_TOO_MANY_REDIRECTS`).
 
 ### ✅ The Solution:
-Maintain clean URL rewrite mapping in `_redirects`:
-```
-# Clean URLs Rewrite
-/:page            /:page.html     200
-```
-Never insert invalid multi-segment wildcards into `_redirects`.
+1. **Remove `/:page /:page.html 200` from `_redirects`**:
+   - Both Cloudflare Pages and Netlify (via `pretty_urls = true` in `netlify.toml`) natively map clean URLs to their corresponding `.html` files without needing manual wildcards in `_redirects`.
+2. **Never insert invalid multi-segment wildcards** like `/*/nav.js` into `_redirects`.
 
 ---
 

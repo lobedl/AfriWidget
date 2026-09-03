@@ -60,14 +60,12 @@ Ensure `netlify.toml` specifies the build command, Node environment, and enables
   NPM_FLAGS = "--include=dev"
 ```
 
-### 1.5 Netlify Clean URL Routing Mandate (`_redirects`)
-To prevent "Site not found" 404 errors when navigating clean routes (e.g. `/education`, `/gpa-calculator`):
-- `_redirects` **MUST** include clean URL rewrite mapping:
-  ```
-  # Clean URLs Rewrite: Map clean paths (e.g., /education, /gpa-calculator) to .html files
-  /:page            /:page.html     200
-  ```
-- **NEVER** add invalid wildcard rules like `/*/nav.js` or `/*/*.js` into `_redirects`. Invalid syntax breaks Netlify's routing engine and causes valid pages to return 404.
+### 1.5 Clean URL Routing Mandate (Cloudflare Pages & Netlify)
+Clean, extensionless URLs (e.g., `/education`, `/gpa-calculator`) are handled natively:
+- **Netlify**: Handled automatically by `[build.processing.html] pretty_urls = true` in `netlify.toml`.
+- **Cloudflare Pages**: Handled automatically by native asset serving (extensionless requests resolve directly to `.html` files).
+- **CRITICAL**: Do **NOT** put `/:page /:page.html 200` in `_redirects`. On Cloudflare Pages, Cloudflare automatically 308-redirects all `.html` extensions to their extensionless counterparts; having a 200 rewrite back to `.html` creates an infinite redirect loop (`ERR_TOO_MANY_REDIRECTS`).
+- **NEVER** add invalid wildcard rules like `/*/nav.js` or `/*/*.js` into `_redirects`. Invalid syntax breaks routing engines and causes valid pages to return 404.
 
 ---
 

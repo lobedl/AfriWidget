@@ -33,5 +33,5 @@
 /ucas-tariff-points-calculator           /ucas-points-calculator                  301
 /ucas-tariff-points-calculator.html      /ucas-points-calculator                  301
 
-# Clean URLs Rewrite: Map clean paths (e.g., /education, /gpa-calculator) to .html files
-/:page            /:page.html     200
+# Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
+
