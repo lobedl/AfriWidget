@@ -17,24 +17,28 @@ Because `wrangler.toml` is present in the root directory, Cloudflare Pages will 
 | Setting | Value | Notes |
 | :--- | :--- | :--- |
 | **Framework Preset** | `None` | Static site with pre-rendering |
-| **Build Command** | `npm run build` (or `bun run build`) | Builds CSS, OG assets, and pre-renders guides |
+| **Build Command** | `bun run build` (or `npm run build`) | Builds CSS, OG assets, and pre-renders guides |
 | **Build Output Directory** | `.` | Root directory containing HTML & static assets |
 | **Root Directory** | `/` | Leave default (repository root) |
-| **Deploy Command** | *(Leave Empty)* or `npx wrangler pages deploy .` | **CRITICAL**: Do NOT use `npx wrangler deploy` (see Troubleshooting below) |
+| **Deploy Command** | `npx wrangler pages deploy . --project-name=afriwidget` | Or leave empty if optional in your dashboard |
 
 ---
 
 ## ⚠️ Troubleshooting & Deployment Fixes
 
 ### Fix 1: "Configuration file for Pages projects does not support 'build'"
-- **Cause**: Cloudflare Pages does not allow a `[build]` section inside `wrangler.toml` (unlike Cloudflare Workers). Build commands for Pages are managed via the dashboard build settings or git hooks.
+- **Cause**: Cloudflare Pages does not allow a `[build]` section inside `wrangler.toml` (unlike Cloudflare Workers).
 - **Fix**: The `[build]` section has been removed from `wrangler.toml`. It now purely contains valid Pages keys (`name`, `pages_build_output_dir`, `compatibility_date`, `compatibility_flags`).
 
-### Fix 2: "Deploy command" in Cloudflare Pages Dashboard
-In Cloudflare Pages Git deployments:
-- **Best Practice**: In **Settings** → **Builds & deployments** → **Build configuration**, leave the **Deploy command** field **completely empty**.
-- When empty, Cloudflare Pages automatically takes the files from the build output directory (`.`) and deploys them to its edge network as soon as `bun run build` succeeds.
-- If you do use `npx wrangler pages deploy .`, it will now also succeed because `wrangler.toml` has been cleaned up and validated.
+### Fix 2: "Deploy command" Requirement in Cloudflare Pages Dashboard
+If your Cloudflare dashboard marks the **Deploy command** as a required field:
+- Use:
+  ```bash
+  npx wrangler pages deploy . --project-name=afriwidget
+  ```
+  *(Replace `afriwidget` with your exact Cloudflare Pages project name if different).*
+- **Do NOT use `npx wrangler deploy`**: That command is for Cloudflare Workers scripts and will cause a `Missing entry-point to Worker script` error.
+- If your dashboard allows the field to be left blank, leaving it empty is also valid as Cloudflare Pages automatically publishes the build directory (`.`).
 
 ### 3. Environment Variables & Secrets
 Navigate to **Settings** → **Environment Variables** in your Cloudflare Pages project and add the following:
