@@ -1,3 +1,9 @@
+if (typeof globalThis.process === 'undefined') {
+  globalThis.process = { env: {} };
+} else if (!globalThis.process.env) {
+  globalThis.process.env = {};
+}
+
 import { handler as sendEmailHandler } from '../../netlify/functions/send-email.js';
 
 export async function onRequestOptions() {
@@ -16,11 +22,11 @@ export async function onRequest(context) {
     return onRequestOptions();
   }
 
-  // Populate environment variables from Cloudflare Pages context.env into process.env
+  // Populate environment variables from Cloudflare Pages context.env into globalThis.process.env
   if (context.env) {
     for (const [key, value] of Object.entries(context.env)) {
       if (typeof value === 'string' && value) {
-        process.env[key] = value;
+        globalThis.process.env[key] = value;
       }
     }
   }

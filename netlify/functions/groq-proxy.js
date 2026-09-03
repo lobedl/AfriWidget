@@ -1,3 +1,10 @@
+// Ensure process is safely defined across standard Node, Netlify, and Cloudflare Pages / V8 Worker runtimes
+if (typeof globalThis.process === 'undefined') {
+  globalThis.process = { env: {} };
+} else if (!globalThis.process.env) {
+  globalThis.process.env = {};
+}
+
 const FALLBACK_MESSAGE = 'Realtime AI is unavailable right now. Please try again later.';
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODELS_URL = 'https://api.groq.com/openai/v1/models';
@@ -41,12 +48,15 @@ function cleanAIOutput(rawText) {
 const keyModelCache = new Map();
 const CACHE_TTL_MS = 10 * 60 * 1000;
 
-function configuredGroqKeys() {
-  /*
-   * Netlify injects environment variables into the function runtime.
-   * We search process.env for all variations of Groq key names,
-   * trim whitespace, strip quotes, and deduplicate.
-   */
+function getEnv() {
+  if (typeof globalThis.process !== 'undefined' && globalThis.process && globalThis.process.env) {
+    return globalThis.process.env;
+  }
+  return {};
+}
+
+function configuredGroqKeys(customEnv = null) {
+  const env = customEnv || getEnv();
   const keys = [];
 
   const explicitNames = [
@@ -60,12 +70,12 @@ function configuredGroqKeys() {
   ];
 
   for (const name of explicitNames) {
-    if (process.env[name]) {
-      keys.push(process.env[name]);
+    if (env[name]) {
+      keys.push(env[name]);
     }
   }
 
-  for (const [envKey, envVal] of Object.entries(process.env)) {
+  for (const [envKey, envVal] of Object.entries(env)) {
     if (/groq/i.test(envKey) && typeof envVal === 'string') {
       keys.push(envVal);
     }
@@ -123,9 +133,6 @@ async function getAvailableModelsForKey(key) {
   keyModelCache.set(key, { models: DEFAULT_MODELS, timestamp: Date.now() });
   return DEFAULT_MODELS;
 }
-
-const INITIAL_KEYS = configuredGroqKeys();
-console.info(`[groq-proxy] initialized; ${INITIAL_KEYS.length} credential source(s) configured`);
 
 const headers = {
   'Access-Control-Allow-Origin': '*',
@@ -232,8 +239,9 @@ ${contextText}`;
 }
 
 // Optional Gemini fallback if Groq keys are exhausted
-async function tryGeminiFallback(category, userPrompt) {
-  const geminiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+async function tryGeminiFallback(category, userPrompt, customEnv = null) {
+  const env = customEnv || getEnv();
+  const geminiKey = env.GEMINI_API_KEY || env.API_KEY;
   if (!geminiKey) return null;
 
   try {

@@ -1,3 +1,9 @@
+if (typeof globalThis.process === 'undefined') {
+  globalThis.process = { env: {} };
+} else if (!globalThis.process.env) {
+  globalThis.process.env = {};
+}
+
 import { onRequest as groqProxyHandler, onRequestOptions as groqOptionsHandler } from './api/groq-proxy.js';
 import { onRequest as sendEmailHandler, onRequestOptions as sendEmailOptionsHandler } from './api/send-email.js';
 

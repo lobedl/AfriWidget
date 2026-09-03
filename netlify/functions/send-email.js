@@ -1,3 +1,10 @@
+// Ensure process is safely defined across standard Node, Netlify, and Cloudflare Pages / V8 Worker runtimes
+if (typeof globalThis.process === 'undefined') {
+  globalThis.process = { env: {} };
+} else if (!globalThis.process.env) {
+  globalThis.process.env = {};
+}
+
 import { Resend } from 'resend';
 
 const headers = {
@@ -7,6 +14,13 @@ const headers = {
   'Content-Type': 'application/json',
   'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
 };
+
+function getEnv() {
+  if (typeof globalThis.process !== 'undefined' && globalThis.process && globalThis.process.env) {
+    return globalThis.process.env;
+  }
+  return {};
+}
 
 function jsonResponse(statusCode, body) {
   return {
@@ -25,7 +39,8 @@ export const handler = async (event) => {
     return jsonResponse(405, { ok: false, message: 'Method not allowed' });
   }
 
-  let apiKey = (process.env.RESEND_API_KEY || process.env.RESEND_KEY || '').trim();
+  const env = getEnv();
+  let apiKey = (env.RESEND_API_KEY || env.RESEND_KEY || '').trim();
   apiKey = apiKey.replace(/^["']|["']$/g, '').trim();
 
   if (!apiKey) {
@@ -52,12 +67,12 @@ export const handler = async (event) => {
   const resend = new Resend(apiKey);
   
   // Default to verified domain sender and primary inbox
-  let toEmail = (process.env.CONTACT_EMAIL || process.env.RESEND_TO_EMAIL || '').trim().replace(/^["']|["']$/g, '');
+  let toEmail = (env.CONTACT_EMAIL || env.RESEND_TO_EMAIL || '').trim().replace(/^["']|["']$/g, '');
   if (!toEmail) {
     toEmail = 'hello@afriwidget.com';
   }
 
-  let fromEmail = (process.env.RESEND_FROM_EMAIL || '').trim().replace(/^["']|["']$/g, '');
+  let fromEmail = (env.RESEND_FROM_EMAIL || '').trim().replace(/^["']|["']$/g, '');
   // If no fromEmail is specified or if it's set to the test onboarding sandbox, use the verified domain sender
   if (!fromEmail || fromEmail.includes('onboarding@resend.dev')) {
     fromEmail = 'AfriWidget Contact <contact@afriwidget.com>';

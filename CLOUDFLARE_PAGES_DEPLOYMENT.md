@@ -58,16 +58,24 @@ Navigate to **Settings** → **Environment Variables** in your Cloudflare Pages 
 ## 📁 Cloudflare Configuration Architecture
 
 ### 1. `wrangler.toml` (Repository Root)
-Centralized configuration file defining the Pages project name, static build output directory (`.`), Node.js compatibility date, and build command:
+Centralized configuration file defining the Pages project name, static build output directory (`.`), and Node.js compatibility:
 ```toml
 name = "afriwidget"
 pages_build_output_dir = "."
 compatibility_date = "2024-09-01"
 compatibility_flags = ["nodejs_compat"]
-
-[build]
-command = "npm run build"
 ```
+
+### 2. Edge-Safe `process` Polyfill for Pages Functions
+Cloudflare Pages Functions execute inside a V8 isolate runtime where Node's `process` global is not available by default. All function handlers and imports in `/functions` and `/netlify/functions` include a safe edge polyfill:
+```javascript
+if (typeof globalThis.process === 'undefined') {
+  globalThis.process = { env: {} };
+} else if (!globalThis.process.env) {
+  globalThis.process.env = {};
+}
+```
+This ensures that any reference to `process.env` never throws `ReferenceError: process is not defined` during Function publication.
 
 ### 2. Node Runtime Specification (`.node-version` and `.nvmrc`)
 Specifies Node.js 20 LTS for the Cloudflare Pages build environment.
