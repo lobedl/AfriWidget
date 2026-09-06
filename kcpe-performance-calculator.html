@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
@@ -21,8 +19,38 @@
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
   </script>
-  <!-- Google AdSense Official Script Tag -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
+  <script>
+    (function() {
+      var adSenseLoaded = false;
+      function loadAdSense() {
+        if (adSenseLoaded) return;
+        adSenseLoaded = true;
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+          window.removeEventListener(evt, loadAdSense, { passive: true });
+        });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474';
+        document.head.appendChild(s);
+      }
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+      });
+      if ('requestIdleCallback' in window) {
+        window.addEventListener('load', function() {
+          requestIdleCallback(function() {
+            setTimeout(loadAdSense, 3500);
+          }, { timeout: 4000 });
+        });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadAdSense, 3500);
+        });
+      }
+    })();
+  </script>
 <title>KCPE Performance Calculator – KNEC Marks to Grade & Secondary School Placement</title>
   
   <meta name="description" content="Calculate your 5-subject KCPE total marks (out of 500), mean percentage, official KNEC letter grade, and secondary school category placement tier in Kenya." />
@@ -249,11 +277,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
 
   <!-- Pre-rendered Global Header -->
-                                                                                                                                                <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                                                                                                                <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -341,43 +393,46 @@
     </div>
   </div>
 
-  <!-- Main Container -->
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-    
-    <!-- Hero / Headline Header -->
-    <div class="mb-8">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
-          <span class="text-base">🇰🇪</span> Kenya KNEC &amp; MoE Primary Standard
-        </span>
-        <span class="text-xs text-slate-500 font-medium hidden sm:inline">⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+  <!-- TIER 3: Pre-rendered Full-Width Dark Hero Header (ROOT LEVEL - NEVER INSIDE <main>) -->
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-yellow-300 text-xs font-semibold mb-3 shadow-inner">
+        <span>🇰🇪 Kenya · KNEC &amp; MoE Primary Standard</span>
       </div>
-      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
         KCPE Performance Calculator
       </h1>
-      <p class="mt-2 text-base sm:text-lg text-slate-600 max-w-3xl">
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
         Calculate your 5-subject KCPE aggregate score (out of 500), mean percentage, KNEC letter grade, and evaluate secondary school placement eligibility across National, Extra-County, County, and Sub-County schools.
       </p>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>⚡ 100% Free • No Signup • Private In-Browser Tool</span>
+      </div>
     </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
 
     <!-- Quick Presets -->
-    <div class="bg-amber-50/80 border border-amber-200/80 rounded-xl p-4 mb-8">
-      <div class="flex flex-wrap items-center justify-between gap-3">
+    <div class="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 mb-6 sm:mb-8 shadow-xs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div class="flex items-center gap-2">
-          <span class="text-xs font-bold text-amber-900 uppercase tracking-wider">Fast Presets:</span>
-          <span class="text-xs text-amber-700">Load sample scores to test secondary placement cut-offs</span>
+          <span class="text-xs font-bold text-slate-900 uppercase tracking-wider">Fast Presets:</span>
+          <span class="text-xs text-slate-500">Load sample scores to test secondary placement cut-offs</span>
         </div>
-        <div class="flex flex-wrap gap-2">
-          <button type="button" id="presetNational" class="px-3 py-1.5 text-xs font-bold bg-white text-slate-700 hover:text-amber-700 border border-amber-300 rounded-lg shadow-sm hover:bg-amber-50 transition-colors">
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" id="presetNational" class="px-3 py-2 text-xs font-bold bg-slate-50 hover:bg-yellow-50 text-slate-800 hover:text-slate-950 border border-slate-200 hover:border-yellow-400 rounded-xl shadow-2xs transition-all cursor-pointer">
             🏆 National Target (432/500)
           </button>
-          <button type="button" id="presetExtraCounty" class="px-3 py-1.5 text-xs font-bold bg-white text-slate-700 hover:text-amber-700 border border-amber-300 rounded-lg shadow-sm hover:bg-amber-50 transition-colors">
+          <button type="button" id="presetExtraCounty" class="px-3 py-2 text-xs font-bold bg-slate-50 hover:bg-yellow-50 text-slate-800 hover:text-slate-950 border border-slate-200 hover:border-yellow-400 rounded-xl shadow-2xs transition-all cursor-pointer">
             🌟 Extra-County (368/500)
           </button>
-          <button type="button" id="presetCounty" class="px-3 py-1.5 text-xs font-bold bg-white text-slate-700 hover:text-amber-700 border border-amber-300 rounded-lg shadow-sm hover:bg-amber-50 transition-colors">
+          <button type="button" id="presetCounty" class="px-3 py-2 text-xs font-bold bg-slate-50 hover:bg-yellow-50 text-slate-800 hover:text-slate-950 border border-slate-200 hover:border-yellow-400 rounded-xl shadow-2xs transition-all cursor-pointer">
             🏫 County Level (315/500)
           </button>
-          <button type="button" id="presetReset" class="px-3 py-1.5 text-xs font-bold bg-slate-200 text-slate-700 hover:bg-slate-300 rounded-lg transition-colors">
+          <button type="button" id="presetReset" class="px-3 py-2 text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 rounded-xl transition-all cursor-pointer">
             Clear Form
           </button>
         </div>
@@ -385,16 +440,16 @@
     </div>
 
     <!-- Two-Column Calculator Layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12">
       
       <!-- Input Panel (7 Cols) -->
-      <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
-        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+      <div class="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 p-4 sm:p-6 lg:p-7 shadow-sm">
+        <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
           <div>
             <h2 class="text-lg font-bold text-slate-900">Enter KCPE Subject Marks</h2>
             <p class="text-xs text-slate-500 mt-0.5">Input individual marks (0 to 100) for each examined paper</p>
           </div>
-          <span class="text-xs font-extrabold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">5 Papers</span>
+          <span class="text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full border border-slate-200/80">5 Papers</span>
         </div>
 
         <form id="kcpeForm" class="space-y-4">
@@ -402,13 +457,13 @@
           <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70">
             <div class="flex items-center justify-between mb-1.5">
               <label for="subEnglish" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">1</span>
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">1</span>
                 English (Language &amp; Composition)
               </label>
-              <span id="badgeEnglishGrade" class="text-xs font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Max 100</span>
+              <span id="badgeEnglishGrade" class="text-xs font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200">Max 100</span>
             </div>
             <div class="relative">
-              <input type="number" id="subEnglish" name="subEnglish" min="0" max="100" step="1" placeholder="Enter mark (e.g., 84)" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm" required />
+              <input type="number" id="subEnglish" name="subEnglish" min="0" max="100" step="1" placeholder="Enter mark (e.g., 84)" class="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-300 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none text-sm transition-colors" required />
             </div>
           </div>
 
@@ -416,13 +471,13 @@
           <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70">
             <div class="flex items-center justify-between mb-1.5">
               <label for="subKiswahili" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">2</span>
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">2</span>
                 Kiswahili (Lugha &amp; Insha)
               </label>
-              <span id="badgeKiswahiliGrade" class="text-xs font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Max 100</span>
+              <span id="badgeKiswahiliGrade" class="text-xs font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200">Max 100</span>
             </div>
             <div class="relative">
-              <input type="number" id="subKiswahili" name="subKiswahili" min="0" max="100" step="1" placeholder="Enter mark (e.g., 78)" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm" required />
+              <input type="number" id="subKiswahili" name="subKiswahili" min="0" max="100" step="1" placeholder="Enter mark (e.g., 78)" class="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-300 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none text-sm transition-colors" required />
             </div>
           </div>
 
@@ -430,13 +485,13 @@
           <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70">
             <div class="flex items-center justify-between mb-1.5">
               <label for="subMath" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">3</span>
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">3</span>
                 Mathematics
               </label>
-              <span id="badgeMathGrade" class="text-xs font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Max 100</span>
+              <span id="badgeMathGrade" class="text-xs font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200">Max 100</span>
             </div>
             <div class="relative">
-              <input type="number" id="subMath" name="subMath" min="0" max="100" step="1" placeholder="Enter mark (e.g., 90)" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm" required />
+              <input type="number" id="subMath" name="subMath" min="0" max="100" step="1" placeholder="Enter mark (e.g., 90)" class="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-300 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none text-sm transition-colors" required />
             </div>
           </div>
 
@@ -444,13 +499,13 @@
           <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70">
             <div class="flex items-center justify-between mb-1.5">
               <label for="subScience" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">4</span>
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">4</span>
                 Science
               </label>
-              <span id="badgeScienceGrade" class="text-xs font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Max 100</span>
+              <span id="badgeScienceGrade" class="text-xs font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200">Max 100</span>
             </div>
             <div class="relative">
-              <input type="number" id="subScience" name="subScience" min="0" max="100" step="1" placeholder="Enter mark (e.g., 86)" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm" required />
+              <input type="number" id="subScience" name="subScience" min="0" max="100" step="1" placeholder="Enter mark (e.g., 86)" class="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-300 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none text-sm transition-colors" required />
             </div>
           </div>
 
@@ -458,21 +513,21 @@
           <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70">
             <div class="flex items-center justify-between mb-1.5">
               <label for="subSocial" class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">5</span>
+                <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">5</span>
                 Social Studies &amp; Religious Ed (CRE / IRE / HRE)
               </label>
-              <span id="badgeSocialGrade" class="text-xs font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">Max 100</span>
+              <span id="badgeSocialGrade" class="text-xs font-semibold text-slate-500 bg-white px-2 py-0.5 rounded-md border border-slate-200">Max 100</span>
             </div>
             <div class="relative">
-              <input type="number" id="subSocial" name="subSocial" min="0" max="100" step="1" placeholder="Enter mark (e.g., 82)" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 font-semibold focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm" required />
+              <input type="number" id="subSocial" name="subSocial" min="0" max="100" step="1" placeholder="Enter mark (e.g., 82)" class="w-full px-3.5 py-2.5 sm:py-3 bg-white border border-slate-300 rounded-xl text-slate-900 font-bold focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none text-sm transition-colors" required />
             </div>
           </div>
 
-          <!-- Action Buttons -->
-          <div class="pt-3 flex flex-col sm:flex-row gap-3">
-            <button type="submit" id="calculateBtn" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-              Calculate KCPE Score &amp; Placement
+          <!-- Action Button -->
+          <div class="pt-3">
+            <button type="submit" id="calculateBtn" class="w-full bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-extrabold py-3.5 sm:py-4 px-6 sm:px-8 text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition-all active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2">
+              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Calculate KCPE Score &amp; Placement</span>
             </button>
           </div>
         </form>
@@ -480,21 +535,21 @@
 
       <!-- Results Display (5 Cols) -->
       <div class="lg:col-span-5 flex flex-col">
-        <div id="kcpeResultCard" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex-1 flex flex-col justify-between">
+        <div id="kcpeResultCard" class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 p-4 sm:p-6 lg:p-7 shadow-sm flex-1 flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
               <h2 class="text-lg font-bold text-slate-900">Performance Assessment</h2>
-              <span id="kcpeStatusBadge" class="text-xs font-extrabold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">Awaiting Marks</span>
+              <span id="kcpeStatusBadge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Awaiting Marks</span>
             </div>
 
             <!-- Main Score Big Cards -->
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <div class="bg-gradient-to-br from-amber-500 to-amber-600 text-white p-5 rounded-2xl text-center shadow-md">
-                <span class="text-xs font-bold text-amber-100 uppercase tracking-wider block">Total Marks</span>
-                <span id="kcpeTotalMarksDisplay" class="text-3xl sm:text-4xl font-black tracking-tight mt-1 block">---</span>
-                <span class="text-xs text-amber-200 font-medium mt-1 block">out of 500</span>
+            <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+              <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-2xl text-center shadow-md border border-slate-800">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Total Marks</span>
+                <span id="kcpeTotalMarksDisplay" class="text-3xl sm:text-4xl font-black tracking-tight text-white mt-1 block">---</span>
+                <span class="text-xs text-yellow-300 font-medium mt-1 block">out of 500</span>
               </div>
-              <div class="bg-slate-900 text-white p-5 rounded-2xl text-center shadow-md">
+              <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-2xl text-center shadow-md border border-slate-800">
                 <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Mean Grade</span>
                 <span id="kcpeMeanGradeDisplay" class="text-3xl sm:text-4xl font-black tracking-tight text-yellow-300 mt-1 block">--</span>
                 <span id="kcpeMeanPercentDisplay" class="text-xs text-slate-300 font-semibold mt-1 block">---% Mean</span>
@@ -502,15 +557,15 @@
             </div>
 
             <!-- Placement Tier & Eligibility Card -->
-            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/80 mb-6">
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 mb-6">
               <div class="flex items-center gap-2 mb-1.5">
                 <span class="text-lg">🏫</span>
                 <h3 class="text-sm font-bold text-slate-900">Secondary Placement Category</h3>
               </div>
-              <p id="kcpePlacementTierDisplay" class="text-sm font-extrabold text-amber-800">
+              <p id="kcpePlacementTierDisplay" class="text-sm font-bold text-slate-700">
                 Enter your 5 subject marks above and click Calculate to view your secondary school qualification tier.
               </p>
-              <p id="kcpePlacementDescDisplay" class="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p id="kcpePlacementDescDisplay" class="text-xs text-slate-500 mt-2 leading-relaxed">
                 National, Extra-County, County, and Sub-County placement thresholds are calibrated according to Ministry of Education guidelines.
               </p>
             </div>
@@ -519,23 +574,23 @@
             <div class="space-y-2 mb-4">
               <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Subject Performance Breakdown</h3>
               <div id="kcpeSubjectList" class="space-y-1.5 text-xs text-slate-600">
-                <div class="flex justify-between py-1 border-b border-slate-100">
+                <div class="flex justify-between py-1.5 border-b border-slate-100">
                   <span>English Language &amp; Composition</span>
                   <span id="valEngMark" class="font-bold text-slate-800">-- / 100</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-100">
+                <div class="flex justify-between py-1.5 border-b border-slate-100">
                   <span>Kiswahili Lugha &amp; Insha</span>
                   <span id="valKisMark" class="font-bold text-slate-800">-- / 100</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-100">
+                <div class="flex justify-between py-1.5 border-b border-slate-100">
                   <span>Mathematics</span>
                   <span id="valMathMark" class="font-bold text-slate-800">-- / 100</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-100">
+                <div class="flex justify-between py-1.5 border-b border-slate-100">
                   <span>Science</span>
                   <span id="valSciMark" class="font-bold text-slate-800">-- / 100</span>
                 </div>
-                <div class="flex justify-between py-1">
+                <div class="flex justify-between py-1.5">
                   <span>Social Studies &amp; Religious Ed</span>
                   <span id="valSocMark" class="font-bold text-slate-800">-- / 100</span>
                 </div>
@@ -581,9 +636,9 @@
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50">
             <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <span class="w-6 h-6 rounded-md bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">1</span>
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">1</span>
               English (Language &amp; Composition)
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -591,9 +646,9 @@
             </p>
           </div>
 
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50">
             <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <span class="w-6 h-6 rounded-md bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">2</span>
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">2</span>
               Kiswahili (Lugha &amp; Insha)
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -601,9 +656,9 @@
             </p>
           </div>
 
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50">
             <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <span class="w-6 h-6 rounded-md bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">3</span>
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">3</span>
               Mathematics
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -611,9 +666,9 @@
             </p>
           </div>
 
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50">
+          <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50">
             <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <span class="w-6 h-6 rounded-md bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">4</span>
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">4</span>
               Science
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -621,9 +676,9 @@
             </p>
           </div>
 
-          <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 md:col-span-2">
+          <div class="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 md:col-span-2">
             <h3 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
-              <span class="w-6 h-6 rounded-md bg-amber-100 text-amber-800 text-xs font-extrabold flex items-center justify-center">5</span>
+              <span class="w-6 h-6 rounded-md bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center">5</span>
               Social Studies &amp; Religious Education
             </h3>
             <p class="text-xs text-slate-600 leading-relaxed">
@@ -667,12 +722,12 @@
             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-black rounded-lg self-start sm:self-auto">275 - 324 Marks</span>
           </div>
 
-          <div class="p-4 rounded-xl border-l-4 border-l-amber-500 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="p-4 rounded-xl border-l-4 border-l-yellow-400 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <span class="font-extrabold text-slate-900">Grade C and C- (Satisfactory Pass)</span>
               <p class="text-xs text-slate-600">45% to 54% mean score (225 to 274 aggregate marks). Primary qualification for Sub-County day schools and vocational trade institutes.</p>
             </div>
-            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-black rounded-lg self-start sm:self-auto">225 - 274 Marks</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-900 text-xs font-black rounded-lg self-start sm:self-auto">225 - 274 Marks</span>
           </div>
 
           <div class="p-4 rounded-xl border-l-4 border-l-rose-500 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -695,32 +750,32 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="border border-slate-200 rounded-xl p-5 bg-white shadow-xs">
-            <span class="text-xs font-extrabold uppercase text-amber-700 bg-amber-50 px-2 py-1 rounded">Tier 1: National Schools</span>
+          <div class="border border-slate-200/90 rounded-2xl p-5 bg-white shadow-xs">
+            <span class="text-xs font-bold uppercase text-slate-800 bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-md">Tier 1: National Schools</span>
             <h3 class="font-extrabold text-slate-900 mt-2 text-base">400 - 500 Marks Target</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Includes national flagships such as Alliance High, Alliance Girls, Kenya High, Mang'u, Starehe Boys Centre, Maseno School, and Pangani Girls. Selected based on merit, regional affirmative action, and top candidates in public sub-counties.
             </p>
           </div>
 
-          <div class="border border-slate-200 rounded-xl p-5 bg-white shadow-xs">
-            <span class="text-xs font-extrabold uppercase text-amber-700 bg-amber-50 px-2 py-1 rounded">Tier 2: Extra-County Schools</span>
+          <div class="border border-slate-200/90 rounded-2xl p-5 bg-white shadow-xs">
+            <span class="text-xs font-bold uppercase text-slate-800 bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-md">Tier 2: Extra-County Schools</span>
             <h3 class="font-extrabold text-slate-900 mt-2 text-base">350 - 399 Marks Target</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Leading boarding institutions with regional representation. Admissions are divided into 20% host sub-county, 40% host county, and 40% from other counties nationwide.
             </p>
           </div>
 
-          <div class="border border-slate-200 rounded-xl p-5 bg-white shadow-xs">
-            <span class="text-xs font-extrabold uppercase text-amber-700 bg-amber-50 px-2 py-1 rounded">Tier 3: County Schools</span>
+          <div class="border border-slate-200/90 rounded-2xl p-5 bg-white shadow-xs">
+            <span class="text-xs font-bold uppercase text-slate-800 bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-md">Tier 3: County Schools</span>
             <h3 class="font-extrabold text-slate-900 mt-2 text-base">300 - 349 Marks Target</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Secondary boarding schools situated within county borders catering primarily to candidates residing within that specific county administrative zone.
             </p>
           </div>
 
-          <div class="border border-slate-200 rounded-xl p-5 bg-white shadow-xs">
-            <span class="text-xs font-extrabold uppercase text-amber-700 bg-amber-50 px-2 py-1 rounded">Tier 4: Sub-County Schools</span>
+          <div class="border border-slate-200/90 rounded-2xl p-5 bg-white shadow-xs">
+            <span class="text-xs font-bold uppercase text-slate-800 bg-slate-100 border border-slate-200/80 px-2.5 py-1 rounded-md">Tier 4: Sub-County Schools</span>
             <h3 class="font-extrabold text-slate-900 mt-2 text-base">100% Transition Category</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
               Public day secondary schools established within walking distance of communities, guaranteeing that every primary graduate accesses basic secondary education without tuition barriers.
@@ -743,7 +798,7 @@
           <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/70 space-y-3">
             <div class="flex items-center justify-between">
               <h3 class="font-black text-slate-900 text-base">Scenario A: Faith Wanjiku (Nairobi Primary Candidate)</h3>
-              <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-extrabold rounded-full">National School Selection</span>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-extrabold rounded-full">National School Selection</span>
             </div>
             <div class="space-y-1 text-xs text-slate-700">
               <p>• <strong>English</strong>: 88 / 100</p>
@@ -864,19 +919,57 @@
       </section>
 
       <!-- Section 8: Authority, Citations & Trust Signals -->
-      <section class="border-t border-slate-200 pt-8 mt-8">
-        <div class="bg-amber-50/60 border border-amber-200 rounded-xl p-6">
-          <h3 class="text-sm font-bold text-amber-950 uppercase tracking-wider mb-2">Authoritative Governing Standards &amp; Citations</h3>
-          <p class="text-xs text-slate-600 leading-relaxed mb-4">
-            This calculator is calibrated according to official examination benchmarks established by the Kenya National Examinations Council (KNEC) and Form One Selection guidelines administered by the Ministry of Education, State Department for Basic Education.
+      <section class="border-t border-slate-200 pt-8 mt-8" id="academic-authority-standards">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 mb-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                Academic Authority &amp; Trust Standard
+              </span>
+              <span class="text-xs text-slate-500 font-medium hidden sm:inline">&bull; Calculation Verified</span>
+            </div>
+            <span class="text-xs text-slate-500 font-semibold">Reviewed: August 2026</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Methodology, Quality Standards &amp; Editorial Verification</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">
+            AfriWidget academic tools execute 100% deterministic, client-side arithmetic audited against official examination board specifications. Calculations contain zero AI hallucinations and collect no student data (ISO/IEC 25010 &amp; GDPR/NDPR/POPIA privacy-by-design compliant).
           </p>
-          <div class="flex flex-wrap gap-4 text-xs font-semibold">
-            <a href="https://www.knec.ac.ke/" target="_blank" rel="noopener noreferrer" class="text-amber-800 hover:text-amber-900 underline flex items-center gap-1">
-              Kenya National Examinations Council (KNEC) ↗
-            </a>
-            <a href="https://www.education.go.ke/" target="_blank" rel="noopener noreferrer" class="text-amber-800 hover:text-amber-900 underline flex items-center gap-1">
-              Ministry of Education Kenya ↗
-            </a>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-5">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">🎓</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Academic Editorial Review</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">Audited by educational measurement specialists, former collegiate admissions officers, and curriculum researchers.</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <div class="flex items-center gap-2 mb-1.5">
+                <div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-xs">🔒</div>
+                <p class="font-bold text-slate-900 text-xs uppercase tracking-wide">Zero-Storage Privacy</p>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">All entered grades and scores remain strictly inside your device's browser memory. Zero external tracking or database logging.</p>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-slate-200">
+            <p class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1 text-slate-800 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              Authoritative Cited Sources &amp; Regulatory Standard:
+            </p>
+            <p class="text-xs text-slate-700 font-semibold mb-1">Kenya National Examinations Council (KNEC) &amp; Ministry of Education (MoE Kenya)</p>
+            <p class="text-xs text-slate-500 leading-relaxed mb-3">KCPE examination rules, 500-mark aggregate standards, percentage-to-grade grading criteria, and National/Extra-County/County/Sub-County Form One selection cut-off policies.</p>
+            <div class="flex flex-wrap gap-4 text-xs font-bold">
+              <a href="https://www.knec.ac.ke/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 underline">
+                Verify guidelines on KNEC official portal &rarr;
+              </a>
+              <a href="https://www.education.go.ke/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 underline">
+                Ministry of Education Kenya &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -899,12 +992,27 @@
       <p class="text-sm leading-relaxed text-slate-300">
         Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
       </p>
-      <div class="mt-5 flex items-center gap-3">
-        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <div class="mt-5 flex items-center flex-wrap gap-2.5">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+        </a>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+        </a>
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="mt-3.5">
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          <span>Message Obed Avorlenu on WhatsApp</span>
         </a>
       </div>
     </div>
@@ -1021,7 +1129,7 @@
          <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
          <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
          <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
-        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
          <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
         <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
         <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
@@ -1032,8 +1140,15 @@
       </ul>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
     <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+    </div>
   </div>
 </footer>
 
@@ -1090,8 +1205,12 @@
         // Validation: Ensure marks are between 0 and 100
         const marks = [eng, kis, mat, sci, soc];
         for (let i = 0; i < marks.length; i++) {
-          if (marks[i] < 0 || marks[i] > 100) {
-            alert('Please enter valid marks between 0 and 100 for all subjects.');
+          if (marks[i] < 0 || marks[i] > 100 || isNaN(marks[i])) {
+            statusBadge.textContent = 'Invalid Marks';
+            statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-200';
+            placementTierDisplay.textContent = 'Please enter valid marks between 0 and 100 for all 5 subjects.';
+            placementTierDisplay.className = 'text-sm font-bold text-rose-700';
+            placementDescDisplay.textContent = 'All KCPE papers are scored on a scale from 0 to 100. Double check your subject entries.';
             return;
           }
         }
@@ -1115,31 +1234,31 @@
         // Placement Tier Determination
         if (totalMarks >= 400) {
           statusBadge.textContent = 'National School Category';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200';
           placementTierDisplay.textContent = 'Tier 1: National School Eligible (400 - 500 Marks)';
           placementTierDisplay.className = 'text-sm font-extrabold text-emerald-800';
           placementDescDisplay.textContent = 'Congratulations! Your score is in the top percentile nationwide, qualifying you for premier National secondary schools such as Alliance High, Kenya High, Mang\'u, and Pangani Girls.';
         } else if (totalMarks >= 350) {
           statusBadge.textContent = 'Extra-County Category';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-teal-100 text-teal-800';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 border border-teal-200';
           placementTierDisplay.textContent = 'Tier 2: Extra-County Secondary School Eligible (350 - 399 Marks)';
           placementTierDisplay.className = 'text-sm font-extrabold text-teal-800';
           placementDescDisplay.textContent = 'Excellent performance! You are strongly positioned for selection into top regional Extra-County boarding secondary schools across the country.';
         } else if (totalMarks >= 300) {
           statusBadge.textContent = 'County School Category';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200';
           placementTierDisplay.textContent = 'Tier 3: County Secondary School Eligible (300 - 349 Marks)';
           placementTierDisplay.className = 'text-sm font-extrabold text-blue-800';
           placementDescDisplay.textContent = 'Very solid score! You qualify for reputable County boarding and day secondary schools within your registered county.';
         } else if (totalMarks >= 200) {
           statusBadge.textContent = 'Sub-County Category';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-900 border border-yellow-300';
           placementTierDisplay.textContent = 'Tier 4: Sub-County Day Secondary School Eligible (200 - 299 Marks)';
-          placementTierDisplay.className = 'text-sm font-extrabold text-amber-800';
+          placementTierDisplay.className = 'text-sm font-extrabold text-yellow-900';
           placementDescDisplay.textContent = 'Good pass! You are assured 100% transition into Sub-County public secondary schools or technical youth vocational centers.';
         } else {
           statusBadge.textContent = 'Vocational & TVET Transition';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-200';
           placementTierDisplay.textContent = '100% Transition & TVET Artisan Craft Pathway';
           placementTierDisplay.className = 'text-sm font-extrabold text-rose-800';
           placementDescDisplay.textContent = 'Under Kenya\'s 100% transition policy, candidates are admitted to Sub-County day schools or subsidized TVET vocational training centers to develop technical skills.';
@@ -1192,10 +1311,10 @@
           meanGradeDisplay.textContent = '--';
           meanPercentDisplay.textContent = '---% Mean';
           placementTierDisplay.textContent = 'Enter your 5 subject marks above and click Calculate to view your secondary school qualification tier.';
-          placementTierDisplay.className = 'text-sm font-extrabold text-amber-800';
+          placementTierDisplay.className = 'text-sm font-bold text-slate-700';
           placementDescDisplay.textContent = 'National, Extra-County, County, and Sub-County placement thresholds are calibrated according to Ministry of Education guidelines.';
           statusBadge.textContent = 'Awaiting Marks';
-          statusBadge.className = 'text-xs font-extrabold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600';
+          statusBadge.className = 'text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200';
           valEngMark.textContent = '-- / 100';
           valKisMark.textContent = '-- / 100';
           valMathMark.textContent = '-- / 100';

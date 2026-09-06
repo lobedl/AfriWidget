@@ -736,7 +736,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         if (!anyProvided) {
           if (userTriggered) {
             stdConfigs.forEach(function (cfg) { markInputError(cfg.id); });
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your marks (0–100) for Test 1, Assignment 1, Test 2, Assignment 2, and Trial Exam above.</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your marks (0–100) for Test 1, Assignment 1, Test 2, Assignment 2, and Trial Exam above.</p></div></div>');
           } else {
             var msgEl = byId('icassMessage');
             if (msgEl) msgEl.classList.add('hidden');
@@ -750,7 +750,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
           if (userTriggered) {
             missing.forEach(function (m) { markInputError(m.id); });
             var missingLabels = missing.map(function (m) { return m.label; }).join(', ');
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please provide marks for: <strong class="underline font-black">' + missingLabels + '</strong>.</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Incomplete Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please provide marks for: <strong class="underline font-black">' + missingLabels + '</strong>.</p></div></div>');
           }
           return;
         }
@@ -758,7 +758,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         if (invalid.length > 0) {
           invalid.forEach(function (inv) { markInputError(inv.id); });
           var invalidLabels = invalid.map(function (i) { return i.label; }).join(', ');
-          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Assessment marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalidLabels + '</strong>.</p></div></div>');
+          showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Assessment marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalidLabels + '</strong>.</p></div></div>');
           return;
         }
 
@@ -790,7 +790,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         if (!anyTriProvided) {
           if (userTriggered) {
             triConfigs.forEach(function (cfg) { markInputError(cfg.id); });
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for Test (30%), Assignment (20%), and Internal Exam (50%).</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Enter Your Assessment Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for Test (30%), Assignment (20%), and Internal Exam (50%).</p></div></div>');
           }
           return;
         }
@@ -798,14 +798,14 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         if (missing.length > 0) {
           if (userTriggered) {
             missing.forEach(function (m) { markInputError(m.id); });
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for: <strong class="underline font-black">' + missing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Incomplete Marks</p><p class="mt-1 text-sm font-bold text-red-900">Please enter marks for: <strong class="underline font-black">' + missing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
           }
           return;
         }
 
         if (invalid.length > 0) {
           invalid.forEach(function (inv) { markInputError(inv.id); });
-          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
+          showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Invalid Score Values</p><p class="mt-1 text-sm font-bold text-red-900">Marks must be between 0% and 100%. Check: <strong class="underline font-black">' + invalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
           return;
         }
 
@@ -852,7 +852,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
 
         if (!anyCustProvided) {
           if (userTriggered) {
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Enter Custom Assessment Figures</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your scores and percentage weights (totaling 100%).</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Enter Custom Assessment Figures</p><p class="mt-1 text-sm font-bold text-red-900">Please enter your scores and percentage weights (totaling 100%).</p></div></div>');
           }
           return;
         }
@@ -860,14 +860,14 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
         if (custMissing.length > 0) {
           if (userTriggered) {
             custMissing.forEach(function (m) { markInputError(m.id); });
-            showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Incomplete Custom Fields</p><p class="mt-1 text-sm font-bold text-red-900">Please complete: <strong class="underline font-black">' + custMissing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
+            showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Incomplete Custom Fields</p><p class="mt-1 text-sm font-bold text-red-900">Please complete: <strong class="underline font-black">' + custMissing.map(function(m){return m.label;}).join(', ') + '</strong>.</p></div></div>');
           }
           return;
         }
 
         if (custInvalid.length > 0) {
           custInvalid.forEach(function (inv) { markInputError(inv.id); });
-          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-red-950">Invalid Values</p><p class="mt-1 text-sm font-bold text-red-900">Check: <strong class="underline font-black">' + custInvalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
+          showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-red-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-red-950">Invalid Values</p><p class="mt-1 text-sm font-bold text-red-900">Check: <strong class="underline font-black">' + custInvalid.map(function(i){return i.label;}).join(', ') + '</strong>.</p></div></div>');
           return;
         }
 
@@ -875,7 +875,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
           customConfigs.forEach(function (cfg) { markInputError(cfg.weightId); });
           var diff = custWeightSum - 100;
           var diffTxt = diff > 0 ? 'exceeds 100% by ' + diff.toFixed(1) + '%' : 'is short by ' + Math.abs(diff).toFixed(1) + '%';
-          showError('<div class="flex items-start gap-3"><span class="text-2xl">⚠️</span><div><p class="text-lg font-black text-amber-950">Weight Total Error (' + custWeightSum.toFixed(1) + '%)</p><p class="mt-1 text-sm font-bold text-amber-900">Component weights must total 100% (currently ' + diffTxt + ').</p></div></div>', true);
+          showError('<div class="flex items-start gap-3"><svg class="w-6 h-6 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><div><p class="text-lg font-black text-amber-950">Weight Total Error (' + custWeightSum.toFixed(1) + '%)</p><p class="mt-1 text-sm font-bold text-amber-900">Component weights must total 100% (currently ' + diffTxt + ').</p></div></div>', true);
           return;
         }
       }
@@ -906,19 +906,19 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       var progressColor = 'bg-yellow-500';
 
       if (icassResultScore >= 75) {
-        bandText = '🌟 Outstanding Continuous Assessment (Distinction Level — ' + icassResultScore.toFixed(2) + '%)';
+        bandText = 'Distinction Level — Outstanding Continuous Assessment (' + icassResultScore.toFixed(2) + '%)';
         bandClass = 'text-emerald-700 bg-emerald-50 border-emerald-300';
         progressColor = 'bg-emerald-500';
       } else if (icassResultScore >= 50) {
-        bandText = '✅ Good Academic Standing (Passing Range — ' + icassResultScore.toFixed(2) + '%)';
+        bandText = 'Passing Range — Good Academic Standing (' + icassResultScore.toFixed(2) + '%)';
         bandClass = 'text-blue-700 bg-blue-50 border-blue-300';
         progressColor = 'bg-blue-500';
       } else if (icassResultScore >= 40) {
-        bandText = '⚠️ Eligible for Final Exam Entry (Sub-minimum 40% met — ' + icassResultScore.toFixed(2) + '%)';
+        bandText = 'Eligible for Final Exam Entry — DHET 40% Sub-minimum Met (' + icassResultScore.toFixed(2) + '%)';
         bandClass = 'text-amber-800 bg-amber-50 border-amber-300';
         progressColor = 'bg-amber-500';
       } else {
-        bandText = '🚨 Below Sub-Minimum (< 40%) — Urgent Mark Recovery Recommended Before Exam Admission';
+        bandText = 'Below Sub-Minimum (< 40%) — Mark Recovery Required Before Exam Admission';
         bandClass = 'text-red-700 bg-red-50 border-red-300';
         progressColor = 'bg-red-500';
       }
@@ -939,10 +939,10 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       var eligEl = byId('icassEligibility');
       if (eligEl) {
         if (icassResultScore >= 40) {
-          eligEl.innerHTML = '<div class="flex items-center gap-2 text-emerald-800 font-extrabold text-sm sm:text-base"><span class="text-xl">✅</span><span><strong>Exam Admission Status: QUALIFIED</strong> (Meets DHET 40% sub-minimum requirement for national exam entry)</span></div>';
+          eligEl.innerHTML = '<div class="flex items-center gap-2.5 text-emerald-800 font-extrabold text-sm sm:text-base"><svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span><strong>Exam Admission Status: QUALIFIED</strong> (Meets DHET 40% sub-minimum requirement for national exam entry)</span></div>';
         } else {
           var neededPoints = (40 - icassResultScore).toFixed(2);
-          eligEl.innerHTML = '<div class="flex items-center gap-2 text-red-800 font-extrabold text-sm sm:text-base"><span class="text-xl">⚠️</span><span><strong>Exam Admission Status: AT RISK</strong> (Short by ' + neededPoints + '% to reach the 40% exam sub-minimum)</span></div>';
+          eligEl.innerHTML = '<div class="flex items-center gap-2.5 text-red-800 font-extrabold text-sm sm:text-base"><svg class="w-5 h-5 text-red-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><span><strong>Exam Admission Status: AT RISK</strong> (Short by ' + neededPoints + '% to reach the 40% exam sub-minimum)</span></div>';
         }
       }
 
@@ -1035,13 +1035,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       copyBtn.addEventListener('click', function () {
         var score = byId('icassScore') ? byId('icassScore').textContent : '';
         var band = byId('icassBand') ? byId('icassBand').textContent : '';
-        var summary = '📚 TVET ICASS Mark Calculation Report (AfriWidget)\n' +
+        var summary = 'TVET ICASS Mark Calculation Report (AfriWidget)\n' +
           '• Overall ICASS Score: ' + score + '\n' +
           '• Assessment Band: ' + band + '\n' +
           '• Calculator: https://afriwidget.com/icass-calculator';
         navigator.clipboard.writeText(summary).then(function () {
           var original = copyBtn.innerHTML;
-          copyBtn.innerHTML = '<span>✅</span> Copied to Clipboard!';
+          copyBtn.innerHTML = '<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg><span>Copied to Clipboard!</span>';
           setTimeout(function () { copyBtn.innerHTML = original; }, 2000);
         }).catch(function () {});
       });

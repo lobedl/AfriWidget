@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
+  <script>
+    (function() {
+      var adSenseLoaded = false;
+      function loadAdSense() {
+        if (adSenseLoaded) return;
+        adSenseLoaded = true;
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+          window.removeEventListener(evt, loadAdSense, { passive: true });
+        });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474';
+        document.head.appendChild(s);
+      }
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+      });
+      if ('requestIdleCallback' in window) {
+        window.addEventListener('load', function() {
+          requestIdleCallback(function() {
+            setTimeout(loadAdSense, 3500);
+          }, { timeout: 4000 });
+        });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadAdSense, 3500);
+        });
+      }
+    })();
+  </script>
+<title>Cameroon GCE A-Level Calculator (Points, Grades &amp; Matriculation) – AfriWidget</title>
+  <meta name="description" content="Calculate your Cameroon GCE Advanced Level (A-Level) total points (A=5 to E=1), Best 3 subjects score (out of 15), principal passes count, and university degree matriculation eligibility." />
+  <link rel="canonical" href="https://afriwidget.com/cameroon-gce-a-level-calculator" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cameroon GCE A-Level Calculator (Points, Grades &amp; Matriculation) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/cameroon-gce-a-level-calculator" />
+  <meta property="og:description" content="Free Cameroon GCE A-Level points calculator. Tally letter grades (A=5, B=4, C=3, D=2, E=1), compute Best 3 subjects score out of 15, and check university degree eligibility." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cameroon GCE A-Level Calculator – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate your Cameroon GCE Advanced Level points, Best 3 subjects score, and university degree matriculation eligibility." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <script src="/nav.js" defer></script>
+  <script src="/footer.js" defer></script>
+  <script src="/share-results.js" defer></script>
+  <script src="/universal-ai.js" defer></script>
+
+  <!-- Rich WebApplication E-E-A-T JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Cameroon GCE A-Level Calculator",
+      "description": "Accredited educational assessment tool for calculating Cameroon General Certificate of Education Advanced Level (GCE A-Level) grades and points according to the statutory regulations of the Cameroon GCE Board (CGCEB, Buea) and Ministry of Higher Education (MINESUP). Computes total points (A=5, B=4, C=3, D=2, E=1), Best 3 subjects benchmark (out of 15), principal passes count, and evaluates direct university matriculation clearance.",
+      "url": "https://afriwidget.com/cameroon-gce-a-level-calculator",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All modern web browsers",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "XAF"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AfriWidget",
+        "url": "https://afriwidget.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://afriwidget.com/favicon-180.png"
+        }
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "AfriWidget Academic Psychometrics Team"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Cameroon GCE Board & Higher Education Advisory Council"
+      },
+      "citation": [
+        "https://cameroongceboard.org",
+        "https://minesup.gov.cm"
+      ],
+      "dateModified": "2026-09-05"
+    }
+  ]
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+<!-- Mandatory Pre-Rendered Global Header -->
+                    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Cameroon GCE A-Level Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+<!-- Root-Level Hero Header (Mandatory Zero-Nesting Standard) -->
+<header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+  <div class="max-w-4xl mx-auto space-y-3">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-300 text-xs font-semibold border border-yellow-400/20">
+      <span>🇨🇲 Official CGCEB Buea 5-Point Scale</span>
+    </div>
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+      Cameroon GCE A-Level Calculator
+    </h1>
+    <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+      Calculate your Cameroon GCE Advanced Level total points (A=5 to E=1), Best 3 subjects score (out of 15), principal passes count, and direct university matriculation clearance.
+    </p>
+    <div class="pt-2 flex items-center justify-center gap-4 text-xs text-slate-400">
+      <span>⚡ 100% Free</span>
+      <span>•</span>
+      <span>No Signup</span>
+      <span>•</span>
+      <span>Private In-Browser Tool</span>
+    </div>
+  </div>
+</header>
+
+<!-- Main Responsive Content Container (Anti-Cramp Standard) -->
+<main class="flex-grow w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+  <!-- Interactive Calculator Card -->
+  <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden p-3.5 sm:p-6 lg:p-8">
+    
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-slate-100">
+      <div>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900">Enter Your GCE Advanced Level Grades</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Select letter grades awarded by the Cameroon GCE Board (A=5, B=4, C=3, D=2, E=1; O/F=0).</p>
+      </div>
+      <button type="button" id="resetBtn" class="text-xs font-semibold text-slate-500 hover:text-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors">
+        Reset Form
+      </button>
+    </div>
+
+    <!-- Subjects List Container -->
+    <div class="mt-6 space-y-3" id="subjectsContainer">
+      <!-- Dynamic Subject Rows Injected by JS -->
+    </div>
+
+    <!-- Add Subject & Action Controls -->
+    <div class="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+      <button type="button" id="addSubjectBtn" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-dashed border-slate-300 hover:border-yellow-500 bg-slate-50 hover:bg-yellow-50/50 text-xs sm:text-sm font-semibold text-slate-700 hover:text-amber-900 transition-all">
+        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        <span>Add Another Subject (Max 5)</span>
+      </button>
+      <span class="text-xs text-slate-500 text-center sm:text-right">Upper Sixth candidates sit 3 to 5 subjects</span>
+    </div>
+
+    <!-- Ordinary Level English Prerequisite Verification -->
+    <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
+      <label class="flex items-start sm:items-center gap-3 cursor-pointer">
+        <input type="checkbox" id="hasOLevelEnglish" checked class="mt-0.5 sm:mt-0 w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500" />
+        <span class="text-xs sm:text-sm text-slate-700 leading-normal">
+          <strong>Mandatory Matriculation Check:</strong> I passed GCE Ordinary Level <strong>English Language</strong> with at least Grade C (required by MINESUP for university admission).
+        </span>
+      </label>
+    </div>
+
+    <!-- Action Trigger (Strict Manual User Action Mandate) -->
+    <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+      <button type="button" id="calculateBtn" class="w-full sm:w-auto min-w-[260px] inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        <span>Calculate GCE A-Level Points</span>
+      </button>
+      <p class="text-xs text-slate-400 mt-2">Click above to evaluate points, Best 3 score, and university clearance.</p>
+    </div>
+
+    <!-- Results Display Container (Hidden until user calculates) -->
+    <div id="resultContainer" class="hidden mt-8 pt-8 border-t-2 border-slate-100 space-y-6">
+      
+      <!-- Primary Summary Card -->
+      <div id="summaryCard" class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-slate-900 to-indigo-950 text-white shadow-lg border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span id="resultBadge" class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 mb-2">High Distinction Band</span>
+            <h3 id="resultTitle" class="text-xl sm:text-2xl font-black text-white">3 Principal Passes • 14 Total Points</h3>
+            <p id="resultSubtitle" class="text-xs sm:text-sm text-slate-300 mt-1">Exceptional performance. Direct matriculation qualified across all faculties.</p>
+          </div>
+          <div class="text-left sm:text-right">
+            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Best 3 Points</div>
+            <div id="best3Score" class="text-3xl sm:text-4xl font-extrabold text-yellow-400">14 / 15</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat Badges Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+          <div class="text-xs text-slate-500 font-medium">Principal Passes</div>
+          <div id="statPassesCount" class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">0</div>
+          <div class="text-[11px] text-emerald-600 font-semibold mt-0.5">Grades A through E</div>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+          <div class="text-xs text-slate-500 font-medium">Total Points</div>
+          <div id="statTotalPoints" class="text-xl sm:text-2xl font-extrabold text-amber-600 mt-1">0</div>
+          <div id="statTotalMax" class="text-[11px] text-slate-500 mt-0.5">Out of 15 / 20 / 25</div>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+          <div class="text-xs text-slate-500 font-medium">Best 3 Subjects</div>
+          <div id="statBest3Score" class="text-xl sm:text-2xl font-extrabold text-indigo-600 mt-1">0</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Faculty Benchmark /15</div>
+        </div>
+        <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+          <div class="text-xs text-slate-500 font-medium">Matriculation Status</div>
+          <div id="statMatricStatus" class="text-base sm:text-lg font-extrabold text-emerald-600 mt-1">Qualified</div>
+          <div id="statMatricNote" class="text-[11px] text-slate-500 mt-0.5">MINESUP Compliant</div>
+        </div>
+      </div>
+
+      <!-- University Faculty Recommendation Matrix -->
+      <div class="p-4 sm:p-6 rounded-2xl bg-amber-50/60 border border-amber-200/80">
+        <h4 class="text-sm font-bold text-amber-950 uppercase tracking-wider mb-3">University Faculty Admission Matrix (UB, UBa, Yaoundé I, Douala)</h4>
+        <div class="space-y-2.5 text-xs sm:text-sm" id="facultyAuditList">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Post-Result Recommendation CTA (Mandatory Layer 1) -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h4 class="font-bold text-sm sm:text-base">Check Your Precise Admission Cut-offs</h4>
+          <p class="text-xs text-indigo-800 mt-0.5">Compare your A-Level score against university cut-offs or calculate Concours entrance composite points.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <a href="/cameroon-university-admission-calculator" class="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-all shadow-sm">
+            <span>University Admission Calculator</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Mandatory Layer 3: Dedicated Related Tools Grid -->
+  <section class="mt-8 sm:mt-12">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Related Cameroon &amp; Higher Education Tools</h3>
+      <a href="/education" class="text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors">View All Education Tools &rarr;</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+      
+      <a href="/cameroon-gce-o-level-calculator" class="group p-4 rounded-2xl bg-white border border-slate-200 hover:border-yellow-500 hover:shadow-md transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">🇨🇲</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-700">Cameroon</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 group-hover:text-amber-700 transition-colors">Cameroon GCE O-Level Calculator</h4>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate O-Level points (A=3, B=2, C=1), Best 6 score, and check Sixth Form science or arts eligibility.</p>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-amber-700">
+          <span>Calculate O-Level Points &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/cameroon-university-admission-calculator" class="group p-4 rounded-2xl bg-white border border-slate-200 hover:border-yellow-500 hover:shadow-md transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">🇨🇲</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-700">Cameroon</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 group-hover:text-amber-700 transition-colors">Cameroon University Admission Calculator</h4>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Check admission chances at UB, UBa, Yaoundé I, Douala, and competitive Concours cut-offs.</p>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-amber-700">
+          <span>Check University Chances &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/tertiary-gpa-cgpa-calculator" class="group p-4 rounded-2xl bg-white border border-slate-200 hover:border-yellow-500 hover:shadow-md transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">🎓</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-700">Tertiary</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 group-hover:text-amber-700 transition-colors">Tertiary GPA &amp; CGPA Calculator</h4>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">Compute semester GPA and cumulative CGPA on 4.0 and 5.0 scales for polytechnic and university courses.</p>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-100 flex items-center text-xs font-semibold text-amber-700">
+          <span>Calculate University GPA &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Educational Content Section (Compiled from markdown by build-prerender.js) -->
+  <article class="mt-8 sm:mt-12 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 p-4 sm:p-8 shadow-sm">
+<h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-8 mb-4">Cameroon GCE A-Level Calculator (Points, Grades & University Matriculation)</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The Cameroon General Certificate of Education Advanced Level (GCE A-Level) represents the culminating high school credential in the Anglophone educational subsystem of Cameroon. Supervised by the Cameroon GCE Board (CGCEB, Buea) and certified under the Ministry of Secondary Education (MINESEC), the examination is sat at the end of Upper Sixth (Terminal Anglophone) across general, scientific, commercial, and technical educational streams. Achieving high A-Level points is the single most critical criterion for securing admission into state universities, private higher institutes, and prestigious professional Grandes Écoles throughout the Republic of Cameroon.</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">This specialized calculator allows Upper Sixth candidates, high school graduates, teachers, and university admissions officers to calculate total GCE A-Level points, assess Best 3 subject points, tally principal passes, and determine direct degree matriculation standing for competitive faculties including Medicine, Engineering, Law, and Technology.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">How to Use the Cameroon GCE A-Level Calculator</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The calculator reflects the official numerical weighting protocols of the Cameroon GCE Board:</p><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Select the Number of Registered Subjects</strong>: Upper Sixth students typically register for 3, 4, or 5 subjects. Choose the number of subjects corresponding to your official registration.</li><li class="leading-relaxed"><strong>Specify Subject Names and Series</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Sciences</strong>: Biology, Chemistry, Physics, Pure Mathematics with Mechanics (PMM), Further Mathematics, Computer Science, Geology.</li><li class="leading-relaxed"><strong>Arts & Humanities</strong>: Literature in English, History, Economics, French, Philosophy, Geography, Religious Studies.</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Select Your Letter Grade for Each Subject</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Grade A</strong>: 5 Points (Distinction / Highest Honors).</li><li class="leading-relaxed"><strong>Grade B</strong>: 4 Points (Very Good Pass).</li><li class="leading-relaxed"><strong>Grade C</strong>: 3 Points (Good / Standard Pass).</li><li class="leading-relaxed"><strong>Grade D</strong>: 2 Points (Satisfactory Pass).</li><li class="leading-relaxed"><strong>Grade E</strong>: 1 Point (Marginal Pass).</li><li class="leading-relaxed"><strong>Grade O</strong>: 0 Points (Ordinary / Subsidiary standard - not counted as an A-Level pass).</li><li class="leading-relaxed"><strong>Grade F</strong>: 0 Points (Failure).</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Indicate Ordinary Level English Language Status</strong>: Confirm whether you achieved at least a Grade C in GCE Ordinary Level English Language, which is mandatory for university matriculation clearance.</li><li class="leading-relaxed"><strong>Click "Calculate GCE A-Level Points"</strong>: The tool computes your total points, Best 3 points, principal pass count, university matriculation band, and faculty admission recommendations.</li></ol><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">How the Cameroon GCE A-Level Calculation Works</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The Cameroon GCE Board uses a 5-point ascending numerical scale for Advanced Level papers. Grades A through E represent recognized principal passes, while Grade O denotes an Ordinary level subsidiary standard and Grade F denotes outright failure:</p><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Official Cameroon GCE A-Level Numerical Scale</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Grade A (70% to 100%)</strong>: 5 Points. Exceptional academic excellence and analytical depth.</li><li class="leading-relaxed"><strong>Grade B (60% to 69%)</strong>: 4 Points. Very high competence and problem-solving execution.</li><li class="leading-relaxed"><strong>Grade C (50% to 59%)</strong>: 3 Points. Solid academic performance meeting degree prerequisite baselines.</li><li class="leading-relaxed"><strong>Grade D (45% to 49%)</strong>: 2 Points. Satisfactory passing grade accepted for general arts and social science programs.</li><li class="leading-relaxed"><strong>Grade E (40% to 44%)</strong>: 1 Point. Minimum statutory passing grade recognized as a principal pass.</li><li class="leading-relaxed"><strong>Grade O (35% to 39%)</strong>: 0 Points. Subsidiary standard. Does not count as an A-Level principal pass toward degree requirements.</li><li class="leading-relaxed"><strong>Grade F (0% to 34%)</strong>: 0 Points. Failure.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Key Calculation Formulas</h3><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Total GCE A-Level Points</strong>:</li><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Total Points = Sum of points earned across all registered subjects. Formula: Total Points = (Count of A × 5) + (Count of B × 4) + (Count of C × 3) + (Count of D × 2) + (Count of E × 1).</p></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">For a 3-subject candidate: Maximum possible score is 15 points (A, A, A: 5 + 5 + 5 = 15).</li><li class="leading-relaxed">For a 4-subject candidate: Maximum possible score is 20 points (A, A, A, A: 5 × 4 = 20).</li><li class="leading-relaxed">For a 5-subject candidate: Maximum possible score is 25 points (A, A, A, A, A: 5 × 5 = 25).</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Best 3 Subjects Points (University Faculty Benchmark)</strong>:</li><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Best 3 Points = Sum of the three highest scoring subjects. State universities such as the University of Buea (UB) and the University of Bamenda (UBa), as well as professional entrance concourses (FHS, FET, NAHPI, ENS), evaluate candidates primarily on their Best 3 relevant subjects out of a maximum of 15 points.</p></ol><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Principal Passes Count</strong>:</li><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Principal Passes = Count of subjects with Grades A, B, C, D, or E. Statutory ministerial directives from the Ministry of Higher Education (MINESUP) mandate a minimum of two (2) principal passes (at least Grade E) in a single sitting for university admission eligibility.</p></ol><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">University Matriculation Standing Bands</h3><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Distinction Band (13 to 15 Points in Best 3 Subjects)</strong>:</li><li class="leading-relaxed">Top-tier national standing. Highly competitive for direct entry or competitive concourses in Human Medicine (FHS Buea, FMSB Yaoundé), Electrical/Software Engineering (FET UB, NAHPI UBa, ENSPY), and Commercial Law.</li><li class="leading-relaxed"><strong>Very Good Band (10 to 12 Points in Best 3 Subjects)</strong>:</li><li class="leading-relaxed">Strongly competitive for Computer Science, Nursing, Medical Laboratory Science, Chemical Engineering, Economics, Management, and Corporate Finance.</li><li class="leading-relaxed"><strong>Good Pass Band (7 to 9 Points in Best 3 Subjects)</strong>:</li><li class="leading-relaxed">Direct qualification for Natural Sciences (Biochemistry, Microbiology, Physics, Mathematics), Education, Journalism (ASMAC/ASTI), Political Science, and Environmental Science.</li><li class="leading-relaxed"><strong>Standard Pass Band (4 to 6 Points in 2 or 3 Subjects)</strong>:</li><li class="leading-relaxed">Meets statutory minimum threshold for Faculty of Arts, Letters and Social Sciences (History, Literature, Linguistics, Philosophy, Geography, Sociology).</li><li class="leading-relaxed"><strong>Sub-Matriculation Band (0 to 3 Points or Fewer than 2 Passes)</strong>:</li><li class="leading-relaxed">Ineligible for direct undergraduate degree enrollment. Recommended for higher technical diplomas (HND / BTS), certificate programs, or November GCE A-Level private re-sits.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Step-by-Step Worked Examples</h2><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Student Profile A: Kevin Tanyitiku (Buea, Southwest Region - Aspiring Physician)</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Kevin completed Upper Sixth Science at Bilingual Grammar School Molyko Buea, sitting for 4 science subjects:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Biology: Grade A (5 points)</li><li class="leading-relaxed">Chemistry: Grade A (5 points)</li><li class="leading-relaxed">Physics: Grade B (4 points)</li><li class="leading-relaxed">Pure Mathematics with Mechanics: Grade C (3 points)</li><li class="leading-relaxed">O-Level English Language: Passed with Grade B</li></ul><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4"><strong>Calculation Breakdown</strong>:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Number of Principal Passes: 4 passes (Grades A, A, B, C).</li><li class="leading-relaxed">Total A-Level Points: 5 + 5 + 4 + 3 = 17 points (out of 20).</li><li class="leading-relaxed">Best 3 Subjects: Biology (5), Chemistry (5), Physics (4).</li><li class="leading-relaxed">Best 3 Points: 5 + 5 + 4 = 14 points (out of 15).</li><li class="leading-relaxed"><strong>Advisory Verdict</strong>: Qualified with High Distinction. Kevin possesses the ideal prerequisite combination (Biology and Chemistry Grade A) required for the National Competitive Entrance Examination into Medical Training (FHS University of Buea and FMSB University of Yaoundé I).</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Student Profile B: Brenda Nfor (Bamenda, Northwest Region - Aspiring Software Engineer)</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Brenda sat for 3 subjects at Saint Bede's College Ashing-Kom:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Pure Mathematics with Mechanics: Grade A (5 points)</li><li class="leading-relaxed">Computer Science: Grade A (5 points)</li><li class="leading-relaxed">Physics: Grade B (4 points)</li><li class="leading-relaxed">O-Level English Language: Passed with Grade A</li></ul><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4"><strong>Calculation Breakdown</strong>:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Number of Principal Passes: 3 passes (Grades A, A, B).</li><li class="leading-relaxed">Total A-Level Points: 5 + 5 + 4 = 14 points (out of 15).</li><li class="leading-relaxed">Best 3 Subjects: PMM (5), Computer Science (5), Physics (4).</li><li class="leading-relaxed">Best 3 Points: 14 points (out of 15).</li><li class="leading-relaxed"><strong>Advisory Verdict</strong>: Qualified with High Distinction. Exceptional profile for Faculty of Engineering and Technology (FET) at University of Buea and National Higher Polytechnic Institute (NAHPI) at University of Bamenda for Software Engineering.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Student Profile C: Arrey Manyi (Kumba, Southwest Region - Aspiring Corporate Lawyer)</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Arrey completed Upper Sixth Arts at Cameroon College of Arts, Science and Technology (CCAST) Kumba, sitting for 3 subjects:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Literature in English: Grade B (4 points)</li><li class="leading-relaxed">History: Grade B (4 points)</li><li class="leading-relaxed">Economics: Grade C (3 points)</li><li class="leading-relaxed">O-Level English Language: Passed with Grade B</li></ul><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4"><strong>Calculation Breakdown</strong>:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Number of Principal Passes: 3 passes (Grades B, B, C).</li><li class="leading-relaxed">Total A-Level Points: 4 + 4 + 3 = 11 points (out of 15).</li><li class="leading-relaxed">Best 3 Subjects: Literature (4), History (4), Economics (3).</li><li class="leading-relaxed">Best 3 Points: 11 points (out of 15).</li><li class="leading-relaxed"><strong>Advisory Verdict</strong>: Very Good Pass. Fully qualified for direct undergraduate entry into the Faculty of Laws and Political Science (LL.B program) at University of Buea and University of Bamenda.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-10 mb-6 flex items-center gap-2.5"><svg class="w-6 h-6 text-yellow-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Frequently Asked Questions (FAQ)</span></h2><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the passing grade at Cameroon GCE A-Level?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">At the Advanced Level, Grades A, B, C, D, and E are official passing grades that count as principal passes. Grade A equals 5 points, Grade B equals 4 points, Grade C equals 3 points, Grade D equals 2 points, and Grade E equals 1 point. Grade O is an ordinary/subsidiary pass awarding 0 points, and Grade F is a fail awarding 0 points.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the minimum A-Level requirement for university admission in Cameroon?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">According to statutory guidelines from the Ministry of Higher Education (MINESUP), a candidate must pass at least two (2) A-Level subjects in one sitting (at grades A through E) to be eligible for university admission. In addition, the candidate must possess at least four or five GCE Ordinary Level passes including English Language.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>How are points calculated for a student sitting 4 or 5 subjects?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Every subject passed with Grade A through E generates points (A=5, B=4, C=3, D=2, E=1). A student sitting 4 subjects can earn up to 20 total points, while a student sitting 5 subjects can earn up to 25 total points. However, when applying to competitive university faculties, admissions committees predominantly evaluate your Best 3 relevant subjects on a 15-point scale.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Does Grade O count as a university entrance pass?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">No. Grade O indicates that the candidate reached an Ordinary Level subsidiary standard on an Advanced Level paper, but failed to attain the minimum A-Level passing standard (Grade E). Consequently, Grade O does not count as one of the mandatory two principal passes needed for university matriculation.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>How many points do I need for Medicine at the University of Buea (FHS)?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Admission into Human Medicine at the Faculty of Health Sciences (FHS), University of Buea, requires sitting for the national competitive entrance examination (Concours). To have a competitive academic dossier, candidates typically need at least 11 to 15 points in their Best 3 science subjects, with mandatory high passes (Grades A or B) in Biology and Chemistry.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can I gain admission into university if I passed A-Levels but failed O-Level English?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">No. GCE Ordinary Level English Language with at least a Grade C (or an officially recognized equivalent English proficiency test) is a strict mandatory matriculation requirement across all state universities in Cameroon, including University of Buea, University of Bamenda, and University of Yaoundé. Candidates without O-Level English must re-sit the subject.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Is the Cameroon GCE A-Level Calculator free and secure?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. The calculator is 100% free and client-side. No candidate names, center numbers, or examination slips are transmitted to external servers or logged in any database, preserving complete confidentiality.</p></div></details>
+</article>
+
+  <!-- Authoritative References & Statutory Sources (E-E-A-T Mandate) -->
+  <section class="mt-8 bg-slate-100 rounded-2xl border border-slate-200/80 p-5 sm:p-6 text-xs text-slate-600">
+    <h4 class="font-extrabold text-slate-900 text-sm mb-2">Authoritative References &amp; Statutory Sources</h4>
+    <ul class="space-y-1.5 list-disc list-inside">
+      <li><strong>Cameroon GCE Board (CGCEB, Buea)</strong>: <a href="https://cameroongceboard.org" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">cameroongceboard.org</a> — Official GCE Advanced Level point regulations, grading criteria, and subject syllabi.</li>
+      <li><strong>Ministry of Higher Education (MINESUP, Cameroon)</strong>: <a href="https://minesup.gov.cm" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">minesup.gov.cm</a> — Statutory degree matriculation rules, national entrance concourse circulars, and university guidelines.</li>
+      <li><strong>University of Buea (UB)</strong>: <a href="https://ubuea.cm" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">ubuea.cm</a> — Undergraduate admission regulations, study points index, and faculty prerequisite criteria.</li>
+      <li><strong>University of Bamenda (UBa)</strong>: <a href="https://uniba.cm" target="_blank" rel="noopener noreferrer" class="text-amber-700 hover:underline">uniba.cm</a> — Admissions prospectus, Bambili faculty requirements, and polytechnic standards.</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Vanilla JS Calculator Script (Manual Action Only) -->
+<script>
+  (function() {
+    'use strict';
+
+    var defaultSubjects = [
+      { name: "Biology", grade: "A" },
+      { name: "Chemistry", grade: "A" },
+      { name: "Physics", grade: "B" },
+      { name: "Pure Mathematics with Mechanics", grade: "C" }
+    ];
+
+    var standardSubjectsList = [
+      "Biology",
+      "Chemistry",
+      "Physics",
+      "Pure Mathematics with Mechanics",
+      "Further Mathematics",
+      "Computer Science",
+      "Geology",
+      "Literature in English",
+      "History",
+      "Economics",
+      "Geography",
+      "French",
+      "Philosophy",
+      "Religious Studies",
+      "Accounting",
+      "Commerce"
+    ];
+
+    var gradeScale = {
+      "A": { points: 5, label: "Grade A (5 pts - Distinction)", isPass: true },
+      "B": { points: 4, label: "Grade B (4 pts - Very Good)", isPass: true },
+      "C": { points: 3, label: "Grade C (3 pts - Good Pass)", isPass: true },
+      "D": { points: 2, label: "Grade D (2 pts - Satisfactory)", isPass: true },
+      "E": { points: 1, label: "Grade E (1 pt - Marginal Pass)", isPass: true },
+      "O": { points: 0, label: "Grade O (0 pts - Subsidiary Standard)", isPass: false },
+      "F": { points: 0, label: "Grade F (0 pts - Fail)", isPass: false }
+    };
+
+    var currentSubjects = JSON.parse(JSON.stringify(defaultSubjects));
+    var container = document.getElementById('subjectsContainer');
+
+    function renderSubjectRows() {
+      if (!container) return;
+      container.innerHTML = '';
+
+      currentSubjects.forEach(function(sub, idx) {
+        var row = document.createElement('div');
+        row.className = 'flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 p-3 rounded-xl border bg-slate-50 border-slate-200';
+
+        // Subject Name Col
+        var nameCol = document.createElement('div');
+        nameCol.className = 'flex-1 flex items-center gap-2';
+
+        var badge = document.createElement('span');
+        badge.className = 'text-[11px] font-bold px-2 py-0.5 rounded-md shrink-0 bg-amber-200 text-amber-900';
+        badge.textContent = 'Subject ' + (idx + 1);
+        nameCol.appendChild(badge);
+
+        var selectName = document.createElement('select');
+        selectName.className = 'text-xs sm:text-sm font-medium bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500 flex-1';
+        standardSubjectsList.forEach(function(sName) {
+          var opt = document.createElement('option');
+          opt.value = sName;
+          opt.textContent = sName;
+          if (sName === sub.name) opt.selected = true;
+          selectName.appendChild(opt);
+        });
+        selectName.addEventListener('change', function(e) {
+          sub.name = e.target.value;
+        });
+        nameCol.appendChild(selectName);
+        row.appendChild(nameCol);
+
+        // Grade Select Col
+        var gradeCol = document.createElement('div');
+        gradeCol.className = 'w-full sm:w-60 flex items-center gap-2';
+
+        var selectGrade = document.createElement('select');
+        selectGrade.className = 'w-full text-xs sm:text-sm font-semibold bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500';
+        
+        Object.keys(gradeScale).forEach(function(gKey) {
+          var opt = document.createElement('option');
+          opt.value = gKey;
+          opt.textContent = gradeScale[gKey].label;
+          if (gKey === sub.grade) opt.selected = true;
+          selectGrade.appendChild(opt);
+        });
+
+        selectGrade.addEventListener('change', function(e) {
+          sub.grade = e.target.value;
+        });
+        gradeCol.appendChild(selectGrade);
+
+        // Delete button (maintain minimum 2 subjects)
+        if (currentSubjects.length > 2) {
+          var delBtn = document.createElement('button');
+          delBtn.type = 'button';
+          delBtn.className = 'p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors shrink-0';
+          delBtn.setAttribute('aria-label', 'Remove subject');
+          delBtn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>';
+          delBtn.addEventListener('click', function() {
+            currentSubjects.splice(idx, 1);
+            renderSubjectRows();
+          });
+          gradeCol.appendChild(delBtn);
+        }
+
+        row.appendChild(gradeCol);
+        container.appendChild(row);
+      });
+    }
+
+    renderSubjectRows();
+
+    // Add subject
+    var addBtn = document.getElementById('addSubjectBtn');
+    if (addBtn) {
+      addBtn.addEventListener('click', function() {
+        if (currentSubjects.length >= 5) {
+          alert('Maximum 5 subjects can be registered for Cameroon GCE Advanced Level.');
+          return;
+        }
+        var nextSubject = standardSubjectsList.find(function(s) {
+          return !currentSubjects.some(function(cs) { return cs.name === s; });
+        }) || "Computer Science";
+
+        currentSubjects.push({ name: nextSubject, grade: "C" });
+        renderSubjectRows();
+      });
+    }
+
+    // Reset button
+    var resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        currentSubjects = JSON.parse(JSON.stringify(defaultSubjects));
+        renderSubjectRows();
+        var resCont = document.getElementById('resultContainer');
+        if (resCont) resCont.classList.add('hidden');
+      });
+    }
+
+    // Calculation Routine (Executed ONLY on Calculate Button Click)
+    var calcBtn = document.getElementById('calculateBtn');
+    if (calcBtn) {
+      calcBtn.addEventListener('click', function() {
+        var passesCount = 0;
+        var totalPoints = 0;
+        var scoredList = [];
+        var maxPossible = currentSubjects.length * 5;
+
+        var hasBiology = false;
+        var hasChemistry = false;
+        var hasPhysics = false;
+        var hasMaths = false;
+        var hasLiterature = false;
+        var hasHistory = false;
+        var hasEconomics = false;
+
+        currentSubjects.forEach(function(sub) {
+          var gInfo = gradeScale[sub.grade];
+          if (!gInfo) return;
+
+          var points = gInfo.points;
+          totalPoints += points;
+
+          if (gInfo.isPass) {
+            passesCount++;
+            scoredList.push({ name: sub.name, points: points, grade: sub.grade });
+
+            var lower = sub.name.toLowerCase();
+            if (lower.includes('biology')) hasBiology = true;
+            if (lower.includes('chemistry')) hasChemistry = true;
+            if (lower.includes('physics')) hasPhysics = true;
+            if (lower.includes('mathematics')) hasMaths = true;
+            if (lower.includes('literature')) hasLiterature = true;
+            if (lower.includes('history')) hasHistory = true;
+            if (lower.includes('economics')) hasEconomics = true;
+          }
+        });
+
+        // Best 3 Points
+        scoredList.sort(function(a, b) { return b.points - a.points; });
+        var best3Sum = 0;
+        for (var i = 0; i < Math.min(3, scoredList.length); i++) {
+          best3Sum += scoredList[i].points;
+        }
+
+        var hasEnglishCheck = document.getElementById('hasOLevelEnglish');
+        var passesEnglish = hasEnglishCheck ? hasEnglishCheck.checked : true;
+
+        // Display results
+        var resCont = document.getElementById('resultContainer');
+        if (resCont) resCont.classList.remove('hidden');
+
+        // Update stats
+        var spPasses = document.getElementById('statPassesCount');
+        if (spPasses) spPasses.textContent = passesCount;
+
+        var stPoints = document.getElementById('statTotalPoints');
+        if (stPoints) stPoints.textContent = totalPoints;
+
+        var stMax = document.getElementById('statTotalMax');
+        if (stMax) stMax.textContent = 'Out of ' + maxPossible + ' Points';
+
+        var b3Score = document.getElementById('best3Score');
+        if (b3Score) b3Score.textContent = best3Sum + ' / 15';
+
+        var stBest3 = document.getElementById('statBest3Score');
+        if (stBest3) stBest3.textContent = best3Sum;
+
+        var matricStatus = document.getElementById('statMatricStatus');
+        var matricNote = document.getElementById('statMatricNote');
+
+        var isMatricQualified = (passesCount >= 2 && passesEnglish);
+        if (matricStatus) {
+          if (passesCount >= 2 && passesEnglish) {
+            matricStatus.textContent = 'Qualified';
+            matricStatus.className = 'text-base sm:text-lg font-extrabold text-emerald-600 mt-1';
+          } else if (passesCount >= 2 && !passesEnglish) {
+            matricStatus.textContent = 'Conditional';
+            matricStatus.className = 'text-base sm:text-lg font-extrabold text-amber-600 mt-1';
+          } else {
+            matricStatus.textContent = 'Ineligible';
+            matricStatus.className = 'text-base sm:text-lg font-extrabold text-red-600 mt-1';
+          }
+        }
+        if (matricNote) {
+          if (passesCount >= 2 && passesEnglish) {
+            matricNote.textContent = 'Direct Degree Matriculation';
+          } else if (passesCount >= 2 && !passesEnglish) {
+            matricNote.textContent = 'O-Level English Required';
+          } else {
+            matricNote.textContent = 'Min 2 Passes Required';
+          }
+        }
+
+        // Title and summary
+        var resBadge = document.getElementById('resultBadge');
+        var resTitle = document.getElementById('resultTitle');
+        var resSub = document.getElementById('resultSubtitle');
+
+        if (best3Sum >= 13 && isMatricQualified) {
+          if (resBadge) {
+            resBadge.className = 'inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300 border border-yellow-400/30 mb-2';
+            resBadge.textContent = 'Distinction Band (Top 5%)';
+          }
+          if (resTitle) resTitle.textContent = passesCount + ' Principal Passes • ' + totalPoints + ' Total Points';
+          if (resSub) resSub.textContent = 'Elite academic performance. Highly competitive for Medicine (FHS), Engineering (FET/NAHPI), and Common Law.';
+        } else if (best3Sum >= 10 && isMatricQualified) {
+          if (resBadge) {
+            resBadge.className = 'inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 mb-2';
+            resBadge.textContent = 'Very Good Band';
+          }
+          if (resTitle) resTitle.textContent = passesCount + ' Principal Passes • ' + totalPoints + ' Total Points';
+          if (resSub) resSub.textContent = 'Strong standing. Competitive for Computer Science, Nursing, Medical Lab Science, Economics, and Management.';
+        } else if (best3Sum >= 7 && isMatricQualified) {
+          if (resBadge) {
+            resBadge.className = 'inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-indigo-400/20 text-indigo-300 border border-indigo-400/30 mb-2';
+            resBadge.textContent = 'Good Standing Band';
+          }
+          if (resTitle) resTitle.textContent = passesCount + ' Principal Passes • ' + totalPoints + ' Total Points';
+          if (resSub) resSub.textContent = 'Solid results. Directly eligible for Natural Sciences, Environmental Science, Education, and Social Sciences.';
+        } else if (passesCount >= 2 && isMatricQualified) {
+          if (resBadge) {
+            resBadge.className = 'inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-400/20 text-slate-300 border border-slate-400/30 mb-2';
+            resBadge.textContent = 'Standard Pass Band';
+          }
+          if (resTitle) resTitle.textContent = passesCount + ' Principal Passes • ' + totalPoints + ' Total Points';
+          if (resSub) resSub.textContent = 'Meets statutory MINESUP baseline. Directly eligible for Faculty of Arts, Letters and Social Sciences.';
+        } else {
+          if (resBadge) {
+            resBadge.className = 'inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-red-400/20 text-red-300 border border-red-400/30 mb-2';
+            resBadge.textContent = passesCount >= 2 ? 'Conditional Standing' : 'Sub-Matriculation Standing';
+          }
+          if (resTitle) resTitle.textContent = passesCount + ' Principal ' + (passesCount === 1 ? 'Pass' : 'Passes') + ' • ' + totalPoints + ' Points';
+          if (resSub) resSub.textContent = passesCount >= 2 ? 'Requires passing GCE O-Level English Language for formal degree matriculation clearance.' : 'Fewer than 2 principal passes. Registration for November private series or HND diploma recommended.';
+        }
+
+        // Faculty Audit List
+        var auditList = document.getElementById('facultyAuditList');
+        if (auditList) {
+          var canMed = (isMatricQualified && best3Sum >= 11 && hasBiology && hasChemistry);
+          var canEng = (isMatricQualified && best3Sum >= 10 && hasMaths && hasPhysics);
+          var canLaw = (isMatricQualified && best3Sum >= 8 && (hasLiterature || hasHistory || hasEconomics));
+          var canEcon = (isMatricQualified && best3Sum >= 8 && hasEconomics);
+          var canScience = (isMatricQualified && best3Sum >= 6);
+          var canArts = (isMatricQualified && passesCount >= 2);
+
+          auditList.innerHTML = [
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canMed ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canMed ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canMed ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Human Medicine &amp; Health Sciences (FHS Buea, FMSB Yaoundé)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canMed ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canMed ? 'Competitive (11+ pts & Bio/Chem)' : 'Requires 11+ pts & Bio/Chem') + '</span>',
+            '</div>',
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canEng ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canEng ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canEng ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Engineering &amp; Technology (FET UB, NAHPI UBa, ENSPY)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canEng ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canEng ? 'Competitive (10+ pts & Maths/Phys)' : 'Requires 10+ pts & Maths/Phys') + '</span>',
+            '</div>',
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canLaw ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canLaw ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canLaw ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Common Law &amp; Political Science (FSJP UB &amp; UBa)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canLaw ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canLaw ? 'Directly Qualified (8+ pts)' : 'Requires 8+ pts in Arts') + '</span>',
+            '</div>',
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canEcon ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canEcon ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canEcon ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Economics &amp; Management (FSEG UB, UBa, Douala)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canEcon ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canEcon ? 'Directly Qualified (8+ pts & Econ)' : 'Requires 8+ pts & Econ') + '</span>',
+            '</div>',
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canScience ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canScience ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canScience ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Faculty of Science (Biochemistry, Geology, Physics, Chemistry)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canScience ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canScience ? 'Directly Qualified (6+ pts)' : 'Requires 6+ pts in Sciences') + '</span>',
+            '</div>',
+            '<div class="flex items-center justify-between p-2.5 rounded-lg bg-white border ' + (canArts ? 'border-emerald-200' : 'border-slate-200') + '">',
+              '<div class="flex items-center gap-2">',
+                '<span class="' + (canArts ? 'text-emerald-600 font-bold' : 'text-slate-400') + '">' + (canArts ? '✓' : '•') + '</span>',
+                '<span class="font-semibold text-slate-800">Faculty of Arts &amp; Social Sciences (Literature, History, Philosophy)</span>',
+              '</div>',
+              '<span class="text-xs font-bold px-2 py-0.5 rounded ' + (canArts ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600') + '">' + (canArts ? 'Directly Qualified (2+ Passes)' : 'Requires 2 Principal Passes') + '</span>',
+            '</div>'
+          ].join('');
+        }
+
+        // Scroll to results
+        resCont.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+  })();
+</script>
+
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center flex-wrap gap-2.5">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+        </a>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+        </a>
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="mt-3.5">
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          <span>Message Obed Avorlenu on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

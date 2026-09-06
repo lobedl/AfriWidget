@@ -4,11 +4,19 @@ This document defines the mandatory development, build, deployment, and performa
 
 ---
 
-## ⚡ 1. Netlify Deployment & CSS Build System Mandate
+## ⚡ 1. Cloudflare Pages Deployment & CSS Build System Mandate
 
-To guarantee **100% PageSpeed performance** and prevent style breakages upon Netlify deployment:
+To guarantee **100% PageSpeed performance** and prevent style breakages upon **Cloudflare Pages** deployment:
 
-### 1.1 Multi-Path Stylesheet Inclusion in `<head>`
+### 1.1 Deployment Platform: Cloudflare Pages
+AfriWidget is hosted and deployed directly on **Cloudflare Pages** (`wrangler.toml` / GitHub Integration):
+- **Publish Directory**: Root directory (`.`) containing static HTML, CSS, JavaScript, and assets.
+- **Build Command**: `npm run build` (or `bun run build`).
+- **Deploy Command**: `npx wrangler pages deploy .`
+- **Edge Functions**: Cloudflare Pages Functions located in `/functions` (and `/netlify/functions` for shared handlers) run in Cloudflare's edge V8 isolate with `nodejs_compat` enabled.
+- **Cache-Control Headers**: Defined in `_headers` at the project root for edge CDN caching (`Cache-Control: public, max-age=86400, stale-while-revalidate=604800` for CSS/JS).
+
+### 1.2 Multi-Path Stylesheet Inclusion in `<head>`
 Every `.html` page in the project **MUST** include the following CSS link tags at the very top of `<head>`:
 
 ```html
@@ -20,52 +28,55 @@ Every `.html` page in the project **MUST** include the following CSS link tags a
 </head>
 ```
 
-- **Why:** Netlify serves static files from the publish root (`.`). Linking both `styles.css` (root) and `/dist/styles.css` guarantees that regardless of how assets are served or cached, the minified Tailwind styles are fetched instantly with 0 ms lag.
+- **Why:** Cloudflare Pages serves static files from the publish root (`.`). Linking both `styles.css` (root) and `/dist/styles.css` guarantees that regardless of how assets are served, resolved, or cached across edge nodes, the minified Tailwind styles are fetched instantly with 0 ms lag and zero FOUC.
 
-### 1.2 Dual Output CSS Build Command
+### 1.3 Dual Output CSS Build Command
 The build command in `package.json` must generate compiled output in both `./dist/styles.css` and `./styles.css`:
 
 ```json
 "scripts": {
   "build:css": "npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\"",
-  "build": "npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
+  "build": "node build-search-engine.js && node generate-og-assets.js && node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
 }
 ```
 
-### 1.3 Unignored CSS Artifacts in `.gitignore`
-In `.gitignore`, compiled CSS files **MUST** be explicitly unignored so Netlify receives pre-built styles even if the build environment skips devDependencies:
+### 1.4 Unignored CSS Artifacts in `.gitignore`
+In `.gitignore`, compiled CSS files **MUST** be explicitly unignored so Cloudflare Pages receives pre-built styles even if the build environment skips devDependencies:
 
 ```gitignore
 !dist/styles.css
 !styles.css
 ```
 
-### 1.4 Netlify Configuration & Pretty URLs (`netlify.toml`)
-Ensure `netlify.toml` specifies the build command, Node environment, and enables `pretty_urls`:
+### 1.5 Cloudflare Pages Configuration (`wrangler.toml` & `_headers`)
+Ensure `wrangler.toml` at the project root defines the Pages project name, publish directory, and Node.js compatibility flags:
 
 ```toml
-[build]
-  command = "npm run build"
-  publish = "."
-  functions = "netlify/functions"
-
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--include=dev"
+name = "afriwidget"
+pages_build_output_dir = "."
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
 ```
 
-### 1.5 Clean URL Routing Mandate (Cloudflare Pages & Netlify)
-Clean, extensionless URLs (e.g., `/education`, `/gpa-calculator`) are handled natively:
-- **Netlify**: Handled automatically by `[build.processing.html] pretty_urls = true` in `netlify.toml`.
-- **Cloudflare Pages**: Handled automatically by native asset serving (extensionless requests resolve directly to `.html` files).
+Edge cache rules and security headers are configured in `_headers`:
+
+```text
+/styles.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/branding.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/dist/styles.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/*.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+```
+
+### 1.6 Clean URL Routing Mandate on Cloudflare Pages
+Clean, extensionless URLs (e.g., `/education`, `/gpa-calculator`) are handled natively by Cloudflare Pages:
+- **Cloudflare Pages**: Extensionless requests resolve directly to corresponding `.html` files in the root directory.
 - **CRITICAL**: Do **NOT** put `/:page /:page.html 200` in `_redirects`. On Cloudflare Pages, Cloudflare automatically 308-redirects all `.html` extensions to their extensionless counterparts; having a 200 rewrite back to `.html` creates an infinite redirect loop (`ERR_TOO_MANY_REDIRECTS`).
 - **NEVER** add invalid wildcard rules like `/*/nav.js` or `/*/*.js` into `_redirects`. Invalid syntax breaks routing engines and causes valid pages to return 404.
+- `_redirects` must ONLY contain explicit URL migrations (e.g. `301` status redirects from old slugs to new slugs).
 
 ---
 
@@ -222,13 +233,13 @@ Directly under `<body ...>`:
 
 ## 📖 7. Master Known Issues & Solutions Reference
 
-All reported bugs, layout anomalies, build failures, and SEO audit warnings are cataloged in **`KNOWN_ISSUES_AND_SOLUTIONS.md`**. Every agent must review this playbook to prevent regressions on Netlify stylesheets, SVG icon sizing, LaTeX bans, schema classifications, favicon consistency, mobile placeholder cards, and static header preservation.
+All reported bugs, layout anomalies, build failures, and SEO audit warnings are cataloged in **`KNOWN_ISSUES_AND_SOLUTIONS.md`**. Every agent must review this playbook to prevent regressions on Cloudflare Pages stylesheets, SVG icon sizing, LaTeX bans, schema classifications, favicon consistency, mobile placeholder cards, and static header preservation.
 
 ---
 
 ## 🌐 8. Mandatory Homepage & Ecosystem Tool Integration Standard (Zero-Orphan Policy)
 
-**STRICT ZERO-ORPHAN REQUIREMENT**: When any new tool or calculator is created, the agent **MUST** integrate it across all 7 discovery endpoints in the **same turn**:
+**STRICT ZERO-ORPHAN REQUIREMENT**: When any new tool or calculator is created, the agent **MUST** integrate it across all 9 discovery endpoints in the **same turn**:
 1. **Homepage (`index.html`)**: Under the correct category section (`education`, `finance`, `health`, `productivity`, `business`, `everyday`) with complete `data-tool-card`, `data-category`, `data-search`, flag/icon, title, description, and link. Also include in the static footer list.
 2. **Category Hub (`education.html`, `finance.html`, etc.)**: In the `.category-tool-grid` and relevant guide cards.
 3. **Directory (`widgets.html`)**: In the full tools directory grid with appropriate tag chips.
@@ -236,8 +247,10 @@ All reported bugs, layout anomalies, build failures, and SEO audit warnings are 
 5. **Sitemap (`sitemap.xml`)**: Added with `priority 0.9` and `changefreq weekly`.
 6. **LLM Reference (`llms.txt`)**: Documented with markdown link and concise description.
 7. **Universal AI (`universal-ai.js`)**: Registered in `TOOL_CONFIGS` with result and host selector mapping.
+8. **Share Results System (`share-results.js`)**: Registered in `TOOL_ADAPTERS` with input and calculate bindings.
+9. **🔍 Search System (`tools-index.json` & `build-search-engine.js`)**: Added to `tools-index.json` with 15+ rich keywords and compiled to `search-engine.js`.
 
-*Refer to `NEW_TOOL_INTEGRATION_RULES.md` for full implementation details and card templates.*
+*Refer to `NEW_TOOL_INTEGRATION_RULES.md` and `SEARCH_SYSTEM_INTEGRATION_MANDATE.md` for full implementation details.*
 
 ---
 
@@ -324,6 +337,22 @@ All reported bugs, layout anomalies, build failures, and SEO audit warnings are 
 3. **Markdown Guide Integration**:
    - Store content in `/content/[tool-slug].md`. The build prerender pipeline automatically compiles this markdown into interactive styled FAQ accordions and semantic HTML inside `<article class="...">`.
 4. **Reference**: See **`MANDATORY_EDUCATIONAL_CONTENT_AND_WORD_COUNT_STANDARDS.md`** for complete specifications and templates.
+
+---
+
+## 🔍 16. Mandatory Search System Integration Mandate (Zero-Missing-Search Policy)
+
+**STRICT ZERO-EXCEPTION REQUIREMENT**: Every tool, calculator, converter, and generator page on the AfriWidget platform **MUST BE ADDED TO THE CLIENT-SIDE SEARCH SYSTEM**:
+1. **Canonical JSON Registry (`tools-index.json`)**:
+   - The tool entry MUST be added in alphabetical order by `slug`.
+   - Must contain: `slug`, `name`, `shortName`, `description`, `category`, `url`, and a comprehensive array of 15+ search `keywords` (country, governing bodies, exams, universities, acronyms, and aliases).
+2. **Regional Flag & Icon Mapping (`build-search-engine.js`)**:
+   - Ensure the country flag/icon is mapped inside `getToolIcon(tool)`.
+   - Specific national identifiers MUST precede regional exam board checks (e.g., `liberia` before `waec`) to prevent incorrect flag display.
+3. **Recompile Search Engine (`search-engine.js`)**:
+   - Run `node build-search-engine.js` (or `npm run build`) to generate the unified, typo-tolerant `search-engine.js`.
+4. **Reference**: See **`SEARCH_SYSTEM_INTEGRATION_MANDATE.md`** for complete architectural requirements and the automated verification audit script.
+
 
 
 

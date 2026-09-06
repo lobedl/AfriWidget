@@ -211,8 +211,26 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     }
   }
 
+  function loadSearchEngine() {
+    if (document.querySelector('script[src*="search-engine.js"]')) return;
+    var loadScript = function() {
+      if (document.querySelector('script[src*="search-engine.js"]')) return;
+      var script = document.createElement('script');
+      script.src = '/search-engine.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    };
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadScript, { timeout: 2000 });
+    } else {
+      setTimeout(loadScript, 1000);
+    }
+  }
+
   ensureMenuStyles();
   loadUniversalAi();
+  loadSearchEngine();
 
   /* Normalize the shared navigation as soon as the parsed menu is available. */
   if (document.body) {

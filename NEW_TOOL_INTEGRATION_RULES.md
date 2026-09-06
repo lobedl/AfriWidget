@@ -84,14 +84,24 @@ The tool **MUST** be added under its respective category section in `index.html`
 
 ---
 
-### 9. Static Header & Zero-Mismatch Breadcrumb Bar
+### 9. 🔍 Search System Integration (`tools-index.json` & `build-search-engine.js`)
+- **STRICT MANDATE**: The tool **MUST** be added to `tools-index.json` in alphabetical order by `slug` with:
+  - `slug`, `name`, `shortName`, `description`, `category`, `url`.
+  - 15+ rich `keywords` including country, acronyms, and common query variations.
+- Verify regional flag mapping in `build-search-engine.js` (`getToolIcon`).
+- Recompile search engine: `node build-search-engine.js`.
+- See `SEARCH_SYSTEM_INTEGRATION_MANDATE.md` for full instructions.
+
+---
+
+### 10. Static Header & Zero-Mismatch Breadcrumb Bar
 - The tool page itself **MUST** contain the static pre-rendered `<nav>` header and a visual breadcrumb bar.
 - The intermediate breadcrumb item **MUST** link to the tool's matching parent category (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`). Never leave a copied category slug like `/productivity` on an education or finance tool.
 - See `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for full requirements and the automated audit script.
 
 ---
 
-### 10. Dedicated Related Tools Section & Reciprocal Cluster Linking
+### 11. Dedicated Related Tools Section & Reciprocal Cluster Linking
 - Every new tool **MUST** include a dedicated "Related Tools" 3-to-4 card grid section before the FAQ/Footer.
 - Embed 2+ contextual anchor text links in the educational guide copy.
 - Display a next-step recommendation CTA in or after the result calculation state.
@@ -108,7 +118,8 @@ For the complete 9-phase protocol covering HTML `<head>` tags, E-E-A-T schemas, 
 ## 🚫 Anti-Patterns (Forbidden Practices)
 - ❌ Creating a tool `.html` page and finishing without touching `index.html`.
 - ❌ Putting a tool on `widgets.html` but forgetting `index.html` (Homepage).
+- ❌ Forgetting to register the tool in `tools-index.json` and running `node build-search-engine.js`, making the tool completely invisible in the site search bar, autocomplete, and `Ctrl+K` modal.
 - ❌ Adding a card with generic or missing `data-search` attributes, which breaks homepage live search filtering.
 - ❌ Leaving a mismatched parent category in the breadcrumbs (e.g. `Productivity Tools` on an education calculator).
 - ❌ Building an isolated tool with zero outbound or inbound related tool links.
-- ❌ Relying on user feedback to discover unlinked or orphan tools.
+- ❌ Relying on user feedback to discover unlinked or unindexed tools.

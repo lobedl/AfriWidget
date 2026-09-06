@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="branding.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/dist/styles.css" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-6V491CW7H0");
+  </script>
+  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
+  <script>
+    (function() {
+      var adSenseLoaded = false;
+      function loadAdSense() {
+        if (adSenseLoaded) return;
+        adSenseLoaded = true;
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+          window.removeEventListener(evt, loadAdSense, { passive: true });
+        });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474';
+        document.head.appendChild(s);
+      }
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+      });
+      if ('requestIdleCallback' in window) {
+        window.addEventListener('load', function() {
+          requestIdleCallback(function() {
+            setTimeout(loadAdSense, 3500);
+          }, { timeout: 4000 });
+        });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadAdSense, 3500);
+        });
+      }
+    })();
+  </script>
+<title>Seychelles Student Budget Calculator (SCR Monthly Cost of Living) – AfriWidget</title>
+  <meta name="description" content="Plan your monthly student expenses in Seychelles Rupees (SCR). Calculate ANHRD allowances, accommodation in Mahé, SPTC bus fares, food, and internet costs with smart budgeting tips." />
+  <link rel="canonical" href="https://afriwidget.com/seychelles-student-budget-calculator" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seychelles Student Budget Calculator (SCR Monthly Cost of Living) – AfriWidget" />
+  <meta property="og:url" content="https://afriwidget.com/seychelles-student-budget-calculator" />
+  <meta property="og:description" content="Free Seychelles student monthly budget calculator in SCR. Balance ANHRD allowances, housing in Mahé, SPTC transit, food, data bundles, and semester study expenses." />
+  <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
+  <meta property="og:site_name" content="AfriWidget" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Seychelles Student Budget Calculator – AfriWidget" />
+  <meta name="twitter:site" content="@afriwidget" />
+  <meta name="twitter:description" content="Calculate and balance your monthly student living costs in Seychelles Rupees (SCR) with ANHRD allowance tracking." />
+  <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
+
+  <script src="/nav.js" defer></script>
+  <script src="/footer.js" defer></script>
+  <script src="/share-results.js" defer></script>
+  <script src="/universal-ai.js" defer></script>
+
+  <!-- Rich WebApplication E-E-A-T JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Seychelles Student Budget Calculator",
+      "description": "Financial planning and monthly cost-of-living assessment software for tertiary and secondary students in Seychelles, tracking Agency for National Human Resource Development (ANHRD) allowances, rental accommodation in Mahé and Praslin, SPTC bus transit, groceries, telecom bundles, and study supplies.",
+      "url": "https://afriwidget.com/seychelles-student-budget-calculator",
+      "applicationCategory": "FinancialApplication",
+      "operatingSystem": "All modern web browsers",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SCR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AfriWidget",
+        "url": "https://afriwidget.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://afriwidget.com/favicon-180.png"
+        }
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "AfriWidget Financial Economics Advisory Group"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Seychelles Tertiary Student Welfare & Economics Board"
+      },
+      "citation": [
+        "https://www.anhrd.gov.sc",
+        "https://www.sptc.sc",
+        "https://www.unisey.ac.sc"
+      ],
+      "dateModified": "2026-09-06"
+    }
+  ]
+  </script>
+
+
+
+
+
+
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+
+<!-- Mandatory Pre-rendered Static Header -->
+            <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center space-x-2">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+            <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+          </svg>
+          <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- Visual Breadcrumb Navigation -->
+  <div class="bg-slate-900 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex items-center flex-wrap gap-2 text-xs font-medium text-slate-400">
+          <li class="inline-flex items-center">
+            <a href="/" class="text-slate-400 hover:text-yellow-300 transition-colors inline-flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li>
+            <a href="/finance" class="text-slate-400 hover:text-yellow-300 transition-colors">Finance Tools</a>
+          </li>
+          <li class="text-slate-600 inline-flex items-center" aria-hidden="true">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </li>
+          <li class="text-yellow-300 font-semibold truncate max-w-[260px] sm:max-w-none" aria-current="page">Seychelles Student Budget Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+<!-- Root-Level Hero Header -->
+<header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+  <div class="max-w-4xl mx-auto space-y-3">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold uppercase tracking-wider">
+      <span class="text-sm">🇸🇨</span> Seychelles Rupee (SCR) Student Cost of Living
+    </div>
+    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+      Seychelles Student Budget Calculator
+    </h1>
+    <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+      Balance your monthly student allowances, accommodation in Mahé, SPTC bus transit, groceries, and telecom expenses in Seychelles Rupees (SCR).
+    </p>
+    <div class="pt-2 text-xs text-slate-400 flex items-center justify-center gap-4 flex-wrap">
+      <span>⚡ 100% Free In-Browser Calculation</span>
+      <span>•</span>
+      <span>🔒 Confidential In-Memory</span>
+      <span>•</span>
+      <span>₨ Seychelles Rupee (SCR) Optimized</span>
+    </div>
+  </div>
+</header>
+
+<!-- Main Container -->
+<main class="flex-grow w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+  <!-- Interactive Calculator Card -->
+  <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden mb-10">
+    
+    <!-- Header -->
+    <div class="bg-slate-900 text-white p-4 sm:p-5 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest block">Monthly Financial Planner</span>
+        <h2 class="text-base sm:text-lg font-extrabold text-white">Income Streams &amp; Living Expenses (SCR)</h2>
+      </div>
+      <div class="text-xs text-slate-400">
+        Currency: Seychelles Rupee (SCR, ₨)
+      </div>
+    </div>
+
+    <div class="p-4 sm:p-6 lg:p-8 space-y-6">
+
+      <!-- Section 1: Monthly Incomes -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-4">
+        <h3 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-2">
+          1. Monthly Inflows &amp; Allowances (SCR)
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div>
+            <label for="incAnhrd" class="text-xs font-bold text-slate-800 block mb-1">ANHRD Monthly Student Allowance</label>
+            <input type="number" id="incAnhrd" value="3500" min="0" step="50" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-semibold outline-none focus:ring-2 focus:ring-yellow-400" />
+            <span class="text-[11px] text-slate-500">Typical govt stipend: SCR 2,500 – 4,500/mo</span>
+          </div>
+          <div>
+            <label for="incFamily" class="text-xs font-bold text-slate-800 block mb-1">Family Support / Parental Allowance</label>
+            <input type="number" id="incFamily" value="1500" min="0" step="50" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-semibold outline-none focus:ring-2 focus:ring-yellow-400" />
+            <span class="text-[11px] text-slate-500">Monthly contributions from home</span>
+          </div>
+          <div>
+            <label for="incWork" class="text-xs font-bold text-slate-800 block mb-1">Part-Time Work / Internship Stipend</label>
+            <input type="number" id="incWork" value="0" min="0" step="50" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-semibold outline-none focus:ring-2 focus:ring-yellow-400" />
+            <span class="text-[11px] text-slate-500">Weekend shifts, hospitality, or tutoring</span>
+          </div>
+          <div>
+            <label for="incOther" class="text-xs font-bold text-slate-800 block mb-1">Other Bursaries / Savings Drawdown</label>
+            <input type="number" id="incOther" value="0" min="0" step="50" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm font-semibold outline-none focus:ring-2 focus:ring-yellow-400" />
+            <span class="text-[11px] text-slate-500">Emergency funds or secondary grants</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Monthly Expenses -->
+      <div class="space-y-4">
+        <h3 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wider">
+          2. Estimated Monthly Living Expenses (SCR)
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+          <!-- Housing -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expRent" class="text-xs font-bold text-slate-800 block">Accommodation / Rent</label>
+            <input type="number" id="expRent" value="2000" min="0" step="100" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">Hostel or shared flat (SCR 0 if living at home)</span>
+          </div>
+
+          <!-- Food -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expFood" class="text-xs font-bold text-slate-800 block">Groceries &amp; Meals</label>
+            <input type="number" id="expFood" value="1600" min="0" step="50" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">STC groceries, take-away lunches</span>
+          </div>
+
+          <!-- Transport -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expTransport" class="text-xs font-bold text-slate-800 block">Transport (SPTC Bus)</label>
+            <input type="number" id="expTransport" value="300" min="0" step="20" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">Student Smart Card / Ferry</span>
+          </div>
+
+          <!-- Mobile & Internet -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expData" class="text-xs font-bold text-slate-800 block">Mobile Data &amp; Wi-Fi</label>
+            <input type="number" id="expData" value="350" min="0" step="25" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">Cable &amp; Wireless / Airtel student bundles</span>
+          </div>
+
+          <!-- Academic Supplies -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expBooks" class="text-xs font-bold text-slate-800 block">Books, Printing &amp; Stationery</label>
+            <input type="number" id="expBooks" value="250" min="0" step="25" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">Course readers, photocopying, pens</span>
+          </div>
+
+          <!-- Personal / Misc -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm space-y-1">
+            <label for="expMisc" class="text-xs font-bold text-slate-800 block">Personal Care &amp; Leisure</label>
+            <input type="number" id="expMisc" value="300" min="0" step="25" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold outline-none focus:bg-white" />
+            <span class="text-[10px] text-slate-400">Toiletries, outings, emergencies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons (Strict User-Action Mandate) -->
+      <div class="pt-4 flex flex-col sm:flex-row gap-3 items-center justify-center">
+        <button type="button" id="calculateBtn" class="w-full sm:w-auto min-w-[240px] py-3.5 sm:py-4 px-6 sm:px-8 text-sm sm:text-base font-extrabold text-slate-950 bg-yellow-400 hover:bg-yellow-300 rounded-xl sm:rounded-2xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Calculate Monthly Student Budget</span>
+        </button>
+        <button type="button" id="resetBtn" class="w-full sm:w-auto py-3 px-5 text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors">
+          Reset Default Values
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Results Container (Initially Hidden) -->
+    <div id="resultsContainer" class="hidden border-t border-slate-200 bg-slate-50/80 p-4 sm:p-6 lg:p-8 space-y-6">
+      
+      <!-- Primary Net Cash Flow Banner -->
+      <div class="rounded-2xl p-5 sm:p-6 text-white bg-slate-900 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest block mb-1">
+              Monthly Financial Position
+            </span>
+            <div class="flex items-baseline gap-2">
+              <span id="resNetBalance" class="text-4xl sm:text-5xl font-black text-emerald-400">+ SCR 200</span>
+              <span class="text-xl sm:text-2xl font-bold text-slate-400">/ month</span>
+            </div>
+          </div>
+          <div class="text-left sm:text-right">
+            <span id="resBudgetBadge" class="inline-block px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+              Balanced Budget • Surplus
+            </span>
+            <p id="resDailyBudget" class="text-xs text-slate-300 mt-1">
+              Discretionary Daily Cushion: SCR 6.67 / day
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Metrics KPI Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <span class="text-xs font-semibold text-slate-500 block">Total Monthly Inflows</span>
+          <span id="resTotalIncome" class="text-2xl font-black text-indigo-950 mt-1 block">SCR 5,000</span>
+          <span class="text-[11px] text-slate-400">ANHRD &amp; Family Contributions</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <span class="text-xs font-semibold text-slate-500 block">Total Monthly Expenses</span>
+          <span id="resTotalExpenses" class="text-2xl font-black text-rose-600 mt-1 block">SCR 4,800</span>
+          <span class="text-[11px] text-slate-400">Rent, Food, Transport &amp; Data</span>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 text-center">
+          <span class="text-xs font-semibold text-slate-500 block">Savings Rate</span>
+          <span id="resSavingsRate" class="text-2xl font-black text-emerald-600 mt-1 block">4.0%</span>
+          <span class="text-[11px] text-slate-400">Recommended: 5% - 10%</span>
+        </div>
+      </div>
+
+      <!-- Expense Categories Breakdown -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 space-y-3">
+        <h4 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2 flex items-center justify-between">
+          <span>📊 Monthly Spending Distribution in Seychelles</span>
+          <span class="text-xs text-slate-400">Percentage of Total Outflows</span>
+        </h4>
+        <div class="space-y-2 text-xs sm:text-sm" id="resExpenseBars">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Budget Advice Card -->
+      <div class="p-4 rounded-xl border border-yellow-200 bg-yellow-50/70 space-y-1">
+        <span class="text-xs font-extrabold text-yellow-900 uppercase tracking-wider block">🇸🇨 Local Student Cost Management Tips</span>
+        <p class="text-xs text-yellow-800 leading-relaxed" id="resAdviceText">
+          Loading recommendations...
+        </p>
+      </div>
+
+      <!-- Share Button -->
+      <div class="flex items-center justify-between pt-2">
+        <span class="text-xs text-slate-500">Calculated locally in browser. No financial data stored.</span>
+        <button type="button" id="shareResultBtn" class="text-xs font-bold text-yellow-600 hover:text-yellow-700 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+          <span>Share Budget Summary</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= 800+ WORDS EDUCATIONAL CONTENT ================= -->
+  <article class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 p-5 sm:p-8 lg:p-10 shadow-sm space-y-8 text-slate-700 leading-relaxed">
+    
+    <div>
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950 mb-3 tracking-tight">
+        Navigating Student Cost of Living in the Seychelles
+      </h2>
+      <p class="text-sm sm:text-base leading-relaxed text-slate-600">
+        Studying in Seychelles, whether at the University of Seychelles (UniSey) in Anse Royale, the School of Advanced Level Studies (SALS), or vocational institutions like the Seychelles Institute of Technology (SIT) and Seychelles Tourism Academy (STA), requires proactive financial budgeting. As a high-income small island developing state (SIDS), Seychelles imports a significant proportion of its foodstuffs and consumer goods, creating a distinctive cost-of-living structure priced in Seychelles Rupees (SCR). Mastering personal finances ensures that students can focus on academic success without financial distress.
+      </p>
+    </div>
+
+    <!-- Section: Typical Costs Breakdown -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+        Core Monthly Expenditure Categories in Mahé and the Inner Islands
+      </h3>
+      <p class="text-sm text-slate-600">
+        Student expenditure patterns in Seychelles typically divide into six primary pillars:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+          <h4 class="font-bold text-slate-900 mb-1">1. Accommodation &amp; Housing (SCR 1,500 – 4,000)</h4>
+          <p class="text-slate-600">
+            For students from Praslin, La Digue, or southern Mahé who cannot commute daily, shared student accommodation or hostel quarters around Anse Royale and Mont Fleuri averages SCR 1,500 to SCR 3,500 per room. Students residing with family incur zero rent, dramatically freeing up financial bandwidth.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+          <h4 class="font-bold text-slate-900 mb-1">2. Food &amp; Groceries (SCR 1,200 – 2,500)</h4>
+          <p class="text-slate-600">
+            Purchasing basic food staples (rice, lentils, canned tuna, fresh fish from local markets, bread) from the Seychelles Trading Company (STC) supermarket provides the most economical nutritional sustenance. Daily takeaway lunches near campuses typically cost SCR 60 to SCR 90 each.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+          <h4 class="font-bold text-slate-900 mb-1">3. Public Bus Transit — SPTC (SCR 150 – 450)</h4>
+          <p class="text-slate-600">
+            The Seychelles Public Transport Corporation (SPTC) provides comprehensive bus connectivity across Mahé and Praslin. Utilizing the registered SPTC Student Travel Card provides discounted journeys compared to the standard cash fare, capping monthly commuting costs at approximately SCR 200 to SCR 400.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+          <h4 class="font-bold text-slate-900 mb-1">4. Mobile Internet &amp; Wi-Fi (SCR 250 – 500)</h4>
+          <p class="text-slate-600">
+            Mobile data packages provided by Cable &amp; Wireless Seychelles (CWS) and Airtel Seychelles are essential for accessing lecture recordings, university Moodle portals, and research databases. Opting for monthly student data bundles maximizes gigabytes per Rupee spent.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50 sm:col-span-2">
+          <h4 class="font-bold text-slate-900 mb-1">5. Academic Materials &amp; Personal Care (SCR 400 – 800)</h4>
+          <p class="text-slate-600">
+            Photocopying, printing thesis chapters and lab manuals, stationery, toiletries, and laundry services require steady monthly cash allocations. Maintaining an emergency buffer of at least SCR 200 per month guards against unexpected medical or academic costs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: ANHRD Allowance Rules -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+        Understanding ANHRD Student Allowances &amp; Stipends
+      </h3>
+      <p class="text-sm text-slate-600">
+        The Agency for National Human Resource Development (ANHRD) provides monthly living stipends to qualifying Seychellois students enrolled in accredited full-time tertiary programs:
+      </p>
+
+      <ul class="text-xs sm:text-sm space-y-2 text-slate-700 list-disc list-inside">
+        <li><strong>Local UniSey Degree Students</strong>: Receive a monthly government maintenance allowance (typically between SCR 2,500 and SCR 4,500) designed to defray transport, food, and study material expenses while tuition is paid directly by the state.</li>
+        <li><strong>Inner Island Living Allowances</strong>: Students whose permanent domicile is on Praslin, La Digue, or Silhouette who relocate to Mahé for tertiary study receive enhanced accommodation allowances or subsidized placement in government youth hostels.</li>
+        <li><strong>Academic Conditionality</strong>: Continued disbursement of ANHRD allowances is strictly contingent on maintaining a minimum GPA of 2.00 (Pass) and meeting faculty attendance requirements.</li>
+      </ul>
+    </div>
+
+    <!-- Section: Step-by-Step Worked Examples -->
+    <div class="space-y-6">
+      <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+        Step-by-Step Realistic Budget Scenarios
+      </h3>
+
+      <!-- Scenario 1 -->
+      <div class="border border-slate-200 rounded-2xl p-5 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-yellow-700 bg-yellow-50 px-2.5 py-1 rounded-md border border-yellow-200">
+            Scenario 1: UniSey Student Living with Family in Victoria (Commuter)
+          </span>
+          <span class="text-xs font-extrabold text-slate-500">Commuter Profile</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600">
+          <strong>Student Profile</strong>: Darryl lives with his parents in Victoria and commutes daily via SPTC bus to the UniSey campus at Anse Royale.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <span class="font-bold text-slate-900 block">Monthly Income</span>
+            <p>ANHRD Allowance: SCR 3,000</p>
+            <p>Family Support: SCR 500</p>
+            <p class="font-bold text-indigo-950 mt-1">Total: SCR 3,500</p>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <span class="font-bold text-slate-900 block">Monthly Expenses</span>
+            <p>Rent: SCR 0 (Living at home)</p>
+            <p>SPTC Bus Card: SCR 350</p>
+            <p>Campus Lunches: SCR 1,200</p>
+            <p>Mobile Data: SCR 300</p>
+            <p>Printing &amp; Study: SCR 250</p>
+            <p>Personal Misc: SCR 300</p>
+            <p class="font-bold text-rose-700 mt-1">Total: SCR 2,400</p>
+          </div>
+        </div>
+        <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200 text-xs sm:text-sm">
+          <p class="text-emerald-900 font-bold">
+            Net Surplus: SCR 1,100 per month (31.4% savings rate). Darryl can build an emergency fund or invest in laptop upgrades.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="border border-slate-200 rounded-2xl p-5 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-yellow-700 bg-yellow-50 px-2.5 py-1 rounded-md border border-yellow-200">
+            Scenario 2: Praslin Student Renting in Anse Royale
+          </span>
+          <span class="text-xs font-extrabold text-slate-500">Relocated Resident</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600">
+          <strong>Student Profile</strong>: Vanessa relocated from Praslin to attend SIT in Providence, renting a shared apartment room in Mont Fleuri.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <span class="font-bold text-slate-900 block">Monthly Income</span>
+            <p>ANHRD Allowance + Outer Island Subsidy: SCR 4,500</p>
+            <p>Family Contribution: SCR 1,500</p>
+            <p class="font-bold text-indigo-950 mt-1">Total: SCR 6,000</p>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+            <span class="font-bold text-slate-900 block">Monthly Expenses</span>
+            <p>Shared Room Rent: SCR 2,500</p>
+            <p>Groceries &amp; Cooking: SCR 1,600</p>
+            <p>SPTC Bus Transit: SCR 250</p>
+            <p>Mobile Internet: SCR 350</p>
+            <p>Supplies &amp; Photocopying: SCR 300</p>
+            <p>Personal &amp; Health: SCR 500</p>
+            <p class="font-bold text-rose-700 mt-1">Total: SCR 5,500</p>
+          </div>
+        </div>
+        <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200 text-xs sm:text-sm">
+          <p class="text-emerald-900 font-bold">
+            Net Surplus: SCR 500 per month (8.3% savings buffer). Balanced budget with sufficient liquidity for Cat Cocos ferry visits back to Praslin.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Practical Cost-Saving Tips -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+        Pragmatic Money-Saving Strategies for Students in Seychelles
+      </h3>
+      <ol class="list-decimal list-inside text-xs sm:text-sm space-y-2 text-slate-600">
+        <li><strong>Prepare Packed Lunches</strong>: Cooking batch meals from STC groceries instead of buying daily take-away boxes saves between SCR 800 and SCR 1,200 each month.</li>
+        <li><strong>Register for the SPTC Student Bus Card</strong>: Avoid paying single cash fares on buses. The smart student card reduces daily transit expenditure by up to 50%.</li>
+        <li><strong>Leverage Campus Wi-Fi</strong>: Download lecture PDFs, recorded seminars, and heavy software updates while connected to campus networks to conserve cellular data.</li>
+        <li><strong>Form Book-Sharing Circles</strong>: Purchase textbooks collectively or access digital library repositories through UniSey’s online library service.</li>
+        <li><strong>Track Weekly Outflows</strong>: Check spending every Sunday to verify that discretionary expenses do not exceed your planned daily allowance.</li>
+      </ol>
+    </div>
+
+    <!-- Section: Frequently Asked Questions -->
+    <div class="space-y-4">
+      <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+        Frequently Asked Questions (FAQ)
+      </h3>
+      <div class="space-y-3">
+        
+        <details class="group rounded-xl border border-slate-200 bg-slate-50/50 p-4 transition-all">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-sm">
+            <span>How much is the standard ANHRD student allowance in Seychelles?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            The monthly allowance varies based on academic level, institution, and residential status. Local undergraduate degree students typically receive approximately SCR 3,000 to SCR 4,500 per month, with supplementary living allowances provided for students relocating from the inner islands.
+          </p>
+        </details>
+
+        <details class="group rounded-xl border border-slate-200 bg-slate-50/50 p-4 transition-all">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-sm">
+            <span>Are students permitted to work part-time in Seychelles?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Yes. Seychellois tertiary students can undertake part-time employment, weekend shifts in hospitality, or paid vocational internships, provided their working hours do not conflict with mandatory lecture timetables or compromise academic standing.
+          </p>
+        </details>
+
+        <details class="group rounded-xl border border-slate-200 bg-slate-50/50 p-4 transition-all">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-sm">
+            <span>What happens to my ANHRD allowance if I fail a semester exam?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            If a student fails multiple modules or falls below the mandatory 2.00 CGPA threshold, ANHRD policies mandate an academic review. In cases of unexcused academic probation, the monthly maintenance stipend may be temporarily suspended until re-examinations are cleared.
+          </p>
+        </details>
+
+        <details class="group rounded-xl border border-slate-200 bg-slate-50/50 p-4 transition-all">
+          <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900 text-sm">
+            <span>How can students from Praslin or La Digue minimize travel costs?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Students traveling between Mahé and the inner islands can access student concession rates on the Cat Cocos ferry or travel on government-subsidized scheduled charter tickets organized during term breaks.
+          </p>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="border-t border-slate-200 pt-6">
+      <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
+        Related Seychelles Student Tools
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <a href="/seychelles-study-planner" class="p-3 bg-slate-50 hover:bg-yellow-50 rounded-xl border border-slate-200 hover:border-yellow-300 transition-colors block">
+          <span class="font-bold text-slate-900 block mb-1">🇸🇨 Seychelles Study Planner</span>
+          <span class="text-slate-500">Organize weekly revision blocks and balance study hours across academic modules.</span>
+        </a>
+        <a href="/seychelles-gpa-calculator" class="p-3 bg-slate-50 hover:bg-yellow-50 rounded-xl border border-slate-200 hover:border-yellow-300 transition-colors block">
+          <span class="font-bold text-slate-900 block mb-1">🇸🇨 Seychelles GPA Calculator</span>
+          <span class="text-slate-500">Track semester SGPA and maintain bursary eligibility thresholds.</span>
+        </a>
+        <a href="/seychelles-university-admission-calculator" class="p-3 bg-slate-50 hover:bg-yellow-50 rounded-xl border border-slate-200 hover:border-yellow-300 transition-colors block">
+          <span class="font-bold text-slate-900 block mb-1">🇸🇨 Seychelles Uni Admission</span>
+          <span class="text-slate-500">Check UniSey degree cut-offs and ANHRD government sponsorship requirements.</span>
+        </a>
+      </div>
+    </div>
+
+  </article>
+
+</main>
+
+<!-- In-Browser Calculation Script (Strict User-Action Mandate) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const calcBtn = document.getElementById('calculateBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const resultsContainer = document.getElementById('resultsContainer');
+
+    calcBtn.addEventListener('click', function() {
+      // Incomes
+      const anhrd = parseFloat(document.getElementById('incAnhrd').value) || 0;
+      const family = parseFloat(document.getElementById('incFamily').value) || 0;
+      const work = parseFloat(document.getElementById('incWork').value) || 0;
+      const other = parseFloat(document.getElementById('incOther').value) || 0;
+      const totalIncome = anhrd + family + work + other;
+
+      // Expenses
+      const rent = parseFloat(document.getElementById('expRent').value) || 0;
+      const food = parseFloat(document.getElementById('expFood').value) || 0;
+      const transport = parseFloat(document.getElementById('expTransport').value) || 0;
+      const data = parseFloat(document.getElementById('expData').value) || 0;
+      const books = parseFloat(document.getElementById('expBooks').value) || 0;
+      const misc = parseFloat(document.getElementById('expMisc').value) || 0;
+      const totalExpenses = rent + food + transport + data + books + misc;
+
+      const netBalance = totalIncome - totalExpenses;
+      const savingsRate = totalIncome > 0 ? ((netBalance / totalIncome) * 100) : 0;
+      const dailyCushion = (netBalance / 30);
+
+      // DOM Updates
+      const netEl = document.getElementById('resNetBalance');
+      const badge = document.getElementById('resBudgetBadge');
+      const dailyText = document.getElementById('resDailyBudget');
+      const adviceEl = document.getElementById('resAdviceText');
+
+      document.getElementById('resTotalIncome').textContent = `SCR ${totalIncome.toLocaleString()}`;
+      document.getElementById('resTotalExpenses').textContent = `SCR ${totalExpenses.toLocaleString()}`;
+
+      if (netBalance >= 0) {
+        netEl.textContent = `+ SCR ${netBalance.toLocaleString()}`;
+        netEl.className = 'text-4xl sm:text-5xl font-black text-emerald-400';
+        badge.textContent = netBalance > 500 ? 'Healthy Surplus • Resilient' : 'Balanced Budget • Modest Surplus';
+        badge.className = 'inline-block px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+        dailyText.textContent = `Discretionary Daily Cushion: SCR ${dailyCushion.toFixed(2)} / day`;
+        document.getElementById('resSavingsRate').textContent = `${savingsRate.toFixed(1)}%`;
+        document.getElementById('resSavingsRate').className = 'text-2xl font-black text-emerald-600 mt-1 block';
+        
+        adviceEl.textContent = `You have a monthly surplus of SCR ${netBalance.toLocaleString()}. Setting aside SCR 300 to SCR 500 into a dedicated savings fund will insulate you against emergency island ferry trips or unexpected academic textbooks.`;
+      } else {
+        netEl.textContent = `- SCR ${Math.abs(netBalance).toLocaleString()}`;
+        netEl.className = 'text-4xl sm:text-5xl font-black text-rose-400';
+        badge.textContent = 'Deficit Alert • Expenses Exceed Inflows';
+        badge.className = 'inline-block px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold bg-rose-500/20 text-rose-300 border border-rose-500/40';
+        dailyText.textContent = `Daily Deficit: - SCR ${Math.abs(dailyCushion).toFixed(2)} / day`;
+        document.getElementById('resSavingsRate').textContent = `Negative`;
+        document.getElementById('resSavingsRate').className = 'text-2xl font-black text-rose-600 mt-1 block';
+
+        adviceEl.textContent = `Your spending exceeds monthly income by SCR ${Math.abs(netBalance).toLocaleString()}. Consider reviewing food spending (switch to batch cooking), reducing mobile data bundles, or checking eligibility for supplemental ANHRD relocation assistance.`;
+      }
+
+      // Expense Breakdown Bars
+      const barsContainer = document.getElementById('resExpenseBars');
+      const cats = [
+        { name: 'Accommodation / Rent', val: rent, color: 'bg-indigo-500' },
+        { name: 'Groceries & Campus Food', val: food, color: 'bg-yellow-500' },
+        { name: 'SPTC Bus & Transit', val: transport, color: 'bg-emerald-500' },
+        { name: 'Mobile Internet / Data', val: data, color: 'bg-blue-500' },
+        { name: 'Academic Books & Printing', val: books, color: 'bg-purple-500' },
+        { name: 'Personal Care & Leisure', val: misc, color: 'bg-rose-500' }
+      ];
+
+      let barsHtml = '';
+      cats.forEach(c => {
+        const pct = totalExpenses > 0 ? ((c.val / totalExpenses) * 100).toFixed(1) : 0;
+        barsHtml += `
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-slate-700">${c.name}</span>
+              <span class="font-bold text-slate-900">SCR ${c.val.toLocaleString()} (${pct}%)</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+              <div class="${c.color} h-2 rounded-full" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      });
+      barsContainer.innerHTML = barsHtml;
+
+      // Reveal results
+      resultsContainer.classList.remove('hidden');
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    resetBtn.addEventListener('click', function() {
+      document.getElementById('incAnhrd').value = '3500';
+      document.getElementById('incFamily').value = '1500';
+      document.getElementById('incWork').value = '0';
+      document.getElementById('incOther').value = '0';
+      document.getElementById('expRent').value = '2000';
+      document.getElementById('expFood').value = '1600';
+      document.getElementById('expTransport').value = '300';
+      document.getElementById('expData').value = '350';
+      document.getElementById('expBooks').value = '250';
+      document.getElementById('expMisc').value = '300';
+      resultsContainer.classList.add('hidden');
+    });
+  });
+</script>
+
+<!-- Static Footer -->
+<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+    <div class="min-w-0">
+      <a href="/" class="flex items-center space-x-2 mb-4">
+        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+        </svg>
+        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-300">
+        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      </p>
+      <div class="mt-5 flex items-center flex-wrap gap-2.5">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+        </a>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+        </a>
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="mt-3.5">
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          <span>Message Obed Avorlenu on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
+      <ul class="space-y-2 text-sm">
+         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
+         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
+         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
+         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
+         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
+         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
+         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
+        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
+        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
+        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
+        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
+        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
+        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
+        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
+        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
+        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
+        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
+        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
+        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
+         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
+         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
+         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
+         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
+        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
+        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
+        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
+         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
+         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
+         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
+         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
+         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
+         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
+         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
+         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
+         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
+         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
+         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
+         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
+         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
+         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
+         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
+         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
+         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
+          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
+         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
+         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
+         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
+         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
+         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
+         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
+         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
+        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
+        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
+        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
+         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
+         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
+         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
+         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
+         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
+        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
+        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
+        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
+        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
+        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
+         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
+         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
+         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
+         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
+         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
+         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
+         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
+         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
+         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
+         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
+         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
+         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
+         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
+         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
+         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
+         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
+         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
+         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
+         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
+        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
+         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
+         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
+         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
+         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
+         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
+         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
+         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
+         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
+         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
+         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
+         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
+        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
+        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

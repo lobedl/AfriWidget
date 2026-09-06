@@ -8,30 +8,12 @@ The **AfriWidget KCSE Eligibility Tier Checker** classifies your KCSE overall me
 
 ## The KNQA &amp; KUCCPS Tertiary Placement Tier Architecture
 
-Under policies enacted by the **Ministry of Education** and **KUCCPS**, tertiary educational entry points in Kenya are mapped to specific minimum KCSE mean-grade benchmarks:
+Under policies enacted by the **Ministry of Education** and **KUCCPS**, tertiary educational entry points in Kenya are mapped to four statutory KCSE mean-grade benchmarks:
 
-```
-+-------------------------------------------------------------------------+
-
-
-+------------------------------------+------------------------------------+
-
-- **** | Minimum KCSE Mean Grade: C+ (Plus): Grades: A, A-, B+, B, B-, C+
-
-+------------------------------------+------------------------------------+
-
-- **** | Minimum KCSE Mean Grade: C- (Minus): Grades: C, C-
-
-+------------------------------------+------------------------------------+
-
-- **** | Minimum KCSE Mean Grade: D (Plain): Grades: D+, D
-
-+------------------------------------+------------------------------------+
-
-- **** | Minimum KCSE Mean Grade: E: Grades: D-, E
-
-+------------------------------------+------------------------------------+
-```
+- **Tier 1: Degree Placement (KNQA Level 7)**: Minimum KCSE Mean Grade: **C+ (Plus)**. Qualifying KCSE Grades: **A, A-, B+, B, B-, C+** (Aggregate: 46 to 84 points). Qualifies for direct admission into undergraduate bachelor’s degree programmes at Kenyan public and private universities with eligibility for Government Scholarships and HELB Loans.
+- **Tier 2: Diploma / TVET Level 6**: Minimum KCSE Mean Grade: **C- (Minus)**. Qualifying KCSE Grades: **C, C-** (Aggregate: 32 to 45 points). Qualifies for direct government-subsidized placement into 2-to-3-year Diploma programmes at National Polytechnics and accredited Technical and Vocational Colleges (TVCs).
+- **Tier 3: Craft Certificate / TVET Level 5**: Minimum KCSE Mean Grade: **D (Plain)**. Qualifying KCSE Grades: **D+, D** (Aggregate: 18 to 31 points). Qualifies for practical Craft Certificate courses offering hands-on occupational competency in electrical installation, automotive mechanics, building technology, and business administration.
+- **Tier 4: Artisan Certificate / TVET Level 4**: Minimum KCSE Mean Grade: **E (Pass)**. Qualifying KCSE Grades: **D-, E** (Aggregate: 7 to 17 points). Qualifies for foundational technical and trade courses in Vocational Training Centres (VTCs), with a clear progression pathway under the Kenya National Qualifications Framework to advance toward Diploma and Degree qualifications.
 
 ### 1. Degree Placement Tier (Mean Grade C+ to A)
 Candidates scoring a mean grade of **C+ (46&ndash;52 points)**, **B- (53&ndash;59 points)**, **B (60&ndash;66 points)**, **B+ (67&ndash;73 points)**, **A- (74&ndash;80 points)**, or **A (81&ndash;84 points)** attain the statutory baseline qualification for direct admission into undergraduate bachelor’s degree programmes at Kenyan public and private universities.

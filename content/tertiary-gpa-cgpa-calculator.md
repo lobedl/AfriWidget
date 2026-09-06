@@ -23,29 +23,11 @@ Under standard university academic regulations, letter grades achieved in semest
 
 ## The Mathematical Formulas for GPA and Cumulative CGPA
 
-The computation of grade point average is fundamentally a **weighted arithmetic mean** where course credit unit values serve as statistical weights.
+The computation of grade point average is fundamentally a **weighted arithmetic mean** where course credit unit values serve as statistical weights:
 
-```
-+-------------------------------------------------------------------------+
-
-
-+------------------------------------+------------------------------------+
-
-
-+------------------------------------+------------------------------------+
-
-- **** | Sum of Quality Points across all: registered courses in the term.
-
-+------------------------------------+------------------------------------+
-
-- **** | Sum of Credit Units for all: registered courses in the term.
-
-+------------------------------------+------------------------------------+
-
-- **** | Total Quality Points (TQP) ÷ Total: Credit Units (TCU)
-
-+------------------------------------+------------------------------------+
-```
+- **Total Quality Points (TQP)**: The sum of individual course quality points across all registered courses in the term, where each course's quality points equal its Credit Units multiplied by its Grade Point value (Credit Units &times; Grade Point).
+- **Total Credit Units (TCU)**: The sum of credit unit weights for all registered courses taken during the term (e.g., 18 to 24 units).
+- **Semester Grade Point Average (GPA)**: Computed directly as Total Quality Points divided by Total Credit Units (**GPA = TQP ÷ TCU**).
 
 ### Cumulative Grade Point Average (CGPA) Formula:
 When combining academic performance across multiple semesters (e.g., Year 1 through Year 4):

@@ -699,3 +699,52 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Germany GPA Converter](https://afriwidget.com/germany-gpa-converter) — Convert international university and high school GPAs (US 4.0, UK percentages, India 10.0 CGPA, Nigeria 5.0 CGPA, and European systems) to the German 1.0–4.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel) recognized by uni-assist, DAAD, and the KMK for Master's and Bachelor's degree admissions.
 
+## Liberia WAEC Grade Calculator (WASSCE Division & 9-Point Scale)
+
+[Liberia WAEC Grade Calculator](https://afriwidget.com/liberia-waec-grade-calculator) — Calculate official West African Senior School Certificate Examination (WASSCE) letter grades (A1 to F9) and numerical points according to the West African Examinations Council (WAEC Monrovia Office) regulations, compute Best 6 subject aggregates incorporating compulsory English Language and General Mathematics, tally credit passes, and verify certificate division standing (Division 1, 2, or 3).
+
+## Liberia University Admission Calculator (UL, Cuttington & Entrance Exam)
+
+[Liberia University Admission Calculator](https://afriwidget.com/liberia-university-admission-calculator) — Evaluate undergraduate admission eligibility for the University of Liberia (UL), Cuttington University, William V.S. Tubman University, and accredited tertiary colleges in Liberia by combining WASSCE secondary school credits with institutional entrance examination performance on the 60/40 Composite Admission Index.
+
+## Liberia University GPA Calculator (Semester GPA & CGPA 4.0 Scale)
+
+[Liberia University GPA Calculator](https://afriwidget.com/liberia-gpa-calculator) — Compute semester Grade Point Average (GPA) and Cumulative CGPA on the standard 4.00 collegiate scale for the University of Liberia (UL), Cuttington University, and Liberian tertiary colleges, calculate quality points per credit hour, track Dean's List eligibility, and determine Latin honours (Summa Cum Laude, Magna Cum Laude, Cum Laude).
+
+## Cameroon GCE O-Level Calculator (Points & Sixth Form Eligibility)
+
+[Cameroon GCE O-Level Calculator](https://afriwidget.com/cameroon-gce-o-level-calculator) — Calculate official Cameroon GCE Ordinary Level (O-Level) points (Grade A=3, B=2, C=1), compute Best 6 subjects aggregate score, check passing grades count, and evaluate eligibility for Sixth Form (Lower Sixth Science, Arts, and Commercial series) and MINESEC certificate regulations.
+
+## Cameroon GCE A-Level Calculator (Points, Grades & University Clearance)
+
+[Cameroon GCE A-Level Calculator](https://afriwidget.com/cameroon-gce-a-level-calculator) — Calculate Cameroon General Certificate of Education Advanced Level (GCE A-Level) total points on the official 5-point scale (A=5, B=4, C=3, D=2, E=1; O/F=0), compute Best 3 subjects faculty score out of 15, tally principal passes count, and determine direct university degree matriculation eligibility under MINESUP and CGCEB rules.
+
+## Cameroon University Admission Calculator (UB, UBa, Concours & Cut-offs)
+
+[Cameroon University Admission Calculator](https://afriwidget.com/cameroon-university-admission-calculator) — Evaluate undergraduate degree admission chances for University of Buea (UB), University of Bamenda (UBa), Yaoundé I, Douala, and competitive entrance Concourses (FHS Buea, FET UB, NAHPI UBa, ENS Yaoundé) by analyzing GCE A-Level points, O-Level core credits, prerequisite subject compliance, and competitive Concours composite scores.
+
+## Rwanda National Exam Points Calculator (NESA S6 & S3)
+
+[Rwanda National Exam Points Calculator](https://afriwidget.com/rwanda-national-exam-points-calculator) — Calculate official Rwanda National Examination and School Inspection Authority (NESA) exam points for Senior Six (S6 Advanced Level, TVET, TTC out of 60 weighted points) and Senior Three (S3 Ordinary Level out of 54 points), with Higher Education Council (HEC) compliance, AGCSE graduation clearance, and University of Rwanda (UR) admission audits.
+
+## Seychelles Secondary Exam Calculator (S5 Cambridge IGCSE Points)
+
+[Seychelles Secondary Exam Calculator](https://afriwidget.com/seychelles-secondary-exam-calculator) — Calculate official Seychelles Secondary Five (S5) Cambridge IGCSE examination points on the 8-point scale (A*=8 to G=1), count credit passes (Grade C and above), and evaluate admission qualification status for School of Advanced Level Studies (SALS), Seychelles Institute of Technology (SIT), NIHSS, and TGTC.
+
+## Seychelles University Admission Calculator (UniSey & ANHRD Scholarship)
+
+[Seychelles University Admission Calculator](https://afriwidget.com/seychelles-university-admission-calculator) — Compute University of Seychelles (UniSey) admission points and UCAS tariff score from Cambridge International A-Levels, check prerequisite O-Level English and Mathematics compliance, evaluate direct degree admission eligibility, and assess National Human Resources Development (ANHRD) government scholarship qualification.
+
+## Seychelles GPA Calculator (UniSey SGPA & CGPA 4.0/4.3 Scales)
+
+[Seychelles GPA Calculator](https://afriwidget.com/seychelles-gpa-calculator) — Calculate Semester Grade Point Average (SGPA) and Cumulative CGPA on the standard 4.0 and 4.3 scales for the University of Seychelles (UniSey) and Seychellois tertiary institutes, incorporating SQA credit weighting, quality points, and British undergraduate degree honours classification (First Class, Upper Second 2:1, Lower Second 2:2, Third Class).
+
+## Seychelles Student Budget Calculator (Monthly SCR & ANHRD Allowance)
+
+[Seychelles Student Budget Calculator](https://afriwidget.com/seychelles-student-budget-calculator) — Plan student living expenses in Seychelles Rupees (SCR) across Mahé, Praslin, and La Digue. Balance ANHRD tertiary stipends, SPTC bus transit cards, island rental housing, STC grocery food baskets, and mobile data packages.
+
+## Seychelles Study Planner & Revision Timetable (IGCSE, A-Levels & UniSey)
+
+[Seychelles Study Planner](https://afriwidget.com/seychelles-study-planner) — Generate an intelligent, priority-weighted revision timetable for Seychelles secondary and tertiary students preparing for S5 Cambridge IGCSE, SALS A-Levels, and UniSey degree modules with custom Pomodoro study blocks and spaced repetition schedules.
+
+

@@ -7,9 +7,9 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "lint": "node --check server.js academic-tools.js universal-ai.js share-results.js footer.js new-tools.js",
+    "lint": "node --check server.js academic-tools.js universal-ai.js share-results.js footer.js new-tools.js search-engine.js build-search-engine.js",
     "build:css": "npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\"",
-    "build": "node generate-og-assets.js && node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\"",
+    "build": "node build-search-engine.js && node generate-og-assets.js && node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\"",
     "deploy": "npx wrangler pages deploy ."
   },
   "dependencies": {

@@ -97,5 +97,5 @@ Cloudflare Pages parses `_headers` to enforce:
 ### 5. URL Rewriting & Clean Routing (`_redirects`)
 Cloudflare Pages parses `_redirects` to execute:
 - Canonical 301 redirects for legacy routes and slug migrations.
-- Clean extensionless URLs (`/:page /:page.html 200`).
-- Seamless proxying for API routes.
+- Clean extensionless URLs are handled natively by Cloudflare Pages asset serving (extensionless requests resolve directly to corresponding `.html` files without redirect loops).
+- **Rule**: Do NOT add `/:page /:page.html 200` to `_redirects`, as Cloudflare's automatic 308 redirect on `.html` will trigger an `ERR_TOO_MANY_REDIRECTS` loop.

@@ -10,24 +10,9 @@ The **AfriWidget JAMB Admission Chance Checker** evaluates your realistic admiss
 
 Under the legal framework established by the Federal Ministry of Education and implemented through the **JAMB Central Admissions Processing System (CAPS)**, all Nigerian federal universities are statutorily required to allocate their verified carrying capacity across three distinct quota channels:
 
-```
-+-------------------------------------------------------------------------+
-
-
-+------------------------------------+------------------------------------+
-
-- **** | Awarded strictly to top candidates: nationwide, regardless of origin.
-
-+------------------------------------+------------------------------------+
-
-- **** | Reserved for applicants from the: university's geopolitical zone.
-
-+------------------------------------+------------------------------------+
-
-- **** | Allocated to 23 Educationally Less: Developed States in Nigeria.
-
-+------------------------------------+------------------------------------+
-```
+- **National Merit Channel (45%)**: Awarded strictly to top-performing candidates nationwide based on cumulative composite scores, regardless of state of origin or demographic background.
+- **Catchment Area Channel (35%)**: Reserved for applicants whose state of origin falls within the university's designated geopolitical catchment area, expanding access for local communities.
+- **Educationally Less Developed States (ELDS) Channel (20%)**: Allocated to qualified candidates from the 23 designated Educationally Less Developed States across Nigeria to ensure balanced national human capital development.
 
 ### 1. National Merit Channel (45%)
 The first 45% of departmental admissions are awarded strictly based on cumulative composite merit. Any Nigerian candidate, irrespective of state of origin, geopolitical zone, or demographic background, is considered in this primary tier. Departmental merit cutoffs are the highest benchmarks in the university.

@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
@@ -21,8 +19,38 @@
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
   </script>
-  <!-- Google AdSense Official Script Tag -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474" crossorigin="anonymous"></script>
+  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
+  <script>
+    (function() {
+      var adSenseLoaded = false;
+      function loadAdSense() {
+        if (adSenseLoaded) return;
+        adSenseLoaded = true;
+        ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+          window.removeEventListener(evt, loadAdSense, { passive: true });
+        });
+        var s = document.createElement('script');
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2239061398283474';
+        document.head.appendChild(s);
+      }
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadAdSense, { passive: true, once: true });
+      });
+      if ('requestIdleCallback' in window) {
+        window.addEventListener('load', function() {
+          requestIdleCallback(function() {
+            setTimeout(loadAdSense, 3500);
+          }, { timeout: 4000 });
+        });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadAdSense, 3500);
+        });
+      }
+    })();
+  </script>
 <title>ICASS Score Calculator for TVET Students – AfriWidget</title>
   
   <meta name="description" content="Calculate weighted Internal Continuous Assessment (ICASS) scores for South Africa TVET college courses (N1–N6 and NC(V)). Free, instant, and private in-browser tool." />
@@ -180,118 +208,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-full flex flex-col antialiased">
   <!-- Mandatory Global Navigation -->
-                                                                                                                                                    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                                                                                                                    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -380,234 +300,250 @@
   </div>
 
   <!-- Hero Header -->
-  <header class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white pt-12 pb-14 sm:pt-16 sm:pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
-          ⚡ 100% Free • No Signup • Private In-Browser Tool
-        </span>
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-400/30">
-          🇿🇦 South Africa TVET / DHET Standards
-        </span>
+  <header class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white py-10 sm:py-14 px-4 border-b border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-yellow-300 text-xs font-semibold mb-3 shadow-inner">
+        <svg class="w-3.5 h-3.5 text-yellow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        <span>South Africa &middot; DHET &amp; TVET Colleges National Standard</span>
       </div>
       
-      <div class="grid lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-8">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-            ICASS Score Calculator <span class="text-yellow-400">for TVET Students</span>
-          </h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            Calculate your weighted Internal Continuous Assessment (ICASS) average for South Africa TVET colleges (N1–N6 and NC(V)), verify DHET national exam admission eligibility (40% sub-minimum), and project target marks needed to pass or earn a distinction.
-          </p>
-        </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
+        ICASS Score Calculator <span class="text-yellow-300">for TVET Students</span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Calculate your weighted Internal Continuous Assessment (ICASS) average for South Africa TVET colleges (N1&ndash;N6 and NC(V)), verify DHET national examination admission eligibility (40% sub-minimum), and project target marks needed to pass or achieve a distinction.
+      </p>
 
-        <div class="lg:col-span-4 grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-4 text-center">
-            <span class="block text-2xl font-black text-yellow-400">40%</span>
-            <span class="text-xs font-semibold text-slate-300 mt-0.5 block">NATED Exam Entry Min</span>
-          </div>
-          <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-4 text-center">
-            <span class="block text-2xl font-black text-emerald-400">40 / 60</span>
-            <span class="text-xs font-semibold text-slate-300 mt-0.5 block">ICASS / Exam Split</span>
-          </div>
-          <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-4 text-center">
-            <span class="block text-2xl font-black text-blue-400">5-Task</span>
-            <span class="text-xs font-semibold text-slate-300 mt-0.5 block">Standard DHET Model</span>
-          </div>
-          <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-4 text-center">
-            <span class="block text-2xl font-black text-purple-400">75%</span>
-            <span class="text-xs font-semibold text-slate-300 mt-0.5 block">Distinction Barrier</span>
-          </div>
+      <div class="mt-4 flex items-center justify-center gap-2 text-xs font-bold text-emerald-400">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>100% Free &bull; No Signup &bull; Private In-Browser Tool</span>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-6">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-center shadow-xs">
+          <span class="block text-2xl font-black text-yellow-300">40%</span>
+          <span class="text-xs font-medium text-slate-300 mt-0.5 block">Exam Entry Min</span>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-center shadow-xs">
+          <span class="block text-2xl font-black text-emerald-400">40 / 60</span>
+          <span class="text-xs font-medium text-slate-300 mt-0.5 block">ICASS / Exam Split</span>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-center shadow-xs">
+          <span class="block text-2xl font-black text-white">5-Task</span>
+          <span class="text-xs font-medium text-slate-300 mt-0.5 block">Standard Model</span>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3 text-center shadow-xs">
+          <span class="block text-2xl font-black text-yellow-300">75%</span>
+          <span class="text-xs font-medium text-slate-300 mt-0.5 block">Distinction Barrier</span>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Main Calculator Workspace (Spacious 2-Column Responsive Dashboard) -->
-  <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10 mb-16 relative z-10">
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
+  <main class="flex-grow w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+    <!-- Fast Presets & Action Bar -->
+    <div class="bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 mb-6 sm:mb-8 shadow-xs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-900 uppercase tracking-wider">Fast Presets:</span>
+          <span class="text-xs text-slate-500">Load sample scores to test DHET admission rules</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" id="icassSampleBtn" class="px-3.5 py-2 text-xs font-bold bg-slate-50 hover:bg-yellow-50 text-slate-800 hover:text-slate-950 border border-slate-200 hover:border-yellow-400 rounded-xl shadow-2xs transition-all cursor-pointer inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>Sample Marks</span>
+          </button>
+          <button type="button" id="icassResetBtn" class="px-3.5 py-2 text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 rounded-xl transition-all cursor-pointer inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Clear Form</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-Column Calculator Dashboard -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-12">
 
       <!-- LEFT COLUMN: Input Workspace (7 cols on lg) -->
-      <section class="lg:col-span-7 bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-8" aria-labelledby="icass-calc-heading">
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold bg-yellow-100 text-yellow-900 border border-yellow-300">
-              <span>📚</span>
-              <span>DHET Continuous Assessment</span>
-            </div>
-            <h2 id="icass-calc-heading" class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
-              Continuous Assessment Marks
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Select your course weighting format and enter task scores out of 100%.</p>
+      <section class="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-4 sm:p-6 lg:p-7" aria-labelledby="icass-calc-heading">
+        <div class="border-b border-slate-100 pb-4 mb-5">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200 mb-2">
+            <svg class="w-3.5 h-3.5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>DHET Continuous Assessment</span>
           </div>
-
-          <div class="flex items-center gap-2">
-            <button type="button" id="icassSampleBtn" class="px-3.5 py-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 active:scale-95 rounded-xl transition border border-slate-200 cursor-pointer inline-flex items-center gap-1.5 shadow-sm">
-              <span>✨</span>
-              <span>Sample Marks</span>
-            </button>
-            <button type="button" id="icassResetBtn" class="px-3.5 py-2 text-xs font-bold text-slate-500 hover:text-slate-800 bg-white hover:bg-slate-100 active:scale-95 rounded-xl transition border border-slate-200 cursor-pointer inline-flex items-center gap-1.5 shadow-sm">
-              <span>🔄</span>
-              <span>Clear</span>
-            </button>
-          </div>
+          <h2 id="icass-calc-heading" class="text-xl sm:text-2xl font-black text-slate-900">
+            Assessment Mark Entry
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Select your course weighting format and enter task scores out of 100%.</p>
         </div>
 
-        <!-- Mode Selector Tabs (Pill Segmented Controls) -->
-        <div class="mt-6">
-          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Select Assessment Weighting Preset:</label>
+        <!-- Mode Selector Tabs -->
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Assessment Weighting Preset:</label>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200" role="tablist" aria-label="ICASS Assessment Preset">
-            <button type="button" id="tabStandard" class="px-3 py-2.5 text-xs sm:text-sm font-black rounded-xl bg-slate-900 text-yellow-300 shadow-sm transition-all text-center cursor-pointer" role="tab" aria-selected="true">
-              ⭐ Standard 5-Task
+            <button type="button" id="tabStandard" class="px-3 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-slate-900 text-yellow-300 shadow-xs transition-all text-center cursor-pointer" role="tab" aria-selected="true">
+              Standard 5-Task
             </button>
-            <button type="button" id="tabTrimester" class="px-3 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-transparent hover:bg-white/70 text-slate-700 transition-all text-center cursor-pointer" role="tab" aria-selected="false">
-              📅 Trimester 3-Task
+            <button type="button" id="tabTrimester" class="px-3 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-transparent hover:bg-white/70 text-slate-700 transition-all text-center cursor-pointer" role="tab" aria-selected="false">
+              Trimester 3-Task
             </button>
-            <button type="button" id="tabCustom" class="px-3 py-2.5 text-xs sm:text-sm font-bold rounded-xl bg-transparent hover:bg-white/70 text-slate-700 transition-all text-center cursor-pointer" role="tab" aria-selected="false">
-              ⚙️ Custom Weights
+            <button type="button" id="tabCustom" class="px-3 py-2.5 text-xs sm:text-sm font-semibold rounded-xl bg-transparent hover:bg-white/70 text-slate-700 transition-all text-center cursor-pointer" role="tab" aria-selected="false">
+              Custom Weights
             </button>
           </div>
         </div>
 
         <!-- Dynamic Formula Explainer Banner -->
-        <div class="mt-4 p-4 bg-slate-900 text-slate-200 rounded-2xl text-xs sm:text-sm font-medium border border-slate-800 shadow-inner">
+        <div class="p-3 sm:p-4 bg-slate-900 text-slate-200 rounded-xl sm:rounded-2xl text-xs font-medium border border-slate-800 shadow-xs mb-5">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <div class="flex items-center gap-2">
-              <span class="text-yellow-400 font-black">Formula Applied:</span>
-              <span class="font-mono text-yellow-200 text-xs sm:text-sm">Test 1 (10%) + Assign 1 (25%) + Test 2 (10%) + Assign 2 (25%) + Trial Exam (30%)</span>
+              <span class="text-yellow-300 font-bold">Active Formula:</span>
+              <span class="font-mono text-slate-300 text-xs">Test 1 (10%) + Assign 1 (25%) + Test 2 (10%) + Assign 2 (25%) + Trial Exam (30%)</span>
             </div>
-            <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-700 px-2.5 py-0.5 rounded-full font-black whitespace-nowrap">
-              Weight Total = 100%
+            <span class="text-[11px] bg-slate-800 text-emerald-400 border border-slate-700 px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap">
+              Total Weight = 100%
             </span>
           </div>
         </div>
 
         <!-- Form Input Container -->
-        <form id="icassForm" onsubmit="return false;" class="mt-6">
+        <form id="icassForm" onsubmit="return false;">
           
           <!-- Mode 1: Standard TVET 5-Task Mode -->
           <div id="icassStandardMode" class="space-y-4">
-            <div class="grid gap-4 sm:grid-cols-2">
+            <div class="grid gap-3.5 sm:grid-cols-2">
               <!-- Test 1 (10%) -->
-              <div class="p-4 bg-slate-50/80 border-2 border-slate-200 rounded-2xl hover:border-yellow-400 focus-within:border-yellow-500 focus-within:bg-white transition-all shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassTest1Score" class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
-                    <span>🧪</span>
+                  <label for="icassTest1Score" class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center shrink-0">1</span>
                     <span>Class Test 1</span>
                   </label>
-                  <span class="text-xs font-black px-2.5 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">10% Weight</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">10% Weight</span>
                 </div>
                 <div class="relative">
-                  <input id="icassTest1Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 68" class="w-full text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:ring-4 focus:ring-yellow-100 focus:outline-none transition" />
-                  <span class="absolute right-3.5 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassTest1Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 68" class="w-full text-sm sm:text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
                 <p class="text-[11px] text-slate-500 mt-1.5">First term formative theory test mark</p>
               </div>
 
               <!-- Assignment 1 (25%) -->
-              <div class="p-4 bg-slate-50/80 border-2 border-slate-200 rounded-2xl hover:border-blue-400 focus-within:border-blue-500 focus-within:bg-white transition-all shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassAssign1Score" class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
-                    <span>📝</span>
+                  <label for="icassAssign1Score" class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center shrink-0">2</span>
                     <span>Assignment 1</span>
                   </label>
-                  <span class="text-xs font-black px-2.5 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">25% Weight</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">25% Weight</span>
                 </div>
                 <div class="relative">
-                  <input id="icassAssign1Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="w-full text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none transition" />
-                  <span class="absolute right-3.5 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassAssign1Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="w-full text-sm sm:text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
                 <p class="text-[11px] text-slate-500 mt-1.5">Theory coursework / research assignment 1</p>
               </div>
 
               <!-- Test 2 (10%) -->
-              <div class="p-4 bg-slate-50/80 border-2 border-slate-200 rounded-2xl hover:border-yellow-400 focus-within:border-yellow-500 focus-within:bg-white transition-all shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassTest2Score" class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
-                    <span>🧪</span>
+                  <label for="icassTest2Score" class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center shrink-0">3</span>
                     <span>Class Test 2</span>
                   </label>
-                  <span class="text-xs font-black px-2.5 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">10% Weight</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">10% Weight</span>
                 </div>
                 <div class="relative">
-                  <input id="icassTest2Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 72" class="w-full text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:ring-4 focus:ring-yellow-100 focus:outline-none transition" />
-                  <span class="absolute right-3.5 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassTest2Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 72" class="w-full text-sm sm:text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
                 <p class="text-[11px] text-slate-500 mt-1.5">Second term formative theory test mark</p>
               </div>
 
               <!-- Assignment 2 (25%) -->
-              <div class="p-4 bg-slate-50/80 border-2 border-slate-200 rounded-2xl hover:border-blue-400 focus-within:border-blue-500 focus-within:bg-white transition-all shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassAssign2Score" class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
-                    <span>📝</span>
+                  <label for="icassAssign2Score" class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-slate-900 text-yellow-300 text-xs font-black flex items-center justify-center shrink-0">4</span>
                     <span>Assignment 2</span>
                   </label>
-                  <span class="text-xs font-black px-2.5 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">25% Weight</span>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">25% Weight</span>
                 </div>
                 <div class="relative">
-                  <input id="icassAssign2Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 78" class="w-full text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 focus:outline-none transition" />
-                  <span class="absolute right-3.5 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassAssign2Score" type="number" min="0" max="100" step="0.01" placeholder="e.g. 78" class="w-full text-sm sm:text-base font-bold pl-3.5 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3.5 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
                 <p class="text-[11px] text-slate-500 mt-1.5">Practical project / coursework assignment 2</p>
               </div>
             </div>
 
             <!-- Trial Exam / Internal Preparatory Exam (30%) Full Width -->
-            <div class="p-4 sm:p-5 bg-gradient-to-r from-purple-50 to-indigo-50/80 border-2 border-purple-200 rounded-2xl hover:border-purple-400 focus-within:border-purple-500 focus-within:bg-white transition-all shadow-sm">
+            <div class="p-3.5 sm:p-4 bg-slate-900 text-white rounded-xl border border-slate-800 shadow-sm">
               <div class="flex items-center justify-between mb-2">
-                <label for="icassTrialScore" class="font-extrabold text-purple-950 text-sm sm:text-base flex items-center gap-2">
-                  <span>🏛️</span>
+                <label for="icassTrialScore" class="font-extrabold text-white text-sm sm:text-base flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-yellow-400 text-slate-950 text-xs font-black flex items-center justify-center shrink-0">5</span>
                   <span>Trial / Internal Preparatory Exam</span>
                 </label>
-                <span class="text-xs font-black px-3 py-1 bg-purple-200/80 text-purple-950 border border-purple-300 rounded-lg">
+                <span class="text-xs font-bold px-2.5 py-0.5 bg-slate-800 text-yellow-300 border border-slate-700 rounded-md">
                   30% Weight (Largest Task)
                 </span>
               </div>
               <div class="relative">
-                <input id="icassTrialScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="w-full text-lg font-black pl-4 pr-10 py-3 bg-white border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-100 focus:outline-none transition" />
-                <span class="absolute right-4 top-3.5 text-purple-400 text-base font-black">%</span>
+                <input id="icassTrialScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="w-full text-base font-bold pl-4 pr-10 py-3 bg-slate-800 border border-slate-700 text-white rounded-xl focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                <span class="absolute right-4 top-3 text-slate-400 text-base font-bold">%</span>
               </div>
-              <p class="text-xs text-purple-800/80 mt-2">Comprehensive internal simulated examination administered under standard DHET exam conditions</p>
+              <p class="text-xs text-slate-400 mt-2">Comprehensive internal simulated examination administered under standard DHET exam conditions</p>
             </div>
           </div>
 
           <!-- Mode 2: Trimester NATED 3-Task Mode (Hidden by default) -->
           <div id="icassTrimesterMode" class="hidden space-y-4">
-            <div class="grid gap-4 sm:grid-cols-3">
+            <div class="grid gap-3.5 sm:grid-cols-3">
               <!-- Test 1 (30%) -->
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl hover:border-yellow-400 transition shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassTrimTest" class="font-extrabold text-slate-800 text-sm">🧪 Class Test</label>
-                  <span class="text-xs font-black px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">30%</span>
+                  <label for="icassTrimTest" class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                    <span class="w-5 h-5 rounded-full bg-slate-900 text-yellow-300 text-xs font-black inline-flex items-center justify-center shrink-0">1</span>
+                    <span>Class Test</span>
+                  </label>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">30%</span>
                 </div>
                 <div class="relative">
-                  <input id="icassTrimTest" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
-                  <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassTrimTest" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="w-full text-sm font-bold pl-3 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
               </div>
 
               <!-- Assignment (20%) -->
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl hover:border-blue-400 transition shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassTrimAssign" class="font-extrabold text-slate-800 text-sm">📝 Assignment</label>
-                  <span class="text-xs font-black px-2 py-0.5 bg-blue-100 text-blue-900 border border-blue-300 rounded-md">20%</span>
+                  <label for="icassTrimAssign" class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                    <span class="w-5 h-5 rounded-full bg-slate-900 text-yellow-300 text-xs font-black inline-flex items-center justify-center shrink-0">2</span>
+                    <span>Assignment</span>
+                  </label>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">20%</span>
                 </div>
                 <div class="relative">
-                  <input id="icassTrimAssign" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:outline-none" />
-                  <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassTrimAssign" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="w-full text-sm font-bold pl-3 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
               </div>
 
               <!-- Internal Exam (50%) -->
-              <div class="p-4 bg-purple-50/80 border-2 border-purple-200 rounded-2xl hover:border-purple-400 transition shadow-sm">
+              <div class="p-3.5 sm:p-4 bg-slate-50 rounded-xl border border-slate-200/80 shadow-2xs">
                 <div class="flex items-center justify-between mb-2">
-                  <label for="icassTrimTrial" class="font-extrabold text-purple-950 text-sm">🏛️ Internal Exam</label>
-                  <span class="text-xs font-black px-2 py-0.5 bg-purple-200 text-purple-950 border border-purple-300 rounded-md">50%</span>
+                  <label for="icassTrimTrial" class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                    <span class="w-5 h-5 rounded-full bg-slate-900 text-yellow-300 text-xs font-black inline-flex items-center justify-center shrink-0">3</span>
+                    <span>Internal Exam</span>
+                  </label>
+                  <span class="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-700 border border-slate-200 rounded-md">50%</span>
                 </div>
                 <div class="relative">
-                  <input id="icassTrimTrial" type="number" min="0" max="100" step="0.01" placeholder="e.g. 68" class="w-full text-base font-bold pl-3 pr-8 py-2.5 bg-white border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:outline-none" />
-                  <span class="absolute right-3 top-3 text-slate-400 text-sm font-bold">%</span>
+                  <input id="icassTrimTrial" type="number" min="0" max="100" step="0.01" placeholder="e.g. 68" class="w-full text-sm font-bold pl-3 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition" />
+                  <span class="absolute right-3 top-2.5 text-slate-400 text-sm font-bold">%</span>
                 </div>
               </div>
             </div>
@@ -615,59 +551,60 @@
 
           <!-- Mode 3: Custom Weights Mode (Hidden by default) -->
           <div id="icassCustomMode" class="hidden space-y-4">
-            <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-2xl text-xs text-amber-900 font-medium">
-              💡 Enter custom mark percentages and weight values. Make sure all four weight fields sum to exactly 100%.
+            <div class="p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 font-medium flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Enter custom mark percentages and weight values. All four weight fields must sum to exactly 100%.</span>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl shadow-sm">
+            <div class="grid gap-3.5 sm:grid-cols-2">
+              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-2xs">
                 <div class="flex gap-3">
                   <div class="flex-1">
-                    <label for="icassAssignmentScore" class="text-xs font-extrabold text-slate-800">Assignment Score (%)</label>
-                    <input id="icassAssignmentScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 75" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassAssignmentScore" class="text-xs font-bold text-slate-800">Assignment Score (%)</label>
+                    <input id="icassAssignmentScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 75" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                   <div class="w-1/3">
-                    <label for="icassAssignmentWeight" class="text-xs font-extrabold text-slate-800">Weight (%)</label>
-                    <input id="icassAssignmentWeight" type="number" min="0" max="100" step="0.01" placeholder="25" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassAssignmentWeight" class="text-xs font-bold text-slate-800">Weight (%)</label>
+                    <input id="icassAssignmentWeight" type="number" min="0" max="100" step="0.01" placeholder="25" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                 </div>
               </div>
 
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl shadow-sm">
+              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-2xs">
                 <div class="flex gap-3">
                   <div class="flex-1">
-                    <label for="icassPracticalScore" class="text-xs font-extrabold text-slate-800">Practical Score (%)</label>
-                    <input id="icassPracticalScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassPracticalScore" class="text-xs font-bold text-slate-800">Practical Score (%)</label>
+                    <input id="icassPracticalScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 80" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                   <div class="w-1/3">
-                    <label for="icassPracticalWeight" class="text-xs font-extrabold text-slate-800">Weight (%)</label>
-                    <input id="icassPracticalWeight" type="number" min="0" max="100" step="0.01" placeholder="35" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassPracticalWeight" class="text-xs font-bold text-slate-800">Weight (%)</label>
+                    <input id="icassPracticalWeight" type="number" min="0" max="100" step="0.01" placeholder="35" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                 </div>
               </div>
 
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl shadow-sm">
+              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-2xs">
                 <div class="flex gap-3">
                   <div class="flex-1">
-                    <label for="icassTestScore" class="text-xs font-extrabold text-slate-800">Test Score (%)</label>
-                    <input id="icassTestScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassTestScore" class="text-xs font-bold text-slate-800">Test Score (%)</label>
+                    <input id="icassTestScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 65" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                   <div class="w-1/3">
-                    <label for="icassTestWeight" class="text-xs font-extrabold text-slate-800">Weight (%)</label>
-                    <input id="icassTestWeight" type="number" min="0" max="100" step="0.01" placeholder="30" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassTestWeight" class="text-xs font-bold text-slate-800">Weight (%)</label>
+                    <input id="icassTestWeight" type="number" min="0" max="100" step="0.01" placeholder="30" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                 </div>
               </div>
 
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl shadow-sm">
+              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-2xs">
                 <div class="flex gap-3">
                   <div class="flex-1">
-                    <label for="icassAttendanceScore" class="text-xs font-extrabold text-slate-800">Attendance / Other (%)</label>
-                    <input id="icassAttendanceScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 90" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassAttendanceScore" class="text-xs font-bold text-slate-800">Attendance / Other (%)</label>
+                    <input id="icassAttendanceScore" type="number" min="0" max="100" step="0.01" placeholder="e.g. 90" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                   <div class="w-1/3">
-                    <label for="icassAttendanceWeight" class="text-xs font-extrabold text-slate-800">Weight (%)</label>
-                    <input id="icassAttendanceWeight" type="number" min="0" max="100" step="0.01" placeholder="10" class="mt-1 w-full font-bold px-3 py-2.5 bg-white border-2 border-slate-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+                    <label for="icassAttendanceWeight" class="text-xs font-bold text-slate-800">Weight (%)</label>
+                    <input id="icassAttendanceWeight" type="number" min="0" max="100" step="0.01" placeholder="10" class="mt-1 w-full text-sm font-bold px-3 py-2 bg-white border border-slate-300 rounded-xl text-slate-900 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none" />
                   </div>
                 </div>
               </div>
@@ -676,13 +613,13 @@
 
           <!-- Calculate CTA Button -->
           <div class="mt-6 pt-2">
-            <button id="icassCalculateBtn" type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 active:scale-[0.99] text-slate-950 font-black py-4 px-8 rounded-2xl shadow-lg hover:shadow-xl transition-all text-base sm:text-lg cursor-pointer flex items-center justify-center gap-2 border border-yellow-500/30">
-              <span>Calculate ICASS Mark</span>
-              <span class="text-xl">→</span>
+            <button id="icassCalculateBtn" type="submit" class="w-full bg-yellow-400 hover:bg-yellow-300 active:scale-[0.99] text-slate-950 font-extrabold py-3.5 sm:py-4 px-6 sm:px-8 text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 border border-yellow-500/30">
+              <svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Calculate ICASS Mark &amp; Exam Eligibility</span>
             </button>
             <div class="flex items-center justify-center gap-2 mt-3 text-xs font-semibold text-slate-500">
               <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              <span>Instant client-side calculation • No data transmitted or stored</span>
+              <span>Instant client-side calculation &bull; 100% private in-browser tool</span>
             </div>
           </div>
         </form>
@@ -695,54 +632,46 @@
       <aside class="lg:col-span-5 space-y-6">
         
         <!-- Live Result Card -->
-        <div id="icassResult" class="hidden bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-7 space-y-6">
-          <div class="border-b border-slate-100 pb-5">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Continuous Assessment Total</span>
-              <span class="text-xs font-bold px-2 py-0.5 bg-yellow-100 text-yellow-900 border border-yellow-300 rounded-md">TVET ICASS</span>
-            </div>
-            
-            <div class="mt-3 flex flex-wrap items-baseline gap-3">
-              <strong id="icassScore" class="text-4xl sm:text-5xl font-black text-slate-950 tracking-tight">0.00%</strong>
-            </div>
-
-            <!-- Performance Tier Pill -->
-            <div class="mt-2">
+        <div id="icassResult" class="hidden bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-5 sm:p-6 space-y-5">
+          <div class="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 shadow-md text-center">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Cumulative ICASS Average</span>
+            <span id="icassScore" class="text-4xl sm:text-5xl font-black tracking-tight text-yellow-300 mt-2 block">0.00%</span>
+            <div class="mt-3 flex justify-center">
               <span id="icassBand" class="font-bold text-xs sm:text-sm"></span>
             </div>
-
-            <!-- Animated Multi-Marker Progress Bar -->
-            <div class="mt-5">
-              <div class="flex justify-between text-[11px] font-extrabold text-slate-500 mb-1.5">
+            <div class="mt-4 pt-3 border-t border-slate-800">
+              <div class="flex justify-between text-[11px] font-bold text-slate-400 mb-1">
                 <span>0%</span>
-                <span class="text-amber-700">40% (Exam Entry)</span>
-                <span class="text-blue-700">50% (Pass)</span>
-                <span class="text-emerald-700">75% (Dist.)</span>
+                <span class="text-yellow-400">40% Min Entry</span>
+                <span class="text-emerald-400">75% Distinction</span>
                 <span>100%</span>
               </div>
-              <div class="w-full bg-slate-100 rounded-full h-3.5 p-0.5 border border-slate-200 overflow-hidden">
-                <div id="icassProgressBar" class="h-2.5 rounded-full bg-yellow-500 transition-all duration-700 shadow-sm" style="width: 0%"></div>
+              <div class="w-full bg-slate-800 rounded-full h-2.5 p-0.5 border border-slate-700 overflow-hidden">
+                <div id="icassProgressBar" class="h-1.5 rounded-full bg-yellow-400 transition-all duration-500" style="width: 0%"></div>
               </div>
             </div>
           </div>
 
           <!-- Exam Admission Status Card -->
-          <div id="icassEligibility" class="p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm"></div>
+          <div id="icassEligibility" class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 shadow-2xs"></div>
 
           <!-- Component Contribution Table -->
           <div>
-            <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-2.5 flex items-center justify-between">
-              <span>📊 Task Contribution Breakdown</span>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <span>Task Contribution Breakdown</span>
+              </h3>
               <span class="text-[11px] font-semibold text-slate-400">Sum = ICASS Total</span>
-            </h3>
-            <div class="overflow-hidden bg-slate-50/70 rounded-2xl border border-slate-200">
+            </div>
+            <div class="overflow-hidden bg-slate-50 rounded-xl border border-slate-200">
               <table class="w-full text-xs sm:text-sm">
-                <thead class="bg-slate-100 border-b border-slate-200 text-[11px] font-extrabold text-slate-600 uppercase">
+                <thead class="bg-slate-100 border-b border-slate-200 text-[11px] font-bold text-slate-600 uppercase">
                   <tr>
-                    <th class="py-2.5 px-3 text-left">Task</th>
-                    <th class="py-2.5 px-2 text-center">Weight</th>
-                    <th class="py-2.5 px-2 text-center">Score</th>
-                    <th class="py-2.5 px-3 text-right">Added</th>
+                    <th class="py-2 px-3 text-left">Task</th>
+                    <th class="py-2 px-2 text-center">Weight</th>
+                    <th class="py-2 px-2 text-center">Score</th>
+                    <th class="py-2 px-3 text-right">Added</th>
                   </tr>
                 </thead>
                 <tbody id="icassBreakdownTable" class="divide-y divide-slate-100"></tbody>
@@ -754,7 +683,7 @@
           <div class="p-4 sm:p-5 bg-slate-900 text-white rounded-2xl border border-slate-800 shadow-md">
             <div class="flex items-center justify-between gap-2 mb-2">
               <h3 class="text-xs sm:text-sm font-black text-yellow-300 flex items-center gap-1.5">
-                <span>🎯</span>
+                <svg class="w-4 h-4 text-yellow-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Final Exam Target Required</span>
               </h3>
               <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-800 text-slate-300 rounded border border-slate-700">40% ICASS / 60% Exam</span>
@@ -763,60 +692,60 @@
               Minimum mark you must score in the national final paper to achieve your desired overall subject mark:
             </p>
             <div class="grid grid-cols-3 gap-2 text-center">
-              <div class="p-2 sm:p-2.5 bg-slate-800/90 rounded-xl border border-slate-700">
+              <div class="p-2.5 bg-slate-800 rounded-xl border border-slate-700">
                 <span class="text-[10px] sm:text-xs text-slate-400 block font-bold">50% Pass</span>
-                <strong id="icassTarget50" class="text-sm sm:text-base font-black text-yellow-400 mt-0.5 block">—</strong>
+                <strong id="icassTarget50" class="text-sm sm:text-base font-black text-yellow-300 mt-0.5 block">&mdash;</strong>
               </div>
-              <div class="p-2 sm:p-2.5 bg-slate-800/90 rounded-xl border border-slate-700">
-                <span class="text-[10px] sm:text-xs text-slate-400 block font-bold">65% Strong</span>
-                <strong id="icassTarget65" class="text-sm sm:text-base font-black text-blue-400 mt-0.5 block">—</strong>
+              <div class="p-2.5 bg-slate-800 rounded-xl border border-slate-700">
+                <span class="text-[10px] sm:text-xs text-slate-400 block font-bold">65% Credit</span>
+                <strong id="icassTarget65" class="text-sm sm:text-base font-black text-blue-400 mt-0.5 block">&mdash;</strong>
               </div>
-              <div class="p-2 sm:p-2.5 bg-slate-800/90 rounded-xl border border-slate-700">
+              <div class="p-2.5 bg-slate-800 rounded-xl border border-slate-700">
                 <span class="text-[10px] sm:text-xs text-slate-400 block font-bold">75% Distinction</span>
-                <strong id="icassTarget75" class="text-sm sm:text-base font-black text-emerald-400 mt-0.5 block">—</strong>
+                <strong id="icassTarget75" class="text-sm sm:text-base font-black text-emerald-400 mt-0.5 block">&mdash;</strong>
               </div>
             </div>
           </div>
 
           <!-- Quick Action Buttons & Links -->
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3 border-t border-slate-100">
-            <button type="button" id="icassCopyBtn" class="w-full sm:w-auto px-4 py-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 active:scale-95 rounded-xl transition border border-slate-200 cursor-pointer inline-flex items-center justify-center gap-1.5">
-              <span>📋</span>
+            <button type="button" id="icassCopyBtn" class="w-full sm:w-auto px-4 py-2.5 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 active:scale-95 rounded-xl transition border border-slate-200 cursor-pointer inline-flex items-center justify-center gap-1.5">
+              <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
               <span>Copy ICASS Summary</span>
             </button>
-            <a href="/tvet-exam-target-mark-calculator" class="text-xs font-bold text-slate-700 hover:text-yellow-600 transition underline inline-flex items-center gap-1">
-              <span>Exam Target Calculator</span>
-              <span>→</span>
+            <a href="/south-african-tvet-nated-calculator" class="text-xs font-bold text-yellow-600 hover:text-yellow-700 transition inline-flex items-center gap-1">
+              <span>NATED Pass Calculator</span>
+              <span>&rarr;</span>
             </a>
           </div>
         </div>
 
         <!-- TVET Guide & Sub-Minimum Quick Reference Card (Always visible helper) -->
-        <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-7 space-y-4">
-          <div class="flex items-center gap-2 text-slate-900 font-black text-base border-b border-slate-100 pb-3">
-            <span>🇿🇦</span>
+        <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-5 sm:p-6 space-y-4">
+          <div class="flex items-center gap-2 text-slate-900 font-extrabold text-base border-b border-slate-100 pb-3">
+            <svg class="w-5 h-5 text-yellow-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
             <span>DHET TVET ICASS Rules at a Glance</span>
           </div>
 
           <div class="space-y-3 text-xs sm:text-sm text-slate-600">
             <div class="flex items-start gap-2.5">
-              <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <p><strong class="text-slate-900">40% Exam Admission Rule:</strong> You must achieve at least 40% in your cumulative ICASS to be admitted to the national final examination.</p>
             </div>
             <div class="flex items-start gap-2.5">
-              <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <p><strong class="text-slate-900">40 / 60 Combined Weight:</strong> Final pass marks combine 40% ICASS score + 60% National Examination paper score.</p>
             </div>
             <div class="flex items-start gap-2.5">
-              <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
-              <p><strong class="text-slate-900">Trial Exam Importance:</strong> The internal preparatory exam counts 30% on its own—making it the highest leverage task in your portfolio.</p>
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              <p><strong class="text-slate-900">Trial Exam Importance:</strong> The internal preparatory exam counts 30% on its own&mdash;making it the highest leverage task in your portfolio.</p>
             </div>
           </div>
 
           <div class="mt-4 pt-4 border-t border-slate-100">
             <a href="#toolGuide" class="text-xs font-bold text-yellow-600 hover:text-yellow-700 flex items-center gap-1">
               <span>Read complete DHET assessment guidelines below</span>
-              <span>↓</span>
+              <span>&darr;</span>
             </a>
           </div>
         </div>
@@ -826,7 +755,7 @@
 
     <!-- Comprehensive Academic Guide & Authority Reference Hub -->
     <section id="toolGuide" class="mt-16 bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-10 lg:p-12 space-y-10" aria-label="ICASS Academic Guide">
-<h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Comprehensive Guide to ICASS Score Calculation for TVET Students</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Internal Continuous Assessment (ICASS) is a core evaluation framework utilized by Technical and Vocational Education and Training (TVET) colleges, vocational training institutes, and polytechnic colleges (such as those regulated by South Africa’s Department of Higher Education and Training - DHET for NATED Report 191 and NC(V) programmes). Unlike traditional academic systems that rely solely on a single high-stakes final examination, the ICASS system evaluates a student’s ongoing performance throughout the academic term across diverse practical, theoretical, and coursework tasks.</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Achieving a strong ICASS score is vital because internal continuous assessment marks carry substantial weight in determining final subject pass statuses, qualifying for national examination entry, and maintaining financial bursary eligibility (such as NSFAS funding).</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessment mark estimation tool. Designed specifically for TVET students, lecturers, and academic advisors, it calculates your weighted cumulative ICASS mark in real time, compares it against official passing thresholds, and executes 100% privately in your web browser.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">The Mathematics of Weighted ICASS Calculations</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">In Technical and Vocational Education and Training (TVET), continuous assessment tasks carry specific percentage weights prescribed by curriculum policy guidelines (such as the DHET National Policy on Assessment for TVET Colleges). The standard 5-task vocational model weights assessments as follows:</p><div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto"> <p class="font-semibold text-amber-400 mb-2">Standard TVET ICASS Mark (%) =</p> <p class="pl-4">(Test 1 &times; 0.10) + (Assign 1 &times; 0.25) + (Test 2 &times; 0.10) + (Assign 2 &times; 0.25) + (Trial Exam &times; 0.30)</p> </div><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Where:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Test 1 & Test 2</strong> = Class tests weighted at <strong>10%</strong> each (Total 20%)</li><li class="leading-relaxed"><strong>Assignment 1 & Assignment 2</strong> = Formal assignments / practical coursework weighted at <strong>25%</strong> each (Total 50%)</li><li class="leading-relaxed"><strong>Trial Exam / Preparatory Exam</strong> = Internal preparatory examination weighted at <strong>30%</strong> (Total 30%)</li><li class="leading-relaxed"><strong>Total Weights</strong> = 10% + 25% + 10% + 25% + 30% = <strong>100%</strong></li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Example Calculation</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Suppose a student scores the following marks in NATED N4 / NCV Level 4:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Test 1</strong>: Score = 68% (Weight 10%) &rarr; 68 &times; 0.10 = <strong>6.80%</strong></li><li class="leading-relaxed"><strong>Assignment 1</strong>: Score = 80% (Weight 25%) &rarr; 80 &times; 0.25 = <strong>20.00%</strong></li><li class="leading-relaxed"><strong>Test 2</strong>: Score = 72% (Weight 10%) &rarr; 72 &times; 0.10 = <strong>7.20%</strong></li><li class="leading-relaxed"><strong>Assignment 2</strong>: Score = 78% (Weight 25%) &rarr; 78 &times; 0.25 = <strong>19.50%</strong></li><li class="leading-relaxed"><strong>Trial Exam</strong>: Score = 65% (Weight 30%) &rarr; 65 &times; 0.30 = <strong>19.50%</strong></li><li class="leading-relaxed"><strong>Total Cumulative ICASS Mark</strong>: 6.80 + 20.00 + 7.20 + 19.50 + 19.50 = <strong>73.00%</strong> (Good Academic Standing / Near Distinction).</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Breakdown of ICASS Assessment Components</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Understanding the role of each assessment component helps students allocate study time effectively:</p><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Class Tests (Test 1 & Test 2 — 10% Each / 20% Total)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Evaluates foundational theory, module units, and problem-solving concepts taught during the term.</li><li class="leading-relaxed"><em>Academic Tip</em>: Consistent preparation for class tests provides easy foundation marks that protect your cumulative average.</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Coursework & Formal Assignments (Assign 1 & Assign 2 — 25% Each / 50% Total)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Deep-dive technical assignments, case studies, drafting exercises, or practical laboratory reports.</li><li class="leading-relaxed"><em>Academic Tip</em>: Submit assignments ahead of deadlines to avoid point penalties and secure high marks.</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Trial / Internal Preparatory Examination (30% Weight)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Comprehensive simulated exam covering the full semester or trimester curriculum under strict exam conditions.</li><li class="leading-relaxed"><em>Academic Tip</em>: The trial exam is the single largest individual assessment in the ICASS portfolio. High performance here significantly boosts exam qualification.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Sub-Minimum Requirements & Examination Admission Rules</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">To sit for national TVET final examinations, institutions enforce strict ICASS sub-minimum entry rules:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>40% Sub-Minimum ICASS Requirement</strong>: In most DHET NATED (N1–N6) subjects, a student MUST achieve a minimum ICASS mark of <strong>40%</strong> to qualify for admission to the final national examination paper.</li><li class="leading-relaxed"><strong>50% Sub-Minimum for Practical/Vocational Subjects</strong>: In National Certificate Vocational (NCV) Level 2–4 practical subjects, the sub-minimum requirement is often <strong>50%</strong>.</li><li class="leading-relaxed"><strong>Disqualification Consequences</strong>: Failing to meet the ICASS sub-minimum results in an automatic "Did Not Qualify" (DNQ) status. Students who DNQ are barred from writing the final exam and must re-enroll in the module during a subsequent semester.</li><li class="leading-relaxed"><strong>Contribution to Final Pass Mark</strong>: In NATED engineering and business courses, the ICASS mark typically contributes <strong>40%</strong> to the final combined subject mark, while the national examination contributes <strong>60%</strong>.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">How to Use the ICASS Calculator</h2><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Check Your Syllabus Handbook</strong>: Confirm the exact component percentage weights specified by your college lecturer or departmental handbook.</li><li class="leading-relaxed"><strong>Input Percentage Scores</strong>: Enter your achieved scores (0% to 100%) for Assignments, Practicals, Tests, and Attendance.</li><li class="leading-relaxed"><strong>Adjust Percentage Weights</strong>: Ensure the four component weight inputs sum up to exactly <strong>100%</strong> (e.g., 25% + 35% + 30% + 10% = 100%).</li><li class="leading-relaxed"><strong>Review Real-Time Output</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Weighted ICASS Estimate</strong>: Your overall weighted percentage score.</li><li class="leading-relaxed"><strong>Performance Band</strong>: Classification into Distinction (75%+), Passing Range (50%–74%), or At-Risk / Sub-Minimum warning (<50%).</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Formulate Mark Recovery Plans</strong>: Use the calculator to determine what marks you need in upcoming tests or practicals to cross the 40% or 50% examination entry barrier.</li></ol><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Practical Strategies for ICASS Mark Recovery</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">If your mid-term ICASS score falls near or below the 40% threshold, implement these recovery steps:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Request Supplementary Practical Re-assessments</strong>: Ask your workshop lecturer if you can re-attempt failed practical tasks or submit revised logbooks for re-marking.</li><li class="leading-relaxed"><strong>Maximize Attendance Points</strong>: Attending every remaining class session guarantees full attendance weighting points.</li><li class="leading-relaxed"><strong>Form Peer Study Groups</strong>: Collaborate with classmates on complex assignment calculations and past exam papers.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Privacy, Security & Client-Side Execution</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget handles academic mark calculations with complete confidentiality. All calculations run strictly inside your device’s browser using Vanilla JavaScript. No student names, identification numbers, college names, or academic grades are stored in databases or transmitted across the internet.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-10 mb-6 flex items-center gap-2.5"><span>❓</span><span>Frequently Asked Questions</span></h2><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What happens if component weights do not equal 100%?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Weighted calculations require all component weights to add up to 100%. If your institution uses a different weighting structure (e.g., 30% assignments, 50% tests, 20% practicals), adjust the input weight fields so their sum equals 100%.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Does a high ICASS score guarantee passing the module?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">A strong ICASS mark secures entry to the final examination and contributes significantly to your final grade. However, you must still meet the final exam sub-minimum pass mark (usually 40%) to pass the module overall.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can I recalculate my ICASS if I rewrite a test?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. Simply replace your old test mark in the input field with your updated score to see how your cumulative ICASS average improves.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the difference between NATED and NC(V) ICASS requirements?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">NATED (Report 191) courses are trimester or semester-based programmes with a 40% ICASS exam entry requirement. NC(V) courses are full-year vocational programmes with higher practical component weights and a 50% pass requirement.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Is this ICASS calculator free to use?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. AfriWidget is a 100% free educational platform with no hidden subscription fees, required user registrations, or account creations.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can TVET lecturers use this calculator to compute student averages?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. Lecturers and tutors can quickly verify individual student continuous assessment totals by entering component marks and verifying overall subject eligibility before submitting official mark sheets.</p></div></details>
+<h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Comprehensive Guide to ICASS Score Calculation for TVET Students</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Internal Continuous Assessment (ICASS) is the foundational continuous evaluation framework utilized by Technical and Vocational Education and Training (TVET) colleges, vocational training institutes, and polytechnic colleges across South Africa. Regulated by the Department of Higher Education and Training (DHET) under the National Policy on Assessment for TVET Colleges and monitored by Umalusi, ICASS evaluates a student’s ongoing competence throughout the academic term rather than relying solely on a single high-stakes final examination.</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Achieving a strong ICASS score is vital because internal continuous assessment marks carry substantial weight in determining final subject pass statuses, qualifying for national examination entry, and maintaining financial bursary eligibility (such as NSFAS funding).</p><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget’s ICASS Calculator provides an instant, weighted Continuous Assessment mark estimation tool. Designed specifically for TVET students, lecturers, and academic advisors, it calculates your weighted cumulative ICASS mark in real time, compares it against official passing thresholds, and executes 100% privately in your web browser.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">The Mathematics of Weighted ICASS Calculations</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">In Technical and Vocational Education and Training (TVET), continuous assessment tasks carry specific percentage weights prescribed by curriculum policy guidelines. In the standard 5-task vocational model, assessments are weighted as follows:</p><div class="my-4 p-4 bg-slate-800 rounded-lg text-slate-100 border border-slate-700 font-mono text-sm overflow-x-auto"> <p class="font-semibold text-yellow-300 mb-2">Standard TVET ICASS Mark (%) =</p> <p class="pl-4">(Test 1 &times; 0.10) + (Assign 1 &times; 0.25) + (Test 2 &times; 0.10) + (Assign 2 &times; 0.25) + (Trial Exam &times; 0.30)</p> </div><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Where:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Test 1 & Test 2</strong> = Formative class theory tests weighted at <strong>10%</strong> each (Total 20%)</li><li class="leading-relaxed"><strong>Assignment 1 & Assignment 2</strong> = Formal assignments, case studies, or practical coursework tasks weighted at <strong>25%</strong> each (Total 50%)</li><li class="leading-relaxed"><strong>Trial Exam / Preparatory Exam</strong> = Comprehensive internal preparatory examination weighted at <strong>30%</strong> (Total 30%)</li><li class="leading-relaxed"><strong>Total Weights</strong> = 10% + 25% + 10% + 25% + 30% = <strong>100%</strong></li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Example Calculation</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Suppose a student scores the following marks in NATED N4 or NC(V) Level 4:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Test 1</strong>: Score = 68% (Weight 10%) &rarr; 68 &times; 0.10 = <strong>6.80%</strong></li><li class="leading-relaxed"><strong>Assignment 1</strong>: Score = 80% (Weight 25%) &rarr; 80 &times; 0.25 = <strong>20.00%</strong></li><li class="leading-relaxed"><strong>Test 2</strong>: Score = 72% (Weight 10%) &rarr; 72 &times; 0.10 = <strong>7.20%</strong></li><li class="leading-relaxed"><strong>Assignment 2</strong>: Score = 78% (Weight 25%) &rarr; 78 &times; 0.25 = <strong>19.50%</strong></li><li class="leading-relaxed"><strong>Trial Exam</strong>: Score = 65% (Weight 30%) &rarr; 65 &times; 0.30 = <strong>19.50%</strong></li><li class="leading-relaxed"><strong>Total Cumulative ICASS Mark</strong>: 6.80 + 20.00 + 7.20 + 19.50 + 19.50 = <strong>73.00%</strong> (Good Academic Standing / Near Distinction).</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Breakdown of ICASS Assessment Components</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Understanding the role of each assessment component helps students allocate study time effectively:</p><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Class Tests (Test 1 & Test 2 — 10% Each / 20% Total)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Evaluates foundational theory, module units, and problem-solving concepts taught during the early and middle stages of the term.</li><li class="leading-relaxed">Consistent preparation for class tests provides easy foundation marks that protect your cumulative average from mid-term dips.</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Coursework & Formal Assignments (Assign 1 & Assign 2 — 25% Each / 50% Total)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Deep-dive technical assignments, case studies, engineering drafting exercises, or practical laboratory reports.</li><li class="leading-relaxed">Submitting assignments ahead of deadlines guarantees full points and eliminates penalty deductions.</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Trial / Internal Preparatory Examination (30% Weight)</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed">Comprehensive simulated exam covering the full semester or trimester curriculum under strict national examination hall conditions.</li><li class="leading-relaxed">Because the trial exam is the single largest individual assessment in the ICASS portfolio, scoring high here provides the greatest upward boost to your overall subject qualification.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">NATED Report 191 vs NC(V) Assessment Policy Frameworks</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">South African TVET colleges operate two primary qualifications, each with distinct assessment weightings and statutory requirements:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>NATED Engineering Studies (Trimesters N1 to N6)</strong>: Runs on fast-paced 10-to-12-week trimesters. The standard assessment schedule comprises one or two class tests (20% to 30%), one comprehensive assignment (20%), and an internal trial exam (50%). A minimum ICASS mark of <strong>40%</strong> is legally required for exam admission. The final subject result is computed as <strong>40% ICASS + 60% National Examination</strong>.</li><li class="leading-relaxed"><strong>NATED Business & General Studies (Semesters N4 to N6)</strong>: Structured over 18-to-20-week semesters using the 5-task assessment portfolio (two tests, two assignments, and a trial examination). Like engineering, the sub-minimum is <strong>40%</strong>, contributing <strong>40%</strong> to the final composite score alongside the <strong>60%</strong> national paper.</li><li class="leading-relaxed"><strong>National Certificate Vocational - NC(V) (Levels 2, 3, and 4)</strong>: Year-long programmes blending academic theory with rigorous practical competence. In NC(V), the continuous assessment portfolio is termed the ICASS component (counting 50% of internal assessment) alongside the Integrated Summative Assessment Task (ISAT), which assesses workplace practical readiness. Fundamental subjects (English, Mathematical Literacy, Life Orientation) enforce a <strong>40%</strong> pass mark, while vocational and technical modules require a strict <strong>50%</strong> sub-minimum.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Step-by-Step Worked Recovery Scenario: Saving Exam Entry</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Consider a realistic student profile illustrating how weighted ICASS calculations guide mid-term recovery:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Student Profile</strong>: Thabo, enrolled in NATED N3 Electrical Trade Theory.</li><li class="leading-relaxed"><strong>Early Setbacks</strong>: Thabo scored 38% in Class Test 1 (10% weight) and 52% in Assignment 1 (25% weight) due to transport and personal difficulties.</li><li class="leading-relaxed"><strong>Mid-Term Audit</strong>:</li><li class="leading-relaxed">Points earned from Test 1 = 38 &times; 0.10 = <strong>3.80%</strong></li><li class="leading-relaxed">Points earned from Assignment 1 = 52 &times; 0.25 = <strong>13.00%</strong></li><li class="leading-relaxed">Current cumulative points = 3.80 + 13.00 = <strong>16.80%</strong> (out of 35% total available so far).</li><li class="leading-relaxed"><strong>Required Remaining Points</strong>: To meet the DHET 40.0% sub-minimum for exam admission, Thabo needs at least 40.00 - 16.80 = <strong>23.20%</strong> from the remaining 65% weight (Test 2 at 10%, Assignment 2 at 25%, and Trial Exam at 30%).</li><li class="leading-relaxed"><strong>Target Strategy</strong>:</li><li class="leading-relaxed">If Thabo scores 70% on Assignment 2 (70 &times; 0.25 = <strong>17.50%</strong>), he will already have 16.80 + 17.50 = <strong>34.30%</strong>.</li><li class="leading-relaxed">He then needs only 5.70% more across Test 2 (10%) and the Trial Exam (30%) to clear 40%.</li><li class="leading-relaxed">Scoring 65% in Test 2 adds <strong>6.50%</strong>, pushing his score to <strong>40.80%</strong>—securing exam qualification before even sitting the Trial Exam!</li><li class="leading-relaxed">By then scoring 60% on the Trial Exam (60 &times; 0.30 = <strong>18.00%</strong>), his final ICASS reaches <strong>58.80%</strong>, transforming an at-risk standing into a solid academic pass.</li></ul><h3 class="text-lg sm:text-xl font-bold text-slate-800 mt-6 mb-3">Worked Scenario 2: Distinction Pursuit (75%+ Honors & Internship Pathway)</h3><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">For high-achieving TVET scholars seeking competitive corporate apprenticeships or university articulation through the Central Applications Office (CAO), achieving a Distinction grade (75% or higher) requires intentional continuous mark management:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Student Profile</strong>: Nomvula, enrolled in N5 Financial Management (Cost and Management Accounting).</li><li class="leading-relaxed"><strong>Target</strong>: Cumulative ICASS of 75.0% or higher to buffer her external national exam.</li><li class="leading-relaxed"><strong>Formative Performance</strong>:</li><li class="leading-relaxed"><strong>Class Test 1</strong> (10% weight): Score = 82% &rarr; 82 &times; 0.10 = <strong>8.20%</strong></li><li class="leading-relaxed"><strong>Assignment 1</strong> (25% weight): Score = 88% &rarr; 88 &times; 0.25 = <strong>22.00%</strong></li><li class="leading-relaxed"><strong>Class Test 2</strong> (10% weight): Score = 76% &rarr; 76 &times; 0.10 = <strong>7.60%</strong></li><li class="leading-relaxed"><strong>Subtotal after 3 Tasks</strong> (45% weight evaluated): 8.20 + 22.00 + 7.60 = <strong>37.80%</strong> (out of a possible 45%).</li><li class="leading-relaxed"><strong>Remaining Task Execution</strong>:</li><li class="leading-relaxed">Nomvula achieves 84% on <strong>Assignment 2</strong> (25% weight): 84 &times; 0.25 = <strong>21.00%</strong>, lifting her cumulative standing to <strong>58.80%</strong> (out of 70%).</li><li class="leading-relaxed">She now needs at least 75.00 - 58.80 = <strong>16.20%</strong> from the Trial Examination (30% weight) to clinch a distinction.</li><li class="leading-relaxed">Required Trial Exam Percentage: 16.20 &divide; 0.30 = <strong>54.0%</strong>.</li><li class="leading-relaxed"><strong>Academic Conclusion</strong>: Because Nomvula built exceptional coursework leverage during Assignments 1 and 2, she only needs 54% in the challenging 3-hour trial exam to finish with an honors-level 75.0% ICASS score. Furthermore, heading into the final DHET national examination with 75% ICASS means she only needs a modest 33.3% in the external paper to pass the subject overall (though the 40% sub-minimum still applies).</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Umalusi Quality Assurance, Statistical Moderation & Mark Standardization</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Internal Continuous Assessment scores are subject to strict multi-tier quality assurance protocols mandated by Umalusi (Council for Quality Assurance in General and Further Education and Training) to guarantee that college diplomas possess national credibility and parity of esteem:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Standard Deviation and Anomaly Detection</strong>: Provincial DHET curriculum directorates analyze continuous mark distributions across TVET campuses. If a college reports an unusually high ICASS average (e.g., class average of 88%) while historic external national exam averages hover around 42%, the assessment portfolio undergoes mandatory forensic investigation.</li><li class="leading-relaxed"><strong>Statistical Moderation Adjustments</strong>: In instances where internal marking is judged excessively lenient or inconsistently severe across campuses, Umalusi applies statistical moderation formulas. Raw student scores may be adjusted upward or downward to reflect verified external exam performance distributions.</li><li class="leading-relaxed"><strong>Pre-Registration Mark Audits</strong>: Before national examination timetables are generated, college academic boards must submit verified continuous assessment schedules signed by the module lecturer, senior lecturer, and Campus Academic Manager. Any altered, uninitialled, or disputed mark sheets are immediately quarantined for manual verification.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">TVET MIS Deadlines, Verification Windows & Exam Admission Permits</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">To avoid last-minute disqualifications, TVET students and academic administrators must observe key calendar milestones governed by the TVET Management Information System (TVETMIS):</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Preliminary Mark Publication</strong>: Approximately two to three weeks prior to the commencement of national examinations, colleges publish preliminary ICASS lists on campus notice boards and student portals.</li><li class="leading-relaxed"><strong>The 48-Hour Student Dispute Window</strong>: Students have a statutory window (typically 48 to 72 hours) to inspect their captured marks against their physical marked scripts. If a clerical error occurred (for example, entering 48% instead of 84%), the student must file an immediate discrepancy appeal with the campus examination officer before data transmission.</li><li class="leading-relaxed"><strong>National TVETMIS Final Capture Lock</strong>: Once the national capture window closes on the DHET portal, raw ICASS marks are permanently locked. No campus principal or lecturer has the administrative authority to alter marks after this freeze date.</li><li class="leading-relaxed"><strong>Admission Permit Generation</strong>: Only candidates with a locked ICASS score of 40.0% or above are issued an official DHET Examination Admission Permit (containing seat allocations, examination center codes, and authorized subject timetables). Candidates scoring 39.9% or lower are marked DNQ (Did Not Qualify) and barred from entering the examination hall.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">The Critical 80% Minimum Attendance Mandate & Portfolio Moderation</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Beyond numeric test scores, DHET policy enforces non-negotiable operational requirements that every student and lecturer must uphold:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>80% Minimum Attendance Rule</strong>: Under DHET TVET policy, a student MUST maintain at least 80% attendance in scheduled classes, lectures, and practical workshops per subject. A student with an ICASS mark above 40% can still be barred from the national examination if their verified attendance register falls below 80% without certified medical justification.</li><li class="leading-relaxed"><strong>Portfolio of Assessment (PoA) Authentication</strong>: Every task included in your ICASS calculation must physically exist in your official student Portfolio of Assessment. This folder contains lecturer-marked test scripts, signed declaration of authenticity forms, original assignments, and grading rubrics.</li><li class="leading-relaxed"><strong>Internal and External Moderation</strong>: Before marks are uploaded to the DHET examination database, colleges conduct internal departmental moderation. Subsequently, Umalusi (Council for Quality Assurance in General and Further Education and Training) and provincial DHET officials conduct random on-site sample moderation to verify that grading standards align with national benchmarks.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Sub-Minimum Requirements & Examination Admission Rules</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">To sit for national TVET final examinations, institutions enforce strict ICASS sub-minimum entry rules:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>40% Sub-Minimum ICASS Requirement</strong>: In most DHET NATED (N1–N6) subjects, a student MUST achieve a minimum ICASS mark of <strong>40%</strong> to qualify for admission to the final national examination paper.</li><li class="leading-relaxed"><strong>50% Sub-Minimum for Practical/Vocational Subjects</strong>: In National Certificate Vocational (NCV) Level 2–4 practical subjects, the sub-minimum requirement is often <strong>50%</strong>.</li><li class="leading-relaxed"><strong>Disqualification Consequences</strong>: Failing to meet the ICASS sub-minimum results in an automatic "Did Not Qualify" (DNQ) status. Students who DNQ are barred from writing the final exam and must re-enroll in the module during a subsequent semester.</li><li class="leading-relaxed"><strong>Contribution to Final Pass Mark</strong>: In NATED engineering and business courses, the ICASS mark typically contributes <strong>40%</strong> to the final combined subject mark, while the national examination contributes <strong>60%</strong>.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">How to Use the ICASS Calculator</h2><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Check Your Syllabus Handbook</strong>: Confirm the exact component percentage weights specified by your college lecturer or departmental handbook.</li><li class="leading-relaxed"><strong>Input Percentage Scores</strong>: Enter your achieved scores (0% to 100%) for Assignments, Practicals, Tests, and Attendance.</li><li class="leading-relaxed"><strong>Adjust Percentage Weights</strong>: Ensure the component weight inputs sum up to exactly <strong>100%</strong> (e.g., 10% + 25% + 10% + 25% + 30% = 100%).</li><li class="leading-relaxed"><strong>Review Real-Time Output</strong>:</li></ol><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Weighted ICASS Estimate</strong>: Your overall weighted percentage score.</li><li class="leading-relaxed"><strong>Performance Band</strong>: Classification into Distinction (75%+), Passing Range (50%–74%), or At-Risk / Sub-Minimum warning (<40%).</li></ul><ol class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-decimal list-inside pl-1"><li class="leading-relaxed"><strong>Formulate Mark Recovery Plans</strong>: Use the calculator to determine what marks you need in upcoming tests or practicals to cross the 40% or 50% examination entry barrier.</li></ol><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Practical Strategies for ICASS Mark Recovery</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">If your mid-term ICASS score falls near or below the 40% threshold, implement these recovery steps:</p><ul class="space-y-2.5 my-4 text-sm sm:text-base text-slate-600 list-disc list-inside pl-1"><li class="leading-relaxed"><strong>Request Supplementary Practical Re-assessments</strong>: Ask your workshop lecturer if you can re-attempt failed practical tasks or submit revised logbooks for re-marking.</li><li class="leading-relaxed"><strong>Maximize Attendance Points</strong>: Attending every remaining class session guarantees full attendance weighting points and satisfies the 80% statutory requirement.</li><li class="leading-relaxed"><strong>Form Peer Study Groups</strong>: Collaborate with classmates on complex assignment calculations and past exam papers.</li></ul><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-10 mb-4 pb-2 border-b border-slate-200/80">Privacy, Security & Client-Side Execution</h2><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">AfriWidget handles academic mark calculations with complete confidentiality. All calculations run strictly inside your device’s browser using Vanilla JavaScript. No student names, identification numbers, college names, or academic grades are stored in databases or transmitted across the internet.</p><hr class="my-8 border-slate-200" /><h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-10 mb-6 flex items-center gap-2.5"><svg class="w-6 h-6 text-yellow-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Frequently Asked Questions</span></h2><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What happens if component weights do not equal 100%?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Weighted calculations require all component weights to add up to 100%. If your institution uses a different weighting structure (e.g., 30% assignments, 50% tests, 20% practicals), adjust the input weight fields so their sum equals 100%.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Does a high ICASS score guarantee passing the module?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">A strong ICASS mark secures entry to the final examination and contributes significantly to your final grade. However, you must still meet the final exam sub-minimum pass mark (usually 40%) to pass the module overall.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What should I do if I miss an ICASS test due to medical illness?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">DHET assessment policy stipulates that if you miss a formal test or assessment due to illness, you must submit a valid medical certificate issued by a registered medical practitioner within 5 working days of your return to campus. Your lecturer or department head can then schedule a sanctioned deferred test or calculate an approved substitute formative average.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>How does my ICASS score affect my NSFAS bursary renewal?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">The National Student Financial Aid Scheme (NSFAS) requires TVET students to demonstrate consistent academic progression. Students must achieve passing marks in a statutory minimum percentage of enrolled modules (typically at least 50% to 60% of subjects). Because an ICASS score below 40% results in an immediate DNQ (Did Not Qualify) and module failure, poor ICASS marks directly endanger future NSFAS allowance disbursements.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the difference between ICASS and ISAT in TVET colleges?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">ICASS (Internal Continuous Assessment) measures ongoing academic coursework, tests, and theoretical assignments completed throughout the teaching term. In contrast, ISAT (Integrated Summative Assessment Task) is a comprehensive, practical, hands-on project administered specifically in NC(V) programmes to test real-world trade and technical competence before graduation.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can I recalculate my ICASS if I rewrite a test?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. Simply replace your old test mark in the input field with your updated score to see how your cumulative ICASS average improves.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>What is the difference between NATED and NC(V) ICASS requirements?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">NATED (Report 191) courses are trimester or semester-based programmes with a 40% ICASS exam entry requirement. NC(V) courses are full-year vocational programmes with higher practical component weights and a 50% pass requirement.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Is this ICASS calculator free to use?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. AfriWidget is a 100% free educational platform with no hidden subscription fees, required user registrations, or account creations.</p></div></details><details class="group bg-white rounded-xl border border-slate-200/90 shadow-sm mb-3 overflow-hidden transition-all"><summary class="flex items-center justify-between font-bold text-slate-900 p-4 sm:p-5 cursor-pointer hover:bg-slate-50 transition-colors list-none"><span>Can TVET lecturers use this calculator to compute student averages?</span><svg class="w-5 h-5 text-slate-400 transition-transform duration-200 group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="px-4 pb-5 sm:px-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3"><p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">Yes. Lecturers and tutors can quickly verify individual student continuous assessment totals by entering component marks and verifying overall subject eligibility before submitting official mark sheets.</p></div></details>
 </section>
 
   </main>
@@ -845,12 +774,27 @@
       <p class="text-sm leading-relaxed text-slate-300">
         Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
       </p>
-      <div class="mt-5 flex items-center gap-3">
-        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <div class="mt-5 flex items-center flex-wrap gap-2.5">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+        </a>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+        </a>
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="mt-3.5">
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          <span>Message Obed Avorlenu on WhatsApp</span>
         </a>
       </div>
     </div>
@@ -967,7 +911,7 @@
          <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
          <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
          <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
-        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">🌟 User Success Stories</a></li>
+        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
          <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
         <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
         <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
@@ -978,8 +922,15 @@
       </ul>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 text-center text-sm text-slate-300">
+  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
     <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+    </div>
   </div>
 </footer>
 

@@ -10,20 +10,8 @@ The **AfriWidget South African TVET NATED Pass Calculator** executes determinist
 
 In all accredited public and private TVET colleges across South Africa (e.g., False Bay College, Ekurhuleni West College, South West Gauteng TVET, Tshwane North TVET, and Northlink College), NATED subject outcomes are governed by the statutory 40:60 assessment split:
 
-```
-+-------------------------------------------------------------------------+
-
-
-+------------------------------------+------------------------------------+
-
-- **** | Derived from college tests, practical: tasks, and internal trial exams.
-
-+------------------------------------+------------------------------------+
-
-- **** | External national examination set: and moderated by DHET and Umalusi.
-
-+------------------------------------+------------------------------------+
-```
+- **Internal Continuous Assessment (ICASS - 40%)**: Derived from classroom tests, practical vocational tasks, assignments, and internal trial examinations administered by your TVET college during the trimester or semester.
+- **National Examination Component (60%)**: External national examination set, administered, and moderated nationwide by the Department of Higher Education and Training (DHET) and quality-assured by Umalusi.
 
 ### Composite Mathematical Formula:
 **Final Subject Mark (%)** = (ICASS Mark &times; 0.40) + (National Examination Mark &times; 0.60)

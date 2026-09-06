@@ -7,8 +7,8 @@
 
 ## 📑 Table of Contents
 1. [Issue 1: Authority & Trust Signals / E-E-A-T Audit Warning](#issue-1-authority--trust-signals--e-e-a-t-audit-warning)
-2. [Issue 2: Netlify Deployment CSS Lag & Broken Stylesheets](#issue-2-netlify-deployment-css-lag--broken-stylesheets)
-3. [Issue 3: Netlify 404s on Clean URLs & Invalid Wildcards in `_redirects`](#issue-3-netlify-404s-on-clean-urls--invalid-wildcards-in-_redirects)
+2. [Issue 2: Cloudflare Pages Deployment CSS Lag & Broken Stylesheets](#issue-2-cloudflare-pages-deployment-css-lag--broken-stylesheets)
+3. [Issue 3: Cloudflare Pages 404s, Redirect Loops & Invalid Wildcards in `_redirects`](#issue-3-cloudflare-pages-404s-redirect-loops--invalid-wildcards-in-_redirects)
 4. [Issue 4: Raw LaTeX Formatting Rendered as Broken Text](#issue-4-raw-latex-formatting-rendered-as-broken-text)
 5. [Issue 5: Huge SVG Icons Expanding to 100% Screen Width (FOUC)](#issue-5-huge-svg-icons-expanding-to-100-screen-width-fouc)
 6. [Issue 6: Incorrect Schema Application Category & Missing FAQ Schemas](#issue-6-incorrect-schema-application-category--missing-faq-schemas)
@@ -38,13 +38,13 @@ Every tool page and category hub must include:
 
 ---
 
-## Issue 2: Netlify Deployment CSS Lag & Broken Stylesheets
+## Issue 2: Cloudflare Pages Deployment CSS Lag & Broken Stylesheets
 
 ### 🚨 The Problem:
-Upon deploying to Netlify, pages occasionally loaded unstyled for 1–2 seconds (flash of unstyled content) or failed to find `/dist/styles.css`, damaging Google Core Web Vitals and PageSpeed scores.
+Upon deploying to Cloudflare Pages, pages occasionally loaded unstyled for 1–2 seconds (flash of unstyled content) or failed to find `/dist/styles.css`, damaging Google Core Web Vitals and PageSpeed scores.
 
 ### 🔍 Root Cause:
-Netlify serves static files from the project root. If the HTML page only linked to `/dist/styles.css` and the build script didn't duplicate the compiled stylesheet to `./styles.css`, or if devDependencies were skipped, styles failed.
+Cloudflare Pages serves static files from the project root (`.`). If the HTML page only linked to `/dist/styles.css` and the build script didn't duplicate the compiled stylesheet to `./styles.css`, or if devDependencies were skipped, styles failed.
 
 ### ✅ The Solution:
 1. **Triple-Link `<head>` Standard**:
@@ -55,7 +55,7 @@ Netlify serves static files from the project root. If the HTML page only linked 
    ```
 2. **Dual-Output Build Command** in `package.json`:
    ```json
-   "build": "npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
+   "build": "node build-search-engine.js && node generate-og-assets.js && node build-prerender.js && npx @tailwindcss/cli -i ./input.css -o ./dist/styles.css --minify && node -e \"import('fs').then(fs => fs.copyFileSync('./dist/styles.css', './styles.css'))\""
    ```
 3. **Unignore Compiled CSS** in `.gitignore`:
    ```gitignore
@@ -65,7 +65,7 @@ Netlify serves static files from the project root. If the HTML page only linked 
 
 ---
 
-## Issue 3: Netlify 404s on Clean URLs & Invalid Wildcards in `_redirects`
+## Issue 3: Cloudflare Pages 404s, Redirect Loops & Invalid Wildcards in `_redirects`
 
 ### 🚨 The Problem:
 Navigating to clean paths like `/education` or `/wassce-aggregate-calculator` resulted in `ERR_TOO_MANY_REDIRECTS` on Cloudflare Pages, or a 404 error when invalid wildcards were present.
@@ -75,8 +75,9 @@ Cloudflare Pages has built-in canonical asset routing: it automatically strips `
 
 ### ✅ The Solution:
 1. **Remove `/:page /:page.html 200` from `_redirects`**:
-   - Both Cloudflare Pages and Netlify (via `pretty_urls = true` in `netlify.toml`) natively map clean URLs to their corresponding `.html` files without needing manual wildcards in `_redirects`.
+   - Cloudflare Pages natively maps clean URLs to their corresponding `.html` files without needing manual rewrite rules in `_redirects`.
 2. **Never insert invalid multi-segment wildcards** like `/*/nav.js` into `_redirects`.
+3. Keep `_redirects` exclusively for explicit 301 migrations.
 
 ---
 

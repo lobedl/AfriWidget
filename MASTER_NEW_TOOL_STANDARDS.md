@@ -28,7 +28,7 @@
 
 Every tool `.html` page MUST include the following in `<head>` in this exact sequence:
 
-### 1.1 Multi-Path Stylesheet Inclusion (Netlify 0ms FOUC Mandate)
+### 1.1 Multi-Path Stylesheet Inclusion (Cloudflare Pages 0ms FOUC Mandate)
 ```html
 <head>
   <meta charset="UTF-8" />
@@ -218,9 +218,9 @@ Every new tool MUST implement the 4-layer internal linking framework:
 
 ---
 
-## 🌐 Phase 8: Complete 8-Point Ecosystem Integration (Zero-Orphan Mandate)
+## 🌐 Phase 8: Complete 9-Point Ecosystem Integration (Zero-Orphan Mandate)
 
-When a new tool is created, the developer/agent **MUST integrate it across all 8 endpoints in the same turn**:
+When a new tool is created, the developer/agent **MUST integrate it across all 9 endpoints in the same turn**:
 
 | # | Endpoint | Required Action |
 |---|---|---|
@@ -232,6 +232,7 @@ When a new tool is created, the developer/agent **MUST integrate it across all 8
 | **6** | **LLM Documentation (`llms.txt`)** | Document under relevant H2 category header with clean markdown link. |
 | **7** | **Universal AI (`universal-ai.js`)** | Register tool slug in `TOOL_CONFIGS`. |
 | **8** | **Share Results (`share-results.js`)** | Register tool slug and field selectors in `TOOL_ADAPTERS`. |
+| **9** | **🔍 Search System (`tools-index.json` & `build-search-engine.js`)** | Register in canonical `tools-index.json` with 15+ keywords, verify flag in `build-search-engine.js`, and compile `search-engine.js`. See `SEARCH_SYSTEM_INTEGRATION_MANDATE.md`. |
 
 ---
 
