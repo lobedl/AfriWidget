@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="category-pages.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -331,12 +332,10 @@
 
 
 
-
-
 </head>
 <body class="category-page bg-slate-50 text-slate-800 font-sans">
 
-                                                                                                                                                                                                      <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                                                                                                                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -419,22 +418,99 @@
   </div>
   <main>
 
+  <!-- HERO (Professional AfriWidget Standard) -->
+  <section class="relative overflow-hidden bg-slate-950 text-white px-4 py-12 sm:py-16 text-center" style="background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.06) 0%, transparent 40%), #020617;">
+    <!-- Geometric Dot Pattern -->
+    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
 
-  <section class="bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 text-white py-20 px-4 text-center">
-    <div class="max-w-3xl mx-auto">
-      <span class="inline-block bg-teal-500 bg-opacity-20 text-teal-300 text-sm font-semibold px-4 py-1 rounded-full mb-6 border border-teal-500 border-opacity-30">Finance &amp; Wealth</span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">Free Finance &amp; Wealth Calculators</h1>
-      <p class="text-lg text-slate-300 mb-8 max-w-xl mx-auto">Calculate compound interest growth, savings timelines, loan amortization schedules, debt payoff plans, mortgage payments, rent affordability, and investment return on investment (ROI) with clear, private in-browser calculators.</p>
-      <a href="compound-interest" class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-8 py-3 rounded-xl transition-colors shadow-lg">Try the Compound Interest Calculator</a>
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Live Trust Badge -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm mb-4">
+        <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
+        <span>⚡ 100% Free • No Signup • Private In-Browser Execution</span>
+      </div>
+
+      <!-- Heading & Catchy Subhead -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white mb-3">
+        Free Finance &amp; Wealth Calculators
+        <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1">
+          Compound Growth, Loan Amortization &amp; Budget Planning
+        </span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Calculate compound interest growth, debt avalanche payoffs, student loans, mortgage amortization, rent affordability, and profit margins with 100% private in-browser computation.
+      </p>
+
+      <!-- Instant Live Search & Sub-Filter Box -->
+      <div class="mt-7 max-w-2xl mx-auto">
+        <div class="relative flex items-center rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20">
+          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
+          </svg>
+          <input id="categorySearch" type="search" class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search financial tools (e.g. Compound Interest, Loan, Mortgage, Budget)..." aria-label="Search financial tools" autocomplete="off">
+          <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded shadow-2xs mr-1.5">Ctrl K</kbd>
+          <button id="clearCategorySearch" type="button" class="hidden mr-2 rounded-lg bg-slate-100 p-1.5 text-xs text-slate-600 hover:bg-slate-200 font-bold" title="Clear search">✕</button>
+          <span id="categorySearchCount" class="hidden sm:inline-flex items-center px-2.5 py-1 text-xs font-bold text-slate-700 bg-slate-100 rounded-lg shrink-0">29 Tools</span>
+        </div>
+
+        <!-- Quick Sub-Filter Chips -->
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
+            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Filter:
+          </span>
+          <button type="button" data-subfilter="all" class="category-filter-btn is-active rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">All Tools</button>
+          <button type="button" data-subfilter="interest" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📈 Compound Growth</button>
+          <button type="button" data-subfilter="loan" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💳 Loans &amp; Debts</button>
+          <button type="button" data-subfilter="budget" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🏠 Housing &amp; Budgets</button>
+          <button type="button" data-subfilter="salary" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💼 Income &amp; Business</button>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- 4-PILLAR STATS STRIP -->
+  <div class="border-y border-slate-800 bg-slate-900 py-3.5 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 text-center">
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300 font-extrabold text-sm">29</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Financial Tools</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Verified Formulas</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400 font-extrabold text-sm">0ms</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Client-Side Speed</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Instant In-Browser</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300 font-extrabold text-sm">100%</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Private &amp; Secure</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Zero Data Stored</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300 font-extrabold text-sm">ISO</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">25010 Tested</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Precision Audited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Success Story Spotlight -->
   <section class="max-w-7xl mx-auto px-4 my-8">
-    <div class="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-emerald-800/60 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6">
       <div class="space-y-2 max-w-2xl">
         <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 text-[11px] font-black uppercase">💰 Success Story Spotlight</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-yellow-400 text-slate-950 text-[11px] font-black uppercase">💰 Success Story Spotlight</span>
           <span class="text-xs text-slate-400 font-medium">Johannesburg, South Africa</span>
         </div>
         <h3 class="text-xl font-bold text-white">"Paid Off R45,000 Consumer Debt 17 Months Early"</h3>
@@ -442,12 +518,11 @@
           "I modeled my debt snowball schedule privately on AfriWidget and saved over R12,400 in compound interest charges." — <strong>Sibusiso M.</strong>
         </p>
       </div>
-      <a href="success-stories" class="shrink-0 px-5 py-3 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors text-center shadow">
+      <a href="success-stories" class="shrink-0 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors text-center shadow">
         Read Finance Stories →
       </a>
     </div>
   </section>
-
 
   <section class="category-tools" aria-labelledby="finance-tools-title">
     <div class="category-tools-inner">
@@ -456,8 +531,17 @@
           <h2 id="finance-tools-title">Finance Tools</h2>
           <p class="mt-1 text-left">Clear calculators for saving, pricing, housing, and income planning.</p>
         </div>
-        <span class="hidden text-xs font-bold uppercase tracking-wider text-yellow-700 sm:block">24 tools</span>
+        <span id="categoryHeadingCount" class="category-count-badge">29 Tools</span>
       </div>
+
+      <!-- Zero Results State -->
+      <div id="categoryNoResults" class="category-no-results" style="display: none;">
+        <div class="category-no-results-icon">🔍</div>
+        <h3>No financial tools matched your search</h3>
+        <p>Try searching for terms like "Compound", "Loan", "Mortgage", "Budget", or click below to view all tools.</p>
+        <button id="categoryResetBtn" type="button" class="category-reset-btn">Reset Filters &amp; Show All Tools</button>
+      </div>
+
       <div class="category-tool-grid">
         <a class="category-tool-card" href="zambia-student-budget-planner"><span class="category-tool-icon"><span class="text-xl">🇿🇲</span></span><h3>Zambia Student Budget Planner</h3><p>Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
         <a class="category-tool-card" href="tanzania-heslb-loan-calculator"><span class="category-tool-icon"><span class="text-xl">🇹🇿</span></span><h3>HESLB Loan Calculator</h3><p>Calculate Tanzania HESLB student loan allocation (Tuition, MA, FPT), 6% VRF, and statutory 15% salary repayment.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
@@ -753,5 +837,6 @@
       document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
     });
   </script>
+  <script src="/category-filter.js" defer></script>
 </body>
 </html>

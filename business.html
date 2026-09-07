@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
+  <link rel="stylesheet" href="category-pages.css" />
   <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -325,12 +326,10 @@
 
 
 
-
-
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-                                                                                                                                                                                                      <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                                                                                                                                                                                                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -415,276 +414,385 @@
   <main>
 
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-br from-slate-900 via-violet-900 to-slate-900 text-white py-20 px-4 text-center">
-    <div class="max-w-3xl mx-auto">
-      <span class="inline-block bg-violet-500 bg-opacity-20 text-violet-300 text-sm font-semibold px-4 py-1 rounded-full mb-6 border border-violet-500 border-opacity-30">Business, E-Commerce &amp; Freelance</span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">Free Business &amp; Freelance Calculators</h1>
-      <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">Calculate gross profit margins, break-even unit volumes, freelance hourly billing rates, invoice totals, startup launch capital requirements, and payment processor transaction fees instantly.</p>
-      <div class="flex flex-wrap justify-center gap-4 mt-8">
-        <a href="paypal-fee-calculator" class="bg-violet-500 hover:bg-violet-400 text-white font-bold px-8 py-3 rounded-xl transition-colors shadow-lg">Payment Fee Calculator</a>
-        <a href="profit-margin-calculator" class="border border-violet-400 text-violet-300 hover:bg-violet-500 hover:text-white font-bold px-8 py-3 rounded-xl transition-colors">Profit Margin</a>
-        <a href="hourly-to-salary" class="border border-violet-400 text-violet-300 hover:bg-violet-500 hover:text-white font-bold px-8 py-3 rounded-xl transition-colors">Hourly to Salary</a>
+  <!-- HERO (Professional AfriWidget Standard) -->
+  <section class="relative overflow-hidden bg-slate-950 text-white px-4 py-12 sm:py-16 text-center" style="background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.07) 0%, transparent 40%), #020617;">
+    <!-- Geometric Dot Pattern -->
+    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+
+    <div class="relative max-w-4xl mx-auto">
+      <!-- Live Trust Badge -->
+      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm mb-4">
+        <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
+        <span>⚡ 100% Free • No Signup • Private In-Browser Execution</span>
+      </div>
+
+      <!-- Heading & Catchy Subhead -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white mb-3">
+        Free Business &amp; Freelance Calculators
+        <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1">
+          Profit Margins, Payment Fees, Cash Runway &amp; Hourly Rates
+        </span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Calculate gross profit margins, break-even unit volumes, freelance billing rates, startup cash burn rates, website valuation multiples, and payment processor transaction fees locally with zero data tracking.
+      </p>
+
+      <!-- Instant Live Search & Sub-Filter Box -->
+      <div class="mt-7 max-w-2xl mx-auto">
+        <div class="relative flex items-center rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20">
+          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke-width="2"/>
+            <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
+          </svg>
+          <input id="categorySearch" type="search" class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search business tools (e.g. PayPal, Margin, Burn Rate, Freelance, ROI)..." aria-label="Search business tools" autocomplete="off">
+          <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded shadow-2xs mr-1.5">Ctrl K</kbd>
+          <button id="clearCategorySearch" type="button" class="hidden mr-2 rounded-lg bg-slate-100 p-1.5 text-xs text-slate-600 hover:bg-slate-200 font-bold" title="Clear search">✕</button>
+          <span id="categorySearchCount" class="hidden sm:inline-flex items-center px-2.5 py-1 text-xs font-bold text-slate-700 bg-slate-100 rounded-lg shrink-0">21 Tools</span>
+        </div>
+
+        <!-- Quick Sub-Filter Chips -->
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
+            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Filter:
+          </span>
+          <button type="button" data-subfilter="all" class="category-filter-btn is-active rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">All Tools</button>
+          <button type="button" data-subfilter="margin" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📊 Pricing &amp; Fees</button>
+          <button type="button" data-subfilter="runway" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🚀 Startup &amp; Valuation</button>
+          <button type="button" data-subfilter="rate" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💼 Freelance &amp; Rates</button>
+          <button type="button" data-subfilter="ai" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">✨ AI &amp; Copywriting</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TOOL CARDS -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Business &amp; Freelance Tools</h2>
-      <div class="w-16 h-1 bg-violet-400 mx-auto mb-12 rounded"></div>
-      <div class="grid md:grid-cols-3 gap-8">
+  <!-- 4-PILLAR STATS STRIP -->
+  <div class="border-y border-slate-800 bg-slate-900 py-3.5 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 text-center">
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300 font-extrabold text-sm">21</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Business Calculators</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Free &amp; Uncapped</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400 font-extrabold text-sm">0ms</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Client-Side Speed</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Instant In-Browser</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300 font-extrabold text-sm">100%</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">Private &amp; Secure</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Zero Data Stored</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300 font-extrabold text-sm">ISO</div>
+        <div class="text-left">
+          <div class="text-xs font-bold text-white leading-tight">25010 Verified</div>
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Accounting Precision</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- TOOL GRID SECTION -->
+  <section id="business-tools" class="category-tools" aria-labelledby="business-tools-title">
+    <div class="category-tools-inner">
+      <div class="category-tools-heading">
+        <div>
+          <h2 id="business-tools-title">Business &amp; Freelance Tools</h2>
+          <p class="mt-1 text-left">Enterprise-grade financial calculators for pricing, margins, valuation, runway, and freelance growth.</p>
+        </div>
+        <span id="categoryHeadingCount" class="category-count-badge">21 Tools</span>
+      </div>
+
+      <!-- Zero Results State -->
+      <div id="categoryNoResults" class="category-no-results" style="display: none;">
+        <div class="category-no-results-icon">🔍</div>
+        <h3>No business tools matched your search</h3>
+        <p>Try searching for terms like "PayPal", "Margin", "Burn Rate", "Freelance", or click below to view all tools.</p>
+        <button id="categoryResetBtn" type="button" class="category-reset-btn">Reset Filters &amp; Show All Tools</button>
+      </div>
+
+      <div class="category-tool-grid">
         <!-- Reverse AdSense Calculator -->
-        <a href="reverse-adsense-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors text-2xl">
-            📈
+        <a class="category-tool-card" href="reverse-adsense-calculator">
+          <span class="category-tool-icon">📈</span>
+          <h3>Reverse AdSense Calculator</h3>
+          <p>Enter desired monthly ad income to calculate exact required monthly pageviews, daily traffic, and ad click volume.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Pageviews</span>
+            <span class="category-tool-tag">AdSense RPM</span>
+            <span class="category-tool-tag">CTR &amp; CPC</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Reverse AdSense Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Enter desired monthly ad income to calculate exact required monthly pageviews, daily traffic, and ad click volume.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Pageviews</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">AdSense RPM</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">CTR & CPC</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Traffic →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
         <!-- Website Valuation Calculator -->
-        <a href="website-valuation-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors text-2xl">
-            🏛️
+        <a class="category-tool-card" href="website-valuation-calculator">
+          <span class="category-tool-icon">🏛️</span>
+          <h3>Website Valuation Calculator</h3>
+          <p>Estimate market sale price and valuation multiples for content blogs, SaaS, affiliate sites, and e-commerce stores.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Site Worth</span>
+            <span class="category-tool-tag">SDE Multiple</span>
+            <span class="category-tool-tag">M&amp;A Range</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Website Valuation Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Estimate market sale price and valuation multiples for content blogs, SaaS, affiliate sites, and e-commerce stores.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Site Worth</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">SDE Multiple</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">M&A Range</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Estimate Valuation →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
         <!-- Startup Burn Rate Calculator -->
-        <a href="startup-burn-rate-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors text-2xl">
-            🔥
+        <a class="category-tool-card" href="startup-burn-rate-calculator">
+          <span class="category-tool-icon">🔥</span>
+          <h3>Startup Burn Rate Calculator</h3>
+          <p>Calculate net monthly cash burn, remaining financial runway in months, and zero cash date forecast for startups.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Gross Burn</span>
+            <span class="category-tool-tag">Net Burn</span>
+            <span class="category-tool-tag">Runway</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Startup Burn Rate Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate net monthly cash burn, remaining financial runway in months, and zero cash date forecast for startups.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Gross Burn</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Net Burn</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Runway</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Runway →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
         <!-- Creator Sponsorship Rate Calculator -->
-        <a href="creator-sponsorship-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors text-2xl">
-            📱
+        <a class="category-tool-card" href="creator-sponsorship-calculator">
+          <span class="category-tool-icon">📱</span>
+          <h3>Creator Sponsorship Rate Calculator</h3>
+          <p>Calculate commercial pricing cards for YouTube integrations, TikTok clips, and Instagram sponsor posts.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">YouTube</span>
+            <span class="category-tool-tag">TikTok</span>
+            <span class="category-tool-tag">Instagram</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Creator Sponsorship Rate Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate commercial pricing cards for YouTube integrations, TikTok clips, and Instagram sponsor posts.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">YouTube</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">TikTok</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Instagram</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Rates →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
         <!-- Remote Salary Converter -->
-        <a href="remote-salary-converter" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors text-2xl">
-            🌍
+        <a class="category-tool-card" href="remote-salary-converter">
+          <span class="category-tool-icon">🌍</span>
+          <h3>Remote Salary Converter</h3>
+          <p>Compare international remote compensation with exchange rates and cost-of-living purchasing power adjustments.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Cost of Living</span>
+            <span class="category-tool-tag">Purchasing Power</span>
+            <span class="category-tool-tag">Remote Pay</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Remote Salary Converter</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Compare international remote compensation with exchange rates and cost-of-living purchasing power adjustments.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Cost of Living</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Purchasing Power</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Convert Salary →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="paypal-fee-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        <!-- Payment Processor Fee Calculator -->
+        <a class="category-tool-card" href="paypal-fee-calculator">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></span>
+          <h3>Payment Processor Fee Calculator</h3>
+          <p>Compare transaction fees across PayPal, Stripe, and Square with reverse fee mode to price for exact target net payout.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">PayPal</span>
+            <span class="category-tool-tag">Stripe</span>
+            <span class="category-tool-tag">Square</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Payment Processor Fee Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Enter your sale amount and choose your platform — PayPal, Stripe, or Square — to instantly see the exact fee deducted and the net amount you receive. Includes reverse-fee mode so you can price products to land a target payout.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">PayPal</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Stripe</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Square</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Net Payout</span>
-          </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Fees →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="profit-margin-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <!-- Profit Margin Calculator -->
+        <a class="category-tool-card" href="profit-margin-calculator">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></span>
+          <h3>Profit Margin Calculator</h3>
+          <p>Compute gross profit, gross margin percentage, markup percentage, and break-even pricing from cost and selling price.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Gross Margin</span>
+            <span class="category-tool-tag">Markup %</span>
+            <span class="category-tool-tag">Net Profit</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Profit Margin Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Enter your product cost and selling price to compute your gross profit, gross margin percentage, and markup percentage. Instantly understand whether your pricing strategy is sustainable — and by exactly how much.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Gross Margin</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Markup %</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Net Profit</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Break-Even</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- Break-Even Calculator -->
+        <a class="category-tool-card" href="break-even-calculator">
+          <span class="category-tool-icon">⚖️</span>
+          <h3>Break-Even Calculator</h3>
+          <p>Calculate break-even unit volume, sales revenue, contribution margin ratio, and target profit thresholds.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Break-Even</span>
+            <span class="category-tool-tag">Contribution Margin</span>
+            <span class="category-tool-tag">Target Revenue</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Margins →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="break-even-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <span class="text-2xl font-black text-violet-600">⚖️</span>
+        <!-- Pricing Calculator -->
+        <a class="category-tool-card" href="pricing-calculator">
+          <span class="category-tool-icon">💲</span>
+          <h3>Product &amp; Service Pricing Calculator</h3>
+          <p>Calculate target selling prices and net payout based on unit costs, profit margin goals, and processor fee deductions.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Selling Price</span>
+            <span class="category-tool-tag">Target Margin</span>
+            <span class="category-tool-tag">Processor Fees</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Break-Even Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate break-even unit volume, sales revenue, contribution margin ratio, and target profit thresholds for your product or service.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Break-Even Volume</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Contribution Margin</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Target Revenue</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- ROI Calculator -->
+        <a class="category-tool-card" href="roi-calculator">
+          <span class="category-tool-icon">📈</span>
+          <h3>ROI Calculator</h3>
+          <p>Compute Return on Investment (ROI %), total net profit, and annualized compound returns (CAGR) for business projects.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">ROI %</span>
+            <span class="category-tool-tag">Net Return</span>
+            <span class="category-tool-tag">CAGR %</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Break-Even →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="pricing-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <span class="text-2xl font-black text-violet-600">$</span>
+        <!-- Startup Cost Calculator -->
+        <a class="category-tool-card" href="startup-cost-calculator">
+          <span class="category-tool-icon">🚀</span>
+          <h3>Startup Cost Calculator</h3>
+          <p>Calculate total launch capital, monthly operating burn rate, and working capital runway reserves for new businesses.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Launch Capital</span>
+            <span class="category-tool-tag">Monthly OpEx</span>
+            <span class="category-tool-tag">Cash Runway</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Pricing Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate target selling prices and net payout based on unit costs, profit margin goals, and payment processor transaction fee deduction percentages.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Selling Price</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Target Margin</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Processor Fees</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- Freelance Rate Calculator -->
+        <a class="category-tool-card" href="freelance-rate-calculator">
+          <span class="category-tool-icon">💼</span>
+          <h3>Freelance Rate Calculator</h3>
+          <p>Determine sustainable hourly rates, day rates, and monthly retainers based on target net income and overhead expenses.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Hourly Rate</span>
+            <span class="category-tool-tag">Day Rate</span>
+            <span class="category-tool-tag">Retainers</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Pricing →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="roi-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <span class="text-2xl font-black text-violet-600">📈</span>
+        <!-- Hourly Rate to Salary -->
+        <a class="category-tool-card" href="hourly-to-salary">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+          <h3>Hourly Rate to Salary Converter</h3>
+          <p>Convert hourly rates to daily, weekly, monthly, and annual salary equivalents across standard and freelance schedules.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Annual Salary</span>
+            <span class="category-tool-tag">Monthly Pay</span>
+            <span class="category-tool-tag">Freelance Hours</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">ROI Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Work out Return on Investment (ROI %), total net profit or loss, and annualized compound returns (CAGR) for marketing campaigns, capital, and business projects.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">ROI %</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Net Return</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">CAGR %</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- Freelance Hourly Rate & Project Pricing -->
+        <a class="category-tool-card" href="freelance-hourly-rate-pricing-calculator">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></span>
+          <h3>Freelance Hourly Rate &amp; Project Pricing</h3>
+          <p>Build a sustainable hourly rate and client project quote from desired income, billable hours, and overhead expenses.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Hourly Rate</span>
+            <span class="category-tool-tag">Project Quote</span>
+            <span class="category-tool-tag">Overhead</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate ROI →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="startup-cost-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <span class="text-2xl font-black text-violet-600">🚀</span>
+        <!-- Invoice & Receipt Generator -->
+        <a class="category-tool-card" href="invoice-receipt-generator">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></span>
+          <h3>Invoice &amp; Receipt PDF Generator</h3>
+          <p>Create professional invoices and receipts with line items, tax, discounts, currencies, and instant PDF download.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">PDF Invoices</span>
+            <span class="category-tool-tag">Receipts</span>
+            <span class="category-tool-tag">VAT &amp; Tax</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Startup Cost Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Calculate total initial launch costs, monthly operating burn rate, and working capital cash runway reserves (3, 6, 12 months) for new business startups.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Launch Capital</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Monthly OpEx</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Cash Runway</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- WhatsApp Direct Link & QR -->
+        <a class="category-tool-card" href="whatsapp-direct-link-qr-generator">
+          <span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"/></svg></span>
+          <h3>WhatsApp Direct Link &amp; QR</h3>
+          <p>Generate click-to-chat wa.me links with custom greeting messages and downloadable QR codes for business marketing.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">wa.me</span>
+            <span class="category-tool-tag">QR Code</span>
+            <span class="category-tool-tag">Direct Chat</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Startup Costs →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="freelance-rate-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <span class="text-2xl font-black text-violet-600">💼</span>
+        <!-- AI Business Name Generator -->
+        <a class="category-tool-card" href="ai-business-name-generator">
+          <span class="category-tool-icon">🏷️</span>
+          <h3>AI Business Name Generator</h3>
+          <p>Explore creative company and brand name directions categorized by industry, target audience, and brand personality.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Brand Names</span>
+            <span class="category-tool-tag">Startups</span>
+            <span class="category-tool-tag">Naming</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Freelance Rate Calculator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Determine sustainable hourly rates, day rates, and monthly retainers based on target net income, overhead expenses, taxes, and billable capacity.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Hourly Rate</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Day Rate</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Retainers</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Tax Buffer</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- AI Product Description Generator -->
+        <a class="category-tool-card" href="ai-product-description-generator">
+          <span class="category-tool-icon">🛍️</span>
+          <h3>AI Product Description Generator</h3>
+          <p>Turn product features into compelling, persuasive sales copy for e-commerce stores, catalogs, and online marketplaces.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">E-Commerce</span>
+            <span class="category-tool-tag">Product Copy</span>
+            <span class="category-tool-tag">Shopify</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Calculate Rates →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="hourly-to-salary" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors">
-            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <!-- AI Gig Description Generator -->
+        <a class="category-tool-card" href="ai-gig-description-generator">
+          <span class="category-tool-icon">📋</span>
+          <h3>AI Gig Description Generator</h3>
+          <p>Create clear Fiverr, Upwork, and freelance service gig listings with honest deliverables, timelines, and scope.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Fiverr</span>
+            <span class="category-tool-tag">Upwork</span>
+            <span class="category-tool-tag">Gig Proposals</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Hourly Rate to Annual Salary Converter</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Enter your hourly rate and typical work schedule to see your daily, weekly, monthly, and annual equivalent income. Invaluable for freelancers comparing contract rates to full-time offers or negotiating a fair wage.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Annual Salary</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Monthly Pay</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Weekly Pay</span>
-            <span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Freelance Rate</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
+        </a>
+
+        <!-- AI Paraphrasing Tool -->
+        <a class="category-tool-card" href="ai-paraphrasing-tool">
+          <span class="category-tool-icon">🔄</span>
+          <h3>AI Paraphrasing &amp; Rewriting Tool</h3>
+          <p>Rewrite business copy, emails, and proposals for clarity, professional tone, and specific audience impact.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Rewriting</span>
+            <span class="category-tool-tag">Clarity</span>
+            <span class="category-tool-tag">Tone</span>
           </div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Convert Rate →</span>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
 
-        <a href="freelance-hourly-rate-pricing-calculator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-100 transition-colors"><svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg></div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">Freelance Hourly Rate &amp; Project Pricing</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Build a sustainable hourly rate and project quote from your desired income, billable hours, overhead, tax, and direct expenses.</p>
-          <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Hourly Rate</span><span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Project Quote</span><span class="text-xs bg-violet-100 text-violet-700 px-2 py-1 rounded-lg font-medium">Overhead</span></div>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Price Freelance Work →</span>
+        <!-- AI Text Summarizer -->
+        <a class="category-tool-card" href="ai-text-summarizer">
+          <span class="category-tool-icon">📑</span>
+          <h3>AI Text Summarizer</h3>
+          <p>Condense business reports, contracts, executive briefings, and meeting notes into clear bulleted takeaways.</p>
+          <div class="category-tool-tags">
+            <span class="category-tool-tag">Summaries</span>
+            <span class="category-tool-tag">Briefings</span>
+            <span class="category-tool-tag">Key Points</span>
+          </div>
+          <span>Launch tool <b aria-hidden="true">→</b></span>
         </a>
-
-        <a href="invoice-receipt-generator" class="app-card group block bg-white border-2 border-slate-100 hover:border-amber-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5 text-amber-700"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg></div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-700 transition-colors">Invoice &amp; Receipt PDF Generator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Create professional invoices with dynamic line items, tax, discounts, currencies, and a browser-based PDF download.</p>
-          <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-lg font-medium">PDF</span><span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-lg font-medium">VAT</span><span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-lg font-medium">Private</span></div>
-          <span class="text-amber-700 font-semibold text-sm group-hover:text-amber-600 transition-colors">Create Invoice →</span>
-        </a>
-
-        <a href="whatsapp-direct-link-qr-generator" class="app-card group block bg-white border-2 border-slate-100 hover:border-emerald-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-5 text-emerald-700"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M5 5h14v14H5zM8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"/></svg></div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors">WhatsApp Direct Link &amp; QR</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Generate a wa.me click-to-chat link, add a greeting message, copy it, and download a QR code for customers.</p>
-          <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-lg font-medium">wa.me</span><span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-lg font-medium">QR Code</span></div>
-          <span class="text-emerald-700 font-semibold text-sm group-hover:text-emerald-600 transition-colors">Generate Link →</span>
-        </a>
-
-        <a href="ai-business-name-generator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 text-violet-700 font-black text-lg">Aa</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">AI Business Name Generator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Explore creative company and brand name directions by industry, audience, and style.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Generate Names →</span>
-        </a>
-
-        <a href="ai-product-description-generator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 text-violet-700 font-black text-lg">✦</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">AI Product Description Generator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Turn real product features into clear, persuasive copy for e-commerce stores and marketplaces.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Write Product Copy →</span>
-        </a>
-
-        <a href="ai-gig-description-generator" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 text-violet-700 font-black text-lg">Gig</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">AI Gig Description Generator</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Create clear Fiverr, Upwork, and freelance service descriptions with honest deliverables and timelines.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Describe a Service →</span>
-        </a>
-
-        <a href="ai-paraphrasing-tool" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 text-violet-700 font-black text-lg">↻</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">AI Paraphrasing Tool</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Rewrite sentences and paragraphs for clarity, tone, and a specific audience while preserving meaning.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Rewrite Text →</span>
-        </a>
-
-        <a href="ai-text-summarizer" class="app-card group block bg-white border-2 border-slate-100 hover:border-violet-300 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
-          <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center mb-5 text-violet-700 font-black text-lg">≡</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-violet-700 transition-colors">AI Text Summarizer</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">Condense articles, reports, and notes into accurate key points, briefings, or action items.</p>
-          <span class="text-violet-600 font-semibold text-sm group-hover:text-violet-500 transition-colors">Summarize Text →</span>
-        </a>
-
       </div>
     </div>
   </section>
@@ -920,5 +1028,6 @@
       document.getElementById('mobileMenu').classList.toggle('open');
     });
   </script>
+  <script src="/category-filter.js" defer></script>
 </body>
 </html>
