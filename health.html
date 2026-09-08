@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
   <link rel="preload" href="/styles.css" as="style" />
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-  <link rel="stylesheet" href="category-pages.css" />
-  <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,7 +16,6 @@
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
   </script>
-  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
   <script>
     (function() {
       var adSenseLoaded = false;
@@ -52,286 +47,67 @@
       }
     })();
   </script>
-<title>Free Health &amp; Wellness Calculators – AfriWidget</title>
-  
-  <meta name="description" content="Explore free health, fitness, and wellness calculators including BMI, BMR, TDEE, macro ratios, hydration targets, and sleep cycles." />
+  <meta name="impact-site-verification" value="8d895b2f-2afa-4509-9580-9986391475e5" />
+  <title>Free Health &amp; Wellness Calculators – AfriWidget</title>
+  <meta name="description" content="Free health and wellness calculators for BMI, BMR, TDEE, macro nutrition, hydration, pediatric dosage, and ovulation tracking. 100% private, browser-based." />
   <link rel="canonical" href="https://afriwidget.com/health" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Free Health &amp; Wellness Calculators – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/health" />
-  <meta property="og:description" content="Browse free, privacy-first health and wellness calculators with instant private results." />
+  <meta property="og:description" content="Free health and wellness calculators for BMI, BMR, TDEE, macro nutrition, hydration, pediatric dosage, and ovulation tracking." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Free Health &amp; Wellness Calculators – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Free AI-powered health and wellness tools from AfriWidget. Calculate BMI, BMR, TDEE and get personalised health insights based on WHO standards." />
+  <meta name="twitter:description" content="Free health and wellness calculators for BMI, BMR, TDEE, macro nutrition, hydration, pediatric dosage, and ovulation tracking." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
-  <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Health &amp; Wellness Calculators",
-    "description": "Free AI-powered health and wellness tools from AfriWidget. Calculate BMI, BMR, TDEE and get personalised health insights based on WHO standards.",
-    "url": "https://afriwidget.com/health",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+  <style>
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://afriwidget.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Free Health &amp; Wellness Calculators",
-        "item": "https://afriwidget.com/health"
-      }
-    ]
-  }
-]
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .faq-item:hover { border-color: #cbd5e1; }
+    .faq-item .faq-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.25rem; text-align: left; font-weight: 600; font-size: 0.95rem;
+      color: #0f172a; background: #ffffff; border: none; cursor: pointer;
+      transition: background 0.15s; font-family: inherit;
+    }
+    .faq-item .faq-btn:hover { background: #f8fafc; }
+    .faq-item .faq-btn .faq-icon {
+      flex-shrink: 0; width: 1.25rem; height: 1.25rem; color: #64748b;
+      transition: transform 0.25s ease;
+    }
+    .faq-item .faq-btn .faq-icon.open { transform: rotate(180deg); }
+    .faq-item .faq-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.25rem; color: #475569; font-size: 0.9rem; line-height: 1.6;
+    }
+    .faq-item .faq-content.open { max-height: 300px; padding: 0 1.25rem 1.25rem 1.25rem; }
+    .tool-card { transition: opacity 0.2s, transform 0.2s; }
+    .tool-card.hidden-card { display: none; }
+    .no-results { display: none; text-align: center; padding: 2rem 0; color: #64748b; }
+    .no-results.visible { display: block; }
+    .tool-icon-svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; color: #0f172a; }
+    .group:hover .tool-icon-svg { color: #ca8a04; }
+    .featured-icon-svg { width: 1.5rem; height: 1.5rem; color: #0f172a; }
+    .group:hover .featured-icon-svg { color: #ca8a04; }
+  </style>
 </head>
-<body class="category-page bg-slate-50 text-slate-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans">
 
-  <!-- NAV -->
-                                                                                                                                                                                                    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -343,57 +119,54 @@
           <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
-        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
-        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
-        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
-        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
-        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
-        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
-        <div class="relative nav-dropdown group">
-          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
-            <span>Legal</span>
-            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
-            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
-            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
-            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
-            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
-            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
-            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
-            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+          <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+          <a href="/education" class="transition-colors hover:text-yellow-300">Education</a>
+          <a href="/finance" class="transition-colors hover:text-yellow-300">Finance</a>
+          <a href="/health" class="transition-colors hover:text-yellow-300 text-yellow-300 font-bold">Health</a>
+          <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity</a>
+          <div class="relative nav-dropdown group">
+            <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+              <span>Legal</span>
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+              <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+                <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+                <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+                <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+                <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+                <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+                <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
     <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
-    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
-    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
-    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
-    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
-    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
-    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
-    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
-    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
-      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
-      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
-        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
-        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
-        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
-        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
-        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
-        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+      <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education</a>
+      <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance</a>
+      <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors text-yellow-300 font-bold">Health</a>
+      <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity</a>
+      <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+        <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+          <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+          <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+          <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+          <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+          <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+        </div>
       </div>
     </div>
-  </div>
   </nav>
-  <!-- Visual Breadcrumb Navigation -->
+
+  <!-- BREADCRUMB -->
   <div class="bg-slate-900 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
       <nav aria-label="Breadcrumb">
@@ -412,438 +185,408 @@
       </nav>
     </div>
   </div>
+
   <main>
 
-  <!-- HERO (Professional AfriWidget Standard) -->
-  <section class="relative overflow-hidden bg-slate-950 text-white px-4 py-12 sm:py-16 text-center" style="background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(244, 63, 94, 0.06) 0%, transparent 40%), #020617;">
-    <!-- Geometric Dot Pattern -->
-    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+    <!-- ===== HERO ===== -->
+    <section class="relative overflow-hidden bg-slate-950 text-white px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:pt-12 sm:pb-16 lg:py-20" style="background: radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.07) 0%, transparent 45%), radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 45%), #020617;">
+      <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto">
+          <!-- Individual Trust Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-semibold">
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-yellow-400/25 px-2.5 py-1 text-yellow-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              100% Private
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              In-Browser Engine
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              No Signups
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              Verified Math
+            </span>
+          </div>
 
-    <div class="relative max-w-4xl mx-auto">
-      <!-- Live Trust Badge -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm mb-4">
-        <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
-        <span>⚡ 100% Free • No Signup • Private In-Browser Execution</span>
-      </div>
+          <h1 class="mt-4 sm:mt-5 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.18] sm:leading-[1.15] tracking-tight text-white break-words">
+            Free Health &amp; Wellness Calculators
+            <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1 sm:mt-2">
+              BMI, BMR, TDEE, Nutrition &amp; Clinical Tools
+            </span>
+          </h1>
 
-      <!-- Heading & Catchy Subhead -->
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white mb-3">
-        Free Health &amp; Wellness Calculators
-        <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1">
-          BMI, BMR, TDEE, Clinical Dosages &amp; Nutrition
-        </span>
-      </h1>
+          <p class="mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-slate-300">
+            Estimate Body Mass Index, Basal Metabolic Rate, daily calorie burn, macronutrient targets, hydration schedules, pediatric medicine doses, and ovulation windows with 100% private in-browser computation.
+          </p>
 
-      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-        Estimate Body Mass Index, Basal Metabolic Rate, daily calorie burn, macronutrient targets, hydration schedules, pediatric medicine doses, and ovulation windows with 100% private in-browser computation.
-      </p>
+          <!-- Search Bar -->
+          <form id="toolSearchForm" class="search-ring mt-5 sm:mt-7 flex max-w-2xl mx-auto items-center gap-1.5 sm:gap-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-1.5 sm:p-2 transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20" role="search" onsubmit="return false;">
+            <label for="toolSearch" class="sr-only">Search health tools</label>
+            <svg class="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
+            </svg>
+            <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1.5 sm:px-2 py-2 sm:py-2.5 text-xs sm:text-base font-medium text-white outline-none placeholder:text-slate-400" placeholder="Search health tools (e.g. BMI, Macro, Calorie, Pediatric)..." aria-label="Search health tools" autocomplete="off">
+            <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-800 border border-slate-700 px-1.5 py-0.5 rounded shadow-2xs mr-1">Ctrl K</kbd>
+            <button type="button" id="searchBtn" class="flex items-center gap-1 sm:gap-1.5 rounded-lg bg-yellow-400 px-3 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-extrabold text-slate-950 transition-all hover:bg-yellow-300 active:scale-95 shadow-sm shrink-0">
+              <span>Find tool</span>
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </form>
 
-      <!-- Instant Live Search & Sub-Filter Box -->
-      <div class="mt-7 max-w-2xl mx-auto">
-        <div class="relative flex items-center rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20">
-          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" stroke-width="2"/>
-            <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
-          </svg>
-          <input id="categorySearch" type="search" class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search health tools (e.g. BMI, Macro, Calorie, Pediatric, Water)..." aria-label="Search health tools" autocomplete="off">
-          <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded shadow-2xs mr-1.5">Ctrl K</kbd>
-          <button id="clearCategorySearch" type="button" class="hidden mr-2 rounded-lg bg-slate-100 p-1.5 text-xs text-slate-600 hover:bg-slate-200 font-bold" title="Clear search">✕</button>
-          <span id="categorySearchCount" class="hidden sm:inline-flex items-center px-2.5 py-1 text-xs font-bold text-slate-700 bg-slate-100 rounded-lg shrink-0">13 Tools</span>
+          <!-- Popular Tags -->
+          <div class="mt-3 sm:mt-3.5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs">
+            <span class="text-slate-400 font-medium mr-0.5 sm:mr-1">Popular:</span>
+            <button type="button" data-quick-search="bmi" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ BMI ]</button>
+            <button type="button" data-quick-search="bmr" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ BMR ]</button>
+            <button type="button" data-quick-search="tdee" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ TDEE ]</button>
+            <button type="button" data-quick-search="water" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Hydration ]</button>
+            <button type="button" data-quick-search="pediatric" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Pediatric ]</button>
+            <button type="button" data-quick-search="ovulation" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Ovulation ]</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Quick Sub-Filter Chips -->
-        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
-          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
-            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            Filter:
-          </span>
-          <button type="button" data-subfilter="all" class="category-filter-btn is-active rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">All Tools</button>
-          <button type="button" data-subfilter="bmi" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">⚖️ BMI &amp; Weight</button>
-          <button type="button" data-subfilter="calorie" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🥗 Calories &amp; Macros</button>
-          <button type="button" data-subfilter="water" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💧 Hydration</button>
-          <button type="button" data-subfilter="clinical" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🏥 Clinical &amp; Fertility</button>
+    <!-- ===== 4-PILLAR STATS STRIP ===== -->
+    <div class="relative border-y border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-4 sm:py-5 px-4 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(250,204,21,0.04),transparent_50%)] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_40%,rgba(250,204,21,0.01)_40%,rgba(250,204,21,0.01)_60%,transparent_60%)] pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">13</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Health Tools</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Clinical Grade</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">0ms</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Client-Side Speed</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Instant Results</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">100%</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Private &amp; Free</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">No Health Data Sent</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">ISO</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">25010 Verified</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Formulas Audited</div></div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 4-PILLAR STATS STRIP -->
-  <div class="border-y border-slate-800 bg-slate-900 py-3.5 px-4">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 text-center">
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300 font-extrabold text-sm">13</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Health Calculators</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Clinical Grade</div>
+    <!-- ===== SUCCESS STORY SPOTLIGHT ===== -->
+    <section class="max-w-7xl mx-auto px-4 my-8">
+      <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all hover:border-yellow-400/30">
+        <div class="space-y-2 max-w-2xl">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-yellow-300 text-[11px] font-black uppercase tracking-wider">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              Clinical Impact
+            </span>
+            <span class="text-xs text-slate-400 font-medium">Ashanti Region, Ghana</span>
+          </div>
+          <h3 class="text-xl font-bold text-white leading-tight">"100% Precision in Paediatric Clinical Consultations"</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">"In our rural clinic, the Pediatric Dosage Calculator gives our nursing team instant double-checks on weight-based infant liquid doses offline." — <strong class="text-white">Nurse Fatima B.</strong></p>
         </div>
+        <a href="success-stories" class="shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-xl active:scale-95">
+          Read Clinical Stories
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
       </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400 font-extrabold text-sm">0ms</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Client-Side Speed</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Instant In-Browser</div>
-        </div>
-      </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300 font-extrabold text-sm">100%</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Private &amp; Free</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">No Health Data Sent</div>
-        </div>
-      </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300 font-extrabold text-sm">ISO</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">25010 Verified</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Formulas Audited</div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Success Story Spotlight -->
-  <section class="max-w-7xl mx-auto px-4 my-8">
-    <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6">
-      <div class="space-y-2 max-w-2xl">
-        <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-full bg-yellow-400 text-slate-950 text-[11px] font-black uppercase">🏥 Clinical Safety Story</span>
-          <span class="text-xs text-slate-400 font-medium">Ashanti Region, Ghana</span>
-        </div>
-        <h3 class="text-xl font-bold text-white">"100% Precision in Paediatric Clinical Consultations"</h3>
-        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-          "In our rural clinic, the Pediatric Dosage Calculator gives our nursing team instant double-checks on weight-based infant liquid doses offline." — <strong>Nurse Fatima B.</strong>
-        </p>
-      </div>
-      <a href="success-stories" class="shrink-0 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors text-center shadow">
-        Read Clinical Stories →
-      </a>
-    </div>
-  </section>
-
-  <section class="category-tools" aria-labelledby="health-tools-title">
-    <div class="category-tools-inner">
-      <div class="category-tools-heading">
+    <!-- ===== TOOLS SECTION ===== -->
+    <section class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex items-center justify-between mb-6">
         <div>
-          <h2 id="health-tools-title">Health Tools</h2>
-          <p class="mt-1 text-left">Private browser-based tools for everyday health planning.</p>
+          <p class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-yellow-700">All health tools</p>
+          <h2 class="text-2xl font-black text-slate-950 mt-0.5">Health calculators &amp; wellness resources</h2>
         </div>
-        <span id="categoryHeadingCount" class="category-count-badge">13 Tools</span>
+        <span id="totalCount" class="text-sm font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg">13 tools</span>
       </div>
 
-      <!-- Zero Results State -->
-      <div id="categoryNoResults" class="category-no-results" style="display: none;">
-        <div class="category-no-results-icon">🔍</div>
-        <h3>No health tools matched your search</h3>
-        <p>Try searching for terms like "BMI", "Macro", "Calories", "Water", or click below to view all tools.</p>
-        <button id="categoryResetBtn" type="button" class="category-reset-btn">Reset Filters &amp; Show All Tools</button>
+      <!-- FEATURED ROW (6) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-10" id="featuredRow">
+        <a href="/bmi-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="bmi bmr tdee body mass index health">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 19h14M7 16V8m4 8V5m4 11v-3m4 3V7"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">BMI / BMR / TDEE</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Body mass, metabolism &amp; daily energy needs</p>
+        </a>
+        <a href="/macro-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="macro calculator macronutrient split protein carbs fats">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v3m0 12v3m-9-9h3m12 0h3M5.5 5.5l2 2m9 9l2 2M5.5 18.5l2-2m9-9l2-2"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Macro Calculator</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Protein, carbs &amp; fat targets</p>
+        </a>
+        <a href="/water-intake-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="water intake hydration weight exercise climate">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 4h8l-1 16H9L8 4ZM9 8h6"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Water Intake</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Daily hydration goals</p>
+        </a>
+        <a href="/pediatric-dosage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="pediatric dosage medicine child paracetamol ibuprofen">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4h10v16H7zM9 8h6M9 12h6M9 16h3"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Pediatric Dosage</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Weight-based liquid medicine doses</p>
+        </a>
+        <a href="/body-fat-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="body fat percentage navy circumference waist neck">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Body Fat</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Navy circumference method</p>
+        </a>
+        <a href="/ovulation-cycle-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="ovulation cycle fertile window period">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 2"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Ovulation &amp; Cycle</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Fertile window &amp; cycle tracking</p>
+        </a>
       </div>
 
-      <div class="category-tool-grid">
-        <a class="category-tool-card" href="macro-calculator"><span class="category-tool-icon"><span class="text-xl font-black">🥗</span></span><h3>Macro Calculator</h3><p>Calculate target daily grams of Protein, Carbs, and Fats based on TDEE and fitness goals.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="bmi-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M5 19h14M7 16V8m4 8V5m4 11v-3m4 3V7"/></svg></span><h3>BMI / BMR / TDEE Calculator</h3><p>Estimate body mass index, resting energy, and daily calorie needs.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="body-fat-calculator"><span class="category-tool-icon"><span class="text-xl font-black">%</span></span><h3>Body Fat Calculator</h3><p>Estimate body fat percentage from waist, neck, height, and hip measurements.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-         <a class="category-tool-card" href="daily-calorie-needs-calculator"><span class="category-tool-icon"><span class="text-xl font-black">kcal</span></span><h3>Daily Calorie Needs Calculator</h3><p>Estimate BMR and daily maintenance calories from your body size and activity.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-         <a class="category-tool-card" href="calorie-burn-calculator"><span class="category-tool-icon"><span class="text-xl font-black">🔥</span></span><h3>Calorie Burn Calculator</h3><p>Estimate energy used during walks, workouts, sports, and everyday activities.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-         <a class="category-tool-card" href="ideal-weight-calculator"><span class="category-tool-icon"><span class="text-xl font-black">↔</span></span><h3>Ideal Weight Calculator</h3><p>Compare several height-based reference weight formulas without a single false-precision target.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-         <a class="category-tool-card" href="healthy-weight-range-calculator"><span class="category-tool-icon"><span class="text-xl font-black">✓</span></span><h3>Healthy Weight Range Calculator</h3><p>Estimate an adult height-based reference range using BMI thresholds.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="pediatric-dosage-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M7 4h10v16H7zM9 8h6M9 12h6M9 16h3"/></svg></span><h3>Pediatric Dosage Calculator</h3><p>Estimate weight-based liquid medicine dosing with safety reminders.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="ovulation-cycle-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M12 8v4l3 2"/></svg></span><h3>Ovulation &amp; Cycle Calculator</h3><p>Estimate fertile windows, ovulation timing, and upcoming cycle dates.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="water-intake-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M8 4h8l-1 16H9L8 4ZM9 8h6"/></svg></span><h3>Water Intake Calculator</h3><p>Build a daily hydration target from weight, exercise, and climate.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-         <a class="category-tool-card" href="hydration-reminder-calculator"><span class="category-tool-icon"><span class="text-xl font-black">⏱</span></span><h3>Hydration Reminder Calculator</h3><p>Turn a daily water target into a flexible schedule across waking hours.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="calorie-deficit-planner"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 4c3 3 5 5 5 9a5 5 0 1 1-10 0c0-2 1-4 3-6 0 2 1 3 2 3 1-2 1-4 0-6Z"/></svg></span><h3>Calorie Deficit Planner</h3><p>Compare estimated maintenance calories with a measured deficit plan.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="blood-donation-eligibility-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 3s5 5 5 10a5 5 0 1 1-10 0c0-5 5-10 5-10Z"/></svg></span><h3>Blood Donation Eligibility</h3><p>Review basic age, weight, and donation interval planning criteria.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <article class="max-w-4xl mx-auto px-4 py-16">
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Health Literacy Matters in Africa</h2>
-    <p class="text-slate-700 leading-relaxed mb-5 text-lg">Across sub-Saharan Africa and many other developing regions, access to personalised, affordable healthcare guidance remains deeply unequal. Millions of people face decisions about diet, exercise, and chronic disease management without the benefit of a regular physician or nutritionist. AfriWidget's Health &amp; Wellness toolkit was built specifically to close this knowledge gap — providing clinically grounded calculations that were previously available only to those who could afford professional consultations.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">Understanding your own health data is the first step toward meaningful change. When you know your Body Mass Index (BMI), you gain a medically recognised reference point for evaluating whether your weight is within a range associated with lower risks of chronic disease. When you understand your Basal Metabolic Rate (BMR), you know exactly how many calories your body burns at complete rest — a baseline figure that unlocks smart, science-backed approaches to weight management. And when you calculate your Total Daily Energy Expenditure (TDEE), you are equipped with the precise caloric target you need to maintain, lose, or gain weight intentionally.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">These are not abstract medical concepts reserved for hospital consultations. They are practical numbers you can act on today, and AfriWidget puts them in your hands for free.</p>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Our Health Tools Explained</h2>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Body Mass Index (BMI)</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">BMI is the most widely used screening tool for categorising body weight relative to height. Developed in the early 19th century and adopted by the World Health Organisation (WHO) as a global standard, BMI divides your weight in kilograms by the square of your height in metres. The resulting number places you into one of four categories: underweight (below 18.5), normal weight (18.5–24.9), overweight (25–29.9), or obese (30 and above).</p>
-      <p class="text-slate-700 leading-relaxed mb-4">While BMI is not a diagnostic tool — it does not directly measure body fat percentage or distinguish between muscle and adipose tissue — it remains an invaluable population-level indicator associated with risks of diabetes, cardiovascular disease, certain cancers, and other lifestyle-related conditions. Our AfriWidget BMI calculator provides your result in real time and can request realtime AI guidance that contextualises your score, explains what it means for your long-term health, and recommends evidence-based next steps.</p>
-      <a href="bmi-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Your BMI →</a>
-    </div>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Basal Metabolic Rate (BMR)</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Your Basal Metabolic Rate is the number of calories your body burns every day just to maintain basic physiological functions — breathing, circulation, cell production, and temperature regulation — while at complete rest. It accounts for the majority of your total energy expenditure, typically 60–75% for most adults.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">AfriWidget calculates your BMR using the Mifflin-St Jeor equation, which has been validated in numerous independent clinical studies as the most accurate formula for estimating resting energy expenditure in diverse adult populations. The equation incorporates your age, sex, height, and current weight to produce a figure expressed in kilocalories per day. This number serves as the foundation for any evidence-based weight management plan.</p>
-    </div>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-10">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Total Daily Energy Expenditure (TDEE)</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">TDEE builds on your BMR by factoring in your actual daily physical activity level using scientifically validated activity multipliers. Whether you are sedentary, lightly active, moderately active, very active, or extra active, our calculator applies the appropriate Harris-Benedict activity factor to produce your personalised daily caloric requirement.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">Understanding your TDEE empowers you to make intentional, data-driven decisions about nutrition. Consuming fewer calories than your TDEE creates a caloric deficit associated with sustainable weight loss. Eating at your TDEE maintains your current weight. Consuming more supports muscle gain and recovery from intense athletic training. No guesswork, no fad diets — just precise, personalised numbers backed by decades of nutritional science.</p>
-      <a href="bmi-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Your TDEE →</a>
-    </div>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">More Health &amp; Wellness Tools</h2>
-    <div class="grid sm:grid-cols-2 gap-4 mb-10">
-      <a href="pediatric-dosage-calculator" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-400 hover:shadow-md transition-all">
-        <h3 class="font-bold text-teal-700">Pediatric Dosage Calculator</h3>
-        <p class="text-sm text-slate-600 mt-2">Estimate a weight-based liquid paracetamol or ibuprofen dose in millilitres, with a prominent pharmacist safety reminder.</p>
-      </a>
-      <a href="ovulation-cycle-calculator" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-400 hover:shadow-md transition-all">
-        <h3 class="font-bold text-teal-700">Ovulation &amp; Cycle Calculator</h3>
-        <p class="text-sm text-slate-600 mt-2">Map an estimated next period, fertile window, ovulation peak, and lower-risk days from cycle dates.</p>
-      </a>
-      <a href="water-intake-calculator" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-400 hover:shadow-md transition-all">
-        <h3 class="font-bold text-teal-700">Daily Water Intake Calculator</h3>
-        <p class="text-sm text-slate-600 mt-2">Build a daily hydration goal in litres, millilitres, and 500 mL bottles using weight, exercise, and climate.</p>
-      </a>
-      <a href="calorie-deficit-planner" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-400 hover:shadow-md transition-all">
-        <h3 class="font-bold text-teal-700">Calorie Deficit Planner</h3>
-        <p class="text-sm text-slate-600 mt-2">Compare estimated maintenance calories with a measured 500 kcal daily deficit using Mifflin–St Jeor.</p>
-      </a>
-      <a href="blood-donation-eligibility-calculator" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-400 hover:shadow-md transition-all sm:col-span-2">
-        <h3 class="font-bold text-teal-700">Blood Donation Eligibility Calculator</h3>
-        <p class="text-sm text-slate-600 mt-2">Check a basic age, weight, and re-donation interval planning screen, including the earliest possible next donation date.</p>
-      </a>
-    </div>
-
-     <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-       <h3 class="text-2xl font-bold text-teal-700 mb-4">Age and Life Milestones</h3>
-       <p class="text-slate-700 leading-relaxed mb-4">Calendar age is useful for birthday planning, school and sports forms, life-stage milestones, and general date calculations. Our Age Calculator reports completed years, months, and days, estimates total days lived, and counts down to the next birthday while keeping the birth date in your browser.</p>
-       <a href="age-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Your Age →</a>
-     </div>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Building a Foundation for Wellness</h2>
-    <p class="text-slate-700 leading-relaxed mb-5">Health is not a destination — it is a daily practice built on informed choices. AfriWidget's health tools are designed not just to give you numbers, but to help you understand what those numbers mean and how to act on them. After a result is calculated, the realtime AI assistant can translate the displayed clinical metrics into actionable, plain-language guidance tailored to your profile.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">For example, a user with a BMI in the overweight category will receive guidance explaining the associated health risks, the modest changes in caloric intake that could shift their BMI into the normal range over time, and the types of physical activity most associated with sustainable weight loss in clinical literature. A user with a BMI in the underweight category will receive entirely different guidance focused on safe, nutrient-dense approaches to weight gain.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">This level of personalisation — once available only through paid nutritionist or physician consultations — is now freely accessible to anyone with an internet connection, anywhere in the world.</p>
-
-    <!-- INFO CARDS -->
-    <div class="grid sm:grid-cols-3 gap-6 mb-12">
-      <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-emerald-700 mb-2">WHO</div>
-        <div class="text-sm text-slate-600">Validated BMI Standards</div>
+      <!-- ALL HEALTH TOOLS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="allTools">
+        <a href="/bmi-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="bmi bmr tdee body mass index health"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Body Metrics</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">WHO Standard</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 19h14M7 16V8m4 8V5m4 11v-3m4 3V7"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">BMI</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">BMI / BMR / TDEE Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate your Body Mass Index, Basal Metabolic Rate, and Total Daily Energy Expenditure using WHO and Mifflin-St Jeor standards.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate metrics →</span></a>
+        <a href="/macro-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="macro calculator macronutrient split protein carbs fats tdee"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Nutrition</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v3m0 12v3m-9-9h3m12 0h3M5.5 5.5l2 2m9 9l2 2M5.5 18.5l2-2m9-9l2-2"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Macros</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Macro Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate your optimal daily protein, carbohydrate, and fat targets based on your TDEE and specific fitness goals.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate macros →</span></a>
+        <a href="/body-fat-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="body fat percentage navy circumference waist neck hips"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Composition</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">U.S. Navy</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Body Fat</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Body Fat Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate your body fat percentage using the U.S. Navy circumference method from simple tape measurements.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate body fat →</span></a>
+        <a href="/daily-calorie-needs-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="daily calorie needs maintenance calories bmr tdee"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Nutrition</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">kcal</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Calories</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Daily Calorie Needs</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate your BMR and daily maintenance calories using the Mifflin-St Jeor equation and your activity level.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate needs →</span></a>
+        <a href="/calorie-burn-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="calorie burn exercise activity met walking running"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Fitness</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">MET-Based</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🔥</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Burn</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Calorie Burn Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate energy expended during walking, running, cycling, sports, and other physical activities using MET values.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Estimate burn →</span></a>
+        <a href="/ideal-weight-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="ideal weight healthy weight range devine robinson"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Reference</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">↔</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Ideal</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Ideal Weight Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare multiple height-based reference weight formulas including Devine, Robinson, Miller, and Hamwi standards.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate range →</span></a>
+        <a href="/healthy-weight-range-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="healthy weight range bmi height adult reference"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Reference</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">WHO</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">✓</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Range</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Healthy Weight Range</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate your healthy weight range based on WHO BMI thresholds of 18.5–24.9 for adult height.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate range →</span></a>
+        <a href="/pediatric-dosage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="pediatric dosage medicine child paracetamol ibuprofen"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Clinical</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">WHO/Paediatric</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4h10v16H7zM9 8h6M9 12h6M9 16h3"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Pediatric</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Pediatric Dosage Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate weight-based liquid paracetamol and ibuprofen doses in millilitres with clinical safety reminders.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate dose →</span></a>
+        <a href="/ovulation-cycle-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="ovulation cycle fertile window period"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Fertility</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 2"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Ovulation</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Ovulation &amp; Cycle Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate your fertile window, ovulation date, period dates, and cycle phases based on your cycle length.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Track cycle →</span></a>
+        <a href="/water-intake-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="water intake hydration weight exercise climate"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Hydration</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 4h8l-1 16H9L8 4ZM9 8h6"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Water</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Water Intake Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate your personalised daily hydration goal in litres, millilitres, and bottles based on weight, exercise, and climate.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate intake →</span></a>
+        <a href="/hydration-reminder-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="hydration reminder water schedule drinking wake bedtime"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Hydration</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">⏱</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Reminder</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Hydration Reminder Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Turn your daily water target into a practical drinking schedule across your waking hours with interval planning.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Set schedule →</span></a>
+        <a href="/calorie-deficit-planner" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="calorie deficit planner weight loss maintenance calories"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Weight</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4c3 3 5 5 5 9a5 5 0 1 1-10 0c0-2 1-4 3-6 0 2 1 3 2 3 1-2 1-4 0-6Z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Deficit</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Calorie Deficit Planner</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare your maintenance calories with a structured 500 kcal daily deficit for sustainable weight loss planning.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan deficit →</span></a>
+        <a href="/blood-donation-eligibility-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="blood donation eligibility donor health"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Clinical</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3s5 5 5 10a5 5 0 1 1-10 0c0-5 5-10 5-10Z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Donation</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Blood Donation Eligibility</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Review basic age, weight, and donation interval criteria to determine your eligibility for blood donation.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Check eligibility →</span></a>
       </div>
 
-      <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-teal-700 mb-2">3-in-1</div>
-        <div class="text-sm text-slate-600">BMI + BMR + TDEE in one tool</div>
-      </div>
-      <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-slate-700 mb-2">0ms</div>
-        <div class="text-sm text-slate-600">Real-time instant results</div>
-      </div>
-    </div>
+      <!-- No Results -->
+      <div id="noResults" class="no-results"><p class="text-sm text-slate-500">No health tools found matching your search. Try a different keyword.</p></div>
+    </section>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-800">
-      <strong>Medical Disclaimer:</strong> The health tools provided by AfriWidget are for informational and educational purposes only. They are not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider before making changes to your diet, exercise routine, or health plan.
-    </div>
-  </article>
+    <!-- ===== ABOUT SECTION (EXPANDED - 800+ WORDS) ===== -->
+    <section class="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 mb-4">Why Health Literacy Matters</h2>
 
-  <!-- FOOTER -->
-  
+      <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Health literacy is the foundation of personal wellbeing. Across Africa and the developing world, millions of people face decisions about diet, exercise, and chronic disease management without the benefit of a regular physician or nutritionist. AfriWidget's Health &amp; Wellness toolkit was built specifically to close this knowledge gap — providing clinically grounded calculations that were previously available only to those who could afford professional consultations. When you understand your Body Mass Index, you gain a medically recognised reference point for evaluating whether your weight is within a range associated with lower risks of chronic disease. When you know your Basal Metabolic Rate, you understand exactly how many calories your body burns at complete rest — a baseline figure that unlocks smart, science-backed approaches to weight management.</p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Body Mass Index (BMI) — A Vital Health Screening Tool</h3>
+      <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">BMI is the most widely used screening tool for categorising body weight relative to height. Developed in the early 19th century and adopted by the World Health Organisation as a global standard, BMI divides your weight in kilograms by the square of your height in metres. The resulting number places you into one of four categories: underweight (below 18.5), normal weight (18.5–24.9), overweight (25–29.9), or obese (30 and above). While BMI is not a diagnostic tool — it does not directly measure body fat percentage or distinguish between muscle and adipose tissue — it remains an invaluable population-level indicator associated with risks of diabetes, cardiovascular disease, certain cancers, and other lifestyle-related conditions. Our AfriWidget BMI calculator provides your result in real time and can request realtime AI guidance that contextualises your score, explains what it means for your long-term health, and recommends evidence-based next steps.</p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE)</h3>
+      <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Your Basal Metabolic Rate is the number of calories your body burns every day just to maintain basic physiological functions — breathing, circulation, cell production, and temperature regulation — while at complete rest. It accounts for the majority of your total energy expenditure, typically 60–75% for most adults. AfriWidget calculates your BMR using the Mifflin-St Jeor equation, which has been validated in numerous independent clinical studies as the most accurate formula for estimating resting energy expenditure in diverse adult populations. TDEE builds on your BMR by factoring in your actual daily physical activity level using scientifically validated activity multipliers. Whether you are sedentary, lightly active, moderately active, very active, or extra active, our calculator applies the appropriate activity factor to produce your personalised daily caloric requirement. Understanding your TDEE empowers you to make intentional, data-driven decisions about nutrition — consuming fewer calories than your TDEE creates a caloric deficit associated with sustainable weight loss, while eating at your TDEE maintains your current weight.</p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Macronutrient Planning and Sports Nutrition</h3>
+      <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Beyond calorie counting, understanding the composition of your diet — the balance of protein, carbohydrates, and fats — is essential for athletic performance, muscle recovery, and metabolic health. Our Macro Calculator uses evidence-based guidelines to determine your optimal daily intake of each macronutrient based on your TDEE, activity level, and specific fitness goals. Whether you are an endurance athlete, a strength athlete, or someone seeking general wellness, personalised macronutrient ratios help you fuel your body effectively and achieve measurable results.</p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Hydration and Clinical Safety Tools</h3>
+      <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Water is fundamental to every biological process in the human body. Yet, many people do not consume enough fluids to maintain optimal physiological function. Our Water Intake Calculator builds a personalised hydration goal based on your weight, daily physical activity, and climate. In clinical settings, our Pediatric Dosage Calculator provides nursing teams and caregivers with an instant double-check on weight-based liquid medication doses for infants and children. This tool is especially valuable in resource-limited settings where access to clinical reference materials may be restricted. The Ovulation and Cycle Calculator offers individuals a private, browser-based tool for tracking menstrual cycles, estimating fertile windows, and planning reproductive health decisions.</p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Privacy and Data Security in Health Planning</h3>
+      <p class="text-slate-700 leading-relaxed text-sm sm:text-base">Health data is among the most sensitive personal information. Body weight, menstrual cycles, medication doses, and fitness goals are not numbers you want exposed to third parties. That's why every AfriWidget health tool runs 100% client-side in your browser. No data is transmitted to our servers. No information is stored in a database. Your health metrics remain private, secure, and under your control. We believe that access to health planning tools should not come at the cost of your privacy — and our commitment to zero data collection reflects that conviction. All calculations are performed locally, giving you complete confidence that your personal health information stays where it belongs — with you.</p>
+    </section>
+
+    <!-- ===== FAQ SECTION (EXPANDED - 500+ WORDS) ===== -->
+    <section class="max-w-4xl mx-auto px-4 pb-16">
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 mb-6">Frequently Asked Questions About Health Calculators</h2>
+      <div class="space-y-2.5" id="faqContainer">
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>How accurate are the health calculators?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">Our health calculators use internationally recognised, clinically validated formulas. BMI follows WHO standards, BMR uses the Mifflin-St Jeor equation (validated in multiple clinical studies), and TDEE applies standard activity multipliers. However, our tools are for informational purposes only and should not replace advice from qualified healthcare professionals.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>Do I need to create an account to use these tools?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">No. AfriWidget has no user accounts, no sign-up requirements, and no registration. Every tool is available instantly and runs entirely in your web browser. We do not collect, store, or sell any personal health data.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>What is the difference between BMI, BMR, and TDEE?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">BMI (Body Mass Index) is a screening tool that categorises weight relative to height. BMR (Basal Metabolic Rate) is the number of calories your body burns at complete rest. TDEE (Total Daily Energy Expenditure) is your BMR multiplied by an activity factor — representing your total daily calorie needs including all physical activity.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>How does the Pediatric Dosage Calculator work?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">The Pediatric Dosage Calculator uses weight-based dosing guidelines for common paediatric medications like paracetamol and ibuprofen. It calculates the recommended dose in millilitres based on the child's weight and provides clinical safety reminders. Always verify with a qualified healthcare professional before administering any medication.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>Can I use these calculators for weight loss planning?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">Yes. Our Calorie Deficit Planner and Macro Calculator are specifically designed for weight loss and body composition planning. They help you calculate a sustainable caloric deficit and determine optimal macronutrient ratios for your specific goals. Always consult a healthcare professional before beginning any weight loss program.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>Is my health data safe when using these tools?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">Absolutely. All calculations are performed locally in your browser using JavaScript. No weight, age, medication, or cycle data is ever sent to or stored on our servers. Your health data remains completely private and secure.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>What is a healthy BMI range?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">According to the World Health Organisation (WHO), a healthy BMI range for adults is 18.5–24.9. A BMI below 18.5 is considered underweight, 25–29.9 is overweight, and 30 or above is classified as obese. BMI is a screening tool and should be interpreted alongside other health metrics and professional guidance.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" type="button"><span>How do I calculate my daily water intake?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="faq-content">Our Water Intake Calculator provides a personalised hydration goal based on your weight, daily exercise, and climate. A common recommendation is to drink 30–40 ml of water per kilogram of body weight, with additional intake for physical activity and hot weather. The calculator provides results in litres, millilitres, and standard drinking bottles.</div>
+        </div>
+      </div>
+    </section>
 
   </main>
-<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
-    <div class="min-w-0">
-      <a href="/" class="flex items-center space-x-2 mb-4">
-        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
-          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
-        </svg>
-        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
-      </a>
-      <p class="text-sm leading-relaxed text-slate-300">
-        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
-      </p>
-      <div class="mt-5 flex items-center flex-wrap gap-2.5">
-        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4" aria-label="AfriWidget site footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+      <div class="min-w-0">
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+          </svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
-        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
-        </a>
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-        </a>
-        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
+        <p class="text-sm leading-relaxed text-slate-300">Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.</p>
+        <div class="mt-5 flex items-center flex-wrap gap-2.5">
+          <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" aria-label="X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+          </a>
+          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          </a>
+          <a href="https://www.instagram.com/afriwidget" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+        <div class="mt-3.5">
+          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+            <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+            <span>Message Obed Avorlenu on WhatsApp</span>
+          </a>
+        </div>
       </div>
-      <div class="mt-3.5">
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
-          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-          <span>Message Obed Avorlenu on WhatsApp</span>
-        </a>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3><ul class="space-y-2 text-sm"><li><a href="/health" class="hover:text-yellow-300 transition-colors">Health &amp; Wellness</a></li><li><a href="/finance" class="hover:text-yellow-300 transition-colors">Finance &amp; Wealth</a></li><li><a href="/business" class="hover:text-yellow-300 transition-colors">Business &amp; Freelance</a></li><li><a href="/education" class="hover:text-yellow-300 transition-colors">Education &amp; Academics</a></li><li><a href="/productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a></li></ul></div>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Hubs</h3><ul class="space-y-2 text-sm"><li><a href="/success-stories" class="hover:text-yellow-300 transition-colors">Success Stories</a></li><li><a href="/about" class="hover:text-yellow-300 transition-colors">About Us</a></li><li><a href="/faq" class="hover:text-yellow-300 transition-colors">FAQ</a></li><li><a href="/contact" class="hover:text-yellow-300 transition-colors">Contact</a></li></ul></div>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h3><ul class="space-y-2 text-sm"><li><a href="/privacy-policy" class="hover:text-yellow-300 transition-colors">Privacy Policy</a></li><li><a href="/terms" class="hover:text-yellow-300 transition-colors">Terms of Service</a></li><li><a href="/cookie-policy" class="hover:text-yellow-300 transition-colors">Cookie Policy</a></li><li><a href="/adsense-disclaimer" class="hover:text-yellow-300 transition-colors">AdSense Disclaimer</a></li></ul></div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
+      <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+      <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+        <span class="text-slate-600 hidden sm:inline">•</span>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+        <span class="text-slate-600 hidden sm:inline">•</span>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
       </div>
     </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
-      <ul class="space-y-2 text-sm">
-         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
-         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
-         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
-         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
-         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
-         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
-         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
-        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
-        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
-        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
-        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
-        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
-        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
-        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
-        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
-        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
-        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
-        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
-        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
-         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
-         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
-         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
-         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
-        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
-        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
-        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
-         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
-         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
-         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
-         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
-         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
-         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
-         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
-         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
-         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
-         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
-         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
-         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
-         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
-         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
-         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
-         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
-         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
-         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
-          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
-         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
-         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
-         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
-         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
-         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
-         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
-         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
-        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
-        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
-        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
-         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
-         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
-         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
-         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
-         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
-        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
-        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
-        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
-        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
-        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
-         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
-         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
-         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
-         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
-         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
-         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
-         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
-         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
-         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
-         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
-         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
-         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
-         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
-         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
-         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
-         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
-         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
-         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
-         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
-        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
-         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
-         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
-         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
-         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
-         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
-         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
-         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
-         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
-         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
-         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
-        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
-         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
-        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
-        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
-        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
-        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
-    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
-    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
-      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
-    </div>
-  </div>
-</footer>
-
-  <!-- COOKIE CONSENT BANNER -->
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
-    </p>
-    <div class="flex gap-3 flex-shrink-0">
-      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
-      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
-    </div>
-  </div>
-</div>
-
+  </footer>
 
   <!-- COOKIE BANNER -->
-  
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.</p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+        <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+      </div>
+    </div>
   </div>
-  <script>
-    function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
 
-    onReady(() => {
-      document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
-    });
+  <!-- SEARCH & FAQ SCRIPTS -->
+  <script>
+    (function() {
+      // FAQ Accordion
+      document.querySelectorAll('.faq-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.faq-icon');
+          var isOpen = content.classList.contains('open');
+          document.querySelectorAll('.faq-content').forEach(function(c) {
+            if (c !== content) { c.classList.remove('open'); var parentBtn = c.previousElementSibling; if (parentBtn) { var otherIcon = parentBtn.querySelector('.faq-icon'); if (otherIcon) otherIcon.classList.remove('open'); } }
+          });
+          if (isOpen) { content.classList.remove('open'); if (icon) icon.classList.remove('open'); }
+          else { content.classList.add('open'); if (icon) icon.classList.add('open'); }
+        });
+      });
+
+      // Search Engine
+      var searchInput = document.getElementById('toolSearch');
+      var searchBtn = document.getElementById('searchBtn');
+      var toolCards = document.querySelectorAll('.tool-card');
+      var noResults = document.getElementById('noResults');
+      var totalCount = document.getElementById('totalCount');
+
+      function updateCount(visible) {
+        var total = toolCards.length;
+        if (totalCount) totalCount.textContent = visible + ' / ' + total + ' tools';
+        if (noResults) {
+          if (searchInput && searchInput.value.trim() !== '' && visible === 0) { noResults.classList.add('visible'); }
+          else { noResults.classList.remove('visible'); }
+        }
+      }
+
+      function performSearch(query) {
+        query = query.trim().toLowerCase();
+        var visible = 0;
+        toolCards.forEach(function(card) {
+          var text = (card.getAttribute('data-search-text') || card.textContent).toLowerCase();
+          var match = query === '' || text.indexOf(query) !== -1;
+          if (match) { card.classList.remove('hidden-card'); visible++; }
+          else { card.classList.add('hidden-card'); }
+        });
+        updateCount(visible);
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function() { performSearch(this.value); });
+        document.addEventListener('keydown', function(e) {
+          if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); searchInput.select(); }
+        });
+      }
+      if (searchBtn) { searchBtn.addEventListener('click', function() { if (searchInput) performSearch(searchInput.value); }); }
+
+      // Quick search tags
+      document.querySelectorAll('[data-quick-search]').forEach(function(tag) {
+        tag.addEventListener('click', function() {
+          var text = this.textContent.replace(/[\[\]]/g, '').trim();
+          if (searchInput) { searchInput.value = text; performSearch(text); searchInput.focus(); }
+        });
+      });
+
+      // Cookie Banner
+      var banner = document.getElementById('cookieBanner');
+      if (banner) {
+        if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') { banner.classList.add('hidden'); }
+        else { banner.classList.remove('hidden'); }
+        var acceptBtn = document.getElementById('cookieAccept');
+        var declineBtn = document.getElementById('cookieDecline');
+        if (acceptBtn) { acceptBtn.addEventListener('click', function() { localStorage.setItem('cookieConsent', 'accepted'); banner.classList.add('hidden'); }); }
+        if (declineBtn) { declineBtn.addEventListener('click', function() { localStorage.setItem('cookieConsent', 'declined'); banner.classList.add('hidden'); }); }
+      }
+
+      // Mobile Menu
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+      });
+
+      // Initial count
+      updateCount(toolCards.length);
+    })();
   </script>
-  <script src="/category-filter.js" defer></script>
 </body>
 </html>
