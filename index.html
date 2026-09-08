@@ -652,90 +652,146 @@
     </section>
 
     <!-- ===== COMPACT BRAND + FOUNDER + FAQ ===== -->
-    <section class="bg-white px-4 sm:px-6 lg:px-8 py-10 sm:py-14 border-b border-slate-200">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-6 sm:gap-10">
-          <!-- Left: Brand & Founder -->
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-yellow-400/20 border border-yellow-400/30 text-yellow-300">
-                <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
-                  <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
-                </svg>
-              </div>
-              <div>
-                <span class="text-[10px] font-extrabold uppercase tracking-wider text-yellow-700">About AfriWidget</span>
-                <h2 class="text-xl sm:text-2xl font-black text-slate-950">Practical tools. Real solutions.</h2>
-              </div>
-            </div>
-            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-3">
-              AfriWidget is a free, browser-based platform that puts practical calculations and intelligent explanations directly into your hands — with no app downloads, no sign-ups, and absolutely no hidden fees. We believe access to high-quality tools should not be a privilege reserved for a few. Whether you are a student planning your university admission, a professional managing your finances, or a parent tracking your family's health metrics, AfriWidget provides the accurate, real-time insights you need to make confident decisions.
-            </p>
-            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-3">
-              Our platform was born from the recognition that millions of people across Africa and the developing world lack access to the personalized financial advisors, nutrition coaches, and academic counselors that wealthier demographics take for granted. AfriWidget closes that gap, one smart widget at a time. Every tool is carefully crafted to be simple, intuitive, and immediately useful — turning complex calculations into clear, actionable answers.
-            </p>
-            <p class="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-              Founded by Ghanaian web developer <strong class="text-slate-900">Obed Avorlenu</strong>, AfriWidget is built on the belief that geography and finances should never restrict access to essential educational, financial, and productivity calculations. 100% free, private, and calculated in-browser — because your data belongs to you.
-            </p>
-            <div class="flex flex-wrap items-center gap-3 pt-1">
-              <a href="/about" class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-900 hover:text-yellow-700 transition-colors">Read founder story <span aria-hidden="true">→</span></a>
-              <span class="text-[10px] text-slate-400">• Accra, Ghana</span>
-              <span class="text-[10px] text-slate-400">• Zero Data Harvesting</span>
-            </div>
-          </div>
-          <!-- Right: Professional FAQ Accordion -->
-          <div>
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-yellow-700 block mb-3">Quick answers</span>
-            <h3 class="text-lg sm:text-xl font-black text-slate-950 mb-4">Frequently Asked Questions</h3>
-            <div class="space-y-2.5" id="faqContainer">
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>Is AfriWidget completely free to use?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">Yes, AfriWidget is 100% free for all users. Every calculator, category page, and realtime AI assistant is available without any subscription, registration, or payment. We are supported by non-intrusive advertising and believe that access to smart, AI-powered tools is a right, not a premium feature.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>Does AfriWidget store my personal data?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">AfriWidget has no user accounts and does not use calculator inputs for advertising targeting. Most calculations run locally in your browser. Finance and Education tools may send the relevant calculation context through a secure server-side proxy to generate a Groq-powered AI insight; do not include names or other personal identifiers in calculator fields. We do not maintain a database of calculator submissions.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>How accurate are the calculator results?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">Our calculators use internationally recognised, clinically and academically validated formulas. Our BMI tool follows WHO guidelines, our BMR calculator uses the Mifflin-St Jeor equation (considered the gold standard), and our GPA tool reflects standard 4.0-scale grading conventions. However, our tools are for informational purposes only and should not replace advice from qualified medical, financial, or academic professionals.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>Who is AfriWidget designed for?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">AfriWidget is designed for everyone, with a particular focus on users across Africa and other developing regions who may lack access to premium advisory services. Our tools work on older smartphones, slow internet connections, and a wide range of devices and browsers. We are committed to digital inclusion and believe that geography should never determine access to quality decision-making tools.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>How does the realtime AI assistant work?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">The shared realtime assistant waits for a completed tool result, then sends the relevant calculation context through the secure server-side proxy for a concise explanation and practical next step. The proxy keeps the Groq key out of the browser. If the deployed AI endpoint is unavailable, the assistant clearly reports that realtime AI is unavailable rather than presenting a locally generated response.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-btn" type="button">
-                  <span>Can I use AfriWidget on my mobile phone?</span>
-                  <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-content">Yes. AfriWidget is fully responsive and optimised for mobile, tablet, and desktop browsers. Every page is designed with a mobile-first approach using modern Tailwind CSS layouts, touch-friendly controls, and fast-loading static HTML so it feels native on any device without requiring an app download.</div>
-              </div>
-            </div>
-          </div>
+    <!-- ABOUT AFRIWIDGET – Expanded for AdSense -->
+<section id="aboutSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">What Is AfriWidget?</h2>
+    <div class="w-16 h-1 bg-yellow-400 mx-auto mb-6 sm:mb-8 rounded"></div>
+
+    <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-start">
+      <div>
+        <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
+          AfriWidget is a free, browser-based platform that puts practical calculations and intelligent explanations directly into your hands — with no app downloads, no sign-ups, and absolutely no hidden fees. We believe that access to high-quality information and useful tools should not be a privilege reserved for a few. Whether you are a student planning your university admission, a professional managing your finances, or a parent tracking your family's health metrics, AfriWidget provides the accurate, real-time insights you need to make confident decisions.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
+          Our platform was born from a simple but profound observation: millions of people across Africa and the developing world lack access to the personalized financial advisors, nutrition coaches, and academic counselors that wealthier demographics take for granted. While a student in London or New York can easily access free academic planning tools and career guidance, a student in rural Kenya, Ghana, or South Africa often faces barriers — unreliable internet, expensive consultancy fees, or simply no access to accurate, up-to-date information.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
+          AfriWidget closes that gap, one smart widget at a time. Every tool is carefully crafted to be simple, intuitive, and immediately useful — turning complex calculations into clear, actionable answers. We don't just give you numbers; we help you understand what those numbers mean for your life, your education, your health, and your financial future. Our optional realtime AI assistant provides context, explanations, and practical next steps based on your specific inputs and goals.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
+          The name AfriWidget reflects our dual commitment: serving African users and the global community with the same quality of service, and delivering compact, powerful "widgets" that solve real problems. We are proudly headquartered in Accra, Ghana, and our team spans the continent — bringing together developers, educators, financial analysts, and health professionals who share a common vision of digital inclusion and knowledge democratisation.
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base lg:text-lg leading-relaxed">
+          AfriWidget is more than a collection of calculators. It is a movement toward a future where every person, regardless of their geographical location or economic status, can access the information and insights they need to build a better life. We are committed to staying 100% free, 100% private, and 100% focused on empowering our users. Because when knowledge is accessible, opportunity follows.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="bg-teal-50 border border-teal-100 rounded-2xl p-4 sm:p-6 text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-teal-700 mb-1">100%</div>
+          <div class="text-xs sm:text-sm text-slate-600 font-medium">Free Forever</div>
+          <p class="text-[10px] text-slate-400 mt-1">No premium tiers, no paywalls</p>
+        </div>
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 sm:p-6 text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">0</div>
+          <div class="text-xs sm:text-sm text-slate-600 font-medium">Data Sold</div>
+          <p class="text-[10px] text-slate-400 mt-1">Your privacy is non-negotiable</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-6 text-center">
+           <div class="text-3xl sm:text-4xl font-extrabold text-slate-700 mb-1">175+</div>
+          <div class="text-xs sm:text-sm text-slate-600 font-medium">Smart Tools</div>
+          <p class="text-[10px] text-slate-400 mt-1">And growing every month</p>
+        </div>
+        <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 sm:p-6 text-center">
+           <div class="text-3xl sm:text-4xl font-extrabold text-amber-700 mb-1">6</div>
+          <div class="text-xs sm:text-sm text-slate-600 font-medium">Core Categories</div>
+          <p class="text-[10px] text-slate-400 mt-1">Education, Finance, Health, Business, Productivity, Real Estate</p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Additional content block for more depth -->
+    <div class="mt-10 pt-8 border-t border-slate-200">
+      <h3 class="text-xl font-bold text-slate-900 mb-3">Why AfriWidget Exists — The Story Behind the Platform</h3>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+        The idea for AfriWidget emerged from a personal experience. Our founder, Obed Avorlenu, was helping a relative navigate university admissions in Ghana. The process was opaque, stressful, and expensive — with students and families paying significant amounts of money to "consultants" who simply applied formulas that could be automated. A degree in engineering and a background in web development led to a realisation: these calculations could be digitised, made freely available, and delivered to anyone with a smartphone.
+      </p>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+        That initial project — a WASSCE aggregate calculator — quickly grew into a comprehensive platform. Students asked for GPA calculators. Teachers requested BECE placement tools. Parents wanted health and fitness trackers. Entrepreneurs needed business calculators. Freelancers asked for invoicing and pricing tools. Each request revealed a gap in the market: there was no single, trusted, free platform where Africans could find all these tools in one place.
+      </p>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+        AfriWidget was built to fill that gap. Every tool is designed with the African user in mind — considering slower internet connections, older device compatibility, and the specific academic and financial contexts of the continent. We localise where it matters (WASSCE, KCSE, JAMB, APS, NSFAS) and globalise where it helps (UCAS, ATAR, GMAT, compound interest).
+      </p>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+        Today, AfriWidget serves users from over 50 countries across Africa, Europe, the Americas, and Asia. Our traffic is growing organically because users trust us — they know we don't sell their data, we don't charge for features, and we never compromise on accuracy. This trust is our most valuable asset, and we protect it fiercely.
+      </p>
+    </div>
+  </div>
+</section>
+          <!-- FAQ ACCORDION – Expanded for AdSense -->
+<section id="faqSection" class="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 bg-white border-t border-slate-200">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 text-center">Frequently Asked Questions</h2>
+    <div class="w-16 h-1 bg-yellow-400 mx-auto mb-8 sm:mb-12 rounded"></div>
+
+    <div class="space-y-3 sm:space-y-4" id="faqContainer">
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>Is AfriWidget completely free to use?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, AfriWidget is 100% free for all users. Every calculator, category page, and realtime AI assistant is available without any subscription, registration, or payment. We are supported by non-intrusive advertising and believe that access to smart, AI-powered tools is a right, not a premium feature. There are no premium tiers, no hidden costs, and no "pro" versions — what you see is what you get, and it's all free.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>Does AfriWidget store my personal data?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">AfriWidget has no user accounts and does not use calculator inputs for advertising targeting. Most calculations run locally in your browser. Finance and Education tools may send the relevant calculation context through a secure server-side proxy to generate a Groq-powered AI insight; do not include names or other personal identifiers in calculator fields. We do not maintain a database of calculator submissions. Your data belongs to you, and we keep it that way.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>How accurate are the calculator results?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Our calculators use internationally recognised, clinically and academically validated formulas. Our BMI tool follows WHO guidelines, our BMR calculator uses the Mifflin-St Jeor equation (considered the gold standard), and our GPA tool reflects standard 4.0-scale grading conventions. Financial calculators apply standard compound interest and amortisation formulas. However, our tools are for informational purposes only and should not replace advice from qualified medical, financial, or academic professionals.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>Who is AfriWidget designed for?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">AfriWidget is designed for everyone, with a particular focus on users across Africa and other developing regions who may lack access to premium advisory services. Our tools work on older smartphones, slow internet connections, and a wide range of devices and browsers. We are committed to digital inclusion and believe that geography should never determine access to quality decision-making tools. Whether you're a student, entrepreneur, parent, retiree, or professional, there's a tool here for you.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>How does the realtime AI assistant work?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">The shared realtime assistant waits for a completed tool result, then sends the relevant calculation context through the secure server-side proxy for a concise explanation and practical next step. The proxy keeps the Groq key out of the browser. If the deployed AI endpoint is unavailable, the assistant clearly reports that realtime AI is unavailable rather than presenting a locally generated response. This ensures you always know whether you're receiving AI-generated insights or a standard calculation.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>Can I use AfriWidget on my mobile phone?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">Yes. AfriWidget is fully responsive and optimised for mobile, tablet, and desktop browsers. Every page is designed with a mobile-first approach using modern Tailwind CSS layouts, touch-friendly controls, and fast-loading static HTML so it feels native on any device without requiring an app download. We prioritise performance on low-bandwidth connections, so pages load quickly even on 2G and 3G networks.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>How often are new tools added to AfriWidget?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">We add new tools and features regularly — typically 2-3 new calculators or utilities every month. Our roadmap is driven by user feedback and requests. If there's a tool you'd like to see, please reach out through our contact page. We prioritise tools that solve real problems for our community, especially those related to education, finance, health, and productivity in the African context.</div>
+      </div>
+
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 text-left font-semibold text-xs sm:text-base text-slate-800 hover:bg-slate-50 transition-colors">
+          <span>How does AfriWidget make money if everything is free?</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 flex-shrink-0 transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-content px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">AfriWidget is supported by non-intrusive advertising and Google AdSense. We display relevant ads that do not interrupt your experience or collect your personal data. Our commitment is to keep all tools free forever — we believe that monetisation should never come at the cost of user privacy or tool accessibility. We are also exploring partnerships with educational institutions and financial organisations that align with our mission of digital inclusion.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ===== FINAL CTA ===== -->
     <section class="bg-gradient-to-r from-slate-900 to-slate-800 py-10 sm:py-14 px-4 sm:px-6 text-white text-center">
