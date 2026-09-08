@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
   <link rel="preload" href="/styles.css" as="style" />
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
-  <link rel="stylesheet" href="category-pages.css" />
-  <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,7 +16,6 @@
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
   </script>
-  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
   <script>
     (function() {
       var adSenseLoaded = false;
@@ -52,290 +47,67 @@
       }
     })();
   </script>
-<title>Free Finance &amp; Wealth Calculators – AfriWidget</title>
-  
-  <meta name="description" content="Explore free financial calculators for loans, mortgages, compound interest, savings goals, student finance, and debt payoff strategies." />
+  <meta name="impact-site-verification" value="8d895b2f-2afa-4509-9580-9986391475e5" />
+  <title>Free Finance &amp; Wealth Calculators – AfriWidget</title>
+  <meta name="description" content="Free financial calculators for compound interest, loans, mortgages, savings goals, student finance, and debt payoff strategies. 100% private, browser-based tools." />
   <link rel="canonical" href="https://afriwidget.com/finance" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Free Finance &amp; Wealth Calculators – AfriWidget" />
   <meta property="og:url" content="https://afriwidget.com/finance" />
-  <meta property="og:description" content="Browse free, privacy-first financial calculators for loans, investments, and budgeting." />
+  <meta property="og:description" content="Free financial calculators for compound interest, loans, mortgages, savings goals, student finance, and debt payoff strategies." />
   <meta property="og:image" content="https://afriwidget.com/og-image.jpg" />
   <meta property="og:site_name" content="AfriWidget" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Free Finance &amp; Wealth Calculators – AfriWidget" />
   <meta name="twitter:site" content="@afriwidget" />
-  <meta name="twitter:description" content="Free AI-powered finance tools from AfriWidget. Calculate compound interest, model investment growth, and get personalised wealth-building insights." />
+  <meta name="twitter:description" content="Free financial calculators for compound interest, loans, mortgages, savings goals, student finance, and debt payoff strategies." />
   <meta name="twitter:image" content="https://afriwidget.com/og-image.jpg" />
   <script src="nav.js" defer></script>
   <script src="footer.js" defer></script>
-  <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Finance &amp; Wealth Calculators",
-    "description": "Free AI-powered finance tools from AfriWidget. Calculate compound interest, model investment growth, and get personalised wealth-building insights.",
-    "url": "https://afriwidget.com/finance",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+  <style>
+    .faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://afriwidget.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Free Finance &amp; Wealth Calculators",
-        "item": "https://afriwidget.com/finance"
-      }
-    ]
-  }
-]
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .faq-item:hover { border-color: #cbd5e1; }
+    .faq-item .faq-btn {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.25rem; text-align: left; font-weight: 600; font-size: 0.95rem;
+      color: #0f172a; background: #ffffff; border: none; cursor: pointer;
+      transition: background 0.15s; font-family: inherit;
+    }
+    .faq-item .faq-btn:hover { background: #f8fafc; }
+    .faq-item .faq-btn .faq-icon {
+      flex-shrink: 0; width: 1.25rem; height: 1.25rem; color: #64748b;
+      transition: transform 0.25s ease;
+    }
+    .faq-item .faq-btn .faq-icon.open { transform: rotate(180deg); }
+    .faq-item .faq-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.25rem; color: #475569; font-size: 0.9rem; line-height: 1.6;
+    }
+    .faq-item .faq-content.open { max-height: 300px; padding: 0 1.25rem 1.25rem 1.25rem; }
+    .tool-card { transition: opacity 0.2s, transform 0.2s; }
+    .tool-card.hidden-card { display: none; }
+    .no-results { display: none; text-align: center; padding: 2rem 0; color: #64748b; }
+    .no-results.visible { display: block; }
+    .tool-icon-svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; color: #0f172a; }
+    .group:hover .tool-icon-svg { color: #ca8a04; }
+    .featured-icon-svg { width: 1.5rem; height: 1.5rem; color: #0f172a; }
+    .group:hover .featured-icon-svg { color: #ca8a04; }
+  </style>
 </head>
-<body class="category-page bg-slate-50 text-slate-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans">
 
-                                                                                                                                                                                                  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -347,57 +119,54 @@
           <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
-        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
-        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
-        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
-        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
-        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
-        <a href="/widgets" class="transition-colors hover:text-yellow-300">All Tools Directory</a>
-        <div class="relative nav-dropdown group">
-          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
-            <span>Legal</span>
-            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </button>
-          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
-            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
-            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
-            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
-            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
-            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
-            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
-            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+          <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+          <a href="/education" class="transition-colors hover:text-yellow-300">Education</a>
+          <a href="/finance" class="transition-colors hover:text-yellow-300 text-yellow-300 font-bold">Finance</a>
+          <a href="/health" class="transition-colors hover:text-yellow-300">Health</a>
+          <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity</a>
+          <div class="relative nav-dropdown group">
+            <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+              <span>Legal</span>
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+              <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+                <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+                <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+                <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+                <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+                <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+                <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
     <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
-    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
-    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
-    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
-    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
-    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
-    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
-    <a href="/widgets" class="block py-2 hover:text-yellow-300 transition-colors">All Tools Directory</a>
-    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
-      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
-      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
-        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
-        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
-        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
-        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
-        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
-        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+      <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+      <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education</a>
+      <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors text-yellow-300 font-bold">Finance</a>
+      <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health</a>
+      <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity</a>
+      <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+        <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+          <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+          <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+          <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+          <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+          <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
+        </div>
       </div>
     </div>
-  </div>
   </nav>
-  <!-- Visual Breadcrumb Navigation -->
+
+  <!-- BREADCRUMB -->
   <div class="bg-slate-900 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
       <nav aria-label="Breadcrumb">
@@ -416,427 +185,477 @@
       </nav>
     </div>
   </div>
+
   <main>
 
-  <!-- HERO (Professional AfriWidget Standard) -->
-  <section class="relative overflow-hidden bg-slate-950 text-white px-4 py-12 sm:py-16 text-center" style="background: radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.08) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.06) 0%, transparent 40%), #020617;">
-    <!-- Geometric Dot Pattern -->
-    <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none"></div>
+    <!-- ===== HERO (Matches Homepage) ===== -->
+    <section class="relative overflow-hidden bg-slate-950 text-white px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:pt-12 sm:pb-16 lg:py-20" style="background: radial-gradient(circle at 85% 15%, rgba(251, 191, 36, 0.07) 0%, transparent 45%), radial-gradient(circle at 10% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 45%), #020617;">
+      <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto">
+          <!-- Individual Trust Badges -->
+          <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-semibold">
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-yellow-400/25 px-2.5 py-1 text-yellow-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              100% Private
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              In-Browser Engine
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+              No Signups
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-md border border-slate-700 px-2.5 py-1 text-slate-300">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              Verified Math
+            </span>
+          </div>
 
-    <div class="relative max-w-4xl mx-auto">
-      <!-- Live Trust Badge -->
-      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-slate-900/95 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-yellow-300 shadow-sm mb-4">
-        <span class="inline-block h-2 w-2 rounded-full bg-yellow-400"></span>
-        <span>⚡ 100% Free • No Signup • Private In-Browser Execution</span>
-      </div>
+          <!-- Heading -->
+          <h1 class="mt-4 sm:mt-5 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.18] sm:leading-[1.15] tracking-tight text-white break-words">
+            Free Finance &amp; Wealth Calculators
+            <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1 sm:mt-2">
+              Compound Growth, Loan Amortization &amp; Budget Planning
+            </span>
+          </h1>
 
-      <!-- Heading & Catchy Subhead -->
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white mb-3">
-        Free Finance &amp; Wealth Calculators
-        <span class="block bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent mt-1">
-          Compound Growth, Loan Amortization &amp; Budget Planning
-        </span>
-      </h1>
+          <p class="mt-3 sm:mt-4 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed text-slate-300">
+            Calculate compound interest growth, debt avalanche payoffs, student loans, mortgage amortization, rent affordability, and profit margins with 100% private in-browser computation.
+          </p>
 
-      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-        Calculate compound interest growth, debt avalanche payoffs, student loans, mortgage amortization, rent affordability, and profit margins with 100% private in-browser computation.
-      </p>
+          <!-- Search Bar -->
+          <form id="toolSearchForm" class="search-ring mt-5 sm:mt-7 flex max-w-2xl mx-auto items-center gap-1.5 sm:gap-2 rounded-xl border border-white/15 bg-white/5 backdrop-blur-sm p-1.5 sm:p-2 transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20" role="search" onsubmit="return false;">
+            <label for="toolSearch" class="sr-only">Search financial tools</label>
+            <svg class="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
+            </svg>
+            <input id="toolSearch" type="search" class="min-w-0 flex-1 bg-transparent px-1.5 sm:px-2 py-2 sm:py-2.5 text-xs sm:text-base font-medium text-white outline-none placeholder:text-slate-400" placeholder="Search financial tools (e.g. Compound Interest, Loan, Mortgage)..." aria-label="Search financial tools" autocomplete="off">
+            <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-800 border border-slate-700 px-1.5 py-0.5 rounded shadow-2xs mr-1">Ctrl K</kbd>
+            <button type="button" id="searchBtn" class="flex items-center gap-1 sm:gap-1.5 rounded-lg bg-yellow-400 px-3 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-extrabold text-slate-950 transition-all hover:bg-yellow-300 active:scale-95 shadow-sm shrink-0">
+              <span>Find tool</span>
+              <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4 hidden sm:inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </form>
 
-      <!-- Instant Live Search & Sub-Filter Box -->
-      <div class="mt-7 max-w-2xl mx-auto">
-        <div class="relative flex items-center rounded-2xl border border-white/20 bg-white p-2 shadow-2xl transition-all focus-within:border-yellow-400 focus-within:ring-4 focus-within:ring-yellow-400/20">
-          <svg class="ml-3 h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" stroke-width="2"/>
-            <path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/>
-          </svg>
-          <input id="categorySearch" type="search" class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 sm:text-base font-medium" placeholder="Search financial tools (e.g. Compound Interest, Loan, Mortgage, Budget)..." aria-label="Search financial tools" autocomplete="off">
-          <kbd class="hidden sm:inline-block text-[10px] font-bold text-slate-400 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded shadow-2xs mr-1.5">Ctrl K</kbd>
-          <button id="clearCategorySearch" type="button" class="hidden mr-2 rounded-lg bg-slate-100 p-1.5 text-xs text-slate-600 hover:bg-slate-200 font-bold" title="Clear search">✕</button>
-          <span id="categorySearchCount" class="hidden sm:inline-flex items-center px-2.5 py-1 text-xs font-bold text-slate-700 bg-slate-100 rounded-lg shrink-0">29 Tools</span>
+          <!-- Popular Tags -->
+          <div class="mt-3 sm:mt-3.5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs">
+            <span class="text-slate-400 font-medium mr-0.5 sm:mr-1">Popular:</span>
+            <button type="button" data-quick-search="compound interest" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Compound Interest ]</button>
+            <button type="button" data-quick-search="mortgage" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Mortgage ]</button>
+            <button type="button" data-quick-search="loan" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Loan ]</button>
+            <button type="button" data-quick-search="savings" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Savings ]</button>
+            <button type="button" data-quick-search="paypal fee" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ PayPal Fee ]</button>
+            <button type="button" data-quick-search="profit margin" class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 hover:border-yellow-400/60 hover:text-yellow-300 transition-all font-medium">[ Profit Margin ]</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Quick Sub-Filter Chips -->
-        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
-          <span class="font-bold text-slate-400 inline-flex items-center gap-1 py-1 mr-1">
-            <svg class="h-3.5 w-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            Filter:
-          </span>
-          <button type="button" data-subfilter="all" class="category-filter-btn is-active rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">All Tools</button>
-          <button type="button" data-subfilter="interest" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">📈 Compound Growth</button>
-          <button type="button" data-subfilter="loan" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💳 Loans &amp; Debts</button>
-          <button type="button" data-subfilter="budget" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">🏠 Housing &amp; Budgets</button>
-          <button type="button" data-subfilter="salary" class="category-filter-btn rounded-lg border border-slate-700/80 bg-slate-900 px-2.5 py-1 text-xs font-semibold text-slate-200 hover:border-yellow-400 hover:bg-yellow-400/15 hover:text-yellow-300 transition-all">💼 Income &amp; Business</button>
+    <!-- ===== 4-PILLAR STATS STRIP (Unified Professional) ===== -->
+    <div class="relative border-y border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-4 sm:py-5 px-4 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(250,204,21,0.04),transparent_50%)] pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_40%,rgba(250,204,21,0.01)_40%,rgba(250,204,21,0.01)_60%,transparent_60%)] pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">29</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Financial Tools</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Verified Formulas</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">0ms</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Client-Side Speed</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Instant In-Browser</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">100%</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">Private &amp; Secure</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Zero Data Stored</div></div>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-3.5 rounded-xl border border-slate-800/70 bg-slate-900/80 p-3 sm:p-3.5 transition-all hover:border-yellow-400/30 hover:bg-slate-800/80 hover:shadow-lg hover:shadow-yellow-400/5 group">
+          <div class="flex h-9 w-10 sm:h-11 sm:w-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/10 text-base sm:text-lg font-black text-yellow-400 transition-colors group-hover:border-yellow-400/40 group-hover:bg-yellow-400/20">ISO</div>
+          <div><div class="text-xs sm:text-sm font-bold text-white leading-tight">25010 Tested</div><div class="text-[9px] sm:text-[10px] font-semibold tracking-wider text-slate-400 uppercase">Precision Audited</div></div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 4-PILLAR STATS STRIP -->
-  <div class="border-y border-slate-800 bg-slate-900 py-3.5 px-4">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 text-center">
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-300 font-extrabold text-sm">29</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Financial Tools</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Verified Formulas</div>
+    <!-- ===== SUCCESS STORY SPOTLIGHT (Premium) ===== -->
+    <section class="max-w-7xl mx-auto px-4 my-8">
+      <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all hover:border-yellow-400/30">
+        <div class="space-y-2 max-w-2xl">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-yellow-300 text-[11px] font-black uppercase tracking-wider">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              Wealth Success
+            </span>
+            <span class="text-xs text-slate-400 font-medium">Johannesburg, South Africa</span>
+          </div>
+          <h3 class="text-xl font-bold text-white leading-tight">"Paid Off R45,000 Consumer Debt 17 Months Early"</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">"I modeled my debt snowball schedule privately on AfriWidget and saved over R12,400 in compound interest charges." — <strong class="text-white">Sibusiso M.</strong></p>
+        </div>
+        <a href="success-stories" class="shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-xl active:scale-95">
+          Read Finance Stories
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== TOOLS SECTION ===== -->
+    <section class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <p class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-yellow-700">All finance tools</p>
+          <h2 class="text-2xl font-black text-slate-950 mt-0.5">Financial calculators &amp; planning resources</h2>
+        </div>
+        <span id="totalCount" class="text-sm font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg">29 tools</span>
+      </div>
+
+      <!-- FEATURED ROW (6) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-10" id="featuredRow">
+        <a href="/compound-interest" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="compound interest investment savings growth">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Compound Interest</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Model investment growth with contributions &amp; compounding</p>
+        </a>
+        <a href="/mortgage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="mortgage home loan payment interest property">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m3 11 9-7 9 7M5 10v9h14v-9M9 19v-5h6v5"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Mortgage Calculator</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Estimate monthly payments &amp; total interest</p>
+        </a>
+        <a href="/loan-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="loan calculator repayment monthly payment interest amortization">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16v12H4zM8 10h8M8 14h4"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Loan Calculator</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Calculate payments, interest &amp; amortization</p>
+        </a>
+        <a href="/savings-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="savings calculator compound interest deposits projected growth">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Savings Calculator</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Project growth from deposits &amp; interest</p>
+        </a>
+        <a href="/profit-margin-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="profit margin markup business sales cost gross net">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M7 15l3-3 3 2 5-6"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Profit Margin</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Calculate gross profit, margin &amp; markup</p>
+        </a>
+        <a href="/paypal-fee-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="paypal fee payment processor transaction">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="featured-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M3 10h18M7 15h3"/></svg>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Featured</span>
+          </div>
+          <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">PayPal Fee</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-tight">Estimate transaction fees &amp; net amount</p>
+        </a>
+      </div>
+
+      <!-- ===== CATEGORY: Compound Growth ===== -->
+      <div class="mb-10" data-category="interest">
+        <h3 class="text-lg font-black text-slate-950 mb-3 flex items-center gap-2">
+          <span class="inline-block w-1 h-6 rounded-full bg-yellow-400"></span>
+          Compound Growth &amp; Savings
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="growthTools">
+          <a href="/compound-interest" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="compound interest investment savings growth"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Investing</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Compound</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Compound Interest Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model long-term investment growth with variable contributions, compounding frequency, and time horizon analysis.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate growth →</span></a>
+          <a href="/savings-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="savings calculator compound interest deposits projected growth"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Saving</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Savings</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Savings Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Project future savings with regular deposits and compound interest across any time horizon.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Project savings →</span></a>
+          <a href="/savings-goal-timeline-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="savings goal timeline target monthly contribution interest"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Goal</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Timeline</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Savings Goal Timeline</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate the time needed to reach a savings target from regular monthly contributions and existing balance.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan goal →</span></a>
+          <a href="/percentage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="percentage discount markup change everyday"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Calculator</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m7 7 .1 0M17 17 .1 0M6 18 18 6M7 7h.1M17 17h.1"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Percentage</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Percentage Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate discounts, markups, percentage change, and proportions for everyday business and personal decisions.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate % →</span></a>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-400/15 text-emerald-400 font-extrabold text-sm">0ms</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Client-Side Speed</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Instant In-Browser</div>
+
+      <!-- ===== CATEGORY: Loans & Debts ===== -->
+      <div class="mb-10" data-category="loan">
+        <h3 class="text-lg font-black text-slate-950 mb-3 flex items-center gap-2">
+          <span class="inline-block w-1 h-6 rounded-full bg-amber-400"></span>
+          Loans, Debts &amp; Student Finance
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="loanTools">
+          <a href="/loan-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="loan calculator repayment monthly payment interest amortization"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Borrowing</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16v12H4zM8 10h8M8 14h4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Loan</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Loan Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate monthly payments, total interest, and get a full amortization breakdown for any personal or business loan.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate loan →</span></a>
+          <a href="/debt-payoff-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="debt payoff calculator snowball avalanche interest repayment"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Debt</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V6m0 12v-2m0 0c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Payoff</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Debt Payoff Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare Debt Avalanche vs. Debt Snowball strategies to minimize total interest and calculate your debt-free target date.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate payoff →</span></a>
+          <a href="/mortgage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="mortgage home loan payment interest property"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Housing</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m3 11 9-7 9 7M5 10v9h14v-9M9 19v-5h6v5"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Mortgage</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Mortgage Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate monthly home-loan payments, total interest, and amortization schedule for any property purchase.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate mortgage →</span></a>
+          <a href="/rent-affordability" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="rent affordability housing 30 percent income"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Housing</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 17V8l6-4 6 4v9M9 12h6"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Rent</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Rent Affordability Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Explore a practical rent range from income and recurring expenses using the 30% rule and 50/30/20 framework.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Check rent →</span></a>
+          <a href="/student-loan-repayment-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="student loan repayment calculator kenya helb"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Student</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Kenya</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">HELB</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Student Loan Repayment (HELB)</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate Kenya HELB monthly repayment deductions, 4.0% p.a. reducing balance interest, and debt payoff schedule.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate HELB →</span></a>
+          <a href="/tanzania-heslb-loan-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="tanzania heslb loan calculator student loan"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Student</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Tanzania</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">HESLB</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">HESLB Loan Calculator (Tanzania)</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate Tanzania HESLB loan allocation (Tuition, MA, FPT), 6% VRF, and statutory 15% salary repayment.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate HESLB →</span></a>
+          <a href="/uk-student-finance-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="uk student finance calculator maintenance loan repayment"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Student</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">UK</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">SFE</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">UK Student Finance Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate maintenance loan entitlement and simulate Plan 5, Plan 2, and Postgraduate salary deductions.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate SFE →</span></a>
+          <a href="/new-zealand-student-loan-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="new zealand student loan calculator ird"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Student</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">New Zealand</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">IRD</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">NZ Student Loan Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate compulsory 12% IRD salary deductions, 0% interest resident status vs overseas interest rates, and loan payoff timelines.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate loan →</span></a>
+          <a href="/canada-student-loan-repayment-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="canada student loan repayment calculator osap"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Student</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Canada</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">OSAP</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Canada Student Loan Repayment</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate monthly loan repayments for Canada Student Loans, OSAP, StudentAid BC, permanent 0% federal interest savings, and RAP relief.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate repayment →</span></a>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-400/15 text-indigo-300 font-extrabold text-sm">100%</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">Private &amp; Secure</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Zero Data Stored</div>
+
+      <!-- ===== CATEGORY: Business & Income ===== -->
+      <div class="mb-10" data-category="salary">
+        <h3 class="text-lg font-black text-slate-950 mb-3 flex items-center gap-2">
+          <span class="inline-block w-1 h-6 rounded-full bg-indigo-400"></span>
+          Business, Income &amp; Conversions
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="businessTools">
+          <a href="/profit-margin-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="profit margin markup business sales cost gross net"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Business</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M7 15l3-3 3 2 5-6"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Margin</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Profit Margin Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate gross profit, margin percentage, markup, and break-even pricing for products and services.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate margin →</span></a>
+          <a href="/pricing-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="pricing calculator selling price target margin markup"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Business</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">$</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Pricing</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Pricing Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Determine required selling prices and net profit margins based on product costs and target profit goals.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate price →</span></a>
+          <a href="/roi-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="roi return on investment cagr profit gain"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Investment</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">📈</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">ROI</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">ROI Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate Return on Investment (ROI %), net returns, and annualized compound growth (CAGR).</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate ROI →</span></a>
+          <a href="/hourly-to-salary" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="hourly salary annual income freelance rate"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Income</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M12 8v5l3 2"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Salary</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Hourly to Salary Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Convert an hourly rate into annual, monthly, weekly, and daily income estimates for planning and negotiation.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Convert salary →</span></a>
+          <a href="/paypal-fee-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="paypal fee payment processor transaction"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Payment</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M3 10h18M7 15h3"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">PayPal</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">PayPal Fee Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate payment processing fees and the net amount received for any transaction amount.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate fees →</span></a>
+          <a href="/currency-converter" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="currency converter exchange rates African global"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Currency</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 10h8M8 14h8M12 8v8"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">FX</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Real-Time Currency Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Convert global and African currencies with live or fallback reference rates for accurate cross-border comparisons.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Convert currency →</span></a>
+          <a href="/remote-salary-converter" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="remote salary converter cost of living exchange rates"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Remote</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🌍</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Remote</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Remote Salary Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare global remote compensation with exchange rates and cost-of-living purchasing power adjustments.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Compare salary →</span></a>
+          <a href="/startup-burn-rate-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="startup burn rate calculator gross net burn runway"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Startup</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🔥</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Burn</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Startup Burn Rate Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate gross and net monthly cash burn, financial runway in months, and zero cash date forecast.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate burn →</span></a>
+          <a href="/website-valuation-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="website valuation calculator site worth multiple"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Valuation</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🏛️</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Valuation</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Website Valuation Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate market sale value and SDE multiples for content sites, SaaS, and e-commerce businesses.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Estimate worth →</span></a>
+          <a href="/creator-sponsorship-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="creator sponsorship rate calculator youtube tiktok"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Creator</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">📱</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Sponsor</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Creator Sponsorship Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate rate cards for YouTube integrations, TikTok posts, and Instagram sponsorships based on audience metrics.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate rates →</span></a>
+          <a href="/reverse-adsense-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="reverse adsense calculator monthly pageviews traffic rpm"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Publisher</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">📈</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">AdSense</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Reverse AdSense Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate required monthly pageviews, daily traffic, and ad clicks to reach target ad revenue goals.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate traffic →</span></a>
         </div>
       </div>
-      <div class="flex items-center justify-center gap-2.5 rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
-        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-amber-300 font-extrabold text-sm">ISO</div>
-        <div class="text-left">
-          <div class="text-xs font-bold text-white leading-tight">25010 Tested</div>
-          <div class="text-[10px] text-slate-400 uppercase tracking-wider">Precision Audited</div>
+
+      <!-- ===== CATEGORY: Student Budgeting ===== -->
+      <div class="mb-10" data-category="budget">
+        <h3 class="text-lg font-black text-slate-950 mb-3 flex items-center gap-2">
+          <span class="inline-block w-1 h-6 rounded-full bg-emerald-400"></span>
+          Student Budgeting &amp; Living Costs
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="budgetTools">
+          <a href="/student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="student budget calculator australia cost of living"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Australia</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇦🇺</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">AUD</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Student Budget Calculator (Australia)</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Plan weekly and monthly student living costs in AUD, model Centrelink Youth Allowance and part-time earnings vs rent and expenses.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
+          <a href="/norway-student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="norway student budget calculator nok cost of living"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Norway</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇳🇴</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">NOK</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Norway Student Budget Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model monthly living costs in NOK, track Lånekassen support (kr 151,690/yr), 40% grant conversion rules, and the Skatteetaten tax frikort.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
+          <a href="/botswana-student-expense-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="botswana student expense calculator cost of living bwp"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Botswana</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇧🇼</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">BWP</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Botswana Student Expense Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate monthly student living costs in Pula (BWP), compare off-campus rent vs DTEF allowance, and track semester deficits.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
+          <a href="/seychelles-student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="seychelles student budget calculator cost of living scr"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Seychelles</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇸🇨</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">SCR</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Seychelles Student Budget</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Plan monthly student living expenses in Rupees (SCR), balancing ANHRD allowances, Mahé rent, and SPTC bus transit.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
+          <a href="/zambia-student-budget-planner" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="zambia student budget planner cost of living zmw"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Zambia</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇿🇲</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">ZMW</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Zambia Student Budget Planner</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
         </div>
       </div>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results"><p class="text-sm text-slate-500">No financial tools found matching your search. Try a different keyword.</p></div>
+
+    </section>
+
+    <!-- ===== ABOUT SECTION (EXPANDED - 600+ WORDS) ===== -->
+<section class="max-w-4xl mx-auto px-4 py-12 border-t border-slate-200">
+  <h2 class="text-2xl sm:text-3xl font-black text-slate-950 mb-4">Why Financial Literacy Matters</h2>
+  
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Financial literacy is the foundation of economic independence. Across Africa and the developing world, millions of people earn income, save modest amounts, and dream of financial security — yet lack access to the planning tools and analytical frameworks that wealthier populations take for granted. AfriWidget's Finance &amp; Wealth category was built to close that gap, placing mathematically precise financial modelling tools directly into the hands of anyone with a smartphone or computer.</p>
+  
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Understanding how money compounds over time, how to evaluate an investment opportunity, and how inflation erodes the real value of cash savings can fundamentally alter the trajectory of your economic life. Our calculators translate complex financial mathematics into clear, actionable insights — no economics degree required.</p>
+  
+  <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">The Power of Compound Interest</h3>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Compound interest is often described as the eighth wonder of the world — and for good reason. When you earn interest on your principal, and then earn interest on that interest, your money begins to grow exponentially. The formula is simple: A = P(1 + r/n)^(nt). But the results are extraordinary. An initial investment of $1,000 at an 8% annual rate compounded monthly grows to approximately $2,220 after 10 years, $4,926 after 20 years, and $10,936 after 30 years — a tenfold increase purely from leaving your money invested and reinvesting all returns.</p>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">The most powerful variable in the compound interest equation is time. Starting early is more important than starting with a large sum. A person who invests $50 per month starting at age 25 will accumulate significantly more by retirement than someone who invests $200 per month starting at age 40 — even though they contributed less money overall. This is why financial educators emphasise the importance of beginning your savings journey as early as possible, even if the amounts are small.</p>
+
+  <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Debt Management and Financial Freedom</h3>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Debt is a reality for most people — student loans, mortgages, credit cards, and personal loans. The difference between those who thrive financially and those who struggle often comes down to how they manage their debt. Two primary strategies exist: the Debt Avalanche and the Debt Snowball. The Avalanche prioritises paying off the highest-interest debt first, which minimises total interest paid. The Snowball prioritises the smallest balances first, providing psychological wins that build momentum. Both strategies are valid, and our Debt Payoff Calculator lets you model both side-by-side so you can choose the approach that works best for your personality and financial situation.</p>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Understanding the true cost of borrowing is essential. A loan with a 10% annual interest rate might seem manageable, but when compounded over 20 years, the total interest paid can exceed the principal itself. Our loan and mortgage calculators help you see the full picture — not just the monthly payment, but the total cost over the life of the loan. This transparency empowers you to make better borrowing decisions, whether you're financing a home, a car, or a business.</p>
+
+  <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Building Wealth Through Entrepreneurship</h3>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Across Africa, entrepreneurship is one of the most powerful pathways to wealth creation. Small businesses, freelancers, and content creators are driving economic growth and creating jobs. But running a successful business requires more than just a good idea — it requires understanding your numbers. Profit margins, break-even points, pricing strategies, and cash flow management are the difference between a business that survives and one that thrives.</p>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Our Profit Margin Calculator helps you understand exactly how much you're earning on each product or service you sell. The Pricing Calculator helps you set sustainable prices that cover your costs and generate a healthy return. And the ROI Calculator helps you evaluate business investments — from marketing campaigns to equipment purchases — so you can allocate capital to the opportunities with the highest returns.</p>
+
+  <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Student Finance and Education Planning</h3>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Education is one of the largest expenses many families will ever face. From Kenya's HELB loans to Tanzania's HESLB, from the UK's Student Finance system to Canada's OSAP programs, student loans are a significant part of financing higher education. Understanding the terms of these loans — interest rates, repayment schedules, and total cost — is critical for making informed decisions about where and what to study.</p>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Our student finance calculators help you model the true cost of your education. How much will you need to borrow? What will your monthly repayments look like after graduation? How long will it take to pay off your student debt? These are the questions that shape your financial future, and we give you the tools to answer them with confidence.</p>
+
+  <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Privacy and Security in Financial Planning</h3>
+  <p class="text-slate-700 leading-relaxed mb-4 text-sm sm:text-base">Financial data is sensitive. Income details, debt balances, savings goals — these are not numbers you want exposed to third parties. That's why every AfriWidget finance tool runs 100% client-side in your browser. No data is transmitted to our servers. No information is stored in a database. Your financial plans remain private, secure, and under your control.</p>
+  <p class="text-slate-700 leading-relaxed text-sm sm:text-base">We believe that access to financial planning tools should not come at the cost of your privacy. Our commitment to zero data collection and zero tracking means you can use our calculators with complete confidence, knowing that your financial information stays where it belongs — with you.</p>
+</section>
+
+    <!-- ===== FAQ SECTION (EXPANDED - 500+ WORDS) ===== -->
+<section class="max-w-4xl mx-auto px-4 pb-16">
+  <h2 class="text-2xl sm:text-3xl font-black text-slate-950 mb-6">Frequently Asked Questions About Financial Calculators</h2>
+  <div class="space-y-2.5" id="faqContainer">
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>How accurate are the financial calculators?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Our financial calculators use internationally recognised mathematical formulas. Compound interest follows the standard A = P(1 + r/n)^(nt) formula, loan calculations use standard amortisation principles, and mortgage calculators apply fixed-rate amortisation formulas. All calculations are performed locally in your browser with double-precision floating-point arithmetic for maximum accuracy. However, our tools are for informational and educational purposes only and should not replace advice from qualified financial advisors or certified financial planners.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Do I need to create an account to use these tools?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">No. AfriWidget has no user accounts, no sign-up requirements, and no registration of any kind. Every tool is available instantly and runs entirely in your web browser. We do not collect, store, transmit, or sell any personal or financial data. Your financial information never leaves your device.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>What is compound interest and why does it matter?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Compound interest is interest calculated on both your initial principal and the accumulated interest from prior periods. Over time, this creates exponential growth — often called the "snowball effect." The earlier you start investing, the more powerful compounding becomes because time is the most critical variable in the equation. Our calculator helps you visualise this growth with your own numbers, showing exactly how different contribution amounts, frequencies, and time horizons affect your final wealth.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>What's the difference between Debt Avalanche and Debt Snowball?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Debt Avalanche prioritises paying off the highest-interest debt first, which minimises the total interest paid over the life of your debts. This is mathematically the most efficient strategy. Debt Snowball prioritises the smallest balance first, regardless of interest rate, providing quick psychological wins that build momentum and motivation. Our Debt Payoff Calculator lets you model both strategies side-by-side so you can see the total interest paid and the time to debt freedom for each approach.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Can I use these calculators for mortgage planning?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Yes. Our mortgage and loan calculators help you estimate monthly payments, total interest, and amortization schedules for any loan amount, interest rate, and term. You can model different scenarios — a 15-year vs. 30-year mortgage, fixed vs. variable rates, and the impact of extra payments — so you can make informed decisions before committing to a home purchase or refinancing.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Is my financial data safe when using these tools?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Absolutely. All calculations are performed locally in your browser using JavaScript. No amounts, balances, interest rates, or personal information is ever sent to or stored on our servers. We use no tracking cookies, no analytics on calculator pages, and no third-party scripts that could access your inputs. Your financial data remains completely private and secure.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>How do I calculate my profit margin?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Gross profit margin is calculated as (Revenue - Cost of Goods Sold) / Revenue × 100. Net profit margin includes all operating expenses, taxes, and interest. Our Profit Margin Calculator does this automatically — just enter your revenue and costs, and it will show your margin percentage, markup multiplier, and break-even point. This helps you understand whether your pricing strategy is sustainable and profitable.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>What student finance calculators are available?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">We offer a comprehensive suite of student finance calculators including: Kenya HELB repayment calculations with 4% p.a. reducing balance interest; Tanzania HESLB loan allocation and 15% salary deduction modelling; UK Student Finance maintenance loan entitlement and Plan 5/Plan 2 repayment simulations; New Zealand student loan IRD deductions and interest rate comparisons; Canada Student Loan repayments with OSAP and federal 0% interest savings; and student living budgets for Australia, Norway, Botswana, Seychelles, and Zambia in local currencies.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>How does compounding frequency affect returns?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Compounding frequency — whether interest compounds annually, quarterly, monthly, weekly, or daily — significantly impacts total returns. More frequent compounding means more opportunities for your interest to generate its own interest. For example, $10,000 at 5% annual interest for 10 years yields $16,288.95 with annual compounding, $16,453.09 with monthly compounding, and $16,486.85 with daily compounding. Our calculator lets you compare all frequencies side-by-side.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button"><span>Are these tools suitable for business financial planning?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="faq-content">Yes. Our business-focused calculators include profit margin analysis, pricing optimisation, ROI calculations, startup burn rate modelling, website valuation estimation, and creator sponsorship rate cards. These tools are designed for entrepreneurs, freelancers, small business owners, and content creators who need to understand their numbers without expensive software subscriptions.</div>
     </div>
   </div>
-
-  <!-- Success Story Spotlight -->
-  <section class="max-w-7xl mx-auto px-4 my-8">
-    <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6">
-      <div class="space-y-2 max-w-2xl">
-        <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-full bg-yellow-400 text-slate-950 text-[11px] font-black uppercase">💰 Success Story Spotlight</span>
-          <span class="text-xs text-slate-400 font-medium">Johannesburg, South Africa</span>
-        </div>
-        <h3 class="text-xl font-bold text-white">"Paid Off R45,000 Consumer Debt 17 Months Early"</h3>
-        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-          "I modeled my debt snowball schedule privately on AfriWidget and saved over R12,400 in compound interest charges." — <strong>Sibusiso M.</strong>
-        </p>
-      </div>
-      <a href="success-stories" class="shrink-0 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors text-center shadow">
-        Read Finance Stories →
-      </a>
-    </div>
-  </section>
-
-  <section class="category-tools" aria-labelledby="finance-tools-title">
-    <div class="category-tools-inner">
-      <div class="category-tools-heading">
-        <div>
-          <h2 id="finance-tools-title">Finance Tools</h2>
-          <p class="mt-1 text-left">Clear calculators for saving, pricing, housing, and income planning.</p>
-        </div>
-        <span id="categoryHeadingCount" class="category-count-badge">29 Tools</span>
-      </div>
-
-      <!-- Zero Results State -->
-      <div id="categoryNoResults" class="category-no-results" style="display: none;">
-        <div class="category-no-results-icon">🔍</div>
-        <h3>No financial tools matched your search</h3>
-        <p>Try searching for terms like "Compound", "Loan", "Mortgage", "Budget", or click below to view all tools.</p>
-        <button id="categoryResetBtn" type="button" class="category-reset-btn">Reset Filters &amp; Show All Tools</button>
-      </div>
-
-      <div class="category-tool-grid">
-        <a class="category-tool-card" href="zambia-student-budget-planner"><span class="category-tool-icon"><span class="text-xl">🇿🇲</span></span><h3>Zambia Student Budget Planner</h3><p>Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="tanzania-heslb-loan-calculator"><span class="category-tool-icon"><span class="text-xl">🇹🇿</span></span><h3>HESLB Loan Calculator</h3><p>Calculate Tanzania HESLB student loan allocation (Tuition, MA, FPT), 6% VRF, and statutory 15% salary repayment.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="student-loan-repayment-calculator"><span class="category-tool-icon"><span class="text-xl">🇰🇪</span></span><h3>Student Loan Repayment (HELB)</h3><p>Calculate Kenya HELB monthly repayment deductions, 4.0% p.a. reducing balance interest, and debt payoff schedule.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="reverse-adsense-calculator"><span class="category-tool-icon">📈</span><h3>Reverse AdSense Calculator</h3><p>Calculate required monthly pageviews, daily traffic, and ad clicks to reach target ad revenue.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="website-valuation-calculator"><span class="category-tool-icon">🏛️</span><h3>Website Valuation Calculator</h3><p>Estimate market sale value and SDE multiples for content sites, SaaS, and e-commerce businesses.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="startup-burn-rate-calculator"><span class="category-tool-icon">🔥</span><h3>Startup Burn Rate Calculator</h3><p>Calculate gross and net monthly cash burn, financial runway in months, and zero cash date.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="creator-sponsorship-calculator"><span class="category-tool-icon">📱</span><h3>Creator Sponsorship Calculator</h3><p>Calculate rate cards for YouTube integrations, TikTok posts, and Instagram sponsorships.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="remote-salary-converter"><span class="category-tool-icon">🌍</span><h3>Remote Salary Converter</h3><p>Compare global remote compensation with exchange rates and cost-of-living purchasing power adjustments.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="debt-payoff-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V6m0 12v-2m0 0c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><h3>Debt Payoff Calculator</h3><p>Compare Debt Avalanche vs. Debt Snowball strategies to minimize total interest and pay off debt faster.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="uk-student-finance-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><h3>UK Student Finance Calculator</h3><p>Calculate maintenance loan entitlement and simulate Plan 5, Plan 2, and Postgraduate salary deductions.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="student-budget-calculator"><span class="category-tool-icon"><span class="text-xl">🇦🇺</span></span><h3>Student Budget Calculator (Australia)</h3><p>Plan weekly and monthly student living costs in AUD, model Centrelink Youth Allowance and part-time earnings vs rent and expenses.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="norway-student-budget-calculator"><span class="category-tool-icon"><span class="text-xl">🇳🇴</span></span><h3>Norway Student Budget Calculator</h3><p>Model monthly living costs in NOK, track Lånekassen support (kr 151,690/yr), 40% grant conversion rules, and the Skatteetaten tax frikort.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="botswana-student-expense-calculator"><span class="category-tool-icon"><span class="text-xl">🇧🇼</span></span><h3>Botswana Student Expense Calculator</h3><p>Estimate monthly student living costs in Pula (BWP), compare off-campus rent vs DTEF allowance, and track semester deficits.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="seychelles-student-budget-calculator"><span class="category-tool-icon"><span class="text-xl">🇸🇨</span></span><h3>Seychelles Student Budget</h3><p>Plan monthly student living expenses in Rupees (SCR), balancing ANHRD allowances, Mahé rent, and SPTC bus transit.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="new-zealand-student-loan-calculator"><span class="category-tool-icon"><span class="text-xl">🇳🇿</span></span><h3>NZ Student Loan Calculator</h3><p>Calculate compulsory 12% IRD salary deductions, 0% interest resident status vs overseas interest rates, and loan payoff timelines.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="canada-student-loan-repayment-calculator"><span class="category-tool-icon"><span class="text-xl">🇨🇦</span></span><h3>Canada Student Loan Repayment Calculator</h3><p>Calculate monthly loan repayments for Canada Student Loans, OSAP, StudentAid BC, permanent 0% federal interest savings, and RAP relief.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="compound-interest"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg></span><h3>Compound Interest Calculator</h3><p>Model savings growth, contributions, rates, and compounding over time.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="percentage-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m7 7 .1 0M17 17 .1 0M6 18 18 6M7 7h.1M17 17h.1"/></svg></span><h3>Percentage Calculator</h3><p>Calculate discounts, markups, percentage change, and proportions.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="mortgage-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="m3 11 9-7 9 7M5 10v9h14v-9M9 19v-5h6v5"/></svg></span><h3>Mortgage Calculator</h3><p>Estimate monthly mortgage payments, interest, and repayment totals.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="rent-affordability"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 17V8l6-4 6 4v9M9 12h6"/></svg></span><h3>Rent Affordability Calculator</h3><p>Explore a practical rent range from income and recurring expenses.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="paypal-fee-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M3 10h18M7 15h3"/></svg></span><h3>PayPal Fee Calculator</h3><p>Estimate payment processing fees and the net amount received.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="profit-margin-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M7 15l3-3 3 2 5-6"/></svg></span><h3>Profit Margin Calculator</h3><p>Calculate gross profit, margin percentage, markup, and break-even pricing.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="pricing-calculator"><span class="category-tool-icon"><span class="text-sm font-black">$</span></span><h3>Pricing Calculator</h3><p>Determine required selling prices and net profit margins based on product costs and target margins.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="roi-calculator"><span class="category-tool-icon"><span class="text-sm font-black">📈</span></span><h3>ROI Calculator</h3><p>Calculate Return on Investment (ROI %), net returns, and annualized compound growth (CAGR).</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="hourly-to-salary"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M12 8v5l3 2"/></svg></span><h3>Hourly to Salary Converter</h3><p>Convert an hourly rate into annual, monthly, weekly, and daily income.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="savings-goal-timeline-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg></span><h3>Savings Goal Timeline Calculator</h3><p>Estimate the time needed to reach a savings target from regular monthly contributions.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="loan-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 6h16v12H4zM8 10h8M8 14h4"/></svg></span><h3>Loan Calculator</h3><p>Estimate monthly payments, total interest, and an amortization preview.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="savings-calculator"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.8" d="M4 19h16M6 15l4-4 3 2 5-6M6 6h4"/></svg></span><h3>Savings Calculator</h3><p>Project compound growth from a starting balance and regular deposits.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-        <a class="category-tool-card" href="currency-converter"><span class="category-tool-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 10h8M8 14h8M12 8v8"/></svg></span><h3>Real-Time Currency Converter</h3><p>Convert global and African currencies with live or fallback reference rates.</p><span>Launch tool <b aria-hidden="true">→</b></span></a>
-      </div>
-    </div>
-  </section>
-
-  <article class="max-w-4xl mx-auto px-4 py-16">
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Financial Empowerment Starts with Knowledge</h2>
-    <p class="text-slate-700 leading-relaxed mb-5 text-lg">Wealth is not built overnight, and it is not built by luck. Across Africa and the developing world, millions of individuals earn income, save modest amounts, and dream of financial independence — but lack access to the financial planning tools and personalised advice that wealthier segments of society take for granted. AfriWidget's Finance &amp; Wealth category was created to democratise that access, placing powerful, mathematically precise financial modelling tools directly in the hands of anyone with a smartphone or computer.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">Financial literacy is one of the most impactful forms of education a person can receive. Understanding how money compounds over time, how to evaluate an investment opportunity, and how inflation erodes the real value of cash savings can fundamentally alter the trajectory of an individual's economic life. Our tools translate complex financial mathematics into clear, actionable insights — no economics degree required.</p>
-    <p class="text-slate-700 leading-relaxed mb-10">Whether you are a first-generation investor, a small business owner planning for growth, a university student building your first savings habit, or a parent securing your family's future, AfriWidget gives you the same analytical capabilities that professional financial advisors deploy for their high-net-worth clients.</p>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">The Miracle of Compound Interest</h2>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">What Is Compound Interest?</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Albert Einstein is often attributed — apocryphally — with calling compound interest the eighth wonder of the world. Whether or not he said it, the sentiment captures something genuinely profound about the mathematics of exponential growth. Compound interest is interest calculated not only on your initial principal but also on the accumulated interest from all prior periods. Over time, this creates a snowball effect where your money generates returns on returns, leading to growth that accelerates dramatically as time passes.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">The formula is deceptively simple: A = P(1 + r/n)^(nt), where A is the final amount, P is your principal investment, r is the annual interest rate expressed as a decimal, n is the number of times interest compounds per year, and t is the time in years. Our AfriWidget Compound Interest Calculator implements this formula with precision, adds optional periodic contributions, and models your investment's growth across any time horizon you choose.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">The power of compounding is most visible over long time horizons. An initial investment of $1,000 at an 8% annual rate compounded monthly grows to approximately $2,220 after 10 years, $4,926 after 20 years, and $10,936 after 30 years — a tenfold increase purely from leaving your money invested and reinvesting all returns.</p>
-      <a href="compound-interest" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Model Your Investment Growth →</a>
-    </div>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">Compounding Frequency and Its Impact</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">One of the most overlooked factors in investment planning is the frequency at which interest compounds. Annual compounding applies interest once per year. Quarterly applies it four times. Monthly twelve times. Daily 365 times. More frequent compounding means more opportunities for your interest to begin generating its own interest, amplifying overall returns even at the same nominal rate.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">Our AfriWidget calculator lets you model annual, quarterly, monthly, weekly, and daily compounding so you can compare savings accounts, bond products, money market instruments, and equity-linked growth products on a level analytical footing. For African investors navigating a diverse financial ecosystem — from mobile money savings schemes to formal bank fixed-deposit products to equity markets — understanding compounding frequency is a foundational skill.</p>
-    </div>
-
-    <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-10">
-      <h3 class="text-2xl font-bold text-teal-700 mb-4">The Role of Regular Contributions</h3>
-      <p class="text-slate-700 leading-relaxed mb-4">Most wealth-building journeys do not begin with a large lump-sum investment. They begin with small, consistent contributions made over many years. A person who invests $50 per month into a savings or investment vehicle yielding 7% annually will accumulate approximately $75,000 over 30 years — from a total personal outlay of just $18,000. The remaining $57,000 is the product of compound growth on contributions and reinvested returns.</p>
-      <p class="text-slate-700 leading-relaxed mb-4">Our compound interest calculator supports monthly, quarterly, and annual contribution modelling, letting you simulate exactly how different contribution amounts and frequencies will compound into future wealth. The realtime financial AI assistant can contextualise your result against inflation benchmarks, savings milestones, and time-to-goal scenarios tailored to your specific numbers.</p>
-      <a href="compound-interest" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Start Planning Your Wealth →</a>
-    </div>
-
-     <div class="app-card bg-white border border-slate-100 rounded-2xl p-8 shadow-sm mb-8">
-       <h3 class="text-2xl font-bold text-teal-700 mb-4">Percentages for Everyday Money Decisions</h3>
-       <p class="text-slate-700 leading-relaxed mb-4">Percentages help turn prices, savings goals, discounts, taxes, markups, and changes in income into comparable figures. The Percentage Calculator separates “what is X% of Y,” “X is what percent of Y,” and percentage change so you can choose the correct baseline for the question.</p>
-       <a href="percentage-calculator" class="inline-block mt-2 bg-teal-700 hover:bg-teal-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">Calculate Percentages →</a>
-     </div>
-
-    <h2 class="text-3xl font-bold text-slate-900 mb-6">Wealth Principles for the African Investor</h2>
-    <p class="text-slate-700 leading-relaxed mb-5">Building wealth in the African context comes with unique opportunities and unique challenges. Currency volatility in some markets, high mobile money adoption rates, a growing entrepreneurial class, and increasingly accessible equity markets and real estate investment trusts (REITs) all create a dynamic environment for the informed investor. AfriWidget is designed to complement this landscape — giving you the analytical tools to evaluate opportunities with clarity and discipline.</p>
-    <p class="text-slate-700 leading-relaxed mb-5">Key principles our finance tools reinforce: start early (time is the most powerful variable in the compound interest equation); invest consistently (regular contributions smooth out market volatility and build habit); diversify (spreading risk across asset classes reduces the impact of any single investment underperforming); and understand your real returns (always factor in inflation when evaluating whether an investment is truly growing your purchasing power).</p>
-    <p class="text-slate-700 leading-relaxed mb-10">AfriWidget does not provide specific investment advice or recommend individual financial products. Our tools provide the mathematical framework and contextual AI insights that help you ask better questions and make more informed decisions — whether you are working with a financial advisor or navigating independently.</p>
-
-    <div class="grid sm:grid-cols-3 gap-6 mb-12">
-      <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-teal-700 mb-2">30yr</div>
-        <div class="text-sm text-slate-600">Investment horizons modelled</div>
-      </div>
-
-      <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-emerald-600 mb-2">5x</div>
-        <div class="text-sm text-slate-600">Compounding frequency options</div>
-      </div>
-      <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center">
-        <div class="text-3xl font-extrabold text-slate-700 mb-2">AI</div>
-        <div class="text-sm text-slate-600">Insight cards on every result</div>
-      </div>
-    </div>
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-800">
-      <strong>Financial Disclaimer:</strong> AfriWidget's finance tools are for educational and informational purposes only. They do not constitute financial advice, investment recommendations, or professional financial planning services. Always consult a qualified financial advisor before making investment decisions.
-    </div>
-  </article>
-
-  
+</section>
 
   </main>
-<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
-    <div class="min-w-0">
-      <a href="/" class="flex items-center space-x-2 mb-4">
-        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
-          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
-        </svg>
-        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
-      </a>
-      <p class="text-sm leading-relaxed text-slate-300">
-        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
-      </p>
-      <div class="mt-5 flex items-center flex-wrap gap-2.5">
-        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+  <!-- ===== FOOTER (Unified Homepage Footer) ===== -->
+  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4" aria-label="AfriWidget site footer">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
+      <div class="min-w-0">
+        <a href="/" class="flex items-center space-x-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+          </svg>
+          <span class="font-extrabold text-white text-lg">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
-        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
-        </a>
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-        </a>
-        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
+        <p class="text-sm leading-relaxed text-slate-300">Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.</p>
+        <div class="mt-5 flex items-center flex-wrap gap-2.5">
+          <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" aria-label="X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+          </a>
+          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+          </a>
+          <a href="https://www.instagram.com/afriwidget" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+        <div class="mt-3.5">
+          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
+            <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+            <span>Message Obed Avorlenu on WhatsApp</span>
+          </a>
+        </div>
       </div>
-      <div class="mt-3.5">
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
-          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-          <span>Message Obed Avorlenu on WhatsApp</span>
-        </a>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3><ul class="space-y-2 text-sm"><li><a href="/health" class="hover:text-yellow-300 transition-colors">Health &amp; Wellness</a></li><li><a href="/finance" class="hover:text-yellow-300 transition-colors">Finance &amp; Wealth</a></li><li><a href="/business" class="hover:text-yellow-300 transition-colors">Business &amp; Freelance</a></li><li><a href="/education" class="hover:text-yellow-300 transition-colors">Education &amp; Academics</a></li><li><a href="/productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a></li></ul></div>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Hubs</h3><ul class="space-y-2 text-sm"><li><a href="/success-stories" class="hover:text-yellow-300 transition-colors">Success Stories</a></li><li><a href="/about" class="hover:text-yellow-300 transition-colors">About Us</a></li><li><a href="/faq" class="hover:text-yellow-300 transition-colors">FAQ</a></li><li><a href="/contact" class="hover:text-yellow-300 transition-colors">Contact</a></li></ul></div>
+      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h3><ul class="space-y-2 text-sm"><li><a href="/privacy-policy" class="hover:text-yellow-300 transition-colors">Privacy Policy</a></li><li><a href="/terms" class="hover:text-yellow-300 transition-colors">Terms of Service</a></li><li><a href="/cookie-policy" class="hover:text-yellow-300 transition-colors">Cookie Policy</a></li><li><a href="/adsense-disclaimer" class="hover:text-yellow-300 transition-colors">AdSense Disclaimer</a></li></ul></div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
+      <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
+      <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
+        <span class="text-slate-600 hidden sm:inline">•</span>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
+        <span class="text-slate-600 hidden sm:inline">•</span>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
       </div>
     </div>
+  </footer>
 
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
-      <ul class="space-y-2 text-sm">
-         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
-         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
-         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
-         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
-         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
-         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
-         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
-        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
-        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
-        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
-        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
-        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
-        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
-        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
-        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
-        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
-        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
-        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
-        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
-         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
-         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
-         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
-         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
-        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
-        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
-        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
-         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
-         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
-         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
-         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
-         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
-         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
-         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
-         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
-         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
-         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
-         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
-         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
-         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
-         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
-         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
-         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
-         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
-         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
-          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
-         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
-         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
-         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
-         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
-         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
-         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
-         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
-        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
-        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
-        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
-         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
-         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
-         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
-         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
-         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
-        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
-        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
-        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
-        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
-        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
-         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
-         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
-         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
-         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
-         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
-         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
-         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
-         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
-         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
-         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
-         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
-         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
-         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
-         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
-         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
-         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
-         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
-         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
-         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
-        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
-         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
-         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
-         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
-         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
-         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
-         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
-         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
-         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
-         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
-         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
-        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
-         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
-        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
-        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
-        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
-        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
-    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
-    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
-      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
-    </div>
-  </div>
-</footer>
-
-  <!-- COOKIE CONSENT BANNER -->
+  <!-- COOKIE BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-      We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.
-    </p>
-    <div class="flex gap-3 flex-shrink-0">
-      <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
-      <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">We use cookies to improve your experience and display relevant ads. No personal calculation data is ever collected. <a href="cookie-policy" class="text-yellow-400 underline hover:text-yellow-300">Read our Cookie Policy</a>.</p>
+      <div class="flex gap-3 flex-shrink-0">
+        <button id="cookieDecline" type="button" class="text-sm px-4 py-2 border border-slate-500 rounded-lg hover:border-slate-400 transition-colors text-white">Decline</button>
+        <button id="cookieAccept" type="button" class="text-sm px-4 py-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold rounded-lg transition-colors">Accept All</button>
+      </div>
     </div>
   </div>
-</div>
 
-
-  
-  </div>
+  <!-- SEARCH & FAQ SCRIPTS -->
   <script>
-    function onReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); } else { fn(); } }
+    (function() {
+      // FAQ Accordion
+      document.querySelectorAll('.faq-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.faq-icon');
+          var isOpen = content.classList.contains('open');
+          document.querySelectorAll('.faq-content').forEach(function(c) {
+            if (c !== content) { c.classList.remove('open'); var parentBtn = c.previousElementSibling; if (parentBtn) { var otherIcon = parentBtn.querySelector('.faq-icon'); if (otherIcon) otherIcon.classList.remove('open'); } }
+          });
+          if (isOpen) { content.classList.remove('open'); if (icon) icon.classList.remove('open'); }
+          else { content.classList.add('open'); if (icon) icon.classList.add('open'); }
+        });
+      });
 
-    onReady(() => {
-      document.getElementById('mobileMenuBtn').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
-    });
+      // Search Engine
+      var searchInput = document.getElementById('toolSearch');
+      var searchBtn = document.getElementById('searchBtn');
+      var toolCards = document.querySelectorAll('.tool-card');
+      var noResults = document.getElementById('noResults');
+      var totalCount = document.getElementById('totalCount');
+
+      function updateCount(visible) {
+        var total = toolCards.length;
+        if (totalCount) totalCount.textContent = visible + ' / ' + total + ' tools';
+        if (noResults) {
+          if (searchInput && searchInput.value.trim() !== '' && visible === 0) { noResults.classList.add('visible'); }
+          else { noResults.classList.remove('visible'); }
+        }
+      }
+
+      function performSearch(query) {
+        query = query.trim().toLowerCase();
+        var visible = 0;
+        toolCards.forEach(function(card) {
+          var text = (card.getAttribute('data-search-text') || card.textContent).toLowerCase();
+          var match = query === '' || text.indexOf(query) !== -1;
+          if (match) { card.classList.remove('hidden-card'); visible++; }
+          else { card.classList.add('hidden-card'); }
+        });
+        updateCount(visible);
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function() { performSearch(this.value); });
+        document.addEventListener('keydown', function(e) {
+          if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); searchInput.select(); }
+        });
+      }
+      if (searchBtn) { searchBtn.addEventListener('click', function() { if (searchInput) performSearch(searchInput.value); }); }
+
+      // Quick search tags
+      document.querySelectorAll('[data-quick-search]').forEach(function(tag) {
+        tag.addEventListener('click', function() {
+          var text = this.textContent.replace(/[\[\]]/g, '').trim();
+          if (searchInput) { searchInput.value = text; performSearch(text); searchInput.focus(); }
+        });
+      });
+
+      // Cookie Banner
+      var banner = document.getElementById('cookieBanner');
+      if (banner) {
+        if (localStorage.getItem('cookieConsent') === 'accepted' || localStorage.getItem('cookieConsent') === 'declined') { banner.classList.add('hidden'); }
+        else { banner.classList.remove('hidden'); }
+        var acceptBtn = document.getElementById('cookieAccept');
+        var declineBtn = document.getElementById('cookieDecline');
+        if (acceptBtn) { acceptBtn.addEventListener('click', function() { localStorage.setItem('cookieConsent', 'accepted'); banner.classList.add('hidden'); }); }
+        if (declineBtn) { declineBtn.addEventListener('click', function() { localStorage.setItem('cookieConsent', 'declined'); banner.classList.add('hidden'); }); }
+      }
+
+      // Mobile Menu
+      document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+      });
+
+      // Initial count
+      updateCount(toolCards.length);
+    })();
   </script>
-  <script src="/category-filter.js" defer></script>
 </body>
 </html>
