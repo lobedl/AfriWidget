@@ -169,11 +169,11 @@ Use this master map to select the mandatory 3 to 4 related tools whenever creati
 ### 3.11 Business, Freelance & Pricing Cluster 💼 ⚡
 - `freelance-hourly-rate-pricing-calculator` ↔ `freelance-rate-calculator` ↔ `hourly-to-salary` ↔ `remote-salary-converter` ↔ `profit-margin-calculator` ↔ `break-even-calculator` ↔ `startup-burn-rate-calculator` ↔ `startup-cost-calculator` ↔ `paypal-fee-calculator` ↔ `invoice-receipt-generator` ↔ `creator-sponsorship-calculator` ↔ `website-valuation-calculator`
 
-### 3.12 AI Career & Resume Builder Cluster 🤖 📄
-- `ai-resume-builder` ↔ `ai-cover-letter-generator` ↔ `work-experience-resume-duration-calculator` ↔ `ai-linkedin-headline-generator` ↔ `ai-bio-generator` ↔ `ai-paraphrasing-tool` ↔ `ai-text-summarizer`
+### 3.12 Career & Writing Utilities Cluster 📄 ✍️
+- `work-experience-resume-duration-calculator` ↔ `ai-paraphrasing-tool` ↔ `ai-text-summarizer` ↔ `word-counter`
 
 ### 3.13 Web, Social Media & Marketing Utilities Cluster 📱 🔍
-- `qr-code-generator` ↔ `whatsapp-direct-link-qr-generator` ↔ `url-slug-generator` ↔ `word-counter` ↔ `reading-time-speech-estimator` ↔ `ai-social-media-caption-generator` ↔ `ai-hashtag-generator` ↔ `ai-youtube-title-generator` ↔ `ai-youtube-description-generator` ↔ `ai-blog-title-generator` ↔ `seo-meta-generator` ↔ `keyword-density-checker`
+- `qr-code-generator` ↔ `whatsapp-direct-link-qr-generator` ↔ `url-slug-generator` ↔ `word-counter` ↔ `reading-time-speech-estimator` ↔ `seo-meta-generator` ↔ `keyword-density-checker`
 
 ---
 

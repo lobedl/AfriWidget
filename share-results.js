@@ -164,10 +164,6 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       fields: () => [$('#userState'), $('#userStudyArea'), $('#userDegreeLevel'), $('#userAtarScore'), $('#userStudyMode'), $('#userCitizenship'), $('#equityFinancial'), $('#equityRural'), $('#equityIndigenous'), $('#equityFirstGen'), $('#equityDisability'), $('#meritLeadership')],
       calculate: () => $('#filterScholarshipsBtn')?.click()
     },
-    'student-budget-calculator': {
-      fields: () => [$('#livingCity'), $('#housingType'), $('#incomeYouthAllowance'), $('#incomeJob'), $('#incomeFamily'), $('#incomeScholarship'), $('#costRent'), $('#costGroceries'), $('#costUtilities'), $('#costTransport'), $('#costPhone'), $('#costAcademic'), $('#costPersonal')],
-      calculate: () => $('#calcBudgetBtn')?.click()
-    },
     'university-course-finder': {
       fields: () => [$('#filterState'), $('#filterArea'), $('#filterDegreeLevel'), $('#filterMaxAtar'), $('#filterInstitutionType'), $('#courseSearchInput')],
       calculate: () => $('#applyFiltersBtn')?.click()
@@ -208,42 +204,6 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
       calculate: () => $('#calcLoanBtn')?.click()
     },
-    'cameroon-gce-o-level-calculator': {
-      fields: () => [$('#subjectsContainer select'), $('#isScienceDirect'), $('#isArtsDirect')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'cameroon-gce-a-level-calculator': {
-      fields: () => [$('#subjectsContainer select'), $('#hasOLevelEnglish')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'cameroon-university-admission-calculator': {
-      fields: () => [$('#universitySelect'), $('#facultySelect'), $('#best3Points'), $('#totalAPasses'), $('#totalOPasses'), $('#passOEnglish'), $('#passOMaths'), $('#passSpecialtyA'), $('#passSpecialtyB'), $('#writtenScore'), $('#dossierWeight')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'rwanda-national-exam-points-calculator': {
-      fields: () => [$('#s6CombinationSelect'), $('#s6Subj1Grade'), $('#s6Subj2Grade'), $('#s6Subj3Grade'), $('#s6GpGrade'), $('#s6SubMathGrade')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'seychelles-secondary-exam-calculator': {
-      fields: () => [$('#s5EngGrade'), $('#s5MathGrade'), $('#s5Subj3Grade'), $('#s5Subj4Grade'), $('#s5Subj5Grade'), $('#s5Subj6Grade'), $('#s5Subj7Grade'), $('#s5Subj8Grade')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'seychelles-university-admission-calculator': {
-      fields: () => [$('#targetProgram'), $('#alevel1Grade'), $('#alevel2Grade'), $('#alevel3Grade'), $('#asLevelGrade'), $('#hasEnglishOLevel'), $('#hasMathsOLevel')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'seychelles-gpa-calculator': {
-      fields: () => [$('#gpaScale'), $('#includeCumulative'), $('#priorGpa'), $('#priorCredits'), ...$$('.course-row input, .course-row select')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'seychelles-student-budget-calculator': {
-      fields: () => [$('#incAnhrd'), $('#incFamily'), $('#incWork'), $('#incOther'), $('#expRent'), $('#expFood'), $('#expTransport'), $('#expData'), $('#expBooks'), $('#expMisc')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'seychelles-study-planner': {
-      fields: () => [$('#studentLevel'), $('#studyDays'), $('#hoursPerDay'), ...$$('.subject-row input, .subject-row select')].filter(Boolean),
-      calculate: () => $('#calculateBtn')?.click()
-    }
   };
 
   function standardAdapter() {

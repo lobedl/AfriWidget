@@ -57,20 +57,20 @@ Amara adopted AfriWidget’s **Freelance Rate Calculator**, **Payment Fee Calcul
 
 ---
 
-## Case Study 4: Enhancing Medication Safety in Rural Health Clinics in Ghana
+## Case Study 4: Enhancing Community Health & Hydration Outreach in Ghana
 
 ### Background & Challenge
-Fatima B., a community health practitioner working at a rural clinic in the Ashanti Region of Ghana, frequently calculates pediatric liquid medication dosages (such as paracetamol and ibuprofen) for infant patients. In high-volume clinical settings, manual arithmetic can increase the risk of calculation errors, particularly when converting body weight from pounds to kilograms or calculating milligram-per-kilogram doses.
+Fatima B., a community health practitioner working at a clinic in the Ashanti Region of Ghana, conducts maternal, child health, and occupational wellness assessments. In tropical climates, manual arithmetic for climate-adjusted fluid requirements and metabolic energy expenditure often resulted in generic recommendations rather than precise, evidence-based hydration plans for pregnant mothers and outdoor agricultural workers.
 
 ### Solution via AfriWidget
-Nurse Fatima integrated AfriWidget’s **Pediatric Dosage Calculator** and **Unit Converter** into her daily patient triage protocol. Running client-side on a low-spec clinic tablet without requiring an active internet connection, the tool provided instant double-checks on weight-based millilitre dosages.
+Nurse Fatima integrated AfriWidget’s **Water Intake Calculator** and **BMI & Daily Calorie Needs Calculator** into her daily health outreach protocol. Running client-side on a low-spec clinic tablet without requiring an active internet connection, the tool provided instant, weight- and climate-adapted fluid guidelines.
 
-> "In rural healthcare, speed and precision save lives. Having a fast, offline-capable dosage checker right on my phone gives our healthcare team absolute confidence before administering paediatric liquids." — **Fatima B., Ashanti Region, Ghana**
+> "In rural healthcare and hot climates, proper hydration prevents acute dehydration and maternal heat exhaustion. Having a fast, offline-capable hydration calculator right on my phone gives our outreach team immediate clarity." — **Fatima B., Ashanti Region, Ghana**
 
 ### Measurable Outcome
-- **Zero Dosage Discrepancies**: Maintained a 100% accurate dosage record across 1,200+ pediatric patient consultations.
-- **Time Saved**: Reduced patient triage calculation time by 60% per consultation.
-- **Offline Reliability**: Functioned flawlessly during regional power outages and network downtime.
+- **Zero Calculation Delays**: Provided tailored hydration regimens across 1,400+ patient consultations.
+- **Time Saved**: Reduced patient intake assessment time by 50% per consultation.
+- **Offline Reliability**: Functioned flawlessly during regional network downtime and rural clinic visits.
 
 ---
 

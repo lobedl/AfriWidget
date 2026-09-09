@@ -156,7 +156,6 @@ Add **two** `<script type="application/ld+json">` blocks after Twitter tags:
 - Use descriptive, keyword-aligned anchor text consistently across desktop and mobile navigation:
   - `Health & Wellness Tools`
   - `Finance & Wealth Tools`
-  - `Real Estate & Housing Tools`
   - `Business & Freelance Tools`
   - `Education & Academic Tools`
   - `Tech & Developer Tools`

@@ -133,175 +133,195 @@ function renderMarkdown(markdown) {
   return html.join('');
 }
 
-const sharedFooterMarkup = `<footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4 mt-16" aria-label="AfriWidget site footer">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
-    <div class="min-w-0">
-      <a href="/" class="flex items-center space-x-2 mb-4">
-        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+const sharedFooterMarkup = `<footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-12 px-4 sm:px-6 lg:px-8 mt-20" aria-label="AfriWidget site footer">
+  <!-- Top Feature & Trust Pillars (Desktop 3-Column / Mobile Stacked) -->
+  <div class="max-w-7xl mx-auto mb-12 pb-10 border-b border-slate-800/80">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 transition-colors hover:border-slate-700/80">
+        <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400 mt-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white">Zero-Storage Privacy</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Calculations process 100% in-browser. Your grades, health metrics, and financial inputs never touch our servers.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 transition-colors hover:border-slate-700/80">
+        <div class="w-9 h-9 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center shrink-0 text-yellow-400 mt-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white">Statutorily Aligned Models</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">Formulas and grading algorithms calibrated to official WAEC, JAMB, KUCCPS, DHET, and international academic standards.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 transition-colors hover:border-slate-700/80">
+        <div class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0 text-indigo-400 mt-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white">100% Free &amp; Open Access</h4>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">No paywalls, no mandatory signups, and zero gated features. Designed for high speed on smartphones and low-bandwidth connections.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Grid: 4 cols for Brand, 8 cols divided evenly into 4 link columns -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+    <!-- Brand & Platform Column -->
+    <div class="lg:col-span-4 min-w-0 space-y-4">
+      <a href="/" class="inline-flex items-center space-x-2.5 group" aria-label="AfriWidget Home">
+        <svg width="34" height="34" viewBox="0 0 36 36" fill="none" class="shrink-0" aria-hidden="true">
           <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
           <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+          <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
         </svg>
-        <span class="font-extrabold text-white text-lg">Afri<span class="afriwidget-home-wordmark text-yellow-300">Widget</span></span>
+        <span class="text-2xl font-black tracking-tight text-white">Afri<span class="text-yellow-300">Widget</span></span>
       </a>
-      <p class="text-sm leading-relaxed text-slate-300">
-        Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.
+      <p class="text-xs sm:text-sm leading-relaxed text-slate-400 max-w-sm">
+        Africa's premier open computational platform. Delivering verified academic calculators, financial modeling tools, health calculators, and digital utilities with client-side privacy.
       </p>
-      <div class="mt-5 flex items-center flex-wrap gap-2.5">
-        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow AfriWidget on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
+
+      <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 max-w-sm">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-xs font-semibold text-slate-200">Independent &amp; Free Platform</span>
+        </div>
+        <p class="text-[11px] leading-relaxed text-slate-400">
+          Created by <strong class="text-slate-200">Obed Avorlenu</strong> — self-taught web developer who studied business at Keta Business College, dedicated to building free, open computational tools.
+        </p>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-2 pt-1">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Obed Avorlenu on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Connect on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
         </a>
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message Obed Avorlenu on WhatsApp" title="WhatsApp (+233 20 220 8348)" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp" title="Chat on WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
         </a>
-        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="AfriWidget on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="Follow on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="AfriWidget on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="Follow on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-      <div class="mt-3.5">
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
-          <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-          <span>Message Obed Avorlenu on WhatsApp</span>
-        </a>
+    </div>
+
+    <!-- 4 Navigation Columns -->
+    <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-6">
+      <!-- Academic Hubs -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+          Academic Tools
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="/waec-grade-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">WASSCE / WAEC Calculator</a></li>
+          <li><a href="/jamb-utme-aggregate-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">JAMB UTME Aggregate</a></li>
+          <li><a href="/kcse-kuccps-cluster-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">KCSE KUCCPS Cluster</a></li>
+          <li><a href="/south-african-aps-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">South Africa APS Points</a></li>
+          <li><a href="/zimsec-alevel-points-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">ZIMSEC A-Level Points</a></li>
+          <li><a href="/tertiary-gpa-cgpa-calculator" class="text-slate-400 hover:text-yellow-300 transition-colors">Tertiary GPA &amp; CGPA</a></li>
+          <li class="pt-1.5 border-t border-slate-800/60"><a href="/education" class="text-yellow-400 hover:text-yellow-300 font-semibold text-xs inline-flex items-center gap-1">All Academic Hubs &rarr;</a></li>
+        </ul>
+      </div>
+
+      <!-- Finance & Wealth -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          Finance &amp; Wealth
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="/loan-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Loan &amp; Amortization</a></li>
+          <li><a href="/debt-payoff-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Debt Payoff &amp; Snowball</a></li>
+          <li><a href="/savings-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Compound Savings</a></li>
+          <li><a href="/freelance-rate-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Freelance Rate Planner</a></li>
+          <li><a href="/break-even-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Break-Even Calculator</a></li>
+          <li><a href="/profit-margin-calculator" class="text-slate-400 hover:text-emerald-300 transition-colors">Profit Margin &amp; Markup</a></li>
+          <li class="pt-1.5 border-t border-slate-800/60"><a href="/finance" class="text-emerald-400 hover:text-emerald-300 font-semibold text-xs inline-flex items-center gap-1">All Finance Tools &rarr;</a></li>
+        </ul>
+      </div>
+
+      <!-- Health & Tools -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          Health &amp; Tools
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="/bmi-calculator" class="text-slate-400 hover:text-cyan-300 transition-colors">BMI &amp; Ideal Weight</a></li>
+          <li><a href="/water-intake-calculator" class="text-slate-400 hover:text-cyan-300 transition-colors">Water Intake Calculator</a></li>
+          <li><a href="/body-fat-calculator" class="text-slate-400 hover:text-cyan-300 transition-colors">Body Fat &amp; Composition</a></li>
+          <li><a href="/ovulation-cycle-calculator" class="text-slate-400 hover:text-cyan-300 transition-colors">Ovulation Cycle Tracker</a></li>
+          <li><a href="/qr-code-generator" class="text-slate-400 hover:text-cyan-300 transition-colors">QR Code Generator</a></li>
+          <li><a href="/json-formatter-validator" class="text-slate-400 hover:text-cyan-300 transition-colors">JSON Formatter</a></li>
+          <li class="pt-1.5 border-t border-slate-800/60"><a href="/health" class="text-cyan-400 hover:text-cyan-300 font-semibold text-xs inline-flex items-center gap-1">All Health &amp; Tech &rarr;</a></li>
+        </ul>
+      </div>
+
+      <!-- Company & Governance -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+          Platform &amp; Legal
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm">
+          <li><a href="/about" class="text-slate-400 hover:text-white transition-colors">About AfriWidget</a></li>
+          <li><a href="/faq" class="text-slate-400 hover:text-white transition-colors">FAQ &amp; Help Center</a></li>
+          <li><a href="/contact" class="text-slate-400 hover:text-white transition-colors">Contact &amp; Support</a></li>
+          <li><a href="/privacy-policy" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="/cookie-policy" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a></li>
+          <li><a href="/adsense-disclaimer" class="text-slate-400 hover:text-white transition-colors">AdSense Disclaimer</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3>
-      <ul class="space-y-2 text-sm">
-         <li><a href="/health" class="hover:text-emerald-400 transition-colors">Health &amp; Wellness</a></li>
-         <li><a href="/finance" class="hover:text-emerald-400 transition-colors">Finance &amp; Wealth</a></li>
-         <li><a href="/real-estate" class="hover:text-emerald-400 transition-colors">Real Estate &amp; Housing</a></li>
-         <li><a href="/business" class="hover:text-emerald-400 transition-colors">Business &amp; Freelance</a></li>
-         <li><a href="/education" class="hover:text-emerald-400 transition-colors">Education &amp; Academics</a></li>
-         <li><a href="/productivity" class="hover:text-emerald-400 transition-colors">Productivity Tools</a></li>
-         <li><a href="/widgets" class="hover:text-emerald-400 transition-colors">All Tools Directory</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Calculators</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/bmi-calculator" class="hover:text-emerald-400 transition-colors">BMI / BMR / TDEE</a></li>
-        <li><a href="/body-fat-calculator" class="hover:text-emerald-400 transition-colors">Body Fat Calculator</a></li>
-        <li><a href="/daily-calorie-needs-calculator" class="hover:text-emerald-400 transition-colors">Daily Calorie Needs</a></li>
-        <li><a href="/calorie-burn-calculator" class="hover:text-emerald-400 transition-colors">Calorie Burn</a></li>
-        <li><a href="/ideal-weight-calculator" class="hover:text-emerald-400 transition-colors">Ideal Weight</a></li>
-        <li><a href="/healthy-weight-range-calculator" class="hover:text-emerald-400 transition-colors">Healthy Weight Range</a></li>
-        <li><a href="/pediatric-dosage-calculator" class="hover:text-emerald-400 transition-colors">Pediatric Dosage</a></li>
-        <li><a href="/ovulation-cycle-calculator" class="hover:text-emerald-400 transition-colors">Ovulation &amp; Cycle</a></li>
-        <li><a href="/water-intake-calculator" class="hover:text-emerald-400 transition-colors">Water Intake</a></li>
-        <li><a href="/hydration-reminder-calculator" class="hover:text-emerald-400 transition-colors">Hydration Reminder</a></li>
-        <li><a href="/calorie-deficit-planner" class="hover:text-emerald-400 transition-colors">Calorie Deficit</a></li>
-        <li><a href="/blood-donation-eligibility-calculator" class="hover:text-emerald-400 transition-colors">Blood Donation Eligibility</a></li>
-        <li><a href="/compound-interest" class="hover:text-emerald-400 transition-colors">Compound Interest</a></li>
-         <li><a href="/loan-calculator" class="hover:text-emerald-400 transition-colors">Loan Calculator</a></li>
-         <li><a href="/savings-calculator" class="hover:text-emerald-400 transition-colors">Savings Calculator</a></li>
-         <li><a href="/currency-converter" class="hover:text-emerald-400 transition-colors">Currency Converter</a></li>
-         <li><a href="/percentage-calculator" class="hover:text-emerald-400 transition-colors">Percentage Calculator</a></li>
-        <li><a href="/mortgage-calculator" class="hover:text-emerald-400 transition-colors">Mortgage Payment</a></li>
-        <li><a href="/rent-affordability" class="hover:text-emerald-400 transition-colors">Rent Affordability</a></li>
-        <li><a href="/gpa-calculator" class="hover:text-emerald-400 transition-colors">GPA Calculator</a></li>
-         <li><a href="/wassce-aggregate-calculator" class="hover:text-emerald-400 transition-colors">WASSCE Aggregate</a></li>
-         <li><a href="/bece-aggregate-calculator" class="hover:text-emerald-400 transition-colors">BECE Aggregate</a></li>
-         <li><a href="/jamb-utme-aggregate-calculator" class="hover:text-emerald-400 transition-colors">JAMB UTME Aggregate</a></li>
-         <li><a href="/tertiary-gpa-cgpa-calculator" class="hover:text-emerald-400 transition-colors">Tertiary GPA &amp; CGPA</a></li>
-         <li><a href="/south-african-aps-calculator" class="hover:text-emerald-400 transition-colors">South African APS</a></li>
-         <li><a href="/south-african-university-admission-calculator" class="hover:text-emerald-400 transition-colors">SA University Admission</a></li>
-         <li><a href="/nsfas-eligibility-checker" class="hover:text-emerald-400 transition-colors">NSFAS Eligibility Checker</a></li>
-         <li><a href="/kcse-grade-calculator" class="hover:text-emerald-400 transition-colors">KCSE Grade Calculator (Kenya)</a></li>
-         <li><a href="/kuccps-cluster-points-calculator" class="hover:text-emerald-400 transition-colors">KUCCPS Cluster Points (Kenya)</a></li>
-         <li><a href="/kenya-university-gpa-calculator" class="hover:text-emerald-400 transition-colors">Kenya University GPA</a></li>
-         <li><a href="/kcpe-performance-calculator" class="hover:text-emerald-400 transition-colors">KCPE Performance (Kenya)</a></li>
-         <li><a href="/student-loan-repayment-calculator" class="hover:text-emerald-400 transition-colors">Student Loan Repayment (Kenya)</a></li>
-         <li><a href="/uganda-university-admission-calculator" class="hover:text-emerald-400 transition-colors">Uganda University Admission</a></li>
-         <li><a href="/kcse-kuccps-cluster-calculator" class="hover:text-emerald-400 transition-colors">KCSE &amp; KUCCPS</a></li>
-         <li><a href="/university-cutoff-eligibility-checker" class="hover:text-emerald-400 transition-colors">University Eligibility</a></li>
-         <li><a href="/olevel-subject-combination-checker" class="hover:text-emerald-400 transition-colors">WAEC / NECO Subjects</a></li>
-         <li><a href="/kcse-eligibility-tier-checker" class="hover:text-emerald-400 transition-colors">KCSE Eligibility Tier</a></li>
-         <li><a href="/south-african-tvet-nated-calculator" class="hover:text-emerald-400 transition-colors">TVET NATED Pass</a></li>
-          <li><a href="/icass-calculator" class="hover:text-emerald-400 transition-colors">ICASS Calculator</a></li>
-         <li><a href="/bece-cssps-placement-estimator" class="hover:text-emerald-400 transition-colors">BECE CSSPS Placement</a></li>
-         <li><a href="/igcse-alevel-gpa-converter" class="hover:text-emerald-400 transition-colors">IGCSE / A-Level GPA</a></li>
-         <li><a href="/ucas-points-calculator" class="hover:text-emerald-400 transition-colors">UCAS Points Calculator</a></li>
-         <li><a href="/a-level-grade-calculator" class="hover:text-emerald-400 transition-colors">A-Level Grade Calculator</a></li>
-         <li><a href="/invoice-receipt-generator" class="hover:text-emerald-400 transition-colors">Invoice &amp; Receipt PDF</a></li>
-         <li><a href="/whatsapp-direct-link-qr-generator" class="hover:text-emerald-400 transition-colors">WhatsApp Direct Link</a></li>
-         <li><a href="/qr-code-generator" class="hover:text-emerald-400 transition-colors">QR Code Generator</a></li>
-        <li><a href="/paypal-fee-calculator" class="hover:text-emerald-400 transition-colors">Payment Fee Calculator</a></li>
-        <li><a href="/profit-margin-calculator" class="hover:text-emerald-400 transition-colors">Profit Margin</a></li>
-        <li><a href="/hourly-to-salary" class="hover:text-emerald-400 transition-colors">Hourly to Salary</a></li>
-         <li><a href="/ai-business-name-generator" class="hover:text-emerald-400 transition-colors">AI Business Name</a></li>
-         <li><a href="/ai-product-description-generator" class="hover:text-emerald-400 transition-colors">AI Product Description</a></li>
-         <li><a href="/ai-gig-description-generator" class="hover:text-emerald-400 transition-colors">AI Gig Description</a></li>
-         <li><a href="/ai-paraphrasing-tool" class="hover:text-emerald-400 transition-colors">AI Paraphrasing Tool</a></li>
-         <li><a href="/ai-text-summarizer" class="hover:text-emerald-400 transition-colors">AI Text Summarizer</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Utilities &amp; Legal</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/word-counter" class="hover:text-emerald-400 transition-colors">Word Counter</a></li>
-        <li><a href="/json-formatter" class="hover:text-emerald-400 transition-colors">JSON Formatter</a></li>
-        <li><a href="/markdown-to-html-converter" class="hover:text-emerald-400 transition-colors">Markdown to HTML</a></li>
-        <li><a href="/html-minifier" class="hover:text-emerald-400 transition-colors">HTML Minifier</a></li>
-        <li><a href="/base64-encoder-decoder" class="hover:text-emerald-400 transition-colors">Base64 Encoder &amp; Decoder</a></li>
-        <li><a href="/password-generator" class="hover:text-emerald-400 transition-colors">Password Generator</a></li>
-         <li><a href="/random-email-generator" class="hover:text-emerald-400 transition-colors">Random Email Generator</a></li>
-         <li><a href="/random-username-generator" class="hover:text-emerald-400 transition-colors">Random Username Generator</a></li>
-         <li><a href="/random-business-name-generator" class="hover:text-emerald-400 transition-colors">Random Business Name Generator</a></li>
-         <li><a href="/random-team-name-generator" class="hover:text-emerald-400 transition-colors">Random Team Name Generator</a></li>
-         <li><a href="/random-nickname-generator" class="hover:text-emerald-400 transition-colors">Random Nickname Generator</a></li>
-         <li><a href="/random-address-generator" class="hover:text-emerald-400 transition-colors">Random Address Generator</a></li>
-         <li><a href="/random-phone-number-generator" class="hover:text-emerald-400 transition-colors">Random Phone Number Generator</a></li>
-         <li><a href="/random-date-generator" class="hover:text-emerald-400 transition-colors">Random Date Generator</a></li>
-         <li><a href="/random-color-generator" class="hover:text-emerald-400 transition-colors">Random Color Generator</a></li>
-         <li><a href="/ai-resume-builder" class="hover:text-emerald-400 transition-colors">AI Resume Builder</a></li>
-         <li><a href="/ai-cover-letter-generator" class="hover:text-emerald-400 transition-colors">AI Cover Letter Generator</a></li>
-         <li><a href="/ai-linkedin-headline-generator" class="hover:text-emerald-400 transition-colors">AI LinkedIn Headline</a></li>
-         <li><a href="/ai-bio-generator" class="hover:text-emerald-400 transition-colors">AI Professional Bio</a></li>
-         <li><a href="/ai-email-writer" class="hover:text-emerald-400 transition-colors">AI Email Writer</a></li>
-         <li><a href="/ai-social-media-caption-generator" class="hover:text-emerald-400 transition-colors">AI Social Captions</a></li>
-         <li><a href="/ai-hashtag-generator" class="hover:text-emerald-400 transition-colors">AI Hashtag Generator</a></li>
-         <li><a href="/ai-youtube-title-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Titles</a></li>
-         <li><a href="/ai-youtube-description-generator" class="hover:text-emerald-400 transition-colors">AI YouTube Descriptions</a></li>
-         <li><a href="/ai-blog-title-generator" class="hover:text-emerald-400 transition-colors">AI Blog Titles</a></li>
-        <li><a href="/seo-meta-generator" class="hover:text-emerald-400 transition-colors">SEO Meta Tag Generator</a></li>
-         <li><a href="/age-calculator" class="hover:text-emerald-400 transition-colors">Age Calculator</a></li>
-         <li><a href="/unit-converter" class="hover:text-emerald-400 transition-colors">Unit Converter</a></li>
-         <li><a href="/reading-time-speech-estimator" class="hover:text-emerald-400 transition-colors">Reading Time Estimator</a></li>
-         <li><a href="/text-case-converter-cleanup" class="hover:text-emerald-400 transition-colors">Text Case Converter</a></li>
-         <li><a href="/image-resizer-webp-converter" class="hover:text-emerald-400 transition-colors">Image Resizer &amp; WebP</a></li>
-         <li><a href="/robots-txt-generator" class="hover:text-emerald-400 transition-colors">Robots.txt Generator</a></li>
-         <li><a href="/xml-sitemap-builder" class="hover:text-emerald-400 transition-colors">XML Sitemap Builder</a></li>
-         <li><a href="/meta-pixel-checker" class="hover:text-emerald-400 transition-colors">Meta Pixel Checker</a></li>
-         <li><a href="/keyword-density-checker" class="hover:text-emerald-400 transition-colors">Keyword Density Checker</a></li>
-         <li><a href="/url-slug-generator" class="hover:text-emerald-400 transition-colors">URL Slug Generator</a></li>
-        <li class="pt-2"><a href="/success-stories" class="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors inline-flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><span>User Success Stories</span></a></li>
-         <li><a href="/about" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-        <li><a href="/faq" class="hover:text-emerald-400 transition-colors">FAQ</a></li>
-        <li><a href="/contact" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-        <li><a href="/privacy-policy" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
-        <li><a href="/terms" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
-        <li><a href="/adsense-disclaimer" class="hover:text-emerald-400 transition-colors">AdSense Disclaimer</a></li>
-        <li><a href="/cookie-policy" class="hover:text-emerald-400 transition-colors">Cookie Policy</a></li>
-      </ul>
+  <!-- Regional Coverage Strip -->
+  <div class="max-w-7xl mx-auto border-t border-slate-800/80 pt-8 pb-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div>
+        <span class="text-xs font-bold text-slate-300 uppercase tracking-wider block mb-1">Supported Curricula &amp; Statutory Frameworks</span>
+        <p class="text-xs text-slate-500">Official computational scoring models for national and international examining councils</p>
+      </div>
+      <div class="flex items-center flex-wrap justify-center md:justify-end gap-2 text-xs">
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇬🇭 Ghana (WAEC)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇳🇬 Nigeria (JAMB)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇰🇪 Kenya (KUCCPS)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇿🇦 South Africa (Matric)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇿🇼 Zimbabwe (ZIMSEC)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇬🇧 UK (UCAS)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇨🇦 Canada (GPA)</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">🇦🇺 Australia (ATAR)</span>
+      </div>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
-    <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
-    <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
-      <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
-      <span class="text-slate-600 hidden sm:inline">•</span>
-      <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+
+  <!-- Bottom Legal & Copyright Bar -->
+  <div class="max-w-7xl mx-auto border-t border-slate-800/80 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center md:text-left">
+    <div class="space-y-1">
+      <p>&copy; ${new Date().getFullYear()} AfriWidget. All rights reserved. For informational and educational calculation purposes only.</p>
+      <p class="text-[11px] text-slate-600">Client-side execution architecture. In-memory computation compliant with GDPR, NDPR &amp; POPIA privacy principles.</p>
+    </div>
+    <div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 text-slate-400">
+      <a href="/privacy-policy" class="hover:text-yellow-300 transition-colors">Privacy</a>
+      <span class="text-slate-800" aria-hidden="true">&bull;</span>
+      <a href="/terms" class="hover:text-yellow-300 transition-colors">Terms</a>
+      <span class="text-slate-800" aria-hidden="true">&bull;</span>
+      <a href="/cookie-policy" class="hover:text-yellow-300 transition-colors">Cookies</a>
+      <span class="text-slate-800" aria-hidden="true">&bull;</span>
+      <a href="/adsense-disclaimer" class="hover:text-yellow-300 transition-colors">AdSense</a>
+      <span class="text-slate-800" aria-hidden="true">&bull;</span>
+      <a href="/contact" class="hover:text-yellow-300 transition-colors">Contact</a>
     </div>
   </div>
 </footer>`;
@@ -314,24 +334,25 @@ const catUrlMap = {
   business: { name: "Business Tools", url: "/business" },
   productivity: { name: "Productivity Tools", url: "/productivity" },
   tech: { name: "Productivity Tools", url: "/productivity" },
-  realestate: { name: "Real Estate Tools", url: "/real-estate" },
-  "real-estate": { name: "Real Estate Tools", url: "/real-estate" }
+  realestate: { name: "Finance Tools", url: "/finance" },
+  "real-estate": { name: "Finance Tools", url: "/finance" }
 };
 
-// Build category map from widgets.html data-category attributes
+// Build category map from tools-index.json
 const categoryMap = {};
 
 try {
-  const widgetsHtml = fs.readFileSync(path.join(process.cwd(), 'widgets.html'), 'utf8');
-  const cardMatches = widgetsHtml.matchAll(/<a[^>]+href=["\x27]\/?([a-z0-9-]+)(?:\.html)?["\x27][^>]*data-category=["\x27]([a-z-]+)["\x27]/g);
-  for (const m of cardMatches) {
-    const slug = m[1];
-    const cat = m[2];
-    const info = catUrlMap[cat] || { name: "Productivity Tools", url: "/productivity" };
-    categoryMap[slug + ".html"] = { category: info.name, categoryUrl: info.url };
+  const toolsIndexRaw = fs.readFileSync(path.join(process.cwd(), 'tools-index.json'), 'utf8');
+  const toolsIndex = JSON.parse(toolsIndexRaw);
+  for (const item of toolsIndex) {
+    if (item.slug && item.category) {
+      const catKey = item.category.toLowerCase().replace(/\s+/g, '-');
+      const info = catUrlMap[catKey] || catUrlMap[item.category.toLowerCase()] || { name: `${item.category} Tools`, url: `/${catKey}` };
+      categoryMap[item.slug + ".html"] = { category: info.name, categoryUrl: info.url };
+    }
   }
 } catch (e) {
-  console.warn("Could not read widgets.html for categoryMap:", e.message);
+  console.warn("Could not read tools-index.json for categoryMap:", e.message);
 }
 
 // Special Hubs and Policy Pages
@@ -340,9 +361,7 @@ categoryMap["education.html"] = { isHub: true, title: "Education & Academic Tool
 categoryMap["finance.html"] = { isHub: true, title: "Finance & Wealth Tools" };
 categoryMap["productivity.html"] = { isHub: true, title: "Productivity & Utility Tools" };
 categoryMap["business.html"] = { isHub: true, title: "Business & Freelance Tools" };
-categoryMap["real-estate.html"] = { isHub: true, title: "Real Estate & Housing Tools" };
 categoryMap["admissions.html"] = { isHub: true, title: "African Admissions Calculators", category: "Education Tools", categoryUrl: "/education" };
-categoryMap["widgets.html"] = { isHub: true, title: "All Tools Directory" };
 categoryMap["success-stories.html"] = { isHub: true, title: "User Success Stories" };
 
 categoryMap["about.html"] = { isHub: true, title: "About AfriWidget" };
@@ -529,8 +548,7 @@ const navItems = [
   ['/finance', 'Finance Tools'],
   ['/health', 'Health Tools'],
   ['/productivity', 'Productivity Tools'],
-  ['/success-stories', 'Success Stories'],
-  ['/widgets', 'All Tools Directory']
+  ['/success-stories', 'Success Stories']
 ];
 
 const legalNavItems = [

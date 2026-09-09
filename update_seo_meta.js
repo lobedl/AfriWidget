@@ -3,11 +3,9 @@ import fs from 'fs';
 // Map of high-converting, accurate, keyword-rich meta descriptions tailored to each page (120-158 characters)
 const descriptions = {
   // === AI & WRITING TOOLS ===
-  "ai-bio-generator.html": {
     meta: "Generate professional bios for LinkedIn, resumes, speaker profiles, and social media with AI. Customize tone and length with free in-browser privacy.",
     og: "Create compelling professional biographies for resumes, websites, and social profiles instantly with AI."
   },
-  "ai-blog-title-generator.html": {
     meta: "Generate catchy, SEO-friendly blog post titles and article headlines with AI. Boost your click-through rates with engaging topic ideas and formulas.",
     og: "Generate catchy, viral, and SEO-optimized blog titles and article headlines instantly with AI."
   },
@@ -15,11 +13,9 @@ const descriptions = {
     meta: "Discover creative, memorable business name ideas and brand names with AI. Generate catchy startup names across tech, retail, consulting, and commerce.",
     og: "Generate creative, catchy business names and brand ideas tailored to your industry with AI."
   },
-  "ai-cover-letter-generator.html": {
     meta: "Generate tailored, professional cover letters for job applications with AI. Match your experience to job descriptions with instant, private editing.",
     og: "Create compelling, job-matched cover letters in seconds with our free AI cover letter generator."
   },
-  "ai-email-writer.html": {
     meta: "Draft professional business emails, follow-ups, client replies, and sales pitches with AI. Choose tone, purpose, and key points for instant polish.",
     og: "Write clear, persuasive, and professional emails in seconds with our free AI email writer."
   },
@@ -27,11 +23,9 @@ const descriptions = {
     meta: "Create high-converting freelance gig descriptions for Fiverr and Upwork with AI. Highlight your skills, deliverables, and packages to win clients.",
     og: "Generate high-ranking Fiverr and Upwork gig descriptions with our free AI freelance tool."
   },
-  "ai-hashtag-generator.html": {
     meta: "Generate trending, relevant hashtags for Instagram, TikTok, Twitter, and LinkedIn with AI. Increase social reach and engagement across your niche.",
     og: "Discover trending, high-engagement hashtags for Instagram, TikTok, and LinkedIn with AI."
   },
-  "ai-linkedin-headline-generator.html": {
     meta: "Craft impactful LinkedIn headlines that attract recruiters and clients with AI. Highlight your role, value proposition, and keywords effortlessly.",
     og: "Generate high-converting, keyword-rich LinkedIn profile headlines with our free AI tool."
   },
@@ -43,11 +37,9 @@ const descriptions = {
     meta: "Generate persuasive e-commerce product descriptions for Shopify, Amazon, and Etsy with AI. Highlight features and benefits that drive sales conversions.",
     og: "Create persuasive, SEO-friendly e-commerce product descriptions in seconds with AI."
   },
-  "ai-resume-builder.html": {
     meta: "Build modern, ATS-friendly resumes and CV bullet points with AI. Structure your work experience and achievements into formatted, ready-to-use resumes.",
     og: "Create tailored, ATS-compliant resumes and professional bullet points with our free AI builder."
   },
-  "ai-social-media-caption-generator.html": {
     meta: "Generate engaging captions for Instagram posts, TikTok videos, Facebook, and Threads with AI. Includes call-to-actions and customizable tones.",
     og: "Create viral, engaging social media captions with relevant emojis and hashtags using AI."
   },
@@ -55,11 +47,9 @@ const descriptions = {
     meta: "Condense long articles, research papers, essays, and meeting notes into concise summaries or bullet points with our free, private in-browser AI summarizer.",
     og: "Summarize long articles, documents, and reports into key takeaways and bullet points with AI."
   },
-  "ai-youtube-description-generator.html": {
     meta: "Generate SEO-optimized YouTube video descriptions with timestamps, keywords, and call-to-actions with AI to boost views and subscriber engagement.",
     og: "Create search-optimized YouTube video descriptions with links and timestamps using AI."
   },
-  "ai-youtube-title-generator.html": {
     meta: "Create viral, click-worthy YouTube video titles with AI. Generate high-CTR title variations for tutorials, vlogs, reviews, and educational videos.",
     og: "Generate high-CTR, viral YouTube video titles and ideas in seconds with our free AI tool."
   },
@@ -85,7 +75,6 @@ const descriptions = {
     meta: "Create custom QR codes for website URLs, Wi-Fi networks, text, and contact cards instantly. Download high-resolution PNG or SVG vector QR codes for free.",
     og: "Generate and download custom QR codes for URLs, text, Wi-Fi, and contact details."
   },
-  "random-email-generator.html": {
     meta: "Generate realistic mock email addresses for QA testing, software prototyping, demos, and seed databases. 100% private, instant client-side tool.",
     og: "Create random mock email address lists for software testing, forms validation, and developer demos."
   },

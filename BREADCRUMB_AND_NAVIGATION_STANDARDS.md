@@ -29,7 +29,6 @@ Use this lookup table to determine the exact path and link label for every tool:
 | **Health & Wellness**<br>(Calorie, BMI, BMR, Water Intake, Macro, Ovulation, Pediatric Dosage, Hydration) | `/health` | `<a href="/health" class="text-slate-400 hover:text-yellow-300 transition-colors">Health Tools</a>` |
 | **Productivity & Utilities**<br>(QR Code, Password Generator, Minifier, Formatter, Unit Converter, Sitemap, Image Resizer) | `/productivity` | `<a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>` |
 | **Business & Freelance**<br>(Invoice, Rate Pricing, Profit Margin, Startup Cost, Website Valuation) | `/business` | `<a href="/business" class="text-slate-400 hover:text-yellow-300 transition-colors">Business Tools</a>` |
-| **Real Estate & Housing**<br>(Rent Affordability, Property Valuation, Mortgage) | `/real-estate` | `<a href="/real-estate" class="text-slate-400 hover:text-yellow-300 transition-colors">Real Estate Tools</a>` |
 
 ---
 
@@ -98,7 +97,7 @@ if (match) {
     if (km) configs[km[1]] = km[2];
   }
 }
-const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && !["index.html", "widgets.html", "education.html", "finance.html", "health.html", "productivity.html", "business.html", "real-estate.html", "contact.html", "faq.html", "privacy-policy.html", "terms.html", "cookie-policy.html", "success-stories.html"].includes(f));
+const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && !["index.html", "widgets.html", "education.html", "finance.html", "health.html", "productivity.html", "business.html", "contact.html", "faq.html", "privacy-policy.html", "terms.html", "cookie-policy.html", "success-stories.html"].includes(f));
 let mismatches = 0;
 for (const file of files) {
   const toolSlug = file.replace(".html", "");

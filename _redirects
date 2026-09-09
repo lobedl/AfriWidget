@@ -33,5 +33,53 @@
 /ucas-tariff-points-calculator           /ucas-points-calculator                  301
 /ucas-tariff-points-calculator.html      /ucas-points-calculator                  301
 
+# Retired Tools Redirects
+/random-address-generator                /productivity   301
+/random-address-generator.html           /productivity   301
+/random-phone-number-generator           /productivity   301
+/random-phone-number-generator.html      /productivity   301
+/random-email-generator                  /productivity   301
+/random-email-generator.html             /productivity   301
+/random-team-name-generator              /productivity   301
+/random-team-name-generator.html         /productivity   301
+/random-nickname-generator               /productivity   301
+/random-nickname-generator.html          /productivity   301
+/random-date-generator                   /productivity   301
+/random-date-generator.html              /productivity   301
+/random-color-generator                  /productivity   301
+/random-color-generator.html             /productivity   301
+/ai-resume-builder                       /productivity   301
+/ai-resume-builder.html                  /productivity   301
+/ai-cover-letter-generator               /productivity   301
+/ai-cover-letter-generator.html          /productivity   301
+/ai-linkedin-headline-generator          /productivity   301
+/ai-linkedin-headline-generator.html     /productivity   301
+/ai-bio-generator                        /productivity   301
+/ai-bio-generator.html                   /productivity   301
+/ai-email-writer                         /productivity   301
+/ai-email-writer.html                    /productivity   301
+/ai-social-media-caption-generator       /productivity   301
+/ai-social-media-caption-generator.html  /productivity   301
+/ai-hashtag-generator                    /productivity   301
+/ai-hashtag-generator.html               /productivity   301
+/ai-youtube-title-generator              /productivity   301
+/ai-youtube-title-generator.html         /productivity   301
+/ai-youtube-description-generator        /productivity   301
+/ai-youtube-description-generator.html   /productivity   301
+/ai-blog-title-generator                 /productivity   301
+/ai-blog-title-generator.html            /productivity   301
+/random-username-generator               /productivity   301
+/random-username-generator.html          /productivity   301
+/random-business-name-generator          /productivity   301
+/random-business-name-generator.html     /productivity   301
+/pediatric-dosage-calculator             /health         301
+/pediatric-dosage-calculator.html        /health         301
+/blood-donation-eligibility-calculator   /health         301
+/blood-donation-eligibility-calculator.html /health      301
+/macro-calculator                        /health         301
+/macro-calculator.html                   /health         301
+/calorie-deficit-planner                 /health         301
+/calorie-deficit-planner.html            /health         301
+
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
 

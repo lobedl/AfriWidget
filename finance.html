@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Multi-Path CSS Inclusion for 100% Instant Stylesheet Loading & Zero CLS -->
   <link rel="preload" href="/styles.css" as="style" />
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="/dist/styles.css" />
+  <!-- Resource Preconnects for Fast Asset Delivery -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V491CW7H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,6 +19,7 @@
     gtag("js", new Date());
     gtag("config", "G-6V491CW7H0");
   </script>
+  <!-- High-Performance Lazy-Loaded Google AdSense (Zero Blocking Time & Zero Layout Shift) -->
   <script>
     (function() {
       var adSenseLoaded = false;
@@ -47,7 +51,7 @@
       }
     })();
   </script>
-  <meta name="impact-site-verification" value="8d895b2f-2afa-4509-9580-9986391475e5" />
+<meta name="impact-site-verification" value="8d895b2f-2afa-4509-9580-9986391475e5" />
   <title>Free Finance &amp; Wealth Calculators – AfriWidget</title>
   <meta name="description" content="Free financial calculators for compound interest, loans, mortgages, savings goals, student finance, and debt payoff strategies. 100% private, browser-based tools." />
   <link rel="canonical" href="https://afriwidget.com/finance" />
@@ -103,11 +107,18 @@
     .featured-icon-svg { width: 1.5rem; height: 1.5rem; color: #0f172a; }
     .group:hover .featured-icon-svg { color: #ca8a04; }
   </style>
+
+
+
+
+
+
+
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
   <!-- NAVIGATION -->
-  <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
+                <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a href="/" class="flex items-center space-x-2">
@@ -119,54 +130,55 @@
           <span class="text-xl font-extrabold text-white">Afri<span class="text-yellow-300">Widget</span></span>
         </a>
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
-          <a href="/education" class="transition-colors hover:text-yellow-300">Education</a>
-          <a href="/finance" class="transition-colors hover:text-yellow-300 text-yellow-300 font-bold">Finance</a>
-          <a href="/health" class="transition-colors hover:text-yellow-300">Health</a>
-          <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity</a>
-          <div class="relative nav-dropdown group">
-            <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
-              <span>Legal</span>
-              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
-              <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
-                <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
-                <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
-                <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
-                <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
-                <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
-                <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
-              </div>
+        <a href="/" class="transition-colors hover:text-yellow-300">Home</a>
+        <a href="/education" class="transition-colors hover:text-yellow-300">Education Tools</a>
+        <a href="/finance" class="transition-colors hover:text-yellow-300">Finance Tools</a>
+        <a href="/health" class="transition-colors hover:text-yellow-300">Health Tools</a>
+        <a href="/productivity" class="transition-colors hover:text-yellow-300">Productivity Tools</a>
+        <a href="/success-stories" class="transition-colors hover:text-yellow-300">Success Stories</a>
+        <div class="relative nav-dropdown group">
+          <button type="button" class="flex items-center gap-1 transition-colors hover:text-yellow-300 py-1 cursor-pointer focus:outline-none" aria-expanded="false" aria-haspopup="true" aria-label="Legal and policy pages">
+            <span>Legal</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="nav-dropdown-menu absolute right-0 top-full pt-1.5 w-48 hidden group-hover:block z-50">
+            <div class="rounded-xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 backdrop-blur-md">
+            <a href="/privacy-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Cookie Policy</a>
+            <a href="/adsense-disclaimer" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">AdSense Disclaimer</a>
+            <a href="/about" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">About Us</a>
+            <a href="/contact" class="block px-4 py-2 text-xs text-slate-200 hover:bg-slate-800 hover:text-yellow-300 transition-colors">Contact</a>
             </div>
           </div>
         </div>
+      </div>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-700" aria-label="Open navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
     <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2 text-sm font-semibold">
-      <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
-      <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education</a>
-      <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors text-yellow-300 font-bold">Finance</a>
-      <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health</a>
-      <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity</a>
-      <div class="pt-2.5 mt-2 border-t border-slate-800/80">
-        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
-        <div class="grid grid-cols-2 gap-1 text-xs font-medium">
-          <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
-          <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
-          <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
-          <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
-          <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
-          <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
-        </div>
+    <a href="/" class="block py-2 hover:text-yellow-300 transition-colors">Home</a>
+    <a href="/education" class="block py-2 hover:text-yellow-300 transition-colors">Education Tools</a>
+    <a href="/finance" class="block py-2 hover:text-yellow-300 transition-colors">Finance Tools</a>
+    <a href="/health" class="block py-2 hover:text-yellow-300 transition-colors">Health Tools</a>
+    <a href="/productivity" class="block py-2 hover:text-yellow-300 transition-colors">Productivity Tools</a>
+    <a href="/success-stories" class="block py-2 hover:text-yellow-300 transition-colors">Success Stories</a>
+    <div class="pt-2.5 mt-2 border-t border-slate-800/80">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider px-1 mb-1.5">Legal &amp; Info</div>
+      <div class="grid grid-cols-2 gap-1 text-xs font-medium">
+        <a href="/privacy-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Terms of Service</a>
+        <a href="/cookie-policy" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Cookie Policy</a>
+        <a href="/adsense-disclaimer" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">AdSense Disclaimer</a>
+        <a href="/about" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">About Us</a>
+        <a href="/contact" class="py-1.5 px-2 rounded hover:bg-slate-800 hover:text-yellow-300 text-slate-300 transition-colors">Contact</a>
       </div>
     </div>
+  </div>
   </nav>
-
-  <!-- BREADCRUMB -->
+  <!-- Visual Breadcrumb Navigation -->
   <div class="bg-slate-900 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
       <nav aria-label="Breadcrumb">
@@ -278,27 +290,6 @@
       </div>
     </div>
 
-    <!-- ===== SUCCESS STORY SPOTLIGHT (Premium) ===== -->
-    <section class="max-w-7xl mx-auto px-4 my-8">
-      <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all hover:border-yellow-400/30">
-        <div class="space-y-2 max-w-2xl">
-          <div class="flex items-center gap-3">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-yellow-300 text-[11px] font-black uppercase tracking-wider">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
-              Wealth Success
-            </span>
-            <span class="text-xs text-slate-400 font-medium">Johannesburg, South Africa</span>
-          </div>
-          <h3 class="text-xl font-bold text-white leading-tight">"Paid Off R45,000 Consumer Debt 17 Months Early"</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl">"I modeled my debt snowball schedule privately on AfriWidget and saved over R12,400 in compound interest charges." — <strong class="text-white">Sibusiso M.</strong></p>
-        </div>
-        <a href="success-stories" class="shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-xl active:scale-95">
-          Read Finance Stories
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
-      </div>
-    </section>
-
     <!-- ===== TOOLS SECTION ===== -->
     <section class="max-w-7xl mx-auto px-4 py-6">
       <div class="flex items-center justify-between mb-6">
@@ -370,7 +361,6 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="growthTools">
           <a href="/compound-interest" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="compound interest investment savings growth"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Investing</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Compound</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Compound Interest Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model long-term investment growth with variable contributions, compounding frequency, and time horizon analysis.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate growth →</span></a>
           <a href="/savings-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="savings calculator compound interest deposits projected growth"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Saving</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Savings</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Savings Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Project future savings with regular deposits and compound interest across any time horizon.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Project savings →</span></a>
-          <a href="/savings-goal-timeline-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="savings goal timeline target monthly contribution interest"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Goal</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 18h16M6 15l4-4 3 2 5-6M6 6h4"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Timeline</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Savings Goal Timeline</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate the time needed to reach a savings target from regular monthly contributions and existing balance.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan goal →</span></a>
           <a href="/percentage-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="percentage discount markup change everyday"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Calculator</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m7 7 .1 0M17 17 .1 0M6 18 18 6M7 7h.1M17 17h.1"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Percentage</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Percentage Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate discounts, markups, percentage change, and proportions for everyday business and personal decisions.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate % →</span></a>
         </div>
       </div>
@@ -407,11 +397,6 @@
           <a href="/hourly-to-salary" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="hourly salary annual income freelance rate"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Income</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M12 8v5l3 2"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Salary</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Hourly to Salary Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Convert an hourly rate into annual, monthly, weekly, and daily income estimates for planning and negotiation.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Convert salary →</span></a>
           <a href="/paypal-fee-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="paypal fee payment processor transaction"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Payment</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M3 10h18M7 15h3"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">PayPal</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">PayPal Fee Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate payment processing fees and the net amount received for any transaction amount.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate fees →</span></a>
           <a href="/currency-converter" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="currency converter exchange rates African global"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Currency</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><svg class="tool-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-width="1.8" d="M8 10h8M8 14h8M12 8v8"/></svg><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">FX</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Real-Time Currency Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Convert global and African currencies with live or fallback reference rates for accurate cross-border comparisons.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Convert currency →</span></a>
-          <a href="/remote-salary-converter" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="remote salary converter cost of living exchange rates"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Remote</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🌍</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Remote</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Remote Salary Converter</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Compare global remote compensation with exchange rates and cost-of-living purchasing power adjustments.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Compare salary →</span></a>
-          <a href="/startup-burn-rate-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="startup burn rate calculator gross net burn runway"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Startup</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🔥</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Burn</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Startup Burn Rate Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate gross and net monthly cash burn, financial runway in months, and zero cash date forecast.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate burn →</span></a>
-          <a href="/website-valuation-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="website valuation calculator site worth multiple"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Valuation</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🏛️</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Valuation</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Website Valuation Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate market sale value and SDE multiples for content sites, SaaS, and e-commerce businesses.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Estimate worth →</span></a>
-          <a href="/creator-sponsorship-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="creator sponsorship rate calculator youtube tiktok"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Creator</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">📱</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Sponsor</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Creator Sponsorship Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate rate cards for YouTube integrations, TikTok posts, and Instagram sponsorships based on audience metrics.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate rates →</span></a>
-          <a href="/reverse-adsense-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="reverse adsense calculator monthly pageviews traffic rpm"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Publisher</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Global</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">📈</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">AdSense</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Reverse AdSense Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Calculate required monthly pageviews, daily traffic, and ad clicks to reach target ad revenue goals.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Calculate traffic →</span></a>
         </div>
       </div>
 
@@ -422,11 +407,6 @@
           Student Budgeting &amp; Living Costs
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="budgetTools">
-          <a href="/student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="student budget calculator australia cost of living"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Australia</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇦🇺</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">AUD</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Student Budget Calculator (Australia)</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Plan weekly and monthly student living costs in AUD, model Centrelink Youth Allowance and part-time earnings vs rent and expenses.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
-          <a href="/norway-student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="norway student budget calculator nok cost of living"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Norway</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇳🇴</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">NOK</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Norway Student Budget Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model monthly living costs in NOK, track Lånekassen support (kr 151,690/yr), 40% grant conversion rules, and the Skatteetaten tax frikort.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
-          <a href="/botswana-student-expense-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="botswana student expense calculator cost of living bwp"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Botswana</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇧🇼</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">BWP</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Botswana Student Expense Calculator</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Estimate monthly student living costs in Pula (BWP), compare off-campus rent vs DTEF allowance, and track semester deficits.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
-          <a href="/seychelles-student-budget-calculator" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="seychelles student budget calculator cost of living scr"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Seychelles</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇸🇨</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">SCR</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Seychelles Student Budget</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Plan monthly student living expenses in Rupees (SCR), balancing ANHRD allowances, Mahé rent, and SPTC bus transit.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
-          <a href="/zambia-student-budget-planner" class="tool-card group rounded-xl border border-slate-200 bg-white p-4 hover:border-yellow-300 hover:shadow-md transition-all" data-search-text="zambia student budget planner cost of living zmw"><div class="flex items-start justify-between mb-2"><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">TYPE</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Budget</span></span><span class="inline-flex items-center rounded-md border border-slate-700 overflow-hidden text-[9px] font-medium"><span class="px-1.5 py-0.5 bg-slate-800 text-slate-400">REGION</span><span class="px-1.5 py-0.5 bg-slate-900 text-white">Zambia</span></span></div><div class="flex items-center gap-2 mb-2"><span class="text-sm font-black text-slate-900 group-hover:text-yellow-700">🇿🇲</span><span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">ZMW</span></div><h4 class="text-base font-extrabold text-slate-900 group-hover:text-yellow-700 transition-colors">Zambia Student Budget Planner</h4><p class="text-xs text-slate-500 mt-1 leading-relaxed">Model monthly living expenses in Kwacha (ZMW) across HEASB upkeep, boarding rent, market food, and ZESCO units.</p><span class="mt-3 inline-block text-xs font-bold text-slate-950 group-hover:text-yellow-700 transition-colors">Plan budget →</span></a>
         </div>
       </div>
 
@@ -498,7 +478,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-btn" type="button"><span>What student finance calculators are available?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-      <div class="faq-content">We offer a comprehensive suite of student finance calculators including: Kenya HELB repayment calculations with 4% p.a. reducing balance interest; Tanzania HESLB loan allocation and 15% salary deduction modelling; UK Student Finance maintenance loan entitlement and Plan 5/Plan 2 repayment simulations; New Zealand student loan IRD deductions and interest rate comparisons; Canada Student Loan repayments with OSAP and federal 0% interest savings; and student living budgets for Australia, Norway, Botswana, Seychelles, and Zambia in local currencies.</div>
+      <div class="faq-content">We offer a comprehensive suite of student finance calculators including: Kenya HELB repayment calculations with 4% p.a. reducing balance interest; Tanzania HESLB loan allocation and 15% salary deduction modelling; UK Student Finance maintenance loan entitlement and Plan 5/Plan 2 repayment simulations; New Zealand student loan IRD deductions and interest rate comparisons; Canada Student Loan repayments with OSAP and federal 0% interest savings; and Australia HECS-HELP compulsory loan repayment schedules.</div>
     </div>
     <div class="faq-item">
       <button class="faq-btn" type="button"><span>How does compounding frequency affect returns?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
@@ -506,7 +486,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-btn" type="button"><span>Are these tools suitable for business financial planning?</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-      <div class="faq-content">Yes. Our business-focused calculators include profit margin analysis, pricing optimisation, ROI calculations, startup burn rate modelling, website valuation estimation, and creator sponsorship rate cards. These tools are designed for entrepreneurs, freelancers, small business owners, and content creators who need to understand their numbers without expensive software subscriptions.</div>
+      <div class="faq-content">Yes. Our business-focused calculators include profit margin analysis, pricing optimisation, ROI calculations, and payment processor fee comparisons across PayPal, Stripe, and Square. These tools are designed for entrepreneurs, freelancers, small business owners, and digital creators who need to understand their numbers without expensive software subscriptions.</div>
     </div>
   </div>
 </section>
@@ -514,56 +494,88 @@
   </main>
 
   <!-- ===== FOOTER (Unified Homepage Footer) ===== -->
-  <footer class="bg-slate-900 text-slate-300 pt-14 pb-8 px-4" aria-label="AfriWidget site footer">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-12">
-      <div class="min-w-0">
-        <a href="/" class="flex items-center space-x-2 mb-4">
-          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
-            <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
-          </svg>
-          <span class="font-extrabold text-white text-lg">Afri<span class="text-yellow-300">Widget</span></span>
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-14 pb-8 px-4 mt-20" aria-label="AfriWidget site footer">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
+    <div class="sm:col-span-2 lg:col-span-2 min-w-0">
+      <a href="/" class="inline-flex items-center space-x-2.5 mb-4 group" aria-label="AfriWidget Home">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none" class="shrink-0" aria-hidden="true">
+          <path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/>
+          <circle cx="28" cy="9" r="2.5" fill="#CA8A04"/>
+          <circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/>
+        </svg>
+        <span class="text-xl font-bold tracking-tight text-white">Afri<span class="text-yellow-300">Widget</span></span>
+      </a>
+      <p class="text-sm leading-relaxed text-slate-400 max-w-sm mb-4">
+        Free, high-accuracy in-browser computational tools and academic planning instruments. Built with client-side privacy for students, professionals, and businesses across Africa and worldwide.
+      </p>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-400 mb-5">
+        <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <span>100% In-Browser &bull; Zero Data Storage</span>
+      </div>
+      <div class="flex items-center flex-wrap gap-2">
+        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on X (Twitter)" title="Follow on X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <p class="text-sm leading-relaxed text-slate-300">Free browser-based tools with Groq-powered Finance and Education insights where enabled. Built for Africa and the world.</p>
-        <div class="mt-5 flex items-center flex-wrap gap-2.5">
-          <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" aria-label="X" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-slate-950 hover:text-white hover:ring-1 hover:ring-slate-700">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-[#0A66C2] hover:text-white">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
-          </a>
-          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" aria-label="WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-all hover:bg-emerald-600 hover:text-white">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-          </a>
-          <a href="https://www.instagram.com/afriwidget" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-300 transition-colors hover:bg-yellow-400 hover:text-slate-950">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-        </div>
-        <div class="mt-3.5">
-          <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 hover:border-emerald-600 transition-all text-xs font-semibold group shadow-sm">
-            <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-white shrink-0 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
-            <span>Message Obed Avorlenu on WhatsApp</span>
-          </a>
-        </div>
-      </div>
-      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Categories</h3><ul class="space-y-2 text-sm"><li><a href="/health" class="hover:text-yellow-300 transition-colors">Health &amp; Wellness</a></li><li><a href="/finance" class="hover:text-yellow-300 transition-colors">Finance &amp; Wealth</a></li><li><a href="/business" class="hover:text-yellow-300 transition-colors">Business &amp; Freelance</a></li><li><a href="/education" class="hover:text-yellow-300 transition-colors">Education &amp; Academics</a></li><li><a href="/productivity" class="hover:text-yellow-300 transition-colors">Productivity Tools</a></li></ul></div>
-      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Hubs</h3><ul class="space-y-2 text-sm"><li><a href="/success-stories" class="hover:text-yellow-300 transition-colors">Success Stories</a></li><li><a href="/about" class="hover:text-yellow-300 transition-colors">About Us</a></li><li><a href="/faq" class="hover:text-yellow-300 transition-colors">FAQ</a></li><li><a href="/contact" class="hover:text-yellow-300 transition-colors">Contact</a></li></ul></div>
-      <div><h3 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Legal</h3><ul class="space-y-2 text-sm"><li><a href="/privacy-policy" class="hover:text-yellow-300 transition-colors">Privacy Policy</a></li><li><a href="/terms" class="hover:text-yellow-300 transition-colors">Terms of Service</a></li><li><a href="/cookie-policy" class="hover:text-yellow-300 transition-colors">Cookie Policy</a></li><li><a href="/adsense-disclaimer" class="hover:text-yellow-300 transition-colors">AdSense Disclaimer</a></li></ul></div>
-    </div>
-    <div class="max-w-7xl mx-auto border-t border-slate-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300">
-      <p>&copy; 2026 AfriWidget. All rights reserved. For informational purposes only — not professional medical, financial, or academic advice.</p>
-      <div class="flex items-center flex-wrap justify-center gap-4 text-xs">
-        <a href="https://x.com/AfriWidget" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">X (@AfriWidget)</a>
-        <span class="text-slate-600 hidden sm:inline">•</span>
-        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397" target="_blank" rel="noopener" class="text-slate-400 hover:text-yellow-300 transition-colors">LinkedIn</a>
-        <span class="text-slate-600 hidden sm:inline">•</span>
-        <a href="https://wa.me/233202208348" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/obed-avorlenu-ab9149397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Obed Avorlenu on LinkedIn" title="Connect on LinkedIn" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63 0 .9.73 1.63 1.63 1.63.9 0 1.63-.73 1.63-1.63 0-.9-.73-1.63-1.63-1.63Z"/></svg>
+        </a>
+        <a href="https://wa.me/233202208348" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp" title="Chat on WhatsApp" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.19-.09-1.12-.55-1.3-.61-.17-.07-.3-.1-.43.1-.12.19-.49.61-.6.74-.11.12-.23.14-.42.05-.19-.09-.8-.3-1.53-.94-.57-.5-.95-1.12-1.06-1.31-.11-.19-.01-.29.08-.38.08-.09.19-.23.28-.35.09-.12.13-.19.19-.33.06-.14.03-.26-.02-.35-.04-.09-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.12 0-.33.05-.5.23-.17.19-.66.65-.66 1.58s.68 1.83.77 1.96c.1.12 1.33 2.04 3.23 2.86.45.2.8.31 1.08.4.46.15.87.13 1.2.08.37-.06 1.12-.46 1.28-.9.16-.45.16-.83.11-.92-.04-.09-.17-.14-.36-.24"/></svg>
+        </a>
+        <a href="https://www.instagram.com/afriwidget?igsh=MXg3cnZpMmd6bHEydA==" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Instagram" title="Follow on Instagram" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1DBVMx47Zy/" target="_blank" rel="noopener noreferrer" aria-label="AfriWidget on Facebook" title="Follow on Facebook" class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
       </div>
     </div>
-  </footer>
+
+    <div>
+      <h3 class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-4">Categories</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/education" class="text-slate-400 hover:text-white transition-colors">Education &amp; Academics</a></li>
+        <li><a href="/finance" class="text-slate-400 hover:text-white transition-colors">Finance &amp; Wealth</a></li>
+        <li><a href="/health" class="text-slate-400 hover:text-white transition-colors">Health &amp; Wellness</a></li>
+        <li><a href="/productivity" class="text-slate-400 hover:text-white transition-colors">Productivity Tools</a></li>
+        <li><a href="/business" class="text-slate-400 hover:text-white transition-colors">Business &amp; Freelance</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-4">Company</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/about" class="text-slate-400 hover:text-white transition-colors">About AfriWidget</a></li>
+        <li><a href="/success-stories" class="text-slate-400 hover:text-white transition-colors">Success Stories</a></li>
+        <li><a href="/faq" class="text-slate-400 hover:text-white transition-colors">Frequently Asked Questions</a></li>
+        <li><a href="/contact" class="text-slate-400 hover:text-white transition-colors">Contact &amp; Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-4">Legal &amp; Trust</h3>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="/privacy-policy" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a></li>
+        <li><a href="/terms" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a></li>
+        <li><a href="/cookie-policy" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a></li>
+        <li><a href="/adsense-disclaimer" class="text-slate-400 hover:text-white transition-colors">AdSense Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+    <p>&copy; 2026 AfriWidget. All rights reserved. For informational and educational purposes only.</p>
+    <div class="flex items-center flex-wrap justify-center gap-5 text-slate-400">
+      <a href="/privacy-policy" class="hover:text-slate-200 transition-colors">Privacy</a>
+      <span class="text-slate-700" aria-hidden="true">&bull;</span>
+      <a href="/terms" class="hover:text-slate-200 transition-colors">Terms</a>
+      <span class="text-slate-700" aria-hidden="true">&bull;</span>
+      <a href="/cookie-policy" class="hover:text-slate-200 transition-colors">Cookies</a>
+      <span class="text-slate-700" aria-hidden="true">&bull;</span>
+      <a href="/contact" class="hover:text-slate-200 transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
 
   <!-- COOKIE BANNER -->
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 shadow-2xl z-[100] border-t border-slate-700 hidden">

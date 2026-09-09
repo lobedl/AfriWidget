@@ -6,23 +6,18 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Reverse AdSense Calculator
 
-[Reverse AdSense Calculator](https://afriwidget.com/reverse-adsense-calculator) — Calculate required monthly pageviews, daily traffic, and ad clicks needed to achieve target monthly Google AdSense revenue goals.
 
 ## Website Acquisition Valuation Calculator
 
-[Website Acquisition Valuation Calculator](https://afriwidget.com/website-valuation-calculator) — Estimate market sale value and SDE valuation multiples for content blogs, SaaS software, affiliate sites, and digital businesses.
 
 ## Startup Burn Rate Calculator
 
-[Startup Burn Rate Calculator](https://afriwidget.com/startup-burn-rate-calculator) — Calculate gross burn, net burn rate, remaining financial runway in months, and zero cash date forecast for startups.
 
 ## Creator Sponsorship Rate Calculator
 
-[Creator Sponsorship Rate Calculator](https://afriwidget.com/creator-sponsorship-calculator) — Calculate commercial rate cards for YouTube integrations, TikTok clips, and Instagram sponsorship posts.
 
 ## Remote Salary Converter
 
-[Remote Salary Converter](https://afriwidget.com/remote-salary-converter) — Compare international remote salaries across countries using foreign exchange rates and purchasing power cost-of-living adjustments.
 
 ## User Success Stories & Impact Studies
 
@@ -38,7 +33,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Macronutrient Split & Macro Calculator
 
-[Macronutrient Split & Macro Calculator](https://afriwidget.com/macro-calculator) — Calculate daily protein, carbohydrate, and fat macronutrient goals based on TDEE and fitness goals.
 
 ## BMI, BMR and TDEE Calculator
 
@@ -62,7 +56,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Pediatric Dosage Calculator
 
-[Pediatric Dosage Calculator](https://afriwidget.com/pediatric-dosage-calculator) — Estimate a child’s weight-based liquid paracetamol or ibuprofen dose in millilitres; confirm all medicine decisions with a doctor or pharmacist.
 
 ## Ovulation and Cycle Calculator
 
@@ -82,11 +75,9 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Calorie Deficit Planner
 
-[Calorie Deficit Planner](https://afriwidget.com/calorie-deficit-planner) — Compare estimated maintenance calories with a 500 kcal daily deficit using the Mifflin-St Jeor equation.
 
 ## Blood Donation Eligibility Calculator
 
-[Blood Donation Eligibility Calculator](https://afriwidget.com/blood-donation-eligibility-calculator) — Check a basic age, weight, and re-donation interval planning screen and calculate the earliest next donation date.
 
 ## WASSCE Aggregate Calculator
 
@@ -199,89 +190,9 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [UK Student Finance & Loan Repayment Calculator](https://afriwidget.com/uk-student-loan-finance-calculator) — Calculate means-tested UK Student Finance maintenance loan entitlements and forecast monthly Plan 5, Plan 2, and Postgraduate salary deductions.
 
-## All AfriWidget Tools
-
-[All AfriWidget Tools](https://afriwidget.com/widgets) — Browse the complete collection of AfriWidget calculators and browser-based utilities.
-
 ## Productivity Tools
 
-[Productivity Tools](https://afriwidget.com/productivity) — Use 29 browser-based productivity and creative tools for invoices, career writing, email, profiles, text cleanup, JSON, passwords, mock identity data, naming, dates, colors, SEO, data conversion, images, and WhatsApp links.
-
-## AI Resume Builder
-
-[AI Resume Builder](https://afriwidget.com/ai-resume-builder) — Create an editable resume draft from truthful experience, skills, education, and achievements.
-
-## AI Cover Letter Generator
-
-[AI Cover Letter Generator](https://afriwidget.com/ai-cover-letter-generator) — Draft a tailored cover letter that connects real experience to a specific job and company.
-
-## AI LinkedIn Headline Generator
-
-[AI LinkedIn Headline Generator](https://afriwidget.com/ai-linkedin-headline-generator) — Create concise LinkedIn headline ideas from a role, specialty, and professional value.
-
-## AI Professional Bio Generator
-
-[AI Professional Bio Generator](https://afriwidget.com/ai-bio-generator) — Shape experience and strengths into an editable bio for websites, portfolios, profiles, or speaker pages.
-
-## AI Email Writer
-
-[AI Email Writer](https://afriwidget.com/ai-email-writer) — Turn an email purpose, context, and clear ask into a professional draft without sending it.
-
-## AI Social Media Caption Generator
-
-[AI Social Media Caption Generator](https://afriwidget.com/ai-social-media-caption-generator) — Create editable captions for Instagram, Facebook, and Twitter from a post topic, audience, platform, and tone.
-
-## AI Hashtag Generator
-
-[AI Hashtag Generator](https://afriwidget.com/ai-hashtag-generator) — Generate relevant hashtag sets from a social post topic, niche, platform, and community context.
-
-## AI YouTube Title Generator
-
-[AI YouTube Title Generator](https://afriwidget.com/ai-youtube-title-generator) — Generate accurate, engaging YouTube title ideas from video topics, keywords, audiences, and formats.
-
-## AI YouTube Description Generator
-
-[AI YouTube Description Generator](https://afriwidget.com/ai-youtube-description-generator) — Structure YouTube descriptions with chapters, links, takeaways, and calls to action.
-
-## AI Blog Title Generator
-
-[AI Blog Title Generator](https://afriwidget.com/ai-blog-title-generator) — Turn seed keywords and reader intent into useful blog headlines and article angles.
-
-## 100+ Random Email Generator
-
-[100+ Random Email Generator](https://afriwidget.com/random-email-generator) — Create bulk mock email address lists with selectable domains, styles, copy, and download controls; generation stays in the browser.
-
-## Random Username Generator
-
-[Random Username Generator](https://afriwidget.com/random-username-generator) — Generate gaming, social, professional, and custom username ideas with optional keywords, numbers, separators, and bulk copy.
-
-## Random Business Name Generator
-
-[Random Business Name Generator](https://afriwidget.com/random-business-name-generator) — Generate industry-based business name ideas with modern, classic, friendly, or premium prefixes and suffixes.
-
-## Random Team Name Generator
-
-[Random Team Name Generator](https://afriwidget.com/random-team-name-generator) — Create sports, gaming, office, school, and club team name ideas with bold, funny, clever, or professional energy.
-
-## Random Nickname Generator
-
-[Random Nickname Generator](https://afriwidget.com/random-nickname-generator) — Generate fantasy, cool, cute, and funny nickname ideas with optional keywords, spaces, hyphens, and number endings.
-
-## Random Address Generator
-
-[Random Address Generator](https://afriwidget.com/random-address-generator) — Create fictional street, city, state, and postal code records for forms, prototypes, imports, and QA.
-
-## Random Phone Number Generator
-
-[Random Phone Number Generator](https://afriwidget.com/random-phone-number-generator) — Generate sample formatted phone numbers by country and international calling code.
-
-## Random Date Generator
-
-[Random Date Generator](https://afriwidget.com/random-date-generator) — Generate random dates between selected boundaries in ISO, US, international, or long formats.
-
-## Random Color Generator
-
-[Random Color Generator](https://afriwidget.com/random-color-generator) — Create visual color swatches with HEX, RGB, and HSL codes for design and testing.
+[Productivity Tools](https://afriwidget.com/productivity) — Use 24 browser-based productivity and developer tools for PDF invoices, QR codes, JSON formatting, text cleanup, passwords, word counts, and web utilities.
 
 ## Business and Freelance Pricing Calculator
 
@@ -289,7 +200,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Savings Goal Timeline Calculator
 
-[Savings Goal Timeline Calculator](https://afriwidget.com/savings-goal-timeline-calculator) — Estimate how long regular monthly contributions may take to reach a savings target with an optional return assumption.
 
 ## Loan Calculator
 
@@ -439,10 +349,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [ROI Calculator](https://afriwidget.com/roi-calculator) — Calculate Return on Investment (ROI %), total net profit, and annualized compound returns (CAGR) for investments and business projects.
 
-## Real Estate Investment Calculator
-
-[Real Estate Investment Calculator](https://afriwidget.com/real-estate) — Evaluate rental yield, cap rate, and cash flow projections for property investments.
-
 ## Rent Affordability Calculator
 
 [Rent Affordability Calculator](https://afriwidget.com/rent-affordability) — Determine recommended monthly rental budgets based on gross income and expenses.
@@ -569,11 +475,9 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Zambia TEVETA Score Calculator
 
-[Zambia TEVETA Score Calculator](https://afriwidget.com/zambia-teveta-score-calculator) — Calculate Technical Education, Vocational and Entrepreneurship Training Authority (TEVETA) composite module scores, verify statutory Continuous Assessment (CA) and Final Examination pass mark hurdles (minimum 40%–50%), and determine TQF Level 3–6 overall award classifications (Distinction, Credit, Pass, Refer).
 
 ## Zambia Student Budget Planner
 
-[Zambia Student Budget Planner](https://afriwidget.com/zambia-student-budget-planner) — Calculate monthly student income in Zambian Kwacha (ZMW) across Higher Education Authority (HEA) / HEASB upkeep loans, family allowances, bursaries, and side gigs against off-campus boarding house rent, ZESCO pre-paid electricity tokens, market food, mobile data bundles, and commuting costs.
 
 ## ATAR Calculator (Australia)
 
@@ -585,7 +489,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Student Budget Calculator (Australia)
 
-[Student Budget Calculator](https://afriwidget.com/student-budget-calculator) — Calculate weekly and monthly student living expenses in Australian Dollars (AUD), estimate Youth Allowance, Austudy, or part-time earnings against rent, groceries, transport, utilities, and textbook costs with savings rate modeling.
 
 ## HECS-HELP Repayment Calculator (Australia)
 
@@ -629,7 +532,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Norway Student Budget Calculator
 
-[Norway Student Budget Calculator](https://afriwidget.com/norway-student-budget-calculator) — Calculate monthly and annual higher education living costs in Norwegian Krone (NOK), model official Lånekassen basic support (kr 151,690/year), assess the 40% educational grant conversion criteria, track the Skatteetaten tax-free frikort ceiling (kr 70,000) and Lånekassen annual income limit (kr 214,213), and compare student housing (SiO, Sammen, SiT) across Oslo, Bergen, Trondheim, Tromsø, and Stavanger.
 
 ## Norway GPA Calculator (ECTS & Samordna Opptak)
 
@@ -641,39 +543,30 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Botswana Student Expense Calculator (DTEF & Living Costs)
 
-[Botswana Student Expense Calculator](https://afriwidget.com/botswana-student-expense-calculator) — Calculate monthly student living costs in Botswana Pula (BWP), compare off-campus accommodation rent and combi transport fares in Gaborone, Francistown, and Palapye against the official DTEF monthly living allowance (BWP 1,420 - 1,920), track groceries and utility contributions, and forecast semester financial deficits or surplus savings.
 
 ## Botswana Study Planner & Workload Timetable
 
-[Botswana Study Planner](https://afriwidget.com/botswana-study-planner) — Build a customized weekly academic schedule tailored for Botswana university students (UB, BIUST, BUAN, BAC) and BGCSE candidates, calculating required independent study hours based on Botswana Qualifications Authority (BQA) credit values (10 notional hours per credit), continuous assessment (CA) weighting, and active Pomodoro time-blocking.
 
 ## Botswana BGCSE Points Calculator (BEC 48-Point Scale)
 
-[Botswana BGCSE Points Calculator](https://afriwidget.com/botswana-bgcse-points-calculator) — Calculate Botswana Examinations Council (BEC) BGCSE Best 6 subject points on the official 48-point scale (A*=8 down to G=1), determine government tertiary sponsorship eligibility under the Department of Tertiary Education Financing (DTEF 36+ points standard), and check cut-off admission standings for competitive programmes at the University of Botswana (UB) and BIUST.
 
 ## Namibia NSSC Points Calculator (DNEA NSSCO & NSSCAS)
 
-[Namibia NSSC Points Calculator](https://afriwidget.com/namibia-nssc-points-calculator) — Compute official Directorate of National Examinations and Assessment (DNEA) admission points for Grade 11 NSSCO (A*=8 to G=1) and Grade 12 NSSCAS (a=10 to e=6) curriculums, calculate Best 5 and Best 6 aggregates, verify NSFAF tertiary financial loan eligibility (25+ points with Grade C in English), and evaluate UNAM and NUST general qualification readiness.
 
 ## Namibia University Admission Checker (UNAM, NUST & IUM)
 
-[Namibia University Admission Checker](https://afriwidget.com/namibia-university-admission-calculator) — Check admission eligibility for the University of Namibia (UNAM), Namibia University of Science and Technology (NUST), and the International University of Management (IUM), validating mandatory faculty prerequisites across Engineering, Medicine & Surgery (MBChB), Law (LLB), and Computer Science with InSTEM bridging pathway guidance.
 
 ## Namibia University GPA & WAM Calculator (NQF Weighted)
 
-[Namibia University GPA Calculator](https://afriwidget.com/namibia-gpa-calculator) — Calculate semester and cumulative Weighted Average Mark (WAM) and Grade Point Average (GPA) across UNAM, NUST, and IUM based on NQF module credit allocations, determine academic degree classifications (Distinction/First Class 75%+, Merit 70-74%, Credit 60-69%, Pass 50-59%), Dean's List qualification, and international US 4.0 scale conversions.
 
 ## Malawi MSCE Grade Calculator (MANEB Points & Best 6)
 
-[Malawi MSCE Grade Calculator](https://afriwidget.com/malawi-msce-grade-calculator) — Calculate official Malawi National Examinations Board (MANEB) MSCE points aggregate on the Best 6 subjects scale (where lower points reflect superior performance, Grade 1 to Grade 9), incorporating compulsory English Language/Literature, tallying credit passes (Grades 1 to 6) and distinctions (Grades 1 and 2), and verifying official Certificate Pass criteria (6 subjects passed including English).
 
 ## Malawi University Admission Checker (NCHE Selection & Cut-Offs)
 
-[Malawi University Admission Checker](https://afriwidget.com/malawi-university-admission-calculator) — Evaluate university admission eligibility and competitive selection points across public universities in Malawi (UNIMA, MUBAS, LUANAR, MUST, MZUNI, and KUHeS) under National Council for Higher Education (NCHE) harmonized guidelines, checking faculty-specific prerequisites in Engineering, Medicine & Surgery (MBBS), Law (LLB), Nursing, and Agriculture alongside national quota and Higher Education Students’ Loans and Grants Board (HESLGB) financing criteria.
 
 ## Malawi University GPA & CGPA Calculator (4.0 Scale & Honours)
 
-[Malawi University GPA Calculator](https://afriwidget.com/malawi-gpa-calculator) — Compute credit-weighted Semester Grade Point Average (GPA), cumulative Grade Point Average (CGPA), and academic degree honours classifications (Pass with Distinction/First Class Honours 3.60+, Pass with Credit/Upper Second 3.00-3.59, Pass/Lower Second 2.50-2.99, Third Class Pass 2.00-2.49) for higher education institutions in Malawi including UNIMA, MUBAS, LUANAR, and MUST.
 
 ## New Zealand NCEA Credits & Rank Score Calculator
 
@@ -701,50 +594,38 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## Liberia WAEC Grade Calculator (WASSCE Division & 9-Point Scale)
 
-[Liberia WAEC Grade Calculator](https://afriwidget.com/liberia-waec-grade-calculator) — Calculate official West African Senior School Certificate Examination (WASSCE) letter grades (A1 to F9) and numerical points according to the West African Examinations Council (WAEC Monrovia Office) regulations, compute Best 6 subject aggregates incorporating compulsory English Language and General Mathematics, tally credit passes, and verify certificate division standing (Division 1, 2, or 3).
 
 ## Liberia University Admission Calculator (UL, Cuttington & Entrance Exam)
 
-[Liberia University Admission Calculator](https://afriwidget.com/liberia-university-admission-calculator) — Evaluate undergraduate admission eligibility for the University of Liberia (UL), Cuttington University, William V.S. Tubman University, and accredited tertiary colleges in Liberia by combining WASSCE secondary school credits with institutional entrance examination performance on the 60/40 Composite Admission Index.
 
 ## Liberia University GPA Calculator (Semester GPA & CGPA 4.0 Scale)
 
-[Liberia University GPA Calculator](https://afriwidget.com/liberia-gpa-calculator) — Compute semester Grade Point Average (GPA) and Cumulative CGPA on the standard 4.00 collegiate scale for the University of Liberia (UL), Cuttington University, and Liberian tertiary colleges, calculate quality points per credit hour, track Dean's List eligibility, and determine Latin honours (Summa Cum Laude, Magna Cum Laude, Cum Laude).
 
 ## Cameroon GCE O-Level Calculator (Points & Sixth Form Eligibility)
 
-[Cameroon GCE O-Level Calculator](https://afriwidget.com/cameroon-gce-o-level-calculator) — Calculate official Cameroon GCE Ordinary Level (O-Level) points (Grade A=3, B=2, C=1), compute Best 6 subjects aggregate score, check passing grades count, and evaluate eligibility for Sixth Form (Lower Sixth Science, Arts, and Commercial series) and MINESEC certificate regulations.
 
 ## Cameroon GCE A-Level Calculator (Points, Grades & University Clearance)
 
-[Cameroon GCE A-Level Calculator](https://afriwidget.com/cameroon-gce-a-level-calculator) — Calculate Cameroon General Certificate of Education Advanced Level (GCE A-Level) total points on the official 5-point scale (A=5, B=4, C=3, D=2, E=1; O/F=0), compute Best 3 subjects faculty score out of 15, tally principal passes count, and determine direct university degree matriculation eligibility under MINESUP and CGCEB rules.
 
 ## Cameroon University Admission Calculator (UB, UBa, Concours & Cut-offs)
 
-[Cameroon University Admission Calculator](https://afriwidget.com/cameroon-university-admission-calculator) — Evaluate undergraduate degree admission chances for University of Buea (UB), University of Bamenda (UBa), Yaoundé I, Douala, and competitive entrance Concourses (FHS Buea, FET UB, NAHPI UBa, ENS Yaoundé) by analyzing GCE A-Level points, O-Level core credits, prerequisite subject compliance, and competitive Concours composite scores.
 
 ## Rwanda National Exam Points Calculator (NESA S6 & S3)
 
-[Rwanda National Exam Points Calculator](https://afriwidget.com/rwanda-national-exam-points-calculator) — Calculate official Rwanda National Examination and School Inspection Authority (NESA) exam points for Senior Six (S6 Advanced Level, TVET, TTC out of 60 weighted points) and Senior Three (S3 Ordinary Level out of 54 points), with Higher Education Council (HEC) compliance, AGCSE graduation clearance, and University of Rwanda (UR) admission audits.
 
 ## Seychelles Secondary Exam Calculator (S5 Cambridge IGCSE Points)
 
-[Seychelles Secondary Exam Calculator](https://afriwidget.com/seychelles-secondary-exam-calculator) — Calculate official Seychelles Secondary Five (S5) Cambridge IGCSE examination points on the 8-point scale (A*=8 to G=1), count credit passes (Grade C and above), and evaluate admission qualification status for School of Advanced Level Studies (SALS), Seychelles Institute of Technology (SIT), NIHSS, and TGTC.
 
 ## Seychelles University Admission Calculator (UniSey & ANHRD Scholarship)
 
-[Seychelles University Admission Calculator](https://afriwidget.com/seychelles-university-admission-calculator) — Compute University of Seychelles (UniSey) admission points and UCAS tariff score from Cambridge International A-Levels, check prerequisite O-Level English and Mathematics compliance, evaluate direct degree admission eligibility, and assess National Human Resources Development (ANHRD) government scholarship qualification.
 
 ## Seychelles GPA Calculator (UniSey SGPA & CGPA 4.0/4.3 Scales)
 
-[Seychelles GPA Calculator](https://afriwidget.com/seychelles-gpa-calculator) — Calculate Semester Grade Point Average (SGPA) and Cumulative CGPA on the standard 4.0 and 4.3 scales for the University of Seychelles (UniSey) and Seychellois tertiary institutes, incorporating SQA credit weighting, quality points, and British undergraduate degree honours classification (First Class, Upper Second 2:1, Lower Second 2:2, Third Class).
 
 ## Seychelles Student Budget Calculator (Monthly SCR & ANHRD Allowance)
 
-[Seychelles Student Budget Calculator](https://afriwidget.com/seychelles-student-budget-calculator) — Plan student living expenses in Seychelles Rupees (SCR) across Mahé, Praslin, and La Digue. Balance ANHRD tertiary stipends, SPTC bus transit cards, island rental housing, STC grocery food baskets, and mobile data packages.
 
 ## Seychelles Study Planner & Revision Timetable (IGCSE, A-Levels & UniSey)
 
-[Seychelles Study Planner](https://afriwidget.com/seychelles-study-planner) — Generate an intelligent, priority-weighted revision timetable for Seychelles secondary and tertiary students preparing for S5 Cambridge IGCSE, SALS A-Levels, and UniSey degree modules with custom Pomodoro study blocks and spaced repetition schedules.
 
 

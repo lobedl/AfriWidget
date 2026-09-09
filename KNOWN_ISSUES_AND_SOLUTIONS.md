@@ -206,7 +206,7 @@ A newly added tool page displayed an incorrect parent category in its breadcrumb
 When cloning an existing tool template, the developer or AI agent omitted updating the intermediate breadcrumb link (`<a href="/productivity">Productivity Tools</a>` to `<a href="/education">Education Tools</a>`).
 
 ### ✅ The Solution:
-1. **Strict Category Matrix**: Always match the intermediate breadcrumb link directly with the tool's subject domain (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`).
+1. **Strict Category Matrix**: Always match the intermediate breadcrumb link directly with the tool's subject domain (`/education`, `/finance`, `/health`, `/productivity`, `/business`).
 2. **Automated Audit**: Before finishing any turn, run the automated verification script defined in `BREADCRUMB_AND_NAVIGATION_STANDARDS.md`.
 3. **Canonical Reference**: Follow `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for all breadcrumb markup standards.
 

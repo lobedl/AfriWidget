@@ -19,8 +19,7 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
     ['/finance', 'Finance Tools'],
     ['/health', 'Health Tools'],
     ['/productivity', 'Productivity Tools'],
-    ['/success-stories', 'Success Stories'],
-    ['/widgets', 'All Tools Directory']
+    ['/success-stories', 'Success Stories']
   ];
 
   var legalItems = [

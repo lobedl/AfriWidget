@@ -30,10 +30,6 @@ Free, privacy-first calculators and utility tools for health, finance, and educa
 | `terms.html` | `/terms.html` — Terms of service |
 | `adsense-disclaimer.html` | `/adsense-disclaimer.html` — AdSense disclaimer |
 | `cookie-policy.html` | `/cookie-policy.html` — Cookie policy |
-| `random-address-generator.html` | `/random-address-generator` — Fictional address generator |
-| `random-phone-number-generator.html` | `/random-phone-number-generator` — Fictional phone number generator |
-| `random-date-generator.html` | `/random-date-generator` — Random date generator |
-| `random-color-generator.html` | `/random-color-generator` — Random color generator |
 
 ## Architecture
 

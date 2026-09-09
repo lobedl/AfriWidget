@@ -89,45 +89,33 @@ const descriptions2 = {
     meta: "Calculate gross profit margin, net profit margin, and percentage markup from cost and selling price with comprehensive revenue breakdowns.",
     og: "Calculate gross profit margins, net margins, and selling price markups for business profitability."
   },
-  "random-address-generator.html": {
     meta: "Generate realistic mock street addresses, postal codes, and city data for software testing, form validation, and database seeding.",
     og: "Create random mock street addresses and postal coordinates for developer testing."
   },
-  "random-business-name-generator.html": {
     meta: "Generate unique, catchy business name ideas across technology, retail, creative, and consulting niches with customizable keywords.",
     og: "Generate random, creative business names and brand ideas for new ventures and projects."
   },
-  "random-color-generator.html": {
     meta: "Generate random vibrant colors, HEX codes, RGB, HSL values, and complementary color palettes with one-click clipboard copying.",
     og: "Generate random colors, HEX/RGB codes, and harmonious color palettes instantly."
   },
-  "random-date-generator.html": {
     meta: "Generate random dates within custom date ranges, years, and timeframes for developer test data, mock logs, and simulation models.",
     og: "Create random dates and timestamps within custom start and end intervals for testing."
   },
-  "random-nickname-generator.html": {
     meta: "Generate fun, creative nicknames and gaming handles for Discord, gamer tags, social media profiles, and creative character names.",
     og: "Create unique, creative nicknames and gamer tags tailored to your personal style."
   },
-  "random-phone-number-generator.html": {
     meta: "Generate valid-format mock phone numbers with international country codes for QA testing, UI mockups, and form verification.",
     og: "Generate random formatted test phone numbers for software testing and form validation."
   },
-  "random-team-name-generator.html": {
     meta: "Generate creative, cool, and funny team names for sports leagues, trivia nights, hackathons, workplace squads, and esports competitions.",
     og: "Discover awesome team names for sports, corporate squads, hackathons, and pub trivia."
   },
-  "random-username-generator.html": {
     meta: "Generate unique, memorable usernames and handles for Instagram, TikTok, Reddit, YouTube, Twitch, and gaming platforms.",
     og: "Generate cool, available-style usernames and handles for social media and gaming."
   },
   "reading-time-speech-estimator.html": {
     meta: "Estimate reading time and speaking speech duration from word count with customizable words-per-minute (WPM) speed settings.",
     og: "Calculate estimated reading time and presentation speech duration for articles and scripts."
-  },
-  "real-estate.html": {
-    meta: "Explore free real estate calculators for mortgages, rental yield, rent affordability, and property investment cash flow analysis.",
-    og: "Browse free online real estate and property investment calculators with instant private results."
   },
   "reddit-video-downloader.html": {
     meta: "Extract direct MP4 video stream URLs with synced audio from public Reddit video posts directly in your browser. 100% private and fast.",

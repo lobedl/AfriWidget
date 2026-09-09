@@ -975,7 +975,7 @@ const template = `/**
       });
     }
 
-    // 8.2 DIRECTORY (widgets.html) INTEGRATION
+    // 8.2 DIRECTORY SEARCH INTEGRATION
     const dirSearch = document.getElementById('directorySearch');
     const dirClear = document.getElementById('clearSearchBtn');
     const dirCount = document.getElementById('searchResultCount');

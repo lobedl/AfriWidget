@@ -96,7 +96,7 @@ The tool **MUST** be added under its respective category section in `index.html`
 
 ### 10. Static Header & Zero-Mismatch Breadcrumb Bar
 - The tool page itself **MUST** contain the static pre-rendered `<nav>` header and a visual breadcrumb bar.
-- The intermediate breadcrumb item **MUST** link to the tool's matching parent category (`/education`, `/finance`, `/health`, `/productivity`, `/business`, `/real-estate`). Never leave a copied category slug like `/productivity` on an education or finance tool.
+- The intermediate breadcrumb item **MUST** link to the tool's matching parent category (`/education`, `/finance`, `/health`, `/productivity`, `/business`). Never leave a copied category slug like `/productivity` on an education or finance tool.
 - See `BREADCRUMB_AND_NAVIGATION_STANDARDS.md` for full requirements and the automated audit script.
 
 ---
