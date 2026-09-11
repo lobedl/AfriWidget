@@ -4,6 +4,8 @@
 /api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
+/success-stories             /use-cases      301
+/success-stories.html        /use-cases      301
 /reddit-video-downloader     /productivity   301
 /reddit-video-downloader.html /productivity   301
 /reddit-video-downloader-hd  /productivity   301

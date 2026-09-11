@@ -156,7 +156,7 @@ const ignoredFiles = new Set([
   "index.html", "education.html", "finance.html", "health.html", 
   "productivity.html", "widgets.html", "about.html", "contact.html", 
   "privacy-policy.html", "terms.html", "cookie-policy.html", 
-  "adsense-disclaimer.html", "404.html", "success-stories.html", 
+  "adsense-disclaimer.html", "404.html", "use-cases.html", 
   "admissions.html", "faq.html"
 ]);
 const htmlFiles = fs.readdirSync(".").filter(f => f.endsWith(".html") && !ignoredFiles.has(f));

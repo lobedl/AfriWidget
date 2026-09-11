@@ -65,6 +65,9 @@ app.all('/api/send-email', handleSendEmailFunction);
 app.get(['/tech-tool.html', '/tech-tools.html', '/tech-tool', '/tech-tools'], (req, res) => {
   res.redirect(301, '/productivity');
 });
+app.get(['/success-stories.html', '/success-stories'], (req, res) => {
+  res.redirect(301, '/use-cases');
+});
 
 import fs from 'fs';
 

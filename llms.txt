@@ -21,7 +21,7 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 ## User Success Stories & Impact Studies
 
-[User Success Stories & Impact Studies](https://afriwidget.com/success-stories) — Real-world case studies of students, entrepreneurs, freelancers, and healthcare workers across Africa utilizing AfriWidget's free privacy-first web tools for academic placement, debt payoff, freelance rate optimization, and clinical safety.
+[Everyday Use Cases & Practical Applications](https://afriwidget.com/use-cases) — Real-world case studies of students, entrepreneurs, freelancers, and healthcare workers across Africa utilizing AfriWidget's free privacy-first web tools for academic placement, debt payoff, freelance rate optimization, and clinical safety.
 
 ## Debt Payoff & Snowball Calculator
 

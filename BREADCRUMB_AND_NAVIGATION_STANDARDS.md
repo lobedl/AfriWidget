@@ -97,7 +97,7 @@ if (match) {
     if (km) configs[km[1]] = km[2];
   }
 }
-const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && !["index.html", "widgets.html", "education.html", "finance.html", "health.html", "productivity.html", "business.html", "contact.html", "faq.html", "privacy-policy.html", "terms.html", "cookie-policy.html", "success-stories.html"].includes(f));
+const files = fs.readdirSync(".").filter(f => f.endsWith(".html") && !["index.html", "widgets.html", "education.html", "finance.html", "health.html", "productivity.html", "business.html", "contact.html", "faq.html", "privacy-policy.html", "terms.html", "cookie-policy.html", "use-cases.html"].includes(f));
 let mismatches = 0;
 for (const file of files) {
   const toolSlug = file.replace(".html", "");
