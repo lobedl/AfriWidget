@@ -1,7 +1,7 @@
 /**
  * AfriWidget Unified Search Engine
  * - 100% Client-Side & Ultra-High Performance (<1ms search time)
- * - Comprehensive index of all 175+ tools on AfriWidget
+ * - Comprehensive index of all 120+ tools on AfriWidget
  * - Typo tolerance via Damerau-Levenshtein edit distance
  * - Word-order independent token matching & intent awareness
  * - Autocomplete dropdown with highlighted text, category badges, & keyboard navigation
@@ -704,7 +704,7 @@
         <div class="relative w-full max-w-2xl bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden mt-6 sm:mt-10 animate-in fade-in zoom-in-95 duration-150">
           <div class="flex items-center px-4 py-3 border-b border-slate-200">
             <svg class="h-5 w-5 text-slate-400 shrink-0 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="m20 20-4-4"/></svg>
-            <input id="modalSearchInput" type="search" class="w-full bg-transparent text-slate-900 placeholder:text-slate-400 outline-none text-base font-medium" placeholder="Search all 175+ tools (e.g. GPA, BMI, Mortgage, TVET)..." autocomplete="off">
+            <input id="modalSearchInput" type="search" class="w-full bg-transparent text-slate-900 placeholder:text-slate-400 outline-none text-base font-medium" placeholder="Search all 120+ tools (e.g. GPA, BMI, Mortgage, TVET)..." autocomplete="off">
             <kbd class="hidden sm:inline-block text-[11px] font-bold text-slate-400 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded shadow-2xs">Esc</kbd>
           </div>
           <div id="modalSearchResults" class="max-h-[60vh] overflow-y-auto p-2 divide-y divide-slate-100">
