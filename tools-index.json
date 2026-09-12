@@ -33,26 +33,6 @@
     ]
   },
   {
-    "slug": "age-calculator",
-    "name": "Exact Age Calculator",
-    "shortName": "Age Calculator",
-    "description": "Calculate exact age in years, months, weeks, days, hours, and minutes from date of birth. Includes countdown to your next birthday.",
-    "category": "Everyday",
-    "url": "/age-calculator",
-    "keywords": [
-      "age calculator",
-      "education",
-      "age",
-      "birthday",
-      "date",
-      "calculator",
-      "years",
-      "months",
-      "days",
-      "exact age"
-    ]
-  },
-  {
     "slug": "ai-business-name-generator",
     "name": "AI Business Name Generator",
     "shortName": "AI Business Name Generator",
@@ -261,7 +241,7 @@
       "certificate",
       "ghana",
       "best 2 optional",
-      "scale 6\u201354",
+      "scale 6–54",
       "calculator"
     ]
   },
@@ -412,41 +392,6 @@
       "omsas 4.0",
       "4.33 scale",
       "york 9.0"
-    ]
-  },
-  {
-    "slug": "canada-scholarship-finder",
-    "name": "Canada Scholarship & Grant Finder",
-    "shortName": "Canada Scholarship Finder",
-    "description": "Find and calculate Canadian university scholarships, merit grants, government bursaries, and STEM awards based on your Grade 12 average and background. 100% private.",
-    "category": "Education",
-    "url": "/canada-scholarship-finder",
-    "keywords": [
-      "canada scholarship finder",
-      "education",
-      "canada",
-      "scholarship",
-      "finder",
-      "entrance",
-      "major",
-      "merit",
-      "awards",
-      "loran",
-      "schulich",
-      "community",
-      "national",
-      "scholarships",
-      "bursaries",
-      "ubc",
-      "waterloo",
-      "mcgill",
-      "mcmaster",
-      "queens",
-      "tuition",
-      "funding",
-      "entrance awards",
-      "loran / schulich",
-      "need bursaries"
     ]
   },
   {
@@ -738,7 +683,7 @@
     "slug": "germany-abitur-grade-calculator",
     "name": "Germany Abitur Grade Calculator",
     "shortName": "Germany Abitur Grade Calculator",
-    "description": "Calculate your German Abitur grade (Abiturnote 1.0 to 4.0) from total points (300 to 900) across Block I coursework and Block II Abiturpr\u00fcfungen with KMK standards.",
+    "description": "Calculate your German Abitur grade (Abiturnote 1.0 to 4.0) from total points (300 to 900) across Block I coursework and Block II Abiturprüfungen with KMK standards.",
     "category": "Education",
     "url": "/germany-abitur-grade-calculator",
     "keywords": [
@@ -759,14 +704,14 @@
       "gpa",
       "ects",
       "kmk formula",
-      "1.0\u20134.0 scale"
+      "1.0–4.0 scale"
     ]
   },
   {
     "slug": "germany-gpa-converter",
     "name": "Germany GPA Converter",
     "shortName": "Germany GPA Converter",
-    "description": "Convert your US, UK, Indian, Nigerian, or international GPA to the German 1.0\u20134.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel).",
+    "description": "Convert your US, UK, Indian, Nigerian, or international GPA to the German 1.0–4.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel).",
     "category": "Education",
     "url": "/germany-gpa-converter",
     "keywords": [
@@ -1020,7 +965,7 @@
     "slug": "icass-calculator",
     "name": "ICASS Score Calculator for TVET Students",
     "shortName": "ICASS Calculator",
-    "description": "Calculate weighted Internal Continuous Assessment (ICASS) scores for South Africa TVET college courses (N1\u2013N6 and NC(V)). Free, instant, and private in-browser tool.",
+    "description": "Calculate weighted Internal Continuous Assessment (ICASS) scores for South Africa TVET college courses (N1–N6 and NC(V)). Free, instant, and private in-browser tool.",
     "category": "Education",
     "url": "/icass-calculator",
     "keywords": [
@@ -1169,7 +1114,7 @@
     "slug": "jamb-utme-aggregate-calculator",
     "name": "JAMB UTME Aggregate Calculator",
     "shortName": "JAMB UTME Aggregate Calculator",
-    "description": "Calculate Nigerian university admission screening aggregate points from JAMB UTME scores and WAEC / NECO O\u2019Level grades. Free Post-UTME screening calculator.",
+    "description": "Calculate Nigerian university admission screening aggregate points from JAMB UTME scores and WAEC / NECO O’Level grades. Free Post-UTME screening calculator.",
     "category": "Education",
     "url": "/jamb-utme-aggregate-calculator",
     "keywords": [
@@ -1425,21 +1370,6 @@
     ]
   },
   {
-    "slug": "matric-points-calculator",
-    "name": "South African Matric Points Calculator",
-    "shortName": "South African Matric Points Calculator (NSC Pass Levels & Distinctions)",
-    "description": "Calculate your South African Matric Points, official NSC Pass Level (Bachelor",
-    "category": "Education",
-    "url": "/matric-points-calculator",
-    "keywords": [
-      "matric points calculator",
-      "education",
-      "matric",
-      "points",
-      "calculator"
-    ]
-  },
-  {
     "slug": "matric-sba-exam-calculator",
     "name": "Matric SBA + Final Exam Pass Calculator",
     "shortName": "Matric SBA + Exam Pass Calculator",
@@ -1506,7 +1436,7 @@
     "slug": "new-zealand-ncea-credits-calculator",
     "name": "New Zealand NCEA Credits & Rank Score Calculator",
     "shortName": "NZ NCEA Credits Calculator",
-    "description": "Calculate your NCEA Level 1, 2, and 3 credits, Certificate & Course Endorsements (Merit / Excellence), University Entrance (UE) status, and NZ University Rank Score (0\u2013320 points).",
+    "description": "Calculate your NCEA Level 1, 2, and 3 credits, Certificate & Course Endorsements (Merit / Excellence), University Entrance (UE) status, and NZ University Rank Score (0–320 points).",
     "category": "Education",
     "url": "/new-zealand-ncea-credits-calculator",
     "keywords": [
@@ -1643,7 +1573,7 @@
     "slug": "norway-gpa-calculator",
     "name": "Norway GPA Calculator",
     "shortName": "Norway GPA Calculator",
-    "description": "Calculate your Norwegian university GPA (A\u2013F scale), ECTS credit weighting, US 4.0 conversion, and Samordna opptak VGS admission points with science bonus points.",
+    "description": "Calculate your Norwegian university GPA (A–F scale), ECTS credit weighting, US 4.0 conversion, and Samordna opptak VGS admission points with science bonus points.",
     "category": "Education",
     "url": "/norway-gpa-calculator",
     "keywords": [
@@ -1758,9 +1688,9 @@
   },
   {
     "slug": "olevel-subject-combination-checker",
-    "name": "WAEC / NECO O\u2019Level Subject Combination Checker",
+    "name": "WAEC / NECO O’Level Subject Combination Checker",
     "shortName": "WAEC / NECO Subject Checker",
-    "description": "Verify required O\u2019Level subject combinations for university, polytechnic, and college courses across Medicine, Engineering, Law, and Sciences.",
+    "description": "Verify required O’Level subject combinations for university, polytechnic, and college courses across Medicine, Engineering, Law, and Sciences.",
     "category": "Education",
     "url": "/olevel-subject-combination-checker",
     "keywords": [
@@ -1871,7 +1801,7 @@
       "four",
       "subjects",
       "4 subjects",
-      "divisions 1\u20134"
+      "divisions 1–4"
     ]
   },
   {
@@ -2209,7 +2139,7 @@
     "slug": "switzerland-grade-calculator",
     "name": "Switzerland Grade Conversion Calculator",
     "shortName": "Switzerland Grade Calculator",
-    "description": "Calculate your Swiss university semester GPA, ECTS credit-weighted averages, ETH Zurich/EPFL Basispr\u00fcfung blocks, and convert Swiss 1.0\u20136.0 grades to US 4.0 GPA, German grades, and ECTS.",
+    "description": "Calculate your Swiss university semester GPA, ECTS credit-weighted averages, ETH Zurich/EPFL Basisprüfung blocks, and convert Swiss 1.0–6.0 grades to US 4.0 GPA, German grades, and ECTS.",
     "category": "Education",
     "url": "/switzerland-grade-calculator",
     "keywords": [
@@ -2440,21 +2370,6 @@
     ]
   },
   {
-    "slug": "tvet-college-calculator",
-    "name": "South African TVET College Calculator",
-    "shortName": "South African TVET College Calculator (NATED N1-N6, NC(V) & NSFAS)",
-    "description": "Calculate your TVET college admission eligibility across South Africa for NATED N1\u2013N6 engineering & business diplomas, NC(V) levels, artisan trades, and NSFAS bursary.",
-    "category": "Education",
-    "url": "/tvet-college-calculator",
-    "keywords": [
-      "tvet college calculator",
-      "education",
-      "tvet",
-      "college",
-      "calculator"
-    ]
-  },
-  {
     "slug": "tvet-exam-target-mark-calculator",
     "name": "TVET Exam Target Mark Calculator",
     "shortName": "TVET Exam Target Mark Calculator",
@@ -2480,7 +2395,7 @@
     "slug": "tvet-ncv-pass-calculator",
     "name": "TVET NC(V) Pass & Aggregate Calculator",
     "shortName": "TVET NC(V) Pass & Aggregate",
-    "description": "Calculate South African TVET NC(V) Level 2\u20134 pass status, ICASS (25%), ISAT (25%), and Exam (50%) scores with DHET and Umalusi certification criteria.",
+    "description": "Calculate South African TVET NC(V) Level 2–4 pass status, ICASS (25%), ISAT (25%), and Exam (50%) scores with DHET and Umalusi certification criteria.",
     "category": "Education",
     "url": "/tvet-ncv-pass-calculator",
     "keywords": [
@@ -2552,7 +2467,7 @@
     "slug": "uce-grade-calculator",
     "name": "UCE Grade Calculator",
     "shortName": "UCE Grade Calculator",
-    "description": "Calculate UNEB UCE aggregates, Division (1\u20134), and A-Level combination eligibility from best 8 Senior 4 Ordinary Level subject grades.",
+    "description": "Calculate UNEB UCE aggregates, Division (1–4), and A-Level combination eligibility from best 8 Senior 4 Ordinary Level subject grades.",
     "category": "Education",
     "url": "/uce-grade-calculator",
     "keywords": [
@@ -2738,7 +2653,7 @@
     "slug": "uneb-results-estimator",
     "name": "UNEB Results Estimator",
     "shortName": "UNEB Results Estimator",
-    "description": "Estimate your expected UNEB PLE aggregates (4\u201336), UCE O-Level Best 8 division (1\u20134), and UACE A-Level points (out of 20) from mock exam scores and continuous assessment.",
+    "description": "Estimate your expected UNEB PLE aggregates (4–36), UCE O-Level Best 8 division (1–4), and UACE A-Level points (out of 20) from mock exam scores and continuous assessment.",
     "category": "Education",
     "url": "/uneb-results-estimator",
     "keywords": [
@@ -2894,7 +2809,7 @@
       "school",
       "certificate",
       "best 3 electives",
-      "scale 6\u201354",
+      "scale 6–54",
       "calculator"
     ]
   },

@@ -94,6 +94,14 @@
 /macro-calculator.html                   /health         301
 /calorie-deficit-planner                 /health         301
 /calorie-deficit-planner.html            /health         301
+/age-calculator                          /productivity   301
+/age-calculator.html                     /productivity   301
+/matric-points-calculator                /south-african-aps-calculator  301
+/matric-points-calculator.html           /south-african-aps-calculator  301
+/tvet-college-calculator                 /south-african-tvet-nated-calculator  301
+/tvet-college-calculator.html            /south-african-tvet-nated-calculator  301
+/canada-scholarship-finder               /education      301
+/canada-scholarship-finder.html          /education      301
 
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
 
