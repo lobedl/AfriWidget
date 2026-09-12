@@ -361,14 +361,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Word Counter](https://afriwidget.com/word-counter) — Count words, characters, sentences, paragraphs, and estimated reading time instantly.
 
-## GCSE Grade Calculator
-
-[GCSE Grade Calculator](https://afriwidget.com/gcse-grade-calculator) — Calculate 9–1 average GCSE grades, DfE Attainment 8 scores, and Sixth Form / College admissions eligibility with EBacc bucket breakdowns.
-
-## Degree Classification Calculator
-
-[Degree Classification Calculator](https://afriwidget.com/degree-classification-calculator) — Calculate UK undergraduate degree classification (First-Class, Upper Second 2:1, Lower Second 2:2, Third-Class) across modular Year 2 and Year 3 weightings.
-
 ## UACE Points Calculator
 
 [UACE Points Calculator](https://afriwidget.com/uace-points-calculator) — Calculate Uganda Advanced Certificate of Education (UACE) UNEB A-Level points (out of 20), Principal Passes, and Makerere PUJAB university cut-off weights.
@@ -592,40 +584,22 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Germany GPA Converter](https://afriwidget.com/germany-gpa-converter) — Convert international university and high school GPAs (US 4.0, UK percentages, India 10.0 CGPA, Nigeria 5.0 CGPA, and European systems) to the German 1.0–4.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel) recognized by uni-assist, DAAD, and the KMK for Master's and Bachelor's degree admissions.
 
-## Liberia WAEC Grade Calculator (WASSCE Division & 9-Point Scale)
+## Exact Age Calculator
 
+[Exact Age Calculator](https://afriwidget.com/age-calculator) — Calculate your exact chronological age in years, months, days, hours, and minutes with upcoming birthday countdown and life milestone statistics.
 
-## Liberia University Admission Calculator (UL, Cuttington & Entrance Exam)
+## Cumulative GPA Calculator
 
+[Cumulative GPA Calculator](https://afriwidget.com/gpa-calculator) — Calculate semester GPA and cumulative CGPA on standard 4.0 and 5.0 scales with weighted credit hours and target grade forecasting.
 
-## Liberia University GPA Calculator (Semester GPA & CGPA 4.0 Scale)
+## South African Matric Points Calculator
 
+[South African Matric Points Calculator](https://afriwidget.com/matric-points-calculator) — Calculate South African Matric Points, official NSC Pass Levels (Bachelor's Degree, Diploma, Higher Certificate), distinctions count, and university admission eligibility.
 
-## Cameroon GCE O-Level Calculator (Points & Sixth Form Eligibility)
+## South African TVET College Calculator
 
+[South African TVET College Calculator](https://afriwidget.com/tvet-college-calculator) — Calculate South African TVET College exam results across NATED N1–N6, NC(V) Level 2–4 aggregates, and verify NSFAS allowance criteria.
 
-## Cameroon GCE A-Level Calculator (Points, Grades & University Clearance)
+## Unit Converter
 
-
-## Cameroon University Admission Calculator (UB, UBa, Concours & Cut-offs)
-
-
-## Rwanda National Exam Points Calculator (NESA S6 & S3)
-
-
-## Seychelles Secondary Exam Calculator (S5 Cambridge IGCSE Points)
-
-
-## Seychelles University Admission Calculator (UniSey & ANHRD Scholarship)
-
-
-## Seychelles GPA Calculator (UniSey SGPA & CGPA 4.0/4.3 Scales)
-
-
-## Seychelles Student Budget Calculator (Monthly SCR & ANHRD Allowance)
-
-
-## Seychelles Study Planner & Revision Timetable (IGCSE, A-Levels & UniSey)
-
-
-
+[Unit Converter](https://afriwidget.com/unit-converter) — Convert units of length, mass, temperature, volume, area, speed, time, digital storage, and energy instantly in your browser.

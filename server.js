@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { handler as groqHandler } from './netlify/functions/groq-proxy.js';
 import { handler as sendEmailHandler } from './netlify/functions/send-email.js';
@@ -62,14 +63,24 @@ app.all('/.netlify/functions/send-email', handleSendEmailFunction);
 app.all('/api/send-email', handleSendEmailFunction);
 
 // 301 Redirects from _redirects
-app.get(['/tech-tool.html', '/tech-tools.html', '/tech-tool', '/tech-tools'], (req, res) => {
-  res.redirect(301, '/productivity');
-});
-app.get(['/success-stories.html', '/success-stories'], (req, res) => {
-  res.redirect(301, '/use-cases');
-});
-
-import fs from 'fs';
+try {
+  const redirectsContent = fs.readFileSync(path.join(__dirname, '_redirects'), 'utf8');
+  redirectsContent.split('\n').forEach(line => {
+    line = line.trim();
+    if (line && !line.startsWith('#')) {
+      const parts = line.split(/\s+/);
+      if (parts.length >= 2) {
+        const [from, to, code] = parts;
+        const statusCode = parseInt(code, 10) || 301;
+        if (statusCode === 301 || statusCode === 302) {
+          app.get(from, (req, res) => res.redirect(statusCode, to));
+        }
+      }
+    }
+  });
+} catch (err) {
+  console.error('Error loading _redirects:', err);
+}
 
 // Serve static files with html extension fallback
 app.use(express.static(__dirname, { extensions: ['html'] }));

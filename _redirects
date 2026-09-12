@@ -18,6 +18,18 @@
 /tech-tools       /productivity   301
 
 # Slug Migration Redirects
+/everyday                                /productivity                            301
+/everyday.html                           /productivity                            301
+/tvet-nated-pass-calculator              /south-african-tvet-nated-calculator     301
+/tvet-nated-pass-calculator.html         /south-african-tvet-nated-calculator     301
+/hourly-to-salary-calculator             /hourly-to-salary                        301
+/hourly-to-salary-calculator.html        /hourly-to-salary                        301
+/invoice-generator                       /invoice-receipt-generator               301
+/invoice-generator.html                  /invoice-receipt-generator               301
+/text-case-converter                     /text-case-converter-cleanup             301
+/text-case-converter.html                /text-case-converter-cleanup             301
+/rent-affordability-calculator           /rent-affordability                      301
+/rent-affordability-calculator.html      /rent-affordability                      301
 /json-formatter                          /json-formatter-validator                 301
 /json-formatter.html                     /json-formatter-validator                 301
 /a-level-grade-calculator                /uk-a-level-grade-calculator             301
