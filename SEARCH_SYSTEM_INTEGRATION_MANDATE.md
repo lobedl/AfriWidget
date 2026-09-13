@@ -157,7 +157,7 @@ const ignoredFiles = new Set([
   "productivity.html", "widgets.html", "about.html", "contact.html", 
   "privacy-policy.html", "terms.html", "cookie-policy.html", 
   "adsense-disclaimer.html", "404.html", "use-cases.html", 
-  "admissions.html", "faq.html"
+  "faq.html"
 ]);
 const htmlFiles = fs.readdirSync(".").filter(f => f.endsWith(".html") && !ignoredFiles.has(f));
 const missing = htmlFiles.map(f => f.replace(".html", "")).filter(slug => !indexedSlugs.has(slug));

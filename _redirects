@@ -16,6 +16,10 @@
 /tech-tools.html  /productivity   301
 /tech-tool        /productivity   301
 /tech-tools       /productivity   301
+/admissions       /education      301
+/admissions.html  /education      301
+/admission        /education      301
+/admission.html   /education      301
 
 # Slug Migration Redirects
 /everyday                                /productivity                            301
