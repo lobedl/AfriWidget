@@ -571,10 +571,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Germany Abitur Grade Calculator](https://afriwidget.com/germany-abitur-grade-calculator) — Calculate your official German Abitur grade (Abiturnote 1.0–4.0) from Block I coursework points (out of 600) and Block II final examination points (out of 300) using the official Standing Conference of Ministers of Education (KMK) formula N = 1 + (900 - P) / 180, evaluate pass criteria, and convert Abitur points to international US GPA and ECTS scales.
 
-## Germany University Admission & NC Chance Checker
-
-[Germany University Admission Checker](https://afriwidget.com/germany-university-admission-checker) — Check your admission chances across German universities (Universitäten & Fachhochschulen) for Medicine, Dentistry, Pharmacy, Law, Psychology, CS, and Business, calculate your selection procedure grade (Verfahrensnote), and evaluate Hochschulstart national quotas (Abiturbesten 30%, ZEQ 10%, AdH 60%) with TMS bonuses, vocational qualifications, and voluntary service credits.
-
 ## Germany GPA Converter (Modified Bavarian Formula)
 
 [Germany GPA Converter](https://afriwidget.com/germany-gpa-converter) — Convert international university and high school GPAs (US 4.0, UK percentages, India 10.0 CGPA, Nigeria 5.0 CGPA, and European systems) to the German 1.0–4.0 grading scale using the official Modified Bavarian Formula (Bayerische Formel) recognized by uni-assist, DAAD, and the KMK for Master's and Bachelor's degree admissions.
