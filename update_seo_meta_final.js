@@ -41,10 +41,6 @@ const descriptionsFinal = {
     meta: "Explore free financial calculators for loans, mortgages, compound interest, savings goals, student finance, and debt payoff strategies.",
     og: "Browse free, privacy-first financial calculators for loans, investments, and budgeting."
   },
-  "freelance-hourly-rate-pricing-calculator.html": {
-    meta: "Calculate your optimal freelance hourly rate and client project pricing based on billable hours, annual income targets, and business expenses.",
-    og: "Calculate your freelance hourly rate and project quote estimates to hit annual income goals."
-  },
   "freelance-rate-calculator.html": {
     meta: "Determine your freelance hourly and daily billing rate to cover taxes, business overhead, billable hours, and desired annual income.",
     og: "Calculate freelance hourly rates and project fee structures based on required income."

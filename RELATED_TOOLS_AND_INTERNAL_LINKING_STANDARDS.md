@@ -167,7 +167,7 @@ Use this master map to select the mandatory 3 to 4 related tools whenever creati
 - `compound-interest` ↔ `savings-calculator` ↔ `savings-goal-timeline-calculator` ↔ `loan-calculator` ↔ `debt-payoff-calculator` ↔ `mortgage-calculator` ↔ `rent-affordability` ↔ `percentage-calculator` ↔ `currency-converter`
 
 ### 3.11 Business, Freelance & Pricing Cluster 💼 ⚡
-- `freelance-hourly-rate-pricing-calculator` ↔ `freelance-rate-calculator` ↔ `hourly-to-salary` ↔ `remote-salary-converter` ↔ `profit-margin-calculator` ↔ `break-even-calculator` ↔ `startup-burn-rate-calculator` ↔ `startup-cost-calculator` ↔ `paypal-fee-calculator` ↔ `invoice-receipt-generator` ↔ `creator-sponsorship-calculator` ↔ `website-valuation-calculator`
+- `freelance-rate-calculator` ↔ `hourly-to-salary` ↔ `remote-salary-converter` ↔ `profit-margin-calculator` ↔ `break-even-calculator` ↔ `startup-burn-rate-calculator` ↔ `startup-cost-calculator` ↔ `paypal-fee-calculator` ↔ `invoice-receipt-generator` ↔ `creator-sponsorship-calculator` ↔ `website-valuation-calculator`
 
 ### 3.12 Career & Writing Utilities Cluster 📄 ✍️
 - `work-experience-resume-duration-calculator` ↔ `ai-paraphrasing-tool` ↔ `ai-text-summarizer` ↔ `word-counter`

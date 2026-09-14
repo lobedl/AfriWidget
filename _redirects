@@ -20,6 +20,8 @@
 /admissions.html  /education      301
 /admission        /education      301
 /admission.html   /education      301
+/freelance-hourly-rate-pricing-calculator       /freelance-rate-calculator  301
+/freelance-hourly-rate-pricing-calculator.html  /freelance-rate-calculator  301
 
 # Slug Migration Redirects
 /everyday                                /productivity                            301

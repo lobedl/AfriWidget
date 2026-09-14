@@ -194,10 +194,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Productivity Tools](https://afriwidget.com/productivity) — Use 24 browser-based productivity and developer tools for PDF invoices, QR codes, JSON formatting, text cleanup, passwords, word counts, and web utilities.
 
-## Business and Freelance Pricing Calculator
-
-[Business and Freelance Pricing Calculator](https://afriwidget.com/freelance-hourly-rate-pricing-calculator) — Calculate a sustainable freelance hourly rate and project quote from income goals, billable time, overhead, tax, and direct expenses.
-
 ## Savings Goal Timeline Calculator
 
 
