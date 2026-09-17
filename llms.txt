@@ -513,10 +513,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Switzerland University Cost Calculator](https://afriwidget.com/switzerland-university-cost-calculator) — Estimate comprehensive Swiss higher education tuition and living costs across Swiss universities (ETH Zurich, EPFL, UZH, UNIGE, HSG, Basel, Bern), modeling WG student room rent by canton, student health insurance exemptions (Swisscare/Scorestudies), SBB Halbtax transport, and cantonal Permit B visa financial solvency proof (CHF 21,000–24,000).
 
-## Switzerland Language Learning Planner
-
-[Switzerland Language Learning Planner](https://afriwidget.com/switzerland-language-learning-planner) — Plan a structured CEFR study timetable and daily Pomodoro revision routine for German (Goethe C1 / telc C1 for ETH/UZH), French (DELF B2 / DALF C1 for EPFL/UNIGE), Italian, and the official Swiss Fide language examination for Permit B/C residence and citizenship.
-
 ## Norway Student Budget Calculator
 
 
