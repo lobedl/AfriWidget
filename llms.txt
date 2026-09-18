@@ -261,10 +261,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Keyword Density Checker](https://afriwidget.com/keyword-density-checker) — Review word and phrase frequency, document counts, and approximate keyword density privately in the browser.
 
-## URL Slug Generator
-
-[URL Slug Generator](https://afriwidget.com/url-slug-generator) — Turn page titles into lowercase, readable URL slugs with punctuation cleanup, separator options, and one-click copy.
-
 ## JSON Formatter & Validator
 
 [JSON Formatter & Validator](https://afriwidget.com/json-formatter-validator) — Format, validate, and minify JSON with syntax highlighting, error feedback, schema checking, and local browser processing.
@@ -352,10 +348,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## SEO Meta Tag Generator
 
 [SEO Meta Tag Generator](https://afriwidget.com/seo-meta-generator) — Create optimized meta titles, descriptions, and Open Graph social tags for web pages.
-
-## Word Counter
-
-[Word Counter](https://afriwidget.com/word-counter) — Count words, characters, sentences, paragraphs, and estimated reading time instantly.
 
 ## UACE Points Calculator
 

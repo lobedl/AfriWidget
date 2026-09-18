@@ -170,10 +170,10 @@ Use this master map to select the mandatory 3 to 4 related tools whenever creati
 - `freelance-rate-calculator` ↔ `hourly-to-salary` ↔ `remote-salary-converter` ↔ `profit-margin-calculator` ↔ `break-even-calculator` ↔ `startup-burn-rate-calculator` ↔ `startup-cost-calculator` ↔ `paypal-fee-calculator` ↔ `invoice-receipt-generator` ↔ `creator-sponsorship-calculator` ↔ `website-valuation-calculator`
 
 ### 3.12 Career & Writing Utilities Cluster 📄 ✍️
-- `work-experience-resume-duration-calculator` ↔ `ai-paraphrasing-tool` ↔ `ai-text-summarizer` ↔ `word-counter`
+- `work-experience-resume-duration-calculator` ↔ `ai-paraphrasing-tool` ↔ `ai-text-summarizer` ↔ `text-case-converter-cleanup`
 
 ### 3.13 Web, Social Media & Marketing Utilities Cluster 📱 🔍
-- `qr-code-generator` ↔ `whatsapp-direct-link-qr-generator` ↔ `url-slug-generator` ↔ `word-counter` ↔ `reading-time-speech-estimator` ↔ `seo-meta-generator` ↔ `keyword-density-checker`
+- `qr-code-generator` ↔ `whatsapp-direct-link-qr-generator` ↔ `xml-sitemap-builder` ↔ `reading-time-speech-estimator` ↔ `seo-meta-generator` ↔ `keyword-density-checker`
 
 ---
 

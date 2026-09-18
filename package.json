@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "lint": "node --check server.js search-engine.js build-search-engine.js",
-    "build": "node build-search-engine.js && node generate-og-assets.js",
+    "lint": "node --check server.js generate-og-assets.js",
+    "build": "node generate-og-assets.js",
     "deploy": "npx wrangler pages deploy ."
   },
   "dependencies": {

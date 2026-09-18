@@ -4,6 +4,8 @@
 /api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
+/widgets                     /               301
+/widgets.html                /               301
 /success-stories             /use-cases      301
 /success-stories.html        /use-cases      301
 /reddit-video-downloader     /productivity   301
@@ -110,6 +112,10 @@
 /tvet-college-calculator.html            /south-african-tvet-nated-calculator  301
 /canada-scholarship-finder               /education      301
 /canada-scholarship-finder.html          /education      301
+/url-slug-generator                      /productivity   301
+/url-slug-generator.html                 /productivity   301
+/word-counter                            /productivity   301
+/word-counter.html                       /productivity   301
 
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
 

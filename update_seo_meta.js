@@ -82,17 +82,9 @@ const descriptions = {
     meta: "Convert text case between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and clean up duplicate whitespace and line breaks instantly.",
     og: "Easily convert text case and clean up formatting, whitespace, and capitalization online."
   },
-  "url-slug-generator.html": {
-    meta: "Convert titles and text into clean, SEO-friendly URL slugs. Automatically removes special characters, trims punctuation, and handles custom delimiters.",
-    og: "Generate clean, human-readable, and SEO-optimized URL slugs from headings and text."
-  },
   "whatsapp-direct-link-qr-generator.html": {
     meta: "Create direct WhatsApp click-to-chat links and scannable QR codes with pre-filled custom messages. Start chats without saving phone numbers.",
     og: "Generate WhatsApp click-to-chat links and QR codes with custom pre-filled greeting text."
-  },
-  "word-counter.html": {
-    meta: "Count words, characters, sentences, and paragraphs in real time with estimated reading time and speaking speed analysis. Free and 100% private.",
-    og: "Real-time word counter, character counter, sentence analyzer, and reading time estimator."
   },
 
   // === STATIC, POLICY & INFO PAGES ===
