@@ -10,12 +10,13 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODELS_URL = 'https://api.groq.com/openai/v1/models';
 
 const DEFAULT_MODELS = [
-  'llama-3.3-70b-versatile',
-  'llama-3.1-8b-instant',
-  'mixtral-8x7b-32768',
-  'gemma2-9b-it',
+  'groq/compound-mini',
+  'qwen/qwen3.8-27b',
+  'groq/compound',
   'openai/gpt-oss-120b',
-  'openai/gpt-oss-20b'
+  'openai/gpt-oss-20b',
+  'llama-3.3-70b-versatile',
+  'llama-3.1-8b-instant'
 ];
 
 function cleanAIOutput(rawText) {

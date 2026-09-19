@@ -4,6 +4,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { handler as groqHandler } from './netlify/functions/groq-proxy.js';
 import { handler as sendEmailHandler } from './netlify/functions/send-email.js';
+import { onRequestPost as aiInsightPost, onRequestOptions as aiInsightOptions } from './functions/api/ai-insight.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -61,6 +62,51 @@ app.all('/api/education-ai', handleNetlifyFunction);
 
 app.all('/.netlify/functions/send-email', handleSendEmailFunction);
 app.all('/api/send-email', handleSendEmailFunction);
+
+// Cloudflare Pages /api/ai-insight handler for local dev server
+app.options('/api/ai-insight', async (req, res) => {
+  try {
+    const context = {
+      request: new Request('http://localhost:3000/api/ai-insight', {
+        method: 'OPTIONS',
+        headers: req.headers
+      }),
+      env: process.env
+    };
+    const response = await aiInsightOptions(context);
+    res.status(response.status);
+    response.headers.forEach((val, key) => res.setHeader(key, val));
+    res.end();
+  } catch (err) {
+    console.error('Error in /api/ai-insight OPTIONS:', err);
+    res.status(500).json({ error: 'Internal Error' });
+  }
+});
+
+app.post('/api/ai-insight', async (req, res) => {
+  try {
+    const origin = req.headers.origin || `http://${req.headers.host || 'localhost:3000'}`;
+    const context = {
+      request: new Request('http://localhost:3000/api/ai-insight', {
+        method: 'POST',
+        headers: {
+          ...req.headers,
+          'origin': req.headers.origin || origin
+        },
+        body: JSON.stringify(req.body)
+      }),
+      env: process.env
+    };
+    const response = await aiInsightPost(context);
+    res.status(response.status);
+    response.headers.forEach((val, key) => res.setHeader(key, val));
+    const text = await response.text();
+    res.send(text);
+  } catch (err) {
+    console.error('Error invoking ai-insight:', err);
+    res.status(500).json({ error: 'Internal Error' });
+  }
+});
 
 // 301 Redirects from _redirects
 try {
