@@ -512,9 +512,9 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Norway GPA Calculator](https://afriwidget.com/norway-gpa-calculator) — Compute ECTS-weighted grade point averages on the official Norwegian higher education A–F scale (UiO, NTNU, UiB, NHH, NMBU), convert marks to the US 4.0 GPA scale (WES / AACRAO standards), verify Master's degree admission C-grade thresholds, and calculate Samordna opptak VGS admission points including Skolepoeng (Førstegangsvitnemål kvote) and Konkurransepoeng (Ordinær kvote with realfagspoeng, språkgodkjenning, and military/age bonus points).
 
-## Norway Study Planner & ECTS Workload Timetable
+## South Africa Study Planner & NQF Credit Timetable
 
-[Norway Study Planner](https://afriwidget.com/norway-study-planner) — Generate a structured weekly study timetable based on Norwegian university ECTS workload metrics (25–30 total hours per ECTS credit, ~40 hrs/week for a standard 30 ECTS semester), distribute lecture time, self-study reading (pensum), mandatory assignments (arbeidskrav / øvinger), and part-time jobs, with an integrated semester countdown to Inspera digital examinations.
+[South Africa Study Planner](https://afriwidget.com/south-africa-study-planner) — Convert registered NQF credits into required weekly notional learning hours (10 notional hours per credit, ~43 hrs/week for a 60-credit full-time semester), distribute lecture contact, independent self-study, commute transit time, and part-time employment, and generate a customized semester timetable aligned with the South African academic calendar.
 
 ## Botswana Student Expense Calculator (DTEF & Living Costs)
 
@@ -546,10 +546,6 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## New Zealand NCEA Credits & Rank Score Calculator
 
 [New Zealand NCEA Credits Calculator](https://afriwidget.com/new-zealand-ncea-credits-calculator) — Calculate total NCEA Level 1, 2, and 3 credits, verify Certificate and Course Endorsements with Merit/Excellence, evaluate official University Entrance (UE) criteria, and compute your University Rank Score (out of 320) for competitive undergraduate admissions at Auckland, Otago, Victoria, and Canterbury.
-
-## New Zealand Student Loan & IRD Repayment Calculator
-
-[New Zealand Student Loan Calculator](https://afriwidget.com/new-zealand-student-loan-calculator) — Calculate compulsory 12% IRD student loan repayments on earnings above the $24,128 annual threshold, compare permanent 0% interest for NZ tax residents against overseas interest rates (3.9%), model voluntary repayments, and simulate complete debt-free payoff timelines.
 
 ## New Zealand Study Planner & Workload Timetable
 
