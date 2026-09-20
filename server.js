@@ -86,11 +86,13 @@ app.options('/api/ai-insight', async (req, res) => {
 app.post('/api/ai-insight', async (req, res) => {
   try {
     const origin = req.headers.origin || `http://${req.headers.host || 'localhost:3000'}`;
+    const clientIp = req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
     const context = {
       request: new Request('http://localhost:3000/api/ai-insight', {
         method: 'POST',
         headers: {
           ...req.headers,
+          'x-forwarded-for': clientIp,
           'origin': req.headers.origin || origin
         },
         body: JSON.stringify(req.body)

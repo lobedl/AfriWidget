@@ -1,9 +1,21 @@
+import {
+  normalizeToolContext,
+  buildSystemPrompt,
+  buildUserPrompt,
+  generateDeterministicInsight,
+  clampInsightLength
+} from '../../src/ai-insight-engine.js';
+
 // Ensure process is safely defined across standard Node, Netlify, and Cloudflare Pages / V8 Worker runtimes
 if (typeof globalThis.process === 'undefined') {
   globalThis.process = { env: {} };
 } else if (!globalThis.process.env) {
   globalThis.process.env = {};
 }
+
+const rateLimitMap = new Map();
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
 
 const FALLBACK_MESSAGE = 'Realtime AI is unavailable right now. Please try again later.';
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
@@ -233,6 +245,11 @@ User question:
 ${String(question || '').slice(0, 500)}`;
   }
 
+  if (mode === 'insight') {
+    const toolCtx = normalizeToolContext(context || {}, {});
+    return buildUserPrompt(toolCtx);
+  }
+
   return `You are ${assistantName}. Provide friendly, useful guidance about the completed tool result below. ${styleNote} ${guidanceNote} Respond in 3-5 short sentences: first explain what the result means in plain language, then explain why it matters, then give one or two specific and realistic next steps based on the result, followed by a brief caveat when useful. Use numbers from the displayed result when they help. Do not invent missing inputs or present a generic definition that ignores the user's result.
 
 Tool context:
@@ -279,6 +296,35 @@ export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers, body: '' };
   if (event.httpMethod !== 'POST') return json(405, { ok: false, message: FALLBACK_MESSAGE });
 
+  // Rate limiting: 5 requests per hour per IP
+  const clientIp = (event.headers && (
+    event.headers['cf-connecting-ip'] ||
+    event.headers['client-ip'] ||
+    event.headers['x-forwarded-for'] ||
+    event.headers['x-nf-client-connection-ip']
+  )) || 'unknown';
+
+  const now = Date.now();
+  const visitor = rateLimitMap.get(clientIp) || { count: 0, reset: now + RATE_LIMIT_WINDOW_MS };
+  if (now > visitor.reset) {
+    visitor.count = 0;
+    visitor.reset = now + RATE_LIMIT_WINDOW_MS;
+  }
+  visitor.count++;
+  rateLimitMap.set(clientIp, visitor);
+  if (rateLimitMap.size > 5000) rateLimitMap.clear();
+
+  if (visitor.count > RATE_LIMIT_MAX) {
+    const retrySec = Math.max(1, Math.ceil((visitor.reset - now) / 1000));
+    const retryMin = Math.ceil(retrySec / 60);
+    return json(429, {
+      ok: false,
+      error: 'Too Many Requests',
+      message: `Rate limit reached: maximum 5 requests per hour. Please try again in ${retryMin} minute${retryMin === 1 ? '' : 's'}.`,
+      insight: `Rate limit reached: you have reached the limit of 5 requests per hour. Please wait ${retryMin} minute${retryMin === 1 ? '' : 's'} before requesting another AI insight.`
+    });
+  }
+
   const keys = configuredGroqKeys();
 
   let payload;
@@ -301,6 +347,11 @@ export const handler = async (event) => {
 
       for (const model of modelsToTry) {
         try {
+          const toolCtx = mode === 'insight' ? normalizeToolContext(payload?.context || payload || {}, {}) : null;
+          const systemMsg = mode === 'insight' && toolCtx
+            ? buildSystemPrompt(toolCtx)
+            : `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result. Never output internal thought processes, reasoning preambles, or <think> tags. Strictly NEVER use LaTeX syntax or notation (such as $, $$, \\frac, \\text, \\sum). Use plain text and standard math symbols (+, -, ×, ÷, =). Provide only the clear final advice.`;
+
           const response = await fetch(GROQ_URL, {
             method: 'POST',
             headers: {
@@ -309,13 +360,13 @@ export const handler = async (event) => {
             },
             body: JSON.stringify({
               model,
-              temperature: 0.35,
+              temperature: 0.25,
               max_tokens: mode === 'question' ? 600 : mode === 'writing'
                 ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1500 : 900
-                : 500,
+                : 180,
               reasoning_format: 'hidden',
               messages: [
-                { role: 'system', content: `You are AfriWidget AI ${category} Assistant: careful, direct, concise, and grounded in the supplied tool result. Never output internal thought processes, reasoning preambles, or <think> tags. Strictly NEVER use LaTeX syntax or notation (such as $, $$, \\frac, \\text, \\sum). Use plain text and standard math symbols (+, -, ×, ÷, =). Provide only the clear final advice.` },
+                { role: 'system', content: systemMsg },
                 { role: 'user', content: userPrompt }
               ]
             })
@@ -341,8 +392,13 @@ export const handler = async (event) => {
 
           const data = await response.json();
           const rawText = data?.choices?.[0]?.message?.content;
-          const text = cleanAIOutput(rawText);
-          if (text) return json(200, { ok: true, text });
+          let text = cleanAIOutput(rawText);
+          if (text) {
+            if (mode === 'insight' && toolCtx) {
+              text = clampInsightLength(text, 300, 500, toolCtx);
+            }
+            return json(200, { ok: true, text, insight: text });
+          }
         } catch (err) {
           console.error(`[groq-proxy] Request failed for model ${model}:`, err?.message || err);
         }
@@ -353,8 +409,20 @@ export const handler = async (event) => {
   // If Groq fails or no keys configured, try Gemini fallback
   const geminiText = await tryGeminiFallback(category, userPrompt);
   if (geminiText) {
-    const cleanedGemini = cleanAIOutput(geminiText);
-    if (cleanedGemini) return json(200, { ok: true, text: cleanedGemini });
+    let cleanedGemini = cleanAIOutput(geminiText);
+    if (cleanedGemini) {
+      if (mode === 'insight') {
+        const toolCtx = normalizeToolContext(payload?.context || payload || {}, {});
+        cleanedGemini = clampInsightLength(cleanedGemini, 300, 500, toolCtx);
+      }
+      return json(200, { ok: true, text: cleanedGemini, insight: cleanedGemini });
+    }
+  }
+
+  if (mode === 'insight') {
+    const toolCtx = normalizeToolContext(payload?.context || payload || {}, {});
+    const fallbackInsight = clampInsightLength(generateDeterministicInsight(toolCtx), 300, 500, toolCtx);
+    return json(200, { ok: true, text: fallbackInsight, insight: fallbackInsight });
   }
 
   return json(200, { ok: false, message: FALLBACK_MESSAGE });

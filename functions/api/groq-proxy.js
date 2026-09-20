@@ -33,8 +33,13 @@ export async function onRequest(context) {
 
   try {
     const bodyText = await context.request.text();
+    const ip = context.request.headers.get('CF-Connecting-IP') || context.request.headers.get('x-forwarded-for') || '';
     const event = {
       httpMethod: context.request.method,
+      headers: {
+        'cf-connecting-ip': ip,
+        'x-forwarded-for': ip
+      },
       body: bodyText
     };
 

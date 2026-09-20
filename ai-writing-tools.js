@@ -506,6 +506,13 @@ function onReady(fn) { if (document.readyState === 'loading') { document.addEven
       cache: 'no-store',
       body: JSON.stringify({ mode: 'writing', category: 'productivity', context: Object.assign({ tool: tool }, data) })
     }).then(function (response) {
+      if (response.status === 429) {
+        return response.json().then(function (errData) {
+          throw new Error(errData.message || errData.insight || 'Rate limit reached: maximum 5 requests per hour. Please try again later.');
+        }).catch(function (e) {
+          throw (e && e.message && e.message.indexOf('Rate limit') !== -1) ? e : new Error('Rate limit reached: maximum 5 requests per hour. Please try again later.');
+        });
+      }
       if (!response.ok) throw new Error('AI request failed');
       return response.json();
     }).then(function (payload) {
