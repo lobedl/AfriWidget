@@ -9,11 +9,11 @@
   var style = document.createElement('style');
   style.setAttribute('data-afriwidget-ai-style', 'true');
   style.textContent = `
-    .ai-output { white-space: normal !important; line-height: 1.7 !important; }
-    .ai-output .ai-section { margin-bottom: 0.85rem !important; }
+    .ai-output { white-space: normal !important; line-height: 1.75 !important; font-size: 0.875rem !important; color: #222222 !important; background: #fef3c7 !important; border: 1px solid #facc15 !important; border-left: 4px solid #facc15 !important; border-radius: 0 0.5rem 0.5rem 0 !important; }
+    .ai-output .ai-section { background: transparent !important; border: none !important; border-radius: 0 !important; padding: 0 !important; margin: 0 0 0.65rem 0 !important; box-shadow: none !important; }
     .ai-output .ai-section:last-child { margin-bottom: 0 !important; }
-    .ai-output .ai-sec-title { display: block !important; color: #111827 !important; font-weight: 700 !important; margin-bottom: 0.25rem !important; font-size: 0.925rem !important; }
-    .ai-output p { margin: 0 0 0.5rem 0 !important; }
+    .ai-output .ai-sec-title { display: inline !important; color: #000000 !important; font-weight: 700 !important; font-size: inherit !important; margin-right: 0.25rem !important; }
+    .ai-output p { margin: 0 0 0.5rem 0 !important; font-size: inherit !important; color: inherit !important; line-height: inherit !important; }
     .ai-output p:last-child { margin-bottom: 0 !important; }
     .ai-output a { color: #854d0e !important; text-decoration: underline !important; font-weight: 600 !important; word-break: break-all !important; }
     .ai-output a:hover { color: #000000 !important; }

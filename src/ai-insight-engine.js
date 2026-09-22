@@ -607,6 +607,68 @@ export const BENCHMARKS = {
         justification: "There isn't enough reliable benchmark information to classify this result as good or poor."
       };
     }
+  },
+
+  'job-scam-checker': {
+    name: 'Job Scam Checker',
+    category: 'productivity',
+    country: 'Global & Africa',
+    formula: 'Weighted heuristic risk scoring based on recruitment fraud indicators: upfront fee demands, personal/unverified contact domains, unrealistic compensation, sensitive PII requests, lack of interview/screening, and urgent psychological pressure.',
+    source: 'Federal Trade Commission (FTC) & International Labour Organization (ILO) Fair Recruitment Guidelines',
+    sourceUrl: 'https://www.ftc.gov',
+    sourceDate: '2024–2026 Recruitment Fraud Benchmarks',
+    limitations: 'Heuristic keyword and pattern detection provides advisory screening only. Sophisticated fraud campaigns may impersonate legitimate recruiters using polished templates or compromised business emails. Always independently verify offers via official corporate career portals.',
+    evaluate(ctx) {
+      const score = Number(ctx.result?.riskScore ?? ctx.inputs?.riskScore ?? ctx.result?.totalScore ?? ctx.inputs?.totalScore ?? 0);
+      const flagCount = Number(ctx.inputs?.flagCount ?? ctx.result?.flagCount ?? 0);
+      if (score >= 55) {
+        return {
+          assessment: 'High risk (Probable Scam)',
+          justification: 'The text exhibits multiple critical red flags matching high-severity recruitment fraud patterns (such as upfront payment demands or unverified personal contact methods).'
+        };
+      }
+      if (score >= 25 || flagCount > 0) {
+        return {
+          assessment: 'Moderate risk / Caution',
+          justification: 'The text contains warning signs that warrant independent company and recruiter verification prior to sharing credentials or proceeding.'
+        };
+      }
+      return {
+        assessment: 'Low observable risk',
+        justification: 'No common high-risk recruitment fraud patterns were detected. Maintain standard safety precautions.'
+      };
+    }
+  },
+
+  'online-shop-scam-checker': {
+    name: 'Online Shop Scam Checker',
+    category: 'productivity',
+    country: 'Global & Africa',
+    formula: 'Multi-factor e-commerce trust analysis evaluating domain DNS resolution, internet archive historical footprint, payment gateway escrow safety, pricing anomalies, social proof authenticity, and merchant contact disclosures.',
+    source: 'Global Anti-Scam Alliance (GASA) & Federal Trade Commission (FTC) Consumer Protection Guidelines',
+    sourceUrl: 'https://www.gasa.org',
+    sourceDate: '2024–2026 Online Shopping Fraud Guidelines',
+    limitations: 'Online store screening evaluates observable technical and operational heuristics. Even active domains with valid SSL certificates can host fraudulent stores or drop-shipping storefronts with non-delivery risks. Always verify merchant registration and buyer protections.',
+    evaluate(ctx) {
+      const score = Number(ctx.result?.totalScore ?? ctx.inputs?.totalScore ?? ctx.result?.score ?? ctx.inputs?.score ?? 0);
+      const riskLevel = String(ctx.inputs?.riskLevel ?? ctx.result?.riskLevel ?? '').toLowerCase();
+      if (score >= 55 || riskLevel.includes('high')) {
+        return {
+          assessment: 'High risk (Potential Scam Store)',
+          justification: 'The storefront exhibits multiple high-severity warning flags, such as suspicious payment options, domain irregularities, or absence of verifiable contact channels.'
+        };
+      }
+      if (score >= 25 || riskLevel.includes('caution') || riskLevel.includes('moderate')) {
+        return {
+          assessment: 'Caution / Moderate risk',
+          justification: 'The store presents notable warning signs. Avoid unprotected peer-to-peer money transfers and confirm merchant credentials before making purchases.'
+        };
+      }
+      return {
+        assessment: 'Low observable risk',
+        justification: 'The store satisfies basic trust heuristics and DNS accessibility. Use buyer-protected payment methods (credit card or reputable escrow) for safety.'
+      };
+    }
   }
 };
 
@@ -643,7 +705,10 @@ export function normalizeToolContext(body, headers = {}) {
     'reading-time': 'reading-time-speech-estimator',
     'currency-converter': 'currency-converter',
     'waec-grade': 'wassce-aggregate-calculator',
-    'gpa': 'gpa-calculator'
+    'gpa': 'gpa-calculator',
+    'job-scam': 'job-scam-checker',
+    'shop-scam': 'online-shop-scam-checker',
+    'online-shop-scam': 'online-shop-scam-checker'
   };
 
   const resolvedSlug = ALIASES[rawSlug] || rawSlug;
@@ -657,7 +722,8 @@ export function normalizeToolContext(body, headers = {}) {
     'aggregate', 'gpa', 'cgpa', 'meanGrade', 'meanGpa', 'points', 'aps', 'verdict',
     'monthlyPayment', 'totalRepayment', 'totalInterest', 'futureValue', 'netProfit',
     'grossMargin', 'markup', 'breakEvenUnits', 'breakEvenRevenue', 'bmi', 'bmr',
-    'tdee', 'liters', 'readingMinutes', 'speakingMinutes', 'result', 'status', 'tier'
+    'tdee', 'liters', 'readingMinutes', 'speakingMinutes', 'result', 'status', 'tier',
+    'riskScore', 'totalScore', 'riskLevel', 'flagCount'
   ];
 
   for (const [key, value] of Object.entries(body || {})) {

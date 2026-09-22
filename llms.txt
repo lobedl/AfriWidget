@@ -575,3 +575,12 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 ## Unit Converter
 
 [Unit Converter](https://afriwidget.com/unit-converter) — Convert units of length, mass, temperature, volume, area, speed, time, digital storage, and energy instantly in your browser.
+
+## Job Scam Checker
+
+[Job Scam Checker](https://afriwidget.com/job-scam-checker) — Analyze job offers, interview invitations, and recruiter messages for red flags, upfront fee traps, suspicious contact channels, sensitive information requests, and recruitment fraud privately in the browser.
+
+## Online Shop Scam Checker
+
+[Online Shop Scam Checker](https://afriwidget.com/online-shop-scam-checker) — Evaluate e-commerce websites and social media seller profiles with live DNS resolution, web archive presence checks, payment method risk scoring, and interactive safety checklists privately in the browser.
+
