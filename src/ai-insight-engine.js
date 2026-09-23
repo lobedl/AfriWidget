@@ -669,6 +669,46 @@ export const BENCHMARKS = {
         justification: 'The store satisfies basic trust heuristics and DNS accessibility. Use buyer-protected payment methods (credit card or reputable escrow) for safety.'
       };
     }
+  },
+
+  'pdf-image-metadata-remover': {
+    name: 'PDF & Image Metadata Remover',
+    category: 'productivity',
+    country: 'United Kingdom & Global',
+    formula: 'Client-side HTML5 canvas pixel re-encoding and pdf-lib document dictionary sanitisation.',
+    source: "Information Commissioner's Office (ICO) UK GDPR Data Minimisation Guidance & NCSC Media Sanitisation Standards",
+    sourceUrl: 'https://ico.org.uk',
+    sourceDate: '2024–2026',
+    limitations: 'Sanitises document headers, EXIF/IPTC/XMP blocks, GPS location data, author/creator names, and timestamps. Does not redact visible text, embedded attachments, or hidden revision layers.',
+    evaluate(ctx) {
+      const gps = Boolean(ctx.result?.gpsFound ?? ctx.inputs?.gpsFound);
+      const author = Boolean(ctx.result?.authorOrProducerFound ?? ctx.inputs?.authorOrProducerFound);
+      const fields = Number(ctx.result?.totalMetadataFields ?? ctx.inputs?.totalMetadataFields ?? 0);
+      const cleaned = Number(ctx.result?.cleanedCount ?? ctx.inputs?.cleanedCount ?? ctx.result?.fileCount ?? ctx.inputs?.fileCount ?? 0);
+
+      if (gps) {
+        return {
+          assessment: 'High Privacy Sensitivity (GPS Location Exposed)',
+          justification: 'Files contained precise geographic coordinates (EXIF GPS tags) that can expose home, workplace, or confidential physical locations under UK GDPR personal data definitions.'
+        };
+      }
+      if (author) {
+        return {
+          assessment: 'Moderate Privacy Sensitivity (Identifiable Author / Software)',
+          justification: 'Documents contained creator, author, or producer metadata that reveals user names, internal organizational network paths, or proprietary software versions.'
+        };
+      }
+      if (fields > 0) {
+        return {
+          assessment: 'Standard Technical Metadata (Successfully Minimised)',
+          justification: 'General technical metadata (timestamps, device specs, or editing software tags) was detected and successfully purged in compliance with ICO data minimisation standards.'
+        };
+      }
+      return {
+        assessment: 'Clean File Baseline',
+        justification: 'No sensitive location tags or identifying document properties were detected, confirming full alignment with data minimisation guidelines.'
+      };
+    }
   }
 };
 
@@ -708,7 +748,10 @@ export function normalizeToolContext(body, headers = {}) {
     'gpa': 'gpa-calculator',
     'job-scam': 'job-scam-checker',
     'shop-scam': 'online-shop-scam-checker',
-    'online-shop-scam': 'online-shop-scam-checker'
+    'online-shop-scam': 'online-shop-scam-checker',
+    'pdf-image-metadata-remover': 'pdf-image-metadata-remover',
+    'exif-remover': 'pdf-image-metadata-remover',
+    'metadata-remover': 'pdf-image-metadata-remover'
   };
 
   const resolvedSlug = ALIASES[rawSlug] || rawSlug;
@@ -723,7 +766,8 @@ export function normalizeToolContext(body, headers = {}) {
     'monthlyPayment', 'totalRepayment', 'totalInterest', 'futureValue', 'netProfit',
     'grossMargin', 'markup', 'breakEvenUnits', 'breakEvenRevenue', 'bmi', 'bmr',
     'tdee', 'liters', 'readingMinutes', 'speakingMinutes', 'result', 'status', 'tier',
-    'riskScore', 'totalScore', 'riskLevel', 'flagCount'
+    'riskScore', 'totalScore', 'riskLevel', 'flagCount',
+    'cleanedCount', 'totalMetadataFields', 'gpsFound', 'authorOrProducerFound', 'fileCount', 'pdfCount', 'imageCount'
   ];
 
   for (const [key, value] of Object.entries(body || {})) {
@@ -988,11 +1032,19 @@ function formatPrimaryResult(result, slug) {
   if (result.breakEvenUnits !== undefined) {
     return `Break-even volume is ${result.breakEvenUnits} units${result.breakEvenRevenue ? ` (${result.breakEvenRevenue} revenue)` : ''}.`;
   }
+  if (result.cleanedCount !== undefined || result.totalMetadataFields !== undefined) {
+    const count = result.cleanedCount ?? result.fileCount ?? 0;
+    const fields = result.totalMetadataFields ?? 0;
+    return `Cleaned ${count} file${count === 1 ? '' : 's'} and purged ${fields} metadata field${fields === 1 ? '' : 's'}${result.gpsFound ? ' including GPS location tags' : ''}.`;
+  }
   const firstKey = Object.keys(result)[0];
   return `Calculated ${formatToolName(firstKey)} is ${result[firstKey]}.`;
 }
 
 function generateMeaningText(ctx, evalResult) {
+  if (ctx.category === 'productivity' && (ctx.toolSlug === 'pdf-image-metadata-remover' || ctx.toolSlug === 'exif-remover')) {
+    return 'Stripping hidden metadata directly complies with UK GDPR Article 5(1)(c) data minimisation obligations and ICO document disclosure guidance.';
+  }
   if (ctx.category === 'education') {
     return `This score reflects your academic standing under ${ctx.country} standards.`;
   }
@@ -1009,6 +1061,9 @@ function generateMeaningText(ctx, evalResult) {
 }
 
 function generateNextStep(ctx, evalResult) {
+  if (ctx.category === 'productivity' && (ctx.toolSlug === 'pdf-image-metadata-remover' || ctx.toolSlug === 'exif-remover')) {
+    return 'Save the cleaned files and verify that visible text or attachments do not contain sensitive identifiers before public sharing.';
+  }
   if (ctx.category === 'education') {
     return 'Verify specific departmental cut-off points and prerequisite subject grades with your target institution.';
   }

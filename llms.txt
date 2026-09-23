@@ -584,3 +584,8 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [Online Shop Scam Checker](https://afriwidget.com/online-shop-scam-checker) — Evaluate e-commerce websites and social media seller profiles with live DNS resolution, web archive presence checks, payment method risk scoring, and interactive safety checklists privately in the browser.
 
+## PDF & Image Metadata Remover (EXIF Remover)
+
+[PDF & Image Metadata Remover](https://afriwidget.com/exif-remover) — Strip EXIF tags, GPS location coordinates, camera models, author/creator properties, software signatures, and embedded tracking metadata from JPEG/PNG/WebP images and PDF documents client-side in the browser for UK GDPR data minimisation and privacy protection.
+
+

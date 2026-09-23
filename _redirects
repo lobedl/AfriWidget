@@ -121,5 +121,7 @@
 /word-counter                            /productivity   301
 /word-counter.html                       /productivity   301
 
+/metadata-remover                            /exif-remover                            301
+/metadata-remover.html                       /exif-remover                            301
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
 
