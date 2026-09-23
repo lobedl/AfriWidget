@@ -22,13 +22,11 @@ const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODELS_URL = 'https://api.groq.com/openai/v1/models';
 
 const DEFAULT_MODELS = [
-  'groq/compound-mini',
   'qwen/qwen3.8-27b',
-  'groq/compound',
   'openai/gpt-oss-120b',
   'openai/gpt-oss-20b',
-  'llama-3.3-70b-versatile',
-  'llama-3.1-8b-instant'
+  'groq/compound-mini',
+  'groq/compound'
 ];
 
 function cleanAIOutput(rawText) {
@@ -263,7 +261,7 @@ async function tryGeminiFallback(category, userPrompt, customEnv = null) {
   if (!geminiKey) return null;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${geminiKey}`;
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -276,15 +274,16 @@ async function tryGeminiFallback(category, userPrompt, customEnv = null) {
         ],
         generationConfig: {
           temperature: 0.35,
-          maxOutputTokens: 600
+          maxOutputTokens: 1000
         }
       })
     });
 
     if (res.ok) {
       const data = await res.json();
-      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-      if (text) return text;
+      const textParts = data?.candidates?.[0]?.content?.parts || [];
+      const text = textParts.filter(p => p.text).map(p => p.text).join('\n');
+      if (text) return text.trim();
     }
   } catch (err) {
     console.warn('[groq-proxy] Gemini fallback attempt failed:', err?.message || err);
