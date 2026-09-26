@@ -877,19 +877,23 @@
     "slug": "html-minifier",
     "name": "HTML Minifier",
     "shortName": "HTML Minifier",
-    "description": "Minify HTML code online by stripping unnecessary whitespace, comments, and empty lines to optimize website page load speed.",
+    "description": "Minify and compress HTML code online with our free HTML minifier. Strip comments, collapse whitespace, and minify inline CSS and JavaScript fast in your browser.",
     "category": "Productivity",
     "url": "/html-minifier",
     "keywords": [
       "html minifier",
-      "education",
-      "html",
-      "minifier",
-      "minify",
+      "minify html",
+      "online html minifier",
+      "html compressor",
+      "compress html online",
+      "minify html code",
+      "free html minifier",
+      "html minification tool",
       "whitespace",
       "comments",
-      "optimize",
-      "code"
+      "minify inline css javascript",
+      "productivity",
+      "developer utilities"
     ]
   },
   {
