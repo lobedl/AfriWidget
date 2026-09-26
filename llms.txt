@@ -588,4 +588,8 @@ AfriWidget provides browser-based tools with no sign-up required for everyday ca
 
 [PDF & Image Metadata Remover](https://afriwidget.com/exif-remover) — Strip EXIF tags, GPS location coordinates, camera models, author/creator properties, software signatures, and embedded tracking metadata from JPEG/PNG/WebP images and PDF documents client-side in the browser for UK GDPR data minimisation and privacy protection.
 
+## Job Application Tracker
+
+[Job Application Tracker](https://afriwidget.com/job-application-tracker) — Track job applications, interview dates, hiring stages, salary details, and follow-up alerts privately in your browser. Features pipeline statistics, needs-attention notifications, search/filters, JSON import/export, and professional print/PDF report generation with 100% client-side privacy.
+
 

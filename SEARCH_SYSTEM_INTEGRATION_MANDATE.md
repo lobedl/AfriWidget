@@ -31,7 +31,7 @@ The AfriWidget search system is 100% client-side, instant (<1ms search time), ty
 
 ## 🚫 2. The Core Problem: Why New Tools Disappear from Search
 
-If an agent creates `my-new-tool.html` and links it in `index.html` and `widgets.html`, but **fails to add it to `tools-index.json` and run `node build-search-engine.js`**:
+If an agent creates `my-new-tool.html` and links it in category hubs, but **fails to add it to `tools-index.json` and run `node build-search-engine.js`**:
 - The tool exists as an isolated page.
 - Visitors searching via the global search bar or `Ctrl+K` cannot find it.
 - Autocomplete fails to suggest it.
@@ -176,16 +176,16 @@ If this script prints any missing slugs, add them to `tools-index.json` and re-r
 
 ---
 
-## 🏆 5. Complete 9-Point Ecosystem Integration Checklist
+## 🏆 5. Complete Discovery & Ecosystem Integration Checklist
 
-Every new tool must be integrated across all 9 discovery endpoints:
+Every new tool must be integrated across the discovery endpoints:
 
-1. **Homepage (`index.html`)**: Category section card with `data-search`, flag, description, and link.
-2. **Category Hub (`education.html`, `finance.html`, etc.)**: `.category-tool-grid` entry.
-3. **All Tools Directory (`widgets.html`)**: Directory card with tags.
+1. **Category Hub (`education.html`, `finance.html`, `productivity.html`, etc.)**: `.category-tool-grid` entry. (Do not add new tools to `index.html`).
+2. **All Tools Directory (`widgets.html`)**: Directory card with tags.
+3. **Dedicated Related Tools Section**: Interlinked with 3-4 complementary tool pages.
 4. **Global Footer (`footer.js`)**: Linked in category column.
 5. **XML Sitemap (`sitemap.xml`)**: Clean URL with `priority 0.9`.
 6. **LLM Documentation (`llms.txt`)**: Documented with markdown link.
-7. **Universal AI Assistant (`universal-ai.js`)**: Configured in `TOOL_CONFIGS`.
-8. **Share Results System (`share-results.js`)**: Registered in `TOOL_ADAPTERS`.
+7. **Universal AI Assistant (`universal-ai.js` / `ai-insight.js`)**: Configured in tool configs.
+8. **Share Results System (`share-results.js`)**: Registered in `TOOL_ADAPTERS` if applicable.
 9. **🔍 Search System (`tools-index.json` & `build-search-engine.js`)**: Added to canonical JSON index and compiled to `search-engine.js`.

@@ -3014,6 +3014,33 @@
     ]
   },
   {
+    "slug": "job-application-tracker",
+    "name": "Job Application Tracker (In-Browser Career Pipeline & Interview Manager)",
+    "shortName": "Job Application Tracker",
+    "description": "Track every job application, interview schedule, offer, rejection, and follow-up in one place. Private, in-browser tool with local storage and PDF export.",
+    "category": "Productivity",
+    "url": "/job-application-tracker",
+    "keywords": [
+      "job application tracker",
+      "job tracker",
+      "application tracker",
+      "job search",
+      "career tracker",
+      "interview tracker",
+      "interview schedule",
+      "job applications",
+      "follow up reminder",
+      "job pipeline",
+      "resume",
+      "recruiter contact",
+      "job search organizer",
+      "productivity",
+      "career",
+      "employment",
+      "pdf report"
+    ]
+  },
+  {
     "slug": "job-scam-checker",
     "name": "Job Scam & Fake Offer Checker",
     "shortName": "Job Scam Checker",

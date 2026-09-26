@@ -14,7 +14,7 @@ When generating new tool pages by copying existing templates, developers or AI a
 1. The tool's primary domain (e.g., Education, Finance, Health, Productivity, Business, Real Estate).
 2. The category registered in `universal-ai.js` under `TOOL_CONFIGS`.
 3. The category hub where the tool is listed (`education.html`, `finance.html`, etc.).
-4. The `data-category` attribute on homepage and directory cards.
+4. The `data-category` attribute on category and directory cards.
 
 ---
 
