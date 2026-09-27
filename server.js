@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -12,6 +13,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 3000;
 
+app.use(compression());
 app.use(express.json());
 
 // Handle Netlify function calls locally
