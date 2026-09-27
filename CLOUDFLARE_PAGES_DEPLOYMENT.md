@@ -17,7 +17,7 @@ Because `wrangler.toml` is present in the root directory, Cloudflare Pages will 
 | Setting | Value | Notes |
 | :--- | :--- | :--- |
 | **Framework Preset** | `None` | Static site with pre-rendering |
-| **Build Command** | `bun run build` (or `npm run build`) | Builds CSS, OG assets, and pre-renders guides |
+| **Build Command** | `npm run build` | Builds CSS, OG assets, and pre-renders guides |
 | **Build Output Directory** | `.` | Root directory containing HTML & static assets |
 | **Root Directory** | `/` | Leave default (repository root) |
 | **Deploy Command** | `npx wrangler pages deploy . --project-name=afriwidget` | Or leave empty if optional in your dashboard |
@@ -78,7 +78,7 @@ if (typeof globalThis.process === 'undefined') {
 This ensures that any reference to `process.env` never throws `ReferenceError: process is not defined` during Function publication.
 
 ### 2. Node Runtime Specification (`.node-version` and `.nvmrc`)
-Specifies Node.js 20 LTS for the Cloudflare Pages build environment.
+Specifies Node.js 22 LTS for the Cloudflare Pages build environment.
 
 ### 3. Edge Functions (`/functions`)
 Cloudflare Pages uses file-system-based edge functions running on the Cloudflare Workers V8 runtime:
