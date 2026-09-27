@@ -49,3 +49,12 @@
 
 /favicon-180.png
   Cache-Control: public, max-age=86400, must-revalidate
+
+/favicon-192.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/favicon-512.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/manifest.json
+  Cache-Control: public, max-age=86400, must-revalidate

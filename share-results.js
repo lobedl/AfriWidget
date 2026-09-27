@@ -442,6 +442,7 @@
 
   // Pure SVG Icons (No Emojis)
   const icons = {
+    brandLogo: `<svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/></svg>`,
     share: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
     copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
     check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
@@ -813,13 +814,20 @@
         <button id="afriModalCloseBtn" type="button" class="afri-modal-close" aria-label="Close dialog">
           ${icons.close}
         </button>
-        <div>
-          <span class="afri-modal-eyebrow">Share Calculation</span>
-          <h2 id="afriShareModalTitle" class="afri-modal-title">Share Your Result</h2>
-          <p class="afri-modal-desc">
-            Anyone opening this link will see your exact inputs and computed calculations loaded in their browser.
-          </p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;padding-right:2.5rem;">
+          <div style="width:42px;height:42px;border-radius:0.5rem;background:#000000;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;">
+              ${icons.brandLogo}
+            </div>
+          </div>
+          <div>
+            <span class="afri-modal-eyebrow" style="margin-bottom:0.125rem;">AfriWidget • Free Tools</span>
+            <h2 id="afriShareModalTitle" class="afri-modal-title" style="margin:0;font-size:1.25rem;">Share Your Result</h2>
+          </div>
         </div>
+        <p class="afri-modal-desc">
+          Anyone opening this link will see your exact inputs and computed calculations loaded in their browser.
+        </p>
 
         <div class="afri-copy-box">
           <label for="afriShareLinkInput" class="afri-copy-label">Direct Shareable Link</label>
@@ -925,10 +933,12 @@
     bar.innerHTML = `
       <div class="afri-share-inner">
         <div class="afri-share-info">
-          <span class="afri-share-eyebrow">
-            ${icons.share}
-            <span>Share Calculation</span>
-          </span>
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.375rem;">
+            <div style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              ${icons.brandLogo}
+            </div>
+            <span class="afri-share-eyebrow" style="margin-bottom:0;">Share Calculation</span>
+          </div>
           <h3 class="afri-share-title">Save or Share Your Result</h3>
           <p class="afri-share-desc">
             Send this completed calculation to mentors, family, or save a permanent bookmark link.
@@ -1063,7 +1073,39 @@
     }, 150);
   }
 
+  function ensurePwaMetaTags() {
+    if (!document.querySelector('link[rel="manifest"]')) {
+      const manifestLink = document.createElement('link');
+      manifestLink.rel = 'manifest';
+      manifestLink.href = '/manifest.json';
+      document.head.appendChild(manifestLink);
+    }
+    if (!document.querySelector('link[rel="icon"][sizes="192x192"]')) {
+      const icon192 = document.createElement('link');
+      icon192.rel = 'icon';
+      icon192.type = 'image/png';
+      icon192.sizes = '192x192';
+      icon192.href = '/favicon-192.png';
+      document.head.appendChild(icon192);
+    }
+    if (!document.querySelector('link[rel="icon"][sizes="512x512"]')) {
+      const icon512 = document.createElement('link');
+      icon512.rel = 'icon';
+      icon512.type = 'image/png';
+      icon512.sizes = '512x512';
+      icon512.href = '/favicon-512.png';
+      document.head.appendChild(icon512);
+    }
+    if (!document.querySelector('meta[name="theme-color"]')) {
+      const themeColor = document.createElement('meta');
+      themeColor.name = 'theme-color';
+      themeColor.content = '#000000';
+      document.head.appendChild(themeColor);
+    }
+  }
+
   function init() {
+    ensurePwaMetaTags();
     injectShareStyles();
     const config = getAdapter();
     injectShareBar(config);

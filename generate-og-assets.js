@@ -9,4 +9,13 @@ fs.writeFileSync("og-image.png", buf);
 if (!fs.existsSync("dist")) fs.mkdirSync("dist");
 fs.writeFileSync("dist/og-image.jpg", buf);
 fs.writeFileSync("dist/og-image.png", buf);
+const copyFiles = [
+  "favicon.ico", "favicon.svg", "favicon-16.png", "favicon-32.png",
+  "favicon-180.png", "favicon-192.png", "favicon-512.png", "manifest.json"
+];
+copyFiles.forEach(f => {
+  if (fs.existsSync(f)) {
+    fs.copyFileSync(f, path.join("dist", f));
+  }
+});
 console.log("Wrote pristine binary og-image files from base64.");
