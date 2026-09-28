@@ -188,6 +188,7 @@
       .tool-card {
         position: relative;
       }
+      #afriHomepageFavShelf .tool-card-fav-btn { display: none !important; }
       .tool-card-fav-btn {
         position: absolute;
         top: 0.625rem;
@@ -1143,7 +1144,7 @@
   function attachCardFavoriteButtons(container = document) {
     const cards = container.querySelectorAll('a.tool-card, a.app-card');
     cards.forEach(card => {
-      if (card.querySelector('.tool-card-fav-btn')) return;
+      if (card.closest('#afriHomepageFavShelf') || card.querySelector('.tool-card-fav-btn')) return;
 
       const url = card.getAttribute('href') || '';
       if (!url || url.startsWith('http') || url.startsWith('#') || url === '/') return;
@@ -1364,7 +1365,7 @@
     `;
 
     document.getElementById('afriOpenAllFavBtn')?.addEventListener('click', openFavoritesDrawer);
-    attachCardFavoriteButtons(shelf);
+    // shelf cards do not show duplicate right-hand star
   }
 
   function escapeHtml(str) {

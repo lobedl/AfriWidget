@@ -4,6 +4,9 @@
 /api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
+/favorites                      /favourites     301
+/favorites.html                 /favourites     301
+/favourites.html                /favourites     301
 /widgets                     /               301
 /widgets.html                /               301
 /success-stories             /use-cases      301
