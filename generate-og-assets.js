@@ -11,7 +11,8 @@ fs.writeFileSync("dist/og-image.jpg", buf);
 fs.writeFileSync("dist/og-image.png", buf);
 const copyFiles = [
   "favicon.ico", "favicon.svg", "favicon-16.png", "favicon-32.png",
-  "favicon-180.png", "favicon-192.png", "favicon-512.png", "manifest.json"
+  "favicon-180.png", "favicon-192.png", "favicon-512.png", "manifest.json",
+  "favorites.js", "share-results.js"
 ];
 copyFiles.forEach(f => {
   if (fs.existsSync(f)) {

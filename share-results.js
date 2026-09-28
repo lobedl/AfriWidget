@@ -988,35 +988,6 @@
     });
   }
 
-  function injectPanelHeaderButton(adapterConfig) {
-    if (document.getElementById('afriToolShareBtn')) return;
-    const panelTitle = $('.calc-panel-title');
-    if (!panelTitle) return;
-
-    // Create wrapper container if not already flex-header
-    let header = panelTitle.parentElement;
-    if (header && !header.querySelector('#afriToolShareBtn')) {
-      const shareBtn = document.createElement('button');
-      shareBtn.id = 'afriToolShareBtn';
-      shareBtn.type = 'button';
-      shareBtn.className = 'afri-header-share-btn';
-      shareBtn.setAttribute('aria-label', 'Share this tool');
-      shareBtn.innerHTML = `${icons.share}<span>Share Tool</span>`;
-      shareBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        handleShareClick(adapterConfig, shareBtn);
-      });
-
-      // Insert adjacent to panel title
-      panelTitle.insertAdjacentElement('afterend', shareBtn);
-      panelTitle.parentElement.style.display = 'flex';
-      panelTitle.parentElement.style.flexWrap = 'wrap';
-      panelTitle.parentElement.style.justifyContent = 'space-between';
-      panelTitle.parentElement.style.alignItems = 'center';
-      panelTitle.parentElement.style.gap = '0.75rem';
-    }
-  }
-
   function restoreInputs(adapterConfig) {
     if (!hasSharedInputs) return;
 
@@ -1109,7 +1080,6 @@
     injectShareStyles();
     const config = getAdapter();
     injectShareBar(config);
-    injectPanelHeaderButton(config);
     restoreInputs(config);
   }
 
