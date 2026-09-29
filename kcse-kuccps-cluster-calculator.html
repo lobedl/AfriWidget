@@ -192,7 +192,7 @@ ul,ol{list-style:none}
 .breadcrumb-current{display:inline-flex;align-items:center;gap:.375rem;color:#fde047;font-weight:600}
 .breadcrumb-sep{color:#4b5563}
 .breadcrumb a{color:#94a3b8;transition:color .15s}
-.breadcrumb a:hover{color:#fde047}
+.breadcrumb a:hover{color:#fde047}.breadcrumb a.breadcrumb-current,.breadcrumb .breadcrumb-current a{color:#fde047;display:inline-flex;align-items:center;gap:.375rem;font-weight:600;transition:color .15s}.breadcrumb a.breadcrumb-current:hover,.breadcrumb .breadcrumb-current a:hover{color:#facc15}
 
 .seo-header{background:#fff;padding:3rem 0 2rem;border-bottom:1px solid #e5e5e5;text-align:center}
 @media (min-width:640px){.seo-header{padding:4rem 0 2.5rem}}
@@ -493,10 +493,7 @@ ul,ol{list-style:none}
     <div class="breadcrumb-bar-inner">
       <nav aria-label="Breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-current">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-            <span>Home</span>
-          </li>
+          <li class="breadcrumb-current"><a href="/" class="breadcrumb-current"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a></li>
           <li class="breadcrumb-sep" aria-hidden="true">
             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </li>
@@ -1530,5 +1527,5 @@ ul,ol{list-style:none}
   });
 })();
 </script>
-<script src="/share-results.js" defer></script><script src="/favorites.js" defer></script></body>
+<script src="/share-results.js" defer></script><script src="/favorites.js?v=2" defer></script></body>
 </html>

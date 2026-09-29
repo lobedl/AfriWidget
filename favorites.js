@@ -188,7 +188,7 @@
       .tool-card {
         position: relative;
       }
-      #afriHomepageFavShelf .tool-card-fav-btn { display: none !important; }
+      
       .tool-card-fav-btn {
         position: absolute;
         top: 0.625rem;
@@ -1144,7 +1144,7 @@
   function attachCardFavoriteButtons(container = document) {
     const cards = container.querySelectorAll('a.tool-card, a.app-card');
     cards.forEach(card => {
-      if (card.closest('#afriHomepageFavShelf') || card.querySelector('.tool-card-fav-btn')) return;
+      if (card.querySelector('.tool-card-fav-btn')) return;
 
       const url = card.getAttribute('href') || '';
       if (!url || url.startsWith('http') || url.startsWith('#') || url === '/') return;
@@ -1299,6 +1299,46 @@
   }
 
   // Dedicated Favourites Shelf on Homepage (if on index.html)
+  
+  const CATEGORY_ICONS = {
+    'Health': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>',
+    'Education': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
+    'Finance': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg>',
+    'Productivity': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg>',
+    'Business': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+    'Tech': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg>',
+    'WASSCE': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Zm0 0v13a3 3 0 0 0 3 3M9 8h6M9 12h5"/></svg>',
+    'KCSE': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m4 7 8-4 8 4-8 4-8-4Zm3 3v5c3 2 7 2 10 0v-5M12 14v7"/></svg>',
+    'JAMB': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 5h14v14H5zM8 9h8M8 13h5"/></svg>',
+    'Default': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>'
+  };
+
+  function getToolCategoryIcon(tool) {
+    try {
+      const norm = normalizeUrl(tool.url);
+      const cards = document.querySelectorAll('a.tool-card:not(#afriHomepageFavShelf a), a.app-card');
+      for (let i = 0; i < cards.length; i++) {
+        const c = cards[i];
+        if (normalizeUrl(c.getAttribute('href') || '') === norm) {
+          const svgEl = c.querySelector('.tool-card-icon svg');
+          if (svgEl) {
+            return svgEl.outerHTML;
+          }
+        }
+      }
+    } catch (e) {}
+
+    const cat = (tool.category || '').trim();
+    if (CATEGORY_ICONS[cat]) return CATEGORY_ICONS[cat];
+    const catUpper = cat.toUpperCase();
+    for (const key in CATEGORY_ICONS) {
+      if (catUpper.includes(key.toUpperCase())) {
+        return CATEGORY_ICONS[key];
+      }
+    }
+    return CATEGORY_ICONS['Default'];
+  }
+
   function renderHomepageFavoritesShelf() {
     const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '';
     if (!isHomepage) return;
@@ -1332,11 +1372,12 @@
 
     let cardsHtml = '';
     list.slice(0, 6).forEach(tool => {
+      const catIcon = getToolCategoryIcon(tool);
       cardsHtml += `
         <a href="${escapeHtml(tool.url)}" class="tool-card">
           <div class="tool-card-icon">
-            ${ICONS.starFilled}
-            <span class="tool-card-cat">${escapeHtml(tool.category || 'Favourite')}</span>
+            ${catIcon}
+            <span class="tool-card-cat">${escapeHtml(tool.category || 'General')}</span>
           </div>
           <h3 class="tool-card-title">${escapeHtml(tool.title)}</h3>
           <p class="tool-card-desc">${escapeHtml(tool.description || 'Quick access to your saved calculator.')}</p>
@@ -1365,7 +1406,7 @@
     `;
 
     document.getElementById('afriOpenAllFavBtn')?.addEventListener('click', openFavoritesDrawer);
-    // shelf cards do not show duplicate right-hand star
+    attachCardFavoriteButtons(shelf);
   }
 
   function escapeHtml(str) {
