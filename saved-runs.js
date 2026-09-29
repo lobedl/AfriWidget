@@ -1,13 +1,13 @@
 /**
  * AfriWidget Calculation History & Progress Comparison ("My Saved Runs")
- * Professional, fully responsive client-side calculation notebook and progress comparator.
+ * Allows users to save calculation runs, track progress over time, restore inputs, and compare runs side-by-side.
  *
- * Design Constitution:
+ * Rules:
  * - 100% Client-side privacy (localStorage 'afriwidget_saved_runs').
  * - Zero Emojis (Pure crisp SVG icons).
- * - Zero Tailwind (Clean, self-contained vanilla CSS).
- * - Fully responsive, zero text collision, optimized for 320px to 4K displays.
- * - Strict adherence to AfriWidget Brand System (#000000, #facc15, #fde047, #ffffff, #111827, #e5e5e5).
+ * - Zero Tailwind (Self-contained vanilla CSS).
+ * - Fully responsive and touch-optimized.
+ * - Matches AfriWidget Brand System (#000000, #facc15, #fde047, #ffffff, #111827, #e5e5e5).
  */
 
 (function () {
@@ -15,7 +15,7 @@
 
   const STORAGE_KEY = 'afriwidget_saved_runs';
 
-  // Crisp SVG Icons (Zero Emojis)
+  // SVG Icons (Zero Emojis)
   const ICONS = {
     history: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
     bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
@@ -26,11 +26,12 @@
     edit: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
     close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
     check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`,
-    chevronDown: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`,
-    brandMark: `<svg width="20" height="20" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/></svg>`
+    trendUp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
+    brandLogo: `<svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/></svg>`
   };
 
+  // Helper DOM utilities
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
@@ -42,34 +43,15 @@
     }
   }
 
-  function escapeHtml(str) {
-    if (!str) return '';
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
   function getPageSlug() {
     return location.pathname.split('/').pop().replace(/\.html$/, '') || 'home';
   }
 
   function getToolTitle() {
-    const heading = $('h1');
+    const heading = $('h1') || $('.calc-panel-title') || $('h2');
     if (heading) {
-      const clone = heading.cloneNode(true);
-      clone.querySelectorAll('.seo-title-accent, span, small, .subtitle, .tag').forEach(el => el.remove());
-      const clean = clone.textContent.replace(/Last Updated.*$/i, '').replace(/\s+/g, ' ').trim();
-      if (clean) return clean;
-    }
-    const panelTitle = $('.calc-panel-title');
-    if (panelTitle) {
-      const clean = panelTitle.textContent.replace(/Last Updated.*$/i, '').replace(/\s+/g, ' ').trim();
-      if (clean && !clean.toLowerCase().includes('enter your') && !clean.toLowerCase().includes('select your')) {
-        return clean;
-      }
+      const text = heading.textContent.replace(/Last Updated.*$/i, '').trim();
+      if (text) return text;
     }
     const title = document.title.split('|')[0].split('-')[0].trim();
     return title || 'Calculator Tool';
@@ -96,7 +78,7 @@
       null;
   }
 
-  // Storage Operations
+  // Storage Methods
   function getAllSavedRuns() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -123,7 +105,8 @@
 
   function addRun(runData) {
     const runs = getAllSavedRuns();
-    runs.unshift(runData);
+    runs.unshift(runData); // prepend
+    // Keep max 100 runs overall to protect storage
     if (runs.length > 100) runs.length = 100;
     saveAllRuns(runs);
     return runData;
@@ -153,7 +136,7 @@
     saveAllRuns([]);
   }
 
-  // Input & Result Capture
+  // Capture Inputs and Results from the current page
   function captureCurrentInputs() {
     const form = $('form') || $('.calc-panel') || document;
     const fields = $$(
@@ -170,9 +153,7 @@
       if (field.id) {
         const lbl = $(`label[for="${CSS.escape(field.id)}"]`, form) || $(`label[for="${CSS.escape(field.id)}"]`);
         if (lbl) {
-          const clone = lbl.cloneNode(true);
-          clone.querySelectorAll('.hint, small, span').forEach(el => el.remove());
-          label = clone.textContent.replace(/Alt [AB].*$/i, '').trim();
+          label = lbl.textContent.replace(/Alt [AB].*$/i, '').trim();
         }
       }
 
@@ -180,9 +161,7 @@
         const parentField = field.closest('.field, .field-group, .form-group, div');
         const parentLbl = parentField?.querySelector('.field-label, label');
         if (parentLbl) {
-          const clone = parentLbl.cloneNode(true);
-          clone.querySelectorAll('.hint, small, span').forEach(el => el.remove());
-          label = clone.textContent.trim();
+          label = parentLbl.textContent.trim();
         }
       }
 
@@ -190,6 +169,7 @@
         label = field.getAttribute('aria-label') || field.name || field.id || `Input ${index + 1}`;
       }
 
+      // Clean label
       label = label.replace(/\s+/g, ' ').trim();
 
       let value = '';
@@ -212,9 +192,9 @@
       if (value !== '') {
         inputs.push({
           key,
-          label: label.substring(0, 35),
+          label: label.substring(0, 40),
           value,
-          displayValue: displayValue.substring(0, 45)
+          displayValue: displayValue.substring(0, 60)
         });
       }
     });
@@ -222,26 +202,11 @@
     return inputs;
   }
 
-  function cleanHeroData(rawEyebrow, rawValue) {
-    let label = (rawEyebrow || 'Result')
-      .replace(/^(Your\s+(estimated\s+)?|Estimated\s+)/i, '')
-      .replace(/result/i, 'Score')
-      .trim();
-    if (!label) label = 'Score';
-    label = label.charAt(0).toUpperCase() + label.slice(1);
-
-    let value = (rawValue || '—').trim();
-    return { label, value };
-  }
-
   function captureCurrentSummary() {
     const host = findResultHost() || $('.calc-panel') || document;
 
-    // 1. Primary Hero Result
-    let primaryValue = '';
-    let primaryLabel = 'Result';
-    let primarySub = '';
-
+    // 1. Primary Big Metric
+    let primaryMetric = '';
     const bigElem = host.querySelector(
       '.mean-big, .aggregate-big, .score-big, .gpa-badge, .bmi-badge, #meanGradeValue, #aggregateValue, #pointsValue, #divisionValue, #best5Value, #tcuValue, #totalAmount, #monthlyPayment, #bmiValue, .result-hero-value, .stat-value.accent'
     );
@@ -249,86 +214,56 @@
     if (bigElem) {
       const text = bigElem.textContent.trim();
       if (text && text !== '—') {
-        primaryValue = text;
-        const rawEyebrow = host.querySelector('.results-eyebrow, .results-title, .aggregate-note, .mean-note, .stat-label')?.textContent.trim();
-        const cleaned = cleanHeroData(rawEyebrow, text);
-        primaryLabel = cleaned.label;
-
-        // Subtitle note
-        const note = host.querySelector('.mean-note, .aggregate-note, .results-note, .stat-sub')?.textContent.trim();
-        if (note && note.length < 50 && !note.toLowerCase().includes(primaryValue.toLowerCase())) {
-          primarySub = note;
+        const eyebrow = host.querySelector('.results-eyebrow, .aggregate-note, .mean-note, .stat-label')?.textContent.trim();
+        primaryMetric = text;
+        if (eyebrow && eyebrow.length < 35 && !primaryMetric.toLowerCase().includes(eyebrow.toLowerCase())) {
+          primaryMetric = `${eyebrow}: ${text}`;
         }
       }
     }
 
-    if (!primaryValue) {
+    if (!primaryMetric) {
       const firstStat = host.querySelector('.stat-value');
       if (firstStat) {
-        primaryValue = firstStat.textContent.trim();
         const lbl = firstStat.closest('.stat-card')?.querySelector('.stat-label')?.textContent.trim();
-        if (lbl) primaryLabel = lbl;
+        primaryMetric = lbl ? `${lbl}: ${firstStat.textContent.trim()}` : firstStat.textContent.trim();
       }
     }
 
-    if (!primaryValue || primaryValue === '—') {
-      primaryValue = 'Calculation Complete';
-      primaryLabel = 'Summary';
+    if (!primaryMetric) {
+      primaryMetric = 'Completed Calculation';
     }
 
-    // 2. Secondary Metrics (Clean, concise)
+    // 2. Secondary Metrics / Stat Grid
     const statCards = $$('.stat-card, .metric-card, .summary-item', host);
     const stats = [];
 
     statCards.forEach(card => {
       const lbl = card.querySelector('.stat-label, .metric-label, .summary-label')?.textContent.trim();
       const val = card.querySelector('.stat-value, .metric-value, .summary-value')?.textContent.trim();
-      if (lbl && val && val !== '—' && val !== primaryValue) {
+      const sub = card.querySelector('.stat-sub, .metric-sub')?.textContent.trim();
+      if (lbl && val && val !== '—') {
         stats.push({
-          label: lbl.replace(/\s+/g, ' ').trim().substring(0, 28),
-          value: val.replace(/\s+/g, ' ').trim().substring(0, 30)
+          label: lbl,
+          value: sub ? `${val} (${sub})` : val
         });
       }
     });
 
-    // 3. Verdict / Interpretation
+    // 3. Verdict or Tier
     let verdict = '';
-    const tierElem = host.querySelector('.tier-box, #tierText, #interpretation, #verdict, .verdict-text, .result-desc, p.interpretation, .interpret-text');
+    const tierElem = host.querySelector('.tier-box, #tierText, #interpretation, #verdict, .verdict-text, .result-desc, p.interpretation');
     if (tierElem) {
-      verdict = tierElem.textContent.replace(/^What this (opens|means|usually means):\s*/i, '').trim();
+      verdict = tierElem.textContent.replace(/^What this opens:\s*/i, '').trim();
     }
 
     return {
-      primaryLabel,
-      primaryValue,
-      primarySub,
-      primaryMetric: `${primaryLabel}: ${primaryValue}`,
-      stats: stats.slice(0, 4),
-      verdict: verdict ? verdict.substring(0, 180) : ''
+      primaryMetric: primaryMetric.substring(0, 80),
+      stats: stats.slice(0, 6),
+      verdict: verdict ? verdict.substring(0, 240) : ''
     };
   }
 
-  // Parse legacy runs saved in previous format
-  function parseHeroMetric(summary) {
-    if (summary.primaryValue && summary.primaryLabel) {
-      return {
-        label: summary.primaryLabel,
-        value: summary.primaryValue,
-        sub: summary.primarySub || ''
-      };
-    }
-    const raw = summary.primaryMetric || 'Result';
-    if (raw.includes(':')) {
-      const parts = raw.split(':');
-      let label = parts[0].replace(/^(Your\s+(estimated\s+)?|Estimated\s+)/i, '').trim();
-      label = label.charAt(0).toUpperCase() + label.slice(1);
-      const val = parts.slice(1).join(':').trim();
-      return { label: label || 'Result', value: val, sub: '' };
-    }
-    return { label: 'Result', value: raw, sub: '' };
-  }
-
-  // Restore inputs
   function restoreInputsFromRun(run) {
     if (!run || !Array.isArray(run.inputs)) return;
 
@@ -340,6 +275,7 @@
     run.inputs.forEach(({ key, value }) => {
       let el = document.getElementById(key) || form.querySelector(`[name="${CSS.escape(key)}"]`);
       if (!el) {
+        // Try radio button match
         const radios = form.querySelectorAll(`input[type="radio"][name="${CSS.escape(key)}"]`);
         if (radios.length) {
           radios.forEach(r => {
@@ -357,12 +293,14 @@
           el.value = value;
         }
 
+        // Trigger change & input events
         el.dispatchEvent(new Event('input', { bubbles: true }));
         el.dispatchEvent(new Event('change', { bubbles: true }));
         restoredCount++;
       }
     });
 
+    // Recalculate
     setTimeout(() => {
       const calcBtn = form.querySelector('.btn-calc, button[type="submit"], #calcBtn, #calculateBtn, input[type="submit"]') || form.querySelector('button');
       if (calcBtn) {
@@ -372,10 +310,10 @@
       }
     }, 120);
 
-    closeRunsDrawer();
-    showToast(`Loaded ${restoredCount} input values from "${run.label}".`);
+    showToast(`Restored inputs from "${run.label}" (${restoredCount} fields loaded).`);
   }
 
+  // Toast Notification
   function showToast(message) {
     let toast = document.getElementById('afriRunsToast');
     if (!toast) {
@@ -384,7 +322,7 @@
       toast.className = 'afri-runs-toast';
       document.body.appendChild(toast);
     }
-    toast.innerHTML = `<span class="afri-runs-toast-icon">${ICONS.check}</span><span>${escapeHtml(message)}</span>`;
+    toast.innerHTML = `<span class="afri-runs-toast-icon">${ICONS.check}</span><span>${message}</span>`;
     toast.classList.add('is-visible');
 
     if (toast._timer) clearTimeout(toast._timer);
@@ -393,60 +331,44 @@
     }, 3600);
   }
 
-  // Format concise date
-  function formatRunDate(timestamp, fallbackStr) {
-    if (timestamp && typeof timestamp === 'number') {
-      const d = new Date(timestamp);
-      const day = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-      const time = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      return `${day}, ${time}`;
-    }
-    if (fallbackStr) {
-      return fallbackStr.replace(/\s+\d{4}\s+/, ', ');
-    }
-    return 'Recent run';
-  }
-
-  // Pure Vanilla CSS - Sleek, Responsive, Anti-Slop, Brand Compliant
+  // Self-Contained Pure Vanilla CSS (Zero Tailwind, Zero Emojis)
   function injectStyles() {
     if (document.getElementById('afriwidget-saved-runs-styles')) return;
 
     const style = document.createElement('style');
     style.id = 'afriwidget-saved-runs-styles';
     style.textContent = `
-      /* Universal Reset & Font Family */
+      /* Universal Reset for Saved Runs Components */
       .afri-runs-bar, .afri-runs-drawer, .afri-runs-modal, .afri-runs-toast {
         box-sizing: border-box;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #000000;
-        -webkit-font-smoothing: antialiased;
       }
       .afri-runs-bar *, .afri-runs-drawer *, .afri-runs-modal *, .afri-runs-toast * {
         box-sizing: border-box;
       }
 
-      /* In-Page Action Bar (Beside Calculator Results) */
+      /* In-Page Saved Runs Action Bar */
       .afri-runs-bar {
         display: block;
-        margin: 1.5rem 0;
+        margin: 1.25rem 0;
         background: #ffffff;
         border: 1px solid #e5e5e5;
-        border-left: 4px solid #facc15;
+        border-left: 4px solid #000000;
         border-radius: 0.75rem;
         padding: 1.125rem 1.25rem;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         width: 100%;
-        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        transition: border-color 0.15s ease;
       }
       .afri-runs-bar:hover {
         border-color: #d1d5db;
         border-left-color: #facc15;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
       }
       .afri-runs-bar-inner {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.875rem;
       }
       @media (min-width: 640px) {
         .afri-runs-bar-inner {
@@ -458,12 +380,12 @@
       }
       .afri-runs-bar-info {
         display: flex;
-        align-items: center;
-        gap: 0.875rem;
+        align-items: flex-start;
+        gap: 0.75rem;
       }
       .afri-runs-bar-icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
         border-radius: 0.5rem;
         background: #000000;
         color: #facc15;
@@ -492,11 +414,9 @@
       .afri-runs-bar-actions {
         display: flex;
         align-items: center;
-        gap: 0.625rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
       }
-
-      /* Unified Button Hierarchy */
       .afri-runs-btn {
         display: inline-flex;
         align-items: center;
@@ -560,10 +480,14 @@
         border-radius: 9999px;
         min-width: 1.125rem;
         height: 1.125rem;
-        margin-left: 0.25rem;
+        margin-left: 0.125rem;
+      }
+      .afri-runs-btn-yellow .afri-runs-badge {
+        background: #000000;
+        color: #facc15;
       }
 
-      /* Navigation Topbar Button */
+      /* Navigation Bar Runs Button */
       .nav-runs-btn {
         display: inline-flex;
         align-items: center;
@@ -608,7 +532,7 @@
       .afri-runs-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.65);
+        background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(2px);
         z-index: 9998;
         opacity: 0;
@@ -627,9 +551,9 @@
         right: 0;
         bottom: 0;
         width: 100%;
-        max-width: 460px;
+        max-width: 480px;
         background: #ffffff;
-        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.25);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
         z-index: 9999;
         display: flex;
         flex-direction: column;
@@ -648,31 +572,22 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        flex-shrink: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .afri-runs-header-brand {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.625rem;
       }
-      .afri-runs-header-title-box {
-        display: flex;
-        flex-direction: column;
-        gap: 0.125rem;
+      .afri-runs-header-brand svg {
+        width: 1.375rem;
+        height: 1.375rem;
       }
       .afri-runs-header-title {
         font-size: 1.0625rem;
         font-weight: 800;
         color: #ffffff;
         margin: 0;
-        line-height: 1.2;
-      }
-      .afri-runs-header-sub {
-        font-size: 0.6875rem;
-        color: #94a3b8;
-        font-weight: 500;
-        line-height: 1;
       }
       .afri-runs-close-btn {
         background: transparent;
@@ -695,19 +610,13 @@
         height: 1.25rem;
       }
 
-      /* Segmented Tabs */
-      .afri-runs-tabs-wrap {
-        padding: 0.75rem 1rem;
-        background: #f8fafc;
-        border-bottom: 1px solid #e2e8f0;
-        flex-shrink: 0;
-      }
+      /* Tabs */
       .afri-runs-tabs {
         display: flex;
-        background: #e2e8f0;
-        padding: 0.25rem;
-        border-radius: 0.5rem;
-        gap: 0.25rem;
+        background: #f3f4f6;
+        padding: 0.375rem;
+        gap: 0.375rem;
+        border-bottom: 1px solid #e5e5e5;
       }
       .afri-runs-tab {
         flex: 1;
@@ -716,7 +625,7 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.8125rem;
         font-weight: 700;
-        color: #64748b;
+        color: #4b5563;
         border-radius: 0.375rem;
         cursor: pointer;
         transition: all 0.15s ease;
@@ -729,59 +638,40 @@
       .afri-runs-tab.is-active {
         background: #ffffff;
         color: #000000;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      }
-      .afri-runs-tab-badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.6875rem;
-        font-weight: 800;
-        padding: 0.125rem 0.375rem;
-        border-radius: 9999px;
-        min-width: 1.125rem;
-        height: 1.125rem;
-        background: #cbd5e1;
-        color: #334155;
-        line-height: 1;
-      }
-      .afri-runs-tab.is-active .afri-runs-tab-badge {
-        background: #000000;
-        color: #facc15;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
       }
 
-      /* Drawer Scrollable Body */
+      /* Drawer Body */
       .afri-runs-body {
         flex: 1;
         overflow-y: auto;
-        padding: 1rem;
+        padding: 1.25rem;
         display: flex;
         flex-direction: column;
-        gap: 0.875rem;
-        background: #f8fafc;
+        gap: 1rem;
+        background: #fafafa;
       }
 
       /* Empty State */
       .afri-runs-empty {
         text-align: center;
-        padding: 3.5rem 1.5rem;
+        padding: 3rem 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        color: #6b7280;
       }
       .afri-runs-empty-icon {
         width: 3.5rem;
         height: 3.5rem;
         border-radius: 9999px;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        color: #94a3b8;
+        background: #e5e7eb;
+        color: #9ca3af;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 1rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
       }
       .afri-runs-empty-icon svg {
         width: 1.75rem;
@@ -790,24 +680,24 @@
       .afri-runs-empty-title {
         font-size: 1rem;
         font-weight: 800;
-        color: #0f172a;
+        color: #111827;
         margin: 0 0 0.375rem 0;
       }
       .afri-runs-empty-desc {
         font-size: 0.8125rem;
-        color: #64748b;
+        color: #6b7280;
         margin: 0;
-        max-width: 290px;
+        max-width: 280px;
         line-height: 1.5;
       }
 
-      /* Modernized Professional Run Card */
+      /* Run Card */
       .afri-run-card {
         background: #ffffff;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #e5e5e5;
         border-radius: 0.75rem;
-        padding: 1rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        padding: 1.125rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
@@ -815,310 +705,222 @@
       }
       .afri-run-card:hover {
         border-color: #cbd5e1;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
       }
-
-      /* Card Top Row */
-      .afri-run-card-top {
+      .afri-run-card-header {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
-        gap: 0.625rem;
+        gap: 0.75rem;
       }
-      .afri-run-tool-tag {
-        font-size: 0.6875rem;
+      .afri-run-card-title-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        flex: 1;
+      }
+      .afri-run-card-label {
+        font-size: 0.9375rem;
         font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: #854d0e;
-        background: #fefce8;
-        border: 1px solid #fef08a;
-        padding: 0.2rem 0.5rem;
-        border-radius: 0.25rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 60%;
-      }
-      .afri-run-top-meta {
+        color: #000000;
+        margin: 0;
         display: flex;
         align-items: center;
         gap: 0.375rem;
-        margin-left: auto;
       }
-      .afri-run-time {
-        font-size: 0.6875rem;
-        color: #94a3b8;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .afri-run-mini-btn {
+      .afri-run-card-edit-btn {
         background: transparent;
         border: none;
-        color: #94a3b8;
+        color: #9ca3af;
         cursor: pointer;
-        padding: 0.25rem;
+        padding: 0.125rem;
         border-radius: 0.25rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        transition: color 0.15s ease, background 0.15s ease;
+        transition: color 0.15s ease;
       }
-      .afri-run-mini-btn:hover {
-        color: #0f172a;
-        background: #f1f5f9;
+      .afri-run-card-edit-btn:hover {
+        color: #000000;
       }
-      .afri-run-mini-btn.afri-run-del-btn:hover {
-        color: #dc2626;
-        background: #fef2f2;
+      .afri-run-card-edit-btn svg {
+        width: 0.8125rem;
+        height: 0.8125rem;
       }
-      .afri-run-mini-btn svg {
-        width: 0.875rem;
-        height: 0.875rem;
-      }
-
-      /* Card Title Row */
-      .afri-run-label-row {
-        margin: 0;
-      }
-      .afri-run-label-title {
-        font-size: 0.9375rem;
-        font-weight: 800;
-        color: #0f172a;
-        margin: 0;
-        line-height: 1.3;
-        word-break: break-word;
-      }
-
-      /* Hero Primary Result Banner (Full Width, Clear, Uncrowded) */
-      .afri-run-hero-box {
-        background: #000000;
-        color: #ffffff;
-        border-radius: 0.5rem;
-        padding: 0.75rem 1rem;
+      .afri-run-card-meta {
+        font-size: 0.75rem;
+        color: #6b7280;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
+        gap: 0.375rem;
       }
-      .afri-run-hero-left {
-        display: flex;
-        flex-direction: column;
-        gap: 0.125rem;
+      .afri-run-badge-primary {
+        background: #fefce8;
+        border: 1px solid #fde047;
+        color: #854d0e;
+        font-size: 0.8125rem;
+        font-weight: 800;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.375rem;
+        display: inline-block;
+        line-height: 1.2;
       }
-      .afri-run-hero-eyebrow {
-        font-size: 0.6875rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #94a3b8;
-      }
-      .afri-run-hero-val {
-        font-size: 1.125rem;
-        font-weight: 900;
-        color: #facc15;
-        letter-spacing: -0.01em;
-        line-height: 1.1;
-      }
-      .afri-run-hero-sub {
-        font-size: 0.6875rem;
-        color: #cbd5e1;
-        font-weight: 500;
-        text-align: right;
-        max-width: 45%;
-        line-height: 1.3;
-      }
-
-      /* Secondary Stats Grid */
-      .afri-run-stats-grid {
+      .afri-run-card-stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.375rem;
-        background: #f8fafc;
-        border: 1px solid #f1f5f9;
+        background: #f9fafb;
         padding: 0.625rem;
         border-radius: 0.5rem;
+        font-size: 0.75rem;
       }
       .afri-run-stat-item {
         display: flex;
         flex-direction: column;
-        gap: 0.125rem;
-        overflow: hidden;
       }
       .afri-run-stat-lbl {
-        color: #64748b;
+        color: #6b7280;
         font-size: 0.6875rem;
-        font-weight: 600;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-weight: 500;
       }
       .afri-run-stat-val {
-        color: #0f172a;
-        font-size: 0.8125rem;
+        color: #000000;
         font-weight: 700;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
-
-      /* Verdict Quote Box */
-      .afri-run-verdict-box {
+      .afri-run-card-verdict {
         font-size: 0.75rem;
-        color: #334155;
-        line-height: 1.45;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-left: 3px solid #facc15;
+        color: #4b5563;
+        line-height: 1.4;
+        background: #f3f4f6;
         padding: 0.5rem 0.625rem;
         border-radius: 0.375rem;
+        border-left: 2px solid #000000;
       }
-
-      /* Collapsible Inputs Summary */
-      .afri-run-inputs-wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
-      .afri-run-inputs-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        background: transparent;
-        border: 1px dashed #cbd5e1;
-        border-radius: 0.375rem;
-        padding: 0.375rem 0.625rem;
+      .afri-run-card-inputs-toggle {
         font-size: 0.75rem;
-        font-weight: 600;
-        color: #475569;
+        color: #4b5563;
+        background: transparent;
+        border: none;
+        padding: 0;
         cursor: pointer;
-        transition: all 0.15s ease;
+        text-decoration: underline;
+        text-align: left;
         font-family: inherit;
       }
-      .afri-run-inputs-btn:hover {
-        background: #ffffff;
-        border-color: #000000;
+      .afri-run-card-inputs-toggle:hover {
         color: #000000;
       }
-      .afri-run-inputs-btn svg {
-        width: 0.75rem;
-        height: 0.75rem;
-        transition: transform 0.2s ease;
-      }
-      .afri-run-inputs-btn.is-open svg {
-        transform: rotate(90deg);
-      }
-      .afri-run-inputs-drawer {
+      .afri-run-card-inputs-box {
         display: none;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: #f9fafb;
+        border: 1px solid #e5e5e5;
         border-radius: 0.375rem;
         padding: 0.5rem;
-        max-height: 150px;
-        overflow-y: auto;
         font-size: 0.6875rem;
+        max-height: 140px;
+        overflow-y: auto;
       }
-      .afri-run-inputs-drawer.is-open {
+      .afri-run-card-inputs-box.is-visible {
         display: block;
       }
       .afri-run-input-row {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        padding: 0.25rem 0;
-        border-bottom: 1px solid #f1f5f9;
-        gap: 0.5rem;
+        padding: 0.125rem 0;
+        border-bottom: 1px dashed #e5e5e5;
       }
       .afri-run-input-row:last-child {
         border-bottom: none;
       }
       .afri-run-input-lbl {
-        color: #64748b;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        color: #6b7280;
       }
       .afri-run-input-val {
-        color: #0f172a;
-        font-weight: 700;
-        white-space: nowrap;
-        text-align: right;
+        color: #000000;
+        font-weight: 600;
       }
 
       /* Card Actions */
-      .afri-run-actions-row {
+      .afri-run-card-actions {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        padding-top: 0.375rem;
+        gap: 0.375rem;
+        border-top: 1px solid #f3f4f6;
+        padding-top: 0.625rem;
+        flex-wrap: wrap;
       }
-      .afri-run-card-btn {
-        flex: 1;
+      .afri-run-action-btn {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.375rem;
+        gap: 0.25rem;
         font-size: 0.75rem;
         font-weight: 700;
-        padding: 0.45rem 0.625rem;
+        padding: 0.375rem 0.625rem;
         border-radius: 0.375rem;
         cursor: pointer;
         transition: all 0.15s ease;
         line-height: 1;
         font-family: inherit;
         border: 1px solid transparent;
-        min-height: 2rem;
       }
-      .afri-run-card-btn svg {
+      .afri-run-action-btn svg {
         width: 0.8125rem;
         height: 0.8125rem;
       }
-      .afri-run-card-btn-load {
+      .afri-run-action-load {
         background: #000000;
         color: #ffffff;
       }
-      .afri-run-card-btn-load:hover {
+      .afri-run-action-load:hover {
         background: #1f2937;
-        color: #facc15;
+        color: #fde047;
       }
-      .afri-run-card-btn-compare {
+      .afri-run-action-compare {
         background: #ffffff;
-        color: #0f172a;
-        border-color: #cbd5e1;
+        color: #111827;
+        border-color: #d1d5db;
       }
-      .afri-run-card-btn-compare:hover {
-        background: #f8fafc;
+      .afri-run-action-compare:hover {
+        background: #f9fafb;
         border-color: #000000;
+      }
+      .afri-run-action-delete {
+        background: transparent;
+        color: #9ca3af;
+        margin-left: auto;
+      }
+      .afri-run-action-delete:hover {
+        color: #dc2626;
+        background: #fef2f2;
       }
 
       /* Drawer Footer */
       .afri-runs-footer {
-        padding: 0.875rem 1.25rem;
+        padding: 1rem 1.25rem;
         background: #ffffff;
-        border-top: 1px solid #e2e8f0;
+        border-top: 1px solid #e5e5e5;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        flex-shrink: 0;
+        gap: 0.625rem;
       }
       .afri-runs-footer-row {
         display: flex;
         align-items: center;
-        gap: 0.625rem;
+        justify-content: space-between;
+        gap: 0.75rem;
       }
       .afri-runs-privacy-note {
         font-size: 0.6875rem;
-        color: #94a3b8;
+        color: #9ca3af;
         text-align: center;
         margin: 0;
       }
 
-      /* Comparison Modal */
+      /* Modal for Save Run Prompt & Comparison */
       .afri-runs-modal-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.65);
         backdrop-filter: blur(2px);
         z-index: 10000;
         display: flex;
@@ -1137,8 +939,8 @@
         background: #ffffff;
         border-radius: 0.875rem;
         width: 100%;
-        max-width: 500px;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+        max-width: 520px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         max-height: 90vh;
@@ -1171,15 +973,15 @@
       }
       .afri-runs-modal-footer {
         padding: 0.875rem 1.25rem;
-        background: #f8fafc;
-        border-top: 1px solid #e2e8f0;
+        background: #f9fafb;
+        border-top: 1px solid #e5e5e5;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: 0.625rem;
       }
 
-      /* Modal Form Inputs */
+      /* Form elements in Modal */
       .afri-runs-form-group {
         display: flex;
         flex-direction: column;
@@ -1188,12 +990,12 @@
       .afri-runs-form-label {
         font-size: 0.8125rem;
         font-weight: 700;
-        color: #0f172a;
+        color: #111827;
       }
       .afri-runs-form-input {
         width: 100%;
         padding: 0.625rem 0.75rem;
-        border: 1px solid #cbd5e1;
+        border: 1px solid #d1d5db;
         border-radius: 0.5rem;
         font-size: 0.875rem;
         font-family: inherit;
@@ -1205,49 +1007,49 @@
         box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.5);
       }
       .afri-runs-preview-box {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
+        background: #f9fafb;
+        border: 1px solid #e5e5e5;
         border-radius: 0.5rem;
         padding: 0.875rem;
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 0.375rem;
       }
       .afri-runs-preview-tool {
-        font-size: 0.6875rem;
-        font-weight: 800;
-        color: #ca8a04;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6b7280;
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
       .afri-runs-preview-metric {
-        font-size: 1.0625rem;
-        font-weight: 900;
+        font-size: 1rem;
+        font-weight: 800;
         color: #000000;
       }
 
-      /* Compare Modal Layout */
+      /* Comparison Modal Specific */
       .afri-compare-modal {
-        max-width: 640px;
+        max-width: 680px;
       }
       .afri-compare-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 0.875rem;
       }
-      @media (min-width: 560px) {
+      @media (min-width: 600px) {
         .afri-compare-grid {
           grid-template-columns: 1fr 1fr;
         }
       }
       .afri-compare-column {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
+        background: #f9fafb;
+        border: 1px solid #e5e5e5;
         border-radius: 0.625rem;
-        padding: 0.875rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.625rem;
       }
       .afri-compare-column.is-new {
         border-color: #fde047;
@@ -1257,8 +1059,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: 0.375rem;
-        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #e5e5e5;
       }
       .afri-compare-tag {
         font-size: 0.6875rem;
@@ -1267,8 +1069,8 @@
         letter-spacing: 0.05em;
         padding: 0.125rem 0.375rem;
         border-radius: 0.25rem;
-        background: #e2e8f0;
-        color: #334155;
+        background: #e5e7eb;
+        color: #374151;
       }
       .afri-compare-column.is-new .afri-compare-tag {
         background: #facc15;
@@ -1276,19 +1078,19 @@
       }
       .afri-compare-date {
         font-size: 0.6875rem;
-        color: #64748b;
+        color: #6b7280;
       }
       .afri-compare-label {
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
         font-weight: 800;
-        color: #0f172a;
+        color: #000000;
         margin: 0;
       }
       .afri-compare-metric-box {
         background: #ffffff;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #e5e5e5;
         border-radius: 0.5rem;
-        padding: 0.625rem;
+        padding: 0.75rem;
         text-align: center;
       }
       .afri-compare-metric-val {
@@ -1300,21 +1102,34 @@
         background: #000000;
         color: #ffffff;
         border-radius: 0.5rem;
-        padding: 0.625rem 0.875rem;
+        padding: 0.75rem 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 0.75rem;
       }
       .afri-compare-diff-title {
-        font-size: 0.75rem;
+        font-size: 0.8125rem;
         font-weight: 700;
         color: #cbd5e1;
       }
       .afri-compare-diff-badge {
-        font-size: 0.8125rem;
+        font-size: 0.875rem;
         font-weight: 800;
         color: #facc15;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .afri-compare-diff-badge svg {
+        width: 1rem;
+        height: 1rem;
+      }
+      .afri-compare-table-title {
+        font-size: 0.8125rem;
+        font-weight: 800;
+        color: #111827;
+        margin: 0.5rem 0 0.25rem 0;
       }
       .afri-compare-table {
         width: 100%;
@@ -1323,16 +1138,16 @@
       }
       .afri-compare-table th {
         text-align: left;
-        padding: 0.45rem;
-        background: #f1f5f9;
-        color: #475569;
+        padding: 0.5rem;
+        background: #f3f4f6;
+        color: #4b5563;
         font-weight: 700;
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e5e5e5;
       }
       .afri-compare-table td {
-        padding: 0.45rem;
-        border-bottom: 1px solid #f1f5f9;
-        color: #0f172a;
+        padding: 0.5rem;
+        border-bottom: 1px solid #f3f4f6;
+        color: #111827;
       }
       .afri-compare-table tr.is-diff {
         background: #fefce8;
@@ -1341,7 +1156,7 @@
         font-weight: 600;
       }
 
-      /* Floating Toast */
+      /* Toast */
       .afri-runs-toast {
         position: fixed;
         bottom: 1.5rem;
@@ -1349,13 +1164,13 @@
         transform: translateX(-50%) translateY(100px);
         background: #000000;
         color: #ffffff;
-        padding: 0.625rem 1.125rem;
+        padding: 0.75rem 1.25rem;
         border-radius: 9999px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        font-size: 0.8125rem;
+        gap: 0.625rem;
+        font-size: 0.875rem;
         font-weight: 600;
         z-index: 10001;
         opacity: 0;
@@ -1377,8 +1192,8 @@
         flex-shrink: 0;
       }
       .afri-runs-toast-icon svg {
-        width: 1rem;
-        height: 1rem;
+        width: 1.125rem;
+        height: 1.125rem;
       }
     `;
     document.head.appendChild(style);
@@ -1386,6 +1201,7 @@
 
   // Inject Navigation Bar Button
   function injectNavRunsButton() {
+    // 1. Desktop Nav
     const navLinks = $('.nav-links');
     if (navLinks && !$('#afriNavRunsBtn')) {
       const btn = document.createElement('button');
@@ -1400,6 +1216,7 @@
       `;
       btn.addEventListener('click', () => openRunsDrawer());
 
+      // Place next to Favourites or Legal dropdown
       const favBtn = $('#afriNavFavBtn');
       const dropdown = navLinks.querySelector('.nav-dropdown');
       if (favBtn) {
@@ -1411,6 +1228,7 @@
       }
     }
 
+    // 2. Mobile Nav Menu
     const mobileMenu = $('#mobileMenu');
     if (mobileMenu && !$('#afriMobileRunsLink')) {
       const link = document.createElement('a');
@@ -1464,7 +1282,7 @@
     }
   }
 
-  // Inject In-Page Action Bar (Beside Calculator Results)
+  // Inject In-Page Action Bar (Runs beside results or share bar)
   function injectInlineBar() {
     if (!isCalculatorPage()) return;
     if ($('#afriRunsBar')) return;
@@ -1503,6 +1321,7 @@
       </div>
     `;
 
+    // Smart placement: insert directly above or below share bar or at bottom of results
     const shareBar = $('#afriShareBar');
     if (shareBar) {
       shareBar.parentNode.insertBefore(bar, shareBar);
@@ -1559,18 +1378,18 @@
         </div>
         <div class="afri-runs-modal-body">
           <div class="afri-runs-preview-box">
-            <span class="afri-runs-preview-tool">${escapeHtml(toolTitle)}</span>
-            <span class="afri-runs-preview-metric">${escapeHtml(summary.primaryLabel)}: ${escapeHtml(summary.primaryValue)}</span>
-            ${summary.verdict ? `<span style="font-size:0.75rem;color:#64748b;">${escapeHtml(summary.verdict.substring(0, 90))}...</span>` : ''}
+            <span class="afri-runs-preview-tool">${toolTitle}</span>
+            <span class="afri-runs-preview-metric">${summary.primaryMetric}</span>
+            ${summary.verdict ? `<span style="font-size:0.75rem;color:#4b5563;">${summary.verdict.substring(0, 100)}...</span>` : ''}
           </div>
 
           <div class="afri-runs-form-group">
-            <label for="afriRunLabelInput" class="afri-runs-form-label">Run Label / Title</label>
-            <input id="afriRunLabelInput" type="text" class="afri-runs-form-input" value="${escapeHtml(defaultLabel)}" placeholder="e.g. Mock Exam 1, Target Plan, First Bank Offer" maxlength="50" autofocus />
+            <label for="afriRunLabelInput" class="afri-runs-form-label">Run Label / Assessment Name</label>
+            <input id="afriRunLabelInput" type="text" class="afri-runs-form-input" value="${defaultLabel}" placeholder="e.g. Mock Exam 1, First Quote, Midterm Target" maxlength="50" autofocus />
           </div>
 
-          <p style="font-size:0.75rem;color:#64748b;margin:0;">
-            Saves all ${inputs.length} inputs and resulting metrics securely in your browser to compare or reload later.
+          <p style="font-size:0.75rem;color:#6b7280;margin:0;">
+            This run will be saved in your browser history with all ${inputs.length} input values so you can compare or restore them anytime.
           </p>
         </div>
         <div class="afri-runs-modal-footer">
@@ -1613,7 +1432,7 @@
       });
 
       closeModal();
-      showToast(`Saved "${label}" to history.`);
+      showToast(`Saved "${label}" to calculation history.`);
     });
   }
 
@@ -1638,28 +1457,23 @@
     drawer.innerHTML = `
       <div class="afri-runs-header">
         <div class="afri-runs-header-brand">
-          ${ICONS.brandMark}
-          <div class="afri-runs-header-title-box">
-            <h2 class="afri-runs-header-title">My Saved Runs</h2>
-            <span class="afri-runs-header-sub">Calculation history &amp; progress comparison</span>
-          </div>
+          ${ICONS.brandLogo}
+          <h2 class="afri-runs-header-title">My Saved Runs</h2>
         </div>
         <button id="afriRunsDrawerClose" type="button" class="afri-runs-close-btn" aria-label="Close saved runs">
           ${ICONS.close}
         </button>
       </div>
 
-      <div class="afri-runs-tabs-wrap">
-        <div class="afri-runs-tabs">
-          <button id="afriTabCurrent" type="button" class="afri-runs-tab is-active">
-            <span>This Tool</span>
-            <span id="afriTabCurrentBadge" class="afri-runs-tab-badge">0</span>
-          </button>
-          <button id="afriTabAll" type="button" class="afri-runs-tab">
-            <span>All Saved Runs</span>
-            <span id="afriTabAllBadge" class="afri-runs-tab-badge">0</span>
-          </button>
-        </div>
+      <div class="afri-runs-tabs">
+        <button id="afriTabCurrent" type="button" class="afri-runs-tab is-active">
+          <span>This Tool</span>
+          <span id="afriTabCurrentBadge" class="afri-runs-badge">0</span>
+        </button>
+        <button id="afriTabAll" type="button" class="afri-runs-tab">
+          <span>All Saved Runs</span>
+          <span id="afriTabAllBadge" class="afri-runs-badge">0</span>
+        </button>
       </div>
 
       <div id="afriRunsList" class="afri-runs-body"></div>
@@ -1670,7 +1484,7 @@
             ${ICONS.compare}
             <span>Compare Runs</span>
           </button>
-          <button id="afriClearRunsBtn" type="button" class="afri-runs-btn afri-runs-btn-outline" title="Clear saved runs">
+          <button id="afriClearRunsBtn" type="button" class="afri-runs-btn afri-runs-btn-outline" title="Clear runs">
             ${ICONS.trash}
             <span>Clear</span>
           </button>
@@ -1701,7 +1515,7 @@
     $('#afriClearRunsBtn')?.addEventListener('click', () => {
       const isCurrent = currentDrawerTab === 'current';
       const promptText = isCurrent
-        ? 'Clear saved runs for this calculator tool?'
+        ? 'Clear all saved runs for this calculator tool?'
         : 'Clear all saved runs across all tools?';
       if (confirm(promptText)) {
         if (isCurrent) {
@@ -1714,6 +1528,7 @@
       }
     });
 
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeRunsDrawer();
@@ -1746,6 +1561,7 @@
     const currentRuns = getRunsForCurrentTool();
     const allRuns = getAllSavedRuns();
 
+    // Update tab counts
     const tabCur = $('#afriTabCurrent');
     const tabAll = $('#afriTabAll');
     const badgeCur = $('#afriTabCurrentBadge');
@@ -1764,6 +1580,7 @@
 
     const runsToShow = currentDrawerTab === 'current' ? currentRuns : allRuns;
 
+    // Enable/disable compare button
     const compareBtn = $('#afriCompareBtn');
     if (compareBtn) {
       compareBtn.disabled = runsToShow.length < 2;
@@ -1786,161 +1603,144 @@
       return;
     }
 
-    list.innerHTML = runsToShow.map((run) => {
-      const hero = parseHeroMetric(run.summary);
-
-      // Clean secondary stats
-      const statsList = (run.summary.stats || []).map(s => {
-        let cleanVal = s.value;
-        const parenIdx = cleanVal.indexOf('(');
-        if (parenIdx > 0) {
-          cleanVal = cleanVal.substring(0, parenIdx).trim();
-        }
-        return `
-          <div class="afri-run-stat-item">
-            <span class="afri-run-stat-lbl">${escapeHtml(s.label)}</span>
-            <span class="afri-run-stat-val">${escapeHtml(cleanVal)}</span>
-          </div>
-        `;
-      }).join('');
-
-      return `
-        <div class="afri-run-card" data-run-id="${run.id}">
-          <!-- Top Row: Category tag on left, Date & Quick Icons on right -->
-          <div class="afri-run-card-top">
-            <span class="afri-run-tool-tag">${escapeHtml(run.toolTitle)}</span>
-            <div class="afri-run-top-meta">
-              <span class="afri-run-time">${formatRunDate(run.timestamp, run.dateStr)}</span>
-              <button class="afri-run-mini-btn afri-run-edit-btn" data-edit-id="${run.id}" title="Rename run" aria-label="Rename">
+    list.innerHTML = runsToShow.map((run, idx) => `
+      <div class="afri-run-card" data-run-id="${run.id}">
+        <div class="afri-run-card-header">
+          <div class="afri-run-card-title-wrap">
+            <h4 class="afri-run-card-label">
+              <span>${run.label}</span>
+              <button class="afri-run-card-edit-btn" data-edit-id="${run.id}" title="Rename this run" aria-label="Rename">
                 ${ICONS.edit}
               </button>
-              <button class="afri-run-mini-btn afri-run-del-btn" data-del-id="${run.id}" title="Delete run" aria-label="Delete">
-                ${ICONS.trash}
-              </button>
+            </h4>
+            <div class="afri-run-card-meta">
+              <span>${run.toolTitle}</span>
+              <span>&bull;</span>
+              <span>${run.dateStr}</span>
             </div>
           </div>
-
-          <!-- Run Label Title (Full width, zero squishing) -->
-          <div class="afri-run-label-row">
-            <h4 class="afri-run-label-title">${escapeHtml(run.label)}</h4>
-          </div>
-
-          <!-- Hero Primary Result Banner (Full Width, Clear, Uncrowded) -->
-          <div class="afri-run-hero-box">
-            <div class="afri-run-hero-left">
-              <span class="afri-run-hero-eyebrow">${escapeHtml(hero.label)}</span>
-              <span class="afri-run-hero-val">${escapeHtml(hero.value)}</span>
-            </div>
-            ${hero.sub ? `<span class="afri-run-hero-sub">${escapeHtml(hero.sub)}</span>` : ''}
-          </div>
-
-          <!-- Secondary Stats Grid (Clean 2-Column Key-Values) -->
-          ${statsList ? `<div class="afri-run-stats-grid">${statsList}</div>` : ''}
-
-          <!-- Verdict / Assessment Summary -->
-          ${run.summary.verdict ? `
-            <div class="afri-run-verdict-box">
-              ${escapeHtml(run.summary.verdict)}
-            </div>
-          ` : ''}
-
-          <!-- Collapsible Inputs Summary -->
-          <div class="afri-run-inputs-wrap">
-            <button type="button" class="afri-run-inputs-btn" data-toggle-inputs="${run.id}">
-              <span>View ${run.inputs.length} input values</span>
-              ${ICONS.arrowRight}
-            </button>
-            <div id="inputs_${run.id}" class="afri-run-inputs-drawer">
-              ${run.inputs.map(inp => `
-                <div class="afri-run-input-row">
-                  <span class="afri-run-input-lbl">${escapeHtml(inp.label)}</span>
-                  <span class="afri-run-input-val">${escapeHtml(inp.displayValue || inp.value)}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="afri-run-actions-row">
-            <button type="button" class="afri-run-card-btn afri-run-card-btn-load" data-load-id="${run.id}">
-              ${ICONS.restore}
-              <span>Load Inputs</span>
-            </button>
-            <button type="button" class="afri-run-card-btn afri-run-card-btn-compare" data-compare-id="${run.id}">
-              ${ICONS.compare}
-              <span>Compare</span>
-            </button>
+          <div class="afri-run-badge-primary">
+            ${run.summary.primaryMetric}
           </div>
         </div>
-      `;
-    }).join('');
 
-    // Toggle Inputs Accordion
+        ${run.summary.stats && run.summary.stats.length ? `
+          <div class="afri-run-card-stats">
+            ${run.summary.stats.map(s => `
+              <div class="afri-run-stat-item">
+                <span class="afri-run-stat-lbl">${s.label}</span>
+                <span class="afri-run-stat-val">${s.value}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        ${run.summary.verdict ? `
+          <div class="afri-run-card-verdict">${run.summary.verdict}</div>
+        ` : ''}
+
+        <div>
+          <button type="button" class="afri-run-card-inputs-toggle" data-toggle-inputs="${run.id}">
+            View ${run.inputs.length} input values &darr;
+          </button>
+          <div id="inputs_${run.id}" class="afri-run-card-inputs-box">
+            ${run.inputs.map(inp => `
+              <div class="afri-run-input-row">
+                <span class="afri-run-input-lbl">${inp.label}</span>
+                <span class="afri-run-input-val">${inp.displayValue || inp.value}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="afri-run-card-actions">
+          <button type="button" class="afri-run-action-btn afri-run-action-load" data-load-id="${run.id}">
+            ${ICONS.restore}
+            <span>Load Inputs</span>
+          </button>
+          <button type="button" class="afri-run-action-btn afri-run-action-compare" data-compare-id="${run.id}">
+            ${ICONS.compare}
+            <span>Compare</span>
+          </button>
+          <button type="button" class="afri-run-action-btn afri-run-action-delete" data-del-id="${run.id}" title="Delete run">
+            ${ICONS.trash}
+            <span>Delete</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+    // Attach run card listeners
     $$('[data-toggle-inputs]', list).forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-toggle-inputs');
         const box = $(`#inputs_${id}`);
         if (box) {
-          const isOpen = box.classList.toggle('is-open');
-          btn.classList.toggle('is-open', isOpen);
+          box.classList.toggle('is-visible');
+          btn.innerHTML = box.classList.contains('is-visible')
+            ? `Hide input values &uarr;`
+            : `View input values &darr;`;
         }
       });
     });
 
-    // Rename Run
-    $$('[data-edit-id]', list).forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-edit-id');
-        const run = getAllSavedRuns().find(r => r.id === id);
-        if (!run) return;
-        const newName = prompt('Enter a new label for this run:', run.label);
-        if (newName !== null && newName.trim() !== '') {
-          updateRunLabel(id, newName.trim());
-          renderDrawerContent();
-          showToast(`Renamed to "${newName.trim()}".`);
-        }
-      });
-    });
-
-    // Delete Run
-    $$('[data-del-id]', list).forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-del-id');
-        deleteRun(id);
-        renderDrawerContent();
-        showToast('Run removed from history.');
-      });
-    });
-
-    // Load Run Inputs
     $$('[data-load-id]', list).forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-load-id');
         const run = getAllSavedRuns().find(r => r.id === id);
-        if (!run) return;
-
-        const currentSlug = getPageSlug();
-        if (run.toolSlug !== currentSlug && run.toolUrl) {
-          location.href = run.toolUrl;
-          return;
+        if (run) {
+          // If on a different page, navigate
+          if (run.toolSlug !== getPageSlug()) {
+            if (confirm(`This run is for "${run.toolTitle}". Navigate there to load inputs?`)) {
+              sessionStorage.setItem('afri_restore_run', JSON.stringify(run));
+              location.href = run.toolUrl;
+            }
+          } else {
+            closeRunsDrawer();
+            restoreInputsFromRun(run);
+          }
         }
-
-        restoreInputsFromRun(run);
       });
     });
 
-    // Compare Single Run Trigger
     $$('[data-compare-id]', list).forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-compare-id');
         openCompareModal(id);
       });
     });
+
+    $$('[data-edit-id]', list).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-edit-id');
+        const run = getAllSavedRuns().find(r => r.id === id);
+        if (run) {
+          const next = prompt('Rename this calculation run:', run.label);
+          if (next && next.trim()) {
+            updateRunLabel(id, next);
+            renderDrawerContent();
+          }
+        }
+      });
+    });
+
+    $$('[data-del-id]', list).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-del-id');
+        if (confirm('Delete this saved run?')) {
+          deleteRun(id);
+          renderDrawerContent();
+          showToast('Run deleted.');
+        }
+      });
+    });
   }
 
   // Progress Comparison Modal
   function openCompareModal(preselectedId = null) {
+    const slug = getPageSlug();
     const runs = getRunsForCurrentTool();
+
     if (runs.length < 2 && (!preselectedId || runs.length < 1)) {
       alert('You need at least 2 saved runs for this calculator to compare them. Save another run after modifying inputs!');
       return;
@@ -1966,6 +1766,7 @@
     }
 
     function renderCompareModal() {
+      // Find changed inputs between runA and runB
       const inputsA = new Map(runA.inputs.map(i => [i.key, i]));
       const inputsB = new Map(runB.inputs.map(i => [i.key, i]));
       const allKeys = Array.from(new Set([...inputsA.keys(), ...inputsB.keys()]));
@@ -1981,8 +1782,6 @@
       });
 
       const changedCount = diffRows.filter(r => r.isDiff).length;
-      const heroA = parseHeroMetric(runA.summary);
-      const heroB = parseHeroMetric(runB.summary);
 
       overlay.innerHTML = `
         <div class="afri-runs-modal afri-compare-modal" role="dialog" aria-modal="true" aria-labelledby="afriCompareTitle">
@@ -2000,106 +1799,128 @@
             <!-- Selectors -->
             <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
               <div style="flex:1;min-width:180px;">
-                <label style="font-size:0.75rem;font-weight:700;color:#64748b;display:block;margin-bottom:0.25rem;">Base Run (Earlier Attempt)</label>
+                <label style="font-size:0.75rem;font-weight:700;color:#6b7280;display:block;margin-bottom:0.25rem;">Baseline Run (Run A)</label>
                 <select id="afriSelectRunA" class="afri-runs-form-input">
-                  ${runs.map(r => `<option value="${r.id}" ${r.id === runA.id ? 'selected' : ''}>${escapeHtml(r.label)} (${formatRunDate(r.timestamp, r.dateStr)})</option>`).join('')}
+                  ${runs.map(r => `<option value="${r.id}" ${r.id === runA.id ? 'selected' : ''}>${r.label} (${r.dateStr.split(' ')[0]})</option>`).join('')}
                 </select>
               </div>
               <div style="flex:1;min-width:180px;">
-                <label style="font-size:0.75rem;font-weight:700;color:#64748b;display:block;margin-bottom:0.25rem;">Comparison Run (Later Attempt)</label>
+                <label style="font-size:0.75rem;font-weight:700;color:#6b7280;display:block;margin-bottom:0.25rem;">Comparison Run (Run B)</label>
                 <select id="afriSelectRunB" class="afri-runs-form-input">
-                  ${runs.map(r => `<option value="${r.id}" ${r.id === runB.id ? 'selected' : ''}>${escapeHtml(r.label)} (${formatRunDate(r.timestamp, r.dateStr)})</option>`).join('')}
+                  ${runs.map(r => `<option value="${r.id}" ${r.id === runB.id ? 'selected' : ''}>${r.label} (${r.dateStr.split(' ')[0]})</option>`).join('')}
                 </select>
               </div>
             </div>
 
-            <!-- Side-by-Side Result Cards -->
+            <!-- Comparison Cards Grid -->
             <div class="afri-compare-grid">
               <div class="afri-compare-column">
                 <div class="afri-compare-col-header">
-                  <span class="afri-compare-tag">Base Attempt</span>
-                  <span class="afri-compare-date">${formatRunDate(runA.timestamp, runA.dateStr)}</span>
+                  <span class="afri-compare-tag">Run A &bull; Baseline</span>
+                  <span class="afri-compare-date">${runA.dateStr}</span>
                 </div>
-                <h4 class="afri-compare-label">${escapeHtml(runA.label)}</h4>
+                <h4 class="afri-compare-label">${runA.label}</h4>
                 <div class="afri-compare-metric-box">
-                  <div style="font-size:0.6875rem;color:#64748b;font-weight:700;text-transform:uppercase;">${escapeHtml(heroA.label)}</div>
-                  <div class="afri-compare-metric-val">${escapeHtml(heroA.value)}</div>
+                  <span class="afri-compare-metric-val">${runA.summary.primaryMetric}</span>
                 </div>
+                ${runA.summary.verdict ? `<div style="font-size:0.6875rem;color:#4b5563;">${runA.summary.verdict}</div>` : ''}
               </div>
 
               <div class="afri-compare-column is-new">
                 <div class="afri-compare-col-header">
-                  <span class="afri-compare-tag">Comparison Attempt</span>
-                  <span class="afri-compare-date">${formatRunDate(runB.timestamp, runB.dateStr)}</span>
+                  <span class="afri-compare-tag">Run B &bull; Current</span>
+                  <span class="afri-compare-date">${runB.dateStr}</span>
                 </div>
-                <h4 class="afri-compare-label">${escapeHtml(runB.label)}</h4>
-                <div class="afri-compare-metric-box">
-                  <div style="font-size:0.6875rem;color:#854d0e;font-weight:700;text-transform:uppercase;">${escapeHtml(heroB.label)}</div>
-                  <div class="afri-compare-metric-val" style="color:#ca8a04;">${escapeHtml(heroB.value)}</div>
+                <h4 class="afri-compare-label">${runB.label}</h4>
+                <div class="afri-compare-metric-box" style="border-color:#fde047;">
+                  <span class="afri-compare-metric-val">${runB.summary.primaryMetric}</span>
                 </div>
+                ${runB.summary.verdict ? `<div style="font-size:0.6875rem;color:#4b5563;">${runB.summary.verdict}</div>` : ''}
               </div>
             </div>
 
-            <!-- Changes Summary Banner -->
+            <!-- Difference Banner -->
             <div class="afri-compare-diff-banner">
-              <span class="afri-compare-diff-title">Modified Input Variables</span>
-              <span class="afri-compare-diff-badge">${changedCount} of ${allKeys.length} fields changed</span>
+              <span class="afri-compare-diff-title">Input Modifications Between Runs</span>
+              <span class="afri-compare-diff-badge">
+                ${ICONS.trendUp}
+                <span>${changedCount} ${changedCount === 1 ? 'subject/input changed' : 'subjects/inputs changed'}</span>
+              </span>
             </div>
 
-            <!-- Detailed Breakdown Table -->
-            <div style="max-height:220px;overflow-y:auto;border:1px solid #e2e8f0;border-radius:0.5rem;">
-              <table class="afri-compare-table">
-                <thead>
-                  <tr>
-                    <th>Input Field</th>
-                    <th>Base (${escapeHtml(runA.label.substring(0, 14))})</th>
-                    <th>Comparison (${escapeHtml(runB.label.substring(0, 14))})</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${diffRows.map(r => `
-                    <tr class="${r.isDiff ? 'is-diff' : ''}">
-                      <td>${escapeHtml(r.label)}</td>
-                      <td>${escapeHtml(r.valA)}</td>
-                      <td>
-                        ${escapeHtml(r.valB)}
-                        ${r.isDiff ? '<span style="font-size:0.625rem;background:#facc15;color:#000000;padding:0.1rem 0.3rem;border-radius:0.25rem;font-weight:800;margin-left:0.25rem;">NEW</span>' : ''}
-                      </td>
+            <!-- Inputs Diff Table -->
+            <div>
+              <h5 class="afri-compare-table-title">Subject &amp; Field Breakdown</h5>
+              <div style="border:1px solid #e5e5e5;border-radius:0.5rem;overflow:hidden;">
+                <table class="afri-compare-table">
+                  <thead>
+                    <tr>
+                      <th style="width:38%;">Subject / Field</th>
+                      <th style="width:31%;">Run A</th>
+                      <th style="width:31%;">Run B</th>
                     </tr>
-                  `).join('')}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    ${diffRows.map(r => `
+                      <tr class="${r.isDiff ? 'is-diff' : ''}">
+                        <td>${r.label}</td>
+                        <td>${r.valA}</td>
+                        <td>${r.valB}${r.isDiff ? ` <span style="color:#ca8a04;font-size:0.625rem;font-weight:800;">[UPDATED]</span>` : ''}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
           <div class="afri-runs-modal-footer">
-            <button id="afriCompareCloseBtn" type="button" class="afri-runs-btn afri-runs-btn-outline">Close</button>
-            <button id="afriLoadCompareRunB" type="button" class="afri-runs-btn afri-runs-btn-yellow">
+            <button id="afriLoadRunABtn" type="button" class="afri-runs-btn afri-runs-btn-outline">
               ${ICONS.restore}
-              <span>Load Run B Inputs</span>
+              <span>Load Run A</span>
             </button>
+            <button id="afriLoadRunBBtn" type="button" class="afri-runs-btn afri-runs-btn-dark">
+              ${ICONS.restore}
+              <span>Load Run B</span>
+            </button>
+            <button id="afriCompareDone" type="button" class="afri-runs-btn afri-runs-btn-yellow">Done</button>
           </div>
         </div>
       `;
 
-      $('#afriCompareClose')?.addEventListener('click', () => overlay.classList.remove('is-open'));
-      $('#afriCompareCloseBtn')?.addEventListener('click', () => overlay.classList.remove('is-open'));
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) overlay.classList.remove('is-open');
-      });
-
+      // Select Change Listeners
       $('#afriSelectRunA')?.addEventListener('change', (e) => {
-        runA = runs.find(r => r.id === e.target.value) || runA;
-        renderCompareModal();
+        const selected = runs.find(r => r.id === e.target.value);
+        if (selected) {
+          runA = selected;
+          renderCompareModal();
+        }
       });
 
       $('#afriSelectRunB')?.addEventListener('change', (e) => {
-        runB = runs.find(r => r.id === e.target.value) || runB;
-        renderCompareModal();
+        const selected = runs.find(r => r.id === e.target.value);
+        if (selected) {
+          runB = selected;
+          renderCompareModal();
+        }
       });
 
-      $('#afriLoadCompareRunB')?.addEventListener('click', () => {
-        overlay.classList.remove('is-open');
+      const closeCompare = () => overlay.classList.remove('is-open');
+      $('#afriCompareClose')?.addEventListener('click', closeCompare);
+      $('#afriCompareDone')?.addEventListener('click', closeCompare);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeCompare();
+      });
+
+      $('#afriLoadRunABtn')?.addEventListener('click', () => {
+        closeCompare();
+        closeRunsDrawer();
+        restoreInputsFromRun(runA);
+      });
+
+      $('#afriLoadRunBBtn')?.addEventListener('click', () => {
+        closeCompare();
+        closeRunsDrawer();
         restoreInputsFromRun(runB);
       });
     }
@@ -2108,31 +1929,58 @@
     overlay.classList.add('is-open');
   }
 
-  // Observe calculations for showing inline bar
-  function setupCalculationObserver() {
-    const host = findResultHost();
-    if (!host) return;
-
-    function checkVisibility() {
-      const isVisible = host.offsetParent !== null ||
-        host.classList.contains('visible') ||
-        window.getComputedStyle(host).display !== 'none';
-
-      if (isVisible) {
-        injectInlineBar();
+  // Check if navigating back with a pending restore request from another page
+  function checkPendingRestore() {
+    try {
+      const pending = sessionStorage.getItem('afri_restore_run');
+      if (pending) {
+        sessionStorage.removeItem('afri_restore_run');
+        const run = JSON.parse(pending);
+        if (run && run.toolSlug === getPageSlug()) {
+          setTimeout(() => {
+            restoreInputsFromRun(run);
+          }, 400);
+        }
       }
-    }
+    } catch {}
+  }
 
-    const observer = new MutationObserver(() => {
-      checkVisibility();
-    });
+  // Observe calculations for showing inline bar
+  function observeCalculations() {
+    if (!isCalculatorPage()) return;
 
-    observer.observe(host, { attributes: true, attributeFilter: ['class', 'style'] });
+    // Check periodically or via MutationObserver when results become visible
+    const checkVisibility = () => {
+      const host = findResultHost();
+      if (host) {
+        const isVisible = host.classList.contains('visible') ||
+          host.style.display === 'block' ||
+          window.getComputedStyle(host).display !== 'none';
+        if (isVisible) {
+          injectInlineBar();
+        }
+      }
+    };
+
     checkVisibility();
 
-    $$('button[type="submit"], .btn-calc, #calcBtn, #calculateBtn').forEach(btn => {
+    // Observe result container changes
+    const host = findResultHost();
+    if (host) {
+      const observer = new MutationObserver(checkVisibility);
+      observer.observe(host, { attributes: true, childList: true, subtree: true });
+    }
+
+    // Also hook on calculate / submit button clicks
+    $('form')?.addEventListener('submit', () => {
+      setTimeout(checkVisibility, 200);
+      setTimeout(checkVisibility, 600);
+    });
+
+    $$('.btn-calc, button[type="submit"], #calcBtn, #calculateBtn').forEach(btn => {
       btn.addEventListener('click', () => {
         setTimeout(checkVisibility, 200);
+        setTimeout(checkVisibility, 600);
       });
     });
   }
@@ -2141,17 +1989,18 @@
   function init() {
     injectStyles();
     injectNavRunsButton();
-    setupCalculationObserver();
+    observeCalculations();
+    checkPendingRestore();
   }
 
   onReady(init);
 
-  window.AfriWidgetRuns = {
+  // Global API
+  window.AfriWidgetSavedRuns = {
     openDrawer: openRunsDrawer,
-    closeDrawer: closeRunsDrawer,
     openSaveModal: openSaveRunModal,
-    openCompareModal: openCompareModal,
-    getAll: getAllSavedRuns,
-    getForCurrent: getRunsForCurrentTool
+    openCompare: openCompareModal,
+    getRuns: getAllSavedRuns
   };
+
 })();
