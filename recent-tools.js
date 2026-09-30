@@ -16,7 +16,7 @@
   var MAX_ITEMS = 6;
   var EXPIRY_MS = 30 * 24 * 60 * 60 * 1000; // 30 days expiration
 
-  // Pristine Tool Directory Lookup (All 125 AfriWidget Tools)
+  // Pristine Tool Directory Lookup (All 126 AfriWidget Tools)
   var TOOL_MAP = {
   "acsee-points-calculator": {
     "name": "ACSEE Points Calculator",
@@ -138,6 +138,11 @@
     "category": "Finance",
     "url": "/debt-payoff-calculator"
   },
+  "exif-remover": {
+    "name": "Metadata & EXIF Remover",
+    "category": "Productivity",
+    "url": "/exif-remover"
+  },
   "form-four-gpa-calculator": {
     "name": "Form Four GPA Calculator",
     "category": "Education",
@@ -238,6 +243,16 @@
     "category": "Education",
     "url": "/jamb-utme-aggregate-calculator"
   },
+  "job-application-tracker": {
+    "name": "Job Application Tracker",
+    "category": "Productivity",
+    "url": "/job-application-tracker"
+  },
+  "job-scam-checker": {
+    "name": "Job Scam Checker",
+    "category": "Productivity",
+    "url": "/job-scam-checker"
+  },
   "json-formatter-validator": {
     "name": "JSON Formatter & Validator",
     "category": "Productivity",
@@ -323,11 +338,6 @@
     "category": "Education",
     "url": "/norway-gpa-calculator"
   },
-  "south-africa-study-planner": {
-    "name": "South Africa Study Planner",
-    "category": "Education",
-    "url": "/south-africa-study-planner"
-  },
   "nsfas-eligibility-checker": {
     "name": "NSFAS Eligibility Checker",
     "category": "Education",
@@ -343,6 +353,11 @@
     "category": "Education",
     "url": "/olevel-subject-combination-checker"
   },
+  "online-shop-scam-checker": {
+    "name": "Shop Scam Checker",
+    "category": "Productivity",
+    "url": "/online-shop-scam-checker"
+  },
   "ovulation-cycle-calculator": {
     "name": "Ovulation & Cycle Calculator",
     "category": "Health",
@@ -352,6 +367,11 @@
     "name": "Secure Password Generator",
     "category": "Education",
     "url": "/password-generator"
+  },
+  "paye-calculator": {
+    "name": "PAYE & Net Salary Calculator",
+    "category": "Finance",
+    "url": "/paye-calculator"
   },
   "paypal-fee-calculator": {
     "name": "PayPal Fee Calculator",
@@ -417,6 +437,11 @@
     "name": "SEO Meta Tag Generator & SERP Preview",
     "category": "Education",
     "url": "/seo-meta-generator"
+  },
+  "south-africa-study-planner": {
+    "name": "South Africa Study Planner",
+    "category": "Education",
+    "url": "/south-africa-study-planner"
   },
   "south-african-aps-calculator": {
     "name": "South African APS Calculator",
@@ -622,26 +647,6 @@
     "name": "ZIMSEC O-Level Points Calculator",
     "category": "Education",
     "url": "/zimsec-olevel-points-calculator"
-  },
-  "exif-remover": {
-    "name": "Metadata & EXIF Remover",
-    "category": "Productivity",
-    "url": "/exif-remover"
-  },
-  "job-application-tracker": {
-    "name": "Job Application Tracker",
-    "category": "Productivity",
-    "url": "/job-application-tracker"
-  },
-  "job-scam-checker": {
-    "name": "Job Scam Checker",
-    "category": "Productivity",
-    "url": "/job-scam-checker"
-  },
-  "online-shop-scam-checker": {
-    "name": "Shop Scam Checker",
-    "category": "Productivity",
-    "url": "/online-shop-scam-checker"
   }
 };
 
@@ -812,7 +817,7 @@
   function getPageToolCategory() {
     var catEl = document.querySelector('.calc-panel-cat, .tool-card-cat, .breadcrumb li:nth-child(3)');
     if (catEl) return catEl.textContent.trim();
-    return 'Education';
+    return 'Finance';
   }
 
   function formatTimeAgo(timestamp) {

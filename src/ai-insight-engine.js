@@ -468,6 +468,41 @@ export const BENCHMARKS = {
   },
 
   // === FINANCE TOOLS ===
+  'paye-calculator': {
+    name: 'PAYE & Net Salary Calculator',
+    category: 'finance',
+    country: 'Nigeria, Ghana, Kenya, South Africa, UK',
+    formula: 'Net Salary = Gross Salary - Pension Contribution - PAYE Income Tax - Statutory Health & Social Security Levies (SHIF/NSSF/NI).',
+    source: 'National Tax Authorities (FIRS Nigeria, GRA Ghana, KRA Kenya, SARS South Africa, HMRC UK)',
+    sourceUrl: 'https://afriwidget.com/paye-calculator',
+    sourceDate: '2026 Statutory Tax Schedules and Social Security Contribution Frameworks',
+    limitations: 'Calculations model standard full-time employment contracts. Excludes voluntary top-up retirement annuities, expatriate concessions, specific secondary employment tax codes, regional local government levies, or customized company benefits-in-kind.',
+    evaluate(ctx) {
+      const effRate = Number(ctx.result?.effectiveRate ?? ctx.inputs?.effectiveRate ?? 0);
+      if (effRate <= 0) {
+        return {
+          assessment: 'Zero statutory tax liability',
+          justification: 'Your gross earnings fall within the statutory tax-free personal allowance threshold for the selected country, meaning no personal income tax deduction is incurred.'
+        };
+      }
+      if (effRate < 10) {
+        return {
+          assessment: 'Low effective tax burden',
+          justification: 'Your effective deduction rate is under 10%, indicating that the majority of your earnings sit within lower tax brackets and statutory allowance tiers.'
+        };
+      }
+      if (effRate <= 22) {
+        return {
+          assessment: 'Moderate effective tax burden',
+          justification: 'Your effective rate sits in the typical middle-income tax bracket (10%–22%), balancing personal allowances with progressive statutory deductions.'
+        };
+      }
+      return {
+        assessment: 'Higher marginal tax tier',
+        justification: 'Your effective deduction rate exceeds 22%, reflecting progressive taxation where a significant portion of earnings falls into upper statutory income tax brackets.'
+      };
+    }
+  },
   'loan-calculator': {
     name: 'Loan Calculator',
     category: 'finance',

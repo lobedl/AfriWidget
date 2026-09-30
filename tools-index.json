@@ -605,6 +605,35 @@
     ]
   },
   {
+    "slug": "exif-remover",
+    "name": "PDF & Image Metadata Remover",
+    "shortName": "Metadata & EXIF Remover",
+    "description": "Strip EXIF, GPS location tags, author names, and hidden metadata from PDFs and images locally in your browser for UK GDPR data minimisation.",
+    "category": "Productivity",
+    "url": "/exif-remover",
+    "keywords": [
+      "exif remover",
+      "metadata remover",
+      "pdf metadata remover",
+      "image metadata remover",
+      "strip exif",
+      "remove gps location",
+      "remove metadata",
+      "exif",
+      "metadata",
+      "gps tags",
+      "gdpr",
+      "ico",
+      "privacy",
+      "clean pdf",
+      "photo exif",
+      "data minimisation",
+      "productivity",
+      "safety",
+      "security"
+    ]
+  },
+  {
     "slug": "form-four-gpa-calculator",
     "name": "Form Four GPA & Division Calculator",
     "shortName": "Form Four GPA Calculator",
@@ -1086,6 +1115,58 @@
     ]
   },
   {
+    "slug": "job-application-tracker",
+    "name": "Job Application Tracker (In-Browser Career Pipeline & Interview Manager)",
+    "shortName": "Job Application Tracker",
+    "description": "Track every job application, interview schedule, offer, rejection, and follow-up in one place. Private, in-browser tool with local storage and PDF export.",
+    "category": "Productivity",
+    "url": "/job-application-tracker",
+    "keywords": [
+      "job application tracker",
+      "job tracker",
+      "application tracker",
+      "job search",
+      "career tracker",
+      "interview tracker",
+      "interview schedule",
+      "job applications",
+      "follow up reminder",
+      "job pipeline",
+      "resume",
+      "recruiter contact",
+      "job search organizer",
+      "productivity",
+      "career",
+      "employment",
+      "pdf report"
+    ]
+  },
+  {
+    "slug": "job-scam-checker",
+    "name": "Job Scam & Fake Offer Checker",
+    "shortName": "Job Scam Checker",
+    "description": "Scan job adverts, interview invitations, and recruiter messages for upfront fee traps, suspicious domains, and red flags.",
+    "category": "Productivity",
+    "url": "/job-scam-checker",
+    "keywords": [
+      "job scam checker",
+      "scam checker",
+      "scam",
+      "checker",
+      "job scam",
+      "fake job",
+      "employment fraud",
+      "recruiter scam",
+      "upfront fee scam",
+      "fake interview",
+      "recruitment fraud",
+      "phishing",
+      "fraud check",
+      "safety",
+      "productivity"
+    ]
+  },
+  {
     "slug": "json-formatter-validator",
     "name": "JSON Formatter & Validator",
     "shortName": "JSON Formatter & Validator",
@@ -1527,34 +1608,6 @@
     ]
   },
   {
-    "slug": "south-africa-study-planner",
-    "name": "South Africa Study Planner",
-    "shortName": "South Africa Study Planner",
-    "description": "Convert NQF credits into weekly study hours, balance part-time work and commuting, and build a semester study timetable for South African universities and TVET colleges.",
-    "category": "Education",
-    "url": "/south-africa-study-planner",
-    "keywords": [
-      "south africa study planner",
-      "education",
-      "south africa",
-      "study",
-      "planner",
-      "nqf",
-      "credits",
-      "workload",
-      "timetable",
-      "generator",
-      "university",
-      "weekly",
-      "schedule",
-      "tvet",
-      "lectures",
-      "self study",
-      "notional hours",
-      "semester plan"
-    ]
-  },
-  {
     "slug": "nsfas-eligibility-checker",
     "name": "NSFAS Eligibility Checker",
     "shortName": "NSFAS Eligibility Checker",
@@ -1622,6 +1675,34 @@
     ]
   },
   {
+    "slug": "online-shop-scam-checker",
+    "name": "Online Shop Scam Checker",
+    "shortName": "Shop Scam Checker",
+    "description": "Verify e-commerce websites and social media seller profiles with live DNS checks, web archive history, and payment risk scoring.",
+    "category": "Productivity",
+    "url": "/online-shop-scam-checker",
+    "keywords": [
+      "online shop scam checker",
+      "shop scam checker",
+      "scam checker",
+      "scam",
+      "checker",
+      "shop scam",
+      "fake store",
+      "fake shop",
+      "ecommerce scam",
+      "website trust",
+      "scam website",
+      "fake website",
+      "shopping scam",
+      "online shopping",
+      "fraud check",
+      "seller verification",
+      "safety",
+      "productivity"
+    ]
+  },
+  {
     "slug": "ovulation-cycle-calculator",
     "name": "Ovulation & Cycle Calculator",
     "shortName": "Ovulation & Cycle Calculator",
@@ -1653,6 +1734,31 @@
       "private",
       "password",
       "generator"
+    ]
+  },
+  {
+    "slug": "paye-calculator",
+    "name": "PAYE & Net Salary Calculator",
+    "shortName": "PAYE & Net Salary Calculator",
+    "description": "Calculate take-home pay after PAYE income tax, pension contributions, NHIF/SHIF, NSSF, and statutory deductions across Nigeria, Ghana, Kenya, South Africa, and the UK.",
+    "category": "Finance",
+    "url": "/paye-calculator",
+    "keywords": [
+      "paye calculator",
+      "net salary calculator",
+      "salary after tax",
+      "take home pay",
+      "income tax calculator",
+      "pension contribution",
+      "nigeria paye",
+      "ghana paye",
+      "kenya paye",
+      "south africa sars",
+      "uk salary tax",
+      "finance",
+      "shif deduction",
+      "nssf deduction",
+      "national insurance"
     ]
   },
   {
@@ -1931,6 +2037,34 @@
       "seo",
       "meta",
       "generator"
+    ]
+  },
+  {
+    "slug": "south-africa-study-planner",
+    "name": "South Africa Study Planner",
+    "shortName": "South Africa Study Planner",
+    "description": "Convert NQF credits into weekly study hours, balance part-time work and commuting, and build a semester study timetable for South African universities and TVET colleges.",
+    "category": "Education",
+    "url": "/south-africa-study-planner",
+    "keywords": [
+      "south africa study planner",
+      "education",
+      "south africa",
+      "study",
+      "planner",
+      "nqf",
+      "credits",
+      "workload",
+      "timetable",
+      "generator",
+      "university",
+      "weekly",
+      "schedule",
+      "tvet",
+      "lectures",
+      "self study",
+      "notional hours",
+      "semester plan"
     ]
   },
   {
@@ -2986,115 +3120,6 @@
       "best 5",
       "form 5 eligibility",
       "olevel"
-    ]
-  },
-  {
-    "slug": "exif-remover",
-    "name": "PDF & Image Metadata Remover",
-    "shortName": "Metadata & EXIF Remover",
-    "description": "Strip EXIF, GPS location tags, author names, and hidden metadata from PDFs and images locally in your browser for UK GDPR data minimisation.",
-    "category": "Productivity",
-    "url": "/exif-remover",
-    "keywords": [
-      "exif remover",
-      "metadata remover",
-      "pdf metadata remover",
-      "image metadata remover",
-      "strip exif",
-      "remove gps location",
-      "remove metadata",
-      "exif",
-      "metadata",
-      "gps tags",
-      "gdpr",
-      "ico",
-      "privacy",
-      "clean pdf",
-      "photo exif",
-      "data minimisation",
-      "productivity",
-      "safety",
-      "security"
-    ]
-  },
-  {
-    "slug": "job-application-tracker",
-    "name": "Job Application Tracker (In-Browser Career Pipeline & Interview Manager)",
-    "shortName": "Job Application Tracker",
-    "description": "Track every job application, interview schedule, offer, rejection, and follow-up in one place. Private, in-browser tool with local storage and PDF export.",
-    "category": "Productivity",
-    "url": "/job-application-tracker",
-    "keywords": [
-      "job application tracker",
-      "job tracker",
-      "application tracker",
-      "job search",
-      "career tracker",
-      "interview tracker",
-      "interview schedule",
-      "job applications",
-      "follow up reminder",
-      "job pipeline",
-      "resume",
-      "recruiter contact",
-      "job search organizer",
-      "productivity",
-      "career",
-      "employment",
-      "pdf report"
-    ]
-  },
-  {
-    "slug": "job-scam-checker",
-    "name": "Job Scam & Fake Offer Checker",
-    "shortName": "Job Scam Checker",
-    "description": "Scan job adverts, interview invitations, and recruiter messages for upfront fee traps, suspicious domains, and red flags.",
-    "category": "Productivity",
-    "url": "/job-scam-checker",
-    "keywords": [
-      "job scam checker",
-      "scam checker",
-      "scam",
-      "checker",
-      "job scam",
-      "fake job",
-      "employment fraud",
-      "recruiter scam",
-      "upfront fee scam",
-      "fake interview",
-      "recruitment fraud",
-      "phishing",
-      "fraud check",
-      "safety",
-      "productivity"
-    ]
-  },
-  {
-    "slug": "online-shop-scam-checker",
-    "name": "Online Shop Scam Checker",
-    "shortName": "Shop Scam Checker",
-    "description": "Verify e-commerce websites and social media seller profiles with live DNS checks, web archive history, and payment risk scoring.",
-    "category": "Productivity",
-    "url": "/online-shop-scam-checker",
-    "keywords": [
-      "online shop scam checker",
-      "shop scam checker",
-      "scam checker",
-      "scam",
-      "checker",
-      "shop scam",
-      "fake store",
-      "fake shop",
-      "ecommerce scam",
-      "website trust",
-      "scam website",
-      "fake website",
-      "shopping scam",
-      "online shopping",
-      "fraud check",
-      "seller verification",
-      "safety",
-      "productivity"
     ]
   }
 ]

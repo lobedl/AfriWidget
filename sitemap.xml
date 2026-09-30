@@ -181,7 +181,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://afriwidget.com/paye-calculator</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
     <loc>https://afriwidget.com/hourly-to-salary</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
