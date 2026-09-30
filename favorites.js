@@ -120,6 +120,20 @@
          Zero Tailwind, Zero Emojis, 100% Accessible Pure CSS
          ========================================================================== */
 
+      /* Suppress browser native search cancel button so only custom clear icon is visible */
+      .category-search-input::-webkit-search-decoration,
+      .category-search-input::-webkit-search-cancel-button,
+      .category-search-input::-webkit-search-results-button,
+      .category-search-input::-webkit-search-results-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+
       /* Nav Favourite Button */
       .nav-fav-btn {
         display: inline-flex;
@@ -1492,8 +1506,25 @@
     }
   }
 
+  // Ensure "Continue Where You Left Off" & Progress Engine script is loaded on all tools
+  function ensureRecentTools() {
+    if (window.AfriWidgetRecentTools) return;
+    const currentPath = normalizeUrl(window.location.pathname);
+    if (!currentPath || currentPath === '/' || currentPath === '/index') return;
+    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
+    if (hubPages.includes(currentPath)) return;
+
+    if (!document.querySelector('script[src*="recent-tools.js"]')) {
+      const s = document.createElement('script');
+      s.src = '/recent-tools.js?v=1';
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+  }
+
   // Initialize
   function init() {
+    ensureRecentTools();
     injectStyles();
     ensureDrawerMarkup();
     injectNavFavoritesButton();

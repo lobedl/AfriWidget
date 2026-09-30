@@ -1040,7 +1040,7 @@
       } catch (err) {
         console.warn('Share auto-calculate notice:', err);
       }
-      showToast('Calculation restored from shared link');
+      showToast('Calculation restored');
     }, 150);
   }
 
@@ -1075,8 +1075,19 @@
     }
   }
 
+  function ensureRecentTools() {
+    if (window.AfriWidgetRecentTools) return;
+    if (!document.querySelector('script[src*="recent-tools.js"]')) {
+      const s = document.createElement('script');
+      s.src = '/recent-tools.js?v=1';
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+  }
+
   function init() {
     ensurePwaMetaTags();
+    ensureRecentTools();
     injectShareStyles();
     const config = getAdapter();
     injectShareBar(config);
