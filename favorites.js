@@ -1356,9 +1356,12 @@
       shelf.id = 'afriHomepageFavShelf';
       shelf.className = 'homepage-fav-section';
 
-      // Insert right after the category search section
+      // Insert right after continueSection or category search section
+      const continueSection = document.getElementById('continueSection');
       const searchSection = document.querySelector('.category-search-section');
-      if (searchSection) {
+      if (continueSection) {
+        continueSection.insertAdjacentElement('afterend', shelf);
+      } else if (searchSection) {
         searchSection.insertAdjacentElement('afterend', shelf);
       } else {
         const firstSection = document.querySelector('main > section');
@@ -1446,6 +1449,49 @@
     }
   });
 
+  // Automatic Recent Tool Visit Tracking (works on every tool page across AfriWidget)
+  function trackRecentToolVisit() {
+    if (window.AfriWidgetRecentTools && typeof window.AfriWidgetRecentTools.add === 'function') {
+      return; // Already handled by recent-tools.js if present
+    }
+    const currentPath = normalizeUrl(window.location.pathname);
+    if (!currentPath || currentPath === '/' || currentPath === '/index') return;
+    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
+    if (hubPages.includes(currentPath)) return;
+
+    try {
+      const RECENT_KEY = 'afriwidget_recent_tools';
+      const EXPIRY_MS = 30 * 24 * 60 * 60 * 1000;
+      const raw = localStorage.getItem(RECENT_KEY);
+      let list = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(list)) list = [];
+      const now = Date.now();
+      list = list.filter(item => item && item.url && item.name && typeof item.lastVisited === 'number' && (now - item.lastVisited < EXPIRY_MS));
+
+      const title = getPageToolTitle();
+      const category = getPageToolCategory();
+
+      const existingIndex = list.findIndex(item => normalizeUrl(item.url) === currentPath);
+      const entry = {
+        name: title || 'Calculator Tool',
+        url: currentPath,
+        category: category || 'General',
+        lastVisited: now
+      };
+
+      if (existingIndex > -1) {
+        list.splice(existingIndex, 1);
+      }
+      list.unshift(entry);
+      list = list.slice(0, 6);
+
+      localStorage.setItem(RECENT_KEY, JSON.stringify(list));
+      window.dispatchEvent(new CustomEvent('afriwidget_recent_updated', { detail: { recent: list } }));
+    } catch (e) {
+      // Storage restricted
+    }
+  }
+
   // Initialize
   function init() {
     injectStyles();
@@ -1453,6 +1499,7 @@
     injectNavFavoritesButton();
     attachCardFavoriteButtons(document);
     injectDetailPageFavoriteButton();
+    trackRecentToolVisit();
     renderHomepageFavoritesShelf();
     observeDynamicCards();
   }
@@ -1471,6 +1518,7 @@
     clear: clearAllFavorites,
     open: openFavoritesDrawer,
     close: closeFavoritesDrawer,
-    isFavorite: isFavorite
+    isFavorite: isFavorite,
+    attachCardButtons: attachCardFavoriteButtons
   };
 })();
