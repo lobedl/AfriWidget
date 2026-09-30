@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "lint": "node --check server.js generate-og-assets.js saved-runs.js",
+    "lint": "node --check server.js generate-og-assets.js",
     "build": "node generate-og-assets.js",
     "deploy": "npx wrangler pages deploy ."
   },
