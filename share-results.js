@@ -649,6 +649,33 @@
     'canada-student-loan-repayment-calculator': {
       fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
       calculate: () => $('#calcLoanBtn')?.click()
+    },
+    'document-converter': {
+      fields: () => [$('#textInput'), $('#targetSelect')],
+      restore(values) {
+        values.forEach(({ key, value }) => {
+          if (key === 'textInput' || key === 'text') {
+            const ta = $('#textInput');
+            if (ta) {
+              ta.value = value;
+              ta.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          } else if (key === 'targetSelect' || key === 'format') {
+            const sel = $('#targetSelect');
+            if (sel) {
+              sel.value = value;
+              sel.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          }
+        });
+      },
+      calculate: () => {
+        const ta = $('#textInput');
+        const btn = $('#convertBtn');
+        if (ta && ta.value.trim() && btn && !btn.disabled) {
+          btn.click();
+        }
+      }
     }
   };
 
@@ -740,6 +767,7 @@
     return url.toString();
   }
 
+  window.showAfriToast = showToast;
   function showToast(message) {
     let toast = document.getElementById('afriwidgetToast');
     if (!toast) {

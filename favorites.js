@@ -202,6 +202,13 @@
       .tool-card {
         position: relative;
       }
+      /* Never display favourite buttons on Continue Where You Left Off cards */
+      .continue-card .tool-card-fav-btn,
+      #continueSection .tool-card-fav-btn,
+      #continueGridContainer .tool-card-fav-btn {
+        display: none !important;
+        pointer-events: none !important;
+      }
       
       .tool-card-fav-btn {
         position: absolute;
@@ -1156,8 +1163,14 @@
 
   // Card Bookmark Toggle Buttons (on homepage, category pages, search results, related tools)
   function attachCardFavoriteButtons(container = document) {
-    const cards = container.querySelectorAll('a.tool-card, a.app-card');
+    try {
+      const root = container || document;
+      root.querySelectorAll('.continue-card .tool-card-fav-btn, #continueSection .tool-card-fav-btn, #continueGridContainer .tool-card-fav-btn').forEach(btn => btn.remove());
+    } catch (e) {}
+
+    const cards = (container || document).querySelectorAll('a.tool-card:not(.continue-card), a.app-card:not(.continue-card)');
     cards.forEach(card => {
+      if (card.classList.contains('continue-card') || card.closest('#continueSection, #continueGridContainer')) return;
       if (card.querySelector('.tool-card-fav-btn')) return;
 
       const url = card.getAttribute('href') || '';
@@ -1299,7 +1312,10 @@
     // Update all card buttons
     document.querySelectorAll('.tool-card-fav-btn').forEach(btn => {
       const card = btn.closest('a.tool-card, a.app-card');
-      if (!card) return;
+      if (!card || card.classList.contains('continue-card') || card.closest('#continueSection, #continueGridContainer')) {
+        btn.remove();
+        return;
+      }
       const url = card.getAttribute('href') || '';
       const isFav = isFavorite(url);
       btn.classList.toggle('is-favorite', isFav);

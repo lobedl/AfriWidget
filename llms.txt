@@ -130,6 +130,7 @@ AfriWidget provides fast, browser-based tools with zero registration, no server-
 - [JSON Formatter & Validator](https://afriwidget.com/json-formatter-validator): Validates JSON syntax, highlights parse errors, and formats payloads with customizable indentation or compact minification.
 - [HTML Minifier](https://afriwidget.com/html-minifier): Compresses HTML markup by eliminating redundant whitespace, comments, and empty attributes to reduce page weight.
 - [Markdown to HTML Converter](https://afriwidget.com/markdown-to-html-converter): Converts Markdown documents into clean, semantic HTML markup with live preview and code export.
+- [Universal Document Converter](https://afriwidget.com/document-converter): Converts files and text between Word (.docx), PDF, JPG, PNG, and WebP entirely in the browser with zero server uploads or size tracking.
 - [Image Resizer & WebP Converter](https://afriwidget.com/image-resizer-webp-converter): Resizes image dimensions and compresses JPG/PNG files into modern WebP format entirely in the browser using HTML5 Canvas.
 - [EXIF Metadata Remover](https://afriwidget.com/exif-remover): Strips privacy-compromising EXIF metadata (GPS coordinates, camera serials, timestamps) from photos before online sharing.
 - [Keyword Density Checker](https://afriwidget.com/keyword-density-checker): Analyzes text content to calculate total word counts, reading difficulty, and single/multi-word keyword frequency percentages.

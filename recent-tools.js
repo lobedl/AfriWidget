@@ -133,6 +133,11 @@
     "category": "Productivity",
     "url": "/data-file-unit-converter"
   },
+  "document-converter": {
+    "name": "Universal Document Converter",
+    "category": "Productivity",
+    "url": "/document-converter"
+  },
   "debt-payoff-calculator": {
     "name": "Debt Payoff Calculator",
     "category": "Finance",
@@ -939,10 +944,8 @@
     container.innerHTML = html;
     initClearButton();
 
-    // Attach bookmark favorite star buttons to the new cards if favorites system is loaded
-    if (window.AfriWidgetFavorites && typeof window.AfriWidgetFavorites.attachCardButtons === 'function') {
-      window.AfriWidgetFavorites.attachCardButtons(container);
-    }
+    // Note: Do NOT attach bookmark favorite star buttons to continue cards.
+    // Continue cards are dedicated resume actions for returning users.
   }
 
   // Automatic Tool Visit Tracking on Current Page
@@ -1162,15 +1165,17 @@
       return;
     }
 
-    // Clean up ?continue=1 from the URL bar so the URL stays pristine
+    // Clean up ?continue=1 from the URL bar so the URL stays pristine after other scripts have read it
     if (hasContinueParam && window.history && typeof window.history.replaceState === 'function') {
-      try {
-        var cleanUrl = new URL(window.location.href);
-        cleanUrl.searchParams.delete('continue');
-        cleanUrl.searchParams.delete('resume');
-        var queryStr = cleanUrl.searchParams.toString();
-        window.history.replaceState({}, '', cleanUrl.pathname + (queryStr ? '?' + queryStr : '') + cleanUrl.hash);
-      } catch (e) {}
+      setTimeout(function () {
+        try {
+          var cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('continue');
+          cleanUrl.searchParams.delete('resume');
+          var queryStr = cleanUrl.searchParams.toString();
+          window.history.replaceState({}, '', cleanUrl.pathname + (queryStr ? '?' + queryStr : '') + cleanUrl.hash);
+        } catch (e) {}
+      }, 500);
     }
 
     var storageKey = PROGRESS_PREFIX + path;
