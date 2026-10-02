@@ -258,6 +258,24 @@
     .stat-box { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 0.75rem; padding: 1rem; text-align: center; }
     .stat-box .stat-num { font-size: 1.5rem; font-weight: 900; color: #ca8a04; line-height: 1; margin-bottom: 0.375rem; }
     .stat-box .stat-label { font-size: 0.75rem; font-weight: 600; color: #4b5563; line-height: 1.3; }
+
+    /* Comparison Component */
+    .diff-list { display: flex; flex-direction: column; gap: 1.25rem; margin: 1.75rem 0 2.25rem; }
+    .diff-item { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 0.75rem; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+    .diff-item:hover { border-color: #facc15; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); }
+    .diff-badge { display: inline-block; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ca8a04; background: #fefce8; border: 1px solid #fef08a; padding: 0.2rem 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem; }
+    .diff-item h3 { font-size: 1.0625rem; font-weight: 800; color: #000000; margin-top: 0; margin-bottom: 0.75rem; line-height: 1.35; }
+    .diff-cols { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+    @media (min-width: 640px) { .diff-cols { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+    .diff-box { padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; line-height: 1.55; }
+    .diff-box p { margin-bottom: 0; font-size: 0.875rem; line-height: 1.55; }
+    .diff-typical { background: #f9fafb; border: 1px solid #e5e7eb; color: #4b5563; }
+    .diff-afri { background: #fefce8; border: 1px solid #fef08a; color: #1f2937; }
+    .diff-label { display: block; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .diff-typical .diff-label { color: #6b7280; }
+    .diff-afri .diff-label { color: #ca8a04; }
+    .diff-benefit { font-size: 0.8125rem; color: #374151; line-height: 1.5; margin-bottom: 0; padding-top: 0.625rem; border-top: 1px solid #f3f4f6; }
+    .diff-benefit strong { color: #000000; font-weight: 700; }
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem; }
     .faq-item { border: 1px solid #e5e5e5; border-radius: 0.75rem; overflow: hidden; transition: border-color 0.2s; }
     .faq-item:hover { border-color: #d1d5db; }
@@ -404,8 +422,8 @@
     <header class="seo-header">
       <div class="container">
         <span class="seo-eyebrow">About AfriWidget</span>
-        <h1 class="seo-title">Built in Ghana. <span class="seo-title-accent">Built Around Real Problems.</span></h1>
-        <p class="seo-subtitle">AfriWidget started with a straightforward question: why should calculating a student's aggregate, checking a university cutoff, or estimating loan costs be harder than it needs to be?</p>
+        <h1 class="seo-title">Practical Tools for Real Problems. <span class="seo-title-accent">Built to Take Action.</span></h1>
+        <p class="seo-subtitle">AfriWidget exists to solve problems, simplify decisions, and make useful digital tools accessible to everyone. Built around fast, browser-based utilities that deliver immediate answers without friction or paywalls.</p>
       </div>
     </header>
 
@@ -413,22 +431,22 @@
       <div class="container-narrow">
         <h2>What Is AfriWidget?</h2>
         <p>AfriWidget is a collection of free, high-speed calculators and digital planning tools designed to run directly inside your web browser. There are no mobile apps to download, no user accounts to configure, and no forms demanding personal contact information. Visitors simply open the page, choose the relevant utility, input their numbers, and view the calculation instantly on screen.</p>
-        <p>The platform was created in response to a widespread issue across the web: simple everyday problems were continually being turned into frustrating, bloated online experiences. Whether a secondary school student needs to compute their university admission aggregate, a freelancer needs an instant PDF invoice, or a family needs an accurate loan amortization estimate, these calculations should never be trapped behind paywalls, intrusive tracking, or required subscriptions.</p>
-        <p>Today, AfriWidget provides more than 120 dedicated tools organized across five core categories: education, finance, health, productivity, and business. Every utility is engineered to be lightweight, client-side, mathematically verified, and completely free to use.</p>
+        <p>Many websites provide information, but AfriWidget focuses on helping people take action. Instead of reading through long articles just to find an answer, users can use dedicated tools to calculate numbers, check eligibility, track progress, compare options, and get results immediately.</p>
+        <p>Today, AfriWidget provides more than 120 dedicated tools organized across five core categories: education, finance, health, business, and productivity. Every utility is engineered to solve real-world problems by turning complicated tasks into simple, easy-to-use tools that are lightweight, mathematically verified, and completely free to use.</p>
 
         <div class="callout">
-          <p><strong>The guiding principle:</strong> Find the tool, enter the numbers, get the answer instantly, and move forward with your day.</p>
+          <p><strong>The core mission:</strong> AfriWidget exists to solve problems, simplify decisions, and make useful digital tools accessible to everyone.</p>
         </div>
 
         <h2>The Story Behind AfriWidget</h2>
-        <p>Every practical utility originates from an immediate, real-world friction point. For AfriWidget, that journey began in Accra, Ghana.</p>
-        <p>In 2024, high school students completing their West African Senior School Certificate Examination (WASSCE) faced a familiar hurdle: understanding how their letter grades translated into official numerical aggregate scores and whether their combinations met tertiary admission cutoff points. The mathematics behind the calculation was basic arithmetic, but finding a clear, trustworthy mobile tool was difficult.</p>
-        <p>In many neighborhoods, students were walking to commercial internet cafes or paying middlemen cash just to have their result slips reviewed and totaled on scrap paper. Paying hard-earned money and traveling distances simply to complete a standard scoring formula that could happen in seconds on a mobile phone made the technological divide painfully clear.</p>
-        <p>Having studied business at Keta Business College and dedicating countless hours to self-taught web development and modern JavaScript, founder Obed Avorlenu chose to solve the problem directly in code. Working from an older laptop with modest internet access, he developed a clean grading script following official West African Examinations Council (WAEC) criteria and shared the link with his cousin on WhatsApp.</p>
+        <p>AfriWidget exists because of a passion for solving everyday problems through simple, accessible technology. The goal is to remove friction, save time, and help people make better decisions using practical tools that work instantly in the browser.</p>
+        <p>Across the web, finding answers to common everyday challenges often means wading through endless articles, sponsored guides, and ad-heavy blog posts just to get a single number or verify criteria. People do not always need another lengthy explanation; they need a reliable, direct way to make a calculation, test a scenario, or evaluate an outcome.</p>
+        <p>Founder and lead developer Obed Avorlenu, a self-taught web developer from Ghana, noticed that people searching the web were constantly confronted with bloated articles, complex spreadsheets, paywalled software, and invasive sign-up forms just to complete straightforward calculations. Across education (exam grading criteria and university admission formulas), finance (compound interest, savings plans, and loan amortization), health (body metrics and metabolic needs), business (invoicing, pricing, and profit margins), and productivity, complicated procedures created unnecessary obstacles.</p>
+        <p>Rather than producing more long-form content explaining how to calculate numbers manually, he began coding lightweight, client-side tools that turned these complicated tasks into interactive, immediate utilities available to anyone on any device.</p>
 
-        <h3>From One Calculator to an Open Platform</h3>
-        <p>The link spread rapidly among secondary school candidates and study groups. Within days, students from multiple regions were using the calculator to evaluate their admission options. Soon after, junior high school educators asked for a BECE aggregate calculator. University undergraduates requested semester GPA and CGPA conversion tools. Independent artisans, traders, and freelancers reached out asking for simple profit margin, invoice, and fee calculators.</p>
-        <p>Rather than maintaining dozens of disconnected pages, the entire collection was brought together into a unified, privacy-focused resource named <strong>AfriWidget</strong>.</p>
+        <h3>Action-Driven Tools Instead of Long Articles</h3>
+        <p>Most websites approach challenges by publishing long articles that describe formulas and criteria, leaving users to decipher the mathematics on their own. AfriWidget takes an action-oriented approach: turning complicated rules and formulas into intuitive interactive tools where users can calculate, check eligibility, track progress, and compare options in seconds.</p>
+        <p>What began as a focused effort to make educational criteria transparent and accessible quickly expanded as visitors requested practical utilities for finance, health, business operations, and daily productivity. Rather than maintaining fragmented standalone sites, the utilities were brought together into a unified, privacy-first platform designed to solve real-world problems and help people take immediate action.</p>
 
         <!-- DEDICATED FOUNDER PROFILE -->
         <h2>About the Founder</h2>
@@ -441,8 +459,8 @@
           </div>
 
           <div class="founder-statement">
-            <p>"I'm Obed Avorlenu, a self-taught web developer from Ghana and the founder of AfriWidget. I was born on 17 May 2007. I built AfriWidget to create practical, free browser-based tools, with a growing focus on education. I design, build, and maintain the platform myself, turning everyday problems into simple tools people can actually use."</p>
-            <div class="statement-sign">— Obed Avorlenu, Founder of AfriWidget</div>
+            <p>"AfriWidget was created from a passion for solving everyday problems through simple, accessible technology. Many websites provide information, but AfriWidget focuses on helping people take action. Instead of reading long articles to find answers, you can use our tools to calculate, check eligibility, track progress, compare options, and get results immediately. The goal is to remove friction, save time, and help people make better decisions every single day."</p>
+            <div class="statement-sign">— Obed Avorlenu, Founder &amp; Lead Developer</div>
           </div>
 
           <div class="founder-details">
@@ -461,7 +479,7 @@
           </div>
 
           <p style="font-size: 0.9375rem; color: #4b5563; line-height: 1.7; margin-bottom: 1.25rem;">
-            Obed learned modern software development by building, testing, reading official web documentation, and resolving real-world computational bottlenecks. Starting with an old laptop and self-directed study, he wrote the underlying formulas, crafted the user interfaces, and continues to handle every single update, server optimization, and formula verification personally. His primary vision remains anchored in educational empowerment: ensuring that any student, parent, or working professional across Africa and the world can access reliable calculation tools freely and privately.
+            Obed built AfriWidget to solve problems, simplify decisions, and make useful digital tools accessible to everyone. By engineering lightweight, browser-based tools that run without server-side tracking or mandatory logins, he ensures that students, freelancers, and working professionals worldwide can calculate, compare options, and take action instantly on any device.
           </p>
 
           <div class="founder-links">
@@ -522,6 +540,126 @@
             <div class="stat-label">Core Categories</div>
           </div>
         </div>
+
+        <h2>What Makes AfriWidget Different</h2>
+        <p>Many online utility websites fall into one of two extremes: long explanatory articles that provide background details without a working calculation tool, or standalone calculators that produce a one-time answer and immediately discard the user's context. AfriWidget is engineered around an integrated approach that helps visitors solve problems faster, return to their work easily, track progress over time, and access practical tools without unnecessary barriers.</p>
+        <p>Rather than making unverified claims, the platform distinguishes itself by combining key workflow capabilities that are often missing from traditional online calculators and informational sites:</p>
+
+        <div class="diff-list">
+          <div class="diff-item">
+            <span class="diff-badge">Workflow Focus</span>
+            <h3>Action-Oriented Utilities vs. Static Reading</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Focus primarily on long-form articles and guides, requiring visitors to read thousands of words and calculate formulas by hand.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Focuses directly on action. Interactive tools let users calculate figures, check eligibility against official criteria, compare options, and receive immediate results on screen.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Saves time by eliminating manual arithmetic and transforming passive reading into immediate, practical problem-solving.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Navigation &amp; Convenience</span>
+            <h3>Saved Favourite Tools vs. Repeated Searching</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Only display a one-off result on screen, requiring visitors to search the web from scratch or manage individual browser bookmarks every time they need a tool.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Provides a built-in favorites system that lets users pin frequently used calculators for one-click access across visits directly on the site.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Allows students, freelancers, and small business owners to maintain a personalized dashboard of the specific tools they use most often.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Session Continuity</span>
+            <h3>Continue Where You Left Off vs. Starting Over</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Discard all input data when a user navigates away or refreshes the page, forcing them to re-enter complex numbers from scratch.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Remembers previous calculator inputs in local browser storage, allowing users to return and continue their work seamlessly without losing progress.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Prevents frustration during multi-step evaluations, such as adjusting interest rates on a loan or refining exam grade scenarios over several days.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Longitudinal Utility</span>
+            <h3>Academic Progress Tracking vs. One-Time Calculation</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Provide isolated, one-time scores with no mechanism to track performance across academic terms or evaluate cumulative progress.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Supports academic progress tracking on selected educational tools, enabling learners to monitor semester GPAs, cumulative standing, and target benchmarks over time.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Gives students and educators continuous visibility into academic trends and admission readiness across multiple semesters.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Contextual Guidance</span>
+            <h3>Optional AI-Powered Insights vs. Isolated Numbers</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Present raw numeric answers without practical explanation, leaving users uncertain about what their output actually means or what steps to take next.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Provides optional, on-demand AI-powered insights on relevant tools to contextualize results, explain grade boundaries, or outline practical financial considerations.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Helps users interpret outcomes clearly and make informed decisions without sharing private personal identifiers with external services.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Privacy &amp; Accessibility</span>
+            <h3>Direct In-Browser Tools vs. Registration Barriers</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Demand account registration, email confirmations, software downloads, or credit card trials before granting access to basic calculation features.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Every tool runs directly inside the web browser using client-side JavaScript. There are zero account signups, zero downloads, and zero paywalls.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Guarantees instant utility and total privacy—calculations remain on your personal device and clear immediately when the tab is closed.</p>
+          </div>
+
+          <div class="diff-item">
+            <span class="diff-badge">Unified Platform</span>
+            <h3>All Essential Domains in One Place vs. Fragmented Websites</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Scatter tools across disparate single-purpose sites, each with differing interfaces, intrusive advertising networks, and inconsistent formula standards.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Brings education, finance, health, business, and productivity utilities together under a unified, lightweight interface with consistent navigation and privacy standards.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Provides a single, dependable ecosystem where learners, workers, and entrepreneurs can handle everyday computations without searching across dozens of unknown websites.</p>
+          </div>
+        </div>
+
+        <p>Together, these capabilities reflect AfriWidget's underlying design objective: helping users solve problems faster, return to their work easily, track progress over time, and access practical tools without unnecessary barriers.</p>
 
         <h2>Core Architectural &amp; Design Principles</h2>
         <p>Every tool added to AfriWidget adheres to five foundational design rules:</p>
@@ -630,8 +768,8 @@
         <p><strong>Independent and Community-Focused:</strong> AfriWidget operates as an independent web utility built by its founder, free from venture-capital pressure to monetize user data or restrict basic features behind paid tiers.</p>
 
         <h2>The Ongoing Mission</h2>
-        <p>AfriWidget continues to evolve because the need for accessible, honest, and free digital tools is constant. When corporate websites hide basic calculations behind paywalls, require invasive logins, or slow down under heavy advertising scripts, AfriWidget stands out as an immediate, respectful alternative.</p>
-        <p>Every tool is developed in Ghana with care and dedication, turning everyday problems into simple tools people can actually use. As academic criteria shift and user needs grow, AfriWidget will keep expanding its suite of free utilities for learners, workers, and creators everywhere.</p>
+        <p>AfriWidget exists to solve problems, simplify decisions, and make useful digital tools accessible to everyone. When corporate websites hide basic calculations behind paywalls, require invasive logins, or drown users in long articles that never provide a direct answer, AfriWidget stands out as an immediate, practical alternative.</p>
+        <p>The mission is to replace friction with action. By turning complex procedures into fast, browser-based utilities across education, finance, health, business, and productivity, AfriWidget empowers people to calculate, evaluate, and move forward with confidence—anywhere in the world, on any device.</p>
 
         <h2>Frequently Asked Questions</h2>
         <p>Here are answers to the questions visitors ask most frequently about AfriWidget:</p>
@@ -666,7 +804,7 @@
               <span>Who founded and built AfriWidget?</span>
               <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="faq-content">AfriWidget was founded and is solely developed and maintained by Obed Avorlenu, a self-taught web developer from Ghana born on 17 May 2007. He built the platform from scratch with an emphasis on practical educational and everyday tools that solve real problems.</div>
+            <div class="faq-content">AfriWidget was founded and is solely developed and maintained by Obed Avorlenu, a self-taught web developer from Ghana born on 17 May 2007. The platform was created from a passion for solving everyday problems through simple, accessible technology, providing fast, action-driven browser tools that work without paywalls or signups.</div>
           </div>
 
           <div class="faq-item">
