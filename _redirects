@@ -27,10 +27,26 @@
 /admission.html   /education      301
 /freelance-hourly-rate-pricing-calculator       /freelance-rate-calculator  301
 /freelance-hourly-rate-pricing-calculator.html  /freelance-rate-calculator  301
-/germany-university-admission-checker           /education                  301
-/germany-university-admission-checker.html      /education                  301
+/germany-university-admission-checker           /germany-gpa-converter      301
+/germany-university-admission-checker.html      /germany-gpa-converter      301
 
 # Slug Migration Redirects
+/cumulative-gpa-calculator                  /tertiary-gpa-cgpa-calculator            301
+/cumulative-gpa-calculator.html             /tertiary-gpa-cgpa-calculator            301
+/tertiary-gpa-calculator                    /tertiary-gpa-cgpa-calculator            301
+/tertiary-gpa-calculator.html               /tertiary-gpa-cgpa-calculator            301
+/compound-interest-calculator               /compound-interest                       301
+/compound-interest-calculator.html          /compound-interest                       301
+/australian-university-course-finder        /university-course-finder                301
+/australian-university-course-finder.html   /university-course-finder                301
+/university-cut-off-eligibility-checker     /university-cutoff-eligibility-checker   301
+/university-cut-off-eligibility-checker.html /university-cutoff-eligibility-checker  301
+/wasce-aggregate-calculator                 /wassce-aggregate-calculator             301
+/wasce-aggregate-calculator.html            /wassce-aggregate-calculator             301
+/xml-sitemap-generator                      /xml-sitemap-builder                     301
+/xml-sitemap-generator.html                 /xml-sitemap-builder                     301
+/igcse-a-level-gpa-converter                /igcse-alevel-gpa-converter              301
+/igcse-a-level-gpa-converter.html           /igcse-alevel-gpa-converter              301
 /everyday                                /productivity                            301
 /everyday.html                           /productivity                            301
 /tvet-nated-pass-calculator              /south-african-tvet-nated-calculator     301
@@ -119,10 +135,10 @@
 /tvet-college-calculator.html            /south-african-tvet-nated-calculator  301
 /canada-scholarship-finder               /education      301
 /canada-scholarship-finder.html          /education      301
-/url-slug-generator                      /productivity   301
-/url-slug-generator.html                 /productivity   301
-/word-counter                            /productivity   301
-/word-counter.html                       /productivity   301
+/url-slug-generator                      /text-case-converter-cleanup   301
+/url-slug-generator.html                 /text-case-converter-cleanup   301
+/word-counter                            /reading-time-speech-estimator 301
+/word-counter.html                       /reading-time-speech-estimator 301
 
 /metadata-remover                            /exif-remover                            301
 /metadata-remover.html                       /exif-remover                            301
