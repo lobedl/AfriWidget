@@ -4,10 +4,9 @@
 /api/send-email        /.netlify/functions/send-email 200
 
 # Legacy & Category Redirects
-/favorites                      /               301
-/favorites.html                 /               301
-/favourites                     /               301
-/favourites.html                /               301
+/favorites                      /favourites     301
+/favorites.html                 /favourites     301
+/favourites.html                /favourites     301
 /widgets                     /               301
 /widgets.html                /               301
 /success-stories             /use-cases      301
@@ -128,20 +127,4 @@
 /metadata-remover                            /exif-remover                            301
 /metadata-remover.html                       /exif-remover                            301
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
-# Tool Route Alias & Typo Safety Nets
-/cumulative-gpa-calculator                     /gpa-calculator                          301
-/cumulative-gpa-calculator.html                /gpa-calculator                          301
-/compound-interest-calculator                  /compound-interest                       301
-/compound-interest-calculator.html             /compound-interest                       301
-/australian-university-course-finder           /university-course-finder                301
-/australian-university-course-finder.html      /university-course-finder                301
-/university-cut-off-eligibility-checker        /university-cutoff-eligibility-checker   301
-/university-cut-off-eligibility-checker.html   /university-cutoff-eligibility-checker   301
-/wasce-aggregate-calculator                    /wassce-aggregate-calculator             301
-/wasce-aggregate-calculator.html               /wassce-aggregate-calculator             301
-/tertiary-gpa-calculator                       /tertiary-gpa-cgpa-calculator            301
-/tertiary-gpa-calculator.html                  /tertiary-gpa-cgpa-calculator            301
-/xml-sitemap-generator                         /xml-sitemap-builder                     301
-/xml-sitemap-generator.html                    /xml-sitemap-builder                     301
-/igcse-a-level-gpa-converter                   /igcse-alevel-gpa-converter              301
-/igcse-a-level-gpa-converter.html              /igcse-alevel-gpa-converter              301
+
