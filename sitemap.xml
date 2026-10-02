@@ -4,7 +4,7 @@
   <!-- Home -->
   <url>
     <loc>https://afriwidget.com/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,38 +12,38 @@
   <!-- Category pages -->
   <url>
     <loc>https://afriwidget.com/health</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/finance</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/education</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/productivity</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/business</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://afriwidget.com/use-cases</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -51,457 +51,457 @@
   <!-- Calculator / tool pages -->
   <url>
     <loc>https://afriwidget.com/bmi-calculator</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/body-fat-calculator</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/daily-calorie-needs-calculator</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/calorie-burn-calculator</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ideal-weight-calculator</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/healthy-weight-range-calculator</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/hydration-reminder-calculator</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/compound-interest</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/loan-calculator</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/savings-calculator</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/currency-converter</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/gpa-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/mortgage-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/rent-affordability</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/paypal-fee-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/profit-margin-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/pricing-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/startup-cost-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/freelance-rate-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/roi-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/debt-payoff-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/break-even-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
     <url>
     <loc>https://afriwidget.com/paye-calculator</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 <url>
     <loc>https://afriwidget.com/hourly-to-salary</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/json-formatter-validator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/markdown-to-html-converter</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/html-minifier</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/base64-encoder-decoder</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/password-generator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ai-business-name-generator</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ai-product-description-generator</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ai-gig-description-generator</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ai-paraphrasing-tool</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ai-text-summarizer</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/invoice-receipt-generator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/reading-time-speech-estimator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/text-case-converter-cleanup</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/document-converter</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/image-resizer-webp-converter</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/whatsapp-direct-link-qr-generator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/seo-meta-generator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/robots-txt-generator</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/xml-sitemap-builder</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/meta-pixel-checker</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/keyword-density-checker</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/percentage-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ovulation-cycle-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/water-intake-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/unit-converter</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/data-file-unit-converter</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/work-experience-resume-duration-calculator</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/wassce-aggregate-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/bece-aggregate-calculator</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/jamb-utme-aggregate-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/jamb-score-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/jamb-admission-chance-checker</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/waec-grade-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/post-utme-aggregate-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/nigerian-university-cgpa-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tertiary-gpa-cgpa-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/south-african-aps-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/south-african-university-admission-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/nsfas-eligibility-checker</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kcse-kuccps-cluster-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/university-cutoff-eligibility-checker</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/olevel-subject-combination-checker</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kcse-eligibility-tier-checker</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/south-african-tvet-nated-calculator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/icass-calculator</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/qr-code-generator</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/bece-cssps-placement-estimator</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/matric-sba-exam-calculator</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tvet-ncv-pass-calculator</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tvet-exam-target-mark-calculator</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/nsfas-tvet-allowance-calculator</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/igcse-alevel-gpa-converter</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -509,350 +509,350 @@
   <!-- Informational / policy pages -->
   <url>
     <loc>https://afriwidget.com/about</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/contact</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/faq</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/privacy-policy</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/terms</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/cookie-policy</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/adsense-disclaimer</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ucas-points-calculator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uk-a-level-grade-calculator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uk-gcse-grade-calculator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uk-degree-classification-calculator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uk-student-loan-finance-calculator</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uace-points-calculator</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ple-aggregate-calculator</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uce-grade-calculator</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zimsec-olevel-points-calculator</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zimsec-alevel-points-calculator</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zimbabwe-university-entry-points-calculator</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zimbabwe-university-gpa-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zimbabwe-study-timetable-generator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ghana-university-gpa-calculator</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/ghana-nursing-training-admission-calculator</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kcse-grade-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kuccps-cluster-points-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kenya-university-gpa-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/kcpe-performance-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/student-loan-repayment-calculator</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://afriwidget.com/uganda-university-admission-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uganda-university-cgpa-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/uneb-results-estimator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/form-four-gpa-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/acsee-points-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tanzania-university-admission-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tanzania-heslb-loan-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/tanzania-university-gpa-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zambia-grade-12-points-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zambia-university-admission-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/zambia-university-gpa-calculator</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/atar-calculator</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/university-course-finder</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/hecs-help-repayment-calculator</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/australia-scholarship-finder</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/canada-gpa-calculator</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/canada-university-admission-chance-calculator</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/canada-student-loan-repayment-calculator</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/canada-study-planner</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/switzerland-grade-calculator</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/switzerland-university-cost-calculator</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/norway-gpa-calculator</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/south-africa-study-planner</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/new-zealand-ncea-credits-calculator</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/new-zealand-study-planner</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/germany-abitur-grade-calculator</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/germany-gpa-converter</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/job-scam-checker</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/online-shop-scam-checker</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/exif-remover</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://afriwidget.com/job-application-tracker</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

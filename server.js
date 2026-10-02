@@ -16,6 +16,21 @@ const PORT = 3000;
 app.use(compression());
 app.use(express.json());
 
+// Set X-Robots-Tag on non-indexable system directories and endpoints
+app.use((req, res, next) => {
+  const p = req.path;
+  if (
+    p.startsWith('/api/') ||
+    p.startsWith('/.netlify/') ||
+    p === '/_headers' ||
+    p === '/_redirects' ||
+    p === '/_routes.json'
+  ) {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  }
+  next();
+});
+
 // Handle Netlify function calls locally
 async function handleNetlifyFunction(req, res) {
   try {

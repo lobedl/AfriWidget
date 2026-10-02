@@ -13,10 +13,28 @@
 /*.js
   Cache-Control: public, max-age=0, must-revalidate
 
+/.netlify/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
 /.netlify/functions/*
+  X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
 
 /api/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/_headers
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/_redirects
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
+/_routes.json
+  X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
 
 /*.png
