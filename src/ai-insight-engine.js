@@ -627,6 +627,20 @@ export const BENCHMARKS = {
     }
   },
 
+  'document-converter': {
+    name: 'Universal Document Converter',
+    category: 'productivity',
+    country: 'Global',
+    formula: 'Client-side ISO 32000-2 (PDF 2.0) layout and ECMA-376 (DOCX) text serialization.',
+    source: 'PDF Association & Ecma International',
+    sourceUrl: 'https://pdfa.org',
+    sourceDate: 'ISO 32000-2 / ECMA-376 Standard',
+    limitations: 'Browser-based conversion preserves text and primary layout; complex macros or dynamic forms require desktop suites.',
+    evaluate: (ctx) => ({
+      assessment: 'Valid local conversion',
+      justification: "The document or text was processed 100% in-browser with complete privacy and zero server transmission."
+    })
+  },
   'unit-converter': {
     name: 'Unit Converter',
     category: 'productivity',
