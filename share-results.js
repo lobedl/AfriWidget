@@ -649,33 +649,6 @@
     'canada-student-loan-repayment-calculator': {
       fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
       calculate: () => $('#calcLoanBtn')?.click()
-    },
-    'document-converter': {
-      fields: () => [$('#textInput'), $('#targetSelect')],
-      restore(values) {
-        values.forEach(({ key, value }) => {
-          if (key === 'textInput' || key === 'text') {
-            const ta = $('#textInput');
-            if (ta) {
-              ta.value = value;
-              ta.dispatchEvent(new Event('input', { bubbles: true }));
-            }
-          } else if (key === 'targetSelect' || key === 'format') {
-            const sel = $('#targetSelect');
-            if (sel) {
-              sel.value = value;
-              sel.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-          }
-        });
-      },
-      calculate: () => {
-        const ta = $('#textInput');
-        const btn = $('#convertBtn');
-        if (ta && ta.value.trim() && btn && !btn.disabled) {
-          btn.click();
-        }
-      }
     }
   };
 
@@ -767,7 +740,6 @@
     return url.toString();
   }
 
-  window.showAfriToast = showToast;
   function showToast(message) {
     let toast = document.getElementById('afriwidgetToast');
     if (!toast) {
@@ -973,6 +945,10 @@
           </p>
         </div>
         <div class="afri-share-actions">
+          <button id="afriBarWhatIfBtn" type="button" class="afri-btn afri-btn-secondary" style="border: 1px solid #facc15; color: #facc15;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1rem;height:1rem;flex-shrink:0;"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            <span>What-If Target</span>
+          </button>
           <button id="afriBarCopyBtn" type="button" class="afri-btn afri-btn-primary">
             ${icons.copy}
             <span>Copy Link</span>
@@ -1005,6 +981,15 @@
     modalBtn?.addEventListener('click', (e) => {
       e.preventDefault();
       handleShareClick(adapterConfig, modalBtn);
+    });
+
+    const whatIfBtn = document.getElementById('afriBarWhatIfBtn');
+    whatIfBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const root = document.getElementById('afriwidget-whatif-root');
+      if (root) {
+        root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
 
     // Also support any inline share buttons marked with data-share-btn or .share-btn
@@ -1068,7 +1053,7 @@
       } catch (err) {
         console.warn('Share auto-calculate notice:', err);
       }
-      showToast('Calculation restored');
+      showToast('Calculation restored from shared link');
     }, 150);
   }
 
@@ -1103,11 +1088,10 @@
     }
   }
 
-  function ensureRecentTools() {
-    if (window.AfriWidgetRecentTools) return;
-    if (!document.querySelector('script[src*="recent-tools.js"]')) {
+  function ensureWhatIfSimulator() {
+    if (!document.querySelector('script[src*="what-if-simulator.js"]')) {
       const s = document.createElement('script');
-      s.src = '/recent-tools.js?v=1';
+      s.src = '/what-if-simulator.js';
       s.defer = true;
       document.body.appendChild(s);
     }
@@ -1115,11 +1099,11 @@
 
   function init() {
     ensurePwaMetaTags();
-    ensureRecentTools();
     injectShareStyles();
     const config = getAdapter();
     injectShareBar(config);
     restoreInputs(config);
+    ensureWhatIfSimulator();
   }
 
   onReady(init);

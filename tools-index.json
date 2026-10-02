@@ -1,28 +1,5 @@
 [
   {
-    "slug": "uk-a-level-grade-calculator",
-    "name": "A-Level Grade Calculator",
-    "shortName": "A-Level Grade Calculator",
-    "description": "Calculate weighted A-Level grades from exam components and papers (Cambridge CAIE, Edexcel, AQA, OCR). Forecast marks needed for an A* or A and convert to UCAS points.",
-    "category": "Education",
-    "url": "/uk-a-level-grade-calculator",
-    "keywords": [
-      "uk a level grade calculator",
-      "education",
-      "level",
-      "grade",
-      "calculator",
-      "cambridge",
-      "edexcel",
-      "aqa",
-      "component",
-      "weight",
-      "raw",
-      "mark",
-      "target"
-    ]
-  },
-  {
     "slug": "acsee-points-calculator",
     "name": "ACSEE Points & Division Calculator",
     "shortName": "ACSEE Points Calculator",
@@ -230,39 +207,6 @@
     ]
   },
   {
-    "slug": "university-course-finder",
-    "name": "Australian University Course Finder",
-    "shortName": "University Course Finder (Australia)",
-    "description": "Search and compare 60+ Australian university degrees, 2026 ATAR selection rank cutoffs, CSP tuition fees, prerequisites, and graduate salaries across Go8 and ATN institutions.",
-    "category": "Education",
-    "url": "/university-course-finder",
-    "keywords": [
-      "university course finder",
-      "education",
-      "university",
-      "course",
-      "finder",
-      "australia",
-      "atar",
-      "cutoff",
-      "bachelor",
-      "degree",
-      "go8",
-      "selection",
-      "rank",
-      "unimelb",
-      "usyd",
-      "unsw",
-      "monash",
-      "uwa",
-      "anu",
-      "adelaide",
-      "go8 & regional",
-      "atar cutoffs",
-      "degree finder"
-    ]
-  },
-  {
     "slug": "base64-encoder-decoder",
     "name": "Base64 Encoder & Decoder",
     "shortName": "Base64 Encoder & Decoder",
@@ -414,6 +358,43 @@
     ]
   },
   {
+    "slug": "canada-gpa-calculator",
+    "name": "Canada University GPA Calculator",
+    "shortName": "Canada GPA Calculator",
+    "description": "Calculate your Canadian university GPA and CGPA across OMSAS 4.0, UBC/SFU 4.33, York 9.0, McMaster 12.0, and percentage scales. Free, instant, and private.",
+    "category": "Education",
+    "url": "/canada-gpa-calculator",
+    "keywords": [
+      "canada gpa calculator",
+      "education",
+      "canada",
+      "gpa",
+      "calculator",
+      "university",
+      "omsas",
+      "4.0",
+      "ubc",
+      "mcgill",
+      "4.33",
+      "york",
+      "9.0",
+      "mcmaster",
+      "12.0",
+      "semester",
+      "cgpa",
+      "credit",
+      "hours",
+      "honours",
+      "standing",
+      "letter",
+      "grade",
+      "convert",
+      "omsas 4.0",
+      "4.33 scale",
+      "york 9.0"
+    ]
+  },
+  {
     "slug": "canada-student-loan-repayment-calculator",
     "name": "Canada Student Loan Repayment Calculator",
     "shortName": "Canada Student Loan Repayment",
@@ -519,43 +500,6 @@
     ]
   },
   {
-    "slug": "canada-gpa-calculator",
-    "name": "Canada University GPA Calculator",
-    "shortName": "Canada GPA Calculator",
-    "description": "Calculate your Canadian university GPA and CGPA across OMSAS 4.0, UBC/SFU 4.33, York 9.0, McMaster 12.0, and percentage scales. Free, instant, and private.",
-    "category": "Education",
-    "url": "/canada-gpa-calculator",
-    "keywords": [
-      "canada gpa calculator",
-      "education",
-      "canada",
-      "gpa",
-      "calculator",
-      "university",
-      "omsas",
-      "4.0",
-      "ubc",
-      "mcgill",
-      "4.33",
-      "york",
-      "9.0",
-      "mcmaster",
-      "12.0",
-      "semester",
-      "cgpa",
-      "credit",
-      "hours",
-      "honours",
-      "standing",
-      "letter",
-      "grade",
-      "convert",
-      "omsas 4.0",
-      "4.33 scale",
-      "york 9.0"
-    ]
-  },
-  {
     "slug": "compound-interest",
     "name": "Compound Interest Calculator",
     "shortName": "Compound Interest Calculator",
@@ -574,24 +518,24 @@
     ]
   },
   {
-    "slug": "gpa-calculator",
-    "name": "Cumulative GPA Calculator",
-    "shortName": "Cumulative GPA Calculator",
-    "description": "Free cumulative GPA calculator for college and university students. Calculate weighted GPA on a 4.0 scale with credit hours and letter grade points.",
-    "category": "Education",
-    "url": "/gpa-calculator",
+    "slug": "currency-converter",
+    "name": "Real-Time AI Currency Converter",
+    "shortName": "Real-Time Currency Converter",
+    "description": "Convert live exchange rates across USD, EUR, GBP, NGN, KES, ZAR, GHS, and global currencies with instant in-browser rate calculation.",
+    "category": "Finance",
+    "url": "/currency-converter",
     "keywords": [
-      "gpa calculator",
+      "currency converter",
       "education",
-      "gpa",
-      "cumulative",
-      "grade",
-      "point",
-      "average",
-      "academic",
-      "credits",
-      "scholarships",
-      "calculator"
+      "currency",
+      "converter",
+      "exchange",
+      "rates",
+      "african",
+      "global",
+      "currencies",
+      "real",
+      "time"
     ]
   },
   {
@@ -614,25 +558,6 @@
       "energy",
       "nutrition",
       "energy needs",
-      "calculator"
-    ]
-  },
-  {
-    "slug": "water-intake-calculator",
-    "name": "Daily Water Intake Calculator",
-    "shortName": "Water Intake Calculator",
-    "description": "Calculate your recommended daily water intake in liters and cups based on body weight, daily exercise duration, and climate conditions.",
-    "category": "Health",
-    "url": "/water-intake-calculator",
-    "keywords": [
-      "water intake calculator",
-      "education",
-      "water",
-      "intake",
-      "hydration",
-      "weight",
-      "exercise",
-      "climate",
       "calculator"
     ]
   },
@@ -680,54 +605,32 @@
     ]
   },
   {
-    "slug": "uk-degree-classification-calculator",
-    "name": "Degree Classification Calculator",
-    "shortName": "Degree Classification Calculator",
-    "description": "Calculate your UK university undergraduate degree classification (1st, 2:1, 2:2, 3rd) across Year 2 and Year 3 weightings (1:2, 1:3, 50:50). Forecast required final year marks.",
-    "category": "Education",
-    "url": "/uk-degree-classification-calculator",
+    "slug": "exif-remover",
+    "name": "PDF & Image Metadata Remover",
+    "shortName": "Metadata & EXIF Remover",
+    "description": "Strip EXIF, GPS location tags, author names, and hidden metadata from PDFs and images locally in your browser for UK GDPR data minimisation.",
+    "category": "Productivity",
+    "url": "/exif-remover",
     "keywords": [
-      "uk degree classification calculator",
-      "education",
-      "degree",
-      "classification",
-      "calculator",
-      "university",
-      "first",
-      "upper",
-      "second",
-      "third",
-      "modular",
-      "weighting"
-    ]
-  },
-  {
-    "slug": "zambia-grade-12-points-calculator",
-    "name": "ECZ Grade 12 Points Calculator",
-    "shortName": "Zambia Grade 12 Points",
-    "description": "Calculate your official ECZ Grade 12 School Certificate points (Best 6) and university admission points (Best 5) in Zambia. Check credits, distinctions, and pass status.",
-    "category": "Education",
-    "url": "/zambia-grade-12-points-calculator",
-    "keywords": [
-      "zambia grade 12 points calculator",
-      "education",
-      "zambia",
-      "grade",
-      "points",
-      "calculator",
-      "ecz",
-      "school",
-      "certificate",
-      "best",
-      "subjects",
-      "unza",
-      "cbu",
-      "distinctions",
-      "credits",
-      "pass",
-      "best 6 & 5",
-      "ecz scale 1-9",
-      "school cert"
+      "exif remover",
+      "metadata remover",
+      "pdf metadata remover",
+      "image metadata remover",
+      "strip exif",
+      "remove gps location",
+      "remove metadata",
+      "exif",
+      "metadata",
+      "gps tags",
+      "gdpr",
+      "ico",
+      "privacy",
+      "clean pdf",
+      "photo exif",
+      "data minimisation",
+      "productivity",
+      "safety",
+      "security"
     ]
   },
   {
@@ -759,24 +662,6 @@
     ]
   },
   {
-    "slug": "invoice-receipt-generator",
-    "name": "Free Invoice & Receipt Generator",
-    "shortName": "Invoice & Receipt PDF Generator",
-    "description": "Create and download clean, professional sales receipts and invoices for customers and clients. Add tax rates, discounts, and payment terms.",
-    "category": "Business",
-    "url": "/invoice-receipt-generator",
-    "keywords": [
-      "invoice receipt generator",
-      "education",
-      "invoice",
-      "receipt",
-      "pdf",
-      "generator",
-      "business",
-      "tax"
-    ]
-  },
-  {
     "slug": "freelance-rate-calculator",
     "name": "Freelance Rate Calculator",
     "shortName": "Freelance Rate Calculator",
@@ -799,28 +684,6 @@
       "hours",
       "hourly rate",
       "day rate"
-    ]
-  },
-  {
-    "slug": "uk-gcse-grade-calculator",
-    "name": "GCSE Grade Calculator",
-    "shortName": "GCSE Grade Calculator",
-    "description": "Calculate your GCSE average grade, Attainment 8 score, EBacc points, and Sixth Form / College admission eligibility under the official UK 9-1 grading system.",
-    "category": "Education",
-    "url": "/uk-gcse-grade-calculator",
-    "keywords": [
-      "uk gcse grade calculator",
-      "education",
-      "gcse",
-      "grade",
-      "calculator",
-      "attainment",
-      "average",
-      "progress",
-      "sixth",
-      "form",
-      "admissions",
-      "scale"
     ]
   },
   {
@@ -943,6 +806,27 @@
       "hours",
       "4.0 gpa & cwa",
       "degree class"
+    ]
+  },
+  {
+    "slug": "gpa-calculator",
+    "name": "Cumulative GPA Calculator",
+    "shortName": "Cumulative GPA Calculator",
+    "description": "Free cumulative GPA calculator for college and university students. Calculate weighted GPA on a 4.0 scale with credit hours and letter grade points.",
+    "category": "Education",
+    "url": "/gpa-calculator",
+    "keywords": [
+      "gpa calculator",
+      "education",
+      "gpa",
+      "cumulative",
+      "grade",
+      "point",
+      "average",
+      "academic",
+      "credits",
+      "scholarships",
+      "calculator"
     ]
   },
   {
@@ -1142,6 +1026,24 @@
     ]
   },
   {
+    "slug": "invoice-receipt-generator",
+    "name": "Free Invoice & Receipt Generator",
+    "shortName": "Invoice & Receipt PDF Generator",
+    "description": "Create and download clean, professional sales receipts and invoices for customers and clients. Add tax rates, discounts, and payment terms.",
+    "category": "Business",
+    "url": "/invoice-receipt-generator",
+    "keywords": [
+      "invoice receipt generator",
+      "education",
+      "invoice",
+      "receipt",
+      "pdf",
+      "generator",
+      "business",
+      "tax"
+    ]
+  },
+  {
     "slug": "jamb-admission-chance-checker",
     "name": "JAMB Admission Chance Checker",
     "shortName": "JAMB Admission Chance",
@@ -1335,27 +1237,6 @@
     ]
   },
   {
-    "slug": "kcse-kuccps-cluster-calculator",
-    "name": "KCSE Grade & KUCCPS Cluster Calculator",
-    "shortName": "KCSE & KUCCPS Cluster Calculator",
-    "description": "Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement.",
-    "category": "Education",
-    "url": "/kcse-kuccps-cluster-calculator",
-    "keywords": [
-      "kcse kuccps cluster calculator",
-      "education",
-      "kcse",
-      "kuccps",
-      "cluster",
-      "kenya",
-      "aggregate",
-      "points",
-      "mean",
-      "grade",
-      "calculator"
-    ]
-  },
-  {
     "slug": "kcse-grade-calculator",
     "name": "KCSE Grade Calculator",
     "shortName": "KCSE Grade Calculator",
@@ -1380,6 +1261,27 @@
       "7 subjects",
       "84 points",
       "mean grade"
+    ]
+  },
+  {
+    "slug": "kcse-kuccps-cluster-calculator",
+    "name": "KCSE Grade & KUCCPS Cluster Calculator",
+    "shortName": "KCSE & KUCCPS Cluster Calculator",
+    "description": "Calculate seven-subject KCSE aggregate points, mean grade, and KUCCPS weighted cluster points for Kenyan university degree and diploma placement.",
+    "category": "Education",
+    "url": "/kcse-kuccps-cluster-calculator",
+    "keywords": [
+      "kcse kuccps cluster calculator",
+      "education",
+      "kcse",
+      "kuccps",
+      "cluster",
+      "kenya",
+      "aggregate",
+      "points",
+      "mean",
+      "grade",
+      "calculator"
     ]
   },
   {
@@ -1754,6 +1656,25 @@
     ]
   },
   {
+    "slug": "olevel-subject-combination-checker",
+    "name": "WAEC / NECO O’Level Subject Combination Checker",
+    "shortName": "WAEC / NECO Subject Checker",
+    "description": "Verify required O’Level subject combinations for university, polytechnic, and college courses across Medicine, Engineering, Law, and Sciences.",
+    "category": "Education",
+    "url": "/olevel-subject-combination-checker",
+    "keywords": [
+      "olevel subject combination checker",
+      "education",
+      "waec",
+      "neco",
+      "level",
+      "subject",
+      "combination",
+      "checker",
+      "olevel"
+    ]
+  },
+  {
     "slug": "online-shop-scam-checker",
     "name": "Online Shop Scam Checker",
     "shortName": "Shop Scam Checker",
@@ -1800,6 +1721,22 @@
     ]
   },
   {
+    "slug": "password-generator",
+    "name": "Secure Password Generator",
+    "shortName": "Secure Password Generator",
+    "description": "Generate strong, secure, random passwords with custom length, symbols, numbers, and uppercase characters. 100% client-side security with zero logging.",
+    "category": "Education",
+    "url": "/password-generator",
+    "keywords": [
+      "password generator",
+      "education",
+      "crypto",
+      "private",
+      "password",
+      "generator"
+    ]
+  },
+  {
     "slug": "paye-calculator",
     "name": "PAYE & Net Salary Calculator",
     "shortName": "PAYE & Net Salary Calculator",
@@ -1842,35 +1779,6 @@
       "stripe",
       "square",
       "calculator"
-    ]
-  },
-  {
-    "slug": "exif-remover",
-    "name": "PDF & Image Metadata Remover",
-    "shortName": "Metadata & EXIF Remover",
-    "description": "Strip EXIF, GPS location tags, author names, and hidden metadata from PDFs and images locally in your browser for UK GDPR data minimisation.",
-    "category": "Productivity",
-    "url": "/exif-remover",
-    "keywords": [
-      "exif remover",
-      "metadata remover",
-      "pdf metadata remover",
-      "image metadata remover",
-      "strip exif",
-      "remove gps location",
-      "remove metadata",
-      "exif",
-      "metadata",
-      "gps tags",
-      "gdpr",
-      "ico",
-      "privacy",
-      "clean pdf",
-      "photo exif",
-      "data minimisation",
-      "productivity",
-      "safety",
-      "security"
     ]
   },
   {
@@ -2032,27 +1940,6 @@
     ]
   },
   {
-    "slug": "currency-converter",
-    "name": "Real-Time AI Currency Converter",
-    "shortName": "Real-Time Currency Converter",
-    "description": "Convert live exchange rates across USD, EUR, GBP, NGN, KES, ZAR, GHS, and global currencies with instant in-browser rate calculation.",
-    "category": "Finance",
-    "url": "/currency-converter",
-    "keywords": [
-      "currency converter",
-      "education",
-      "currency",
-      "converter",
-      "exchange",
-      "rates",
-      "african",
-      "global",
-      "currencies",
-      "real",
-      "time"
-    ]
-  },
-  {
     "slug": "rent-affordability",
     "name": "Rent Affordability Calculator",
     "shortName": "Rent Affordability Calculator",
@@ -2069,6 +1956,25 @@
       "income",
       "30% rule",
       "dti"
+    ]
+  },
+  {
+    "slug": "robots-txt-generator",
+    "name": "Robots.txt File Generator",
+    "shortName": "Robots.txt Generator",
+    "description": "Create custom robots.txt files with crawl rules for Googlebot, Bingbot, search engines, and AI scrapers. Download formatted robots.txt instantly.",
+    "category": "Productivity",
+    "url": "/robots-txt-generator",
+    "keywords": [
+      "robots txt generator",
+      "education",
+      "robots",
+      "txt",
+      "generator",
+      "crawler",
+      "bot",
+      "seo",
+      "webmaster"
     ]
   },
   {
@@ -2097,25 +2003,6 @@
     ]
   },
   {
-    "slug": "robots-txt-generator",
-    "name": "Robots.txt File Generator",
-    "shortName": "Robots.txt Generator",
-    "description": "Create custom robots.txt files with crawl rules for Googlebot, Bingbot, search engines, and AI scrapers. Download formatted robots.txt instantly.",
-    "category": "Productivity",
-    "url": "/robots-txt-generator",
-    "keywords": [
-      "robots txt generator",
-      "education",
-      "robots",
-      "txt",
-      "generator",
-      "crawler",
-      "bot",
-      "seo",
-      "webmaster"
-    ]
-  },
-  {
     "slug": "savings-calculator",
     "name": "Savings Calculator",
     "shortName": "Savings Calculator",
@@ -2133,22 +2020,6 @@
       "projected",
       "growth",
       "investment"
-    ]
-  },
-  {
-    "slug": "password-generator",
-    "name": "Secure Password Generator",
-    "shortName": "Secure Password Generator",
-    "description": "Generate strong, secure, random passwords with custom length, symbols, numbers, and uppercase characters. 100% client-side security with zero logging.",
-    "category": "Education",
-    "url": "/password-generator",
-    "keywords": [
-      "password generator",
-      "education",
-      "crypto",
-      "private",
-      "password",
-      "generator"
     ]
   },
   {
@@ -2707,6 +2578,73 @@
     ]
   },
   {
+    "slug": "uk-a-level-grade-calculator",
+    "name": "A-Level Grade Calculator",
+    "shortName": "A-Level Grade Calculator",
+    "description": "Calculate weighted A-Level grades from exam components and papers (Cambridge CAIE, Edexcel, AQA, OCR). Forecast marks needed for an A* or A and convert to UCAS points.",
+    "category": "Education",
+    "url": "/uk-a-level-grade-calculator",
+    "keywords": [
+      "uk a level grade calculator",
+      "education",
+      "level",
+      "grade",
+      "calculator",
+      "cambridge",
+      "edexcel",
+      "aqa",
+      "component",
+      "weight",
+      "raw",
+      "mark",
+      "target"
+    ]
+  },
+  {
+    "slug": "uk-degree-classification-calculator",
+    "name": "Degree Classification Calculator",
+    "shortName": "Degree Classification Calculator",
+    "description": "Calculate your UK university undergraduate degree classification (1st, 2:1, 2:2, 3rd) across Year 2 and Year 3 weightings (1:2, 1:3, 50:50). Forecast required final year marks.",
+    "category": "Education",
+    "url": "/uk-degree-classification-calculator",
+    "keywords": [
+      "uk degree classification calculator",
+      "education",
+      "degree",
+      "classification",
+      "calculator",
+      "university",
+      "first",
+      "upper",
+      "second",
+      "third",
+      "modular",
+      "weighting"
+    ]
+  },
+  {
+    "slug": "uk-gcse-grade-calculator",
+    "name": "GCSE Grade Calculator",
+    "shortName": "GCSE Grade Calculator",
+    "description": "Calculate your GCSE average grade, Attainment 8 score, EBacc points, and Sixth Form / College admission eligibility under the official UK 9-1 grading system.",
+    "category": "Education",
+    "url": "/uk-gcse-grade-calculator",
+    "keywords": [
+      "uk gcse grade calculator",
+      "education",
+      "gcse",
+      "grade",
+      "calculator",
+      "attainment",
+      "average",
+      "progress",
+      "sixth",
+      "form",
+      "admissions",
+      "scale"
+    ]
+  },
+  {
     "slug": "uk-student-loan-finance-calculator",
     "name": "UK Student Finance & Maintenance Loan Calculator",
     "shortName": "UK Student Finance Calculator",
@@ -2781,31 +2719,36 @@
     ]
   },
   {
-    "slug": "document-converter",
-    "name": "Universal Document Converter",
-    "shortName": "Document Converter",
-    "description": "Convert Word, PDF, JPG, PNG, WebP, and text in your browser. Word to PDF, PDF to Word, image to PDF, PDF to image, and text to PDF or Word with zero uploads.",
-    "category": "Productivity",
-    "url": "/document-converter",
+    "slug": "university-course-finder",
+    "name": "Australian University Course Finder",
+    "shortName": "University Course Finder (Australia)",
+    "description": "Search and compare 60+ Australian university degrees, 2026 ATAR selection rank cutoffs, CSP tuition fees, prerequisites, and graduate salaries across Go8 and ATN institutions.",
+    "category": "Education",
+    "url": "/university-course-finder",
     "keywords": [
-      "document converter",
-      "word to pdf",
-      "pdf to word",
-      "image to pdf",
-      "pdf to jpg",
-      "pdf to png",
-      "text to pdf",
-      "text to word",
-      "jpg to pdf",
-      "png to pdf",
-      "webp converter",
-      "pdf converter",
-      "docx to pdf",
-      "docx converter",
-      "file converter",
-      "universal converter",
-      "offline converter",
-      "browser converter"
+      "university course finder",
+      "education",
+      "university",
+      "course",
+      "finder",
+      "australia",
+      "atar",
+      "cutoff",
+      "bachelor",
+      "degree",
+      "go8",
+      "selection",
+      "rank",
+      "unimelb",
+      "usyd",
+      "unsw",
+      "monash",
+      "uwa",
+      "anu",
+      "adelaide",
+      "go8 & regional",
+      "atar cutoffs",
+      "degree finder"
     ]
   },
   {
@@ -2825,25 +2768,6 @@
       "wassce",
       "course",
       "checker"
-    ]
-  },
-  {
-    "slug": "olevel-subject-combination-checker",
-    "name": "WAEC / NECO O’Level Subject Combination Checker",
-    "shortName": "WAEC / NECO Subject Checker",
-    "description": "Verify required O’Level subject combinations for university, polytechnic, and college courses across Medicine, Engineering, Law, and Sciences.",
-    "category": "Education",
-    "url": "/olevel-subject-combination-checker",
-    "keywords": [
-      "olevel subject combination checker",
-      "education",
-      "waec",
-      "neco",
-      "level",
-      "subject",
-      "combination",
-      "checker",
-      "olevel"
     ]
   },
   {
@@ -2888,6 +2812,25 @@
       "certificate",
       "best 3 electives",
       "scale 6–54",
+      "calculator"
+    ]
+  },
+  {
+    "slug": "water-intake-calculator",
+    "name": "Daily Water Intake Calculator",
+    "shortName": "Water Intake Calculator",
+    "description": "Calculate your recommended daily water intake in liters and cups based on body weight, daily exercise duration, and climate conditions.",
+    "category": "Health",
+    "url": "/water-intake-calculator",
+    "keywords": [
+      "water intake calculator",
+      "education",
+      "water",
+      "intake",
+      "hydration",
+      "weight",
+      "exercise",
+      "climate",
       "calculator"
     ]
   },
@@ -2948,6 +2891,35 @@
       "site",
       "seo",
       "urls"
+    ]
+  },
+  {
+    "slug": "zambia-grade-12-points-calculator",
+    "name": "ECZ Grade 12 Points Calculator",
+    "shortName": "Zambia Grade 12 Points",
+    "description": "Calculate your official ECZ Grade 12 School Certificate points (Best 6) and university admission points (Best 5) in Zambia. Check credits, distinctions, and pass status.",
+    "category": "Education",
+    "url": "/zambia-grade-12-points-calculator",
+    "keywords": [
+      "zambia grade 12 points calculator",
+      "education",
+      "zambia",
+      "grade",
+      "points",
+      "calculator",
+      "ecz",
+      "school",
+      "certificate",
+      "best",
+      "subjects",
+      "unza",
+      "cbu",
+      "distinctions",
+      "credits",
+      "pass",
+      "best 6 & 5",
+      "ecz scale 1-9",
+      "school cert"
     ]
   },
   {

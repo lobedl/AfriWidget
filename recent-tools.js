@@ -133,11 +133,6 @@
     "category": "Productivity",
     "url": "/data-file-unit-converter"
   },
-  "document-converter": {
-    "name": "Universal Document Converter",
-    "category": "Productivity",
-    "url": "/document-converter"
-  },
   "debt-payoff-calculator": {
     "name": "Debt Payoff Calculator",
     "category": "Finance",
@@ -923,10 +918,9 @@
       var cat = escapeHtml(tool.category || 'General');
       var name = escapeHtml(tool.name);
       var url = escapeHtml(tool.url);
-      var continueUrl = url + (url.indexOf('?') === -1 ? '?continue=1' : '&continue=1');
       var timeAgo = escapeHtml(formatTimeAgo(tool.lastVisited));
 
-      html += '<a href="' + continueUrl + '" class="tool-card continue-card" data-recent-url="' + url + '">' +
+      html += '<a href="' + url + '" class="tool-card continue-card" data-recent-url="' + url + '">' +
         '<div class="tool-card-icon">' +
           iconSvg +
           '<span class="tool-card-cat">' + cat + '</span>' +
@@ -944,8 +938,10 @@
     container.innerHTML = html;
     initClearButton();
 
-    // Note: Do NOT attach bookmark favorite star buttons to continue cards.
-    // Continue cards are dedicated resume actions for returning users.
+    // Attach bookmark favorite star buttons to the new cards if favorites system is loaded
+    if (window.AfriWidgetFavorites && typeof window.AfriWidgetFavorites.attachCardButtons === 'function') {
+      window.AfriWidgetFavorites.attachCardButtons(container);
+    }
   }
 
   // Automatic Tool Visit Tracking on Current Page
@@ -977,13 +973,6 @@
     document.addEventListener('click', function (e) {
       var card = e.target.closest('a.tool-card, a.app-card');
       if (!card) return;
-
-      if (card.classList.contains('continue-card')) {
-        try {
-          var targetHref = card.getAttribute('href') || '';
-          sessionStorage.setItem('afriwidget_continue_restore', normalizeUrl(targetHref));
-        } catch (err) {}
-      }
 
       var href = card.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('http') || href === '/' || isHubPage(href)) return;
@@ -1032,7 +1021,7 @@
     var path = normalizeUrl(window.location.pathname);
     if (!path || path === '/' || isHubPage(path)) return;
 
-    var toolRoot = document.querySelector('main') || document.querySelector('.calc-panel') || document.querySelector('form') || document.body;
+    var toolRoot = document.querySelector('.calc-panel') || document.querySelector('form') || document.querySelector('main');
     if (!toolRoot) return;
 
     var state = {
@@ -1144,40 +1133,6 @@
     var path = normalizeUrl(window.location.pathname);
     if (!path || path === '/' || isHubPage(path)) return;
 
-    // Only restore previous inputs if the user pressed the tool from the "Continue Where You Left Off" section
-    var params;
-    try {
-      params = new URLSearchParams(window.location.search);
-    } catch (e) {
-      params = null;
-    }
-    var hasContinueParam = params && (params.get('continue') === '1' || params.get('resume') === '1');
-    var hasContinueSession = false;
-    try {
-      if (sessionStorage.getItem('afriwidget_continue_restore') === path) {
-        hasContinueSession = true;
-        sessionStorage.removeItem('afriwidget_continue_restore');
-      }
-    } catch (e) {}
-
-    if (!hasContinueParam && !hasContinueSession) {
-      // Normal direct visit / navigation - do NOT restore old inputs! Start fresh.
-      return;
-    }
-
-    // Clean up ?continue=1 from the URL bar so the URL stays pristine after other scripts have read it
-    if (hasContinueParam && window.history && typeof window.history.replaceState === 'function') {
-      setTimeout(function () {
-        try {
-          var cleanUrl = new URL(window.location.href);
-          cleanUrl.searchParams.delete('continue');
-          cleanUrl.searchParams.delete('resume');
-          var queryStr = cleanUrl.searchParams.toString();
-          window.history.replaceState({}, '', cleanUrl.pathname + (queryStr ? '?' + queryStr : '') + cleanUrl.hash);
-        } catch (e) {}
-      }, 500);
-    }
-
     var storageKey = PROGRESS_PREFIX + path;
     var raw;
     try {
@@ -1195,7 +1150,7 @@
     }
     if (!state || typeof state !== 'object') return;
 
-    var toolRoot = document.querySelector('main') || document.querySelector('.calc-panel') || document.querySelector('form') || document.body;
+    var toolRoot = document.querySelector('.calc-panel') || document.querySelector('form') || document.querySelector('main');
     if (!toolRoot) return;
 
     isRestoringInProgress = true;
@@ -1351,11 +1306,6 @@
     }, { passive: true });
 
     document.addEventListener('change', function (e) {
-      if (e.target.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
-      saveCurrentToolProgress();
-    }, { passive: true });
-
-    document.addEventListener('submit', function (e) {
       if (e.target.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
       saveCurrentToolProgress();
     }, { passive: true });

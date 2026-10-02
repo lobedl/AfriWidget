@@ -120,20 +120,6 @@
          Zero Tailwind, Zero Emojis, 100% Accessible Pure CSS
          ========================================================================== */
 
-      /* Suppress browser native search cancel button so only custom clear icon is visible */
-      .category-search-input::-webkit-search-decoration,
-      .category-search-input::-webkit-search-cancel-button,
-      .category-search-input::-webkit-search-results-button,
-      .category-search-input::-webkit-search-results-decoration,
-      input[type="search"]::-webkit-search-cancel-button,
-      input[type="search"]::-webkit-search-decoration {
-        -webkit-appearance: none !important;
-        appearance: none !important;
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-      }
-
       /* Nav Favourite Button */
       .nav-fav-btn {
         display: inline-flex;
@@ -201,13 +187,6 @@
       /* Card Bookmark Toggle Button */
       .tool-card {
         position: relative;
-      }
-      /* Never display favourite buttons on Continue Where You Left Off cards */
-      .continue-card .tool-card-fav-btn,
-      #continueSection .tool-card-fav-btn,
-      #continueGridContainer .tool-card-fav-btn {
-        display: none !important;
-        pointer-events: none !important;
       }
       
       .tool-card-fav-btn {
@@ -1163,14 +1142,8 @@
 
   // Card Bookmark Toggle Buttons (on homepage, category pages, search results, related tools)
   function attachCardFavoriteButtons(container = document) {
-    try {
-      const root = container || document;
-      root.querySelectorAll('.continue-card .tool-card-fav-btn, #continueSection .tool-card-fav-btn, #continueGridContainer .tool-card-fav-btn').forEach(btn => btn.remove());
-    } catch (e) {}
-
-    const cards = (container || document).querySelectorAll('a.tool-card:not(.continue-card), a.app-card:not(.continue-card)');
+    const cards = container.querySelectorAll('a.tool-card, a.app-card');
     cards.forEach(card => {
-      if (card.classList.contains('continue-card') || card.closest('#continueSection, #continueGridContainer')) return;
       if (card.querySelector('.tool-card-fav-btn')) return;
 
       const url = card.getAttribute('href') || '';
@@ -1312,10 +1285,7 @@
     // Update all card buttons
     document.querySelectorAll('.tool-card-fav-btn').forEach(btn => {
       const card = btn.closest('a.tool-card, a.app-card');
-      if (!card || card.classList.contains('continue-card') || card.closest('#continueSection, #continueGridContainer')) {
-        btn.remove();
-        return;
-      }
+      if (!card) return;
       const url = card.getAttribute('href') || '';
       const isFav = isFavorite(url);
       btn.classList.toggle('is-favorite', isFav);
@@ -1522,25 +1492,8 @@
     }
   }
 
-  // Ensure "Continue Where You Left Off" & Progress Engine script is loaded on all tools
-  function ensureRecentTools() {
-    if (window.AfriWidgetRecentTools) return;
-    const currentPath = normalizeUrl(window.location.pathname);
-    if (!currentPath || currentPath === '/' || currentPath === '/index') return;
-    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
-    if (hubPages.includes(currentPath)) return;
-
-    if (!document.querySelector('script[src*="recent-tools.js"]')) {
-      const s = document.createElement('script');
-      s.src = '/recent-tools.js?v=1';
-      s.defer = true;
-      document.body.appendChild(s);
-    }
-  }
-
   // Initialize
   function init() {
-    ensureRecentTools();
     injectStyles();
     ensureDrawerMarkup();
     injectNavFavoritesButton();
