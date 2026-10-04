@@ -1230,7 +1230,6 @@
       "job applications",
       "follow up reminder",
       "job pipeline",
-      "resume",
       "recruiter contact",
       "job search organizer",
       "productivity",
@@ -2907,28 +2906,6 @@
       "code",
       "generator",
       "chat"
-    ]
-  },
-  {
-    "slug": "work-experience-resume-duration-calculator",
-    "name": "Work Experience & Resume Duration",
-    "shortName": "Work Experience & Resume Duration",
-    "description": "Calculate total cumulative work experience in years and months across multiple overlapping job positions for resumes and job applications.",
-    "category": "Productivity",
-    "url": "/work-experience-resume-duration-calculator",
-    "keywords": [
-      "work experience resume duration calculator",
-      "education",
-      "work",
-      "experience",
-      "resume",
-      "duration",
-      "employment",
-      "dates",
-      "years",
-      "months",
-      "days",
-      "calculator"
     ]
   },
   {

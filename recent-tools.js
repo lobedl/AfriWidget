@@ -603,11 +603,6 @@
     "category": "Business",
     "url": "/whatsapp-direct-link-qr-generator"
   },
-  "work-experience-resume-duration-calculator": {
-    "name": "Work Experience & Resume Duration",
-    "category": "Productivity",
-    "url": "/work-experience-resume-duration-calculator"
-  },
   "xml-sitemap-builder": {
     "name": "Static Site XML Sitemap Builder",
     "category": "Productivity",

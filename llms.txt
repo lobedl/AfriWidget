@@ -122,7 +122,6 @@ AfriWidget provides fast, browser-based tools with zero registration, no server-
 - [Data File & Storage Unit Converter](https://afriwidget.com/data-file-unit-converter): Interconverts data storage units across binary (KiB, MiB, GiB, TiB) and decimal (KB, MB, GB, TB) standards.
 - [Reading & Speech Time Estimator](https://afriwidget.com/reading-time-speech-estimator): Calculates estimated silent reading duration and spoken presentation delivery times across variable words-per-minute speeds.
 - [Text Case Converter & Cleanup](https://afriwidget.com/text-case-converter-cleanup): Formats text into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case with whitespace normalizing.
-- [Work Experience & Resume Duration Calculator](https://afriwidget.com/work-experience-resume-duration-calculator): Calculates exact total employment tenure in years and months across overlapping career roles for CVs and visa applications.
 - [Password Generator](https://afriwidget.com/password-generator): Generates cryptographically secure, random passwords and passphrases using browser Web Crypto APIs with custom character sets.
 - [QR Code Generator](https://afriwidget.com/qr-code-generator): Generates client-side QR codes for URLs, Wi-Fi network credentials, contacts, and text with instant SVG/PNG exports.
 - [WhatsApp Direct Link & QR Generator](https://afriwidget.com/whatsapp-direct-link-qr-generator): Creates instant click-to-chat WhatsApp links and scannable QR codes with pre-populated message encoding.

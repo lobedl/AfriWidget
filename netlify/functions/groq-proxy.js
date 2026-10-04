@@ -185,13 +185,10 @@ function promptFor(mode, category, context, question) {
   if (mode === 'writing') {
     const writingTool = String(context?.tool || 'professional writing tool').slice(0, 80);
     const normalizedTool = writingTool.toLowerCase().replace(/[-_]+/g, ' ');
-    const resumeNote = normalizedTool.includes('resume')
-      ? `For this resume, act as a careful professional editor and recruiter-aware resume writer. Correct spelling, grammar, punctuation, tense, capitalization, and awkward phrasing. Turn rough notes into concise action-led bullets where the supplied facts support them. Build a clear ATS-friendly structure with: NAME AND CONTACT, PROFESSIONAL SUMMARY, CORE SKILLS, TOOLS AND TECHNOLOGIES when supplied, PROFESSIONAL EXPERIENCE, SELECTED ACHIEVEMENTS, EDUCATION, CERTIFICATIONS when supplied, LANGUAGES when supplied, and PROJECTS OR VOLUNTEERING when supplied. Use the target role, industry, skill focus, experience level, leadership background, work arrangement, and job description to prioritize relevant wording without keyword stuffing. If the user supplies no evidence for a section, omit it or use a short bracketed reminder such as [add certification]. Never turn an unmeasured result into a number, and never claim a skill, employer, title, date, qualification, or achievement that is not in the details.`
-      : '';
     const emailNote = normalizedTool.includes('email')
       ? `For this email, follow the selected email type and tone. Vary the structure naturally: a request should make the action clear, a follow-up should refer to the earlier context, an update should foreground the change, a meeting request should make scheduling easy, an introduction should establish relevance, and a reminder should stay polite and specific. Do not use the same stock paragraph every time. Keep the subject concise and the email easy to scan.`
       : '';
-    const variationNote = !normalizedTool.includes('resume') && !normalizedTool.includes('email')
+    const variationNote = !normalizedTool.includes('email')
       ? 'Use a fresh structure and varied wording on each request. Do not repeat a single stock template; choose a natural opening, sentence rhythm, and closing that fit the supplied details.'
       : '';
     const businessNameNote = normalizedTool.includes('business name')
@@ -224,7 +221,7 @@ function promptFor(mode, category, context, question) {
     const blogTitleNote = normalizedTool.includes('blog') && normalizedTool.includes('title')
       ? 'Generate varied blog headline and post-angle options from the seed keyword, audience, format, and tone. Reflect likely search intent, make the promise specific, avoid sensationalism and duplicate patterns, and do not claim research or results that were not supplied.'
       : '';
-    return `You are AfriWidget's ${writingTool}. Create a polished first draft from the user's supplied details. ${styleNote} ${resumeNote} ${emailNote} ${variationNote} ${businessNameNote} ${productNote} ${gigNote} ${paraphraseNote} ${summaryNote} ${socialCaptionNote} ${hashtagNote} ${youtubeTitleNote} ${youtubeDescriptionNote} ${blogTitleNote} Do not invent employers, degrees, dates, metrics, clients, credentials, or achievements. Use placeholders such as [add metric] when a useful detail is missing. Keep the output easy to edit, professional, specific, and appropriate for the requested audience. Return only the draft with clear plain-text headings; do not add a preamble about being an AI.
+    return `You are AfriWidget's ${writingTool}. Create a polished first draft from the user's supplied details. ${styleNote} ${emailNote} ${variationNote} ${businessNameNote} ${productNote} ${gigNote} ${paraphraseNote} ${summaryNote} ${socialCaptionNote} ${hashtagNote} ${youtubeTitleNote} ${youtubeDescriptionNote} ${blogTitleNote} Do not invent employers, degrees, dates, metrics, clients, credentials, or achievements. Use placeholders such as [add metric] when a useful detail is missing. Keep the output easy to edit, professional, specific, and appropriate for the requested audience. Return only the draft with clear plain-text headings; do not add a preamble about being an AI.
 
 Tool:
 ${writingTool}
@@ -360,9 +357,7 @@ export const handler = async (event) => {
             body: JSON.stringify({
               model,
               temperature: 0.25,
-              max_tokens: mode === 'question' ? 600 : mode === 'writing'
-                ? String(payload?.context?.tool || '').toLowerCase().includes('resume') ? 1500 : 900
-                : 180,
+              max_tokens: mode === 'question' ? 600 : mode === 'writing' ? 900 : 180,
               reasoning_format: 'hidden',
               messages: [
                 { role: 'system', content: systemMsg },

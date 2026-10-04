@@ -506,6 +506,62 @@
         .stat-card .stat-value {
           font-size: 1.35rem !important;
         }
+        /* Global mobile typography fixes */
+        h1, h2, h3, h4, h5, h6, p, span, a, label, li, td, th {
+          overflow-wrap: break-word !important;
+          word-break: normal !important;
+          -webkit-hyphens: manual;
+          hyphens: manual;
+        }
+        code, pre, .break-all, a[href^="http"] {
+          overflow-wrap: anywhere !important;
+          word-break: break-word !important;
+        }
+        .afri-share-bar {
+          padding: 1.125rem 1rem !important;
+          margin-top: 1.125rem !important;
+          margin-bottom: 1.125rem !important;
+        }
+        .afri-share-title {
+          font-size: 1.0625rem !important;
+          line-height: 1.3 !important;
+          word-break: normal !important;
+        }
+        .afri-share-desc {
+          font-size: 0.8125rem !important;
+          line-height: 1.5 !important;
+          word-break: normal !important;
+        }
+        .calc-panel-title {
+          font-size: 1.25rem !important;
+          line-height: 1.3 !important;
+          letter-spacing: -0.015em !important;
+          word-break: normal !important;
+        }
+        .calc-panel-sub {
+          font-size: 0.875rem !important;
+          line-height: 1.55 !important;
+          word-break: normal !important;
+        }
+        .field-label {
+          font-size: 0.8125rem !important;
+          font-weight: 700 !important;
+          word-break: normal !important;
+        }
+        .results-title, .aggregate-big {
+          font-size: clamp(1.4rem, 5vw, 1.85rem) !important;
+          line-height: 1.2 !important;
+          word-break: normal !important;
+        }
+      }
+      @media print {
+        .afri-share-bar, #afriShareBar, .afri-modal-overlay, .afri-toast {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -1077,24 +1133,21 @@
       </div>
     `;
 
-    // Health tools: place share button above the table of contents (.toc)
-    if (isHealth && toc && toc.parentNode) {
+    // Health progress or Academic Progress MUST come BEFORE the share bar
+    const healthProgressEl = document.getElementById('afriHealthProgress');
+    const academicProgressEl = document.getElementById('afriAcademicProgress');
+    if (healthProgressEl && healthProgressEl.parentNode) {
+      healthProgressEl.insertAdjacentElement('afterend', bar);
+    } else if (academicProgressEl && academicProgressEl.parentNode) {
+      academicProgressEl.insertAdjacentElement('afterend', bar);
+    } else if (host && (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results'))) {
+      host.appendChild(bar);
+    } else if (host && host.classList.contains('calc-panel')) {
+      host.insertAdjacentElement('afterend', bar);
+    } else if (toc && toc.parentNode) {
       toc.parentNode.insertBefore(bar, toc);
-    } else {
-      // Academic Progress or other tools
-      const academicProgressEl = document.getElementById('afriAcademicProgress');
-      const healthProgressEl = document.getElementById('afriHealthProgress');
-      if (academicProgressEl && academicProgressEl.parentNode) {
-        academicProgressEl.insertAdjacentElement('afterend', bar);
-      } else if (healthProgressEl && healthProgressEl.parentNode) {
-        healthProgressEl.insertAdjacentElement('afterend', bar);
-      } else if (host && (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results'))) {
-        host.appendChild(bar);
-      } else if (host && host.classList.contains('calc-panel')) {
-        host.insertAdjacentElement('afterend', bar);
-      } else if (host) {
-        host.appendChild(bar);
-      }
+    } else if (host) {
+      host.appendChild(bar);
     }
 
     const copyBtn = document.getElementById('afriBarCopyBtn');

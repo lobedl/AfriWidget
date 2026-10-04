@@ -7,4 +7,4 @@ Career, Business, and Freelance writing tools should generate an immediate brows
 
 **Why:** The Replit workflow is a static file server and cannot execute Netlify Functions, while production AI generation must keep provider credentials server-side.
 
-**How to apply:** Keep writing requests on the shared proxy path, use `mode: writing` with the productivity category, preserve `no-store` behavior, and keep every draft editable so users can correct facts before sending or publishing. Resume prompts should receive structured role and evidence fields, proofread without inventing facts, and have enough output budget for a complete ATS-friendly draft. New writing pages should add a local fallback, specialized form controls, and a tool-specific proxy instruction.
+**How to apply:** Keep writing requests on the shared proxy path, use `mode: writing` with the productivity category, preserve `no-store` behavior, and keep every draft editable so users can correct facts before sending or publishing. New writing pages should add a local fallback, specialized form controls, and a tool-specific proxy instruction.

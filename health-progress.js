@@ -242,7 +242,8 @@
         color: #000000;
         line-height: 1.2;
         display: block;
-        word-break: break-word;
+        overflow-wrap: break-word;
+        word-break: normal;
       }
       .afri-health-stat-box-val.accent {
         color: #ca8a04;
@@ -675,6 +676,58 @@
           flex: 1;
           justify-content: center;
           text-align: center;
+        }
+      }
+      @media (max-width: 640px) {
+        .afri-health-progress {
+          padding: 1.125rem 1rem;
+          margin-top: 1.25rem;
+          margin-bottom: 1.25rem;
+        }
+        .afri-health-title {
+          font-size: 1.0625rem;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+          word-break: normal;
+        }
+        .afri-health-subtitle {
+          font-size: 0.75rem;
+          line-height: 1.45;
+          color: #4b5563;
+          word-break: normal;
+        }
+        .afri-health-stat-box {
+          padding: 0.75rem 0.875rem;
+        }
+        .afri-health-stat-box-val {
+          font-size: 1.1875rem;
+          line-height: 1.25;
+          word-break: normal;
+          overflow-wrap: break-word;
+        }
+        .afri-health-stat-box-sub {
+          font-size: 0.6875rem;
+          line-height: 1.35;
+        }
+        .afri-health-trend-banner {
+          font-size: 0.75rem;
+          padding: 0.5rem 0.75rem;
+          line-height: 1.4;
+          word-break: normal;
+        }
+        .afri-health-highlight-name {
+          font-size: 0.8125rem;
+          line-height: 1.35;
+          word-break: normal;
+        }
+      }
+      @media print {
+        .afri-health-progress, #afriHealthProgress, .afri-health-modal-overlay {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
         }
       }
     `;
@@ -1165,12 +1218,14 @@
       .replace(/"/g, '&quot;');
   }
 
-  // For health tools, ensure the share bar is positioned above the Table of Contents (.toc)
-  function ensureShareBarAboveToc() {
+  // Ensure Health Progress comes BEFORE the share buttons
+  function ensureHealthProgressBeforeShareBar() {
+    var healthProg = document.getElementById('afriHealthProgress');
     var shareBar = document.getElementById('afriShareBar');
-    var toc = document.querySelector('.toc');
-    if (shareBar && toc && toc.parentNode && shareBar.nextElementSibling !== toc) {
-      toc.parentNode.insertBefore(shareBar, toc);
+    if (healthProg && shareBar && healthProg.parentNode) {
+      if (healthProg.nextElementSibling !== shareBar) {
+        healthProg.insertAdjacentElement('afterend', shareBar);
+      }
     }
   }
 
@@ -1178,7 +1233,7 @@
   function injectHealthProgressSection(adapter) {
     var existing = document.getElementById('afriHealthProgress');
     if (existing) {
-      ensureShareBarAboveToc();
+      ensureHealthProgressBeforeShareBar();
       return;
     }
 
@@ -1273,12 +1328,19 @@
       </div>
     `;
 
-    // In health tools, Health Progress is inside resultsEl (before .ai-section if present, or appended)
+    // In health tools, Health Progress comes BEFORE the share buttons and before .ai-section
+    var shareBar = document.getElementById('afriShareBar');
     var aiSec = resultsEl.querySelector('.ai-section');
-    if (aiSec && aiSec.parentNode === resultsEl) {
+    if (shareBar && shareBar.parentNode === resultsEl) {
+      resultsEl.insertBefore(container, shareBar);
+    } else if (aiSec && aiSec.parentNode === resultsEl) {
       resultsEl.insertBefore(container, aiSec);
     } else {
       resultsEl.appendChild(container);
+    }
+
+    if (shareBar) {
+      ensureHealthProgressBeforeShareBar();
     }
 
     var historyBtn = document.getElementById('afriHealthHistoryBtn');
@@ -1288,7 +1350,7 @@
       });
     }
 
-    ensureShareBarAboveToc();
+    ensureHealthProgressBeforeShareBar();
   }
 
   // Tool display name resolver for cards and modal
@@ -1657,7 +1719,7 @@
         trendBanner.className = 'afri-health-trend-banner baseline';
         if (trendText) trendText.textContent = 'Awaiting initial calculation baseline';
       }
-      ensureShareBarAboveToc();
+      ensureHealthProgressBeforeShareBar();
       return;
     }
 
@@ -1729,7 +1791,7 @@
       metaBar.innerHTML = items.join('<span class="afri-health-meta-sep" aria-hidden="true">&middot;</span>');
     }
 
-    ensureShareBarAboveToc();
+    ensureHealthProgressBeforeShareBar();
   }
 
   // Record Entry from current calculator state
@@ -1763,7 +1825,7 @@
 
     injectHealthProgressSection(adapter);
     updateProgressUI(adapter);
-    ensureShareBarAboveToc();
+    ensureHealthProgressBeforeShareBar();
   }
 
   // Initialization

@@ -17,5 +17,4 @@
 - [AI writing tools boundary](ai-writing-tools-boundary.md) — all writing pages use local drafts first and the shared server-side proxy when production AI is available
 - [Browser PDF export boundary](pdf-export-boundary.md) — stage client-side PDF content in a fixed A4 document; do not capture responsive cards or far off-screen nodes
 - [Generator variety boundary](generator-variety-boundary.md) — shared random-generation logic must own form events so legacy inline handlers cannot overwrite varied results
-- [Editable resume preview boundary](editable-resume-preview.md) — render resume drafts as a structured paper preview while preserving plain text for copy and PDF export
 - [Developer utility batch pattern](developer-utility-batch-pattern.md) — audit existing routes first, standardize canonical tools in place, and add new client-side utilities only when concepts are missing
