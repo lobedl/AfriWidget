@@ -297,6 +297,116 @@
     .btn-yellow:hover { background: #fde047; }
     .btn-outline-dark { display: inline-block; background: #ffffff; color: #000000; font-weight: 700; font-size: 0.875rem; padding: 0.75rem 1.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; transition: border-color 0.15s; text-align: center; }
     .btn-outline-dark:hover { border-color: #000000; }
+
+    @media (max-width: 639px) {
+      .seo-title {
+        font-size: clamp(1.625rem, 5.5vw, 2rem) !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.02em !important;
+        margin-bottom: 0.75rem !important;
+        text-wrap: balance !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .seo-title-accent {
+        font-size: clamp(1.2rem, 4vw, 1.45rem) !important;
+        margin-top: 0.25rem !important;
+        text-wrap: balance !important;
+      }
+      .seo-subtitle {
+        font-size: 0.9375rem !important;
+        line-height: 1.6 !important;
+        text-wrap: pretty !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .about-article {
+        padding: 2rem 0 2.5rem !important;
+      }
+      .about-article h2 {
+        font-size: 1.375rem !important;
+        line-height: 1.3 !important;
+        margin-top: 2rem !important;
+        margin-bottom: 0.75rem !important;
+        text-wrap: balance !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .about-article h3 {
+        font-size: 1.125rem !important;
+        line-height: 1.35 !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.625rem !important;
+        text-wrap: balance !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .about-article p {
+        font-size: 0.9375rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 1.125rem !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .about-article ul li, .about-article ol li {
+        font-size: 0.9375rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 0.5rem !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+      }
+      .diff-item {
+        padding: 1rem 1.125rem !important;
+      }
+      .diff-box {
+        padding: 0.75rem 0.875rem !important;
+        font-size: 0.84375rem !important;
+      }
+      .diff-box p {
+        font-size: 0.84375rem !important;
+        line-height: 1.55 !important;
+      }
+      .diff-benefit {
+        font-size: 0.8125rem !important;
+        line-height: 1.5 !important;
+      }
+      .founder-card {
+        padding: 1.25rem 1rem !important;
+        margin: 1.5rem 0 !important;
+      }
+      .founder-statement {
+        padding: 1rem !important;
+      }
+      .founder-statement p {
+        font-size: 0.9375rem !important;
+        line-height: 1.65 !important;
+      }
+      .founder-meta h3 {
+        font-size: 1.25rem !important;
+      }
+      .stat-box {
+        padding: 0.875rem 0.5rem !important;
+      }
+      .stat-box .stat-num {
+        font-size: 1.375rem !important;
+      }
+      .faq-btn {
+        font-size: 0.9375rem !important;
+        padding: 0.875rem 1rem !important;
+      }
+      .faq-content {
+        font-size: 0.875rem !important;
+        line-height: 1.65 !important;
+      }
+      .callout {
+        padding: 0.875rem 1rem !important;
+        margin: 1.25rem 0 !important;
+      }
+      .callout p {
+        font-size: 0.875rem !important;
+        line-height: 1.65 !important;
+      }
+    }
     .site-footer { background: #000000; color: #9ca3af; padding: 3.5rem 1rem 2rem; border-top: 1px solid #1f2937; margin-top: auto; }
     .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
     @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -611,6 +721,22 @@
           </div>
 
           <div class="diff-item">
+            <span class="diff-badge">Wellness Tracking</span>
+            <h3>Health Progress Tracking vs. Discarded Biometrics</h3>
+            <div class="diff-cols">
+              <div class="diff-box diff-typical">
+                <span class="diff-label">Typical Websites</span>
+                <p>Compute isolated biometric figures like BMI or body fat percentage and immediately discard the reading, leaving individuals unable to visualize physical changes or target ranges over time.</p>
+              </div>
+              <div class="diff-box diff-afri">
+                <span class="diff-label">AfriWidget Approach</span>
+                <p>Integrates a dedicated health progress system across wellness calculators—visualizing multi-metric biometric radar profiles, computing milestone deltas, maintaining private local logs with mobile-friendly cards, and offering instant CSV exports with zero server tracking.</p>
+              </div>
+            </div>
+            <p class="diff-benefit"><strong>User Benefit:</strong> Empowers users to monitor physical well-being, weight management, and hydration pacing over time with 100% device-level privacy and easy-to-read trend visualisations.</p>
+          </div>
+
+          <div class="diff-item">
             <span class="diff-badge">Contextual Guidance</span>
             <h3>Optional AI-Powered Insights vs. Isolated Numbers</h3>
             <div class="diff-cols">
@@ -720,7 +846,7 @@
         <p>Essential mathematical models for evaluating financial decisions before committing funds: amortized loan repayments, compound interest accumulation, savings target milestones, investment ROI projections, and currency conversions. These tools provide objective figures to help users understand the true cost of borrowing and the power of consistent saving.</p>
 
         <h3>Health &amp; Wellness Tools</h3>
-        <p>Daily biometric estimates grounded in standard health formulas: Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), target daily water intake, and pregnancy / ovulation cycles. These instruments offer informative baseline metrics to support healthy daily planning without replacing clinical medical care.</p>
+        <p>Daily biometric estimates grounded in standard health formulas: Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), target daily water intake, and pregnancy / ovulation cycles. These instruments offer informative baseline metrics to support healthy daily planning without replacing clinical medical care, complete with integrated health progress tracking that lets users record biometric trends, view multi-dimensional radar profiles, and review historical logs privately on their devices.</p>
 
         <h3>Productivity &amp; Everyday Utilities</h3>
         <p>Practical digital tools that streamline day-to-day administrative tasks: text case formatting, clean list sorting, customized QR code generation, speech delivery and reading time estimation, and multi-unit conversions. Each utility provides a single, distraction-free solution that gets the job done cleanly.</p>

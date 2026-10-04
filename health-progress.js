@@ -46,12 +46,12 @@
     style.textContent = `
       .afri-health-progress {
         display: block;
-        margin-top: 1.75rem;
-        margin-bottom: 1.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
         background: #ffffff;
-        border: 1px solid #e5e7eb;
+        border: 1px solid #e5e5e5;
         border-radius: 0.875rem;
-        padding: 1.25rem;
+        padding: 1.125rem;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #111827;
@@ -62,7 +62,7 @@
       }
       @media (min-width: 640px) {
         .afri-health-progress {
-          padding: 1.625rem;
+          padding: 1.5rem 1.625rem;
         }
       }
       .afri-health-header {
@@ -88,26 +88,27 @@
         width: 2.375rem;
         height: 2.375rem;
         border-radius: 0.625rem;
-        background: #ecfdf5;
-        color: #059669;
+        background: #fefce8;
+        border: 1px solid #fef08a;
+        color: #ca8a04;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
       }
       .afri-health-title {
-        font-size: 1.125rem;
+        font-size: 1.0625rem;
         font-weight: 800;
         letter-spacing: -0.01em;
-        color: #111827;
+        color: #000000;
         margin: 0;
         line-height: 1.25;
       }
       .afri-health-subtitle {
         font-size: 0.8125rem;
-        color: #6b7280;
-        margin: 0.125rem 0 0;
-        line-height: 1.4;
+        color: #4b5563;
+        margin: 0.15rem 0 0;
+        line-height: 1.45;
       }
       .afri-health-actions {
         display: flex;
@@ -119,20 +120,22 @@
         align-items: center;
         gap: 0.45rem;
         background: #f9fafb;
-        color: #111827;
-        border: 1px solid #e5e7eb;
+        color: #000000;
+        border: 1px solid #e5e5e5;
         border-radius: 0.5rem;
         padding: 0.5rem 0.875rem;
         font-size: 0.8125rem;
-        font-weight: 600;
+        font-weight: 700;
         cursor: pointer;
         transition: all 0.15s ease;
         line-height: 1;
+        font-family: inherit;
+        text-decoration: none;
       }
       .afri-health-btn:hover {
-        background: #f3f4f6;
-        border-color: #d1d5db;
-        color: #059669;
+        background: #fefce8;
+        border-color: #facc15;
+        color: #000000;
       }
       .afri-health-badge-count {
         display: inline-flex;
@@ -142,10 +145,11 @@
         height: 1.25rem;
         padding: 0 0.35rem;
         border-radius: 9999px;
-        background: #ecfdf5;
-        color: #059669;
+        background: #fefce8;
+        border: 1px solid #fef08a;
+        color: #ca8a04;
         font-size: 0.6875rem;
-        font-weight: 700;
+        font-weight: 800;
       }
 
       /* Body Grid */
@@ -155,17 +159,17 @@
         gap: 1.25rem;
         margin-top: 1.25rem;
       }
-      @media (min-width: 840px) {
+      @media (min-width: 860px) {
         .afri-health-body {
-          grid-template-columns: 320px 1fr;
+          grid-template-columns: 330px 1fr;
           align-items: stretch;
         }
       }
 
       /* Visualizer Card */
       .afri-health-chart-card {
-        background: #f9fafb;
-        border: 1px solid #f3f4f6;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
         border-radius: 0.75rem;
         padding: 1.125rem;
         display: flex;
@@ -173,8 +177,8 @@
         justify-content: space-between;
       }
       .afri-health-card-label {
-        font-size: 0.75rem;
-        font-weight: 700;
+        font-size: 0.6875rem;
+        font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: #6b7280;
@@ -214,40 +218,41 @@
       }
       .afri-health-stat-box {
         background: #f9fafb;
-        border: 1px solid #f3f4f6;
+        border: 1px solid #e5e5e5;
         border-radius: 0.75rem;
         padding: 0.875rem 1rem;
       }
       .afri-health-stat-box.highlight {
-        background: #ffffff;
-        border-color: #a7f3d0;
-        box-shadow: 0 1px 3px rgba(5, 150, 105, 0.08);
+        background: #fefce8;
+        border-color: #facc15;
+        box-shadow: 0 1px 3px rgba(250, 204, 21, 0.15);
       }
       .afri-health-stat-box-label {
         font-size: 0.6875rem;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
         color: #6b7280;
         display: block;
         margin-bottom: 0.25rem;
       }
       .afri-health-stat-box-val {
-        font-size: 1.375rem;
-        font-weight: 800;
-        color: #111827;
+        font-size: 1.35rem;
+        font-weight: 900;
+        color: #000000;
         line-height: 1.2;
         display: block;
         word-break: break-word;
       }
       .afri-health-stat-box-val.accent {
-        color: #059669;
+        color: #ca8a04;
       }
       .afri-health-stat-box-sub {
         font-size: 0.75rem;
-        color: #6b7280;
+        color: #4b5563;
         display: block;
         margin-top: 0.25rem;
+        line-height: 1.35;
       }
 
       /* Trend Banner */
@@ -258,28 +263,28 @@
         padding: 0.625rem 0.875rem;
         border-radius: 0.5rem;
         font-size: 0.8125rem;
-        font-weight: 600;
-        line-height: 1.35;
+        font-weight: 700;
+        line-height: 1.4;
       }
       .afri-health-trend-banner.optimal {
-        background: #ecfdf5;
-        border: 1px solid #a7f3d0;
-        color: #065f46;
+        background: #fefce8;
+        border: 1px solid #fef08a;
+        color: #854d0e;
       }
       .afri-health-trend-banner.attention {
-        background: #fef3c7;
+        background: #fffbeb;
         border: 1px solid #fde68a;
         color: #92400e;
       }
       .afri-health-trend-banner.baseline {
-        background: #f3f4f6;
-        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+        border: 1px solid #e5e5e5;
         color: #4b5563;
       }
       .afri-health-trend-banner.active {
-        background: #eff6ff;
-        border: 1px solid #bfdbfe;
-        color: #1e40af;
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+        color: #111827;
       }
 
       /* Highlights Grid */
@@ -294,7 +299,7 @@
         }
       }
       .afri-health-highlight-card {
-        border: 1px solid #f3f4f6;
+        border: 1px solid #e5e5e5;
         background: #f9fafb;
         border-radius: 0.625rem;
         padding: 0.75rem 0.875rem;
@@ -303,8 +308,8 @@
         align-items: flex-start;
       }
       .afri-health-highlight-card.target-card {
-        border-color: #d1fae5;
-        background: #f0fdf4;
+        border-color: #fef08a;
+        background: #fefce8;
       }
       .afri-health-highlight-icon {
         width: 1.875rem;
@@ -315,12 +320,12 @@
         justify-content: center;
         flex-shrink: 0;
         background: #ffffff;
-        color: #059669;
-        border: 1px solid #d1fae5;
+        color: #ca8a04;
+        border: 1px solid #fef08a;
       }
       .afri-health-highlight-card.focus-card .afri-health-highlight-icon {
-        color: #2563eb;
-        border-color: #dbeafe;
+        color: #000000;
+        border-color: #e5e5e5;
       }
       .afri-health-highlight-info {
         flex: 1;
@@ -328,27 +333,27 @@
       }
       .afri-health-highlight-tag {
         font-size: 0.6875rem;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: #6b7280;
+        letter-spacing: 0.05em;
+        color: #ca8a04;
         display: block;
         line-height: 1.2;
       }
       .afri-health-highlight-name {
         font-size: 0.875rem;
-        font-weight: 700;
-        color: #111827;
+        font-weight: 800;
+        color: #000000;
         margin-top: 0.125rem;
         display: block;
-        line-height: 1.3;
+        line-height: 1.35;
       }
       .afri-health-highlight-sub {
         font-size: 0.75rem;
         color: #4b5563;
         margin-top: 0.125rem;
         display: block;
-        line-height: 1.35;
+        line-height: 1.4;
       }
 
       /* Biometrics unboxed text bar */
@@ -361,7 +366,8 @@
         margin-top: 0.875rem;
         border-top: 1px solid #f3f4f6;
         font-size: 0.75rem;
-        color: #6b7280;
+        color: #4b5563;
+        line-height: 1.5;
       }
       .afri-health-meta-item {
         display: inline-flex;
@@ -369,8 +375,8 @@
         gap: 0.35rem;
       }
       .afri-health-meta-val {
-        font-weight: 600;
-        color: #111827;
+        font-weight: 700;
+        color: #000000;
       }
       .afri-health-meta-sep {
         color: #d1d5db;
@@ -379,11 +385,8 @@
       /* History Modal */
       .afri-health-modal-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.45);
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
         backdrop-filter: blur(2px);
         display: flex;
         align-items: center;
@@ -401,14 +404,14 @@
       .afri-health-modal {
         background: #ffffff;
         border-radius: 1rem;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
         width: 100%;
-        max-width: 680px;
+        max-width: 640px;
         max-height: 85vh;
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        border: 1px solid #e5e7eb;
+        border: 1px solid #e5e5e5;
         transform: translateY(12px);
         transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       }
@@ -425,65 +428,187 @@
       .afri-health-modal-title {
         font-size: 1.125rem;
         font-weight: 800;
-        color: #111827;
+        color: #000000;
         margin: 0;
       }
       .afri-health-modal-sub {
         font-size: 0.75rem;
-        color: #6b7280;
+        color: #4b5563;
         margin-top: 0.125rem;
       }
       .afri-health-modal-close {
-        background: transparent;
-        border: none;
-        color: #9ca3af;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        color: #4b5563;
         cursor: pointer;
         padding: 0.35rem;
         border-radius: 0.375rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.15s ease;
       }
       .afri-health-modal-close:hover {
-        background: #f3f4f6;
-        color: #111827;
+        background: #000000;
+        color: #ffffff;
       }
       .afri-health-modal-body {
-        padding: 1.25rem 1.375rem;
+        padding: 1.125rem 1.25rem;
         overflow-y: auto;
         flex: 1;
       }
       .afri-health-history-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.625rem;
-        margin-bottom: 1.125rem;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
       }
       .afri-health-hstat-box {
         background: #f9fafb;
-        border: 1px solid #f3f4f6;
+        border: 1px solid #e5e7eb;
         border-radius: 0.5rem;
-        padding: 0.625rem 0.75rem;
+        padding: 0.5rem 0.375rem;
         text-align: center;
+        min-width: 0;
       }
       .afri-health-hstat-label {
-        font-size: 0.6875rem;
-        font-weight: 600;
+        font-size: 0.625rem;
+        font-weight: 700;
         text-transform: uppercase;
         color: #6b7280;
         display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        letter-spacing: 0.03em;
       }
       .afri-health-hstat-val {
-        font-size: 1.125rem;
-        font-weight: 800;
-        color: #111827;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #000000;
         margin-top: 0.125rem;
         display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
-      .afri-health-table-wrap {
+
+      /* Mobile-first History Cards */
+      .afri-health-cards-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .afri-health-card-item {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        padding: 0.875rem 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        text-align: left;
+        box-sizing: border-box;
+        word-break: normal;
+        overflow-wrap: break-word;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      .afri-health-card-item:hover {
+        border-color: #facc15;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+      }
+      .afri-health-card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .afri-health-card-title {
+        font-size: 0.9375rem;
+        font-weight: 800;
+        color: #111827;
+        margin: 0;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+      }
+      .afri-health-card-val {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #ca8a04;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-feature-settings: "tnum";
+        font-variant-numeric: tabular-nums;
+      }
+      .afri-health-card-status-badge {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        padding: 0.2rem 0.55rem;
+        border-radius: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        background: #fef9c3;
+        color: #854d0e;
+        border: 1px solid #fde047;
+        line-height: 1.2;
+      }
+      .afri-health-card-meta {
+        font-size: 0.75rem;
+        color: #6b7280;
+        font-weight: 500;
+        line-height: 1.3;
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+      }
+      .afri-health-card-details {
+        background: #f9fafb;
         border: 1px solid #f3f4f6;
-        border-radius: 0.625rem;
-        overflow-x: auto;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        margin-top: 0.15rem;
+      }
+      .afri-health-card-detail-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 0.8125rem;
+        gap: 0.75rem;
+        line-height: 1.35;
+      }
+      .afri-health-card-detail-key {
+        color: #4b5563;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .afri-health-card-detail-val {
+        color: #111827;
+        font-weight: 700;
+        text-align: right;
+        word-break: normal;
+      }
+
+      /* Desktop Table View */
+      .afri-health-table-wrap {
+        display: none;
+      }
+      @media (min-width: 641px) {
+        .afri-health-cards-wrap {
+          display: none;
+        }
+        .afri-health-table-wrap {
+          display: block;
+          border: 1px solid #e5e5e5;
+          border-radius: 0.625rem;
+          overflow-x: auto;
+        }
       }
       .afri-health-table {
         width: 100%;
@@ -495,11 +620,11 @@
         background: #f9fafb;
         padding: 0.625rem 0.875rem;
         font-size: 0.6875rem;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 0.03em;
-        color: #6b7280;
-        border-bottom: 1px solid #e5e7eb;
+        letter-spacing: 0.04em;
+        color: #4b5563;
+        border-bottom: 1px solid #e5e5e5;
       }
       .afri-health-table td {
         padding: 0.625rem 0.875rem;
@@ -510,8 +635,8 @@
         border-bottom: none;
       }
       .afri-health-table td.val-cell {
-        font-weight: 700;
-        color: #059669;
+        font-weight: 800;
+        color: #ca8a04;
       }
       .afri-health-empty {
         text-align: center;
@@ -520,7 +645,7 @@
         font-size: 0.875rem;
       }
       .afri-health-modal-foot {
-        padding: 0.875rem 1.375rem;
+        padding: 0.875rem 1.25rem;
         border-top: 1px solid #f3f4f6;
         background: #fafafa;
         display: flex;
@@ -528,6 +653,29 @@
         justify-content: space-between;
         gap: 0.75rem;
         flex-wrap: wrap;
+      }
+      .afri-health-modal-foot-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      @media (max-width: 480px) {
+        .afri-health-modal-foot {
+          flex-direction: column-reverse;
+          align-items: stretch;
+          gap: 0.5rem;
+        }
+        .afri-health-modal-foot-actions {
+          display: flex;
+          gap: 0.5rem;
+        }
+        .afri-health-modal-foot-actions .afri-health-btn,
+        .afri-health-modal-foot > .afri-health-btn {
+          flex: 1;
+          justify-content: center;
+          text-align: center;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -928,23 +1076,26 @@
       ];
     }
 
-    var size = 300;
-    var center = size / 2;
-    var radius = 100;
+    var sizeX = 320;
+    var sizeY = 270;
+    var cx = 160;
+    var cy = 135;
+    var radius = 78;
     var n = metrics.length;
     var angleStep = (2 * Math.PI) / n;
 
-    var rings = [0.25, 0.5, 0.75, 1.0];
+    var rings = [0.33, 0.66, 1.0];
     var gridPaths = rings.map(function (scale) {
       var pts = [];
       for (var i = 0; i < n; i++) {
         var angle = i * angleStep - Math.PI / 2;
         var r = radius * scale;
-        var x = (center + r * Math.cos(angle)).toFixed(1);
-        var y = (center + r * Math.sin(angle)).toFixed(1);
+        var x = (cx + r * Math.cos(angle)).toFixed(1);
+        var y = (cy + r * Math.sin(angle)).toFixed(1);
         pts.push(x + ',' + y);
       }
-      return '<polygon points="' + pts.join(' ') + '" fill="none" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="' + (scale === 1 ? 'none' : '2,2') + '" />';
+      var isOuter = scale === 1.0;
+      return '<polygon points="' + pts.join(' ') + '" fill="' + (isOuter ? '#ffffff' : 'none') + '" stroke="' + (isOuter ? '#d1d5db' : '#e5e7eb') + '" stroke-width="' + (isOuter ? '1.5' : '1') + '" ' + (isOuter ? '' : 'stroke-dasharray="3,3"') + ' />';
     }).join('');
 
     var axes = [];
@@ -957,37 +1108,44 @@
       var sinA = Math.sin(angle);
 
       // Axis line
-      var xEnd = (center + radius * cosA).toFixed(1);
-      var yEnd = (center + radius * sinA).toFixed(1);
-      axes.push('<line x1="' + center + '" y1="' + center + '" x2="' + xEnd + '" y2="' + yEnd + '" stroke="#e5e7eb" stroke-width="1" />');
+      var xEnd = (cx + radius * cosA).toFixed(1);
+      var yEnd = (cy + radius * sinA).toFixed(1);
+      axes.push('<line x1="' + cx + '" y1="' + cy + '" x2="' + xEnd + '" y2="' + yEnd + '" stroke="#e5e7eb" stroke-width="1" />');
 
       // Value point
-      var norm = typeof metrics[i].norm === 'number' ? Math.max(0.15, Math.min(1.0, metrics[i].norm)) : 0.7;
+      var norm = typeof metrics[i].norm === 'number' ? Math.max(0.18, Math.min(1.0, metrics[i].norm)) : 0.7;
       var valR = radius * norm;
-      var px = (center + valR * cosA).toFixed(1);
-      var py = (center + valR * sinA).toFixed(1);
+      var px = (cx + valR * cosA).toFixed(1);
+      var py = (cy + valR * sinA).toFixed(1);
       polyPoints.push(px + ',' + py);
 
       // Label positioning
-      var labelR = radius + 24;
-      var lx = (center + labelR * cosA).toFixed(1);
-      var ly = (center + labelR * sinA + 3).toFixed(1);
-      var textAnchor = Math.abs(cosA) < 0.15 ? 'middle' : (cosA > 0 ? 'start' : 'end');
-      var name = metrics[i].name;
-      if (name.length > 16) name = name.substring(0, 14) + '…';
+      var labelR = radius + 22;
+      var lx = (cx + labelR * cosA).toFixed(1);
+      var ly = (cy + labelR * sinA).toFixed(1);
+      var textAnchor = 'middle';
+      if (cosA > 0.28) textAnchor = 'start';
+      else if (cosA < -0.28) textAnchor = 'end';
 
-      labels.push('<text x="' + lx + '" y="' + ly + '" font-size="9" font-weight="600" fill="#4b5563" text-anchor="' + textAnchor + '">' + escapeXml(name) + '</text>');
+      var dy = '4';
+      if (sinA < -0.65) dy = '-4';
+      else if (sinA > 0.65) dy = '12';
+
+      var name = metrics[i].name;
+      if (name.length > 15) name = name.substring(0, 13) + '…';
+
+      labels.push('<text x="' + lx + '" y="' + ly + '" dy="' + dy + '" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10" font-weight="700" fill="#111827" text-anchor="' + textAnchor + '">' + escapeXml(name) + '</text>');
     }
 
-    var polySvg = '<polygon points="' + polyPoints.join(' ') + '" fill="rgba(5, 150, 105, 0.18)" stroke="#059669" stroke-width="2.2" />';
+    var polySvg = '<polygon points="' + polyPoints.join(' ') + '" fill="rgba(250, 204, 21, 0.38)" stroke="#ca8a04" stroke-width="2.4" stroke-linejoin="round" />';
 
     var circles = polyPoints.map(function (pt) {
       var coords = pt.split(',');
-      return '<circle cx="' + coords[0] + '" cy="' + coords[1] + '" r="4" fill="#ffffff" stroke="#059669" stroke-width="2" />';
+      return '<circle cx="' + coords[0] + '" cy="' + coords[1] + '" r="3.5" fill="#000000" stroke="#facc15" stroke-width="2" />';
     }).join('');
 
     return `
-      <svg viewBox="0 0 ${size} ${size}" width="100%" height="220" role="img" aria-label="Biometric Target Balance Radar">
+      <svg viewBox="0 0 ${sizeX} ${sizeY}" width="100%" height="220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Biometric Target Balance Radar">
         <title>Biometric Balance Visualizer</title>
         ${gridPaths}
         ${axes.join('')}
@@ -1007,11 +1165,24 @@
       .replace(/"/g, '&quot;');
   }
 
+  // For health tools, ensure the share bar is positioned above the Table of Contents (.toc)
+  function ensureShareBarAboveToc() {
+    var shareBar = document.getElementById('afriShareBar');
+    var toc = document.querySelector('.toc');
+    if (shareBar && toc && toc.parentNode && shareBar.nextElementSibling !== toc) {
+      toc.parentNode.insertBefore(shareBar, toc);
+    }
+  }
+
   // Inject the component into the page
   function injectHealthProgressSection(adapter) {
-    if (document.getElementById('afriHealthProgress')) return;
+    var existing = document.getElementById('afriHealthProgress');
+    if (existing) {
+      ensureShareBarAboveToc();
+      return;
+    }
 
-    var resultsEl = document.getElementById('results');
+    var resultsEl = document.getElementById('results') || document.querySelector('.results') || document.getElementById('cfResults');
     if (!resultsEl) return;
 
     var container = document.createElement('section');
@@ -1102,9 +1273,12 @@
       </div>
     `;
 
-    // Insert directly below the results container
-    if (resultsEl.parentNode) {
-      resultsEl.parentNode.insertBefore(container, resultsEl.nextSibling);
+    // In health tools, Health Progress is inside resultsEl (before .ai-section if present, or appended)
+    var aiSec = resultsEl.querySelector('.ai-section');
+    if (aiSec && aiSec.parentNode === resultsEl) {
+      resultsEl.insertBefore(container, aiSec);
+    } else {
+      resultsEl.appendChild(container);
     }
 
     var historyBtn = document.getElementById('afriHealthHistoryBtn');
@@ -1113,6 +1287,26 @@
         openHistoryModal(adapter);
       });
     }
+
+    ensureShareBarAboveToc();
+  }
+
+  // Tool display name resolver for cards and modal
+  function getToolName(adapter) {
+    if (!adapter) return 'Health Calculator';
+    var names = {
+      'bmi-calc': 'BMI Calculator',
+      'body-fat-calc': 'Body Fat Calculator',
+      'daily-calorie-needs': 'Daily Calorie Needs Calculator',
+      'healthy-weight-range': 'Healthy Weight Range Calculator',
+      'ideal-weight-calc': 'Ideal Weight Calculator',
+      'water-intake-calc': 'Water Intake Calculator',
+      'hydration-reminder-calc': 'Hydration Reminder Calculator',
+      'ovulation-cycle-calc': 'Ovulation & Cycle Calculator',
+      'calorie-burn-calc': 'Calorie Burn Calculator'
+    };
+    if (adapter.id && names[adapter.id]) return names[adapter.id];
+    return adapter.title || 'Health Calculator';
   }
 
   // History Modal Overlay Management
@@ -1155,6 +1349,12 @@
             </div>
           </div>
 
+          <!-- Mobile Cards View -->
+          <div class="afri-health-cards-wrap" id="afriHealthCardsList">
+            <!-- Cards injected here -->
+          </div>
+
+          <!-- Desktop Table View -->
           <div class="afri-health-table-wrap">
             <table class="afri-health-table">
               <thead>
@@ -1173,7 +1373,7 @@
         </div>
 
         <div class="afri-health-modal-foot">
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="afri-health-modal-foot-actions">
             <button type="button" class="afri-health-btn" id="afriHealthExportCsvBtn">
               ${icons.download}
               <span>Export CSV</span>
@@ -1212,7 +1412,7 @@
     var clearBtn = overlay.querySelector('#afriHealthClearBtn');
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {
-        if (window.confirm('Are you sure you want to clear your local biometric history for this tool? This cannot be undone.')) {
+        if (confirm('Are you sure you want to clear your local biometric history for this tool?')) {
           clearHistory(adapter.id);
           renderHistoryModalTable(adapter);
           updateProgressUI(adapter);
@@ -1247,6 +1447,7 @@
   function renderHistoryModalTable(adapter) {
     var history = getHistory(adapter.id);
     var tbody = document.getElementById('afriHealthTableBody');
+    var cardsList = document.getElementById('afriHealthCardsList');
     var countEl = document.getElementById('afriHealthHstatCount');
     var initEl = document.getElementById('afriHealthHstatInitial');
     var latestEl = document.getElementById('afriHealthHstatLatest');
@@ -1259,41 +1460,115 @@
       latestEl.textContent = history.length > 0 ? (history[0].displayValue ? history[0].displayValue.split(' ')[0] : '—') : '—';
     }
 
-    if (!tbody) return;
-    tbody.innerHTML = '';
+    if (cardsList) cardsList.innerHTML = '';
+    if (tbody) tbody.innerHTML = '';
 
     if (history.length === 0) {
-      var tr = document.createElement('tr');
-      tr.innerHTML = '<td colspan="4" class="afri-health-empty">No calculations recorded yet. Use the calculator to log your first biometric entry.</td>';
-      tbody.appendChild(tr);
+      var emptyMsg = 'No calculations recorded yet. Use the calculator to log your first biometric entry.';
+      if (cardsList) {
+        cardsList.innerHTML = '<div class="afri-health-empty">' + emptyMsg + '</div>';
+      }
+      if (tbody) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td colspan="4" class="afri-health-empty">' + emptyMsg + '</td>';
+        tbody.appendChild(tr);
+      }
       return;
     }
 
-    history.forEach(function (entry) {
-      var tr = document.createElement('tr');
-      var dateStr = formatDate(entry.timestamp);
-      var detailSummary = [];
-      if (entry.metrics && Array.isArray(entry.metrics)) {
-        entry.metrics.forEach(function (m) {
-          detailSummary.push(m.name + ': ' + m.value);
-        });
-      }
-      var detailStr = detailSummary.slice(0, 3).join(' &middot; ');
+    var toolName = getToolName(adapter);
 
-      tr.innerHTML = `
-        <td style="white-space: nowrap; font-size: 0.75rem; color: #4b5563;">${escapeXml(dateStr)}</td>
-        <td class="val-cell">${escapeXml(entry.displayValue || (entry.value + ' ' + (adapter.unit || '')))}</td>
-        <td><span style="font-weight: 600; color: #111827;">${escapeXml(entry.status || 'Standard')}</span></td>
-        <td style="font-size: 0.75rem; color: #6b7280;">${detailStr || '—'}</td>
-      `;
-      tbody.appendChild(tr);
+    history.forEach(function (entry) {
+      var dateStr = formatDate(entry.timestamp);
+
+      // Clean primary value (e.g. "19.0 kg/m²" without trailing "(Healthy Weight)")
+      var rawDisplay = entry.displayValue || (entry.value + ' ' + (adapter.unit || ''));
+      var primaryVal = rawDisplay.replace(/\s*\([^)]*\)\s*$/, '').trim();
+      var statusText = entry.status || 'Standard';
+
+      // 1. Mobile Cards View
+      if (cardsList) {
+        var card = document.createElement('div');
+        card.className = 'afri-health-card-item';
+
+        var metricsList = [];
+        if (entry.metrics && Array.isArray(entry.metrics)) {
+          entry.metrics.forEach(function (m) {
+            if (!m || !m.name) return;
+            // Skip metric if it duplicates the primary value or status badge
+            if (m.name === 'BMI Score' || m.name === 'Body Fat %' || m.name === 'Maintenance TDEE' || m.name === 'Total Burned') return;
+            if (m.name === 'Body Composition' && m.value === statusText) return;
+
+            var cleanName = m.name;
+            if (cleanName === 'Basal BMR') cleanName = 'BMR';
+            else if (cleanName === 'Active TDEE') cleanName = 'TDEE';
+            metricsList.push({ name: cleanName, value: m.value });
+          });
+        }
+
+        var detailsHtml = '';
+        if (metricsList.length > 0) {
+          detailsHtml = '<div class="afri-health-card-details">' +
+            metricsList.map(function (m) {
+              return '<div class="afri-health-card-detail-row">' +
+                '<span class="afri-health-card-detail-key">' + escapeXml(m.name) + ':</span>' +
+                '<span class="afri-health-card-detail-val">' + escapeXml(m.value) + '</span>' +
+              '</div>';
+            }).join('') +
+          '</div>';
+        } else if (entry.target) {
+          detailsHtml = '<div class="afri-health-card-details">' +
+            '<div class="afri-health-card-detail-row">' +
+              '<span class="afri-health-card-detail-key">Target:</span>' +
+              '<span class="afri-health-card-detail-val">' + escapeXml(entry.target) + '</span>' +
+            '</div>' +
+          '</div>';
+        }
+
+        card.innerHTML = `
+          <div class="afri-health-card-head">
+            <h4 class="afri-health-card-title">${escapeXml(toolName)}</h4>
+          </div>
+          <div class="afri-health-card-val">${escapeXml(primaryVal)}</div>
+          <div>
+            <span class="afri-health-card-status-badge">${escapeXml(statusText)}</span>
+          </div>
+          <div class="afri-health-card-meta">
+            <span>${escapeXml(dateStr)}</span>
+          </div>
+          ${detailsHtml}
+        `;
+        cardsList.appendChild(card);
+      }
+
+      // 2. Desktop Table View
+      if (tbody) {
+        var tr = document.createElement('tr');
+        var detailSummary = [];
+        if (entry.metrics && Array.isArray(entry.metrics)) {
+          entry.metrics.forEach(function (m) {
+            detailSummary.push(m.name + ': ' + m.value);
+          });
+        }
+        var detailStr = detailSummary.slice(0, 3).join(' &middot; ');
+
+        tr.innerHTML = `
+          <td style="white-space: nowrap; font-size: 0.75rem; color: #4b5563;">${escapeXml(dateStr)}</td>
+          <td class="val-cell">${escapeXml(rawDisplay)}</td>
+          <td><span style="font-weight: 700; color: #111827;">${escapeXml(statusText)}</span></td>
+          <td style="font-size: 0.75rem; color: #6b7280;">${detailStr || '—'}</td>
+        `;
+        tbody.appendChild(tr);
+      }
     });
   }
 
   function exportHistoryCsv(adapter) {
     var history = getHistory(adapter.id);
     if (history.length === 0) {
-      window.alert('No history entries to export.');
+      if (typeof window.showAfriToast === 'function') {
+        window.showAfriToast('No history entries to export');
+      }
       return;
     }
 
@@ -1337,8 +1612,13 @@
     if (!ts) return '—';
     var d = new Date(ts);
     if (isNaN(d.getTime())) return '—';
-    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) +
-           ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    var day = d.getDate();
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var month = months[d.getMonth()];
+    var year = d.getFullYear();
+    var hours = String(d.getHours()).padStart(2, '0');
+    var mins = String(d.getMinutes()).padStart(2, '0');
+    return day + ' ' + month + ' ' + year + ' \u2022 ' + hours + ':' + mins;
   }
 
   function formatDateShort(ts) {
@@ -1377,6 +1657,7 @@
         trendBanner.className = 'afri-health-trend-banner baseline';
         if (trendText) trendText.textContent = 'Awaiting initial calculation baseline';
       }
+      ensureShareBarAboveToc();
       return;
     }
 
@@ -1447,6 +1728,8 @@
       });
       metaBar.innerHTML = items.join('<span class="afri-health-meta-sep" aria-hidden="true">&middot;</span>');
     }
+
+    ensureShareBarAboveToc();
   }
 
   // Record Entry from current calculator state
@@ -1480,6 +1763,7 @@
 
     injectHealthProgressSection(adapter);
     updateProgressUI(adapter);
+    ensureShareBarAboveToc();
   }
 
   // Initialization
@@ -1489,7 +1773,7 @@
 
     injectStyles();
 
-    var resultsEl = document.getElementById('results');
+    var resultsEl = document.getElementById('results') || document.querySelector('.results') || document.getElementById('cfResults');
     if (resultsEl) {
       injectHealthProgressSection(adapter);
       updateProgressUI(adapter);
@@ -1506,7 +1790,7 @@
     });
 
     // Hook buttons
-    var calcButtons = document.querySelectorAll('#calcBtn, .btn-primary, [type="submit"]');
+    var calcButtons = document.querySelectorAll('#calcBtn, .btn-primary, [type="submit"], #calculateBtn');
     calcButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         setTimeout(function () {

@@ -436,6 +436,77 @@
         color: #facc15;
         flex-shrink: 0;
       }
+
+      /* Professional Mobile Typography & Writing Standards Across AfriWidget */
+      @media (max-width: 640px) {
+        .seo-title {
+          font-size: clamp(1.5rem, 5.5vw, 1.875rem) !important;
+          line-height: 1.2 !important;
+          text-wrap: balance !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+        }
+        .seo-title-accent {
+          font-size: clamp(1.0625rem, 4vw, 1.35rem) !important;
+          line-height: 1.25 !important;
+          text-wrap: balance !important;
+        }
+        .seo-subtitle {
+          font-size: 0.9375rem !important;
+          line-height: 1.6 !important;
+          text-wrap: pretty !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+        }
+        .policy-article h2 {
+          font-size: 1.35rem !important;
+          line-height: 1.3 !important;
+          text-wrap: balance !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+          margin-top: 2rem !important;
+        }
+        .policy-article h3 {
+          font-size: 1.125rem !important;
+          line-height: 1.35 !important;
+          text-wrap: balance !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+        }
+        .policy-article p {
+          font-size: 0.9375rem !important;
+          line-height: 1.7 !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+        }
+        .policy-article ul li, .policy-article ol li {
+          font-size: 0.9375rem !important;
+          line-height: 1.65 !important;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+        }
+        .toc {
+          padding: 1rem 1.125rem !important;
+        }
+        .toc ol li {
+          font-size: 0.8125rem !important;
+          line-height: 1.5 !important;
+        }
+        .interpret-box {
+          padding: 0.875rem 1rem !important;
+        }
+        .interpret-text {
+          font-size: 0.9375rem !important;
+          line-height: 1.65 !important;
+        }
+        .ai-desc {
+          font-size: 0.875rem !important;
+          line-height: 1.6 !important;
+        }
+        .stat-card .stat-value {
+          font-size: 1.35rem !important;
+        }
+      }
     `;
     document.head.appendChild(style);
   }
@@ -950,10 +1021,31 @@
       $('.calc-panel');
   }
 
+  function isHealthTool() {
+    const healthSlugs = [
+      'bmi-calculator',
+      'body-fat-calculator',
+      'calorie-burn-calculator',
+      'daily-calorie-needs-calculator',
+      'healthy-weight-range-calculator',
+      'hydration-reminder-calculator',
+      'ideal-weight-calculator',
+      'ovulation-cycle-calculator',
+      'water-intake-calculator'
+    ];
+    const currentSlug = location.pathname.split('/').pop().replace(/\.html$/, '');
+    if (healthSlugs.includes(currentSlug)) return true;
+    if (document.getElementById('afriHealthProgress')) return true;
+    if (document.querySelector('script[src*="health-progress.js"]')) return true;
+    return false;
+  }
+
   function injectShareBar(adapterConfig) {
     if (document.getElementById('afriShareBar')) return;
     const host = findResultHost();
-    if (!host) return;
+    const toc = document.querySelector('.toc');
+    const isHealth = isHealthTool();
+    if (!host && (!isHealth || !toc)) return;
 
     const bar = document.createElement('div');
     bar.id = 'afriShareBar';
@@ -985,13 +1077,24 @@
       </div>
     `;
 
-    // Smart insertion:
-    if (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results')) {
-      host.appendChild(bar);
-    } else if (host.classList.contains('calc-panel')) {
-      host.insertAdjacentElement('afterend', bar);
+    // Health tools: place share button above the table of contents (.toc)
+    if (isHealth && toc && toc.parentNode) {
+      toc.parentNode.insertBefore(bar, toc);
     } else {
-      host.appendChild(bar);
+      // Academic Progress or other tools
+      const academicProgressEl = document.getElementById('afriAcademicProgress');
+      const healthProgressEl = document.getElementById('afriHealthProgress');
+      if (academicProgressEl && academicProgressEl.parentNode) {
+        academicProgressEl.insertAdjacentElement('afterend', bar);
+      } else if (healthProgressEl && healthProgressEl.parentNode) {
+        healthProgressEl.insertAdjacentElement('afterend', bar);
+      } else if (host && (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results'))) {
+        host.appendChild(bar);
+      } else if (host && host.classList.contains('calc-panel')) {
+        host.insertAdjacentElement('afterend', bar);
+      } else if (host) {
+        host.appendChild(bar);
+      }
     }
 
     const copyBtn = document.getElementById('afriBarCopyBtn');
