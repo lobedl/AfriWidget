@@ -1007,6 +1007,2042 @@
       extract: function () {
         return adapters['gpa-calculator'].extract();
       }
+    },
+
+    // 12. WAEC Grade Calculator
+    'waec-grade-calculator': {
+      id: 'waec-grade',
+      title: 'WAEC Grade Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var aggEl = document.getElementById('aggregateScore');
+        var val = aggEl ? parseFloat(aggEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#subjectRowsContainer .subject-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.subj-name');
+          var markInp = row.querySelector('.subj-mark');
+          var name = (nameInp && nameInp.value.trim()) || ('Subject ' + (idx + 1));
+          var mark = markInp && markInp.value !== '' ? parseFloat(markInp.value) : NaN;
+          if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+            var g = mark >= 75 ? 'A1' : mark >= 70 ? 'B2' : mark >= 65 ? 'B3' :
+                    mark >= 60 ? 'C4' : mark >= 55 ? 'C5' : mark >= 50 ? 'C6' :
+                    mark >= 45 ? 'D7' : mark >= 40 ? 'E8' : 'F9';
+            subjects.push({
+              name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+              grade: g,
+              raw: mark,
+              norm: Math.max(0.12, mark / 100),
+              display: g + ' (' + Math.round(mark) + '%)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '% Average',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 13. Nigerian University CGPA Calculator
+    'nigerian-university-cgpa-calculator': {
+      id: 'nigerian-university-cgpa',
+      title: 'Nigerian University CGPA Calculator',
+      higherIsBetter: true,
+      unit: 'CGPA',
+      extract: function () {
+        var cgpaEl = document.getElementById('statCgpa');
+        var val = cgpaEl ? parseFloat(cgpaEl.textContent.trim()) : NaN;
+        if (isNaN(val)) return null;
+
+        var scaleEl = document.getElementById('gradingScale');
+        var isScale4 = scaleEl && scaleEl.value === '4.0';
+        var maxScale = isScale4 ? 4.0 : 5.0;
+        var ptsMap5 = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'F': 0 };
+        var ptsMap4 = { 'A': 4, 'B': 3, 'C': 2, 'D': 1, 'E': 0, 'F': 0 };
+        var map = isScale4 ? ptsMap4 : ptsMap5;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var gradeSel = row.querySelector('.course-grade');
+          var name = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var grade = gradeSel ? gradeSel.value : '';
+          if (grade && map[grade] !== undefined) {
+            var pts = map[grade];
+            subjects.push({
+              name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+              grade: grade,
+              raw: pts,
+              norm: Math.max(0.12, pts / maxScale),
+              display: grade + ' (' + pts.toFixed(1) + ' pts)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' CGPA',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 14. ZIMSEC O-Level Points Calculator
+    'zimsec-olevel-points-calculator': {
+      id: 'zimsec-olevel-points',
+      title: 'ZIMSEC O-Level Points Calculator',
+      higherIsBetter: true,
+      unit: 'pts',
+      extract: function () {
+        var b5El = document.getElementById('best5Out');
+        var val = b5El ? parseInt(b5El.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var ptsMap = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'U': 0 };
+        var subLabels = [
+          'English', 'Maths', 'Combined Science', 'Heritage/Lang',
+          'Subject 5', 'Subject 6', 'Subject 7', 'Subject 8'
+        ];
+        var subjects = [];
+        for (var i = 1; i <= 8; i++) {
+          var sel = document.getElementById('sub' + i + 'Grade');
+          if (sel && sel.value && ptsMap[sel.value] !== undefined) {
+            var g = sel.value;
+            var pts = ptsMap[g];
+            var sName = subLabels[i - 1] || ('Subject ' + i);
+            subjects.push({
+              name: sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 5),
+              display: g + ' (' + pts + ' pts)'
+            });
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val + ' / 25 Best 5',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 15. ZIMSEC A-Level Points Calculator
+    'zimsec-alevel-points-calculator': {
+      id: 'zimsec-alevel-points',
+      title: 'ZIMSEC A-Level Points Calculator',
+      higherIsBetter: true,
+      unit: 'pts',
+      extract: function () {
+        var ptsEl = document.getElementById('pointsOut');
+        var val = ptsEl ? parseInt(ptsEl.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var ptsMap = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'O': 0, 'F': 0 };
+        var subjects = [];
+        for (var i = 1; i <= 4; i++) {
+          var nameInp = document.getElementById('sub' + i + 'Name');
+          var gradeSel = document.getElementById('sub' + i + 'Grade');
+          var sName = (nameInp && nameInp.value.trim()) || ('Subject ' + i);
+          if (gradeSel && gradeSel.value && ptsMap[gradeSel.value] !== undefined) {
+            var g = gradeSel.value;
+            var pts = ptsMap[g];
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 5),
+              display: g + ' (' + pts + ' pts)'
+            });
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val + ' A-Level Pts',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 16. ECZ Grade 12 Points Calculator
+    'zambia-grade-12-points-calculator': {
+      id: 'zambia-grade-12-points',
+      title: 'ECZ Grade 12 Points Calculator',
+      higherIsBetter: false,
+      unit: 'pts',
+      extract: function () {
+        var b6El = document.getElementById('best6Value');
+        var val = b6El ? parseInt(b6El.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        for (var i = 1; i <= 9; i++) {
+          var sInp = document.getElementById('subj' + i);
+          var gSel = document.getElementById('grade' + i);
+          var sName = (sInp && sInp.value.trim()) || (i === 1 ? 'English' : 'Subject ' + i);
+          if (gSel && gSel.value !== '') {
+            var g = parseInt(gSel.value, 10);
+            if (!isNaN(g) && g >= 1 && g <= 9) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: 'Grade ' + g,
+                raw: g,
+                norm: Math.max(0.12, (10 - g) / 9),
+                display: 'Grade ' + g
+              });
+            }
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val + ' Best-6 Pts',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 17. UCE Grade & Aggregate Calculator
+    'uce-grade-calculator': {
+      id: 'uce-grade-calculator',
+      title: 'UCE Grade & Aggregate Calculator',
+      higherIsBetter: false,
+      unit: 'agg',
+      extract: function () {
+        var aggEl = document.getElementById('aggregateScore');
+        var val = aggEl ? parseInt(aggEl.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var subConfig = [
+          { id: 'uceEnglish', name: 'English' },
+          { id: 'uceMath', name: 'Maths' },
+          { id: 'uceBiology', name: 'Biology' },
+          { id: 'uceChemistry', name: 'Chemistry' },
+          { id: 'ucePhysics', name: 'Physics' },
+          { id: 'uceGeography', name: 'Geography' },
+          { id: 'uceHistory', name: 'History' },
+          { id: 'uceCre', name: 'Rel. Ed' },
+          { id: 'uceElective1', name: 'Elective 1' },
+          { id: 'uceElective2', name: 'Elective 2' }
+        ];
+
+        var gradeLetters = { 1: 'D1', 2: 'D2', 3: 'C3', 4: 'C4', 5: 'C5', 6: 'C6', 7: 'P7', 8: 'P8', 9: 'F9' };
+        var subjects = [];
+        subConfig.forEach(function (item) {
+          var sel = document.getElementById(item.id);
+          if (sel && sel.value !== '') {
+            var g = parseInt(sel.value, 10);
+            if (!isNaN(g) && g >= 1 && g <= 9) {
+              var code = gradeLetters[g] || ('G' + g);
+              subjects.push({
+                name: item.name,
+                grade: code,
+                raw: g,
+                norm: Math.max(0.12, (10 - g) / 9),
+                display: code + ' (' + g + ' pt)'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: 'Aggregate ' + val,
+          subjects: subjects
+        };
+      }
+    },
+
+    // 18. UACE Points Calculator
+    'uace-points-calculator': {
+      id: 'uace-points-calculator',
+      title: 'UACE Points Calculator',
+      higherIsBetter: true,
+      unit: 'pts',
+      extract: function () {
+        var rawEl = document.getElementById('rawScore');
+        var val = rawEl ? parseInt(rawEl.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var ptsMap = { 'A': 6, 'B': 5, 'C': 4, 'D': 3, 'E': 2, 'O': 1, 'F': 0 };
+        var subjects = [];
+
+        var addPrinc = function (nameId, gradeId, fallbackName) {
+          var nInp = document.getElementById(nameId);
+          var gSel = document.getElementById(gradeId);
+          var sName = (nInp && nInp.value.trim()) || fallbackName;
+          if (gSel && gSel.value && ptsMap[gSel.value] !== undefined) {
+            var g = gSel.value;
+            var pts = ptsMap[g];
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 6),
+              display: g + ' (' + pts + ' pts)'
+            });
+          }
+        };
+
+        addPrinc('p1Name', 'p1Grade', 'Principal 1');
+        addPrinc('p2Name', 'p2Grade', 'Principal 2');
+        addPrinc('p3Name', 'p3Grade', 'Principal 3');
+
+        var gpSel = document.getElementById('gpGrade');
+        if (gpSel && gpSel.value !== '') {
+          var gpPts = gpSel.value === 'pass' ? 1 : 0;
+          subjects.push({
+            name: 'General Paper',
+            grade: gpPts ? 'Pass (1 pt)' : 'Fail (0 pt)',
+            raw: gpPts,
+            norm: gpPts ? 1.0 : 0.12,
+            display: gpPts ? 'Pass (1 pt)' : 'Fail (0 pt)'
+          });
+        }
+
+        var smSel = document.getElementById('subMathIctGrade');
+        if (smSel && smSel.value !== '') {
+          var smPts = smSel.value === 'pass' ? 1 : 0;
+          subjects.push({
+            name: 'Sub-Math/ICT',
+            grade: smPts ? 'Pass (1 pt)' : 'Fail (0 pt)',
+            raw: smPts,
+            norm: smPts ? 1.0 : 0.12,
+            display: smPts ? 'Pass (1 pt)' : 'Fail (0 pt)'
+          });
+        }
+
+        return {
+          value: val,
+          displayValue: val + ' / 20 Points',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 19. Matric SBA & Final Exam Calculator
+    'matric-sba-exam-calculator': {
+      id: 'matric-sba-exam',
+      title: 'Matric SBA & Final Exam Calculator',
+      higherIsBetter: true,
+      unit: 'APS',
+      extract: function () {
+        var apsEl = document.getElementById('apsTotal');
+        var val = apsEl ? parseInt(apsEl.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) {
+          var avgEl = document.getElementById('avgMark');
+          val = avgEl ? parseFloat(avgEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        }
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#subjectList .subject-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.subject-name');
+          var sbaInp = row.querySelector('.subject-sba');
+          var examInp = row.querySelector('.subject-exam');
+          var sName = (nameInp && (nameInp.value.trim() || nameInp.placeholder)) || ('Subject ' + (idx + 1));
+          var sba = sbaInp && sbaInp.value !== '' ? parseFloat(sbaInp.value) : NaN;
+          var exam = examInp && examInp.value !== '' ? parseFloat(examInp.value) : NaN;
+          if (!isNaN(sba) && !isNaN(exam)) {
+            var isLo = /life orientation/i.test(sName);
+            var finalMark = isLo ? Math.round(0.5 * sba + 0.5 * exam) : Math.round(0.25 * sba + 0.75 * exam);
+            var lvl = finalMark >= 80 ? 7 : finalMark >= 70 ? 6 : finalMark >= 60 ? 5 :
+                      finalMark >= 50 ? 4 : finalMark >= 40 ? 3 : finalMark >= 30 ? 2 : 1;
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: 'L' + lvl,
+              raw: finalMark,
+              norm: Math.max(0.12, finalMark / 100),
+              display: 'L' + lvl + ' (' + finalMark + '%)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' APS Points',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 20. ACSEE Form Six Points Calculator
+    'acsee-points-calculator': {
+      id: 'acsee-points-calculator',
+      title: 'ACSEE Form Six Points Calculator',
+      higherIsBetter: true,
+      unit: 'pts',
+      extract: function () {
+        var tcuEl = document.getElementById('tcuValue');
+        var val = tcuEl ? parseFloat(tcuEl.textContent.trim()) : NaN;
+        if (isNaN(val)) {
+          var nectaEl = document.getElementById('nectaPointsValue');
+          val = nectaEl ? parseFloat(nectaEl.textContent.trim()) : NaN;
+        }
+        if (isNaN(val)) return null;
+
+        var ptsMap = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'S': 0.5, 'F': 0 };
+        var subjects = [];
+
+        var addSub = function (nameId, gradeId, fallbackName) {
+          var nInp = document.getElementById(nameId);
+          var gSel = document.getElementById(gradeId);
+          var sName = (nInp && (nInp.value.trim() || nInp.placeholder)) || fallbackName;
+          if (gSel && gSel.value && ptsMap[gSel.value] !== undefined) {
+            var g = gSel.value;
+            var pts = ptsMap[g];
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 5),
+              display: g + ' (' + pts + ' pts)'
+            });
+          }
+        };
+
+        addSub('prin1Name', 'prin1Grade', 'Principal 1');
+        addSub('prin2Name', 'prin2Grade', 'Principal 2');
+        addSub('prin3Name', 'prin3Grade', 'Principal 3');
+
+        var gsSel = document.getElementById('subGS');
+        if (gsSel && gsSel.value && ptsMap[gsSel.value] !== undefined) {
+          var gPts = ptsMap[gsSel.value];
+          subjects.push({
+            name: 'General Studies',
+            grade: gsSel.value,
+            raw: gPts,
+            norm: Math.max(0.12, gPts / 5),
+            display: gsSel.value + ' (' + gPts + ' pts)'
+          });
+        }
+
+        addSub('sub2Name', 'sub2Grade', 'Subsidiary 2');
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + ' TCU Pts',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 21. Ghana University GPA & CWA Calculator
+    'ghana-university-gpa-calculator': {
+      id: 'ghana-university-gpa',
+      title: 'Ghana University GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var resEl = document.getElementById('semesterScore');
+        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var sysEl = document.getElementById('systemSelect');
+        var isCwa = sysEl && sysEl.value === 'cwa';
+
+        var gpaMap = { 'A': 4.0, 'B+': 3.5, 'B': 3.0, 'C+': 2.5, 'C': 2.0, 'D+': 1.5, 'D': 1.0, 'E': 0.0, 'F': 0.0 };
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name-input') || row.querySelector('.course-name input');
+          var sName = (nameInp && nameInp.value && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var gradeInp = row.querySelector('.course-grade-input') || row.querySelector('.course-grade select, .course-grade input');
+          if (gradeInp && gradeInp.value && gradeInp.value !== '') {
+            if (isCwa) {
+              var mark = parseFloat(gradeInp.value);
+              if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+                subjects.push({
+                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                  grade: Math.round(mark) + '%',
+                  raw: mark,
+                  norm: Math.max(0.12, mark / 100),
+                  display: Math.round(mark) + '%'
+                });
+              }
+            } else {
+              var g = gradeInp.value.toUpperCase();
+              if (gpaMap[g] !== undefined) {
+                var pts = gpaMap[g];
+                subjects.push({
+                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                  grade: g,
+                  raw: pts,
+                  norm: Math.max(0.12, pts / 4.0),
+                  display: g + ' (' + pts.toFixed(1) + ')'
+                });
+              }
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + (isCwa ? '% CWA' : ' GPA'),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 22. Post-UTME Aggregate Screening Calculator
+    'post-utme-aggregate-calculator': {
+      id: 'post-utme-aggregate',
+      title: 'Post-UTME Aggregate Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var resEl = document.getElementById('aggregateScore');
+        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var jambInp = document.getElementById('jambInput');
+        var jambVal = jambInp ? parseFloat(jambInp.value) : NaN;
+        if (!isNaN(jambVal) && jambVal >= 0 && jambVal <= 400) {
+          subjects.push({
+            name: 'JAMB UTME',
+            grade: Math.round(jambVal) + '/400',
+            raw: jambVal,
+            norm: Math.max(0.12, jambVal / 400),
+            display: Math.round(jambVal) + ' / 400'
+          });
+        }
+
+        var cbtInp = document.getElementById('postUtmeInput');
+        var cbtVal = cbtInp ? parseFloat(cbtInp.value) : NaN;
+        if (!isNaN(cbtVal) && cbtVal >= 0 && cbtVal <= 100) {
+          subjects.push({
+            name: 'Post-UTME CBT',
+            grade: Math.round(cbtVal) + '%',
+            raw: cbtVal,
+            norm: Math.max(0.12, cbtVal / 100),
+            display: Math.round(cbtVal) + '%'
+          });
+        }
+
+        var olevelRows = document.querySelectorAll('#olevelGroup .subject-row');
+        var olevelPts = { 'A1': 1.0, 'B2': 0.88, 'B3': 0.76, 'C4': 0.64, 'C5': 0.52, 'C6': 0.40 };
+        olevelRows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.form-input');
+          var gradeSel = row.querySelector('.olevel-grade');
+          var sName = (nameInp && nameInp.value.trim()) || ('O\x27Level ' + (idx + 1));
+          if (gradeSel && gradeSel.value && olevelPts[gradeSel.value] !== undefined) {
+            var g = gradeSel.value;
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: olevelPts[g] * 100,
+              norm: olevelPts[g],
+              display: g
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + '% Composite',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 23. Kenya University GPA Calculator
+    'kenya-university-gpa-calculator': {
+      id: 'kenya-university-gpa',
+      title: 'Kenya University GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var headEl = document.getElementById('gpaHeadline');
+        var text = headEl ? headEl.textContent.trim() : '';
+        var isWam = text.indexOf('%') !== -1;
+        var val = parseFloat(text.replace(/[^0-9.]/g, ''));
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Unit ' + (idx + 1));
+          var gradeSel = row.querySelector('.course-grade-select');
+          var gradeInp = row.querySelector('.course-grade-input');
+          if (isWam && gradeInp && gradeInp.value !== '') {
+            var mark = parseFloat(gradeInp.value);
+            if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: Math.round(mark) + '%',
+                raw: mark,
+                norm: Math.max(0.12, mark / 100),
+                display: Math.round(mark) + '%'
+              });
+            }
+          } else if (gradeSel && gradeSel.value !== '') {
+            var gp = parseFloat(gradeSel.value);
+            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' - ')[0] : (gp.toFixed(1) + ' pts');
+            if (!isNaN(gp) && gp >= 0) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: optText,
+                raw: gp,
+                norm: Math.max(0.12, gp / 4.0),
+                display: optText + ' (' + gp.toFixed(1) + ')'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 24. Tanzania University GPA Calculator
+    'tanzania-university-gpa-calculator': {
+      id: 'tanzania-university-gpa',
+      title: 'Tanzania University GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var headEl = document.getElementById('headline');
+        var val = headEl ? parseFloat(headEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row, #coursesContainer2 .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var gradeSel = row.querySelector('.course-grade');
+          if (gradeSel && gradeSel.value !== '') {
+            var gp = parseFloat(gradeSel.value);
+            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
+            if (!isNaN(gp) && gp >= 0) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: optText,
+                raw: gp,
+                norm: Math.max(0.12, gp / 5.0),
+                display: optText + ' (' + gp.toFixed(1) + ')'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' TCU GPA',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 25. Uganda University CGPA Calculator
+    'uganda-university-cgpa-calculator': {
+      id: 'uganda-university-cgpa',
+      title: 'Uganda University CGPA Calculator',
+      higherIsBetter: true,
+      unit: 'CGPA',
+      extract: function () {
+        var headEl = document.getElementById('headline');
+        var val = headEl ? parseFloat(headEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row, #coursesContainer2 .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var gradeSel = row.querySelector('.course-grade');
+          if (gradeSel && gradeSel.value !== '') {
+            var gp = parseFloat(gradeSel.value);
+            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
+            if (!isNaN(gp) && gp >= 0) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: optText,
+                raw: gp,
+                norm: Math.max(0.12, gp / 5.0),
+                display: optText + ' (' + gp.toFixed(1) + ')'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' NCHE CGPA',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 26. Zambia University GPA Calculator
+    'zambia-university-gpa-calculator': {
+      id: 'zambia-university-gpa',
+      title: 'Zambia University GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var resEl = document.getElementById('semesterGpaValue') || document.getElementById('cgpaValue');
+        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var scaleSel = document.getElementById('gpaScale');
+        var maxScale = scaleSel && scaleSel.value === 'cbu4' ? 4.0 : 5.0;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var gradeSel = row.querySelector('.course-grade');
+          if (gradeSel && gradeSel.value !== '') {
+            var gp = parseFloat(gradeSel.value);
+            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
+            if (!isNaN(gp) && gp >= 0) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: optText,
+                raw: gp,
+                norm: Math.max(0.12, gp / maxScale),
+                display: optText + ' (' + gp.toFixed(1) + ')'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' GPA',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 27. Zimbabwe University GPA Calculator
+    'zimbabwe-university-gpa-calculator': {
+      id: 'zimbabwe-university-gpa',
+      title: 'Zimbabwe University GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var headEl = document.getElementById('headline');
+        var text = headEl ? headEl.textContent.trim() : '';
+        var isWam = text.indexOf('%') !== -1;
+        var val = parseFloat(text.replace(/[^0-9.]/g, ''));
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Unit ' + (idx + 1));
+          var markInp = row.querySelector('.course-mark');
+          if (markInp && markInp.value !== '') {
+            var mark = parseFloat(markInp.value);
+            if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: Math.round(mark) + '%',
+                raw: mark,
+                norm: Math.max(0.12, mark / 100),
+                display: Math.round(mark) + '%'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 28. Form Four GPA Calculator (Tanzania CSEE)
+    'form-four-gpa-calculator': {
+      id: 'form-four-gpa',
+      title: 'Form Four GPA Calculator',
+      higherIsBetter: false,
+      unit: 'pts',
+      extract: function () {
+        var ptsEl = document.getElementById('pointsValue');
+        var val = ptsEl ? parseInt(ptsEl.textContent.trim().replace(/[^0-9]/g, ''), 10) : NaN;
+        if (isNaN(val)) {
+          var gpaEl = document.getElementById('gpaValue');
+          val = gpaEl ? parseFloat(gpaEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        }
+        if (isNaN(val)) return null;
+
+        var ptsMap = { 'A': 1, 'B': 2, 'C': 3, 'D': 4, 'F': 5 };
+        var subjects = [];
+        var rows = document.querySelectorAll('#subjectList .subject-row');
+        rows.forEach(function (row, idx) {
+          var sName = row.dataset.subject || (row.querySelector('.subject-label') ? row.querySelector('.subject-label').textContent.trim() : ('Subject ' + (idx + 1)));
+          var gradeSel = row.querySelector('.subject-grade');
+          if (gradeSel && gradeSel.value && ptsMap[gradeSel.value] !== undefined) {
+            var g = gradeSel.value;
+            var pt = ptsMap[g];
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pt,
+              norm: Math.max(0.12, (6 - pt) / 5),
+              display: g + ' (' + pt + ' pt)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' Points (CSEE)',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 29. PLE Aggregate Calculator (Uganda UNEB)
+    'ple-aggregate-calculator': {
+      id: 'ple-aggregate',
+      title: 'PLE Aggregate Calculator',
+      higherIsBetter: false,
+      unit: 'Aggregate',
+      extract: function () {
+        var aggEl = document.getElementById('aggBig');
+        var val = aggEl ? parseInt(aggEl.textContent.trim(), 10) : NaN;
+        if (isNaN(val)) return null;
+
+        var subConfig = [
+          { id: 'pleEnglish', name: 'English' },
+          { id: 'pleMath', name: 'Maths' },
+          { id: 'pleScience', name: 'Science' },
+          { id: 'pleSst', name: 'Social Studies' }
+        ];
+
+        var gradeLetters = { 1: 'D1', 2: 'D2', 3: 'C3', 4: 'C4', 5: 'C5', 6: 'C6', 7: 'P7', 8: 'P8', 9: 'F9' };
+        var subjects = [];
+        subConfig.forEach(function (item) {
+          var sel = document.getElementById(item.id);
+          if (sel && sel.value !== '') {
+            var pt = parseInt(sel.value, 10);
+            if (!isNaN(pt) && pt >= 1 && pt <= 9) {
+              var code = gradeLetters[pt] || ('G' + pt);
+              subjects.push({
+                name: item.name,
+                grade: code,
+                raw: pt,
+                norm: Math.max(0.12, (10 - pt) / 9),
+                display: code + ' (' + pt + ' pt)'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: 'Aggregate ' + val + ' (PLE)',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 30. TVET NC(V) Pass Calculator
+    'tvet-ncv-pass-calculator': {
+      id: 'tvet-ncv-pass',
+      title: 'TVET NC(V) Pass Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var resEl = document.getElementById('vocAggregate') || document.getElementById('fundAggregate');
+        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+
+        var addFund = function (icassId, examId, name) {
+          var icassEl = document.getElementById(icassId);
+          var examEl = document.getElementById(examId);
+          var i = icassEl && icassEl.value !== '' ? parseFloat(icassEl.value) : NaN;
+          var x = examEl && examEl.value !== '' ? parseFloat(examEl.value) : NaN;
+          if (!isNaN(i) && !isNaN(x)) {
+            var finalMark = Math.round(i * 0.5 + x * 0.5);
+            subjects.push({
+              name: name,
+              grade: finalMark + '%',
+              raw: finalMark,
+              norm: Math.max(0.12, finalMark / 100),
+              display: finalMark + '%'
+            });
+          }
+        };
+
+        addFund('langIcass', 'langExam', 'Language');
+        addFund('loIcass', 'loExam', 'Life Orientation');
+        addFund('mathIcass', 'mathExam', 'Mathematics');
+
+        for (var idx = 1; idx <= 4; idx++) {
+          var nameEl = document.getElementById('voc' + idx + 'Name');
+          var icassEl = document.getElementById('voc' + idx + 'Icass');
+          var isatEl = document.getElementById('voc' + idx + 'Isat');
+          var examEl = document.getElementById('voc' + idx + 'Exam');
+          var sName = (nameEl && nameEl.value.trim()) || ('Vocational ' + idx);
+          var i = icassEl && icassEl.value !== '' ? parseFloat(icassEl.value) : NaN;
+          var p = isatEl && isatEl.value !== '' ? parseFloat(isatEl.value) : NaN;
+          var x = examEl && examEl.value !== '' ? parseFloat(examEl.value) : NaN;
+          if (!isNaN(i) && !isNaN(p) && !isNaN(x)) {
+            var finalMark = Math.round(i * 0.25 + p * 0.25 + x * 0.50);
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: finalMark + '%',
+              raw: finalMark,
+              norm: Math.max(0.12, finalMark / 100),
+              display: finalMark + '%'
+            });
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '% Aggregate',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 31. IGCSE & A-Level GPA Converter
+    'igcse-alevel-gpa-converter': {
+      id: 'igcse-alevel-gpa',
+      title: 'IGCSE & A-Level GPA Converter',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var gpaEl = document.getElementById('gpaBig');
+        var val = gpaEl ? parseFloat(gpaEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var gpaMap = { 'A*': 4.0, 'A': 4.0, 'B': 3.0, 'C': 2.0, 'D': 1.0, 'E': 0.0, 'U': 0.0 };
+        var subjects = [];
+        var rows = document.querySelectorAll('#rowsWrap .subject-row, .subject-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.subject-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Subject ' + (idx + 1));
+          var gradeSel = row.querySelector('.subject-grade');
+          if (gradeSel && gradeSel.value) {
+            var g = gradeSel.value.toUpperCase();
+            var pts = gpaMap[g] !== undefined ? gpaMap[g] : 0;
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 4.0),
+              display: g + ' (' + pts.toFixed(1) + ')'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' GPA',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 32. UK Degree Classification Calculator
+    'uk-degree-classification-calculator': {
+      id: 'uk-degree-classification',
+      title: 'UK Degree Classification Calculator',
+      higherIsBetter: true,
+      unit: '% Honours',
+      extract: function () {
+        var finalEl = document.getElementById('finalScore');
+        var val = finalEl ? parseFloat(finalEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var classEl = document.getElementById('classificationOut');
+        var band = (classEl && classEl.textContent !== '—') ? classEl.textContent.trim() : 'Honours';
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#y2ModulesContainer .mod-row, #y3ModulesContainer .mod-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.mod-name');
+          var markInp = row.querySelector('.mod-mark');
+          var sName = (nameInp && nameInp.value.trim()) || ('Module ' + (idx + 1));
+          if (markInp && markInp.value !== '') {
+            var mark = parseFloat(markInp.value);
+            if (!isNaN(mark) && mark >= 0 && mark <= 100) {
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: Math.round(mark) + '%',
+                raw: mark,
+                norm: Math.max(0.12, mark / 100),
+                display: mark.toFixed(1) + '%'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '% (' + band + ')',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 33. UK GCSE Grade Calculator
+    'uk-gcse-grade-calculator': {
+      id: 'uk-gcse-grade',
+      title: 'UK GCSE Grade Calculator',
+      higherIsBetter: true,
+      unit: 'Avg Grade',
+      extract: function () {
+        var aggEl = document.getElementById('aggregateScore');
+        var val = aggEl ? parseFloat(aggEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var a8El = document.getElementById('statAValue');
+        var a8Str = (a8El && a8El.textContent !== '—') ? a8El.textContent.trim() : '';
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#subjectRowsContainer .gcse-row');
+        rows.forEach(function (row, idx) {
+          var nameInp = row.querySelector('.subj-name');
+          var gradeSel = row.querySelector('.subj-grade');
+          var sName = (nameInp && nameInp.value.trim()) || ('Subject ' + (idx + 1));
+          if (gradeSel && gradeSel.value !== '') {
+            var g = gradeSel.value;
+            var num = parseFloat(g);
+            var pts = !isNaN(num) ? num : (g.toUpperCase() === 'U' ? 0 : 0);
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: 'Grade ' + g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 9.0),
+              display: 'Grade ' + g + ' (' + pts + ' pts)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' Avg Grade' + (a8Str ? ' (A8: ' + a8Str + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 34. UK A-Level Grade Calculator
+    'uk-a-level-grade-calculator': {
+      id: 'uk-a-level-grade',
+      title: 'A-Level Grade Calculator',
+      higherIsBetter: true,
+      unit: 'Grade',
+      extract: function () {
+        var resSubject = document.getElementById('resSubjectCard');
+        var resProfile = document.getElementById('resProfileCard');
+        var isProfile = resProfile && !resProfile.classList.contains('hidden');
+
+        if (isProfile) {
+          var tariffEl = document.getElementById('resProfileTariff');
+          var comboEl = document.getElementById('resProfileCombo');
+          var tariffVal = tariffEl ? parseFloat(tariffEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+          if (isNaN(tariffVal)) return null;
+
+          var subjects = [];
+          var rows = document.querySelectorAll('.prof-row');
+          var TARIFF_MAP = { 'A*': 56, 'A': 48, 'B': 40, 'C': 32, 'D': 24, 'E': 16 };
+          rows.forEach(function (r, idx) {
+            var nameInp = r.querySelector('.prof-name');
+            var gradeSel = r.querySelector('.prof-grade');
+            var sName = (nameInp && nameInp.value.trim()) || ('Subject ' + (idx + 1));
+            var g = gradeSel ? gradeSel.value : '';
+            if (g) {
+              var pts = TARIFF_MAP[g] || 0;
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: g,
+                raw: pts,
+                norm: Math.max(0.15, pts / 56.0),
+                display: g + ' (' + pts + ' pts)'
+              });
+            }
+          });
+
+          return {
+            value: tariffVal,
+            displayValue: (comboEl ? comboEl.textContent.trim() + ' • ' : '') + tariffVal + ' pts',
+            subjects: subjects
+          };
+        } else {
+          var gradeEl = document.getElementById('finalGradeDisplay');
+          var pctEl = document.getElementById('weightedPercentageDisplay');
+          if (!gradeEl || gradeEl.textContent === '—') return null;
+
+          var pctVal = pctEl ? parseFloat(pctEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+          var numVal = !isNaN(pctVal) ? pctVal : 0;
+
+          var subjects = [];
+          var cRows = document.querySelectorAll('#componentList .course-row');
+          cRows.forEach(function (r, idx) {
+            var nameInp = r.querySelector('.comp-name');
+            var sName = (nameInp && nameInp.value.trim()) || ('Paper ' + (idx + 1));
+            var scoreInp = r.querySelector('.comp-score');
+            var maxInp = r.querySelector('.comp-max');
+            var sVal = scoreInp ? parseFloat(scoreInp.value) : NaN;
+            var mVal = maxInp ? parseFloat(maxInp.value) : 100;
+            if (!isNaN(sVal) && mVal > 0) {
+              var ratio = Math.min(1.0, Math.max(0, sVal / mVal));
+              subjects.push({
+                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                grade: Math.round(ratio * 100) + '%',
+                raw: ratio * 100,
+                norm: Math.max(0.12, ratio),
+                display: sVal + '/' + mVal + ' (' + Math.round(ratio * 100) + '%)'
+              });
+            }
+          });
+
+          return {
+            value: numVal,
+            displayValue: 'Grade ' + gradeEl.textContent.trim() + ' (' + numVal.toFixed(1) + '%)',
+            subjects: subjects
+          };
+        }
+      }
+    },
+
+    // 35. UCAS Points Calculator
+    'ucas-points-calculator': {
+      id: 'ucas-points',
+      title: 'UCAS Points Calculator',
+      higherIsBetter: true,
+      unit: 'Points',
+      extract: function () {
+        var totalEl = document.getElementById('totalPoints');
+        var val = totalEl ? parseFloat(totalEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val) || val <= 0) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#qualList .qual-row');
+        rows.forEach(function (r, idx) {
+          var subInp = r.querySelector('.q-subject');
+          var typeSel = r.querySelector('.q-type');
+          var gradeSel = r.querySelector('.q-grade');
+          var sName = (subInp && subInp.value.trim()) || (typeSel && typeSel.selectedOptions[0] ? typeSel.selectedOptions[0].textContent : 'Qualification ' + (idx + 1));
+          var gText = gradeSel && gradeSel.selectedOptions[0] ? gradeSel.selectedOptions[0].textContent : '';
+          var gMatch = gText.match(/^([^(]+)(?:\((\d+)\s*pts\))?/);
+          var gName = gMatch ? gMatch[1].trim() : (gradeSel ? gradeSel.value : '');
+          var pts = gMatch && gMatch[2] ? parseFloat(gMatch[2]) : (gradeSel ? parseFloat(gradeSel.value) || 0 : 0);
+
+          if (gName) {
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: gName,
+              raw: pts,
+              norm: Math.max(0.15, Math.min(1.0, pts / 56.0)),
+              display: gName + ' (' + pts + ' pts)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' UCAS Tariff Points',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 36. Canada GPA Calculator
+    'canada-gpa-calculator': {
+      id: 'canada-gpa',
+      title: 'Canada GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var gpaEl = document.getElementById('gpaBig');
+        var val = gpaEl ? parseFloat(gpaEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var cgpaEl = document.getElementById('cgpaValue');
+        var cgpaStr = cgpaEl && cgpaEl.textContent !== '—' ? cgpaEl.textContent.trim() : '';
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row');
+        var letterMap = { 'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D': 1.0, 'F': 0.0 };
+
+        rows.forEach(function (r, idx) {
+          var nameInp = r.querySelector('.course-name');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var gradeInp = r.querySelector('.course-grade');
+          var credInp = r.querySelector('.course-credit');
+          var gVal = gradeInp ? gradeInp.value.trim() : '';
+          var cr = credInp ? parseFloat(credInp.value) || 3 : 3;
+
+          if (gVal) {
+            var numG = parseFloat(gVal);
+            var normVal = !isNaN(numG) ? (numG > 4.5 ? numG / 100 : numG / 4.0) : 0.75;
+            if (letterMap[gVal.toUpperCase()] !== undefined) {
+              normVal = letterMap[gVal.toUpperCase()] / 4.0;
+            }
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: gVal,
+              raw: normVal * 4.0,
+              norm: Math.max(0.12, Math.min(1.0, normVal)),
+              display: gVal + ' (' + cr + ' cr)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' GPA' + (cgpaStr ? ' (CGPA ' + cgpaStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 37. Australian ATAR Calculator
+    'atar-calculator': {
+      id: 'atar-calc',
+      title: 'ATAR Calculator',
+      higherIsBetter: true,
+      unit: 'ATAR',
+      extract: function () {
+        var atarEl = document.getElementById('atarBig');
+        var val = atarEl ? parseFloat(atarEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row');
+        rows.forEach(function (r, idx) {
+          var nameInp = r.querySelector('.subject-name, .course-name');
+          var scoreInp = r.querySelector('.subject-score, .course-grade');
+          var unitsSel = r.querySelector('.subject-units');
+          var sName = (nameInp && nameInp.value.trim()) || ('Subject ' + (idx + 1));
+          var sVal = scoreInp ? parseFloat(scoreInp.value) : NaN;
+          var uVal = unitsSel ? unitsSel.value : '2';
+
+          if (!isNaN(sVal)) {
+            var normVal = Math.min(1.0, Math.max(0.12, sVal / 50.0));
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: sVal.toFixed(1),
+              raw: sVal,
+              norm: normVal,
+              display: sVal.toFixed(1) + ' (' + uVal + 'u)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' ATAR',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 38. KCPE Performance Calculator
+    'kcpe-performance-calculator': {
+      id: 'kcpe-performance',
+      title: 'KCPE Performance Calculator',
+      higherIsBetter: true,
+      unit: 'Marks',
+      extract: function () {
+        var totalEl = document.getElementById('totalValue');
+        var val = totalEl ? parseFloat(totalEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var meanEl = document.getElementById('meanValue');
+        var gradeEl = document.getElementById('gradeValue');
+        var meanStr = meanEl ? meanEl.textContent.trim() : '';
+        var gradeStr = gradeEl ? gradeEl.textContent.trim() : '';
+
+        var subjects = [];
+        var papers = [
+          { id: 'english', name: 'English' },
+          { id: 'kiswahili', name: 'Kiswahili' },
+          { id: 'maths', name: 'Mathematics' },
+          { id: 'science', name: 'Science' },
+          { id: 'social', name: 'Social Studies' }
+        ];
+
+        papers.forEach(function (p) {
+          var el = document.getElementById(p.id);
+          var m = el ? parseFloat(el.value) : NaN;
+          if (!isNaN(m)) {
+            subjects.push({
+              name: p.name,
+              grade: Math.round(m) + '%',
+              raw: m,
+              norm: Math.max(0.12, Math.min(1.0, m / 100.0)),
+              display: Math.round(m) + ' / 100'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' / 500 (' + (gradeStr || meanStr) + ')',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 39. Germany Abitur Grade Calculator
+    'germany-abitur-grade-calculator': {
+      id: 'germany-abitur-grade',
+      title: 'Germany Abitur Grade Calculator',
+      higherIsBetter: false, // 1.0 is top grade, 4.0 is pass mark
+      unit: 'Abiturnote',
+      extract: function () {
+        var headlineEl = document.getElementById('headline');
+        if (!headlineEl || headlineEl.textContent.trim() === 'Fail' || headlineEl.textContent.trim() === '—') return null;
+
+        var val = parseFloat(headlineEl.textContent.trim().replace(/[^0-9.]/g, ''));
+        if (isNaN(val)) return null;
+
+        var statTotal = document.getElementById('statTotal');
+        var ptsStr = statTotal && statTotal.textContent !== '—' ? statTotal.textContent.trim() + ' pts' : '';
+
+        var subjects = [];
+        var pFields = [
+          { id: 'p1Grade', name: 'P1 Written' },
+          { id: 'p2Grade', name: 'P2 Written' },
+          { id: 'p3Grade', name: 'P3 Written' },
+          { id: 'p4Grade', name: 'P4 Oral' }
+        ];
+
+        pFields.forEach(function (f) {
+          var el = document.getElementById(f.id);
+          var pts = el ? parseFloat(el.value) : NaN;
+          if (!isNaN(pts) && pts >= 0 && pts <= 15) {
+            subjects.push({
+              name: f.name,
+              grade: pts + ' pts',
+              raw: pts,
+              norm: Math.max(0.12, pts / 15.0),
+              display: pts + ' / 15'
+            });
+          }
+        });
+
+        var lkEl = document.getElementById('compLkAverage');
+        if (lkEl && !isNaN(parseFloat(lkEl.value))) {
+          var lkPts = parseFloat(lkEl.value);
+          subjects.unshift({
+            name: 'LK Courses',
+            grade: lkPts.toFixed(1) + ' pts',
+            raw: lkPts,
+            norm: Math.max(0.12, lkPts / 15.0),
+            display: lkPts.toFixed(1) + ' / 15'
+          });
+        }
+
+        var gkEl = document.getElementById('compGkAverage');
+        if (gkEl && !isNaN(parseFloat(gkEl.value))) {
+          var gkPts = parseFloat(gkEl.value);
+          subjects.unshift({
+            name: 'GK Courses',
+            grade: gkPts.toFixed(1) + ' pts',
+            raw: gkPts,
+            norm: Math.max(0.12, gkPts / 15.0),
+            display: gkPts.toFixed(1) + ' / 15'
+          });
+        }
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + ' Note' + (ptsStr ? ' (' + ptsStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 40. Germany GPA Converter (Bavarian Formula)
+    'germany-gpa-converter': {
+      id: 'germany-gpa-converter',
+      title: 'Germany GPA Converter',
+      higherIsBetter: false, // 1.0 is best in Germany
+      unit: 'German Grade',
+      extract: function () {
+        var gEl = document.getElementById('germanGrade');
+        var val = gEl ? parseFloat(gEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var ratingEl = document.getElementById('germanRating');
+        var rText = ratingEl ? ratingEl.textContent.split('•')[0].trim() : '';
+
+        var inputNd = document.getElementById('inputNd');
+        var inputNmax = document.getElementById('inputNmax');
+        var inVal = inputNd ? parseFloat(inputNd.value) : NaN;
+        var maxVal = inputNmax ? parseFloat(inputNmax.value) : 4.0;
+
+        var subjects = [];
+        if (!isNaN(inVal) && maxVal > 0) {
+          var normVal = Math.max(0.12, Math.min(1.0, inVal / maxVal));
+          subjects.push({
+            name: 'Original Grade',
+            grade: inVal.toString(),
+            raw: inVal,
+            norm: normVal,
+            display: inVal + ' / ' + maxVal
+          });
+          var gerNorm = Math.max(0.12, (4.0 - val) / 3.0);
+          subjects.push({
+            name: 'Converted Grade',
+            grade: val.toFixed(1),
+            raw: val,
+            norm: Math.max(0.12, Math.min(1.0, gerNorm)),
+            display: val.toFixed(1) + ' German'
+          });
+          var ectsEl = document.getElementById('statEcts');
+          if (ectsEl && ectsEl.textContent !== '—') {
+            subjects.push({
+              name: 'ECTS Band',
+              grade: ectsEl.textContent.trim(),
+              raw: 1,
+              norm: 0.8,
+              display: 'Band ' + ectsEl.textContent.trim()
+            });
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + ' (' + (rText || 'German Grade') + ')',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 41. New Zealand NCEA Credits Calculator
+    'new-zealand-ncea-credits-calculator': {
+      id: 'nz-ncea-credits',
+      title: 'NCEA Credits & Rank Score Calculator',
+      higherIsBetter: true,
+      unit: 'Rank Score',
+      extract: function () {
+        var rankEl = document.getElementById('rankScoreOut');
+        var val = rankEl ? parseFloat(rankEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var certEl = document.getElementById('certCredits');
+        var certStr = certEl && certEl.textContent !== '—' ? certEl.textContent.trim() + ' cr' : '';
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#nceaRowsContainer .ncea-row');
+        var gradeWeights = { 'E': 4, 'M': 3, 'A': 2, 'N': 0 };
+        rows.forEach(function (r, idx) {
+          var nameInp = r.querySelector('.std-name');
+          var credInp = r.querySelector('.std-credits');
+          var gradeSel = r.querySelector('.std-grade');
+          var sName = (nameInp && nameInp.value.trim()) || ('Standard ' + (idx + 1));
+          var cr = credInp ? parseFloat(credInp.value) : NaN;
+          var g = gradeSel ? gradeSel.value : '';
+
+          if (!isNaN(cr) && g) {
+            var pts = gradeWeights[g] || 0;
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g + ' (' + cr + 'cr)',
+              raw: pts,
+              norm: Math.max(0.12, pts / 4.0),
+              display: g + ' • ' + cr + ' credits'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' Rank Score' + (certStr ? ' (' + certStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 42. Norway GPA Calculator
+    'norway-gpa-calculator': {
+      id: 'norway-gpa',
+      title: 'Norway GPA Calculator',
+      higherIsBetter: true,
+      unit: 'GPA',
+      extract: function () {
+        var hEl = document.getElementById('headline');
+        var val = hEl ? parseFloat(hEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var lblEl = document.getElementById('headlineLabel');
+        var isUni = !lblEl || lblEl.textContent.indexOf('ECTS') !== -1;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#coursesContainer .course-row');
+        var letterMap = { 'A': 5.0, 'B': 4.0, 'C': 3.0, 'D': 2.0, 'E': 1.0, 'F': 0.0 };
+        rows.forEach(function (r, idx) {
+          var nameInp = r.querySelector('.course-name');
+          var gradeSel = r.querySelector('.course-grade');
+          var ectsInp = r.querySelector('.course-ects');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var g = gradeSel ? gradeSel.value : '';
+          var ects = ectsInp ? parseFloat(ectsInp.value) || 7.5 : 7.5;
+
+          if (g && letterMap[g] !== undefined) {
+            var pts = letterMap[g];
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g,
+              raw: pts,
+              norm: Math.max(0.12, pts / 5.0),
+              display: g + ' (' + ects + ' ECTS)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: isUni ? val.toFixed(2) + ' ECTS GPA' : val.toFixed(1) + ' Samordna Points',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 43. Switzerland Grade Calculator
+    'switzerland-grade-calculator': {
+      id: 'switzerland-grade',
+      title: 'Switzerland Grade Calculator',
+      higherIsBetter: true, // 6.0 is highest grade in Switzerland, 4.0 is pass
+      unit: 'Swiss Note',
+      extract: function () {
+        var aggEl = document.getElementById('aggregateBig');
+        var val = aggEl ? parseFloat(aggEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+
+        var usEl = document.getElementById('usGpaValue');
+        var usStr = usEl && usEl.textContent !== '—' ? usEl.textContent.trim() : '';
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row');
+        rows.forEach(function (r, idx) {
+          var nameInp = r.querySelector('.course-name');
+          var gradeInp = r.querySelector('.course-grade');
+          var ectsInp = r.querySelector('.course-ects');
+          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
+          var g = gradeInp ? parseFloat(gradeInp.value) : NaN;
+          var ects = ectsInp ? parseFloat(ectsInp.value) || 3 : 3;
+
+          if (!isNaN(g) && g >= 1.0 && g <= 6.0) {
+            subjects.push({
+              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              grade: g.toFixed(1),
+              raw: g,
+              norm: Math.max(0.12, (g - 1.0) / 5.0),
+              display: g.toFixed(2) + ' (' + ects + ' ECTS)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(2) + ' / 6.00' + (usStr ? ' (US ' + usStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 44. SA TVET NATED Pass Calculator
+    'south-african-tvet-nated-calculator': {
+      id: 'sa-tvet-nated',
+      title: 'TVET NATED Pass Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var scoreEl = document.getElementById('finalScore');
+        var val = scoreEl ? parseFloat(scoreEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var classificationEl = document.getElementById('classification');
+        var classification = classificationEl && classificationEl.textContent !== '—' ? classificationEl.textContent.trim() : '';
+        var icassInp = document.getElementById('icassInput');
+        var examInp = document.getElementById('examInput');
+        var icass = icassInp ? parseFloat(icassInp.value) || 0 : 0;
+        var exam = examInp ? parseFloat(examInp.value) || 0 : 0;
+        var subjects = [
+          {
+            name: 'ICASS Assessment (40%)',
+            grade: icass.toFixed(1) + '%',
+            raw: icass,
+            norm: Math.min(1.0, Math.max(0.1, icass / 100)),
+            display: icass.toFixed(1) + '%'
+          },
+          {
+            name: 'National Examination (60%)',
+            grade: exam.toFixed(1) + '%',
+            raw: exam,
+            norm: Math.min(1.0, Math.max(0.1, exam / 100)),
+            display: exam.toFixed(1) + '%'
+          }
+        ];
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '%' + (classification ? ' (' + classification + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 45. TVET Exam Target Mark Calculator
+    'tvet-exam-target-mark-calculator': {
+      id: 'tvet-exam-target',
+      title: 'TVET Exam Target Mark Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var examEl = document.getElementById('headlineExam');
+        var val = examEl ? parseFloat(examEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var icassInp = document.getElementById('icassInput');
+        var targetInp = document.getElementById('targetInput');
+        var icass = icassInp ? parseFloat(icassInp.value) || 0 : 0;
+        var target = targetInp ? parseFloat(targetInp.value) || 50 : 50;
+        var subjects = [
+          {
+            name: 'Current ICASS Assessment',
+            grade: icass.toFixed(1) + '%',
+            raw: icass,
+            norm: Math.min(1.0, Math.max(0.1, icass / 100)),
+            display: icass.toFixed(1) + '%'
+          },
+          {
+            name: 'Final Mark Goal Target',
+            grade: target.toFixed(1) + '%',
+            raw: target,
+            norm: Math.min(1.0, Math.max(0.1, target / 100)),
+            display: target.toFixed(1) + '%'
+          },
+          {
+            name: 'Required Examination Target',
+            grade: val.toFixed(1) + '%',
+            raw: val,
+            norm: Math.min(1.0, Math.max(0.1, Math.min(100, val) / 100)),
+            display: val.toFixed(1) + '%'
+          }
+        ];
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '% Target Exam Mark (Goal: ' + target.toFixed(0) + '%)',
+          subjects: subjects
+        };
+      }
+    },
+
+    // 46. UNEB Results Estimator (PLE, UCE, UACE)
+    'uneb-results-estimator': {
+      id: 'uneb-results',
+      title: 'UNEB Results Estimator',
+      higherIsBetter: false, // For PLE and UCE aggregates, lower aggregate is superior
+      unit: 'Aggregate',
+      extract: function () {
+        var aggEl = document.getElementById('aggregateScore');
+        var text = aggEl ? aggEl.textContent.trim() : '';
+        if (!text || text === '—') return null;
+        var val = parseFloat(text.replace(/[^0-9.]/g, ''));
+        if (isNaN(val)) return null;
+        var divEl = document.getElementById('statAValue');
+        var divStr = divEl && divEl.textContent !== '—' ? divEl.textContent.trim() : '';
+        var isUace = text.indexOf('/ 20') !== -1;
+        var subjects = [];
+
+        var pleInputs = [
+          { id: 'pleEnglish', name: 'English Language' },
+          { id: 'pleMath', name: 'Mathematics' },
+          { id: 'pleScience', name: 'Integrated Science' },
+          { id: 'pleSst', name: 'Social Studies & RE' }
+        ];
+        var foundPle = false;
+        pleInputs.forEach(function (sub) {
+          var sel = document.getElementById(sub.id);
+          if (sel && sel.value) {
+            foundPle = true;
+            var pt = parseInt(sel.value, 10);
+            subjects.push({
+              name: sub.name,
+              grade: 'D' + pt,
+              raw: pt,
+              norm: Math.max(0.1, (10 - pt) / 9),
+              display: 'Point ' + pt
+            });
+          }
+        });
+
+        if (!foundPle) {
+          var allSelects = document.querySelectorAll('#unebForm select');
+          allSelects.forEach(function (sel) {
+            if (sel.value && sel.id && !sel.id.startsWith('ple')) {
+              var fieldEl = sel.closest('.field');
+              var labelEl = fieldEl ? fieldEl.querySelector('.field-label') : null;
+              var label = labelEl ? labelEl.textContent.trim() : sel.id;
+              var pt = parseFloat(sel.value) || 0;
+              subjects.push({
+                name: label.length > 20 ? label.substring(0, 18) + '…' : label,
+                grade: String(sel.value),
+                raw: pt,
+                norm: isUace ? Math.min(1.0, Math.max(0.1, pt / 6)) : Math.max(0.1, (10 - pt) / 9),
+                display: 'Grade ' + sel.value
+              });
+            }
+          });
+        }
+
+        return {
+          value: val,
+          displayValue: text + (divStr ? ' (' + divStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 47. Ghana Nursing Training Admission Calculator
+    'ghana-nursing-training-admission-calculator': {
+      id: 'ghana-nursing-training',
+      title: 'Ghana Nursing Training Admission Calculator',
+      higherIsBetter: false, // WASSCE aggregate, 6 is top, lower is better
+      unit: 'Aggregate',
+      extract: function () {
+        var aggEl = document.getElementById('aggValue');
+        var val = aggEl ? parseFloat(aggEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var coreEl = document.getElementById('coreValue');
+        var elecEl = document.getElementById('elecValue');
+        var coreStr = coreEl && coreEl.textContent !== '—' ? coreEl.textContent.trim() : '';
+        var elecStr = elecEl && elecEl.textContent !== '—' ? elecEl.textContent.trim() : '';
+
+        var subjects = [];
+        var gradeNames = { 1: 'A1', 2: 'B2', 3: 'B3', 4: 'C4', 5: 'C5', 6: 'C6', 7: 'D7', 8: 'E8', 9: 'F9' };
+        var fields = [
+          { id: 'ghEnglish', name: 'Core English Language' },
+          { id: 'ghMaths', name: 'Core Mathematics' },
+          { id: 'ghScience', name: 'Core Integrated Science' },
+          { id: 'ghElec1Grade', name: 'Elective Subject 1' },
+          { id: 'ghElec2Grade', name: 'Elective Subject 2' },
+          { id: 'ghElec3Grade', name: 'Elective Subject 3' }
+        ];
+        fields.forEach(function (f) {
+          var sel = document.getElementById(f.id);
+          if (sel && sel.value) {
+            var gNum = parseInt(sel.value, 10);
+            var gName = gradeNames[gNum] || ('Grade ' + gNum);
+            subjects.push({
+              name: f.name,
+              grade: gName,
+              raw: gNum,
+              norm: Math.max(0.1, (10 - gNum) / 9),
+              display: gName + ' (Point ' + gNum + ')'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: 'Aggregate ' + val + (coreStr ? ' (Core ' + coreStr + ' + Elec ' + elecStr + ')' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 48. South African University Admission Calculator (APS)
+    'south-african-university-admission-calculator': {
+      id: 'sa-uni-admission',
+      title: 'South African University Admission Calculator',
+      higherIsBetter: true,
+      unit: 'APS',
+      extract: function () {
+        var apsEl = document.getElementById('apsValue');
+        var val = apsEl ? parseFloat(apsEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var passEl = document.getElementById('passLevel');
+        var passStr = passEl && passEl.textContent !== '—' ? passEl.textContent.trim() : '';
+        var benchEl = document.getElementById('benchmarkValue');
+        var benchStr = benchEl && benchEl.textContent !== '—' ? benchEl.textContent.trim() : '';
+
+        var subjects = [];
+        var inputs = [
+          { id: 'saMarkEnglish', name: 'English Language' },
+          { id: 'saMarkMaths', name: 'Mathematics' },
+          { id: 'saMarkPhysSci', name: 'Physical Sciences' },
+          { id: 'saMarkLifeSci', name: 'Life Sciences' },
+          { id: 'saMarkElective1', name: 'Elective 1' },
+          { id: 'saMarkElective2', name: 'Elective 2' },
+          { id: 'saMarkLO', name: 'Life Orientation' }
+        ];
+        inputs.forEach(function (inp) {
+          var el = document.getElementById(inp.id);
+          if (el && el.value !== '') {
+            var m = parseFloat(el.value);
+            if (!isNaN(m)) {
+              subjects.push({
+                name: inp.name,
+                grade: m.toFixed(0) + '%',
+                raw: m,
+                norm: Math.min(1.0, Math.max(0.1, m / 100)),
+                display: m.toFixed(0) + '%'
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' APS' + (passStr ? ' (' + passStr + ')' : '') + (benchStr ? ' [Target: ' + benchStr + ']' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 49. Zimbabwe University Entry Points Calculator
+    'zimbabwe-university-entry-points-calculator': {
+      id: 'zim-uni-entry',
+      title: 'Zimbabwe University Entry Points Calculator',
+      higherIsBetter: true,
+      unit: 'Points',
+      extract: function () {
+        var ptsEl = document.getElementById('pointsOut');
+        var val = ptsEl ? parseFloat(ptsEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var passesEl = document.getElementById('principalPasses');
+        var passesStr = passesEl && passesEl.textContent !== '—' ? passesEl.textContent.trim() : '';
+        var cutoffEl = document.getElementById('cutoffBand');
+        var cutoffStr = cutoffEl && cutoffEl.textContent !== '—' ? cutoffEl.textContent.trim() : '';
+
+        var gradeWeights = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'O': 0, 'F': 0 };
+        var subjects = [];
+        ['sub1', 'sub2', 'sub3'].forEach(function (subId, idx) {
+          var sel = document.getElementById(subId);
+          if (sel && sel.value) {
+            var g = sel.value.toUpperCase();
+            var pts = gradeWeights[g] !== undefined ? gradeWeights[g] : 0;
+            subjects.push({
+              name: 'Principal Subject ' + (idx + 1),
+              grade: 'Grade ' + g,
+              raw: pts,
+              norm: Math.max(0.1, pts / 5),
+              display: 'Grade ' + g + ' (' + pts + ' pts)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val + ' Points' + (passesStr ? ' (' + passesStr + ' Passes)' : '') + (cutoffStr ? ' [' + cutoffStr + ']' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 50. Canada University Admission Chance Calculator
+    'canada-university-admission-chance-calculator': {
+      id: 'canada-admission-chance',
+      title: 'Canada University Admission Calculator',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var avgEl = document.getElementById('avgVal');
+        var val = avgEl ? parseFloat(avgEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var probEl = document.getElementById('probBig');
+        var probStr = probEl && probEl.textContent !== '—' ? probEl.textContent.trim() : '';
+
+        var subjects = [];
+        var subLabels = [
+          'Adv Functions / Pre-Calculus',
+          'Calculus & Vectors / Math 12',
+          'English 12 / ENG4U',
+          'Physics / Chem / Science 12',
+          'Grade 12 Elective 1',
+          'Grade 12 Elective 2'
+        ];
+        for (var i = 1; i <= 6; i++) {
+          var inp = document.getElementById('subj' + i);
+          if (inp && inp.value !== '') {
+            var m = parseFloat(inp.value);
+            if (!isNaN(m)) {
+              subjects.push({
+                name: subLabels[i - 1] || ('Subject ' + i),
+                grade: m.toFixed(1) + '%',
+                raw: m,
+                norm: Math.min(1.0, Math.max(0.1, m / 100)),
+                display: m.toFixed(1) + '%'
+              });
+            }
+          }
+        }
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + '% Top-6 Average' + (probStr ? ' (' + probStr + ' Odds)' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 51. Tanzania University Admission Calculator (TCU)
+    'tanzania-university-admission-calculator': {
+      id: 'tz-uni-admission',
+      title: 'Tanzania University Admission Calculator',
+      higherIsBetter: true,
+      unit: 'Points',
+      extract: function () {
+        var tcuEl = document.getElementById('tcuValue');
+        var val = tcuEl ? parseFloat(tcuEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var coreEl = document.getElementById('coreTwoValue');
+        var coreStr = coreEl && coreEl.textContent !== '—' ? coreEl.textContent.trim() : '';
+        var benchEl = document.getElementById('benchValue');
+        var benchStr = benchEl && benchEl.textContent !== '—' ? benchEl.textContent.trim() : '';
+
+        var gradeWeights = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'S': 0.5, 'F': 0 };
+        var subjects = [];
+        ['tzSub1', 'tzSub2', 'tzSub3'].forEach(function (subId, idx) {
+          var sel = document.getElementById(subId);
+          if (sel && sel.value) {
+            var g = sel.value.toUpperCase();
+            var pts = gradeWeights[g] !== undefined ? gradeWeights[g] : 0;
+            subjects.push({
+              name: 'ACSEE Subject ' + (idx + 1),
+              grade: 'Grade ' + g,
+              raw: pts,
+              norm: Math.max(0.1, pts / 5),
+              display: 'Grade ' + g + ' (' + pts + ' pts)'
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: val.toFixed(1) + ' TCU Points' + (coreStr ? ' (Core Pair: ' + coreStr + ')' : '') + (benchStr ? ' [Cut-off: ' + benchStr + ']' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 52. Zambia University Admission Calculator
+    'zambia-university-admission-calculator': {
+      id: 'zm-uni-admission',
+      title: 'Zambia University Admission Calculator',
+      higherIsBetter: false, // Zambian Grade 12 Best 5 Aggregate: 5 is best (Distinctions), lower is better
+      unit: 'Aggregate',
+      extract: function () {
+        var bestEl = document.getElementById('best5Value');
+        var val = bestEl ? parseFloat(bestEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var creditEl = document.getElementById('creditValue');
+        var creditStr = creditEl && creditEl.textContent !== '—' ? creditEl.textContent.trim() : '';
+        var benchEl = document.getElementById('benchValue');
+        var benchStr = benchEl && benchEl.textContent !== '—' ? benchEl.textContent.trim() : '';
+
+        var subjects = [];
+        var inputs = [
+          { id: 'zmEnglish', name: 'English Language' },
+          { id: 'zmMaths', name: 'Mathematics' },
+          { id: 'zmBiology', name: 'Biology' },
+          { id: 'zmScience', name: 'Physical Science' },
+          { id: 'zmSubj5', name: 'Best Elective 1' },
+          { id: 'zmSubj6', name: 'Best Elective 2' },
+          { id: 'zmSubj7', name: 'Best Elective 3' }
+        ];
+        inputs.forEach(function (inp) {
+          var sel = document.getElementById(inp.id);
+          if (sel && sel.value) {
+            var g = parseInt(sel.value, 10);
+            if (!isNaN(g)) {
+              subjects.push({
+                name: inp.name,
+                grade: 'Grade ' + g,
+                raw: g,
+                norm: Math.max(0.1, (10 - g) / 9),
+                display: 'Grade ' + g
+              });
+            }
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: 'Aggregate ' + val + (creditStr ? ' (' + creditStr + ' Credits)' : '') + (benchStr ? ' [Cut-off: ' + benchStr + ']' : ''),
+          subjects: subjects
+        };
+      }
+    },
+
+    // 53. JAMB Admission Chance Checker
+    'jamb-admission-chance-checker': {
+      id: 'jamb-admission-chance',
+      title: 'JAMB Admission Chance Checker',
+      higherIsBetter: true,
+      unit: '%',
+      extract: function () {
+        var probEl = document.getElementById('probHeadline');
+        var val = probEl ? parseFloat(probEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        if (isNaN(val)) return null;
+        var jambScoreInp = document.getElementById('jambScore');
+        var postUtmeInp = document.getElementById('postUtme');
+        var jambScore = jambScoreInp ? parseFloat(jambScoreInp.value) || 0 : 0;
+        var postUtme = postUtmeInp ? parseFloat(postUtmeInp.value) || 0 : 0;
+        var aggEl = document.getElementById('aggregateValue');
+        var aggStr = aggEl && aggEl.textContent !== '—' ? aggEl.textContent.trim() : '';
+
+        var subjects = [
+          {
+            name: 'JAMB UTME Score',
+            grade: jambScore + ' / 400',
+            raw: jambScore,
+            norm: Math.min(1.0, Math.max(0.1, jambScore / 400)),
+            display: jambScore + ' / 400 (' + ((jambScore / 400) * 100).toFixed(1) + '%)'
+          }
+        ];
+        if (postUtme > 0) {
+          subjects.push({
+            name: 'Post-UTME Screening Mark',
+            grade: postUtme + '%',
+            raw: postUtme,
+            norm: Math.min(1.0, Math.max(0.1, postUtme / 100)),
+            display: postUtme + '%'
+          });
+        }
+        var courseSel = document.getElementById('courseSelect');
+        var courseText = courseSel && courseSel.selectedIndex >= 0 ? courseSel.options[courseSel.selectedIndex].text.split('(')[0].trim() : '';
+        if (courseText) {
+          subjects.push({
+            name: 'Target Course Profile',
+            grade: val.toFixed(0) + '%',
+            raw: val,
+            norm: Math.min(1.0, Math.max(0.1, val / 100)),
+            display: val.toFixed(0) + '% Chance (' + courseText + ')'
+          });
+        }
+
+        return {
+          value: val,
+          displayValue: val.toFixed(0) + '% Estimated Odds' + (aggStr ? ' (Composite: ' + aggStr + ')' : ''),
+          subjects: subjects
+        };
+      }
     }
   };
 
