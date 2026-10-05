@@ -42,6 +42,8 @@
     equal: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="9" x2="19" y2="9"></line><line x1="5" y1="15" x2="19" y2="15"></line></svg>',
     dot: '<svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>',
     close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>',
+    check: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+    alert: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>',
     trash: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>'
   };
 
@@ -537,10 +539,21 @@
         font-size: 0.75rem;
         font-weight: 700;
         cursor: pointer;
-        transition: background 0.15s;
+        transition: all 0.15s ease;
       }
       .afri-btn-danger-outline:hover {
         background: #fef2f2;
+      }
+      .afri-btn-danger-outline.confirming {
+        background: #dc2626 !important;
+        color: #ffffff !important;
+        border-color: #b91c1c !important;
+        box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25) !important;
+        animation: afriPulseConfirm 1.2s infinite ease-in-out;
+      }
+      @keyframes afriPulseConfirm {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.82; }
       }
       .afri-btn-modal-done {
         background: #facc15;
@@ -2574,31 +2587,110 @@
       higherIsBetter: true,
       unit: '%',
       extract: function () {
+        // 1. Check for Trimester / Multi-Subject Mode
+        var triRows = document.querySelectorAll('#natedSubjectRows .subject-row');
+        var isTrimesterTab = document.getElementById('tabTrimester') && document.getElementById('tabTrimester').classList.contains('active');
+        if (isTrimesterTab && triRows && triRows.length >= 3) {
+          var triSubjects = [];
+          var totalComp = 0;
+          var validCount = 0;
+          var passedCount = 0;
+
+          triRows.forEach(function (row, idx) {
+            var nameInp = row.querySelector('.subject-name');
+            var icassInp = row.querySelector('.subject-icass');
+            var examInp = row.querySelector('.subject-exam');
+            var sName = (nameInp && nameInp.value.trim()) || (nameInp && nameInp.placeholder ? nameInp.placeholder.replace(/^e\.g\.\s*/i, '') : ('Subject ' + (idx + 1)));
+            var iVal = icassInp && icassInp.value !== '' ? parseFloat(icassInp.value) : NaN;
+            var eVal = examInp && examInp.value !== '' ? parseFloat(examInp.value) : NaN;
+
+            if (!isNaN(iVal) && !isNaN(eVal)) {
+              var sComp = (iVal * 0.40) + (eVal * 0.60);
+              sComp = Math.min(100, Math.max(0, sComp));
+              var eMet = eVal >= 40.0;
+              var isPass = sComp >= 40.0 && eMet;
+              var isDist = sComp >= 75.0 && eMet;
+              if (isPass) passedCount++;
+
+              var badge = isDist ? 'Distinction' : (isPass ? 'Pass' : (eMet ? 'Fail' : 'Sub-min Fail'));
+              triSubjects.push({
+                name: sName.length > 13 ? sName.substring(0, 11) + '…' : sName,
+                grade: sComp.toFixed(1) + '%',
+                raw: sComp,
+                norm: Math.min(1.0, Math.max(0.1, sComp / 100)),
+                display: sComp.toFixed(1) + '% • ' + badge
+              });
+              totalComp += sComp;
+              validCount++;
+            }
+          });
+
+          if (triSubjects.length >= 3) {
+            var triAvg = validCount > 0 ? (totalComp / validCount) : 0;
+            return {
+              value: triAvg,
+              displayValue: triAvg.toFixed(1) + '% Trimester Average (' + passedCount + '/' + validCount + ' Passed)',
+              subjects: triSubjects
+            };
+          }
+        }
+
+        // 2. Single Subject Mode (5 Core NATED Assessment Dimensions)
         var scoreEl = document.getElementById('finalScore');
         var val = scoreEl ? parseFloat(scoreEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
         if (isNaN(val)) return null;
+
         var classificationEl = document.getElementById('classification');
         var classification = classificationEl && classificationEl.textContent !== '—' ? classificationEl.textContent.trim() : '';
         var icassInp = document.getElementById('icassInput');
         var examInp = document.getElementById('examInput');
-        var icass = icassInp ? parseFloat(icassInp.value) || 0 : 0;
-        var exam = examInp ? parseFloat(examInp.value) || 0 : 0;
+        var icass = icassInp && icassInp.value !== '' ? parseFloat(icassInp.value) || 0 : 0;
+        var exam = examInp && examInp.value !== '' ? parseFloat(examInp.value) || 0 : 0;
+
+        var subMinNorm = exam >= 40
+          ? Math.min(1.0, 0.40 + ((exam - 40) / 60) * 0.60)
+          : Math.max(0.08, (exam / 40) * 0.35);
+
+        var distinctionNorm = Math.min(1.0, Math.max(0.1, val / 75));
+
         var subjects = [
           {
-            name: 'ICASS Assessment (40%)',
+            name: 'ICASS Mark (40%)',
             grade: icass.toFixed(1) + '%',
             raw: icass,
             norm: Math.min(1.0, Math.max(0.1, icass / 100)),
-            display: icass.toFixed(1) + '%'
+            display: icass.toFixed(1) + '% (Term Mark)'
           },
           {
-            name: 'National Examination (60%)',
+            name: 'National Exam (60%)',
             grade: exam.toFixed(1) + '%',
             raw: exam,
             norm: Math.min(1.0, Math.max(0.1, exam / 100)),
-            display: exam.toFixed(1) + '%'
+            display: exam.toFixed(1) + '% (Exam Paper)'
+          },
+          {
+            name: 'Final Composite',
+            grade: val.toFixed(1) + '%',
+            raw: val,
+            norm: Math.min(1.0, Math.max(0.1, val / 100)),
+            display: val.toFixed(1) + '% Combined'
+          },
+          {
+            name: 'Exam Sub-Min (40%)',
+            grade: exam >= 40 ? '+' + (exam - 40).toFixed(1) + '%' : '-' + (40 - exam).toFixed(1) + '%',
+            raw: exam,
+            norm: subMinNorm,
+            display: exam >= 40 ? 'Cleared (+ ' + (exam - 40).toFixed(1) + '% margin)' : 'Sub-minimum Failed'
+          },
+          {
+            name: 'Distinction Index',
+            grade: val >= 75 ? 'Distinction' : val.toFixed(1) + '% / 75%',
+            raw: val,
+            norm: distinctionNorm,
+            display: val >= 75 ? 'Distinction Met (75%+)' : (75 - val).toFixed(1) + '% to Distinction'
           }
         ];
+
         return {
           value: val,
           displayValue: val.toFixed(1) + '%' + (classification ? ' (' + classification + ')' : ''),
@@ -3077,15 +3169,31 @@
 
   // --- RADAR CHART SVG GENERATOR ---
   function generateRadarSvg(subjects) {
-    var count = subjects.length;
-    if (count < 3) {
+    if (!subjects || !subjects.length) {
       return `
         <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;">
-          Add 3 or more subjects to render the performance radar web.
+          Complete a calculation to render the performance radar web.
         </div>
       `;
     }
 
+    var chartItems = subjects.slice();
+    if (chartItems.length === 2) {
+      chartItems = [
+        chartItems[0],
+        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Pass Standard' },
+        chartItems[1],
+        { name: 'Exam Sub-Min', grade: '40%', raw: 40, norm: 0.40, display: '40% Exam Hurdle' }
+      ];
+    } else if (chartItems.length === 1) {
+      chartItems = [
+        chartItems[0],
+        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Benchmark' },
+        { name: 'Distinction', grade: '75%', raw: 75, norm: 0.75, display: '75% Distinction' }
+      ];
+    }
+
+    var count = chartItems.length;
     var sizeX = 340;
     var sizeY = 310;
     var cx = 170;
@@ -3120,7 +3228,7 @@
     var dataPts = [];
     var pointCircles = [];
     for (var i = 0; i < count; i++) {
-      var s = subjects[i];
+      var s = chartItems[i];
       var norm = Math.max(0.12, Math.min(1.0, s.norm !== undefined ? s.norm : 0.5));
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
       var px = cx + r * norm * Math.cos(angle);
@@ -3133,7 +3241,7 @@
     // 4. Perimeter labels
     var labelsHtml = '';
     for (var i = 0; i < count; i++) {
-      var s = subjects[i];
+      var s = chartItems[i];
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
       var labelDist = r + 22;
       var lx = cx + labelDist * Math.cos(angle);
@@ -3340,59 +3448,122 @@
     return overlay;
   }
 
+  var clearConfirmTimer = null;
+
+  function resetAcademicClearBtn(clearBtn, hasHistory) {
+    if (clearConfirmTimer) {
+      clearTimeout(clearConfirmTimer);
+      clearConfirmTimer = null;
+    }
+    if (!clearBtn) return;
+    clearBtn.classList.remove('confirming');
+    clearBtn.style.color = '';
+    clearBtn.style.borderColor = '';
+    clearBtn.style.background = '';
+    clearBtn.innerHTML = icons.trash + ' <span>Clear History</span>';
+    if (!hasHistory) {
+      clearBtn.style.opacity = '0.55';
+      clearBtn.style.cursor = 'default';
+      clearBtn.title = 'No calculation history recorded yet';
+    } else {
+      clearBtn.style.opacity = '1';
+      clearBtn.style.cursor = 'pointer';
+      clearBtn.removeAttribute('title');
+    }
+  }
+
   function openHistoryModal(adapter) {
     var overlay = ensureModalOverlay();
     var listEl = document.getElementById('afriProgHistoryList');
     var clearBtn = document.getElementById('afriProgClearHistoryBtn');
 
-    var history = getHistory(adapter.id);
-    if (!history.length) {
-      listEl.innerHTML = `
-        <div class="afri-history-empty">
-          <p style="margin:0 0 0.5rem;font-weight:700;color:#111827;">No recorded calculations yet</p>
-          <p style="margin:0;font-size:0.8125rem;">Complete a calculation above to automatically record your progress.</p>
-        </div>
-      `;
-    } else {
-      var html = '';
-      history.forEach(function (item, idx) {
-        var isLatest = idx === 0;
-        var dateFormatted = item.dateStr || 'Recent';
-        var chipsHtml = (item.subjects || []).map(function (s) {
-          return '<span class="afri-history-chip">' + s.name + ': ' + (s.grade || s.display || '') + '</span>';
-        }).join('');
+    function renderModalList() {
+      var history = getHistory(adapter.id);
+      resetAcademicClearBtn(clearBtn, history.length > 0);
 
-        var trendBadge = '';
-        if (item.trend) {
-          var trendColor = item.trend.type === 'improved' ? '#16a34a' : item.trend.type === 'declined' ? '#d97706' : '#6b7280';
-          trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + item.trend.label + '</span>';
-        }
-
-        html += `
-          <div class="afri-history-item ${isLatest ? 'latest' : ''}">
-            <div class="afri-history-item-top">
-              <div class="afri-history-index-wrap">
-                <span class="afri-history-num">Attempt #${history.length - idx} ${isLatest ? '(Latest)' : ''}</span>
-                <span class="afri-history-date">&bull; ${dateFormatted}</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.5rem;">
-                ${trendBadge}
-                <span class="afri-history-score-badge">${item.displayValue}</span>
-              </div>
-            </div>
-            ${chipsHtml ? '<div class="afri-history-chips">' + chipsHtml + '</div>' : ''}
+      if (!history.length) {
+        listEl.innerHTML = `
+          <div class="afri-history-empty">
+            <p style="margin:0 0 0.5rem;font-weight:700;color:#111827;">No recorded calculations yet</p>
+            <p style="margin:0;font-size:0.8125rem;">Complete a calculation above to automatically record your progress.</p>
           </div>
         `;
-      });
-      listEl.innerHTML = html;
+      } else {
+        var html = '';
+        history.forEach(function (item, idx) {
+          var isLatest = idx === 0;
+          var dateFormatted = item.dateStr || 'Recent';
+          var chipsHtml = (item.subjects || []).map(function (s) {
+            return '<span class="afri-history-chip">' + s.name + ': ' + (s.grade || s.display || '') + '</span>';
+          }).join('');
+
+          var trendBadge = '';
+          if (item.trend) {
+            var trendColor = item.trend.type === 'improved' ? '#16a34a' : item.trend.type === 'declined' ? '#d97706' : '#6b7280';
+            trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + item.trend.label + '</span>';
+          }
+
+          html += `
+            <div class="afri-history-item ${isLatest ? 'latest' : ''}">
+              <div class="afri-history-item-top">
+                <div class="afri-history-index-wrap">
+                  <span class="afri-history-num">Attempt #${history.length - idx} ${isLatest ? '(Latest)' : ''}</span>
+                  <span class="afri-history-date">&bull; ${dateFormatted}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.5rem;">
+                  ${trendBadge}
+                  <span class="afri-history-score-badge">${item.displayValue}</span>
+                </div>
+              </div>
+              ${chipsHtml ? '<div class="afri-history-chips">' + chipsHtml + '</div>' : ''}
+            </div>
+          `;
+        });
+        listEl.innerHTML = html;
+      }
     }
 
+    renderModalList();
+
     if (clearBtn) {
-      clearBtn.onclick = function () {
-        if (confirm('Clear your recorded calculation history for this tool? This cannot be undone.')) {
+      clearBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var currentItems = getHistory(adapter.id);
+        if (!currentItems.length) {
+          clearBtn.innerHTML = '<span>No history to clear</span>';
+          setTimeout(function () {
+            resetAcademicClearBtn(clearBtn, false);
+          }, 1500);
+          return;
+        }
+
+        if (!clearBtn.classList.contains('confirming')) {
+          clearBtn.classList.add('confirming');
+          clearBtn.innerHTML = icons.alert + ' <span>Click again to confirm</span>';
+          clearBtn.style.background = '#dc2626';
+          clearBtn.style.color = '#ffffff';
+          clearBtn.style.borderColor = '#b91c1c';
+          if (clearConfirmTimer) clearTimeout(clearConfirmTimer);
+          clearConfirmTimer = setTimeout(function () {
+            resetAcademicClearBtn(clearBtn, getHistory(adapter.id).length > 0);
+          }, 4500);
+        } else {
+          if (clearConfirmTimer) clearTimeout(clearConfirmTimer);
+          clearConfirmTimer = null;
           clearHistory(adapter.id);
-          openHistoryModal(adapter);
+          renderModalList();
           updateProgressUI(adapter);
+
+          clearBtn.classList.remove('confirming');
+          clearBtn.style.background = '#f0fdf4';
+          clearBtn.style.color = '#16a34a';
+          clearBtn.style.borderColor = '#86efac';
+          clearBtn.innerHTML = icons.check + ' <span>History Cleared!</span>';
+
+          setTimeout(function () {
+            resetAcademicClearBtn(clearBtn, false);
+          }, 1800);
         }
       };
     }
@@ -3402,6 +3573,8 @@
 
   function closeHistoryModal() {
     var overlay = document.getElementById('afriProgModalOverlay');
+    var clearBtn = document.getElementById('afriProgClearHistoryBtn');
+    if (clearBtn) resetAcademicClearBtn(clearBtn, false);
     if (overlay) overlay.classList.remove('open');
   }
 

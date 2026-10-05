@@ -30,8 +30,12 @@ The tool **MUST** be added under its respective category hub page using the stan
   - Proper styling and card structure (no emojis).
   - Relevant tag chips.
 
-### 3. XML Sitemap (`sitemap.xml`)
+### 3. XML Sitemap (`sitemap.xml`) & On-Page Date Synchronization
 - Add `<url>` block with `<loc>https://afriwidget.com/[tool-slug]</loc>`, `<lastmod>YYYY-MM-DD</lastmod>`, `<changefreq>weekly</changefreq>`, and `<priority>0.9</priority>`.
+- **STRICT MANDATE**: The `<lastmod>` date in `sitemap.xml` MUST match the creation date (or update date) exactly.
+- The visible on-page update stamp (`Last Updated: <span>[D Month YYYY]</span>`) and Schema.org `dateModified` MUST strictly match this date.
+- Whenever an existing tool is updated, both `sitemap.xml` and the page's update stamp must be updated strictly to the date of change (see `LAST_MODIFIED_AND_UPDATE_DATE_RULES.md`).
+
 
 ### 4. LLM & Search Index Reference (`llms.txt`)
 - Add the markdown link and description under the relevant H2 header in `llms.txt`.

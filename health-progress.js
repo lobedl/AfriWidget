@@ -28,6 +28,7 @@
     download: '<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>',
     trash: '<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>',
     close: '<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>',
+    alert: '<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>',
     dot: '<svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="3"/></svg>'
   };
 
@@ -136,6 +137,17 @@
         background: #fefce8;
         border-color: #facc15;
         color: #000000;
+      }
+      .afri-health-btn.confirming {
+        background: #dc2626 !important;
+        color: #ffffff !important;
+        border-color: #b91c1c !important;
+        box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25) !important;
+        animation: afriPulseConfirm 1.2s infinite ease-in-out;
+      }
+      @keyframes afriPulseConfirm {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.82; }
       }
       .afri-health-badge-count {
         display: inline-flex;
@@ -1466,20 +1478,58 @@
 
     var exportBtn = overlay.querySelector('#afriHealthExportCsvBtn');
     if (exportBtn) {
-      exportBtn.addEventListener('click', function () {
-        exportHistoryCsv(adapter);
-      });
+      exportBtn.onclick = function (e) {
+        e.preventDefault();
+        var actAdapter = currentHealthModalAdapter || adapter;
+        if (actAdapter) exportHistoryCsv(actAdapter);
+      };
     }
 
     var clearBtn = overlay.querySelector('#afriHealthClearBtn');
     if (clearBtn) {
-      clearBtn.addEventListener('click', function () {
-        if (confirm('Are you sure you want to clear your local biometric history for this tool?')) {
-          clearHistory(adapter.id);
-          renderHistoryModalTable(adapter);
-          updateProgressUI(adapter);
+      clearBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var actAdapter = currentHealthModalAdapter || adapter;
+        if (!actAdapter) return;
+        var hist = getHistory(actAdapter.id);
+        if (!hist.length) {
+          clearBtn.innerHTML = '<span>No history to clear</span>';
+          setTimeout(function () {
+            resetHealthClearBtn(clearBtn, false);
+          }, 1500);
+          return;
         }
-      });
+
+        if (!clearBtn.classList.contains('confirming')) {
+          clearBtn.classList.add('confirming');
+          clearBtn.innerHTML = icons.alert + ' <span>Click again to confirm</span>';
+          clearBtn.style.background = '#dc2626';
+          clearBtn.style.color = '#ffffff';
+          clearBtn.style.borderColor = '#b91c1c';
+          if (healthClearConfirmTimer) clearTimeout(healthClearConfirmTimer);
+          healthClearConfirmTimer = setTimeout(function () {
+            var curr = getHistory(actAdapter.id);
+            resetHealthClearBtn(clearBtn, curr.length > 0);
+          }, 4500);
+        } else {
+          if (healthClearConfirmTimer) clearTimeout(healthClearConfirmTimer);
+          healthClearConfirmTimer = null;
+          clearHistory(actAdapter.id);
+          renderHistoryModalTable(actAdapter);
+          updateProgressUI(actAdapter);
+
+          clearBtn.classList.remove('confirming');
+          clearBtn.style.background = '#f0fdf4';
+          clearBtn.style.color = '#16a34a';
+          clearBtn.style.borderColor = '#86efac';
+          clearBtn.innerHTML = icons.check + ' <span>History Cleared!</span>';
+
+          setTimeout(function () {
+            resetHealthClearBtn(clearBtn, false);
+          }, 1800);
+        }
+      };
     }
 
     document.addEventListener('keydown', function (e) {
@@ -1491,9 +1541,40 @@
     return overlay;
   }
 
+  var currentHealthModalAdapter = null;
+  var healthClearConfirmTimer = null;
+
+  function resetHealthClearBtn(clearBtn, hasHistory) {
+    if (healthClearConfirmTimer) {
+      clearTimeout(healthClearConfirmTimer);
+      healthClearConfirmTimer = null;
+    }
+    if (!clearBtn) return;
+    clearBtn.classList.remove('confirming');
+    clearBtn.style.color = '#b91c1c';
+    clearBtn.style.borderColor = '';
+    clearBtn.style.background = '';
+    clearBtn.innerHTML = icons.trash + ' <span>Clear History</span>';
+    if (!hasHistory) {
+      clearBtn.style.opacity = '0.55';
+      clearBtn.style.cursor = 'default';
+      clearBtn.title = 'No biometric history recorded yet';
+    } else {
+      clearBtn.style.opacity = '1';
+      clearBtn.style.cursor = 'pointer';
+      clearBtn.removeAttribute('title');
+    }
+  }
+
   function openHistoryModal(adapter) {
+    currentHealthModalAdapter = adapter;
     var overlay = ensureModalOverlay(adapter);
     renderHistoryModalTable(adapter);
+    var clearBtn = overlay.querySelector('#afriHealthClearBtn');
+    if (clearBtn) {
+      var hist = getHistory(adapter.id);
+      resetHealthClearBtn(clearBtn, hist.length > 0);
+    }
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1501,6 +1582,8 @@
   function closeHistoryModal() {
     var overlay = document.getElementById('afriHealthModalOverlay');
     if (overlay) {
+      var clearBtn = overlay.querySelector('#afriHealthClearBtn');
+      if (clearBtn) resetHealthClearBtn(clearBtn, false);
       overlay.classList.remove('open');
     }
     document.body.style.overflow = '';
@@ -1513,6 +1596,11 @@
     var countEl = document.getElementById('afriHealthHstatCount');
     var initEl = document.getElementById('afriHealthHstatInitial');
     var latestEl = document.getElementById('afriHealthHstatLatest');
+    var clearBtn = document.getElementById('afriHealthClearBtn');
+
+    if (clearBtn && !clearBtn.classList.contains('confirming')) {
+      resetHealthClearBtn(clearBtn, history.length > 0);
+    }
 
     if (countEl) countEl.textContent = history.length;
     if (initEl) {

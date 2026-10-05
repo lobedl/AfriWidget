@@ -139,3 +139,13 @@ No horizontal scroll at any viewport width.
 - Do not regenerate entire files when a small edit will suffice.
 - Do not add dependencies or CDN scripts without approval.
 - Do not deviate from the class naming convention.
+
+## 11. Last Modified and Update Date Synchronization
+
+Whenever any tool, page, category hub, or policy document is created or updated:
+- The visible on-page update date (`Last Updated: <span>...</span>`) must be updated strictly to the date of the change (`D Month YYYY`).
+- Any Schema.org JSON-LD `dateModified` property must be updated strictly to the date of the change (`YYYY-MM-DD`).
+- The page's `<lastmod>` entry in `sitemap.xml` must be updated strictly to the date of the change (`YYYY-MM-DD`).
+- Unmodified pages must never receive blanket timestamp updates; only changed pages receive the updated date.
+- See `LAST_MODIFIED_AND_UPDATE_DATE_RULES.md` for full requirements and validation procedures.
+
