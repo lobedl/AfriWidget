@@ -5,9 +5,9 @@ description: Hard rules the user has written down for AfriWidget — must be res
 
 `AGENT_GUARDRAILS.md` is the current repository guardrail file; do not rely on the older `REPLIT_RULES.md` reference, which is not present. The project-wide constraints recorded here remain in force:
 
-1. **Zero dependencies** — no React, Vite, Next.js, npm packages, package.json, Express, PostgreSQL, or Prisma. Root contains only `.html`, `.css`, `.js` files.
+1. **Pure tool UI** — calculator and diagnostic interfaces use raw HTML, pure CSS, and vanilla JavaScript; do not add React, Next.js, Tailwind, emojis, or UI dependencies.
 2. **Raw HTML content** — `index.html` ≥ 1,200 words, every category/policy/tool page ≥ 800 words, all in plain markup (no SPA shell). Validate word counts after stripping tags and scripts; View Page Source must show full text.
-3. **Tailwind via CDN only** — `<script src="https://cdn.tailwindcss.com"></script>` in every `<head>`. Calculators use vanilla JS DOM.
+3. **No Tailwind** — style tool pages with CSS; do not add Tailwind CDN or utility classes.
 4. **Static server only** — `npx --yes serve . -p 3000` or `python3 -m http.server 3000`. Never a prompting/interactive CLI.
 5. **Scroll-to-top on every page** — `window.addEventListener('DOMContentLoaded', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });` before `</body>`.
 
@@ -17,8 +17,8 @@ description: Hard rules the user has written down for AfriWidget — must be res
 9. **Tool-page content depth** — calculator and utility pages should explain their own inputs, method, example, interpretation, limitations, and FAQs; shared footer/legal copy is acceptable repetition.
 10. **Homepage branding is the source of truth for new tools** — use the gold/yellow logo mark (`#FACC15`), secondary dot (`#CA8A04`), and `Widget` wordmark on newly added generator pages and their shared footer.
 
-**Why:** Google AdSense approval requires pre-rendered text in raw HTML; no framework can intercept that requirement.
-**How to apply:** Check these rules before adding any file, package, or workflow change to AfriWidget.
+**Why:** Google AdSense approval requires pre-rendered text in raw HTML; the user also explicitly requires calculator and diagnostic UI to remain pure HTML, CSS, and JavaScript.
+**How to apply:** Check these rules before adding files, packages, or workflows; preserve the static tool UI and avoid frameworks or Tailwind.
 
 For dropdown-based calculators, validate that a selection is non-empty before numeric conversion; JavaScript `Number('')` becomes `0` and can incorrectly look like a valid result.
 
