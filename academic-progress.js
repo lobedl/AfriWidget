@@ -1015,10 +1015,65 @@
     // 11. Tertiary GPA / CGPA Calculator
     'tertiary-gpa-cgpa-calculator': {
       id: 'tertiary-gpa-cgpa',
-      title: 'Tertiary GPA Calculator',
+      title: 'Tertiary GPA / CGPA Calculator',
       higherIsBetter: true,
+      unit: 'GPA',
       extract: function () {
-        return adapters['gpa-calculator'].extract();
+        var semEl = document.getElementById('semesterGpa');
+        var cumEl = document.getElementById('cumulativeGpa');
+        var val = NaN;
+        var displayLabel = '';
+
+        var cumVal = cumEl ? parseFloat(cumEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+        var semVal = semEl ? parseFloat(semEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+
+        if (!isNaN(cumVal)) {
+          val = cumVal;
+          displayLabel = val.toFixed(2) + ' CGPA';
+        } else if (!isNaN(semVal)) {
+          val = semVal;
+          displayLabel = val.toFixed(2) + ' GPA';
+        }
+
+        if (isNaN(val)) return null;
+
+        var scaleEl = document.getElementById('scaleSelect');
+        var scaleVal = scaleEl ? scaleEl.value : '5';
+        var maxScale = scaleVal === '4' ? 4.0 : 5.0;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('#courseList .course-row, .course-row');
+        var pts5 = { 'A': 5.0, 'B': 4.0, 'C': 3.0, 'D': 2.0, 'E': 1.0, 'F': 0.0 };
+        var pts4 = { 'A': 4.0, 'B': 3.0, 'C': 2.0, 'D': 1.0, 'F': 0.0 };
+        var ptsMap = scaleVal === '4' ? pts4 : pts5;
+
+        rows.forEach(function (row, idx) {
+          var nameInput = row.querySelector('.course-name-input, input[type="text"]');
+          var gradeSel = row.querySelector('.course-grade-select, select');
+          var creditSel = row.querySelector('.course-credit-select');
+
+          var rawName = (nameInput && nameInput.value.trim()) || ('Course ' + (idx + 1));
+          var grade = gradeSel ? gradeSel.value : '';
+          var credits = creditSel ? parseFloat(creditSel.value) : NaN;
+
+          if (grade && ptsMap[grade] !== undefined) {
+            var pts = ptsMap[grade];
+            var credText = (!isNaN(credits) && credits > 0) ? (' (' + credits + ' CU)') : '';
+            subjects.push({
+              name: rawName.length > 15 ? rawName.substring(0, 13) + '…' : rawName,
+              grade: grade,
+              raw: pts,
+              norm: Math.max(0.12, Math.min(1.0, pts / maxScale)),
+              display: 'Grade ' + grade + credText
+            });
+          }
+        });
+
+        return {
+          value: val,
+          displayValue: displayLabel,
+          subjects: subjects
+        };
       }
     },
 
