@@ -3,7 +3,7 @@ name: AfriWidget architecture mandates
 description: Hard rules the user has written down for AfriWidget — must be respected on every change
 ---
 
-The authoritative source is `REPLIT_RULES.md` in the project root. Summary:
+`AGENT_GUARDRAILS.md` is the current repository guardrail file; do not rely on the older `REPLIT_RULES.md` reference, which is not present. The project-wide constraints recorded here remain in force:
 
 1. **Zero dependencies** — no React, Vite, Next.js, npm packages, package.json, Express, PostgreSQL, or Prisma. Root contains only `.html`, `.css`, `.js` files.
 2. **Raw HTML content** — `index.html` ≥ 1,200 words, every category/policy/tool page ≥ 800 words, all in plain markup (no SPA shell). Validate word counts after stripping tags and scripts; View Page Source must show full text.
