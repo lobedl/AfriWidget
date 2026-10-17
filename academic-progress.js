@@ -1,12 +1,11 @@
 /**
  * AfriWidget Academic Progress Engine
- * Lightweight, private, client-side tracking and radar chart visualization
- * for high-traffic AfriWidget education tools.
+ * Lightweight, private, client-side result history for AfriWidget education tools.
  * 
  * - Zero accounts, zero login, zero cloud storage, 100% private in-browser localStorage.
  * - Zero Tailwind CSS, pure custom scoped AfriWidget brand design system (#000000, #facc15, #ca8a04, #ffffff, #e5e5e5).
  * - Automatic background recording on calculation with zero friction or gating.
- * - Interactive pure SVG radar chart of subject performance.
+ * - Clear subject results, latest and previous scores, and simple progress trends.
  * - Comparative summary: Latest, Previous, Improvement/Decline, Strongest, Weakest subjects.
  * - Complete chronological attempt history viewer with self-management & clear option.
  */
@@ -17,6 +16,7 @@
 
   var STORAGE_PREFIX = 'afriwidget_academic_progress_';
   var MAX_HISTORY_ITEMS = 15;
+  var recordTimer = null;
 
   function onReady(fn) {
     if (document.readyState === 'loading') {
@@ -24,6 +24,23 @@
     } else {
       fn();
     }
+  }
+
+  function scheduleRecord(adapter) {
+    if (recordTimer) clearTimeout(recordTimer);
+    recordTimer = setTimeout(function () {
+      recordTimer = null;
+      recordAndDisplay(adapter);
+    }, 180);
+  }
+
+  function isResultsVisible(resultsEl) {
+    if (!resultsEl) return false;
+    if (resultsEl.classList.contains('visible')) return true;
+    var style = window.getComputedStyle(resultsEl);
+    return style.display !== 'none' &&
+      style.visibility !== 'hidden' &&
+      Number(style.opacity || 1) > 0.01;
   }
 
   function getPageSlug() {
@@ -166,16 +183,6 @@
           gap: 1.5rem;
         }
       }
-      .afri-radar-card {
-        background: #fafaf9;
-        border: 1px solid #e7e5e4;
-        border-radius: 0.75rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
       .afri-card-label {
         font-size: 0.6875rem;
         font-weight: 800;
@@ -185,21 +192,6 @@
         margin-bottom: 0.5rem;
         width: 100%;
         text-align: left;
-      }
-      .afri-radar-svg-wrap {
-        width: 100%;
-        max-width: 320px;
-        aspect-ratio: 1 / 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-      }
-      .afri-radar-svg {
-        width: 100%;
-        height: auto;
-        display: block;
-        overflow: visible;
       }
       .afri-summary-card {
         background: #ffffff;
@@ -568,6 +560,281 @@
       }
       .afri-btn-modal-done:hover {
         background: #fde047;
+      }
+
+      /* Calm, readable progress dashboard in the AfriWidget brand palette */
+      .afri-academic-progress {
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        border: 1px solid #e5e7eb;
+        border-top: 3px solid #facc15;
+        border-radius: 0.875rem;
+        box-shadow: 0 4px 18px rgba(17, 24, 39, 0.045);
+        font-family: inherit;
+        color: #111827;
+      }
+      .afri-prog-header {
+        gap: 1rem;
+        padding-bottom: 1.125rem;
+        border-color: #e5e7eb;
+      }
+      .afri-prog-title-wrap { gap: 0.875rem; }
+      .afri-prog-icon-badge {
+        width: 2.625rem;
+        height: 2.625rem;
+        border: 1px solid #f3e8a1;
+        border-radius: 0.75rem;
+        background: #fffdf0;
+        color: #6b5900;
+      }
+      .afri-prog-title {
+        font-size: 1.125rem;
+        font-weight: 750;
+        letter-spacing: -0.02em;
+        color: #111827;
+      }
+      .afri-prog-subtitle {
+        margin-top: 0.25rem;
+        color: #5b6472;
+        font-size: 0.875rem;
+      }
+      .afri-prog-btn {
+        min-height: 42px;
+        border-color: #e5e7eb;
+        border-radius: 0.625rem;
+        background: #fff;
+        padding: 0.55rem 0.8rem;
+        font-weight: 650;
+      }
+      .afri-prog-btn:hover {
+        border-color: #d4b20b;
+        background: #fffdf0;
+      }
+      .afri-prog-badge-count {
+        background: #111827;
+        color: #fff;
+        padding: 0.2rem 0.45rem;
+        font-size: 0.7rem;
+      }
+      .afri-prog-notice {
+        display: none;
+        margin: 0.875rem 0 0;
+        padding: 0.7rem 0.85rem;
+        border: 1px solid #fde68a;
+        border-radius: 0.625rem;
+        background: #fffbeb;
+        color: #713f12;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .afri-prog-notice[data-visible="true"] { display: block; }
+      .afri-prog-body {
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 1rem;
+        margin-top: 1.125rem;
+      }
+      .afri-subject-results-card,
+      .afri-summary-card {
+        min-width: 0;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        background: #fff;
+        padding: 1.125rem;
+      }
+      .afri-subject-results-card { background: #fafafa; }
+      .afri-card-label {
+        margin-bottom: 0.75rem;
+        color: #374151;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .afri-subject-results-list {
+        display: flex;
+        flex-direction: column;
+        max-height: 360px;
+        overflow-y: auto;
+        border-top: 1px solid #e5e7eb;
+      }
+      .afri-subject-result-row {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.7rem 0.125rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .afri-subject-result-name {
+        min-width: 0;
+        color: #374151;
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+      }
+      .afri-subject-result-value {
+        flex: 0 0 auto;
+        color: #111827;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-align: right;
+      }
+      .afri-subject-results-empty {
+        margin: 0;
+        padding: 1.125rem 0;
+        color: #667085;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .afri-summary-card { gap: 1rem; }
+      .afri-stat-pair-grid { gap: 0.625rem; }
+      .afri-stat-box {
+        border-color: #e5e7eb;
+        border-radius: 0.625rem;
+        padding: 0.875rem 0.75rem;
+      }
+      .afri-stat-box.highlight {
+        border-color: #f3e8a1;
+        background: #fffdf0;
+      }
+      .afri-stat-box-label {
+        color: #596273;
+        font-size: 0.7rem;
+        font-weight: 650;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .afri-stat-box.highlight .afri-stat-box-label { color: #5f5010; }
+      .afri-stat-box-val {
+        font-size: clamp(1.05rem, 2vw, 1.375rem);
+        font-weight: 750;
+        overflow-wrap: anywhere;
+      }
+      .afri-stat-box-sub {
+        color: #667085;
+        font-size: 0.7rem;
+        overflow-wrap: anywhere;
+      }
+      .afri-trend-banner {
+        align-items: flex-start;
+        border-radius: 0.625rem;
+        padding: 0.75rem 0.8rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+      }
+      .afri-subject-highlights-grid { gap: 0.625rem; }
+      .afri-subject-highlight {
+        min-width: 0;
+        border-radius: 0.625rem;
+        padding: 0.75rem;
+      }
+      .afri-subject-highlight.strongest {
+        border-color: #dce9d8;
+        border-left-color: #52815c;
+        background: #f7faf6;
+      }
+      .afri-subject-highlight.weakest {
+        border-color: #e5e7eb;
+        border-left-color: #c5a62b;
+        background: #fafafa;
+      }
+      .afri-subject-highlight.strongest .afri-highlight-icon {
+        background: #e8f0e5;
+        color: #315e3b;
+      }
+      .afri-subject-highlight.weakest .afri-highlight-icon {
+        background: #f7f1d8;
+        color: #705d13;
+      }
+      .afri-highlight-tag {
+        color: #596273;
+        font-size: 0.6875rem;
+        font-weight: 650;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .afri-subject-highlight.strongest .afri-highlight-tag,
+      .afri-subject-highlight.weakest .afri-highlight-tag { color: #596273; }
+      .afri-highlight-name { font-weight: 700; }
+      .afri-highlight-score { color: #667085; font-weight: 500; }
+      .afri-academic-progress button:focus-visible,
+      .afri-prog-modal-overlay button:focus-visible {
+        outline: 3px solid #b49100;
+        outline-offset: 2px;
+      }
+      .afri-prog-modal-overlay {
+        visibility: hidden;
+        background: rgba(17, 24, 39, 0.58);
+        font-family: inherit;
+      }
+      .afri-prog-modal-overlay.open { visibility: visible; }
+      .afri-prog-modal-card {
+        border-color: #e5e7eb;
+        border-radius: 1rem;
+        box-shadow: 0 24px 60px rgba(17, 24, 39, 0.2);
+      }
+      .afri-prog-modal-title { font-size: 1.2rem; font-weight: 750; }
+      .afri-history-item {
+        gap: 0.625rem;
+        border-radius: 0.75rem;
+        background: #fff;
+      }
+      .afri-history-item.latest {
+        border-color: #e8d366;
+        background: #fffdf4;
+      }
+      .afri-history-empty-title {
+        margin: 0 0 0.375rem;
+        color: #111827;
+        font-size: 0.9375rem;
+        font-weight: 700;
+      }
+      .afri-history-empty-copy {
+        margin: 0;
+        color: #667085;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+      }
+      .afri-history-num {
+        color: #374151;
+        font-size: 0.75rem;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .afri-history-date { color: #667085; }
+      .afri-history-score-badge {
+        border-radius: 0.5rem;
+        font-weight: 750;
+        overflow-wrap: anywhere;
+      }
+      .afri-history-chip { overflow-wrap: anywhere; }
+      .afri-btn-danger-outline:disabled {
+        color: #667085;
+        border-color: #e5e7eb;
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+      .afri-btn-danger-outline.confirming { animation: none; }
+      @media (min-width: 640px) {
+        .afri-academic-progress { padding: 1.5rem; }
+      }
+      @media (max-width: 767px) {
+        .afri-prog-body { grid-template-columns: minmax(0, 1fr); }
+      }
+      @media (max-width: 520px) {
+        .afri-prog-header { align-items: flex-start; }
+        .afri-prog-actions, .afri-prog-btn { width: 100%; }
+        .afri-prog-btn { justify-content: center; }
+        .afri-prog-modal-card { padding: 1rem; }
+        .afri-prog-modal-footer {
+          flex-direction: column-reverse;
+          align-items: stretch;
+        }
+        .afri-btn-danger-outline, .afri-btn-modal-done { justify-content: center; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .afri-prog-modal-overlay,
+        .afri-prog-modal-card { transition: none; }
       }
     `;
     document.head.appendChild(style);
@@ -3199,136 +3466,72 @@
   }
 
   // --- LOCAL STORAGE HELPERS ---
+  var memoryHistory = {};
+
   function getHistory(toolId) {
+    if (Object.prototype.hasOwnProperty.call(memoryHistory, toolId)) {
+      return memoryHistory[toolId];
+    }
     try {
       var raw = localStorage.getItem(STORAGE_PREFIX + toolId);
       if (!raw) return [];
       var parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(function (item) {
+        return item && typeof item === 'object' &&
+          Number.isFinite(Number(item.value)) &&
+          Array.isArray(item.subjects);
+      }).slice(0, MAX_HISTORY_ITEMS);
     } catch (e) {
-      return [];
+      return memoryHistory[toolId] || [];
     }
   }
 
   function saveHistory(toolId, history) {
+    memoryHistory[toolId] = history.slice(0, MAX_HISTORY_ITEMS);
     try {
-      localStorage.setItem(STORAGE_PREFIX + toolId, JSON.stringify(history.slice(0, MAX_HISTORY_ITEMS)));
-    } catch (e) {}
+      localStorage.setItem(STORAGE_PREFIX + toolId, JSON.stringify(memoryHistory[toolId]));
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   function clearHistory(toolId) {
+    memoryHistory[toolId] = [];
     try {
       localStorage.removeItem(STORAGE_PREFIX + toolId);
+      return true;
     } catch (e) {}
+    return false;
   }
 
-  // --- RADAR CHART SVG GENERATOR ---
-  function generateRadarSvg(subjects) {
-    if (!subjects || !subjects.length) {
-      return `
-        <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;">
-          Complete a calculation to render the performance radar web.
-        </div>
-      `;
-    }
-
-    var chartItems = subjects.slice();
-    if (chartItems.length === 2) {
-      chartItems = [
-        chartItems[0],
-        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Pass Standard' },
-        chartItems[1],
-        { name: 'Exam Sub-Min', grade: '40%', raw: 40, norm: 0.40, display: '40% Exam Hurdle' }
-      ];
-    } else if (chartItems.length === 1) {
-      chartItems = [
-        chartItems[0],
-        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Benchmark' },
-        { name: 'Distinction', grade: '75%', raw: 75, norm: 0.75, display: '75% Distinction' }
-      ];
-    }
-
-    var count = chartItems.length;
-    var sizeX = 340;
-    var sizeY = 310;
-    var cx = 170;
-    var cy = 155;
-    var r = 82;
-
-    // 1. Concentric web polygons
-    var levels = [0.33, 0.66, 1.0];
-    var gridPolygonsHtml = '';
-    levels.forEach(function (lvl) {
-      var pts = [];
-      for (var i = 0; i < count; i++) {
-        var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-        var x = cx + r * lvl * Math.cos(angle);
-        var y = cy + r * lvl * Math.sin(angle);
-        pts.push(x.toFixed(1) + ',' + y.toFixed(1));
-      }
-      var isOuter = lvl === 1.0;
-      gridPolygonsHtml += '<polygon points="' + pts.join(' ') + '" fill="' + (isOuter ? '#ffffff' : 'none') + '" stroke="' + (isOuter ? '#d1d5db' : '#e5e7eb') + '" stroke-width="' + (isOuter ? '1.5' : '1') + '" ' + (isOuter ? '' : 'stroke-dasharray="3,3"') + ' />';
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char];
     });
+  }
 
-    // 2. Radial spokes
-    var spokesHtml = '';
-    for (var i = 0; i < count; i++) {
-      var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      var x = cx + r * Math.cos(angle);
-      var y = cy + r * Math.sin(angle);
-      spokesHtml += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="#e5e7eb" stroke-width="1" />';
+  // Show the subjects actually entered; never add synthetic benchmarks to a result.
+  function generateSubjectResultsHtml(subjects) {
+    if (!subjects || !subjects.length) {
+      return '<p class="afri-subject-results-empty">Subject details are not available for this result.</p>';
     }
 
-    // 3. Performance data polygon
-    var dataPts = [];
-    var pointCircles = [];
-    for (var i = 0; i < count; i++) {
-      var s = chartItems[i];
-      var norm = Math.max(0.12, Math.min(1.0, s.norm !== undefined ? s.norm : 0.5));
-      var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      var px = cx + r * norm * Math.cos(angle);
-      var py = cy + r * norm * Math.sin(angle);
-      dataPts.push(px.toFixed(1) + ',' + py.toFixed(1));
-      pointCircles.push('<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="3.5" fill="#000000" stroke="#facc15" stroke-width="2" />');
-    }
-    var dataPolyHtml = '<polygon points="' + dataPts.join(' ') + '" fill="rgba(250, 204, 21, 0.42)" stroke="#ca8a04" stroke-width="2.5" stroke-linejoin="round" />';
-
-    // 4. Perimeter labels
-    var labelsHtml = '';
-    for (var i = 0; i < count; i++) {
-      var s = chartItems[i];
-      var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      var labelDist = r + 22;
-      var lx = cx + labelDist * Math.cos(angle);
-      var ly = cy + labelDist * Math.sin(angle);
-
-      var anchor = 'middle';
-      if (Math.cos(angle) > 0.28) anchor = 'start';
-      else if (Math.cos(angle) < -0.28) anchor = 'end';
-
-      var dy = '4';
-      if (Math.sin(angle) < -0.65) dy = '-4';
-      else if (Math.sin(angle) > 0.65) dy = '13';
-
-      var cleanName = s.name.length > 13 ? s.name.substring(0, 11) + '…' : s.name;
-      var badge = s.grade ? ' ' + s.grade : '';
-
-      labelsHtml += `
-        <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" dy="${dy}" text-anchor="${anchor}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#111827">
-          ${cleanName}<tspan fill="#ca8a04" font-weight="800">${badge}</tspan>
-        </text>
-      `;
-    }
-
-    return `
-      <svg viewBox="0 0 ${sizeX} ${sizeY}" class="afri-radar-svg" preserveAspectRatio="xMidYMid meet" aria-label="Subject performance radar chart">
-        ${gridPolygonsHtml}
-        ${spokesHtml}
-        ${dataPolyHtml}
-        ${pointCircles.join('')}
-        ${labelsHtml}
-      </svg>
-    `;
+    return subjects.map(function (subject) {
+      var name = escapeHtml(subject.name || 'Subject');
+      var result = escapeHtml(subject.display || subject.grade || 'Recorded');
+      return '<div class="afri-subject-result-row" role="listitem">' +
+        '<span class="afri-subject-result-name">' + name + '</span>' +
+        '<span class="afri-subject-result-value">' + result + '</span>' +
+        '</div>';
+    }).join('');
   }
 
   // --- ACADEMIC PROGRESS SECTION UI INJECTION ---
@@ -3341,7 +3544,7 @@
     var container = document.createElement('section');
     container.id = 'afriAcademicProgress';
     container.className = 'afri-academic-progress';
-    container.setAttribute('aria-label', 'Academic Progress');
+    container.setAttribute('aria-labelledby', 'afriProgTitle');
 
     container.innerHTML = `
       <div class="afri-prog-header">
@@ -3350,48 +3553,46 @@
             ${icons.cap}
           </div>
           <div>
-            <h3 class="afri-prog-title">Academic Progress</h3>
-            <p class="afri-prog-subtitle">Private in-browser history and latest subject performance</p>
+            <h3 class="afri-prog-title" id="afriProgTitle">Academic Progress</h3>
+            <p class="afri-prog-subtitle">Your results stay on this device. Run another calculation whenever you’re ready to compare.</p>
           </div>
         </div>
         <div class="afri-prog-actions">
-          <button type="button" class="afri-prog-btn" id="afriProgHistoryBtn" aria-label="View calculation history">
+          <button type="button" class="afri-prog-btn" id="afriProgHistoryBtn" aria-label="View saved calculation history">
             ${icons.history}
-            <span>View History</span>
+            <span>View history</span>
             <span class="afri-prog-badge-count" id="afriProgHistoryBadge">0</span>
           </button>
         </div>
       </div>
 
+      <p class="afri-prog-notice" id="afriProgSaveStatus" role="status" aria-live="polite"></p>
+
       <div class="afri-prog-body">
-        <!-- Radar Chart Card -->
-        <div class="afri-radar-card">
-          <span class="afri-card-label">Subject Performance Radar</span>
-          <div class="afri-radar-svg-wrap" id="afriRadarWrap">
-            <!-- Dynamic SVG injected here -->
-          </div>
+        <div class="afri-subject-results-card">
+          <span class="afri-card-label">Subjects in this result</span>
+          <div class="afri-subject-results-list" id="afriSubjectResultsList" role="list" aria-label="Latest subject results"></div>
         </div>
 
-        <!-- Performance Summary Card -->
         <div class="afri-summary-card">
           <div>
-            <span class="afri-card-label">Progress Summary</span>
+            <span class="afri-card-label">Your results over time</span>
             <div class="afri-stat-pair-grid">
               <div class="afri-stat-box highlight">
-                <span class="afri-stat-box-label">Latest Result</span>
+                <span class="afri-stat-box-label">Latest result</span>
                 <span class="afri-stat-box-val accent" id="afriProgLatestVal">—</span>
-                <span class="afri-stat-box-sub" id="afriProgLatestSub">Current calculation</span>
+                <span class="afri-stat-box-sub" id="afriProgLatestSub">This calculation</span>
               </div>
               <div class="afri-stat-box">
-                <span class="afri-stat-box-label">Previous Result</span>
+                <span class="afri-stat-box-label">Previous result</span>
                 <span class="afri-stat-box-val" id="afriProgPrevVal">—</span>
-                <span class="afri-stat-box-sub" id="afriProgPrevSub">Prior attempt</span>
+                <span class="afri-stat-box-sub" id="afriProgPrevSub">No earlier result yet</span>
               </div>
             </div>
 
             <div class="afri-trend-banner baseline" id="afriProgTrendBanner">
               ${icons.dot}
-              <span id="afriProgTrendText">Calculating performance trend…</span>
+              <span id="afriProgTrendText">Your first result is saved. Complete another calculation to compare.</span>
             </div>
           </div>
 
@@ -3401,9 +3602,9 @@
                 ${icons.star}
               </div>
               <div class="afri-highlight-info">
-                <span class="afri-highlight-tag">Strongest Subject</span>
+                  <span class="afri-highlight-tag">Strong subject</span>
                 <span class="afri-highlight-name" id="afriProgStrongestName">—</span>
-                <span class="afri-highlight-score" id="afriProgStrongestScore">Top performance</span>
+                  <span class="afri-highlight-score" id="afriProgStrongestScore">A good place to build from</span>
               </div>
             </div>
             <div class="afri-subject-highlight weakest">
@@ -3411,9 +3612,9 @@
                 ${icons.target}
               </div>
               <div class="afri-highlight-info">
-                <span class="afri-highlight-tag">Focus Area (Lowest)</span>
+                  <span class="afri-highlight-tag">Focus for next time</span>
                 <span class="afri-highlight-name" id="afriProgWeakestName">—</span>
-                <span class="afri-highlight-score" id="afriProgWeakestScore">Room for growth</span>
+                  <span class="afri-highlight-score" id="afriProgWeakestScore">A useful place to focus</span>
               </div>
             </div>
           </div>
@@ -3446,6 +3647,10 @@
   }
 
   // --- MODAL DIALOG ---
+  var historyReturnFocus = null;
+  var bodyOverflowBeforeHistory = '';
+  var activeHistoryAdapter = null;
+
   function ensureModalOverlay() {
     var overlay = document.getElementById('afriProgModalOverlay');
     if (overlay) return overlay;
@@ -3456,13 +3661,14 @@
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
     overlay.setAttribute('aria-labelledby', 'afriProgModalTitle');
+    overlay.setAttribute('aria-hidden', 'true');
 
     overlay.innerHTML = `
       <div class="afri-prog-modal-card">
         <div class="afri-prog-modal-header">
           <div>
             <h3 id="afriProgModalTitle" class="afri-prog-modal-title">Academic Progress History</h3>
-            <p class="afri-prog-modal-desc">All calculations are saved privately in your device browser.</p>
+            <p class="afri-prog-modal-desc">Saved results stay in this browser on this device.</p>
           </div>
           <button type="button" class="afri-prog-modal-close" id="afriProgModalCloseBtn" aria-label="Close dialog">
             ${icons.close}
@@ -3490,8 +3696,32 @@
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('open')) {
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeHistoryModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        var focusable = Array.prototype.slice.call(overlay.querySelectorAll(
+          'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        ));
+        if (!focusable.length) {
+          e.preventDefault();
+          return;
+        }
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        } else if (!overlay.contains(document.activeElement)) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
 
@@ -3512,17 +3742,14 @@
     }
     if (!clearBtn) return;
     clearBtn.classList.remove('confirming');
+    clearBtn.disabled = !hasHistory;
     clearBtn.style.color = '';
     clearBtn.style.borderColor = '';
     clearBtn.style.background = '';
     clearBtn.innerHTML = icons.trash + ' <span>Clear History</span>';
     if (!hasHistory) {
-      clearBtn.style.opacity = '0.55';
-      clearBtn.style.cursor = 'default';
       clearBtn.title = 'No calculation history recorded yet';
     } else {
-      clearBtn.style.opacity = '1';
-      clearBtn.style.cursor = 'pointer';
       clearBtn.removeAttribute('title');
     }
   }
@@ -3531,16 +3758,18 @@
     var overlay = ensureModalOverlay();
     var listEl = document.getElementById('afriProgHistoryList');
     var clearBtn = document.getElementById('afriProgClearHistoryBtn');
+    activeHistoryAdapter = adapter;
+    historyReturnFocus = document.activeElement;
 
     function renderModalList() {
-      var history = getHistory(adapter.id);
+        var history = getHistory(adapter.id);
       resetAcademicClearBtn(clearBtn, history.length > 0);
 
       if (!history.length) {
         listEl.innerHTML = `
           <div class="afri-history-empty">
-            <p style="margin:0 0 0.5rem;font-weight:700;color:#111827;">No recorded calculations yet</p>
-            <p style="margin:0;font-size:0.8125rem;">Complete a calculation above to automatically record your progress.</p>
+            <p class="afri-history-empty-title">No saved results yet</p>
+            <p class="afri-history-empty-copy">Complete a calculation above and it will be saved here on this device.</p>
           </div>
         `;
       } else {
@@ -3548,14 +3777,14 @@
         history.forEach(function (item, idx) {
           var isLatest = idx === 0;
           var dateFormatted = item.dateStr || 'Recent';
-          var chipsHtml = (item.subjects || []).map(function (s) {
-            return '<span class="afri-history-chip">' + s.name + ': ' + (s.grade || s.display || '') + '</span>';
+          var chipsHtml = (Array.isArray(item.subjects) ? item.subjects : []).map(function (s) {
+            return '<span class="afri-history-chip">' + escapeHtml(s.name || 'Subject') + ': ' + escapeHtml(s.display || s.grade || '') + '</span>';
           }).join('');
 
           var trendBadge = '';
           if (item.trend) {
             var trendColor = item.trend.type === 'improved' ? '#16a34a' : item.trend.type === 'declined' ? '#d97706' : '#6b7280';
-            trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + item.trend.label + '</span>';
+            trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + escapeHtml(item.trend.label) + '</span>';
           }
 
           html += `
@@ -3563,11 +3792,11 @@
               <div class="afri-history-item-top">
                 <div class="afri-history-index-wrap">
                   <span class="afri-history-num">Attempt #${history.length - idx} ${isLatest ? '(Latest)' : ''}</span>
-                  <span class="afri-history-date">&bull; ${dateFormatted}</span>
+                  <span class="afri-history-date">&bull; ${escapeHtml(dateFormatted)}</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:0.5rem;">
                   ${trendBadge}
-                  <span class="afri-history-score-badge">${item.displayValue}</span>
+                  <span class="afri-history-score-badge">${escapeHtml(item.displayValue)}</span>
                 </div>
               </div>
               ${chipsHtml ? '<div class="afri-history-chips">' + chipsHtml + '</div>' : ''}
@@ -3606,15 +3835,23 @@
         } else {
           if (clearConfirmTimer) clearTimeout(clearConfirmTimer);
           clearConfirmTimer = null;
-          clearHistory(adapter.id);
+          var wasCleared = clearHistory(adapter.id);
           renderModalList();
           updateProgressUI(adapter);
+          var saveStatus = document.getElementById('afriProgSaveStatus');
+          if (saveStatus) {
+            saveStatus.textContent = wasCleared
+              ? ''
+              : 'History is cleared for this visit, but your browser could not remove the saved copy.';
+            saveStatus.setAttribute('data-visible', wasCleared ? 'false' : 'true');
+          }
 
           clearBtn.classList.remove('confirming');
-          clearBtn.style.background = '#f0fdf4';
-          clearBtn.style.color = '#16a34a';
-          clearBtn.style.borderColor = '#86efac';
-          clearBtn.innerHTML = icons.check + ' <span>History Cleared!</span>';
+          clearBtn.disabled = true;
+          clearBtn.style.background = '#f7faf6';
+          clearBtn.style.color = '#315e3b';
+          clearBtn.style.borderColor = '#dce9d8';
+          clearBtn.innerHTML = icons.check + ' <span>' + (wasCleared ? 'History cleared' : 'Cleared for this visit') + '</span>';
 
           setTimeout(function () {
             resetAcademicClearBtn(clearBtn, false);
@@ -3623,20 +3860,39 @@
       };
     }
 
+    bodyOverflowBeforeHistory = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    overlay.setAttribute('aria-hidden', 'false');
     overlay.classList.add('open');
+    var closeBtn = document.getElementById('afriProgModalCloseBtn');
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeHistoryModal() {
     var overlay = document.getElementById('afriProgModalOverlay');
     var clearBtn = document.getElementById('afriProgClearHistoryBtn');
-    if (clearBtn) resetAcademicClearBtn(clearBtn, false);
-    if (overlay) overlay.classList.remove('open');
+    if (clearBtn) {
+      var history = activeHistoryAdapter ? getHistory(activeHistoryAdapter.id) : [];
+      resetAcademicClearBtn(clearBtn, history.length > 0);
+    }
+    if (overlay) {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+    document.body.style.overflow = bodyOverflowBeforeHistory;
+    if (historyReturnFocus && typeof historyReturnFocus.focus === 'function') {
+      historyReturnFocus.focus();
+    }
+    historyReturnFocus = null;
   }
 
   // --- CORE PROGRESS RECORDING & UI UPDATE ---
   function computeStrengths(subjects) {
     if (!subjects || !subjects.length) {
       return { strongest: null, weakest: null };
+    }
+    if (subjects.length === 1) {
+      return { strongest: subjects[0], weakest: null };
     }
     // Norm is 0.0 to 1.0 where 1.0 is always best performance
     var sorted = subjects.slice().sort(function (a, b) {
@@ -3652,9 +3908,11 @@
   }
 
   function recordAndDisplay(adapter) {
+    if (!isResultsVisible(document.getElementById('results'))) return;
     var current = adapter.extract();
     if (!current || isNaN(current.value)) return;
 
+    injectAcademicProgressSection(adapter);
     var history = getHistory(adapter.id);
     var prev = history.length > 0 ? history[0] : null;
 
@@ -3671,7 +3929,7 @@
       if (adapter.higherIsBetter) {
         diff = current.value - prev.value;
       } else {
-        // Lower aggregate = better!
+        // Many admission aggregates are stronger when the score is lower.
         diff = prev.value - current.value;
       }
 
@@ -3679,16 +3937,20 @@
         var diffStr = Number.isInteger(diff) ? diff.toString() : diff.toFixed(2);
         trend = {
           type: 'improved',
-          label: '▲ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' improvement',
-          desc: 'Improved by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared to previous calculation'
+          label: 'Improved by ' + diffStr + ' ' + (adapter.unit || 'pts'),
+          desc: 'Your result is ' + diffStr + ' ' + (adapter.unit || 'points') +
+            (adapter.higherIsBetter ? ' higher' : ' lower') + ' than your previous calculation.'
         };
       } else if (diff < -0.001) {
         var absDiff = Math.abs(diff);
         var diffStr = Number.isInteger(absDiff) ? absDiff.toString() : absDiff.toFixed(2);
         trend = {
           type: 'declined',
-          label: '▼ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' decline',
-          desc: 'Lower by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared to previous calculation'
+          label: (adapter.higherIsBetter ? 'Down by ' : 'Up by ') + diffStr + ' ' + (adapter.unit || 'pts'),
+          desc: 'Your result is ' + diffStr + ' ' + (adapter.unit || 'points') +
+            (adapter.higherIsBetter
+              ? ' lower than your previous calculation.'
+              : ' higher than before; lower values are stronger for this tool.')
         };
       } else {
         trend = {
@@ -3700,8 +3962,8 @@
     } else {
       trend = {
         type: 'baseline',
-        label: '● Initial baseline',
-        desc: 'Initial calculation recorded · Next attempt will show your progress trend'
+          label: 'Starting point',
+          desc: 'Your first result is saved. Complete another calculation to compare.'
       };
     }
 
@@ -3725,7 +3987,16 @@
       };
 
       history.unshift(newRecord);
-      saveHistory(adapter.id, history);
+      var saveStatus = document.getElementById('afriProgSaveStatus');
+      if (!saveHistory(adapter.id, history)) {
+        if (saveStatus) {
+          saveStatus.textContent = 'This result is ready, but your browser did not allow us to save your history. It will remain available until you leave this page.';
+          saveStatus.setAttribute('data-visible', 'true');
+        }
+      } else if (saveStatus) {
+        saveStatus.textContent = '';
+        saveStatus.setAttribute('data-visible', 'false');
+      }
     }
 
     // Ensure section exists in DOM
@@ -3740,68 +4011,68 @@
       countBadge.textContent = history.length;
     }
 
-    if (!history.length) {
-      var latestEl = document.getElementById('afriProgLatestVal');
-      var prevEl = document.getElementById('afriProgPrevVal');
-      var trendBanner = document.getElementById('afriProgTrendBanner');
-      var radarWrap = document.getElementById('afriRadarWrap');
+    var latestEl = document.getElementById('afriProgLatestVal');
+    var latestSub = document.getElementById('afriProgLatestSub');
+    var prevEl = document.getElementById('afriProgPrevVal');
+    var prevSub = document.getElementById('afriProgPrevSub');
+    var trendBanner = document.getElementById('afriProgTrendBanner');
+    var subjectList = document.getElementById('afriSubjectResultsList');
+    var strName = document.getElementById('afriProgStrongestName');
+    var strScore = document.getElementById('afriProgStrongestScore');
+    var weakName = document.getElementById('afriProgWeakestName');
+    var weakScore = document.getElementById('afriProgWeakestScore');
 
+    if (!history.length) {
       if (latestEl) latestEl.textContent = '—';
+      if (latestSub) latestSub.textContent = 'Complete a calculation to begin';
       if (prevEl) prevEl.textContent = '—';
+      if (prevSub) prevSub.textContent = 'No earlier result yet';
       if (trendBanner) {
-        trendBanner.className = 'afri-trend-banner neutral';
-        trendBanner.innerHTML = icons.dot + ' <span>Complete a calculation to record progress</span>';
+        trendBanner.className = 'afri-trend-banner baseline';
+        trendBanner.innerHTML = icons.dot + '<span id="afriProgTrendText"></span>';
+        var emptyTrendText = document.getElementById('afriProgTrendText');
+        if (emptyTrendText) emptyTrendText.textContent = 'Complete a calculation to start tracking your results.';
       }
-      if (radarWrap) {
-        radarWrap.innerHTML = '<div style="padding:2rem 1rem;color:#78716c;font-size:0.8125rem;">Radar chart will appear after calculation.</div>';
-      }
+      if (subjectList) subjectList.innerHTML = generateSubjectResultsHtml([]);
+      if (strName) strName.textContent = '—';
+      if (strScore) strScore.textContent = 'Complete a calculation to see your subjects.';
+      if (weakName) weakName.textContent = '—';
+      if (weakScore) weakScore.textContent = 'Add at least two subjects to compare.';
       return;
     }
 
     var latest = history[0];
     var prev = history.length > 1 ? history[1] : null;
 
-    // Latest Result
-    var latestEl = document.getElementById('afriProgLatestVal');
-    var latestSub = document.getElementById('afriProgLatestSub');
-    if (latestEl) latestEl.textContent = latest.displayValue;
-    if (latestSub) latestSub.textContent = latest.dateStr || 'Latest entry';
+    if (latestEl) latestEl.textContent = latest.displayValue || '—';
+    if (latestSub) latestSub.textContent = latest.dateStr || 'Latest saved result';
+    if (prevEl) prevEl.textContent = prev ? (prev.displayValue || '—') : '—';
+    if (prevSub) prevSub.textContent = prev ? (prev.dateStr || 'Previous result') : 'Your next calculation will appear here';
 
-    // Previous Result
-    var prevEl = document.getElementById('afriProgPrevVal');
-    var prevSub = document.getElementById('afriProgPrevSub');
-    if (prevEl) prevEl.textContent = prev ? prev.displayValue : '—';
-    if (prevSub) prevSub.textContent = prev ? (prev.dateStr || 'Prior attempt') : 'No earlier entry';
-
-    // Trend Banner
     var trendBanner = document.getElementById('afriProgTrendBanner');
     if (trendBanner && latest.trend) {
+      var allowedTrendTypes = ['improved', 'declined', 'neutral', 'baseline'];
+      var trendType = allowedTrendTypes.indexOf(latest.trend.type) === -1 ? 'baseline' : latest.trend.type;
       var icon = latest.trend.type === 'improved' ? icons.arrowUp :
         latest.trend.type === 'declined' ? icons.arrowDown :
         latest.trend.type === 'neutral' ? icons.equal : icons.dot;
 
-      trendBanner.className = 'afri-trend-banner ' + latest.trend.type;
-      trendBanner.innerHTML = icon + ' <span>' + latest.trend.desc + '</span>';
+      trendBanner.className = 'afri-trend-banner ' + trendType;
+      trendBanner.innerHTML = icon + '<span id="afriProgTrendText"></span>';
+      var trendText = document.getElementById('afriProgTrendText');
+      if (trendText) trendText.textContent = latest.trend.desc || 'Your latest result is saved.';
     }
-
-    // Highlights
-    var strName = document.getElementById('afriProgStrongestName');
-    var strScore = document.getElementById('afriProgStrongestScore');
-    var weakName = document.getElementById('afriProgWeakestName');
-    var weakScore = document.getElementById('afriProgWeakestScore');
 
     var strengths = computeStrengths(latest.subjects);
     if (strName) strName.textContent = strengths.strongest ? strengths.strongest.name : '—';
-    if (strScore) strScore.textContent = strengths.strongest ? (strengths.strongest.display || strengths.strongest.grade || 'Top mark') : '';
-
-    if (weakName) weakName.textContent = strengths.weakest ? strengths.weakest.name : '—';
-    if (weakScore) weakScore.textContent = strengths.weakest ? (strengths.weakest.display || strengths.weakest.grade || 'Focus mark') : '';
-
-    // Radar Chart
-    var radarWrap = document.getElementById('afriRadarWrap');
-    if (radarWrap && latest.subjects) {
-      radarWrap.innerHTML = generateRadarSvg(latest.subjects);
-    }
+    if (strScore) strScore.textContent = strengths.strongest
+      ? (strengths.strongest.display || strengths.strongest.grade || 'A good place to build from')
+      : 'No subject details were recorded.';
+    if (weakName) weakName.textContent = strengths.weakest ? strengths.weakest.name : 'Compare more subjects';
+    if (weakScore) weakScore.textContent = strengths.weakest
+      ? (strengths.weakest.display || strengths.weakest.grade || 'A useful place to focus')
+      : 'Add at least two subjects to see a focus area.';
+    if (subjectList) subjectList.innerHTML = generateSubjectResultsHtml(latest.subjects);
   }
 
   // --- INITIALIZATION & OBSERVERS ---
@@ -3822,29 +4093,21 @@
     var forms = document.querySelectorAll('form');
     forms.forEach(function (form) {
       form.addEventListener('submit', function () {
-        setTimeout(function () {
-          recordAndDisplay(adapter);
-        }, 120);
+        scheduleRecord(adapter);
       });
     });
 
     var calcButtons = document.querySelectorAll('#calcBtn, .btn-primary, [type="submit"], #sampleBtn');
     calcButtons.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        setTimeout(function () {
-          recordAndDisplay(adapter);
-        }, 140);
+        scheduleRecord(adapter);
       });
     });
 
     // Observer on results visibility or DOM change
     if (resultsEl) {
       var observer = new MutationObserver(function () {
-        if (resultsEl.classList.contains('visible') || window.getComputedStyle(resultsEl).display !== 'none') {
-          setTimeout(function () {
-            recordAndDisplay(adapter);
-          }, 90);
-        }
+        if (isResultsVisible(resultsEl)) scheduleRecord(adapter);
       });
       observer.observe(resultsEl, { attributes: true, attributeFilter: ['class', 'style'], childList: true, subtree: false });
     }
