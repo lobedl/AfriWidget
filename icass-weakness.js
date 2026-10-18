@@ -579,14 +579,6 @@
     // Check if already injected
     if (document.getElementById('weaknessAssessmentSection')) return;
 
-    if (!document.getElementById('afriwidget-weakness-ui')) {
-      var weaknessStyles = document.createElement('link');
-      weaknessStyles.id = 'afriwidget-weakness-ui';
-      weaknessStyles.rel = 'stylesheet';
-      weaknessStyles.href = '/weakness-ui.css';
-      document.head.appendChild(weaknessStyles);
-    }
-
     // 1. Add "Find My Weaknesses" button in calculator btn-row
     var btnRow = document.querySelector('#icassForm .btn-row');
     if (btnRow) {
@@ -629,7 +621,7 @@
     section.id = 'weaknessAssessmentSection';
     section.className = 'weakness-section';
     section.style.display = 'none';
-    section.setAttribute('aria-labelledby', 'wDiagnosticTitle');
+    section.setAttribute('aria-live', 'polite');
 
     section.innerHTML = [
       '<div class="weakness-card">',
@@ -637,7 +629,7 @@
       '  <div id="wIntroView" class="w-view">',
       '    <div class="w-header">',
       '      <span class="w-eyebrow">AfriWidget Diagnostic Assessment</span>',
-      '      <h2 id="wDiagnosticTitle" class="w-title">Find My TVET Weaknesses</h2>',
+      '      <h2 class="w-title">Find My TVET Weaknesses</h2>',
       '      <p class="w-subtitle">Evaluate your command of DHET 40% sub-minimums, ICASS continuous assessment weights, national exam crossover calculations, and moderation rules. Answer 10 multiple-choice questions to receive an instant diagnostic breakdown.</p>',
       '    </div>',
       '    <div id="wContextNotice" class="w-context-notice"></div>',
@@ -669,16 +661,16 @@
       '    <div class="w-quiz-top">',
       '      <div class="w-quiz-info">',
       '        <span id="wQuizBadge" class="w-tag">Comprehensive Diagnostic</span>',
-      '        <span class="w-quiz-counter" role="status" aria-live="polite">Question <strong id="wCurrentQNum">1</strong> of <span id="wQuestionTotal">10</span></span>',
+      '        <span class="w-quiz-counter">Question <strong id="wCurrentQNum">1</strong> of 10</span>',
       '      </div>',
       '      <div class="w-progress-track">',
-      '        <div id="wProgressBar" class="w-progress-fill" role="progressbar" aria-label="Question progress" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" style="width: 10%;"></div>',
+      '        <div id="wProgressBar" class="w-progress-fill" style="width: 10%;"></div>',
       '      </div>',
       '    </div>',
       '    <div class="w-question-box">',
       '      <span id="wQuestionTopic" class="w-question-topic">Topic</span>',
       '      <h3 id="wQuestionText" class="w-question-title">Question prompt</h3>',
-      '      <div id="wOptionsContainer" class="w-options-grid" role="group" aria-label="Answer options"></div>',
+      '      <div id="wOptionsContainer" class="w-options-grid" role="radiogroup" aria-label="Question options"></div>',
       '    </div>',
       '    <div id="wQuizValidation" class="w-validation-alert" style="display:none;">Please select an option before continuing.</div>',
       '    <div class="w-quiz-nav">',
@@ -977,15 +969,9 @@
 
     var topicMeta = TOPICS[q.topicId] || { name: 'General Assessment' };
     document.getElementById('wCurrentQNum').textContent = (activeQuestionIdx + 1);
-    var totalEl = document.getElementById('wQuestionTotal');
-    if (totalEl) totalEl.textContent = currentQuestions.length;
-    var progressBar = document.getElementById('wProgressBar');
-    progressBar.style.width = Math.round(((activeQuestionIdx + 1) / currentQuestions.length) * 100) + '%';
-    progressBar.setAttribute('aria-valuemax', currentQuestions.length);
-    progressBar.setAttribute('aria-valuenow', activeQuestionIdx + 1);
+    document.getElementById('wProgressBar').style.width = ((activeQuestionIdx + 1) * 10) + '%';
     document.getElementById('wQuestionTopic').textContent = topicMeta.name;
-    var questionTitle = document.getElementById('wQuestionText');
-    questionTitle.textContent = q.question;
+    document.getElementById('wQuestionText').textContent = q.question;
 
     var optionsBox = document.getElementById('wOptionsContainer');
     optionsBox.innerHTML = '';
@@ -994,10 +980,11 @@
 
     q.options.forEach(function (optText, oIdx) {
       var letter = String.fromCharCode(65 + oIdx); // A, B, C, D
-      var optBtn = document.createElement('button');
-      optBtn.type = 'button';
+      var optBtn = document.createElement('div');
       optBtn.className = 'w-option-item' + (selectedIdx === oIdx ? ' selected' : '');
-      optBtn.setAttribute('aria-pressed', selectedIdx === oIdx ? 'true' : 'false');
+      optBtn.setAttribute('role', 'radio');
+      optBtn.setAttribute('aria-checked', selectedIdx === oIdx ? 'true' : 'false');
+      optBtn.setAttribute('tabindex', '0');
 
       optBtn.innerHTML = [
         '<span class="w-option-letter">' + letter + '</span>',
@@ -1006,20 +993,20 @@
 
       function selectOption() {
         userAnswers[q.id] = oIdx;
-        Array.prototype.forEach.call(optionsBox.querySelectorAll('.w-option-item'), function (option, optionIndex) {
-          var isSelected = optionIndex === oIdx;
-          option.classList.toggle('selected', isSelected);
-          option.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
-        });
         document.getElementById('wQuizValidation').style.display = 'none';
+        renderActiveQuestion();
       }
 
       optBtn.addEventListener('click', selectOption);
+      optBtn.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectOption();
+        }
+      });
 
       optionsBox.appendChild(optBtn);
     });
-    questionTitle.setAttribute('tabindex', '-1');
-    questionTitle.focus({ preventScroll: true });
 
     // Navigation buttons
     var prevBtn = document.getElementById('wPrevBtn');

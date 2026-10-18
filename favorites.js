@@ -9,12 +9,6 @@
   'use strict';
 
   const STORAGE_KEY = 'afriwidget_favorites';
-  const REMOVED_TOOL_PATHS = new Set([
-    '/bmi-calculator', '/body-fat-calculator', '/calorie-burn-calculator',
-    '/daily-calorie-needs-calculator', '/ghana-nursing-training-admission-calculator',
-    '/healthy-weight-range-calculator', '/hydration-reminder-calculator',
-    '/ideal-weight-calculator', '/ovulation-cycle-calculator', '/water-intake-calculator'
-  ]);
 
   // Crisp SVG Icons (Zero Emojis)
   const ICONS = {
@@ -35,12 +29,7 @@
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return [];
       const parsed = JSON.parse(raw);
-      if (!Array.isArray(parsed)) return [];
-      const cleaned = parsed.filter(item => !item || !REMOVED_TOOL_PATHS.has(normalizeUrl(item.url)));
-      if (cleaned.length !== parsed.length) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cleaned));
-      }
-      return cleaned;
+      return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
       console.warn('AfriWidget Favourites: localStorage read error', e);
       return [];
@@ -1225,7 +1214,7 @@
     if (!currentPath || currentPath === '/' || currentPath === '/index') return;
 
     // Check if on a hub page (education, finance, etc) or policy page
-    const hubPages = ['/education', '/finance', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
+    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
     if (hubPages.includes(currentPath)) return;
 
     // Remove any obsolete legacy duplicate buttons if present in DOM
@@ -1342,6 +1331,7 @@
   // Dedicated Favourites Shelf on Homepage (if on index.html)
   
   const CATEGORY_ICONS = {
+    'Health': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>',
     'Education': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
     'Finance': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg>',
     'Productivity': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg>',
@@ -1496,7 +1486,7 @@
     }
     const currentPath = normalizeUrl(window.location.pathname);
     if (!currentPath || currentPath === '/' || currentPath === '/index') return;
-    const hubPages = ['/education', '/finance', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
+    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
     if (hubPages.includes(currentPath)) return;
 
     try {
@@ -1537,7 +1527,7 @@
     if (window.AfriWidgetRecentTools) return;
     const currentPath = normalizeUrl(window.location.pathname);
     if (!currentPath || currentPath === '/' || currentPath === '/index') return;
-    const hubPages = ['/education', '/finance', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
+    const hubPages = ['/education', '/finance', '/health', '/productivity', '/business', '/use-cases', '/about', '/contact', '/terms', '/privacy-policy', '/cookie-policy', '/adsense-disclaimer', '/404', '/faq'];
     if (hubPages.includes(currentPath)) return;
 
     if (!document.querySelector('script[src*="recent-tools.js"]')) {

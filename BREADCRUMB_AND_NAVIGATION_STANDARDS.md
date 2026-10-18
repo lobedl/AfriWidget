@@ -26,7 +26,7 @@ Use this lookup table to determine the exact path and link label for every tool:
 | :--- | :--- | :--- |
 | **Education & Academics**<br>(WASSCE, BECE, GPA, CWA, ZIMSEC, KCSE, JAMB, TVET, UACE, UCE, Nursing Training, Matric, APS) | `/education` | `<a href="/education" class="text-slate-400 hover:text-yellow-300 transition-colors">Education Tools</a>` |
 | **Finance & Wealth**<br>(Loan, Mortgage, Compound Interest, Savings, Currency, Debt, Salary) | `/finance` | `<a href="/finance" class="text-slate-400 hover:text-yellow-300 transition-colors">Finance Tools</a>` |
-| **Health & Wellness**<br>(Calorie, BMI, BMR, Water Intake, Macro, Ovulation, Pediatric Dosage, Hydration) | `` | `<a href="" class="text-slate-400 hover:text-yellow-300 transition-colors">Health Tools</a>` |
+| **Health & Wellness**<br>(Calorie, BMI, BMR, Water Intake, Macro, Ovulation, Pediatric Dosage, Hydration) | `/health` | `<a href="/health" class="text-slate-400 hover:text-yellow-300 transition-colors">Health Tools</a>` |
 | **Productivity & Utilities**<br>(QR Code, Password Generator, Minifier, Formatter, Unit Converter, Sitemap, Image Resizer) | `/productivity` | `<a href="/productivity" class="text-slate-400 hover:text-yellow-300 transition-colors">Productivity Tools</a>` |
 | **Business & Freelance**<br>(Invoice, Rate Pricing, Profit Margin, Startup Cost, Website Valuation) | `/business` | `<a href="/business" class="text-slate-400 hover:text-yellow-300 transition-colors">Business Tools</a>` |
 

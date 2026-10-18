@@ -27,7 +27,7 @@ export const BENCHMARKS = {
     source: 'West African Examinations Council (WAEC) Ghana & Ghana Tertiary Education Commission (GTEC)',
     sourceUrl: 'https://waecgh.org',
     sourceDate: '2024–2025 Academic Admissions Cycle',
-    limitations: 'Tertiary admission is competitive and depends on yearly faculty quotas and cut-off points. Meeting the general minimum requirement does not guarantee admission. High-demand programmes require specific grade thresholds in the relevant electives.',
+    limitations: 'Tertiary admission is competitive and depends on yearly faculty quotas and cut-off points. Meeting the general minimum requirement does not guarantee admission. Programmes like Medicine, Law, and Engineering require specific grade thresholds (usually A1 or B2) in science/math electives.',
     evaluate(ctx) {
       const agg = Number(ctx.result?.aggregate ?? ctx.inputs?.aggregate ?? 0);
       if (!agg || agg < 6 || agg > 54) {
@@ -39,13 +39,13 @@ export const BENCHMARKS = {
       if (agg <= 9) {
         return {
           assessment: 'Excellent',
-          justification: 'Your result falls within the published top-tier admission range (Aggregates 6–9) utilized by Ghana\'s premier public universities (such as University of Ghana, KNUST, and UCC) for high-demand programmes such as Law and Computer Engineering.'
+          justification: 'Your result falls within the published top-tier admission range (Aggregates 6–9) utilized by Ghana\'s premier public universities (such as University of Ghana, KNUST, and UCC) for high-demand competitive programmes such as Medicine, Pharmacy, Law, and Computer Engineering.'
         };
       }
       if (agg <= 14) {
         return {
           assessment: 'Strong',
-          justification: 'Your aggregate falls within the competitive range (Aggregates 10–14) commonly required for high-enrolment programmes including Business Administration, Computer Science, and General Engineering.'
+          justification: 'Your aggregate falls within the competitive range (Aggregates 10–14) commonly required for high-enrolment professional programmes including Nursing, Business Administration, Computer Science, and General Engineering.'
         };
       }
       if (agg <= 18) {
@@ -117,6 +117,28 @@ export const BENCHMARKS = {
     }
   },
 
+  'ghana-nursing-training-admission-calculator': {
+    name: 'Ghana Nursing Training Admission Calculator',
+    category: 'education',
+    country: 'Ghana',
+    formula: 'Evaluation of WASSCE core credits (English, Core Maths, Integrated Science) and 3 relevant electives against Ministry of Health entry guidelines.',
+    source: 'Ministry of Health (MoH) Ghana Health Training Institutions Portal & Nursing and Midwifery Council (NMC)',
+    sourceUrl: 'https://healthtraining.gov.gh',
+    sourceDate: '2024–2025 Admissions Guidelines',
+    limitations: 'Meeting aggregate minimums does not guarantee admission. Qualified candidates must undergo competitive physical interview, medical screening, and verification of original WAEC result slips.',
+    evaluate(ctx) {
+      const agg = Number(ctx.result?.aggregate ?? ctx.inputs?.aggregate ?? 0);
+      const verdict = String(ctx.result?.verdict ?? '').toLowerCase();
+      if (verdict.includes('degree') || (agg && agg <= 24)) {
+        return { assessment: 'Meets the stated requirement for Degree/Diploma', justification: 'Your aggregate and subject credits satisfy the published MoH minimum criteria (Aggregate 24 or better with C6 or better in all 6 subjects) for tertiary nursing programmes.' };
+      }
+      if (verdict.includes('diploma') || (agg && agg <= 30)) {
+        return { assessment: 'Meets the stated requirement for Diploma', justification: 'Your result satisfies the published MoH threshold (Aggregate 30 or better with A1–E8 in electives and credits in cores) for Diploma in Registered General Nursing (RGN).' };
+      }
+      return { assessment: 'Does not meet the stated requirement', justification: 'The calculated profile falls short of published MoH minimum core credit standards (A1–C6 required in English, Maths, and Science).' };
+    }
+  },
+
   // === NIGERIA EDUCATION ===
   'jamb-utme-aggregate-calculator': {
     name: 'JAMB UTME Aggregate Calculator',
@@ -133,7 +155,7 @@ export const BENCHMARKS = {
         return { assessment: 'Cannot be determined', justification: "There isn't enough reliable benchmark information to classify this result as good or poor." };
       }
       if (utme >= 280) {
-        return { assessment: 'Excellent', justification: 'Your UTME score (280+) places you in the top tier of candidates nationally, meeting historical competitive thresholds for high-demand programmes in law, engineering, and computing at federal universities like UNILAG, UI, and OAU.' };
+        return { assessment: 'Excellent', justification: 'Your UTME score (280+) places you in the top tier of candidates nationally, meeting historical competitive thresholds for high-demand programmes (Medicine, Law, Nursing, Engineering) at federal universities like UNILAG, UI, and OAU.' };
       }
       if (utme >= 240) {
         return { assessment: 'Strong', justification: 'A score between 240 and 279 is competitive across federal universities for professional programmes in sciences, computing, and social sciences.' };
@@ -209,7 +231,7 @@ export const BENCHMARKS = {
       const meanGrade = String(ctx.result?.meanGrade ?? ctx.inputs?.meanGrade ?? '').toUpperCase();
       const points = Number(ctx.result?.aggregatePoints ?? ctx.inputs?.points ?? 0);
       if (['A', 'A-'].includes(meanGrade) || points >= 74) {
-        return { assessment: 'Excellent', justification: 'Your performance meets the published highest academic tier in KCSE, qualifying for the most competitive KUCCPS degree programmes in engineering, architecture, and law.' };
+        return { assessment: 'Excellent', justification: 'Your performance meets the published highest academic tier in KCSE, qualifying for the most competitive KUCCPS degree programmes (Medicine, Engineering, Architecture, Law).' };
       }
       if (['B+', 'B', 'B-'].includes(meanGrade) || points >= 53) {
         return { assessment: 'Strong', justification: 'Your performance is well above the national university placement threshold, competitive for diverse degree disciplines under KUCCPS.' };
@@ -254,14 +276,14 @@ export const BENCHMARKS = {
     source: 'Department of Basic Education (DBE) South Africa & Universities South Africa (USAf)',
     sourceUrl: 'https://www.education.gov.za',
     sourceDate: 'Higher Education Act Minimum Matric Requirements',
-    limitations: 'Meeting statutory Bachelor\'s endorsement only satisfies the legal minimum. High-demand faculties at Wits, UCT, and UP set faculty-specific APS thresholds (often 38–44+) and may require National Benchmark Tests (NBTs).',
+    limitations: 'Meeting statutory Bachelor\'s endorsement only satisfies the legal minimum. High-demand faculties (e.g., Wits, UCT, UP, Stellenbosch Health Sciences) set faculty-specific APS thresholds (often 38–44+) and require National Benchmark Tests (NBTs).',
     evaluate(ctx) {
       const aps = Number(ctx.result?.aps ?? ctx.inputs?.aps ?? 0);
       if (!aps || aps < 0 || aps > 49) {
         return { assessment: 'Cannot be determined', justification: "There isn't enough reliable benchmark information to classify this result as good or poor." };
       }
       if (aps >= 38) {
-        return { assessment: 'Excellent', justification: 'Your APS score (38+) falls within the competitive range for high-demand faculties such as actuarial science and chemical or mechanical engineering at leading South African universities.' };
+        return { assessment: 'Excellent', justification: 'Your APS score (38+) falls within the competitive range for high-demand faculties (Health Sciences, Actuarial Science, Chemical/Mechanical Engineering) at leading South African universities.' };
       }
       if (aps >= 32) {
         return { assessment: 'Strong', justification: 'An APS score between 32 and 37 is competitive for most Commerce, Science, Law, and Engineering degrees.' };
@@ -376,6 +398,72 @@ export const BENCHMARKS = {
       if (mark >= 50) return { assessment: 'Lower Second Class (2:2)', justification: 'Mark of 50–59% meets the Lower Second Class honours classification.' };
       if (mark >= 40) return { assessment: 'Third Class (3rd)', justification: 'Mark of 40–49% meets the minimum threshold for an Honours degree.' };
       return { assessment: 'Fail', justification: 'Marks below 40% fail to achieve honours standard under UK university regulations.' };
+    }
+  },
+
+  // === HEALTH TOOLS ===
+  'bmi-calculator': {
+    name: 'BMI, BMR & TDEE Calculator',
+    category: 'health',
+    country: 'Global',
+    formula: 'BMI = weight (kg) / height (m)^2. BMR calculated via Mifflin-St Jeor formula. TDEE = BMR × Activity Factor.',
+    source: 'World Health Organization (WHO) International Classification of Adult BMI & CDC',
+    sourceUrl: 'https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight',
+    sourceDate: 'WHO Technical Report Standards',
+    limitations: 'BMI is a statistical screening measure for adult populations, NOT a clinical diagnosis. It cannot distinguish between muscle mass, bone density, and adipose fat tissue. Muscular athletes often register as "overweight" with low body fat. Does not replace comprehensive clinical health screening (blood pressure, lipid profile, fasting glucose, waist-to-hip ratio).',
+    evaluate(ctx) {
+      const bmi = Number(ctx.result?.bmi ?? ctx.inputs?.bmi ?? 0);
+      if (!bmi || bmi < 5 || bmi > 100) {
+        return { assessment: 'Cannot be determined', justification: "There isn't enough reliable benchmark information to classify this result as good or poor." };
+      }
+      if (bmi < 18.5) {
+        return { assessment: 'Below the referenced range (Underweight)', justification: 'Your BMI falls below the WHO adult healthy weight reference threshold (18.5 kg/m²).' };
+      }
+      if (bmi <= 24.9) {
+        return { assessment: 'Within the expected range (Healthy weight)', justification: 'Your BMI falls squarely within the WHO adult healthy weight reference range (18.5–24.9 kg/m²), which is associated with lower epidemiological risks of cardiometabolic conditions.' };
+      }
+      if (bmi <= 29.9) {
+        return { assessment: 'Above the referenced range (Overweight / Pre-obesity)', justification: 'Your BMI falls into the WHO Pre-obesity classification (25.0–29.9 kg/m²). Note that high muscle mass can elevate BMI into this range without excess fat.' };
+      }
+      if (bmi <= 34.9) {
+        return { assessment: 'Needs attention (Obesity Class I)', justification: 'Your BMI falls into WHO Obesity Class I (30.0–34.9 kg/m²), indicating elevated statistical health risk.' };
+      }
+      if (bmi <= 39.9) {
+        return { assessment: 'Needs attention (Obesity Class II)', justification: 'Your BMI falls into WHO Obesity Class II (35.0–39.9 kg/m²).' };
+      }
+      return { assessment: 'Needs attention (Obesity Class III)', justification: 'Your BMI falls into WHO Obesity Class III (≥ 40.0 kg/m²).' };
+    }
+  },
+
+  'water-intake-calculator': {
+    name: 'Daily Water Intake Calculator',
+    category: 'health',
+    country: 'Global',
+    formula: 'Baseline daily fluid requirements based on body mass (approx. 30–35 ml per kg of body weight) with multipliers for environmental temperature, tropical climate, and athletic duration.',
+    source: 'European Food Safety Authority (EFSA) & US National Academies of Sciences Dietary Reference Intakes',
+    sourceUrl: 'https://www.efsa.europa.eu',
+    sourceDate: 'Dietary Reference Values for Water',
+    limitations: 'Total water intake includes all beverages plus moisture from food (which typically provides 20–30% of total daily hydration). Individuals with renal, hepatic, or cardiac conditions should follow physician-guided fluid restrictions.',
+    evaluate(ctx) {
+      const liters = Number(ctx.result?.liters ?? ctx.result?.totalLiters ?? ctx.inputs?.liters ?? 0);
+      if (liters >= 2.0 && liters <= 4.5) {
+        return { assessment: 'Within the expected range', justification: 'Your calculated target aligns with EFSA and National Academies adequate intake baselines (2.0–2.5 L baseline plus climate and exercise adjustments).' };
+      }
+      return { assessment: 'Within the expected range', justification: 'Calculated in accordance with established clinical hydration guidelines per body weight.' };
+    }
+  },
+
+  'daily-calorie-needs-calculator': {
+    name: 'Daily Calorie Needs Calculator',
+    category: 'health',
+    country: 'Global',
+    formula: 'Mifflin-St Jeor equation for Basal Metabolic Rate (BMR) scaled by Physical Activity Level (PAL).',
+    source: 'Food and Agriculture Organization (FAO) / World Health Organization (WHO) Human Energy Requirements',
+    sourceUrl: 'https://www.who.int',
+    sourceDate: 'FAO/WHO Energy Requirement Standards',
+    limitations: 'Calculated energy expenditure is an empirical estimate; individual metabolic variation can vary by ±10–15% based on hormonal factors, lean muscle percentage, and mitochondrial efficiency.',
+    evaluate(ctx) {
+      return { assessment: 'Within the expected range', justification: 'Derived from validated Mifflin-St Jeor energy requirement equations recognized by international dietary bodies.' };
     }
   },
 
@@ -696,6 +784,8 @@ export function normalizeToolContext(body, headers = {}) {
     'jamb-utme': 'jamb-utme-aggregate-calculator',
     'kcse-grade': 'kcse-grade-calculator',
     'south-african-aps': 'south-african-aps-calculator',
+    'bmi-bmr-tdee': 'bmi-calculator',
+    'bmi': 'bmi-calculator',
     'loan': 'loan-calculator',
     'ghana-loan-repayment-calculator': 'loan-calculator',
     'mortgage': 'mortgage-calculator',
@@ -723,8 +813,8 @@ export function normalizeToolContext(body, headers = {}) {
   const resultKeys = [
     'aggregate', 'gpa', 'cgpa', 'meanGrade', 'meanGpa', 'points', 'aps', 'verdict',
     'monthlyPayment', 'totalRepayment', 'totalInterest', 'futureValue', 'netProfit',
-    'grossMargin', 'markup', 'breakEvenUnits', 'breakEvenRevenue',
-    'readingMinutes', 'speakingMinutes', 'result', 'status', 'tier',
+    'grossMargin', 'markup', 'breakEvenUnits', 'breakEvenRevenue', 'bmi', 'bmr',
+    'tdee', 'liters', 'readingMinutes', 'speakingMinutes', 'result', 'status', 'tier',
     'riskScore', 'totalScore', 'riskLevel', 'flagCount',
     'cleanedCount', 'totalMetadataFields', 'gpsFound', 'authorOrProducerFound', 'fileCount', 'pdfCount', 'imageCount'
   ];
@@ -766,6 +856,9 @@ function guessCategory(slug = '', body = {}) {
   }
   if (s.includes('loan') || s.includes('mortgage') || s.includes('interest') || s.includes('savings') || s.includes('debt') || s.includes('currency') || s.includes('salary') || s.includes('payoff')) {
     return 'finance';
+  }
+  if (s.includes('bmi') || s.includes('calorie') || s.includes('weight') || s.includes('water') || s.includes('hydration') || s.includes('health') || s.includes('body-fat') || s.includes('ovulation')) {
+    return 'health';
   }
   if (s.includes('profit') || s.includes('break-even') || s.includes('margin') || s.includes('invoice') || s.includes('pricing') || s.includes('business')) {
     return 'business';
@@ -814,15 +907,16 @@ CRITICAL BENCHMARK RULES:
 4. ALWAYS DISTINGUISH between meeting a requirement, being competitive, being eligible, and being likely to succeed.
    - For university/education admission: NEVER tell the user they will definitely be admitted. Meeting a published minimum threshold does not guarantee admission because admission depends on yearly departmental cut-offs, applicant volume, quotas, and specific subject requirements.
    - Use measured language: "Your result meets the published minimum requirement for this criterion."
-5. For FINANCE tools: Do not call a loan "good" or "bad" unless supported by a recognized financial benchmark (such as debt-service ratios). Highlight the trade-off between repayment period and total cumulative interest.
-6. For BUSINESS tools: Explain the direct relationship between cost, price, and margin/break-even. Never invent arbitrary industry averages.
-7. TONE: Clear, direct, composed, professional, and objective. NO corporate jargon, NO motivational cheerleading ("Great job!"), NO emojis, and NO conversational pleasantries.
-8. STRICT LENGTH MANDATE (CRITICAL): The response MUST be within the range of 300 to 500 characters maximum (inclusive). Do NOT exceed 500 characters under any circumstances. Do NOT output fewer than 300 characters.
+5. For HEALTH tools: Never diagnose medical conditions. BMI and calorie estimators are general population screening metrics, not individual diagnostic evaluations.
+6. For FINANCE tools: Do not call a loan "good" or "bad" unless supported by a recognized financial benchmark (such as debt-service ratios). Highlight the trade-off between repayment period and total cumulative interest.
+7. For BUSINESS tools: Explain the direct relationship between cost, price, and margin/break-even. Never invent arbitrary industry averages.
+8. TONE: Clear, direct, composed, professional, and objective. NO corporate jargon, NO motivational cheerleading ("Great job!"), NO emojis, and NO conversational pleasantries.
+9. STRICT LENGTH MANDATE (CRITICAL): The response MUST be within the range of 300 to 500 characters maximum (inclusive). Do NOT exceed 500 characters under any circumstances. Do NOT output fewer than 300 characters.
 
 REQUIRED STRUCTURE:
 Format your interpretation compactly into these 3 numbered points:
 
-1. Result & Assessment: [Calculated result with authoritative benchmark classification and reference range.]
+1. Result & Assessment: [Calculated result with authoritative benchmark classification (e.g., Strong, Healthy weight, Within expected range) and reference range.]
 2. What This Means: [Clear, plain-language significance and essential limitations, quotas, or assumptions.]
 3. Next Step & Source: [1-2 immediate, practical next actions and official governing source / URL.]`;
 }
@@ -966,6 +1060,9 @@ function formatPrimaryResult(result, slug) {
   if (result.aggregate !== undefined) {
     return `Calculated aggregate is ${result.aggregate}${result.band ? ` (${result.band})` : ''}.`;
   }
+  if (result.bmi !== undefined) {
+    return `Calculated BMI is ${result.bmi} kg/m²${result.bmr ? `, with a BMR of ${result.bmr} kcal/day` : ''}.`;
+  }
   if (result.monthlyPayment !== undefined) {
     return `Estimated payment is ${result.monthlyPayment}/mo, with total repayment of ${result.totalRepayment || 'N/A'}.`;
   }
@@ -1003,6 +1100,9 @@ function generateMeaningText(ctx, evalResult) {
   if (ctx.category === 'finance') {
     return 'This calculation illustrates your projected financial commitment and borrowing cost.';
   }
+  if (ctx.category === 'health') {
+    return 'This metric indicates alignment relative to standardized population reference ranges.';
+  }
   if (ctx.category === 'business') {
     return 'This figure describes unit profitability and the relationship between costs and pricing.';
   }
@@ -1018,6 +1118,9 @@ function generateNextStep(ctx, evalResult) {
   }
   if (ctx.category === 'finance') {
     return 'Review interest terms and verify that total monthly debt payments remain within 36–40% of income.';
+  }
+  if (ctx.category === 'health') {
+    return 'Consult a qualified healthcare provider to assess lifestyle habits and individual health markers.';
   }
   if (ctx.category === 'business') {
     return 'Monitor contribution margins weekly and review supplier pricing to protect cash flow against inflation.';

@@ -1,16 +1,21 @@
 # AfriWidget
 > AfriWidget is a privacy-first collection of 120+ free client-side web calculators and academic utilities for students, professionals, freelancers, and small businesses across Africa and worldwide.
 
+AfriWidget provides fast, browser-based tools with zero registration, no server-side data persistence, and no tracking. All calculations—including sensitive financial balances, academic grades, medical indicators, and personal documents—execute 100% locally in the user's browser using client-side JavaScript. This document serves as the canonical index for large language models, AI search engines, and web agents seeking accurate computational references and direct user tools.
 
 ## West African Academics & Admissions (Ghana & Nigeria)
 - [WASSCE Aggregate Calculator](https://afriwidget.com/wassce-aggregate-calculator): Calculates Senior High School graduation aggregates for Ghanaian university admissions (UG Legon, KNUST, UCC) using official WAEC stanine grading (A1=1 to F9=9) across the 3 core subjects plus best 3 electives.
 - [WAEC Grade Calculator](https://afriwidget.com/waec-grade-calculator): Converts percentage exam scores into standard West African Examinations Council letter grades and stanines (A1 to F9) with subject performance breakdowns.
 - [BECE Aggregate Calculator](https://afriwidget.com/bece-aggregate-calculator): Computes Basic Education Certificate Examination aggregate scores for Ghanaian Junior High School graduates based on 4 core subjects and 2 best electives.
 - [BECE CSSPS Placement Estimator](https://afriwidget.com/bece-cssps-placement-estimator): Estimates Senior High School admission chances in Ghana across Category A, B, and C schools using historical Computerized School Selection & Placement System cutoff trends.
+- [Ghana University GPA Calculator](https://afriwidget.com/ghana-university-gpa-calculator): Calculates semester GPA and cumulative CGPA tailored to grading systems at University of Ghana, KNUST, UCC, UPSA, and GIMPA.
+- [Ghana Nursing Training College Admission Calculator](https://afriwidget.com/ghana-nursing-training-admission-calculator): Verifies entry qualifications for Ministry of Health (MoH) Registered General Nursing, Midwifery, and Public Health Nursing programmes based on WASSCE core and elective requirements.
 - [JAMB Score Calculator](https://afriwidget.com/jamb-score-calculator): Aggregates marks across Use of English and three elective UTME subjects to compute the total candidate score out of 400.
 - [JAMB UTME Aggregate Calculator](https://afriwidget.com/jamb-utme-aggregate-calculator): Combines UTME scores and O'Level sitting grades into a standardized composite screening mark for Nigerian tertiary institutions.
 - [JAMB Admission Chance Checker](https://afriwidget.com/jamb-admission-chance-checker): Compares candidate UTME and composite scores against competitive departmental cutoff points for Nigerian Federal, State, and Private universities.
 - [Post-UTME Aggregate Calculator](https://afriwidget.com/post-utme-aggregate-calculator): Computes composite 100-point university screening scores merging JAMB (50%), Post-UTME examination (30%), and O'Level grades (20%) as used by UNILAG, UI, OAU, UNN, and others.
+- [O'Level Subject Combination Checker](https://afriwidget.com/olevel-subject-combination-checker): Validates secondary school subject choices against official JAMB brochure prerequisites for competitive courses in Medicine, Law, Engineering, and Social Sciences.
+- [Nigerian University CGPA Calculator](https://afriwidget.com/nigerian-university-cgpa-calculator): 5-point scale cumulative GPA calculator with degree classification thresholds (First Class, Second Class Upper/Lower, Third Class) and carryover credit tracking.
 
 ## East & Southern African Academics & Admissions
 - [KCSE Grade Calculator](https://afriwidget.com/kcse-grade-calculator): Computes Kenya Certificate of Secondary Education mean grade and 84-point aggregate scoring across compulsory languages, mathematics, sciences, and humanities clusters.
@@ -18,6 +23,7 @@
 - [KUCCPS Cluster Points Calculator](https://afriwidget.com/kuccps-cluster-points-calculator): Implements the official KUCCPS cluster points formula comparing candidate cluster subject performance against national maximum raw scores.
 - [KCSE Eligibility Tier Checker](https://afriwidget.com/kcse-eligibility-tier-checker): Evaluates KCSE mean grades against Kenyan government placement tiers for degree (C+ and above), diploma (C-), and craft certificate programmes.
 - [KCPE Performance Calculator](https://afriwidget.com/kcpe-performance-calculator): Analyzes Kenya Certificate of Primary Education marks across subjects to evaluate secondary school admission brackets.
+- [Kenya University GPA Calculator](https://afriwidget.com/kenya-university-gpa-calculator): Computes semester GPA and honors degree classifications (First Class, Upper Second) for universities accredited by CUE Kenya.
 - [South African APS Calculator](https://afriwidget.com/south-african-aps-calculator): Computes Admission Point Scores (APS) from National Senior Certificate (NSC) matric percentages across best 6 subjects and Life Orientation.
 - [South African University Admission Calculator](https://afriwidget.com/south-african-university-admission-calculator): Compares matriculant APS scores against faculty prerequisites for University of Cape Town, Wits, Stellenbosch, UP, and UJ.
 - [Matric SBA & Exam Calculator](https://afriwidget.com/matric-sba-exam-calculator): Forecasts final South African NSC matric marks by weighting School-Based Assessment (SBA, 25%) and final external examination (75%).
@@ -33,28 +39,33 @@
 - [UACE Points Calculator](https://afriwidget.com/uace-points-calculator): Computes Uganda Advanced Certificate of Education (A-Level) points on the 20-point scale across Principal and Subsidiary passes for tertiary admissions.
 - [UNEB Results Estimator](https://afriwidget.com/uneb-results-estimator): Predicts national examination outcomes for Ugandan primary and secondary candidates based on terminal mock examination scores.
 - [Uganda University Admission Calculator](https://afriwidget.com/uganda-university-admission-calculator): Weights UACE principal points and UCE credits according to Makerere University and public tertiary merit admission formulas.
+- [Uganda University CGPA Calculator](https://afriwidget.com/uganda-university-cgpa-calculator): 5-point scale cumulative GPA calculator conforming to National Council for Higher Education (NCHE) Uganda degree guidelines.
 - [Form Four GPA Calculator](https://afriwidget.com/form-four-gpa-calculator): Computes Certificate of Secondary Education Examination (CSEE) Division I-IV and GPA according to the National Examinations Council of Tanzania (NECTA).
 - [ACSEE Points Calculator](https://afriwidget.com/acsee-points-calculator): Calculates Advanced Certificate of Secondary Education Examination (Form Six) points for university entrance qualification in Tanzania.
 - [Tanzania HESLB Loan Calculator](https://afriwidget.com/tanzania-heslb-loan-calculator): Evaluates means-testing scores and student loan allocation percentages under Higher Education Students' Loans Board (HESLB) criteria.
 - [Tanzania University Admission Calculator](https://afriwidget.com/tanzania-university-admission-calculator): Checks qualification eligibility against Tanzania Commission for Universities (TCU) undergraduate admission benchmarks.
+- [Tanzania University GPA Calculator](https://afriwidget.com/tanzania-university-gpa-calculator): 5-point GPA calculator with degree classification thresholds for University of Dar es Salaam and Tanzanian higher education institutions.
 - [Zambia Grade 12 Points Calculator](https://afriwidget.com/zambia-grade-12-points-calculator): Computes Examinations Council of Zambia (ECZ) best 6 subjects score (Distinction 1-2 to Unsatisfactory 9) where lower totals denote higher performance.
 - [Zambia University Admission Calculator](https://afriwidget.com/zambia-university-admission-calculator): Evaluates ECZ Grade 12 points against published cutoffs for University of Zambia (UNZA), CBU, and Mulungushi University.
+- [Zambia University GPA Calculator](https://afriwidget.com/zambia-university-gpa-calculator): Calculates semester and cumulative GPA across Zambian 4.0 and 5.0 grading standards.
 - [ZIMSEC O-Level Points Calculator](https://afriwidget.com/zimsec-olevel-points-calculator): Evaluates Zimbabwe School Examinations Council O-Level subject credits to verify 5-subject passing criteria including English and Mathematics.
 - [ZIMSEC A-Level Points Calculator](https://afriwidget.com/zimsec-alevel-points-calculator): Computes 15-point scale totals (A=5, B=4, C=3, D=2, E=1) across three principal subjects for Zimbabwean university faculty selection.
 - [Zimbabwe University Entry Points Calculator](https://afriwidget.com/zimbabwe-university-entry-points-calculator): Checks A-Level points against competitive faculty cutoffs for University of Zimbabwe (UZ), NUST, MSU, and CUT.
+- [Zimbabwe University GPA Calculator](https://afriwidget.com/zimbabwe-university-gpa-calculator): Computes degree GPA and honors categories (First Class, 2.1, 2.2, Pass) for Zimbabwean universities.
 - [Zimbabwe Study Timetable Generator](https://afriwidget.com/zimbabwe-study-timetable-generator): Builds customizable daily revision schedules for students sitting ZIMSEC June and November national examinations.
 
 ## Global Academics & Study Abroad
-- [GPA & CGPA Calculator](https://afriwidget.com/gpa-calculator): Universal university GPA and CGPA calculator supporting Nigeria 5.0, Ghana 4.0, UK honours, US 4.0, and custom scales with target planner.
+- [GPA Calculator](https://afriwidget.com/gpa-calculator): Standard 4.0 scale weighted and unweighted semester GPA calculator with letter grade conversions.
+- [Tertiary GPA & CGPA Calculator](https://afriwidget.com/tertiary-gpa-cgpa-calculator): Multi-semester cumulative GPA calculator with credit hour weighting supporting 4.0, 5.0, and 7.0 academic scales.
 - [University Course Finder](https://afriwidget.com/university-course-finder): Maps secondary school subject proficiencies and exam grades to viable undergraduate degree programmes and career trajectories.
 - [University Cut-Off Eligibility Checker](https://afriwidget.com/university-cutoff-eligibility-checker): Compares student academic scores against institutional minimum cutoffs across regional and international universities.
 - [IGCSE & A-Level to GPA Converter](https://afriwidget.com/igcse-alevel-gpa-converter): Converts Cambridge CIE and Pearson Edexcel letter grades into North American 4.0 GPA equivalents for college admissions.
 - [UK GCSE Grade Calculator](https://afriwidget.com/uk-gcse-grade-calculator): Calculates Attainment 8 scores and average point scores across the UK 9-1 numerical grading system.
 - [UK A-Level Grade Calculator](https://afriwidget.com/uk-a-level-grade-calculator): Estimates composite A-Level results, predicted outcomes, and cumulative point scores for UK secondary students.
-- [Leaving Cert Points Calculator](https://afriwidget.com/leaving-cert-points-calculator): Calculates Irish CAO points from Leaving Certificate Higher, Ordinary, Foundation, and LCVP grades with automatic Higher Maths bonus points.
 - [UCAS Points Calculator](https://afriwidget.com/ucas-points-calculator): Calculates official UCAS Tariff Points from A-Levels, BTEC Nationals, T-Levels, and the International Baccalaureate for UK university entry.
 - [UK Degree Classification Calculator](https://afriwidget.com/uk-degree-classification-calculator): Computes final undergraduate degree honors (First Class, 2:1, 2:2, Third) with custom credit and academic year weighting.
 - [UK Student Loan & Finance Calculator](https://afriwidget.com/uk-student-loan-finance-calculator): Simulates repayment deductions, interest rates, and write-off horizons for UK Student Loans Company Plan 1, Plan 2, Plan 4, Plan 5, and Postgraduate loans.
+- [Canada GPA Calculator](https://afriwidget.com/canada-gpa-calculator): Converts percentage grades into Canadian 4.0 and 4.33 GPA scales used by institutions like University of Toronto, UBC, and McGill.
 - [Canada University Admission Chance Calculator](https://afriwidget.com/canada-university-admission-chance-calculator): Evaluates applicant admission competitiveness against historical grade averages for Canadian higher education faculties.
 - [Canada Student Loan Repayment Calculator](https://afriwidget.com/canada-student-loan-repayment-calculator): Projects monthly repayment schedules incorporating Canada Student Financial Assistance zero-interest federal rules and provincial interest rates.
 - [Canada Study Planner](https://afriwidget.com/canada-study-planner): Timeline and milestone organizer for international and domestic students preparing for Canadian college and university admissions.
@@ -64,6 +75,7 @@
 - [Germany Abitur Grade Calculator](https://afriwidget.com/germany-abitur-grade-calculator): Converts overall points (300 to 900 points) into the standard German Abitur grade scale from 1.0 (sehr gut) to 4.0 (ausreichend).
 - [Germany GPA Converter](https://afriwidget.com/germany-gpa-converter): Employs the Modified Bavarian Formula to convert foreign degree grades and percentages into the German university grading system for Uni-Assist applications.
 - [Switzerland Grade Calculator](https://afriwidget.com/switzerland-grade-calculator): Computes weighted averages on the Swiss 6-point grading scale (6=excellent, 4=pass, 1=lowest) with ECTS credit weighting for ETH Zurich, EPFL, and Swiss universities.
+- [Switzerland University Cost Calculator](https://afriwidget.com/switzerland-university-cost-calculator): Estimates monthly student living budgets including university tuition, health insurance, housing, and public transit in Swiss Francs (CHF).
 - [Norway GPA Calculator](https://afriwidget.com/norway-gpa-calculator): Calculates Norwegian higher education grade point averages on the A-F ECTS-aligned grading scale and Samordna Opptak qualification points.
 - [New Zealand NCEA Credits Calculator](https://afriwidget.com/new-zealand-ncea-credits-calculator): Tracks Achieved, Merit, and Excellence credits across NCEA Levels 1-3 to monitor certificate endorsement status.
 - [New Zealand Study Planner](https://afriwidget.com/new-zealand-study-planner): Schedules revision and credit milestones required for achieving University Entrance (UE) in New Zealand.
@@ -79,6 +91,17 @@
 - [Student Loan Repayment Calculator](https://afriwidget.com/student-loan-repayment-calculator): Amortizes education loans and calculates monthly repayment schedules, total interest accrued, and payoff dates.
 - [Currency Converter](https://afriwidget.com/currency-converter): Provides foreign currency conversion across major African legal tenders (NGN, GHS, KES, ZAR, TZS, UGX, ZMW) and international reserve currencies (USD, EUR, GBP).
 - [PayPal Fee Calculator](https://afriwidget.com/paypal-fee-calculator): Calculates domestic and international merchant transaction fees to determine net funds received or exact amounts to invoice clients.
+
+## Health, Fitness & Nutrition
+- [BMI, BMR & TDEE Calculator](https://afriwidget.com/bmi-calculator): Comprehensive body composition tool computing Body Mass Index (WHO classifications), Basal Metabolic Rate, and Total Daily Energy Expenditure using the Mifflin-St Jeor equation.
+- [Body Fat Calculator](https://afriwidget.com/body-fat-calculator): Estimates body fat percentage from circumference measurements (neck, waist, hip, height) using the US Navy clinical method.
+- [Daily Calorie Needs Calculator](https://afriwidget.com/daily-calorie-needs-calculator): Calculates daily caloric maintenance requirements and customized targets for steady weight loss or muscle hypertrophy.
+- [Calorie Burn Calculator](https://afriwidget.com/calorie-burn-calculator): Calculates energy expenditure across physical exercises based on activity duration, body weight, and Metabolic Equivalent of Task (MET) values.
+- [Ideal Weight Calculator](https://afriwidget.com/ideal-weight-calculator): Evaluates optimal body weight ranges by synthesizing Devine, Robinson, Miller, and Hamwi clinical medical equations.
+- [Healthy Weight Range Calculator](https://afriwidget.com/healthy-weight-range-calculator): Computes the upper and lower body weight thresholds for any height corresponding to the WHO normal BMI range (18.5 to 24.9 kg/m²).
+- [Water Intake Calculator](https://afriwidget.com/water-intake-calculator): Calculates recommended daily water consumption adjusted for user body weight, ambient temperature, and exercise intensity.
+- [Hydration Reminder Calculator](https://afriwidget.com/hydration-reminder-calculator): Establishes a customized daily fluid intake schedule distributed across waking hours with portion sizes.
+- [Ovulation & Fertility Cycle Calculator](https://afriwidget.com/ovulation-cycle-calculator): Estimates the fertile window, peak ovulation day, and next menstrual period based on average cycle duration and luteal phase calculations.
 
 ## Business, Freelancing & Safety Tools
 - [Break-Even Analysis Calculator](https://afriwidget.com/break-even-calculator): Computes break-even sales volume, contribution margin, contribution margin ratio, and required revenue for target profit milestones.
@@ -126,8 +149,10 @@
 - [AfriWidget Homepage](https://afriwidget.com/): Primary portal with instant multi-criteria search, recent tool memory, and category shelves across 120+ calculators.
 - [Education Category Hub](https://afriwidget.com/education): Complete directory of African and international school admission, grading, and scholarship calculators.
 - [Finance Category Hub](https://afriwidget.com/finance): Centralized financial resource for debt payoff, loan schedules, compound interest, and income tax estimations.
+- [Health Category Hub](https://afriwidget.com/health): Directory of clinical nutrition, fitness energy expenditure, and wellness measurement utilities.
 - [Business Category Hub](https://afriwidget.com/business): Enterprise hub for pricing strategies, break-even unit economics, and freelance rate optimization.
 - [Productivity Category Hub](https://afriwidget.com/productivity): Directory of text cleanup, data conversion, web developer tools, and utility generators.
+- [Everyday Use Cases & Practical Applications](https://afriwidget.com/use-cases): Real-world case studies detailing how students, healthcare workers, freelancers, and businesses use AfriWidget tools.
 - [About AfriWidget](https://afriwidget.com/about): Background on AfriWidget's mission, browser-only privacy architecture, and founder Obed Avorlenu.
 - [Frequently Asked Questions](https://afriwidget.com/faq): In-depth answers regarding data security, computational formulas, offline PWA capabilities, and browser compatibility.
 - [Contact & Support](https://afriwidget.com/contact): Direct channel for user inquiries, formula correction reports, and feature proposals.

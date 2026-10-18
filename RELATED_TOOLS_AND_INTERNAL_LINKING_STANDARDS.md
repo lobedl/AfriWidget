@@ -41,7 +41,7 @@ Directly within the tool's result container or dynamic results panel, display a 
 
 #### Example Pattern:
 - **Form Four GPA Calculator Result**: "🎉 Finished Form 4? **[Calculate Form 6 ACSEE Points →](/acsee-points-calculator)** or **[Explore TCU University Cut-offs →](/tanzania-university-admission-calculator)**"
-- **BMI Calculator Result**: "🎯 Next Step: **[Calculate Your Daily Calorie Deficit →](/calorie-deficit-planner)** or **[Check Healthy Weight Range →]()**"
+- **BMI Calculator Result**: "🎯 Next Step: **[Calculate Your Daily Calorie Deficit →](/calorie-deficit-planner)** or **[Check Healthy Weight Range →](/healthy-weight-range-calculator)**"
 - **JAMB Score Calculator Result**: "🎓 Ready for admission screening? **[Calculate Post-UTME Aggregate Score →](/post-utme-aggregate-calculator)**"
 
 ---

@@ -588,26 +588,37 @@
       fields: () => [$('#jambScore'), ...$$('.jamb-grade')],
       calculate: () => $('#jambCalculate')?.click()
     },
-
-    'gpa-calculator': {
-      fields: () => [
-        $('#profileSelect'),
-        $('#customScale'),
-        $('#prevCgpa'),
-        $('#prevCredits'),
-        ...$$('.course-card input, .course-card select, .course-row input, .course-row select')
-      ].filter(Boolean),
+    'tertiary-gpa-cgpa-calculator': {
+      fields: () => [$('#gpaScale'), ...$$('.course-row input, .course-row select')].filter(Boolean),
       restore(values) {
-        const profVal = values.find(item => item.key === 'profileSelect' || item.key === 'profile')?.value;
-        if (profVal && $('#profileSelect')) {
-          $('#profileSelect').value = profVal;
-          const opt = $(`[data-value="${profVal}"]`);
-          if (opt) opt.click();
+        const rows = values.filter(item => item.key.startsWith('course'));
+        const scaleEl = $('#gpaScale');
+        if (scaleEl) {
+          scaleEl.value = values.find(item => item.key === 'scale')?.value || scaleEl.value;
         }
-        ['customScale', 'prevCgpa', 'prevCredits'].forEach(id => {
-          const item = values.find(v => v.key === id);
-          if (item && $('#' + id)) $('#' + id).value = item.value;
+        if (!rows.length) return;
+        const grouped = {};
+        rows.forEach(item => {
+          const match = item.key.match(/^course(\d+)(Name|Credits|Grade)$/);
+          if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
         });
+        const add = $('#addCourse');
+        Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
+          const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
+          if (!row) return;
+          const nameEl = $('.course-name', row);
+          const credEl = $('.credit-input', row);
+          const gradeEl = $('.grade-select', row);
+          if (nameEl) nameEl.value = grouped[number].Name || '';
+          if (credEl) credEl.value = grouped[number].Credits || '';
+          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
+        });
+      },
+      calculate: () => $('#gpaCalculate')?.click()
+    },
+    'gpa-calculator': {
+      fields: () => $$('.course-row input, .course-row select'),
+      restore(values) {
         const rows = values.filter(item => item.key.startsWith('course'));
         if (!rows.length) return;
         const grouped = {};
@@ -615,43 +626,16 @@
           const match = item.key.match(/^course(\d+)(Name|Grade|Credits)$/);
           if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
         });
-        const addBtn = $('#addCourseBtn') || $('#addRowBtn');
+        const add = $('#addRowBtn');
         Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
-          const card = $$('.course-card, .course-row')[index] || (addBtn ? (addBtn.click(), $$('.course-card, .course-row').at(-1)) : null);
-          if (!card) return;
-          const nameEl = $('.course-name', card) || $('input[type="text"]', card);
-          const credEl = $('.course-credits', card) || $('.credit-input', card);
-          const gradeEl = $('.course-grade', card) || $('select', card);
-          if (nameEl && grouped[number].Name) nameEl.value = grouped[number].Name;
-          if (credEl && grouped[number].Credits) credEl.value = grouped[number].Credits;
-          if (gradeEl && grouped[number].Grade) gradeEl.value = grouped[number].Grade;
-        });
-      },
-      calculate: () => $('#calcBtn')?.click() || $('#calculateBtn')?.click()
-    },
-    'leaving-cert-points-calculator': {
-      fields: () => $$('.subject-card input, .subject-card select'),
-      restore(values) {
-        const rows = values.filter(item => item.key.startsWith('subject'));
-        if (!rows.length) return;
-        const grouped = {};
-        rows.forEach(item => {
-          const match = item.key.match(/^subject(\d+)(Name|Level|Grade)$/);
-          if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
-        });
-        const addBtn = $('#addSubjectBtn') || $('#addBtn');
-        Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
-          const card = $$('.subject-card')[index] || (addBtn ? (addBtn.click(), $$('.subject-card').at(-1)) : null);
-          if (!card) return;
-          const nameEl = $('.subject-name', card);
-          const levelEl = $('.subject-level', card);
-          const gradeEl = $('.subject-grade', card);
-          if (nameEl && grouped[number].Name) nameEl.value = grouped[number].Name;
-          if (levelEl && grouped[number].Level) {
-            levelEl.value = grouped[number].Level;
-            levelEl.dispatchEvent(new Event('change'));
-          }
-          if (gradeEl && grouped[number].Grade) gradeEl.value = grouped[number].Grade;
+          const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
+          if (!row) return;
+          const nameEl = $('.course-name', row);
+          const credEl = $('.credit-input', row);
+          const gradeEl = $('.grade-select', row);
+          if (nameEl) nameEl.value = grouped[number].Name || '';
+          if (credEl) credEl.value = grouped[number].Credits || '';
+          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
         });
       },
       calculate: () => $('#calcBtn')?.click()
@@ -781,10 +765,17 @@
       },
       calculate: () => $$('.igcse-row input, .igcse-row select').forEach(field => field.dispatchEvent(new Event('input', { bubbles: true })))
     },
-
+    'canada-gpa-calculator': {
+      fields: () => [$('#priorCgpaInput'), $('#priorCreditsInput'), ...$$('.course-row input, .course-row select')],
+      calculate: () => $('#calculateGpaBtn')?.click()
+    },
     'canada-university-admission-chance-calculator': {
       fields: () => [$('#targetUniversity'), $('#targetProgram'), $('#suppTier'), $('#adjFactor'), ...$$('.subj-input')],
       calculate: () => $('#calcAdmissionsBtn')?.click()
+    },
+    'canada-student-loan-repayment-calculator': {
+      fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
+      calculate: () => $('#calcLoanBtn')?.click()
     },
     'document-converter': {
       fields: () => [$('#textInput'), $('#targetSelect')],

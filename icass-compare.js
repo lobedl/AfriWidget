@@ -198,80 +198,6 @@
       '.compare-export-actions .btn-secondary { width: auto; min-height: 44px; padding: 0.625rem 1.25rem; font-size: 0.875rem; }'
     ].join('\n');
 
-    style.textContent += [
-      '',
-      '/* AfriWidget gold-and-ink comparison refresh */',
-      '.compare-workspace-wrap { --cmp-ink: #111827; --cmp-gold: #facc15; width: 100%; min-width: 0; color: var(--cmp-ink); }',
-      '.compare-workspace-wrap button, .compare-workspace-wrap input, .compare-workspace-wrap select { font: inherit; }',
-      '.compare-banner-card { position: relative; overflow: hidden; border-color: #f0d875; background: linear-gradient(110deg, #fffbea 0%, #ffffff 72%); box-shadow: 0 8px 24px rgba(17, 24, 39, .055); }',
-      '.compare-banner-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--cmp-gold); }',
-      '.compare-banner-title { font-size: 1.125rem; font-weight: 850; letter-spacing: -.025em; }',
-      '.compare-banner-btn, .compare-entry-btn { color: #111827; border-color: #111827; background: #facc15; box-shadow: 0 2px 0 #a16207; }',
-      '.compare-banner-btn:hover, .compare-entry-btn:hover { background: #fde047; border-color: #111827; color: #111827; }',
-      '.compare-banner-btn svg, .compare-entry-btn svg { stroke: #111827; }',
-      '.compare-banner-btn.active, .compare-entry-btn.active { background: #111827; border-color: #111827; color: #ffffff; box-shadow: 0 2px 0 #a16207; }',
-      '.compare-main-card { padding: 0; overflow: hidden; border-color: #e5e7eb; border-radius: 1rem; box-shadow: 0 12px 34px rgba(17, 24, 39, .07); }',
-      '.compare-main-card > .compare-setup-panel, .compare-main-card > .compare-results-section { margin-left: 1.25rem; margin-right: 1.25rem; }',
-      '.compare-header { margin: 0 0 1.25rem; padding: 1.5rem 1.25rem; border: 0; border-bottom: 4px solid #facc15; background: linear-gradient(125deg, #111827 0%, #252b35 100%); }',
-      '.compare-eyebrow { color: #facc15; letter-spacing: .14em; }',
-      '.compare-title { color: #ffffff; letter-spacing: -.035em; }',
-      '.compare-subtitle { color: #d1d5db; max-width: 680px; }',
-      '.compare-close-btn { color: #ffffff; border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.08); }',
-      '.compare-close-btn:hover { color: #111827; background: #facc15; border-color: #facc15; }',
-      '.compare-setup-panel { background: #f9fafb; border-color: #e5e7eb; }',
-      '.compare-section-heading { font-size: 1rem; letter-spacing: -.015em; }',
-      '.compare-meta-grid .form-input, .compare-import-row .form-input, .comp-friend-score-input { min-width: 0; min-height: 46px; border-color: #d1d5db; border-radius: .625rem; }',
-      '.compare-meta-grid .form-input:focus, .compare-import-row .form-input:focus, .comp-friend-score-input:focus, .compare-workspace-wrap select:focus { outline: 3px solid rgba(250, 204, 21, .3); outline-offset: 1px; border-color: #ca8a04; box-shadow: none; }',
-      '.compare-tabs { padding: 4px; border: 1px solid #e5e7eb; border-radius: .75rem; background: #f3f4f6; }',
-      '.compare-tab { flex: 1; min-height: 42px; border-color: transparent; border-radius: .55rem; }',
-      '.compare-tab.active { color: #111827; background: #ffffff; border-color: #e5e7eb; box-shadow: 0 1px 3px rgba(17,24,39,.1); }',
-      '.comp-mode-btn { min-height: 38px; border-radius: 999px; }',
-      '.comp-mode-btn.active { color: #111827; background: #facc15; border-color: #eab308; }',
-      '.compare-task-input-card { border-radius: .75rem; padding: .875rem; }',
-      '.compare-actions-row { gap: .625rem; }',
-      '.compare-actions-row .btn-primary, .compare-actions-row .btn-secondary, .compare-export-actions .btn-primary, .compare-export-actions .btn-secondary { width: auto; min-height: 44px; margin: 0; padding: .65rem 1rem; border-radius: .625rem; font-size: .875rem; }',
-      '.compare-actions-row .btn-primary, .compare-export-actions .btn-primary { color: #111827; background: #facc15; box-shadow: inset 0 0 0 1px #eab308; }',
-      '.compare-actions-row .btn-primary:hover, .compare-export-actions .btn-primary:hover { background: #fde047; }',
-      '.compare-actions-row .btn-secondary, .compare-export-actions .btn-secondary { border-color: #d1d5db; }',
-      '.compare-status-text { color: #b42318; }',
-      '.compare-cards-grid { gap: .875rem; }',
-      '.compare-student-card { min-width: 0; border-color: #e5e7eb; border-radius: .875rem; padding: 1.125rem; box-shadow: 0 4px 14px rgba(17,24,39,.045); }',
-      '.compare-card-student { border-top: 4px solid #facc15; }',
-      '.compare-card-friend { border-top: 4px solid #374151; }',
-      '.compare-empty-icon svg { stroke: #ca8a04; }',
-      '.compare-task-bar-top { align-items: flex-start; flex-wrap: wrap; }',
-      '.compare-task-bar-meta { flex-wrap: wrap; justify-content: flex-end; max-width: 100%; }',
-      '.student-badge { color: #713f12; background: #fef3c7; }',
-      '.friend-badge { color: #374151; background: #f3f4f6; }',
-      '.compare-card-name { overflow-wrap: anywhere; letter-spacing: -.025em; }',
-      '.student-score { color: #111827; }',
-      '.compare-bar-track { height: 9px; background: #eef0f3; }',
-      '.student-fill { background: #eab308; }',
-      '.friend-fill { background: #374151; }',
-      '.compare-gap-banner { align-items: flex-start; border-color: #f0d875; background: #fffbeb; border-radius: .75rem; }',
-      '.compare-gap-icon { color: #854d0e; border-color: #f0d875; background: #ffffff; }',
-      '.compare-section-box { min-width: 0; border-color: #e5e7eb; border-radius: .875rem; box-shadow: 0 3px 12px rgba(17,24,39,.035); }',
-      '.compare-task-bar-item, .compare-insight-card, .compare-lost-marks-card, .compare-sim-container { border-radius: .75rem; }',
-      '.compare-bar-dual-row { grid-template-columns: minmax(48px, 78px) minmax(0, 1fr) minmax(52px, 62px); gap: .5rem; }',
-      '.compare-bar-label { overflow-wrap: anywhere; }',
-      '.compare-task-incomplete { border-style: dashed; background: #ffffff; }',
-      '.compare-task-incomplete .compare-bar-track-wrap { background: #f3f4f6; }',
-      '.compare-workspace-wrap input[aria-invalid="true"] { border-color: #b42318; box-shadow: 0 0 0 2px rgba(180, 35, 24, .12); }',
-      '.compare-verdict { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; margin: 0 0 1rem; padding: 1.125rem 1.25rem; border: 1px solid #303846; border-radius: .875rem; background: linear-gradient(125deg, #111827, #252b35); color: #ffffff; }',
-      '.compare-verdict-copy { min-width: 0; }',
-      '.compare-verdict-kicker { display: block; margin-bottom: .25rem; color: #facc15; font-size: .6875rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }',
-      '.compare-verdict-title { margin: 0; color: #ffffff; font-size: 1.125rem; font-weight: 850; letter-spacing: -.025em; line-height: 1.3; }',
-      '.compare-verdict-detail { margin: .3rem 0 0; color: #d1d5db; font-size: .8125rem; line-height: 1.5; }',
-      '.compare-verdict-number { color: #facc15; font-size: clamp(1.45rem, 4vw, 2rem); font-weight: 900; line-height: 1; letter-spacing: -.04em; text-align: right; white-space: nowrap; }',
-      '.compare-verdict-number small { display: block; margin-top: .35rem; color: #d1d5db; font-size: .65rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }',
-      '.compare-verdict.is-tied .compare-verdict-number { color: #ffffff; }',
-      '.compare-export-preview-wrap { overflow: hidden; background: #f3f4f6; border-radius: .75rem; }',
-      '.compare-canvas { width: 100%; }',
-      '.compare-workspace-wrap :focus-visible { outline: 3px solid #ca8a04; outline-offset: 3px; }',
-      '@media (max-width: 639px) { .compare-main-card > .compare-setup-panel, .compare-main-card > .compare-results-section { margin-left: .75rem; margin-right: .75rem; } .compare-header { padding: 1.25rem .875rem; } .compare-verdict { grid-template-columns: minmax(0, 1fr); gap: .7rem; } .compare-verdict-number { text-align: left; } .compare-tabs { flex-direction: column; } .compare-tab { width: 100%; } .compare-actions-row .btn-primary, .compare-actions-row .btn-secondary, .compare-export-actions .btn-primary, .compare-export-actions .btn-secondary { flex: 1 1 100%; } .compare-card-footer { flex-wrap: wrap; gap: .35rem .75rem; } }',
-      '@media (prefers-reduced-motion: reduce) { .compare-workspace-wrap *, .compare-workspace-wrap *::before, .compare-workspace-wrap *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }'
-    ].join('\n');
-
     document.head.appendChild(style);
   }
 
@@ -313,37 +239,6 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-  }
-
-  function normalizeTaskName(name) {
-    return String(name || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-  }
-
-  function getTaskComparison(studentTasks, friendTasks) {
-    var usedFriendTasks = [];
-    var pairs = [];
-    var unmatchedStudentTasks = [];
-
-    (studentTasks || []).forEach(function (studentTask) {
-      var studentKey = normalizeTaskName(studentTask.name);
-      var friendIndex = (friendTasks || []).findIndex(function (friendTask, index) {
-        return !usedFriendTasks[index] && studentKey && normalizeTaskName(friendTask.name) === studentKey;
-      });
-
-      if (friendIndex === -1) {
-        unmatchedStudentTasks.push(studentTask);
-        return;
-      }
-
-      usedFriendTasks[friendIndex] = true;
-      pairs.push({ student: studentTask, friend: friendTasks[friendIndex] });
-    });
-
-    return {
-      pairs: pairs,
-      unmatchedStudentTasks: unmatchedStudentTasks,
-      unmatchedFriendTasks: (friendTasks || []).filter(function (_, index) { return !usedFriendTasks[index]; })
-    };
   }
 
   function getBand(score) {
@@ -631,60 +526,6 @@
     }
   }
 
-  function updateLiveComparisonDetails() {
-    document.querySelectorAll('[data-comparison-name]').forEach(function (label) {
-      var identity = label.getAttribute('data-comparison-name');
-      var name = identity === 'student' ? compareState.studentName : compareState.friendName;
-      label.textContent = name + (label.getAttribute('data-comparison-suffix') || '');
-    });
-    document.querySelectorAll('[data-comparison-module]').forEach(function (label) {
-      label.textContent = compareState.moduleName;
-    });
-    document.querySelectorAll('[data-comparison-friend-lead]').forEach(function (label) {
-      label.textContent = compareState.friendName + ' +' + label.getAttribute('data-comparison-friend-lead') + '%';
-    });
-
-    var studentCtx = getCurrentStudentContext();
-    var friendCalc = calculateWeightedAverage(compareState.friendTasks);
-    if (studentCtx && friendCalc) {
-      var scoreDiff = studentCtx.icassAverage - friendCalc.average;
-      var verdictTitle = document.getElementById('compareVerdictTitle');
-      var gapSummary = document.getElementById('compareGapSummary');
-
-      if (verdictTitle) {
-        verdictTitle.textContent = scoreDiff > 0.05
-          ? compareState.studentName + ' is currently ahead'
-          : (scoreDiff < -0.05 ? compareState.friendName + ' is currently ahead' : 'Your results are level');
-      }
-
-      if (gapSummary) {
-        if (scoreDiff > 0.05) {
-          gapSummary.innerHTML = '<strong>' + escapeHtml(compareState.studentName) + '</strong> is ahead by <strong>' + Math.abs(scoreDiff).toFixed(2) + ' percentage points</strong> on the current ICASS averages.';
-        } else if (scoreDiff < -0.05) {
-          gapSummary.innerHTML = '<strong>' + escapeHtml(compareState.friendName) + '</strong> is ahead by <strong>' + Math.abs(scoreDiff).toFixed(2) + ' percentage points</strong>. The task breakdown can help you choose where to focus.';
-        } else {
-          gapSummary.innerHTML = 'Your current averages are effectively level at <strong>' + fmtPct(studentCtx.icassAverage) + '</strong>. Compare individual tasks to spot useful study opportunities.';
-        }
-      }
-
-      var simLeadSummary = document.getElementById('simLeadSummary');
-      var simTask = studentCtx.tasks[compareState.hypotheticalTaskIndex] || studentCtx.tasks[0];
-      if (simLeadSummary && simTask) {
-        var simOldScore = simTask.score !== null ? simTask.score : 0;
-        var simGain = (compareState.hypotheticalScore - simOldScore) * (simTask.weight / 100);
-        var simProjected = Math.round((studentCtx.icassAverage + simGain) * 100) / 100;
-        var simDiff = simProjected - friendCalc.average;
-        simLeadSummary.textContent = simDiff > 0.05
-          ? 'You would lead ' + compareState.friendName + ' by ' + simDiff.toFixed(2) + ' points'
-          : (simDiff < -0.05
-            ? 'You would trail ' + compareState.friendName + ' by ' + Math.abs(simDiff).toFixed(2) + ' points'
-            : 'Your projected result would be level with ' + compareState.friendName);
-      }
-    }
-
-    drawComparisonCanvas();
-  }
-
   // Render the entire Compare feature UI
   function renderCompareUI() {
     var container = document.getElementById('compareWorkspaceSection');
@@ -738,9 +579,9 @@
     html.push('<div class="compare-card compare-main-card">');
     html.push('  <div class="compare-header">');
     html.push('    <div class="compare-header-info">');
-    html.push('      <span class="compare-eyebrow">ICASS RESULT COMPARISON</span>');
-    html.push('      <h2 class="compare-title">Compare results with a friend</h2>');
-    html.push('      <p class="compare-subtitle">Review both weighted averages, compare matching assessment tasks, and identify practical areas for improvement. Your marks stay in this browser unless you choose to share a link.</p>');
+    html.push('      <span class="compare-eyebrow">PEER BENCHMARKING &amp; ACADEMIC ACCELERATOR</span>');
+    html.push('      <h2 class="compare-title">Compare Results with a Friend &amp; Get Ahead</h2>');
+    html.push('      <p class="compare-subtitle">Compare continuous assessment scores task by task, analyze where marks are won or lost, and get an actionable TVET improvement plan.</p>');
     html.push('    </div>');
     html.push('    <button type="button" id="compareCloseBtn" class="compare-close-btn" aria-label="Close comparison">&times;</button>');
     html.push('  </div>');
@@ -771,18 +612,18 @@
     // Tabs: Option A (Manual Entry) vs Option B (URL Import)
     html.push('    <div class="compare-tabs-wrap">');
     html.push('      <div class="compare-tabs" role="tablist">');
-    html.push('        <button type="button" id="tabCompManual" class="compare-tab ' + (compareState.activeTab === 'manual' ? 'active' : '') + '" role="tab" aria-controls="compManualPanel" aria-selected="' + (compareState.activeTab === 'manual') + '">Enter Friend\'s Marks Manually</button>');
-    html.push('        <button type="button" id="tabCompImport" class="compare-tab ' + (compareState.activeTab === 'import' ? 'active' : '') + '" role="tab" aria-controls="compImportPanel" aria-selected="' + (compareState.activeTab === 'import') + '">Import from Shared Link</button>');
+    html.push('        <button type="button" id="tabCompManual" class="compare-tab ' + (compareState.activeTab === 'manual' ? 'active' : '') + '" role="tab" aria-selected="' + (compareState.activeTab === 'manual') + '">Enter Friend\'s Marks Manually</button>');
+    html.push('        <button type="button" id="tabCompImport" class="compare-tab ' + (compareState.activeTab === 'import' ? 'active' : '') + '" role="tab" aria-selected="' + (compareState.activeTab === 'import') + '">Import from Shared Link</button>');
     html.push('      </div>');
 
     // Tab 1: Manual Marks Panel
-    html.push('      <div id="compManualPanel" class="compare-tab-panel" role="tabpanel" aria-labelledby="tabCompManual" style="' + (compareState.activeTab === 'manual' ? 'display:block;' : 'display:none;') + '">');
+    html.push('      <div id="compManualPanel" class="compare-tab-panel" style="' + (compareState.activeTab === 'manual' ? 'display:block;' : 'display:none;') + '">');
     html.push('        <div class="compare-mode-selector-row">');
     html.push('          <span class="compare-mode-label">Friend\'s Assessment Format:</span>');
     html.push('          <div class="compare-mode-pills">');
-    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'standard' ? 'active' : '') + '" data-mode="standard" aria-pressed="' + (compareState.friendMode === 'standard') + '">Semester Standard (5 Tasks)</button>');
-    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'trimester' ? 'active' : '') + '" data-mode="trimester" aria-pressed="' + (compareState.friendMode === 'trimester') + '">Trimester (3 Tasks)</button>');
-    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'custom' ? 'active' : '') + '" data-mode="custom" aria-pressed="' + (compareState.friendMode === 'custom') + '">Custom Weights</button>');
+    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'standard' ? 'active' : '') + '" data-mode="standard">Semester Standard (5 Tasks)</button>');
+    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'trimester' ? 'active' : '') + '" data-mode="trimester">Trimester (3 Tasks)</button>');
+    html.push('            <button type="button" class="comp-mode-btn ' + (compareState.friendMode === 'custom' ? 'active' : '') + '" data-mode="custom">Custom Weights</button>');
     html.push('          </div>');
     html.push('        </div>');
 
@@ -796,30 +637,29 @@
       html.push('              <span class="compare-task-weight">' + task.weight + '% weight</span>');
       html.push('            </div>');
       html.push('            <div class="input-unit-wrap">');
-      html.push('              <input type="number" min="0" max="100" step="any" class="comp-friend-score-input" data-task-idx="' + i + '" value="' + val + '" placeholder="0–100" aria-label="' + escapeHtml(task.name) + ' score, from 0 to 100" />');
+      html.push('              <input type="number" min="0" max="100" step="any" class="comp-friend-score-input" data-task-idx="' + i + '" value="' + val + '" placeholder="0–100" />');
       html.push('              <span class="input-unit-suffix">%</span>');
       html.push('            </div>');
       html.push('          </div>');
     }
     html.push('        </div>');
-    html.push('        <p class="compare-import-desc">Enter marks from 0 to 100. Leave a task blank if your friend has not received that mark yet. The example button uses sample scores for preview only.</p>');
 
     html.push('        <div class="compare-actions-row">');
     html.push('          <button type="button" id="compCalculateBtn" class="btn-primary">Update Comparison</button>');
-    html.push('          <button type="button" id="compSampleFriendBtn" class="btn-secondary">Load example scores</button>');
+    html.push('          <button type="button" id="compSampleFriendBtn" class="btn-secondary">Load Classmate Benchmark</button>');
     html.push('          <button type="button" id="compClearFriendBtn" class="btn-secondary">Clear Marks</button>');
     html.push('        </div>');
     html.push('        <p id="compStatusMessage" class="compare-status-text" aria-live="polite"></p>');
     html.push('      </div>');
 
     // Tab 2: URL Import Panel
-    html.push('      <div id="compImportPanel" class="compare-tab-panel" role="tabpanel" aria-labelledby="tabCompImport" style="' + (compareState.activeTab === 'import' ? 'display:block;' : 'display:none;') + '">');
+    html.push('      <div id="compImportPanel" class="compare-tab-panel" style="' + (compareState.activeTab === 'import' ? 'display:block;' : 'display:none;') + '">');
     html.push('        <p class="compare-import-desc">If your classmate shared their AfriWidget calculation link or result link with you, paste it below to instantly load their marks.</p>');
     html.push('        <div class="compare-import-row">');
     html.push('          <input type="url" id="compImportUrlInput" class="form-input" placeholder="Paste link (e.g. https://afriwidget.com/icass-calculator.html?stdTest1=70...)" />');
     html.push('          <button type="button" id="compDoImportBtn" class="btn-primary">Import &amp; Compare</button>');
     html.push('        </div>');
-    html.push('        <div id="compImportError" class="compare-import-error" role="alert" aria-live="assertive" style="display:none;"></div>');
+    html.push('        <div id="compImportError" class="compare-import-error" style="display:none;"></div>');
     html.push('      </div>');
     html.push('    </div>');
     html.push('  </div>'); // /compare-setup-panel
@@ -827,30 +667,15 @@
     // If friend has data, display Sections 2, 3, 4, 5, 6, 7
     if (hasFriendData) {
       // SECTION 2: RESULTS OVERVIEW: TWO VISUAL STUDENT CARDS
-      html.push('  <section class="compare-results-section" id="compareResultsSection" aria-labelledby="compareOverviewHeading">');
-      html.push('    <h3 class="compare-section-heading" id="compareOverviewHeading">2. Overall Performance Comparison</h3>');
-      var verdictClass = scoreDiff > 0.05 ? 'is-student-ahead' : (scoreDiff < -0.05 ? 'is-friend-ahead' : 'is-tied');
-      var verdictTitle = scoreDiff > 0.05
-        ? escapeHtml(compareState.studentName) + ' is currently ahead'
-        : (scoreDiff < -0.05 ? escapeHtml(compareState.friendName) + ' is currently ahead' : 'Your results are level');
-      var verdictDetail = scoreDiff > 0.05
-        ? 'Keep building on your lead with a focused study plan.'
-        : (scoreDiff < -0.05 ? 'Use the task breakdown below to choose where to focus next.' : 'You are within 0.05 percentage points of each other.');
-      html.push('    <div class="compare-verdict ' + verdictClass + '" role="status" aria-live="polite">');
-      html.push('      <div class="compare-verdict-copy">');
-      html.push('        <span class="compare-verdict-kicker">Overall comparison</span>');
-      html.push('        <h4 class="compare-verdict-title" id="compareVerdictTitle">' + verdictTitle + '</h4>');
-      html.push('        <p class="compare-verdict-detail">' + verdictDetail + ' Based on the ICASS averages shown below.</p>');
-      html.push('      </div>');
-      html.push('      <div class="compare-verdict-number">' + Math.abs(scoreDiff).toFixed(2) + '<small>' + (Math.abs(scoreDiff) <= 0.05 ? 'percentage points apart' : 'percentage-point gap') + '</small></div>');
-      html.push('    </div>');
+      html.push('  <div class="compare-results-section" id="compareResultsSection">');
+      html.push('    <h3 class="compare-section-heading">2. Overall Performance Comparison</h3>');
       html.push('    <div class="compare-cards-grid">');
 
       // Card 1: Student (Yellow Accent)
       html.push('      <div class="compare-student-card compare-card-student">');
       html.push('        <div class="compare-card-badge student-badge">YOU</div>');
-      html.push('        <h4 class="compare-card-name" data-comparison-name="student">' + escapeHtml(compareState.studentName) + '</h4>');
-      html.push('        <div class="compare-card-meta" data-comparison-module>' + escapeHtml(compareState.moduleName) + '</div>');
+      html.push('        <h4 class="compare-card-name">' + escapeHtml(compareState.studentName) + '</h4>');
+      html.push('        <div class="compare-card-meta">' + escapeHtml(compareState.moduleName) + '</div>');
       html.push('        <div class="compare-card-score-row">');
       html.push('          <span class="compare-card-score-big student-score">' + fmtPct(studentScore) + '</span>');
       html.push('          <span class="compare-card-status" style="color:' + studentBand.color + ';background:' + studentBand.bg + ';border:1px solid ' + studentBand.border + ';">' + studentBand.name + '</span>');
@@ -866,9 +691,9 @@
 
       // Card 2: Friend (Dark Neutral Accent)
       html.push('      <div class="compare-student-card compare-card-friend">');
-      html.push('        <div class="compare-card-badge friend-badge">FRIEND</div>');
-      html.push('        <h4 class="compare-card-name" data-comparison-name="friend">' + escapeHtml(compareState.friendName) + '</h4>');
-      html.push('        <div class="compare-card-meta" data-comparison-module>' + escapeHtml(compareState.moduleName) + '</div>');
+      html.push('        <div class="compare-card-badge friend-badge">CLASSMATE</div>');
+      html.push('        <h4 class="compare-card-name">' + escapeHtml(compareState.friendName) + '</h4>');
+      html.push('        <div class="compare-card-meta">' + escapeHtml(compareState.moduleName) + '</div>');
       html.push('        <div class="compare-card-score-row">');
       html.push('          <span class="compare-card-score-big friend-score">' + fmtPct(friendScore) + '</span>');
       html.push('          <span class="compare-card-status" style="color:' + friendBand.color + ';background:' + friendBand.bg + ';border:1px solid ' + friendBand.border + ';">' + friendBand.name + '</span>');
@@ -886,18 +711,18 @@
       // Differential Gap Banner
       var gapSummaryText = '';
       if (scoreDiff > 0.05) {
-        gapSummaryText = '<strong>' + escapeHtml(compareState.studentName) + '</strong> is ahead by <strong>' + diffAbs + ' percentage points</strong> on the current ICASS averages.';
+        gapSummaryText = '<strong>' + escapeHtml(compareState.studentName) + '</strong> is ahead by <strong>' + diffAbs + ' percentage points</strong>. Both continuous assessment profiles reflect authentic DHET coursework distributions.';
       } else if (scoreDiff < -0.05) {
-        gapSummaryText = '<strong>' + escapeHtml(compareState.friendName) + '</strong> is ahead by <strong>' + diffAbs + ' percentage points</strong>. The task breakdown can help you choose where to focus.';
+        gapSummaryText = '<strong>' + escapeHtml(compareState.friendName) + '</strong> is ahead by <strong>' + diffAbs + ' percentage points</strong>. See the detailed breakdown below for key areas where you can close the gap.';
       } else {
-        gapSummaryText = 'Your current averages are effectively level at <strong>' + fmtPct(studentScore) + '</strong>. Compare individual tasks to spot useful study opportunities.';
+        gapSummaryText = 'Both students have tied at exactly <strong>' + fmtPct(studentScore) + '</strong>. A strong joint study partnership can help both candidates target distinctions on the national exam.';
       }
 
       html.push('    <div class="compare-gap-banner">');
       html.push('      <div class="compare-gap-icon">');
       html.push('        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>');
       html.push('      </div>');
-      html.push('      <div class="compare-gap-text" id="compareGapSummary">' + gapSummaryText + '</div>');
+      html.push('      <div class="compare-gap-text">' + gapSummaryText + '</div>');
       html.push('    </div>');
 
       // SECTION 3: TASK-BY-TASK COMPONENT COMPARISON
@@ -905,11 +730,11 @@
       html.push('      <div class="compare-section-head-row">');
       html.push('        <div>');
       html.push('          <h3 class="compare-section-heading">3. Task-by-Task Component Comparison</h3>');
-      html.push('          <p class="compare-section-sub">Only assessment components with matching names are compared, so unrelated tasks are never treated as equivalent.</p>');
+      html.push('          <p class="compare-section-sub">Paired horizontal bars showing your score versus your friend\'s score across all weighted tasks.</p>');
       html.push('        </div>');
       html.push('        <div class="compare-legend">');
-      html.push('          <span class="legend-item"><span class="legend-dot student-dot"></span> <span data-comparison-name="student" data-comparison-suffix=" (You)">' + escapeHtml(compareState.studentName) + ' (You)</span></span>');
-      html.push('          <span class="legend-item"><span class="legend-dot friend-dot"></span> <span data-comparison-name="friend">' + escapeHtml(compareState.friendName) + '</span></span>');
+      html.push('          <span class="legend-item"><span class="legend-dot student-dot"></span> ' + escapeHtml(compareState.studentName) + ' (You)</span>');
+      html.push('          <span class="legend-item"><span class="legend-dot friend-dot"></span> ' + escapeHtml(compareState.friendName) + '</span>');
       html.push('        </div>');
       html.push('      </div>');
 
@@ -920,31 +745,21 @@
       html.push('      <div class="compare-task-bars-list">');
       var studentTasks = studentCtx.tasks || [];
       var friendTasks = compareState.friendTasks || [];
-      var taskComparison = getTaskComparison(studentTasks, friendTasks);
-      var pairedTasks = taskComparison.pairs;
-      var unmatchedStudentTasks = taskComparison.unmatchedStudentTasks;
-      var unmatchedFriendTasks = taskComparison.unmatchedFriendTasks;
+      var compareLength = Math.min(studentTasks.length, friendTasks.length);
 
       var taskInsights = [];
       var maxGapTask = null;
       var maxGapDiff = -1;
-      var comparableTaskCount = 0;
 
-      if (pairedTasks.length === 0) {
-        html.push('        <p class="compare-section-sub compare-no-matches">No assessment components have matching names yet. Check the task names or use the same assessment format to see a task-by-task comparison.</p>');
-      }
-
-      for (var j = 0; j < pairedTasks.length; j++) {
-        var sTask = pairedTasks[j].student;
-        var fTask = pairedTasks[j].friend;
-        var sVal = (sTask.score !== null && isFinite(sTask.score)) ? sTask.score : null;
-        var fVal = (fTask.score !== null && isFinite(fTask.score)) ? fTask.score : null;
-        var isComparable = sVal !== null && fVal !== null;
-        var tDiff = isComparable ? sVal - fVal : 0;
+      for (var j = 0; j < compareLength; j++) {
+        var sTask = studentTasks[j];
+        var fTask = friendTasks[j];
+        var sVal = (sTask.score !== null && isFinite(sTask.score)) ? sTask.score : 0;
+        var fVal = (fTask.score !== null && isFinite(fTask.score)) ? fTask.score : 0;
+        var tDiff = sVal - fVal;
         var absTDiff = Math.abs(tDiff);
-        if (isComparable) comparableTaskCount++;
 
-        if (isComparable && absTDiff > maxGapDiff) {
+        if (absTDiff > maxGapDiff) {
           maxGapDiff = absTDiff;
           maxGapTask = {
             name: sTask.name,
@@ -957,62 +772,60 @@
         }
 
         var leaderHtml = '';
-        if (!isComparable) {
-          leaderHtml = '<span class="compare-leader-tag leader-tie">Enter both marks</span>';
-        } else if (tDiff > 0.5) {
+        if (tDiff > 0.5) {
           leaderHtml = '<span class="compare-leader-tag leader-student">You +' + tDiff.toFixed(1) + '%</span>';
-          taskInsights.push({ type: 'student_lead', task: sTask.name, diff: tDiff, weight: sTask.weight, friendWeight: fTask.weight });
+          taskInsights.push({ type: 'student_lead', task: sTask.name, diff: tDiff, weight: sTask.weight });
         } else if (tDiff < -0.5) {
-          leaderHtml = '<span class="compare-leader-tag leader-friend" data-comparison-friend-lead="' + absTDiff.toFixed(1) + '">' + escapeHtml(compareState.friendName) + ' +' + absTDiff.toFixed(1) + '%</span>';
-          taskInsights.push({ type: 'friend_lead', task: sTask.name, diff: absTDiff, weight: sTask.weight, friendWeight: fTask.weight });
+          leaderHtml = '<span class="compare-leader-tag leader-friend">' + escapeHtml(compareState.friendName) + ' +' + absTDiff.toFixed(1) + '%</span>';
+          taskInsights.push({ type: 'friend_lead', task: sTask.name, diff: absTDiff, weight: sTask.weight });
         } else {
           leaderHtml = '<span class="compare-leader-tag leader-tie">Tied</span>';
         }
 
-        html.push('        <div class="compare-task-bar-item' + (isComparable ? '' : ' compare-task-incomplete') + '">');
+        html.push('        <div class="compare-task-bar-item">');
         html.push('          <div class="compare-task-bar-top">');
         html.push('            <span class="compare-task-bar-title">' + escapeHtml(sTask.name) + '</span>');
         html.push('            <div class="compare-task-bar-meta">');
-        html.push('              <span>' + (sTask.weight === fTask.weight ? sTask.weight + '% weight' : sTask.weight + '% / ' + fTask.weight + '% weights') + '</span>');
+        html.push('              <span>' + sTask.weight + '% weight</span>');
         html.push('              ' + leaderHtml);
         html.push('            </div>');
         html.push('          </div>');
 
         // Student bar
         html.push('          <div class="compare-bar-dual-row">');
-        html.push('            <span class="compare-bar-label" data-comparison-name="student">' + escapeHtml(compareState.studentName) + '</span>');
+        html.push('            <span class="compare-bar-label">' + escapeHtml(compareState.studentName) + '</span>');
         html.push('            <div class="compare-bar-track-wrap">');
-        html.push('              <div class="compare-bar-fill student-fill" style="width:' + (sVal === null ? 0 : Math.min(100, Math.max(0, sVal))) + '%;"></div>');
+        html.push('              <div class="compare-bar-fill student-fill" style="width:' + Math.min(100, Math.max(0, sVal)) + '%;"></div>');
         html.push('            </div>');
         html.push('            <span class="compare-bar-num">' + fmtPct(sVal) + '</span>');
         html.push('          </div>');
 
         // Friend bar
         html.push('          <div class="compare-bar-dual-row">');
-        html.push('            <span class="compare-bar-label" data-comparison-name="friend">' + escapeHtml(compareState.friendName) + '</span>');
+        html.push('            <span class="compare-bar-label">' + escapeHtml(compareState.friendName) + '</span>');
         html.push('            <div class="compare-bar-track-wrap">');
-        html.push('              <div class="compare-bar-fill friend-fill" style="width:' + (fVal === null ? 0 : Math.min(100, Math.max(0, fVal))) + '%;"></div>');
+        html.push('              <div class="compare-bar-fill friend-fill" style="width:' + Math.min(100, Math.max(0, fVal)) + '%;"></div>');
         html.push('            </div>');
         html.push('            <span class="compare-bar-num">' + fmtPct(fVal) + '</span>');
         html.push('          </div>');
         html.push('        </div>');
       }
 
-      if (unmatchedStudentTasks.length > 0) {
+      if (studentTasks.length > compareLength) {
         html.push('        <div class="compare-unmatched-box" style="margin-top:0.75rem;background:#ffffff;border:1px dashed #d1d5db;border-radius:0.5rem;padding:0.75rem 1rem;font-size:0.8125rem;color:#4b5563;line-height:1.5;">');
-        html.push('          <strong style="color:#111827;">Your tasks without a matching name:</strong>');
-        for (var k = 0; k < unmatchedStudentTasks.length; k++) {
-          var exTask = unmatchedStudentTasks[k];
+        html.push('          <strong style="color:#111827;">Additional Tasks in Your Portfolio (Unmatched in Friend\'s Setup):</strong>');
+        for (var k = compareLength; k < studentTasks.length; k++) {
+          var exTask = studentTasks[k];
           html.push('          <div style="margin-top:0.25rem;">• ' + escapeHtml(exTask.name) + ' (' + exTask.weight + '% weight): ' + (exTask.score !== null ? fmtPct(exTask.score) : '—') + '</div>');
         }
         html.push('        </div>');
       }
 
-      if (unmatchedFriendTasks.length > 0) {
+      if (friendTasks.length > compareLength) {
         html.push('        <div class="compare-unmatched-box" style="margin-top:0.75rem;background:#ffffff;border:1px dashed #d1d5db;border-radius:0.5rem;padding:0.75rem 1rem;font-size:0.8125rem;color:#4b5563;line-height:1.5;">');
-        html.push('          <strong style="color:#111827;">' + escapeHtml(compareState.friendName) + '\'s tasks without a matching name:</strong>');
-        for (var m = 0; m < unmatchedFriendTasks.length; m++) {
-          var exFTask = unmatchedFriendTasks[m];
+        html.push('          <strong style="color:#111827;">Additional Tasks in Friend\'s Portfolio (Unmatched in Your Setup):</strong>');
+        for (var m = compareLength; m < friendTasks.length; m++) {
+          var exFTask = friendTasks[m];
           html.push('          <div style="margin-top:0.25rem;">• ' + escapeHtml(exFTask.name) + ' (' + exFTask.weight + '% weight): ' + (exFTask.score !== null ? fmtPct(exFTask.score) : '—') + '</div>');
         }
         html.push('        </div>');
@@ -1039,12 +852,8 @@
           html.push('            <li><strong>' + escapeHtml(l.task) + '</strong> (' + l.weight + '%): +' + l.diff.toFixed(1) + '% advantage, securing <strong>+' + ptsAdv + ' weighted points</strong>.</li>');
         });
         html.push('          </ul>');
-      } else if (friendLeads.length > 0) {
-        html.push('          <p class="insight-text">' + escapeHtml(compareState.friendName) + ' currently leads on the comparable assessment components. Use the breakdown below to identify a focused revision target.</p>');
-      } else if (comparableTaskCount > 0) {
-        html.push('          <p class="insight-text">You and ' + escapeHtml(compareState.friendName) + ' are closely matched on the comparable assessment components.</p>');
       } else {
-        html.push('          <p class="insight-text">There are not enough matching completed assessment components to identify a task-level advantage yet.</p>');
+        html.push('          <p class="insight-text">Your friend matched or exceeded your score on all current tasks. This highlights clear opportunities to concentrate your revision on the upcoming portfolio submissions.</p>');
       }
       html.push('        </div>');
 
@@ -1060,12 +869,8 @@
           html.push('            <li><strong>' + escapeHtml(l.task) + '</strong> (' + l.weight + '%): Friend is ahead by ' + l.diff.toFixed(1) + '%, creating a <strong>' + ptsLoss + ' point gap</strong>.</li>');
         });
         html.push('          </ul>');
-      } else if (studentLeads.length > 0) {
-        html.push('          <p class="insight-text">You currently lead on the comparable assessment components. Keep your preparation consistent as you complete the remaining tasks.</p>');
-      } else if (comparableTaskCount > 0) {
-        html.push('          <p class="insight-text">Neither student has a clear lead on the comparable tasks. Review the marks together and focus on the next assessment.</p>');
       } else {
-        html.push('          <p class="insight-text">A task-level comparison will appear once both students have marks for a matching assessment component.</p>');
+        html.push('          <p class="insight-text">You hold the lead across all comparable tasks. Maintain consistency in your remaining assessments to safeguard your coursework advantage for the national exam.</p>');
       }
       html.push('        </div>');
 
@@ -1076,7 +881,7 @@
         var gapPoints = (maxGapTask.diff * (maxGapTask.weight / 100)).toFixed(2);
         html.push('          <p class="insight-text">The single largest divergence between you and your classmate occurred on <strong>' + escapeHtml(maxGapTask.name) + '</strong> (carrying a <strong>' + maxGapTask.weight + '% weighting</strong>). The gap of <strong>' + maxGapTask.diff.toFixed(1) + ' percentage points</strong> accounts for <strong>' + gapPoints + ' total ICASS marks</strong> on its own.</p>');
       } else {
-        html.push('          <p class="insight-text">No task-level gap can be calculated until at least one matching assessment component has marks entered for both students.</p>');
+        html.push('          <p class="insight-text">Performance across all components is closely matched with no single outlier task.</p>');
       }
       html.push('        </div>');
       html.push('      </div>'); // /compare-insights-grid
@@ -1205,12 +1010,12 @@
       var gainClass = simPointsGain >= 0 ? 'pos' : 'neg';
       html.push('            <span class="sim-meta-gain ' + gainClass + '">' + gainSign + simPointsGain.toFixed(2) + ' pts net difference</span>');
       html.push('            <span class="sim-meta-band">Projected Band: <strong>' + simProjectedBand.name + '</strong></span>');
-      var leadSummary = simNewDiff > 0.05
+      var leadSummary = simNewDiff > 0
         ? 'You would lead ' + escapeHtml(compareState.friendName) + ' by +' + simNewDiff.toFixed(2) + ' points'
-        : simNewDiff < -0.05
+        : simNewDiff < 0
           ? 'Trailing ' + escapeHtml(compareState.friendName) + ' by ' + Math.abs(simNewDiff).toFixed(2) + ' points'
-          : 'Projected result is level with ' + escapeHtml(compareState.friendName);
-      html.push('            <span id="simLeadSummary" style="font-size:0.75rem;font-weight:700;color:#374151;" aria-live="polite">' + leadSummary + '</span>');
+          : 'Tied with ' + escapeHtml(compareState.friendName);
+      html.push('            <span style="font-size:0.75rem;font-weight:700;color:#374151;">' + leadSummary + '</span>');
       html.push('          </div>');
       html.push('        </div>');
       html.push('        <p style="font-size:0.75rem;color:#6b7280;margin:0.75rem 0 0 0;line-height:1.4;">Note: Projections use the DHET weighted formula where 40% of your final subject result is banked from continuous assessment.</p>');
@@ -1222,7 +1027,7 @@
       html.push('      <h3 class="compare-section-heading">7. Shareable Comparison Card</h3>');
       html.push('      <p class="compare-section-sub">Generate and download a high-resolution comparison summary card to share with classmates or study groups.</p>');
       html.push('      <div class="compare-export-preview-wrap">');
-      html.push('        <canvas id="compareExportCanvas" class="compare-canvas" width="1200" height="630" role="img" aria-label="Shareable ICASS comparison card showing both students’ average and the score difference"></canvas>');
+      html.push('        <canvas id="compareExportCanvas" class="compare-canvas" width="1200" height="630"></canvas>');
       html.push('      </div>');
       html.push('      <div class="compare-export-actions">');
       html.push('        <button type="button" id="compareDownloadImageBtn" class="btn-primary">');
@@ -1231,12 +1036,12 @@
       html.push('        </button>');
       html.push('        <button type="button" id="compareShareBtn" class="btn-secondary">');
       html.push('          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>');
-      html.push('          <span>Share Comparison</span>');
+      html.push('          <span>Copy Comparison Link</span>');
       html.push('        </button>');
       html.push('        <button type="button" id="compareResetAllBtn" class="btn-secondary">Reset Comparison</button>');
       html.push('      </div>');
       html.push('    </div>'); // /compare-section-box
-      html.push('  </section>'); // /compare-results-section
+      html.push('  </div>'); // /compare-results-section
     }
 
     html.push('</div>'); // /compare-main-card
@@ -1293,7 +1098,7 @@
 
     ctx.fillStyle = '#ffffff';
     ctx.font = '900 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText('Results Comparison: ' + modName, 60, 88, 1080);
+    ctx.fillText('Results Comparison: ' + modName, 60, 88);
 
     // 2. Student Cards (Two side-by-side)
     var cardW = 510;
@@ -1313,11 +1118,11 @@
 
     ctx.fillStyle = '#111827';
     ctx.font = '800 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(sName + ' (You)', 85, cardY + 45, cardW - 50);
+    ctx.fillText(sName + ' (You)', 85, cardY + 45);
 
     ctx.fillStyle = '#4b5563';
     ctx.font = '600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(getBand(sScore).name, 85, cardY + 75, cardW - 50);
+    ctx.fillText(getBand(sScore).name, 85, cardY + 75);
 
     ctx.fillStyle = '#000000';
     ctx.font = '900 64px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
@@ -1342,11 +1147,11 @@
 
     ctx.fillStyle = '#111827';
     ctx.font = '800 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(fName, 655, cardY + 45, cardW - 50);
+    ctx.fillText(fName, 655, cardY + 45);
 
     ctx.fillStyle = '#4b5563';
     ctx.font = '600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(getBand(fScore).name, 655, cardY + 75, cardW - 50);
+    ctx.fillText(getBand(fScore).name, 655, cardY + 75);
 
     ctx.fillStyle = '#111827';
     ctx.font = '900 64px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
@@ -1373,7 +1178,7 @@
     } else if (diff < -0.05) {
       summaryText = fName + ' leads by ' + Math.abs(diff).toFixed(2) + ' percentage points. Review highest-weight tasks to close the gap.';
     } else {
-      summaryText = 'Both students are level at ' + fmtPct(sScore) + ' in this module.';
+      summaryText = 'Both students are exactly tied at ' + fmtPct(sScore) + ' in this module.';
     }
 
     ctx.fillStyle = '#111827';
@@ -1382,7 +1187,7 @@
 
     ctx.fillStyle = '#4b5563';
     ctx.font = '500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(summaryText, 85, summaryY + 75, 1030);
+    ctx.fillText(summaryText, 85, summaryY + 75);
 
     // DHET Sub-minimum statement
     var dhetStatus = (sScore >= 40 && fScore >= 40)
@@ -1391,7 +1196,7 @@
 
     ctx.fillStyle = '#6b7280';
     ctx.font = 'italic 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText(dhetStatus, 85, summaryY + 115, 1030);
+    ctx.fillText(dhetStatus, 85, summaryY + 115);
 
     // 4. Footer
     ctx.fillStyle = '#000000';
@@ -1399,11 +1204,11 @@
 
     ctx.fillStyle = '#9ca3af';
     ctx.font = '600 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText('AfriWidget.com  •  Free TVET Academic & Coursework Calculators', 60, 606, 710);
+    ctx.fillText('AfriWidget.com  •  Free TVET Academic & Coursework Calculators', 60, 606);
 
     ctx.fillStyle = '#facc15';
     ctx.font = '700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText('Compare your results free on AfriWidget.com', 820, 606, 330);
+    ctx.fillText('Compare your results free on AfriWidget.com', 820, 606);
   }
 
   // Attach all workspace event listeners
@@ -1429,7 +1234,6 @@
     if (sNameInput) {
       sNameInput.addEventListener('input', function () {
         compareState.studentName = (this.value || 'You').trim();
-        updateLiveComparisonDetails();
       });
     }
 
@@ -1437,7 +1241,6 @@
     if (fNameInput) {
       fNameInput.addEventListener('input', function () {
         compareState.friendName = (this.value || 'Classmate').trim();
-        updateLiveComparisonDetails();
       });
     }
 
@@ -1445,7 +1248,6 @@
     if (modInput) {
       modInput.addEventListener('input', function () {
         compareState.moduleName = (this.value || 'TVET Coursework').trim();
-        updateLiveComparisonDetails();
       });
     }
 
@@ -1496,15 +1298,9 @@
       inp.addEventListener('input', function () {
         var idx = parseInt(this.getAttribute('data-task-idx'), 10);
         var val = parseFloat(this.value);
-        var invalid = this.value !== '' && (!isFinite(val) || val < 0 || val > 100);
-        this.setCustomValidity(invalid ? 'Enter a score from 0 to 100.' : '');
-        this.setAttribute('aria-invalid', invalid ? 'true' : 'false');
         if (compareState.friendTasks[idx]) {
-          compareState.friendTasks[idx].score = !invalid && this.value !== '' && isFinite(val) ? val : null;
+          compareState.friendTasks[idx].score = isFinite(val) ? Math.max(0, Math.min(100, val)) : null;
         }
-        var statusMsg = document.getElementById('compStatusMessage');
-        if (invalid && statusMsg) statusMsg.textContent = 'Scores must be between 0 and 100. Correct the highlighted value before updating.';
-        else if (statusMsg) statusMsg.textContent = '';
       });
     });
 
@@ -1512,14 +1308,8 @@
     var calcBtn = document.getElementById('compCalculateBtn');
     if (calcBtn) {
       calcBtn.addEventListener('click', function () {
-        var invalidInput = document.querySelector('.comp-friend-score-input:invalid');
-        var statusMsg = document.getElementById('compStatusMessage');
-        if (invalidInput) {
-          if (statusMsg) statusMsg.textContent = 'Scores must be between 0 and 100. Correct the highlighted value before updating.';
-          invalidInput.focus();
-          return;
-        }
         var hasValid = compareState.friendTasks.some(function (t) { return t.score !== null; });
+        var statusMsg = document.getElementById('compStatusMessage');
         if (!hasValid && statusMsg) {
           statusMsg.textContent = 'Please enter at least one task score for your friend to calculate the comparison.';
           return;
@@ -1580,19 +1370,8 @@
     var resetAllBtn = document.getElementById('compareResetAllBtn');
     if (resetAllBtn) {
       resetAllBtn.addEventListener('click', function () {
-        var studentCtx = getCurrentStudentContext();
-        compareState.studentName = 'You';
-        compareState.friendName = 'Classmate';
-        compareState.moduleName = 'TVET Coursework';
-        compareState.friendMode = studentCtx ? (studentCtx.mode || 'standard') : 'standard';
         compareState.friendTasks = getDefaultTasks(compareState.friendMode);
-        compareState.activeTab = 'manual';
-        compareState.hypotheticalTaskIndex = 0;
-        compareState.hypotheticalScore = 75;
-        compareState.friendLoadedFromUrl = false;
         renderCompareUI();
-        var resetFocusTarget = document.getElementById('compStudentName');
-        if (resetFocusTarget) resetFocusTarget.focus();
       });
     }
 
@@ -1655,7 +1434,6 @@
           var weight = targetTask ? targetTask.weight : 0;
           var pointsGain = (delta * (weight / 100));
           var projectedAvg = Math.round((studentCtx.icassAverage + pointsGain) * 100) / 100;
-          var friendCalc = calculateWeightedAverage(compareState.friendTasks);
 
           var projScoreEl = document.querySelector('.sim-projected-score');
           if (projScoreEl) projScoreEl.textContent = fmtPct(projectedAvg);
@@ -1669,16 +1447,6 @@
 
           var bandEl = document.querySelector('.sim-meta-band strong');
           if (bandEl) bandEl.textContent = getBand(projectedAvg).name;
-
-          var leadSummaryEl = document.getElementById('simLeadSummary');
-          if (leadSummaryEl && friendCalc) {
-            var projectedDiff = projectedAvg - friendCalc.average;
-            leadSummaryEl.textContent = projectedDiff > 0.05
-              ? 'You would lead ' + (compareState.friendName || 'Classmate') + ' by ' + projectedDiff.toFixed(2) + ' points'
-              : (projectedDiff < -0.05
-                ? 'You would trail ' + (compareState.friendName || 'Classmate') + ' by ' + Math.abs(projectedDiff).toFixed(2) + ' points'
-                : 'Your projected result would be level with ' + (compareState.friendName || 'Classmate'));
-          }
         }
       });
     }
@@ -1709,16 +1477,7 @@
       shareBtn.addEventListener('click', async function () {
         var shareUrl = buildComparisonShareUrl();
         try {
-          if (navigator.share) {
-            await navigator.share({
-              title: 'AfriWidget ICASS comparison',
-              text: 'Compare ICASS results with a friend',
-              url: shareUrl
-            });
-            if (typeof window.showAfriToast === 'function') {
-              window.showAfriToast('Comparison ready to share.');
-            }
-          } else if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
             await navigator.clipboard.writeText(shareUrl);
             if (typeof window.showAfriToast === 'function') {
               window.showAfriToast('Comparison link copied to clipboard!');
@@ -1729,22 +1488,7 @@
             prompt('Copy this comparison link to share with your classmate:', shareUrl);
           }
         } catch (e) {
-          if (!e || e.name !== 'AbortError') {
-            if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
-              try {
-                await navigator.clipboard.writeText(shareUrl);
-                if (typeof window.showAfriToast === 'function') {
-                  window.showAfriToast('Comparison link copied to clipboard!');
-                } else {
-                  alert('Comparison link copied to clipboard!');
-                }
-              } catch (clipboardError) {
-                prompt('Copy this comparison link to share with your classmate:', shareUrl);
-              }
-            } else {
-              prompt('Copy this comparison link to share with your classmate:', shareUrl);
-            }
-          }
+          prompt('Copy this comparison link to share with your classmate:', shareUrl);
         }
       });
     }
@@ -1795,8 +1539,8 @@
       entryCard.className = 'compare-banner-card';
       entryCard.innerHTML = [
         '<div class="compare-banner-content">',
-        '  <h3 class="compare-banner-title">Compare ICASS results with a friend</h3>',
-        '  <p class="compare-banner-desc">Review both weighted averages, compare matching assessment tasks, and find practical areas to improve.</p>',
+        '  <h3 class="compare-banner-title">Compare Results with a Friend</h3>',
+        '  <p class="compare-banner-desc">Benchmark your continuous assessment scores against a classmate, analyze component gaps, and get a practical plan to get ahead.</p>',
         '</div>',
         '<button type="button" id="openCompareBtn" class="compare-banner-btn" aria-expanded="false" aria-controls="compareWorkspaceSection">',
         '  <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">',
@@ -1825,8 +1569,8 @@
       entryCard.className = 'compare-banner-card';
       entryCard.innerHTML = [
         '<div class="compare-banner-content">',
-        '  <h3 class="compare-banner-title">Compare ICASS results with a friend</h3>',
-        '  <p class="compare-banner-desc">Review both weighted averages, compare matching assessment tasks, and find practical areas to improve.</p>',
+        '  <h3 class="compare-banner-title">Compare Results with a Friend</h3>',
+        '  <p class="compare-banner-desc">Benchmark your continuous assessment scores against a classmate, analyze component gaps, and get a practical plan to get ahead.</p>',
         '</div>',
         '<button type="button" id="openCompareBtn" class="compare-banner-btn" aria-expanded="false" aria-controls="compareWorkspaceSection">',
         '  <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">',

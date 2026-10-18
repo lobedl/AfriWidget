@@ -164,6 +164,7 @@ const json = (statusCode, body) => ({
 function promptFor(mode, category, context, question) {
   const contextText = JSON.stringify(context || {});
   const categoryNames = {
+    health: 'Health',
     education: 'Education',
     finance: 'Finance',
     productivity: 'Productivity',
@@ -171,7 +172,9 @@ function promptFor(mode, category, context, question) {
   };
   const categoryKey = Object.prototype.hasOwnProperty.call(categoryNames, category) ? category : 'tools';
   const assistantName = `AfriWidget AI ${categoryNames[categoryKey]} Assistant`;
-  const guidanceNote = categoryKey === 'finance'
+  const guidanceNote = categoryKey === 'health'
+    ? 'Use calm, non-alarming language. This is educational information, not a diagnosis or medical advice. Suggest low-risk, general next steps such as tracking the metric, reviewing habits, or speaking with a qualified clinician. Never diagnose, prescribe, recommend medication changes, or infer symptoms that are not shown. If the displayed result could be concerning, encourage appropriate professional follow-up without overstating urgency.'
+    : categoryKey === 'finance'
       ? 'Give practical financial education, not regulated personal financial advice. Suggest actions such as checking fees, comparing scenarios, building a buffer, reviewing the budget, or adjusting assumptions. Do not tell the user to buy or sell an investment, promise returns, or ignore taxes, interest, provider terms, or affordability limits.'
       : categoryKey === 'education'
         ? 'Treat scores as estimates and never guarantee admission, scholarships, grades, or placement. Suggest practical next steps such as checking prerequisites, confirming current official requirements, speaking with a teacher or adviser, or modelling another scenario.'
@@ -328,7 +331,7 @@ export const handler = async (event) => {
   }
 
   const mode = ['question', 'writing'].includes(payload.mode) ? payload.mode : 'insight';
-  const category = ['education', 'finance', 'productivity', 'tools'].includes(payload.category)
+  const category = ['health', 'education', 'finance', 'productivity', 'tools'].includes(payload.category)
     ? payload.category
     : 'tools';
   const userPrompt = promptFor(mode, category, payload.context, payload.question);

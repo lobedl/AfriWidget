@@ -608,11 +608,7 @@
     if (progBar) {
       var pct = Math.round(((currentQuestionIndex + 1) / currentQuestions.length) * 100);
       progBar.style.width = pct + '%';
-      progBar.setAttribute('aria-valuemax', currentQuestions.length);
-      progBar.setAttribute('aria-valuenow', currentQuestionIndex + 1);
     }
-    var totalEl = document.getElementById('wQuestionTotal');
-    if (totalEl) totalEl.textContent = currentQuestions.length;
 
     var topicMeta = TOPICS[q.topicId] || { name: 'Curriculum Standard' };
     var topicLabel = document.getElementById('wQuestionTopic');
@@ -628,10 +624,11 @@
 
       var letters = ['A', 'B', 'C', 'D'];
       q.options.forEach(function (optText, idx) {
-        var optDiv = document.createElement('button');
-        optDiv.type = 'button';
+        var optDiv = document.createElement('div');
         optDiv.className = 'w-option-item' + (selectedIdx === idx ? ' selected' : '');
-        optDiv.setAttribute('aria-pressed', selectedIdx === idx ? 'true' : 'false');
+        optDiv.setAttribute('role', 'radio');
+        optDiv.setAttribute('aria-checked', selectedIdx === idx ? 'true' : 'false');
+        optDiv.setAttribute('tabindex', '0');
 
         optDiv.innerHTML = [
           '<span class="w-option-letter">' + letters[idx] + '</span>',
@@ -640,23 +637,21 @@
 
         function pick() {
           userAnswers[q.id] = idx;
-          Array.prototype.forEach.call(container.querySelectorAll('.w-option-item'), function (option, optionIndex) {
-            var isSelected = optionIndex === idx;
-            option.classList.toggle('selected', isSelected);
-            option.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
-          });
           var alertBox = document.getElementById('wQuizValidation');
           if (alertBox) alertBox.style.display = 'none';
+          renderCurrentQuestion();
         }
 
         optDiv.addEventListener('click', pick);
+        optDiv.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            pick();
+          }
+        });
 
         container.appendChild(optDiv);
       });
-    }
-    if (titleEl) {
-      titleEl.setAttribute('tabindex', '-1');
-      titleEl.focus({ preventScroll: true });
     }
 
     var prevBtn = document.getElementById('wPrevBtn');
@@ -1047,14 +1042,6 @@
     if (!calcWrap) return;
     if (document.getElementById('weaknessAssessmentSection')) return;
 
-    if (!document.getElementById('afriwidget-weakness-ui')) {
-      var weaknessStyles = document.createElement('link');
-      weaknessStyles.id = 'afriwidget-weakness-ui';
-      weaknessStyles.rel = 'stylesheet';
-      weaknessStyles.href = '/weakness-ui.css';
-      document.head.appendChild(weaknessStyles);
-    }
-
     // 1. Add "Find My Weaknesses" button to form action row
     var form = document.getElementById('wassceForm');
     var actionRow = form ? (form.querySelector('.action-row') || form.querySelector('button[type="submit"]').parentElement) : document.querySelector('.action-row');
@@ -1098,7 +1085,7 @@
     section.id = 'weaknessAssessmentSection';
     section.className = 'weakness-section';
     section.style.display = 'none';
-    section.setAttribute('aria-labelledby', 'wDiagnosticTitle');
+    section.setAttribute('aria-live', 'polite');
 
     section.innerHTML = [
       '<div class="weakness-card">',
@@ -1107,7 +1094,7 @@
       '    <div class="w-header">',
       '      <span class="w-eyebrow">AfriWidget Diagnostic Engine</span>',
       '      <div class="w-header-title-row">',
-      '        <h3 id="wDiagnosticTitle" class="w-title">Find My WASSCE Weaknesses</h3>',
+      '        <h3 class="w-title">Find My WASSCE Weaknesses</h3>',
       '        <button type="button" id="wCloseIntroBtn" class="w-close-btn" aria-label="Close diagnostic">&times;</button>',
       '      </div>',
       '      <p class="w-subtitle">A deterministic 10-question assessment testing your understanding of WAEC 9-point grading, core subject mandatory rules, the C6 credit benchmark, and faculty subject stream prerequisites.</p>',
@@ -1138,16 +1125,16 @@
       '    <div class="w-quiz-top">',
       '      <div class="w-quiz-info">',
       '        <span id="wQuizBadge" class="w-tag">Comprehensive Diagnostic</span>',
-      '        <span class="w-quiz-counter" role="status" aria-live="polite">Question <strong id="wCurrentQNum">1</strong> of <span id="wQuestionTotal">10</span></span>',
+      '        <span class="w-quiz-counter">Question <strong id="wCurrentQNum">1</strong> of 10</span>',
       '      </div>',
       '      <div class="w-progress-track">',
-      '        <div id="wProgressBar" class="w-progress-fill" role="progressbar" aria-label="Question progress" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" style="width: 10%;"></div>',
+      '        <div id="wProgressBar" class="w-progress-fill" style="width: 10%;"></div>',
       '      </div>',
       '    </div>',
       '    <div class="w-question-box">',
       '      <span id="wQuestionTopic" class="w-question-topic">Topic</span>',
       '      <h4 id="wQuestionText" class="w-question-title">Question prompt</h4>',
-      '      <div id="wOptionsContainer" class="w-options-grid" role="group" aria-label="Answer options"></div>',
+      '      <div id="wOptionsContainer" class="w-options-grid" role="radiogroup" aria-label="Question options"></div>',
       '    </div>',
       '    <div id="wQuizValidation" class="w-validation-alert" style="display:none;">Please select an option before continuing.</div>',
       '    <div class="w-quiz-nav">',
