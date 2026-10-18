@@ -93,11 +93,6 @@
     "category": "Health",
     "url": "/calorie-burn-calculator"
   },
-  "canada-gpa-calculator": {
-    "name": "Canada GPA Calculator",
-    "category": "Education",
-    "url": "/canada-gpa-calculator"
-  },
   "canada-student-loan-repayment-calculator": {
     "name": "Canada Student Loan Repayment",
     "category": "Education",
@@ -173,13 +168,8 @@
     "category": "Education",
     "url": "/ghana-nursing-training-admission-calculator"
   },
-  "ghana-university-gpa-calculator": {
-    "name": "Ghana University GPA & CWA",
-    "category": "Education",
-    "url": "/ghana-university-gpa-calculator"
-  },
   "gpa-calculator": {
-    "name": "Cumulative GPA Calculator",
+    "name": "GPA & CGPA Calculator",
     "category": "Education",
     "url": "/gpa-calculator"
   },
@@ -283,11 +273,6 @@
     "category": "Education",
     "url": "/kcse-kuccps-cluster-calculator"
   },
-  "kenya-university-gpa-calculator": {
-    "name": "Kenya University GPA Calculator",
-    "category": "Education",
-    "url": "/kenya-university-gpa-calculator"
-  },
   "keyword-density-checker": {
     "name": "Keyword Density Checker",
     "category": "Productivity",
@@ -332,11 +317,6 @@
     "name": "NZ Study Planner & Timetable",
     "category": "Education",
     "url": "/new-zealand-study-planner"
-  },
-  "nigerian-university-cgpa-calculator": {
-    "name": "Nigerian University CGPA Calculator",
-    "category": "Education",
-    "url": "/nigerian-university-cgpa-calculator"
   },
   "norway-gpa-calculator": {
     "name": "Norway GPA Calculator",
@@ -493,16 +473,6 @@
     "category": "Education",
     "url": "/tanzania-university-admission-calculator"
   },
-  "tanzania-university-gpa-calculator": {
-    "name": "Tanzania University GPA",
-    "category": "Education",
-    "url": "/tanzania-university-gpa-calculator"
-  },
-  "tertiary-gpa-cgpa-calculator": {
-    "name": "Tertiary GPA & CGPA Calculator",
-    "category": "Education",
-    "url": "/tertiary-gpa-cgpa-calculator"
-  },
   "text-case-converter-cleanup": {
     "name": "Text Case & Cleanup",
     "category": "Productivity",
@@ -537,11 +507,6 @@
     "name": "Uganda University Admission",
     "category": "Education",
     "url": "/uganda-university-admission-calculator"
-  },
-  "uganda-university-cgpa-calculator": {
-    "name": "Uganda University CGPA",
-    "category": "Education",
-    "url": "/uganda-university-cgpa-calculator"
   },
   "uk-a-level-grade-calculator": {
     "name": "A-Level Grade Calculator",
@@ -618,11 +583,6 @@
     "category": "Education",
     "url": "/zambia-university-admission-calculator"
   },
-  "zambia-university-gpa-calculator": {
-    "name": "Zambia University GPA",
-    "category": "Education",
-    "url": "/zambia-university-gpa-calculator"
-  },
   "zimbabwe-study-timetable-generator": {
     "name": "Zimbabwe Study Timetable",
     "category": "Education",
@@ -632,11 +592,6 @@
     "name": "Zimbabwe University Entry Calculator",
     "category": "Education",
     "url": "/zimbabwe-university-entry-points-calculator"
-  },
-  "zimbabwe-university-gpa-calculator": {
-    "name": "Zimbabwe University GPA",
-    "category": "Education",
-    "url": "/zimbabwe-university-gpa-calculator"
   },
   "zimsec-alevel-points-calculator": {
     "name": "ZIMSEC A-Level Points Calculator",

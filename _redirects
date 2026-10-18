@@ -170,4 +170,22 @@
 /metadata-remover                            /exif-remover                            301
 /metadata-remover.html                       /exif-remover                            301
 # Clean URLs are handled natively by Cloudflare Pages asset serving and Netlify pretty_urls
-
+# Consolidated Duplicate GPA Calculators into Universal GPA Calculator
+/ghana-university-gpa-calculator           /gpa-calculator   301
+/ghana-university-gpa-calculator.html      /gpa-calculator   301
+/nigerian-university-cgpa-calculator       /gpa-calculator   301
+/nigerian-university-cgpa-calculator.html  /gpa-calculator   301
+/kenya-university-gpa-calculator           /gpa-calculator   301
+/kenya-university-gpa-calculator.html      /gpa-calculator   301
+/tanzania-university-gpa-calculator        /gpa-calculator   301
+/tanzania-university-gpa-calculator.html   /gpa-calculator   301
+/uganda-university-cgpa-calculator         /gpa-calculator   301
+/uganda-university-cgpa-calculator.html    /gpa-calculator   301
+/zambia-university-gpa-calculator          /gpa-calculator   301
+/zambia-university-gpa-calculator.html     /gpa-calculator   301
+/zimbabwe-university-gpa-calculator        /gpa-calculator   301
+/zimbabwe-university-gpa-calculator.html   /gpa-calculator   301
+/canada-gpa-calculator                     /gpa-calculator   301
+/canada-gpa-calculator.html                /gpa-calculator   301
+/tertiary-gpa-cgpa-calculator              /gpa-calculator   301
+/tertiary-gpa-cgpa-calculator.html         /gpa-calculator   301

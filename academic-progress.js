@@ -929,33 +929,86 @@
       title: 'Cumulative GPA Calculator',
       higherIsBetter: true,
       extract: function () {
-        var gpaEl = document.getElementById('gpaValue');
+        var gpaEl = document.getElementById('gpaBig') || document.getElementById('gpaValue');
         var val = gpaEl ? parseFloat(gpaEl.textContent.trim()) : NaN;
         if (isNaN(val)) return null;
 
+        var cgpaEl = document.getElementById('newCgpaVal');
+        var cgpaVal = cgpaEl ? parseFloat(cgpaEl.textContent.trim()) : NaN;
+        var primaryVal = !isNaN(cgpaVal) ? cgpaVal : val;
+
         var gpaMap = { 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3, 'D': 1.0, 'F': 0.0 };
         var subjects = [];
-        var rows = document.querySelectorAll('.course-row');
+        var rows = document.querySelectorAll('.course-card, .course-row');
         rows.forEach(function (row, idx) {
-          var nameInput = row.querySelector('input[type="text"]');
-          var gradeSel = row.querySelector('select');
+          var nameInput = row.querySelector('.course-name, input[type="text"]');
+          var credInput = row.querySelector('.course-credits, .credit-input');
+          var gradeEl = row.querySelector('.course-grade, select');
           var name = (nameInput && nameInput.value.trim()) || ('Course ' + (idx + 1));
-          var grade = gradeSel ? gradeSel.value : '';
-          if (grade && gpaMap[grade] !== undefined) {
-            var pts = gpaMap[grade];
+          var grade = '';
+          if (gradeEl) {
+            grade = gradeEl.value || (gradeEl.tagName === 'SELECT' && gradeEl.selectedIndex >= 0 ? gradeEl.options[gradeEl.selectedIndex].text : '');
+          }
+          var cred = credInput ? credInput.value.trim() : '';
+          if (grade) {
+            var pts = gpaMap[grade] !== undefined ? gpaMap[grade] : (parseFloat(grade) || 0);
             subjects.push({
               name: name,
               grade: grade,
               raw: pts,
-              norm: Math.max(0.12, pts / 4.0),
-              display: grade + ' (' + pts.toFixed(1) + ')'
+              norm: Math.min(1, Math.max(0.12, pts / 4.0)),
+              display: (cred ? cred + ' cr: ' : '') + grade
+            });
+          }
+        });
+
+        var display = !isNaN(cgpaVal)
+          ? 'CGPA ' + cgpaVal.toFixed(2) + ' (Sem: ' + val.toFixed(2) + ')'
+          : val.toFixed(2) + ' GPA';
+
+        return {
+          value: primaryVal,
+          displayValue: display,
+          subjects: subjects
+        };
+      }
+    },
+
+    // Leaving Cert Points Calculator (Ireland CAO)
+    'leaving-cert-points-calculator': {
+      id: 'leaving-cert-points-calculator',
+      title: 'Leaving Cert CAO Points',
+      higherIsBetter: true,
+      unit: 'Points',
+      extract: function () {
+        var el = document.getElementById('totalPoints');
+        var val = el ? parseInt(el.textContent.trim().replace(/[^0-9]/g, ''), 10) : NaN;
+        if (isNaN(val) || val < 0) return null;
+
+        var subjects = [];
+        var rows = document.querySelectorAll('.subject-card');
+        rows.forEach(function (row, idx) {
+          var nameInput = row.querySelector('.subject-name');
+          var levelSel = row.querySelector('.subject-level');
+          var gradeSel = row.querySelector('.subject-grade');
+          var name = (nameInput && nameInput.value.trim()) || ('Subject ' + (idx + 1));
+          var grade = gradeSel ? gradeSel.value : '';
+          var level = levelSel ? levelSel.value : 'higher';
+          if (grade) {
+            var lvlText = level.charAt(0).toUpperCase() + level.slice(1);
+            subjects.push({
+              name: name,
+              grade: grade,
+              raw: val,
+              norm: Math.min(1, Math.max(0.1, val / 625)),
+              display: lvlText + ' ' + grade
             });
           }
         });
 
         return {
           value: val,
-          displayValue: val.toFixed(2) + ' GPA',
+          displayValue: val + ' pts',
           subjects: subjects
         };
       }
@@ -1280,69 +1333,7 @@
     },
 
     // 11. Tertiary GPA / CGPA Calculator
-    'tertiary-gpa-cgpa-calculator': {
-      id: 'tertiary-gpa-cgpa',
-      title: 'Tertiary GPA / CGPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var semEl = document.getElementById('semesterGpa');
-        var cumEl = document.getElementById('cumulativeGpa');
-        var val = NaN;
-        var displayLabel = '';
 
-        var cumVal = cumEl ? parseFloat(cumEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        var semVal = semEl ? parseFloat(semEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-
-        if (!isNaN(cumVal)) {
-          val = cumVal;
-          displayLabel = val.toFixed(2) + ' CGPA';
-        } else if (!isNaN(semVal)) {
-          val = semVal;
-          displayLabel = val.toFixed(2) + ' GPA';
-        }
-
-        if (isNaN(val)) return null;
-
-        var scaleEl = document.getElementById('scaleSelect');
-        var scaleVal = scaleEl ? scaleEl.value : '5';
-        var maxScale = scaleVal === '4' ? 4.0 : 5.0;
-
-        var subjects = [];
-        var rows = document.querySelectorAll('#courseList .course-row, .course-row');
-        var pts5 = { 'A': 5.0, 'B': 4.0, 'C': 3.0, 'D': 2.0, 'E': 1.0, 'F': 0.0 };
-        var pts4 = { 'A': 4.0, 'B': 3.0, 'C': 2.0, 'D': 1.0, 'F': 0.0 };
-        var ptsMap = scaleVal === '4' ? pts4 : pts5;
-
-        rows.forEach(function (row, idx) {
-          var nameInput = row.querySelector('.course-name-input, input[type="text"]');
-          var gradeSel = row.querySelector('.course-grade-select, select');
-          var creditSel = row.querySelector('.course-credit-select');
-
-          var rawName = (nameInput && nameInput.value.trim()) || ('Course ' + (idx + 1));
-          var grade = gradeSel ? gradeSel.value : '';
-          var credits = creditSel ? parseFloat(creditSel.value) : NaN;
-
-          if (grade && ptsMap[grade] !== undefined) {
-            var pts = ptsMap[grade];
-            var credText = (!isNaN(credits) && credits > 0) ? (' (' + credits + ' CU)') : '';
-            subjects.push({
-              name: rawName.length > 15 ? rawName.substring(0, 13) + '…' : rawName,
-              grade: grade,
-              raw: pts,
-              norm: Math.max(0.12, Math.min(1.0, pts / maxScale)),
-              display: 'Grade ' + grade + credText
-            });
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: displayLabel,
-          subjects: subjects
-        };
-      }
-    },
 
     // 12. WAEC Grade Calculator
     'waec-grade-calculator': {
@@ -1385,49 +1376,7 @@
     },
 
     // 13. Nigerian University CGPA Calculator
-    'nigerian-university-cgpa-calculator': {
-      id: 'nigerian-university-cgpa',
-      title: 'Nigerian University CGPA Calculator',
-      higherIsBetter: true,
-      unit: 'CGPA',
-      extract: function () {
-        var cgpaEl = document.getElementById('statCgpa');
-        var val = cgpaEl ? parseFloat(cgpaEl.textContent.trim()) : NaN;
-        if (isNaN(val)) return null;
 
-        var scaleEl = document.getElementById('gradingScale');
-        var isScale4 = scaleEl && scaleEl.value === '4.0';
-        var maxScale = isScale4 ? 4.0 : 5.0;
-        var ptsMap5 = { 'A': 5, 'B': 4, 'C': 3, 'D': 2, 'E': 1, 'F': 0 };
-        var ptsMap4 = { 'A': 4, 'B': 3, 'C': 2, 'D': 1, 'E': 0, 'F': 0 };
-        var map = isScale4 ? ptsMap4 : ptsMap5;
-
-        var subjects = [];
-        var rows = document.querySelectorAll('#coursesContainer .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var gradeSel = row.querySelector('.course-grade');
-          var name = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var grade = gradeSel ? gradeSel.value : '';
-          if (grade && map[grade] !== undefined) {
-            var pts = map[grade];
-            subjects.push({
-              name: name.length > 14 ? name.substring(0, 12) + '…' : name,
-              grade: grade,
-              raw: pts,
-              norm: Math.max(0.12, pts / maxScale),
-              display: grade + ' (' + pts.toFixed(1) + ' pts)'
-            });
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + ' CGPA',
-          subjects: subjects
-        };
-      }
-    },
 
     // 14. ZIMSEC O-Level Points Calculator
     'zimsec-olevel-points-calculator': {
@@ -1773,61 +1722,7 @@
     },
 
     // 21. Ghana University GPA & CWA Calculator
-    'ghana-university-gpa-calculator': {
-      id: 'ghana-university-gpa',
-      title: 'Ghana University GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var resEl = document.getElementById('semesterScore');
-        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        if (isNaN(val)) return null;
 
-        var sysEl = document.getElementById('systemSelect');
-        var isCwa = sysEl && sysEl.value === 'cwa';
-
-        var gpaMap = { 'A': 4.0, 'B+': 3.5, 'B': 3.0, 'C+': 2.5, 'C': 2.0, 'D+': 1.5, 'D': 1.0, 'E': 0.0, 'F': 0.0 };
-        var subjects = [];
-        var rows = document.querySelectorAll('#courseList .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name-input') || row.querySelector('.course-name input');
-          var sName = (nameInp && nameInp.value && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var gradeInp = row.querySelector('.course-grade-input') || row.querySelector('.course-grade select, .course-grade input');
-          if (gradeInp && gradeInp.value && gradeInp.value !== '') {
-            if (isCwa) {
-              var mark = parseFloat(gradeInp.value);
-              if (!isNaN(mark) && mark >= 0 && mark <= 100) {
-                subjects.push({
-                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                  grade: Math.round(mark) + '%',
-                  raw: mark,
-                  norm: Math.max(0.12, mark / 100),
-                  display: Math.round(mark) + '%'
-                });
-              }
-            } else {
-              var g = gradeInp.value.toUpperCase();
-              if (gpaMap[g] !== undefined) {
-                var pts = gpaMap[g];
-                subjects.push({
-                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                  grade: g,
-                  raw: pts,
-                  norm: Math.max(0.12, pts / 4.0),
-                  display: g + ' (' + pts.toFixed(1) + ')'
-                });
-              }
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + (isCwa ? '% CWA' : ' GPA'),
-          subjects: subjects
-        };
-      }
-    },
 
     // 22. Post-UTME Aggregate Screening Calculator
     'post-utme-aggregate-calculator': {
@@ -1892,222 +1787,19 @@
     },
 
     // 23. Kenya University GPA Calculator
-    'kenya-university-gpa-calculator': {
-      id: 'kenya-university-gpa',
-      title: 'Kenya University GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var headEl = document.getElementById('gpaHeadline');
-        var text = headEl ? headEl.textContent.trim() : '';
-        var isWam = text.indexOf('%') !== -1;
-        var val = parseFloat(text.replace(/[^0-9.]/g, ''));
-        if (isNaN(val)) return null;
 
-        var subjects = [];
-        var rows = document.querySelectorAll('#coursesContainer .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Unit ' + (idx + 1));
-          var gradeSel = row.querySelector('.course-grade-select');
-          var gradeInp = row.querySelector('.course-grade-input');
-          if (isWam && gradeInp && gradeInp.value !== '') {
-            var mark = parseFloat(gradeInp.value);
-            if (!isNaN(mark) && mark >= 0 && mark <= 100) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: Math.round(mark) + '%',
-                raw: mark,
-                norm: Math.max(0.12, mark / 100),
-                display: Math.round(mark) + '%'
-              });
-            }
-          } else if (gradeSel && gradeSel.value !== '') {
-            var gp = parseFloat(gradeSel.value);
-            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' - ')[0] : (gp.toFixed(1) + ' pts');
-            if (!isNaN(gp) && gp >= 0) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: optText,
-                raw: gp,
-                norm: Math.max(0.12, gp / 4.0),
-                display: optText + ' (' + gp.toFixed(1) + ')'
-              });
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
-          subjects: subjects
-        };
-      }
-    },
 
     // 24. Tanzania University GPA Calculator
-    'tanzania-university-gpa-calculator': {
-      id: 'tanzania-university-gpa',
-      title: 'Tanzania University GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var headEl = document.getElementById('headline');
-        var val = headEl ? parseFloat(headEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        if (isNaN(val)) return null;
 
-        var subjects = [];
-        var rows = document.querySelectorAll('#coursesContainer .course-row, #coursesContainer2 .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var gradeSel = row.querySelector('.course-grade');
-          if (gradeSel && gradeSel.value !== '') {
-            var gp = parseFloat(gradeSel.value);
-            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
-            if (!isNaN(gp) && gp >= 0) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: optText,
-                raw: gp,
-                norm: Math.max(0.12, gp / 5.0),
-                display: optText + ' (' + gp.toFixed(1) + ')'
-              });
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + ' TCU GPA',
-          subjects: subjects
-        };
-      }
-    },
 
     // 25. Uganda University CGPA Calculator
-    'uganda-university-cgpa-calculator': {
-      id: 'uganda-university-cgpa',
-      title: 'Uganda University CGPA Calculator',
-      higherIsBetter: true,
-      unit: 'CGPA',
-      extract: function () {
-        var headEl = document.getElementById('headline');
-        var val = headEl ? parseFloat(headEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        if (isNaN(val)) return null;
 
-        var subjects = [];
-        var rows = document.querySelectorAll('#coursesContainer .course-row, #coursesContainer2 .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var gradeSel = row.querySelector('.course-grade');
-          if (gradeSel && gradeSel.value !== '') {
-            var gp = parseFloat(gradeSel.value);
-            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
-            if (!isNaN(gp) && gp >= 0) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: optText,
-                raw: gp,
-                norm: Math.max(0.12, gp / 5.0),
-                display: optText + ' (' + gp.toFixed(1) + ')'
-              });
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + ' NCHE CGPA',
-          subjects: subjects
-        };
-      }
-    },
 
     // 26. Zambia University GPA Calculator
-    'zambia-university-gpa-calculator': {
-      id: 'zambia-university-gpa',
-      title: 'Zambia University GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var resEl = document.getElementById('semesterGpaValue') || document.getElementById('cgpaValue');
-        var val = resEl ? parseFloat(resEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        if (isNaN(val)) return null;
 
-        var scaleSel = document.getElementById('gpaScale');
-        var maxScale = scaleSel && scaleSel.value === 'cbu4' ? 4.0 : 5.0;
-
-        var subjects = [];
-        var rows = document.querySelectorAll('#courseList .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var gradeSel = row.querySelector('.course-grade');
-          if (gradeSel && gradeSel.value !== '') {
-            var gp = parseFloat(gradeSel.value);
-            var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
-            if (!isNaN(gp) && gp >= 0) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: optText,
-                raw: gp,
-                norm: Math.max(0.12, gp / maxScale),
-                display: optText + ' (' + gp.toFixed(1) + ')'
-              });
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + ' GPA',
-          subjects: subjects
-        };
-      }
-    },
 
     // 27. Zimbabwe University GPA Calculator
-    'zimbabwe-university-gpa-calculator': {
-      id: 'zimbabwe-university-gpa',
-      title: 'Zimbabwe University GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var headEl = document.getElementById('headline');
-        var text = headEl ? headEl.textContent.trim() : '';
-        var isWam = text.indexOf('%') !== -1;
-        var val = parseFloat(text.replace(/[^0-9.]/g, ''));
-        if (isNaN(val)) return null;
 
-        var subjects = [];
-        var rows = document.querySelectorAll('#coursesContainer .course-row');
-        rows.forEach(function (row, idx) {
-          var nameInp = row.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Unit ' + (idx + 1));
-          var markInp = row.querySelector('.course-mark');
-          if (markInp && markInp.value !== '') {
-            var mark = parseFloat(markInp.value);
-            if (!isNaN(mark) && mark >= 0 && mark <= 100) {
-              subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-                grade: Math.round(mark) + '%',
-                raw: mark,
-                norm: Math.max(0.12, mark / 100),
-                display: Math.round(mark) + '%'
-              });
-            }
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
-          subjects: subjects
-        };
-      }
-    },
 
     // 28. Form Four GPA Calculator (Tanzania CSEE)
     'form-four-gpa-calculator': {
@@ -2505,54 +2197,7 @@
     },
 
     // 36. Canada GPA Calculator
-    'canada-gpa-calculator': {
-      id: 'canada-gpa',
-      title: 'Canada GPA Calculator',
-      higherIsBetter: true,
-      unit: 'GPA',
-      extract: function () {
-        var gpaEl = document.getElementById('gpaBig');
-        var val = gpaEl ? parseFloat(gpaEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
-        if (isNaN(val)) return null;
 
-        var cgpaEl = document.getElementById('cgpaValue');
-        var cgpaStr = cgpaEl && cgpaEl.textContent !== '—' ? cgpaEl.textContent.trim() : '';
-
-        var subjects = [];
-        var rows = document.querySelectorAll('#courseList .course-row');
-        var letterMap = { 'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D': 1.0, 'F': 0.0 };
-
-        rows.forEach(function (r, idx) {
-          var nameInp = r.querySelector('.course-name');
-          var sName = (nameInp && nameInp.value.trim()) || ('Course ' + (idx + 1));
-          var gradeInp = r.querySelector('.course-grade');
-          var credInp = r.querySelector('.course-credit');
-          var gVal = gradeInp ? gradeInp.value.trim() : '';
-          var cr = credInp ? parseFloat(credInp.value) || 3 : 3;
-
-          if (gVal) {
-            var numG = parseFloat(gVal);
-            var normVal = !isNaN(numG) ? (numG > 4.5 ? numG / 100 : numG / 4.0) : 0.75;
-            if (letterMap[gVal.toUpperCase()] !== undefined) {
-              normVal = letterMap[gVal.toUpperCase()] / 4.0;
-            }
-            subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
-              grade: gVal,
-              raw: normVal * 4.0,
-              norm: Math.max(0.12, Math.min(1.0, normVal)),
-              display: gVal + ' (' + cr + ' cr)'
-            });
-          }
-        });
-
-        return {
-          value: val,
-          displayValue: val.toFixed(2) + ' GPA' + (cgpaStr ? ' (CGPA ' + cgpaStr + ')' : ''),
-          subjects: subjects
-        };
-      }
-    },
 
     // 37. Australian ATAR Calculator
     'atar-calculator': {
