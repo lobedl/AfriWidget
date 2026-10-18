@@ -349,7 +349,7 @@ ul,ol{list-style:none}
         <a href="/">Home</a>
         <a href="/education" class="active">Education</a>
         <a href="/finance">Finance</a>
-        
+
         <a href="/productivity">Productivity</a>
         <a href="/use-cases">Use Cases</a>
         <div class="nav-dropdown">
@@ -378,7 +378,7 @@ ul,ol{list-style:none}
     <a href="/">Home</a>
     <a href="/education" class="active">Education</a>
     <a href="/finance">Finance</a>
-    
+
     <a href="/productivity">Productivity</a>
     <a href="/use-cases">Use Cases</a>
     <div class="mobile-menu-divider">
@@ -443,13 +443,13 @@ ul,ol{list-style:none}
         <div class="cluster-block">
           <span class="cluster-label">Degree cluster</span>
           <select class="form-select" id="cluster" required>
-            
+
             <option value="engineering">Engineering, Technology &amp; Surveying</option>
             <option value="computing">Computing, Software Engineering &amp; IT</option>
             <option value="law">Law &amp; Legal Studies (LLB)</option>
             <option value="business">Business, Commerce, Economics &amp; Finance</option>
             <option value="architecture">Architecture, Building &amp; Quantity Surveying</option>
-            
+
             <option value="actuarial">Actuarial Science, Financial Maths &amp; Statistics</option>
             <option value="agriculture">Agricultural Sciences &amp; Agribusiness</option>
             <option value="education_science">Education (Science Teaching)</option>
@@ -467,7 +467,7 @@ ul,ol{list-style:none}
         </div>
 
         <div class="section-divider">
-          <div class="section-title">Four prerequisite subjects <span class="opt" id="clusterHint">Medicine prerequisites</span></div>
+          <div class="section-title">Four prerequisite subjects </div>
 
           <div class="form-row">
             <div class="form-group">
@@ -671,7 +671,7 @@ ul,ol{list-style:none}
           <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <div class="faq-content">
-          
+
         </div>
       </details>
 
@@ -757,7 +757,7 @@ ul,ol{list-style:none}
           <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <div class="faq-content">
-          
+
         </div>
       </details>
 
@@ -855,7 +855,7 @@ ul,ol{list-style:none}
         <ul>
           <li><a href="/education">Education &amp; Academics</a></li>
           <li><a href="/finance">Finance &amp; Wealth</a></li>
-          
+
           <li><a href="/productivity">Productivity Tools</a></li>
           <li><a href="/business">Business &amp; Freelance</a></li>
         </ul>
@@ -928,17 +928,6 @@ ul,ol{list-style:none}
   }
 
   var clusterConfig = {
-    medicine: {
-      hint: 'Medicine and Pharmacy prerequisites',
-      s1: 'Subject 1: Mathematics or Physics',
-      s2: 'Subject 2: Biology',
-      s3: 'Subject 3: Chemistry',
-      s4: 'Subject 4: English or Kiswahili',
-      uon: '~ 44.5 to 45.8',
-      jkuat: '~ 43.5 to 44.8',
-      ku: '~ 43.0 to 44.5',
-      others: '~ 41.5 to 43.5'
-    },
     engineering: {
       hint: 'Engineering and technology prerequisites',
       s1: 'Subject 1: Mathematics',
@@ -993,18 +982,7 @@ ul,ol{list-style:none}
       jkuat: '~ 41.5 to 43.5',
       ku: '~ 40.0 to 42.0',
       others: '~ 37.5 to 40.0'
-    },
-    nursing: {
-      hint: 'Nursing and midwifery prerequisites',
-      s1: 'Subject 1: Mathematics or Physics',
-      s2: 'Subject 2: Biology',
-      s3: 'Subject 3: Chemistry',
-      s4: 'Subject 4: English or Kiswahili',
-      uon: '~ 42.5 to 44.0',
-      jkuat: '~ 41.5 to 43.2',
-      ku: '~ 41.0 to 42.8',
-      others: '~ 39.0 to 41.5'
-    },
+    }
     actuarial: {
       hint: 'Actuarial science and statistics prerequisites',
       s1: 'Subject 1: Mathematics (minimum A- or A)',
@@ -1133,10 +1111,10 @@ ul,ol{list-style:none}
     var interpretation;
     if (wcp >= 45) {
       tier = 'Top tier';
-      interpretation = 'A cluster score in this range puts you at the top of the national pool for your programme. Medicine, Law, Actuarial Science, and the most selective engineering courses at the leading universities are all within realistic reach, provided you also meet the specific subject requirements. Remember that the cut-off for a specific programme in a specific year is only known after the placement run finishes, so use this as a strong indicator rather than a guarantee.';
+      interpretation = 'A cluster score in this range puts you at the top of the national pool for your programme. other fields, Law, Actuarial Science, and the most selective engineering courses at the leading universities are all within realistic reach, provided you also meet the specific subject requirements. Remember that the cut-off for a specific programme in a specific year is only known after the placement run finishes, so use this as a strong indicator rather than a guarantee.';
     } else if (wcp >= 42) {
       tier = 'Very strong';
-      interpretation = 'This sits in the range that has historically been competitive for engineering, computer science, nursing, and similar programmes at the leading public universities. Check the specific cut-off ranges for the universities you are considering, and make sure your programme choices reflect your strongest cluster.';
+      interpretation = 'This sits in the range that has historically been competitive for engineering, computer science, other fields, and similar programmes at the leading public universities. Check the specific cut-off ranges for the universities you are considering, and make sure your programme choices reflect your strongest cluster.';
     } else if (wcp >= 38) {
       tier = 'Solid';
       interpretation = 'A workable score for many science and business programmes at mid-tier public universities, and for less competitive programmes at the top institutions. Mix your choices with at least one or two programmes where your cluster score is comfortably above the typical cut-off.';
