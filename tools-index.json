@@ -37,7 +37,7 @@
     "name": "AI Business Name Generator",
     "shortName": "AI Business Name Generator",
     "description": "Discover creative, memorable business name ideas and brand names with AI. Generate catchy startup names across tech, retail, consulting, and commerce.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/ai-business-name-generator",
     "keywords": [
       "ai business name generator",
@@ -58,7 +58,7 @@
     "name": "AI Gig Description Generator",
     "shortName": "AI Gig Description Generator",
     "description": "Create high-converting freelance gig descriptions for Fiverr and Upwork with AI. Highlight your skills, deliverables, and packages to win clients.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/ai-gig-description-generator",
     "keywords": [
       "ai gig description generator",
@@ -80,7 +80,7 @@
     "name": "AI Paraphrasing Tool",
     "shortName": "AI Paraphrasing Tool",
     "description": "Rewrite sentences, essays, and articles with our free AI paraphrasing tool. Enhance clarity, fix tone, and improve vocabulary with zero signup and 100% privacy.",
-    "category": "Finance",
+    "category": "Productivity",
     "url": "/ai-paraphrasing-tool",
     "keywords": [
       "ai paraphrasing tool",
@@ -102,7 +102,7 @@
     "name": "AI Product Description Generator",
     "shortName": "AI Product Description Generator",
     "description": "Generate persuasive e-commerce product descriptions for Shopify, Amazon, and Etsy with AI. Highlight features and benefits that drive sales conversions.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/ai-product-description-generator",
     "keywords": [
       "ai product description generator",
@@ -123,7 +123,7 @@
     "name": "AI Text Summarizer",
     "shortName": "AI Text Summarizer",
     "description": "Condense long articles, research papers, essays, and meeting notes into concise summaries or bullet points with our free, private in-browser AI summarizer.",
-    "category": "Finance",
+    "category": "Productivity",
     "url": "/ai-text-summarizer",
     "keywords": [
       "ai text summarizer",
@@ -268,7 +268,7 @@
     "name": "Break-Even Point Calculator",
     "shortName": "Break-Even Calculator",
     "description": "Calculate your business break-even point in units and sales revenue based on fixed costs, variable costs per unit, and unit selling price.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/break-even-calculator",
     "keywords": [
       "break even calculator",
@@ -295,7 +295,7 @@
     "name": "Canada Student Loan Repayment Calculator",
     "shortName": "Canada Student Loan Repayment",
     "description": "Calculate your Canada Student Loan (CSLP), OSAP, and StudentAid BC monthly payments with permanent 0% federal interest and RAP zero-payment relief rules.",
-    "category": "Education",
+    "category": "Finance",
     "url": "/canada-student-loan-repayment-calculator",
     "keywords": [
       "canada student loan repayment calculator",
@@ -567,7 +567,7 @@
     "name": "Freelance Rate Calculator",
     "shortName": "Freelance Rate Calculator",
     "description": "Determine your freelance hourly and daily billing rate to cover taxes, business overhead, billable hours, and desired annual income.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/freelance-rate-calculator",
     "keywords": [
       "freelance rate calculator",
@@ -683,7 +683,7 @@
     "name": "HECS-HELP Repayment Calculator Australia",
     "shortName": "HECS-HELP Repayment Calculator",
     "description": "Calculate your Australian HECS-HELP student loan compulsory repayments, weekly/fortnightly paycheck deductions, CPI/WPI indexation, and multi-year payoff timeline under official ATO thresholds.",
-    "category": "Education",
+    "category": "Finance",
     "url": "/hecs-help-repayment-calculator",
     "keywords": [
       "hecs help repayment calculator",
@@ -717,7 +717,7 @@
     "name": "Hourly Rate to Annual Salary Converter",
     "shortName": "Hourly to Salary Converter",
     "description": "Convert hourly pay rates to annual salary, monthly, biweekly, and weekly gross income based on working hours per week and paid weeks per year.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/hourly-to-salary",
     "keywords": [
       "hourly to salary",
@@ -1453,7 +1453,7 @@
     "name": "Secure Password Generator",
     "shortName": "Secure Password Generator",
     "description": "Generate strong, secure, random passwords with custom length, symbols, numbers, and uppercase characters. 100% client-side security with zero logging.",
-    "category": "Education",
+    "category": "Productivity",
     "url": "/password-generator",
     "keywords": [
       "password generator",
@@ -1494,7 +1494,7 @@
     "name": "PayPal & Payment Processor Fee Calculator",
     "shortName": "PayPal Fee Calculator",
     "description": "PayPal & Payment Processor Fee Calculator tool on AfriWidget. Compute results instantly in your browser with zero signup required and 100% private execution.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/paypal-fee-calculator",
     "keywords": [
       "paypal fee calculator",
@@ -1587,7 +1587,7 @@
     "name": "Product & Service Pricing Calculator",
     "shortName": "Pricing Calculator",
     "description": "Calculate optimal product and service pricing using cost-plus, value-based, and competitor markup models to maximize gross profit margins.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/pricing-calculator",
     "keywords": [
       "pricing calculator",
@@ -1611,7 +1611,7 @@
     "name": "Profit Margin Calculator",
     "shortName": "Profit Margin Calculator",
     "description": "Calculate gross profit margin, net profit margin, and percentage markup from cost and selling price with comprehensive revenue breakdowns.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/profit-margin-calculator",
     "keywords": [
       "profit margin calculator",
@@ -1755,7 +1755,7 @@
     "name": "SEO Meta Tag Generator & SERP Preview",
     "shortName": "SEO Meta Tag Generator & SERP Preview",
     "description": "Generate optimized HTML meta tags, Open Graph cards, and Twitter Cards with live desktop and mobile Google SERP preview.",
-    "category": "Education",
+    "category": "Productivity",
     "url": "/seo-meta-generator",
     "keywords": [
       "seo meta generator",
@@ -1862,7 +1862,7 @@
     "name": "Startup Cost Calculator",
     "shortName": "Startup Cost Calculator",
     "description": "Calculate one-time startup capital expenses and recurring monthly operating costs to estimate total funding needed to launch your business.",
-    "category": "Finance",
+    "category": "Business",
     "url": "/startup-cost-calculator",
     "keywords": [
       "startup cost calculator",
@@ -2292,7 +2292,7 @@
     "name": "UK Student Finance & Maintenance Loan Calculator",
     "shortName": "UK Student Finance Calculator",
     "description": "Calculate your UK student maintenance loan entitlement and estimate monthly student loan repayments for Plan 5 (2023+ starters), Plan 2, Plan 1, and Postgraduate loans. Free, instant, and 100% private.",
-    "category": "Education",
+    "category": "Finance",
     "url": "/uk-student-loan-finance-calculator",
     "keywords": [
       "uk student loan finance calculator",

@@ -1,0 +1,154 @@
+regroup category 
+Audit the entire AfriWidget website and fix category duplication. Some tools appear in both Finance & Wealth and Business & Freelance, making the categories confusing and causing the same tool to be listed more than once.
+
+The goal is simple: every tool must have exactly one primary category across the entire website. Place it in the category that best matches its main purpose. Do not delete a useful tool simply because it appears in the wrong category.
+
+Maintain AfriWidget's existing black, yellow, and white branding, static HTML/CSS/JavaScript architecture, responsive design, and Cloudflare Pages compatibility. Do not use React, Next.js, Tailwind CSS, or emojis.
+
+1. Use These Category Rules
+
+Business & Freelance
+
+This category is for operating a business, pricing products and services, managing clients, creating business documents, marketing, and planning freelance work.
+
+Keep these tools here:
+
+- Profit Margin Calculator
+- Break-Even Calculator
+- Product & Service Pricing Calculator
+- Payment Processor Fee Calculator
+- Startup Cost Calculator
+- Freelance Rate Calculator
+- Invoice & Receipt PDF Generator
+- WhatsApp Direct Link & QR
+- AI Business Name Generator
+- AI Product Description Generator
+- AI Gig Description Generator
+- AI Paraphrasing & Rewriting, if primarily designed for business writing
+- AI Text Summarizer, if primarily designed for business documents
+- Hourly Rate to Salary Converter, if its main purpose is helping freelancers compare freelance rates with employment income
+
+Keep the ROI Calculator here only if its main purpose is evaluating business projects, business investments, or business spending.
+
+Finance & Wealth
+
+This category is for personal financial planning, borrowing, saving, debt management, currency conversion, and general financial calculations.
+
+Keep these tools here:
+
+- Compound Interest Calculator
+- Mortgage Calculator
+- Loan Calculator
+- Savings Calculator
+- Debt Payoff Calculator
+- Rent Affordability Calculator
+- PAYE & Net Salary Calculator
+- Real-Time Currency Converter
+- Hourly to Salary Converter, if its main purpose is personal salary and income conversion rather than freelance pricing
+- ROI Calculator, if its main purpose is general investment return rather than business project evaluation
+
+Do not create duplicate versions of the same calculator to justify keeping it in both categories.
+
+Important classification rule
+
+Some tools can reasonably fit either category. Inspect each tool's actual functionality, intended audience, inputs, outputs, page title, and description before deciding where it belongs.
+
+Use the tool's primary purpose to make the decision. The lists above are starting guidance, not permission to ignore the actual implementation.
+
+For tools that could serve both audiences, select the category that best matches their current implementation and keep that decision consistent across the website.
+
+2. Audit Every Category, Not Just These Two
+
+Search the complete project for duplicated tools across:
+
+- Finance & Wealth
+- Business & Freelance
+- Education & Academics
+- Health & Wellness
+- Productivity Tools
+- The homepage and featured tools
+- All Tools Directory
+- Search indexes and tool registries
+- Related-tool recommendations
+- Navigation menus and category cards
+
+Every tool must have one authoritative primary-category assignment.
+
+A tool may still appear in global search, the homepage's featured section, favourites, or related-tool recommendations when appropriate. These are discovery surfaces, not additional category assignments.
+
+Do not remove a tool from global search or featured sections simply because it has been removed from an incorrect category.
+
+3. Fix the Underlying Structure
+
+Do not solve duplication by hiding cards with CSS or removing individual links while leaving the underlying duplication intact.
+
+- Inspect the existing tool registry, category configuration, arrays, JSON files, and page-generation logic.
+- Establish one authoritative category assignment for each tool.
+- Update category pages and directory generation to use that assignment.
+- Ensure each tool is counted only once in category totals.
+- Prevent the same tool from being added to multiple primary categories accidentally.
+- Preserve existing tool URLs and working implementations wherever possible.
+- Do not introduce a database or a new framework.
+
+If the current architecture uses separate static HTML pages, make the smallest reliable changes needed to maintain consistent category assignments.
+
+4. Improve Category Accuracy
+
+Review the names, descriptions, and featured sections of both categories.
+
+- Business & Freelance should emphasise business operations, pricing, payment acceptance, startup planning, freelance work, documents, and marketing.
+- Finance & Wealth should emphasise personal money management, borrowing, saving, debt, housing costs, salary calculations, and currency conversion.
+- Remove misleading descriptions that imply a tool is available in a category when it is not.
+- Update tool counts and category summaries to match the actual contents.
+- Keep descriptions useful and specific. Avoid generic SEO filler.
+
+Do not rewrite unrelated page content or change the website's overall design.
+
+5. Preserve Existing Functionality
+
+Do not break or remove:
+
+- Calculator formulas or input validation
+- PDF invoice and receipt generation
+- AI tool functionality
+- Search and filters
+- Favourites and saved tools
+- Compare Results features
+- Share links and analytics
+- Saved user inputs and progress tracking
+- Responsive layouts
+- SEO metadata and structured data unrelated to this change
+
+Do not remove tools solely because their names are similar. Verify whether they perform genuinely different tasks before making changes.
+
+6. SEO and URL Protection
+
+- Preserve existing URLs wherever possible.
+- Remove internal category links only when a tool is being removed from that category.
+- Ensure each tool has a consistent canonical URL.
+- Do not create duplicate pages or duplicate tool implementations.
+- Do not introduce unnecessary redirects, redirect loops, or blanket redirects to the homepage.
+- Update the sitemap only if actual URLs are added or removed.
+- Preserve existing clean-URL conventions and Cloudflare Pages routing.
+
+7. Test and Report
+
+After implementation:
+
+1. Search the entire project for duplicate primary-category assignments.
+2. Confirm that each tool belongs to exactly one primary category.
+3. Confirm that all remaining tools appear in the correct category.
+4. Check category counts and featured-tool sections.
+5. Test search, filtering, navigation, and direct tool URLs.
+6. Check the browser console for errors.
+7. Verify that the website still builds and deploys correctly on Cloudflare Pages.
+
+At completion, provide:
+
+- The tools moved between categories.
+- The tools that were duplicated and how each duplication was resolved.
+- The final number of tools in each affected category.
+- Any genuine ambiguities that required a decision.
+- Any tests that failed or issues that remain.
+
+Make the changes directly in the existing project. Do not merely produce a report, redesign the website, or remove unrelated functionality.

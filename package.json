@@ -8,8 +8,10 @@
     "dev": "node server.js",
     "start": "node server.js",
     "lint": "node --check server.js generate-og-assets.js academic-progress.js",
+    "validate:categories": "node validate-category-assignments.js",
+    "prebuild": "npm run validate:categories",
     "build": "node generate-og-assets.js",
-    "deploy": "npx wrangler pages deploy ."
+    "deploy": "npm run validate:categories && npx wrangler pages deploy ."
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
