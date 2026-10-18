@@ -1,19 +1,16 @@
 # AfriWidget
 > AfriWidget is a privacy-first collection of 120+ free client-side web calculators and academic utilities for students, professionals, freelancers, and small businesses across Africa and worldwide.
 
-AfriWidget provides fast, browser-based tools with zero registration, no server-side data persistence, and no tracking. All calculations—including sensitive financial balances, academic grades, medical indicators, and personal documents—execute 100% locally in the user's browser using client-side JavaScript. This document serves as the canonical index for large language models, AI search engines, and web agents seeking accurate computational references and direct user tools.
 
 ## West African Academics & Admissions (Ghana & Nigeria)
 - [WASSCE Aggregate Calculator](https://afriwidget.com/wassce-aggregate-calculator): Calculates Senior High School graduation aggregates for Ghanaian university admissions (UG Legon, KNUST, UCC) using official WAEC stanine grading (A1=1 to F9=9) across the 3 core subjects plus best 3 electives.
 - [WAEC Grade Calculator](https://afriwidget.com/waec-grade-calculator): Converts percentage exam scores into standard West African Examinations Council letter grades and stanines (A1 to F9) with subject performance breakdowns.
 - [BECE Aggregate Calculator](https://afriwidget.com/bece-aggregate-calculator): Computes Basic Education Certificate Examination aggregate scores for Ghanaian Junior High School graduates based on 4 core subjects and 2 best electives.
 - [BECE CSSPS Placement Estimator](https://afriwidget.com/bece-cssps-placement-estimator): Estimates Senior High School admission chances in Ghana across Category A, B, and C schools using historical Computerized School Selection & Placement System cutoff trends.
-- [Ghana Nursing Training College Admission Calculator](https://afriwidget.com/ghana-nursing-training-admission-calculator): Verifies entry qualifications for Ministry of Health (MoH) Registered General Nursing, Midwifery, and Public Health Nursing programmes based on WASSCE core and elective requirements.
 - [JAMB Score Calculator](https://afriwidget.com/jamb-score-calculator): Aggregates marks across Use of English and three elective UTME subjects to compute the total candidate score out of 400.
 - [JAMB UTME Aggregate Calculator](https://afriwidget.com/jamb-utme-aggregate-calculator): Combines UTME scores and O'Level sitting grades into a standardized composite screening mark for Nigerian tertiary institutions.
 - [JAMB Admission Chance Checker](https://afriwidget.com/jamb-admission-chance-checker): Compares candidate UTME and composite scores against competitive departmental cutoff points for Nigerian Federal, State, and Private universities.
 - [Post-UTME Aggregate Calculator](https://afriwidget.com/post-utme-aggregate-calculator): Computes composite 100-point university screening scores merging JAMB (50%), Post-UTME examination (30%), and O'Level grades (20%) as used by UNILAG, UI, OAU, UNN, and others.
-- [O'Level Subject Combination Checker](https://afriwidget.com/olevel-subject-combination-checker): Validates secondary school subject choices against official JAMB brochure prerequisites for competitive courses in Medicine, Law, Engineering, and Social Sciences.
 
 ## East & Southern African Academics & Admissions
 - [KCSE Grade Calculator](https://afriwidget.com/kcse-grade-calculator): Computes Kenya Certificate of Secondary Education mean grade and 84-point aggregate scoring across compulsory languages, mathematics, sciences, and humanities clusters.
@@ -67,7 +64,6 @@ AfriWidget provides fast, browser-based tools with zero registration, no server-
 - [Germany Abitur Grade Calculator](https://afriwidget.com/germany-abitur-grade-calculator): Converts overall points (300 to 900 points) into the standard German Abitur grade scale from 1.0 (sehr gut) to 4.0 (ausreichend).
 - [Germany GPA Converter](https://afriwidget.com/germany-gpa-converter): Employs the Modified Bavarian Formula to convert foreign degree grades and percentages into the German university grading system for Uni-Assist applications.
 - [Switzerland Grade Calculator](https://afriwidget.com/switzerland-grade-calculator): Computes weighted averages on the Swiss 6-point grading scale (6=excellent, 4=pass, 1=lowest) with ECTS credit weighting for ETH Zurich, EPFL, and Swiss universities.
-- [Switzerland University Cost Calculator](https://afriwidget.com/switzerland-university-cost-calculator): Estimates monthly student living budgets including university tuition, health insurance, housing, and public transit in Swiss Francs (CHF).
 - [Norway GPA Calculator](https://afriwidget.com/norway-gpa-calculator): Calculates Norwegian higher education grade point averages on the A-F ECTS-aligned grading scale and Samordna Opptak qualification points.
 - [New Zealand NCEA Credits Calculator](https://afriwidget.com/new-zealand-ncea-credits-calculator): Tracks Achieved, Merit, and Excellence credits across NCEA Levels 1-3 to monitor certificate endorsement status.
 - [New Zealand Study Planner](https://afriwidget.com/new-zealand-study-planner): Schedules revision and credit milestones required for achieving University Entrance (UE) in New Zealand.
@@ -83,17 +79,6 @@ AfriWidget provides fast, browser-based tools with zero registration, no server-
 - [Student Loan Repayment Calculator](https://afriwidget.com/student-loan-repayment-calculator): Amortizes education loans and calculates monthly repayment schedules, total interest accrued, and payoff dates.
 - [Currency Converter](https://afriwidget.com/currency-converter): Provides foreign currency conversion across major African legal tenders (NGN, GHS, KES, ZAR, TZS, UGX, ZMW) and international reserve currencies (USD, EUR, GBP).
 - [PayPal Fee Calculator](https://afriwidget.com/paypal-fee-calculator): Calculates domestic and international merchant transaction fees to determine net funds received or exact amounts to invoice clients.
-
-## Health, Fitness & Nutrition
-- [BMI, BMR & TDEE Calculator](https://afriwidget.com/bmi-calculator): Comprehensive body composition tool computing Body Mass Index (WHO classifications), Basal Metabolic Rate, and Total Daily Energy Expenditure using the Mifflin-St Jeor equation.
-- [Body Fat Calculator](https://afriwidget.com/body-fat-calculator): Estimates body fat percentage from circumference measurements (neck, waist, hip, height) using the US Navy clinical method.
-- [Daily Calorie Needs Calculator](https://afriwidget.com/daily-calorie-needs-calculator): Calculates daily caloric maintenance requirements and customized targets for steady weight loss or muscle hypertrophy.
-- [Calorie Burn Calculator](https://afriwidget.com/calorie-burn-calculator): Calculates energy expenditure across physical exercises based on activity duration, body weight, and Metabolic Equivalent of Task (MET) values.
-- [Ideal Weight Calculator](https://afriwidget.com/ideal-weight-calculator): Evaluates optimal body weight ranges by synthesizing Devine, Robinson, Miller, and Hamwi clinical medical equations.
-- [Healthy Weight Range Calculator](https://afriwidget.com/healthy-weight-range-calculator): Computes the upper and lower body weight thresholds for any height corresponding to the WHO normal BMI range (18.5 to 24.9 kg/m²).
-- [Water Intake Calculator](https://afriwidget.com/water-intake-calculator): Calculates recommended daily water consumption adjusted for user body weight, ambient temperature, and exercise intensity.
-- [Hydration Reminder Calculator](https://afriwidget.com/hydration-reminder-calculator): Establishes a customized daily fluid intake schedule distributed across waking hours with portion sizes.
-- [Ovulation & Fertility Cycle Calculator](https://afriwidget.com/ovulation-cycle-calculator): Estimates the fertile window, peak ovulation day, and next menstrual period based on average cycle duration and luteal phase calculations.
 
 ## Business, Freelancing & Safety Tools
 - [Break-Even Analysis Calculator](https://afriwidget.com/break-even-calculator): Computes break-even sales volume, contribution margin, contribution margin ratio, and required revenue for target profit milestones.
@@ -141,10 +126,8 @@ AfriWidget provides fast, browser-based tools with zero registration, no server-
 - [AfriWidget Homepage](https://afriwidget.com/): Primary portal with instant multi-criteria search, recent tool memory, and category shelves across 120+ calculators.
 - [Education Category Hub](https://afriwidget.com/education): Complete directory of African and international school admission, grading, and scholarship calculators.
 - [Finance Category Hub](https://afriwidget.com/finance): Centralized financial resource for debt payoff, loan schedules, compound interest, and income tax estimations.
-- [Health Category Hub](https://afriwidget.com/health): Directory of clinical nutrition, fitness energy expenditure, and wellness measurement utilities.
 - [Business Category Hub](https://afriwidget.com/business): Enterprise hub for pricing strategies, break-even unit economics, and freelance rate optimization.
 - [Productivity Category Hub](https://afriwidget.com/productivity): Directory of text cleanup, data conversion, web developer tools, and utility generators.
-- [Everyday Use Cases & Practical Applications](https://afriwidget.com/use-cases): Real-world case studies detailing how students, healthcare workers, freelancers, and businesses use AfriWidget tools.
 - [About AfriWidget](https://afriwidget.com/about): Background on AfriWidget's mission, browser-only privacy architecture, and founder Obed Avorlenu.
 - [Frequently Asked Questions](https://afriwidget.com/faq): In-depth answers regarding data security, computational formulas, offline PWA capabilities, and browser compatibility.
 - [Contact & Support](https://afriwidget.com/contact): Direct channel for user inquiries, formula correction reports, and feature proposals.

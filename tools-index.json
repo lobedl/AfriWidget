@@ -644,40 +644,6 @@
     ]
   },
   {
-    "slug": "ghana-nursing-training-admission-calculator",
-    "name": "Ghana Nursing Training Admission Calculator",
-    "shortName": "Ghana Nursing Admission",
-    "description": "Calculate your Ghana Nursing and Midwifery Training College (NMTC) admission aggregate, check Ministry of Health (MoH) cut-offs, and verify RGN, RM, CHN, and NAC eligibility.",
-    "category": "Education",
-    "url": "/ghana-nursing-training-admission-calculator",
-    "keywords": [
-      "ghana nursing training admission calculator",
-      "education",
-      "ghana",
-      "nursing",
-      "training",
-      "admission",
-      "calculator",
-      "moh",
-      "nmtc",
-      "cut",
-      "off",
-      "aggregate",
-      "rgn",
-      "midwifery",
-      "chn",
-      "nac",
-      "nap",
-      "korle",
-      "kumasi",
-      "cape",
-      "coast",
-      "wassce",
-      "moh aggregate",
-      "diploma & cert"
-    ]
-  },
-  {
     "slug": "gpa-calculator",
     "name": "GPA & CGPA Calculator",
     "shortName": "GPA & CGPA Calculator",
@@ -1127,7 +1093,7 @@
     "slug": "kuccps-cluster-points-calculator",
     "name": "KUCCPS Cluster Points Calculator",
     "shortName": "KUCCPS Cluster Points Calculator",
-    "description": "Calculate your official KUCCPS Weighted Cluster Points (out of 48) for Kenyan university degree courses including Medicine, Engineering, Law, Computer Science, and Nursing.",
+    "description": "",
     "category": "Education",
     "url": "/kuccps-cluster-points-calculator",
     "keywords": [
@@ -1439,7 +1405,7 @@
     "slug": "olevel-subject-combination-checker",
     "name": "WAEC / NECO O’Level Subject Combination Checker",
     "shortName": "WAEC / NECO Subject Checker",
-    "description": "Verify required O’Level subject combinations for university, polytechnic, and college courses across Medicine, Engineering, Law, and Sciences.",
+    "description": "",
     "category": "Education",
     "url": "/olevel-subject-combination-checker",
     "keywords": [
@@ -1987,7 +1953,7 @@
     "slug": "switzerland-university-cost-calculator",
     "name": "Switzerland University Cost Calculator",
     "shortName": "Switzerland University Cost Calculator",
-    "description": "Calculate Swiss university tuition fees, WG student room rent in Zurich and Geneva, health insurance exemption packages, SBB Halbtax transit, and Permit B financial solvency proof.",
+    "description": "",
     "category": "Education",
     "url": "/switzerland-university-cost-calculator",
     "keywords": [
@@ -2008,14 +1974,12 @@
       "uzh",
       "unige",
       "unibas",
-      "health",
       "insurance",
       "accommodation",
       "cantonal",
       "budget",
       "tuition & rent",
-      "permit b proof",
-      "health exemption"
+      "permit b proof"
     ]
   },
   {

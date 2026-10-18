@@ -1,6 +1,8 @@
 {
   "name": "AfriWidget",
-  "description": "Free calculators and browser tools for health, finance, education, business, and productivity with optional Groq AI insights.",
+  "description": "AfriWidget provides practical education, finance, productivity, and business tools.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

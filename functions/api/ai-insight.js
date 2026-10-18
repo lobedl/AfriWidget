@@ -246,7 +246,7 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Branch 2: Calculator Benchmark Interpretation (GPA, BMI, Loan, WASSCE, etc.)
+    // Branch 2: Calculator Benchmark Interpretation (GPA, Loan, WASSCE, etc.)
     if (visitor.count > RATE_LIMIT_MAX) {
       const retryAfterSec = Math.max(1, Math.ceil((visitor.reset - now) / 1000));
       const retryMinutes = Math.ceil(retryAfterSec / 60);

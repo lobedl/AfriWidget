@@ -150,7 +150,7 @@ try {
 // Serve static files with html extension fallback
 app.use(express.static(__dirname, { extensions: ['html'] }));
 
-// Clean URL routing fallback for HTML pages (e.g. /bmi-calculator -> /bmi-calculator.html)
+  // Clean URL routing fallback for HTML pages (e.g. /gpa-calculator -> /gpa-calculator.html)
 app.use((req, res, next) => {
   if (req.method === 'GET' && !path.extname(req.path)) {
     const filePath = path.join(__dirname, req.path + '.html');

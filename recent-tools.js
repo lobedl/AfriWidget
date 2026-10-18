@@ -15,6 +15,12 @@
   var PROGRESS_PREFIX = 'afriwidget_progress_';
   var MAX_ITEMS = 6;
   var EXPIRY_MS = 30 * 24 * 60 * 60 * 1000; // 30 days expiration
+  var REMOVED_TOOL_PATHS = new Set([
+    '/bmi-calculator', '/body-fat-calculator', '/calorie-burn-calculator',
+    '/daily-calorie-needs-calculator', '/ghana-nursing-training-admission-calculator',
+    '/healthy-weight-range-calculator', '/hydration-reminder-calculator',
+    '/ideal-weight-calculator', '/ovulation-cycle-calculator', '/water-intake-calculator'
+  ]);
 
   // Pristine Tool Directory Lookup (All 126 AfriWidget Tools)
   var TOOL_MAP = {
@@ -73,25 +79,10 @@
     "category": "Education",
     "url": "/bece-cssps-placement-estimator"
   },
-  "bmi-calculator": {
-    "name": "BMI / BMR / TDEE Calculator",
-    "category": "Health",
-    "url": "/bmi-calculator"
-  },
-  "body-fat-calculator": {
-    "name": "Body Fat Calculator",
-    "category": "Health",
-    "url": "/body-fat-calculator"
-  },
   "break-even-calculator": {
     "name": "Break-Even Calculator",
     "category": "Finance",
     "url": "/break-even-calculator"
-  },
-  "calorie-burn-calculator": {
-    "name": "Calorie Burn Calculator",
-    "category": "Health",
-    "url": "/calorie-burn-calculator"
   },
   "canada-student-loan-repayment-calculator": {
     "name": "Canada Student Loan Repayment",
@@ -117,11 +108,6 @@
     "name": "Real-Time Currency Converter",
     "category": "Finance",
     "url": "/currency-converter"
-  },
-  "daily-calorie-needs-calculator": {
-    "name": "Daily Calorie Needs Calculator",
-    "category": "Health",
-    "url": "/daily-calorie-needs-calculator"
   },
   "data-file-unit-converter": {
     "name": "Data & File Unit Converter",
@@ -163,20 +149,10 @@
     "category": "Education",
     "url": "/germany-gpa-converter"
   },
-  "ghana-nursing-training-admission-calculator": {
-    "name": "Ghana Nursing Admission",
-    "category": "Education",
-    "url": "/ghana-nursing-training-admission-calculator"
-  },
   "gpa-calculator": {
     "name": "GPA & CGPA Calculator",
     "category": "Education",
     "url": "/gpa-calculator"
-  },
-  "healthy-weight-range-calculator": {
-    "name": "Healthy Weight Range Calculator",
-    "category": "Health",
-    "url": "/healthy-weight-range-calculator"
   },
   "hecs-help-repayment-calculator": {
     "name": "HECS-HELP Repayment Calculator",
@@ -193,20 +169,10 @@
     "category": "Productivity",
     "url": "/html-minifier"
   },
-  "hydration-reminder-calculator": {
-    "name": "Hydration Reminder Calculator",
-    "category": "Health",
-    "url": "/hydration-reminder-calculator"
-  },
   "icass-calculator": {
     "name": "ICASS Calculator",
     "category": "Education",
     "url": "/icass-calculator"
-  },
-  "ideal-weight-calculator": {
-    "name": "Ideal Weight Calculator",
-    "category": "Health",
-    "url": "/ideal-weight-calculator"
   },
   "igcse-alevel-gpa-converter": {
     "name": "IGCSE / A-Level GPA Converter",
@@ -342,11 +308,6 @@
     "name": "Shop Scam Checker",
     "category": "Productivity",
     "url": "/online-shop-scam-checker"
-  },
-  "ovulation-cycle-calculator": {
-    "name": "Ovulation & Cycle Calculator",
-    "category": "Health",
-    "url": "/ovulation-cycle-calculator"
   },
   "password-generator": {
     "name": "Secure Password Generator",
@@ -558,11 +519,6 @@
     "category": "Education",
     "url": "/wassce-aggregate-calculator"
   },
-  "water-intake-calculator": {
-    "name": "Water Intake Calculator",
-    "category": "Health",
-    "url": "/water-intake-calculator"
-  },
   "whatsapp-direct-link-qr-generator": {
     "name": "WhatsApp Link & QR Generator",
     "category": "Business",
@@ -612,7 +568,6 @@
     '/index.html',
     '/education',
     '/finance',
-    '/health',
     '/productivity',
     '/business',
     '/use-cases',
@@ -628,7 +583,6 @@
 
   // Crisp SVG Icons (Zero Emojis, 100% AfriWidget Design System)
   var CATEGORY_ICONS = {
-    'Health': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>',
     'Education': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>',
     'Finance': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M6 16V8m4 8v-5m4 5V6m4 10V4"/></svg>',
     'Productivity': '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3ZM9 8h6M9 12h6M9 16h3"/></svg>',
@@ -675,6 +629,10 @@
       var changed = false;
       var valid = parsed.filter(function (item) {
         if (!item || !item.url || !item.name || typeof item.lastVisited !== 'number') {
+          changed = true;
+          return false;
+        }
+        if (REMOVED_TOOL_PATHS.has(normalizeUrl(item.url))) {
           changed = true;
           return false;
         }
