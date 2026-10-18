@@ -786,10 +786,6 @@
       fields: () => [$('#targetUniversity'), $('#targetProgram'), $('#suppTier'), $('#adjFactor'), ...$$('.subj-input')],
       calculate: () => $('#calcAdmissionsBtn')?.click()
     },
-    'canada-student-loan-repayment-calculator': {
-      fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
-      calculate: () => $('#calcLoanBtn')?.click()
-    },
     'document-converter': {
       fields: () => [$('#textInput'), $('#targetSelect')],
       restore(values) {

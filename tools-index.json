@@ -291,41 +291,6 @@
     ]
   },
   {
-    "slug": "canada-student-loan-repayment-calculator",
-    "name": "Canada Student Loan Repayment Calculator",
-    "shortName": "Canada Student Loan Repayment",
-    "description": "Calculate your Canada Student Loan (CSLP), OSAP, and StudentAid BC monthly payments with permanent 0% federal interest and RAP zero-payment relief rules.",
-    "category": "Finance",
-    "url": "/canada-student-loan-repayment-calculator",
-    "keywords": [
-      "canada student loan repayment calculator",
-      "education",
-      "canada",
-      "student",
-      "loan",
-      "repayment",
-      "calculator",
-      "cslp",
-      "csfa",
-      "osap",
-      "ontario",
-      "studentaid",
-      "alberta",
-      "aid",
-      "permanent",
-      "federal",
-      "interest",
-      "rap",
-      "assistance",
-      "plan",
-      "monthly",
-      "payment",
-      "0% federal rate",
-      "rap relief",
-      "osap / bc / ab"
-    ]
-  },
-  {
     "slug": "canada-study-planner",
     "name": "Canada Study Planner & Timetable Generator",
     "shortName": "Canada Study Planner",
@@ -1881,39 +1846,6 @@
     ]
   },
   {
-    "slug": "student-loan-repayment-calculator",
-    "name": "Student Loan Repayment Calculator",
-    "shortName": "Student Loan Repayment (HELB)",
-    "description": "Calculate your Kenya HELB student loan monthly repayment, statutory employer salary deduction, total interest at 4% p.a., ledger fees, and payoff timeline.",
-    "category": "Finance",
-    "url": "/student-loan-repayment-calculator",
-    "keywords": [
-      "student loan repayment calculator",
-      "education",
-      "student",
-      "loan",
-      "repayment",
-      "calculator",
-      "kenya",
-      "helb",
-      "ufm",
-      "higher",
-      "loans",
-      "board",
-      "monthly",
-      "salary",
-      "deduction",
-      "interest",
-      "ledger",
-      "fee",
-      "debt",
-      "payoff",
-      "helb loan",
-      "4.0% interest",
-      "monthly deduction"
-    ]
-  },
-  {
     "slug": "switzerland-grade-calculator",
     "name": "Switzerland Grade Conversion Calculator",
     "shortName": "Switzerland Grade Calculator",
@@ -1980,35 +1912,6 @@
       "budget",
       "tuition & rent",
       "permit b proof"
-    ]
-  },
-  {
-    "slug": "tanzania-heslb-loan-calculator",
-    "name": "Tanzania HESLB Student Loan Calculator",
-    "shortName": "HESLB Student Loan (Tanzania)",
-    "description": "Calculate your Tanzania HESLB student loan allocation, cumulative university debt, 6% Value Retention Fee (VRF), and 15% monthly salary repayment deduction.",
-    "category": "Finance",
-    "url": "/tanzania-heslb-loan-calculator",
-    "keywords": [
-      "tanzania heslb loan calculator",
-      "education",
-      "tanzania",
-      "heslb",
-      "loan",
-      "calculator",
-      "student",
-      "higher",
-      "students",
-      "loans",
-      "board",
-      "repayment",
-      "vrf",
-      "salary",
-      "deduction",
-      "tzs",
-      "heslb loan",
-      "6% vrf",
-      "15% salary"
     ]
   },
   {
@@ -2285,32 +2188,6 @@
       "form",
       "admissions",
       "scale"
-    ]
-  },
-  {
-    "slug": "uk-student-loan-finance-calculator",
-    "name": "UK Student Finance & Maintenance Loan Calculator",
-    "shortName": "UK Student Finance Calculator",
-    "description": "Calculate your UK student maintenance loan entitlement and estimate monthly student loan repayments for Plan 5 (2023+ starters), Plan 2, Plan 1, and Postgraduate loans. Free, instant, and 100% private.",
-    "category": "Finance",
-    "url": "/uk-student-loan-finance-calculator",
-    "keywords": [
-      "uk student loan finance calculator",
-      "education",
-      "student",
-      "finance",
-      "calculator",
-      "maintenance",
-      "loan",
-      "repayment",
-      "plan",
-      "postgraduate",
-      "slc",
-      "loans",
-      "company",
-      "sfe",
-      "university",
-      "tuition"
     ]
   },
   {

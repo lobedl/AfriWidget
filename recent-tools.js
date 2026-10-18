@@ -84,11 +84,6 @@
     "category": "Finance",
     "url": "/break-even-calculator"
   },
-  "canada-student-loan-repayment-calculator": {
-    "name": "Canada Student Loan Repayment",
-    "category": "Education",
-    "url": "/canada-student-loan-repayment-calculator"
-  },
   "canada-study-planner": {
     "name": "Canada Study Planner",
     "category": "Education",
@@ -409,11 +404,6 @@
     "category": "Finance",
     "url": "/startup-cost-calculator"
   },
-  "student-loan-repayment-calculator": {
-    "name": "Student Loan Repayment (HELB)",
-    "category": "Finance",
-    "url": "/student-loan-repayment-calculator"
-  },
   "switzerland-grade-calculator": {
     "name": "Switzerland Grade Calculator",
     "category": "Education",
@@ -423,11 +413,6 @@
     "name": "Switzerland University Cost Calculator",
     "category": "Education",
     "url": "/switzerland-university-cost-calculator"
-  },
-  "tanzania-heslb-loan-calculator": {
-    "name": "HESLB Student Loan (Tanzania)",
-    "category": "Finance",
-    "url": "/tanzania-heslb-loan-calculator"
   },
   "tanzania-university-admission-calculator": {
     "name": "Tanzania University Admission",
@@ -483,11 +468,6 @@
     "name": "GCSE Grade Calculator",
     "category": "Education",
     "url": "/uk-gcse-grade-calculator"
-  },
-  "uk-student-loan-finance-calculator": {
-    "name": "UK Student Finance Calculator",
-    "category": "Education",
-    "url": "/uk-student-loan-finance-calculator"
   },
   "uneb-results-estimator": {
     "name": "UNEB Results Estimator",
