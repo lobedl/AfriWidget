@@ -1,0 +1,149 @@
+Objective
+
+Upgrade the existing Shared Academic Progress feature on AfriWidget by improving its performance trend visualizations and academic performance history. The goal is to help students understand their academic progress over time, identify improvements or declining performance, and return to AfriWidget to monitor their progress.
+
+1. Interactive SVG Performance Trend
+
+Build a smart, responsive, interactive SVG visualization that shows how a student's academic performance changes over time.
+
+The visualization must:
+
+- Display actual historical results as a clear performance trend line.
+- Show dates, scores, and relevant academic periods.
+- Allow students to tap or click a data point to view the corresponding result and date.
+- Clearly distinguish improving, declining, and stable performance when enough historical data exists.
+- Show the difference between previous and latest results where a meaningful comparison is possible.
+- Update automatically whenever a new academic result is calculated and saved.
+- Include useful explanations so students understand what their performance trend means.
+- Handle insufficient historical data intelligently. For example, show a useful first-result state when only one result exists rather than displaying a misleading trend.
+- Work smoothly on mobile, tablet, and desktop without clipped labels, overlapping elements, or horizontal page overflow.
+
+The SVG must be genuinely useful, not merely decorative. Use clear labels, appropriate spacing, readable data points, subtle interactions, and a visual hierarchy that makes performance easy to understand.
+
+2. Improve the Existing Academic Performance History
+
+Redesign the existing history feature to make it more professional, organized, and useful.
+
+Students should be able to:
+
+- Review previous academic results quickly.
+- See when each result was recorded.
+- Identify the subject, assessment, or academic period associated with each result where applicable.
+- Compare their latest performance with earlier results.
+- Understand whether their performance is improving, declining, or remaining stable when sufficient data is available.
+- Select a historical result to inspect its details.
+- View a helpful empty state when no previous results exist.
+
+Present historical results in a clean, readable layout with clear visual separation between entries. Avoid clutter, repetitive cards, unnecessary decorations, and information that does not help students understand their progress.
+
+Preserve existing history data and functionality wherever possible. Do not break existing academic calculations or other features that depend on this data.
+
+3. Automatic Performance Tracking
+
+Automatic tracking is a core requirement. Students must never have to manually save a result just to see their academic progress.
+
+Implement the following behavior:
+
+- Automatically record a result when the student completes a calculation and the result is successfully generated.
+- Update the performance history and SVG trend without requiring a separate save action.
+- Preserve existing automatic-save behavior if it is already implemented.
+- Restore previously recorded results when the student returns to the same tool.
+- Avoid duplicate history entries caused by refreshing the page, reopening results, or repeatedly rendering the interface.
+- Use the student's existing result data wherever possible instead of introducing a separate, unnecessary data system.
+- Handle missing, invalid, or incomplete results safely.
+- Make it clear when a result has been recorded automatically without interrupting the student's workflow.
+
+Use the existing storage mechanism and data structure wherever practical. If the feature currently relies on browser storage, preserve that approach unless a genuine technical limitation requires otherwise.
+
+Do not introduce a backend or database simply to implement this upgrade.
+
+4. Make the Feature Genuinely Valuable to Students
+
+The purpose is not just to display historical scores. Help students understand their academic progress.
+
+Provide meaningful insights based on actual recorded results, such as:
+
+- Performance direction: improving, declining, or stable.
+- Recent change: the difference between the latest result and a comparable previous result.
+- Personal progress: how performance has changed across recorded assessments.
+- Areas needing attention: identify subjects or assessment areas with weaker results only when the available data supports that conclusion.
+- Progress milestones: highlight meaningful improvements without inventing achievements.
+
+Every insight must be calculated from real, relevant historical data. Do not generate fake scores, assume missing results, or claim improvement based on incomparable measurements.
+
+Keep explanations short, clear, and student-friendly. Show students what the information means and, where appropriate, suggest a practical next step.
+
+Do not add AI-generated insights, notifications, leaderboards, streaks, or other features merely to make the interface appear more advanced. Focus on the functionality that genuinely helps students.
+
+5. Strict AfriWidget Branding
+
+Follow AfriWidget's existing website branding and design system strictly.
+
+- Inspect the existing Shared Academic Progress feature and surrounding interface before making changes.
+- Reuse the website's existing colors, typography, spacing, borders, buttons, and visual patterns.
+- Maintain the established black, yellow, and white brand identity where those colors are already used.
+- Make the feature feel like a natural part of AfriWidget, not a separate application.
+- Avoid generic dashboard designs, excessive cards, unnecessary gradients, decorative icons, emojis, and visual clutter.
+- Use clean SVG graphics with purposeful styling and consistent visual hierarchy.
+- Ensure the feature looks professional in both light and dark modes if dark mode is supported by the existing website.
+
+Do not redesign unrelated sections of the website or introduce a new design system.
+
+6. Mobile-First User Experience
+
+Student experience takes priority over visual complexity.
+
+Ensure that:
+
+- Performance trends remain readable on small screens.
+- Data points are easy to select by touch.
+- Text and labels have sufficient spacing.
+- History entries are easy to scan.
+- Interactions work with touch, mouse, and keyboard where appropriate.
+- Animations are subtle, purposeful, and respect reduced-motion preferences.
+- Loading, empty, and error states are handled cleanly.
+- Students can understand the feature without needing instructions.
+
+Do not sacrifice usability to make the interface look impressive in screenshots.
+
+7. Technical Restrictions
+
+AfriWidget is built with plain HTML, CSS, and JavaScript.
+
+These restrictions are mandatory:
+
+- Use only vanilla JavaScript, HTML, and CSS.
+- Do not introduce React, Vue, Angular, Svelte, or any other framework.
+- Do not introduce Tailwind CSS or unnecessary third-party libraries.
+- Use native SVG for the interactive performance visualization.
+- Reuse existing functions, storage mechanisms, and styles wherever practical.
+- Do not break the current academic calculator, automatic saving, result sharing, or other existing features.
+- Do not introduce a database or backend for this task.
+- Do not create unnecessary files, dependencies, or complicated abstractions.
+
+8. Implementation and Verification
+
+Before implementing anything, inspect the existing Shared Academic Progress feature, its data structure, storage mechanism, and current behavior.
+
+Then upgrade the existing implementation rather than creating a disconnected replacement.
+
+After implementation, verify that:
+
+1. A newly calculated result is recorded automatically.
+2. The history updates without requiring a manual save.
+3. The SVG trend reflects actual recorded results.
+4. Selecting a data point displays the correct historical information.
+5. Reloading the page does not create duplicate entries.
+6. Returning to the tool restores previously stored results.
+7. The feature handles first-time users and insufficient historical data correctly.
+8. Mobile and desktop layouts work properly.
+9. Existing website branding is preserved.
+10. Existing calculator functionality remains intact.
+
+Fix any issues discovered during testing before considering the work complete.
+
+Final Standard
+
+Build a polished, useful academic progress experience that helps students understand their performance, recognize meaningful changes, and track their development whenever they return to AfriWidget.
+
+Prioritize genuine student value, automatic tracking, clear interactive SVG visuals, responsive design, and consistency with existing AfriWidget branding. Do not add unnecessary features or complexity. Every implementation decision must serve the student.

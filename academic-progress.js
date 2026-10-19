@@ -1,12 +1,12 @@
 /**
  * AfriWidget Academic Progress Engine
- * Lightweight, private, client-side tracking and radar chart visualization
+ * Lightweight, private, client-side tracking, trend chart, and radar visualization
  * for high-traffic AfriWidget education tools.
  * 
  * - Zero accounts, zero login, zero cloud storage, 100% private in-browser localStorage.
  * - Zero Tailwind CSS, pure custom scoped AfriWidget brand design system (#000000, #facc15, #ca8a04, #ffffff, #e5e5e5).
  * - Automatic background recording on calculation with zero friction or gating.
- * - Interactive pure SVG radar chart of subject performance.
+ * - Interactive pure SVG trend line and radar chart of subject performance.
  * - Comparative summary: Latest, Previous, Improvement/Decline, Strongest, Weakest subjects.
  * - Complete chronological attempt history viewer with self-management & clear option.
  */
@@ -158,6 +158,7 @@
         grid-template-columns: 1fr;
         gap: 1.25rem;
         margin-top: 1.25rem;
+        min-width: 0;
       }
       @media (min-width: 768px) {
         .afri-prog-body {
@@ -200,6 +201,159 @@
         height: auto;
         display: block;
         overflow: visible;
+      }
+      .afri-trend-card {
+        grid-column: 1 / -1;
+        min-width: 0;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 0.75rem;
+        padding: 1rem;
+      }
+      .afri-trend-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-bottom: 0.5rem;
+      }
+      @media (min-width: 640px) {
+        .afri-trend-heading {
+          flex-direction: row;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 1rem;
+        }
+      }
+      .afri-trend-caption {
+        margin: 0;
+        color: #6b7280;
+        font-size: 0.75rem;
+        line-height: 1.45;
+      }
+      .afri-trend-svg-wrap {
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #d1d5db transparent;
+      }
+      .afri-trend-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .afri-trend-point {
+        cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .afri-trend-point-hit {
+        fill: transparent;
+        pointer-events: all;
+      }
+      .afri-trend-point-mark {
+        fill: #facc15;
+        stroke: #111827;
+        stroke-width: 2;
+        transition: r 0.15s ease, stroke-width 0.15s ease;
+      }
+      .afri-trend-point:hover .afri-trend-point-mark,
+      .afri-trend-point:focus-visible .afri-trend-point-mark,
+      .afri-trend-point.is-selected .afri-trend-point-mark {
+        r: 7;
+        stroke-width: 3;
+      }
+      .afri-trend-selected {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.25rem 0.75rem;
+        min-height: 2rem;
+        margin-top: 0.35rem;
+        padding-top: 0.65rem;
+        border-top: 1px solid #f3f4f6;
+        color: #4b5563;
+        font-size: 0.8125rem;
+        line-height: 1.45;
+      }
+      .afri-trend-selected strong {
+        color: #111827;
+        font-size: 0.9375rem;
+      }
+      .afri-prog-save-status {
+        margin: 0.45rem 0 0;
+        color: #6b7280;
+        font-size: 0.6875rem;
+        line-height: 1.45;
+      }
+      .afri-prog-save-status.error {
+        color: #b91c1c;
+      }
+      .afri-subject-trend {
+        margin: 0 0 0.875rem;
+        padding: 0.625rem 0.75rem;
+        border-left: 3px solid #facc15;
+        background: #fffbeb;
+        color: #4b5563;
+        font-size: 0.75rem;
+        line-height: 1.45;
+      }
+      .afri-history-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        min-width: 0;
+        cursor: pointer;
+        list-style: none;
+      }
+      .afri-history-summary::-webkit-details-marker {
+        display: none;
+      }
+      .afri-history-summary:focus-visible {
+        outline: 2px solid #ca8a04;
+        outline-offset: 3px;
+        border-radius: 0.25rem;
+      }
+      .afri-history-toggle {
+        flex-shrink: 0;
+        color: #6b7280;
+        font-size: 0.6875rem;
+        font-weight: 700;
+      }
+      .afri-history-hide-label,
+      .afri-history-item[open] .afri-history-view-label {
+        display: none;
+      }
+      .afri-history-item[open] .afri-history-hide-label {
+        display: inline;
+      }
+      .afri-history-item[open] .afri-history-summary {
+        padding-bottom: 0.625rem;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .afri-history-details {
+        padding-top: 0.625rem;
+      }
+      .afri-history-assessment {
+        margin: 0 0 0.625rem;
+        color: #4b5563;
+        font-size: 0.75rem;
+        line-height: 1.45;
+      }
+      .afri-history-detail-empty {
+        margin: 0;
+        color: #6b7280;
+        font-size: 0.75rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .afri-trend-point-mark {
+          transition: none;
+        }
       }
       .afri-summary-card {
         background: #ffffff;
@@ -1072,7 +1226,9 @@
         return {
           value: val,
           displayValue: displayLabel,
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: (displayLabel.indexOf('CGPA') !== -1 ? 'cgpa' : 'semester-gpa') + '-scale-' + scaleVal,
+          unit: displayLabel.indexOf('CGPA') !== -1 ? 'CGPA' : 'GPA'
         };
       }
     },
@@ -1157,7 +1313,8 @@
         return {
           value: val,
           displayValue: val.toFixed(2) + ' CGPA',
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isScale4 ? 'scale-4' : 'scale-5'
         };
       }
     },
@@ -1557,7 +1714,9 @@
         return {
           value: val,
           displayValue: val.toFixed(2) + (isCwa ? '% CWA' : ' GPA'),
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isCwa ? 'cwa' : 'gpa',
+          unit: isCwa ? 'CWA (%)' : 'GPA'
         };
       }
     },
@@ -1673,7 +1832,9 @@
         return {
           value: val,
           displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isWam ? 'wam' : 'gpa',
+          unit: isWam ? 'WAM (%)' : 'GPA'
         };
       }
     },
@@ -1796,7 +1957,8 @@
         return {
           value: val,
           displayValue: val.toFixed(2) + ' GPA',
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: maxScale === 4 ? 'scale-4' : 'scale-5'
         };
       }
     },
@@ -1837,7 +1999,9 @@
         return {
           value: val,
           displayValue: val.toFixed(2) + (isWam ? '% WAM' : ' GPA'),
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isWam ? 'wam' : 'gpa',
+          unit: isWam ? 'WAM (%)' : 'GPA'
         };
       }
     },
@@ -1851,9 +2015,11 @@
       extract: function () {
         var ptsEl = document.getElementById('pointsValue');
         var val = ptsEl ? parseInt(ptsEl.textContent.trim().replace(/[^0-9]/g, ''), 10) : NaN;
+        var isGpa = false;
         if (isNaN(val)) {
           var gpaEl = document.getElementById('gpaValue');
           val = gpaEl ? parseFloat(gpaEl.textContent.trim().replace(/[^0-9.]/g, '')) : NaN;
+          isGpa = !isNaN(val);
         }
         if (isNaN(val)) return null;
 
@@ -1878,8 +2044,11 @@
 
         return {
           value: val,
-          displayValue: val + ' Points (CSEE)',
-          subjects: subjects
+          displayValue: isGpa ? val.toFixed(2) + ' GPA' : val + ' Points (CSEE)',
+          subjects: subjects,
+          comparisonKey: isGpa ? 'gpa' : 'csee-points',
+          higherIsBetter: isGpa,
+          unit: isGpa ? 'GPA' : 'points'
         };
       }
     },
@@ -2155,7 +2324,9 @@
           return {
             value: tariffVal,
             displayValue: (comboEl ? comboEl.textContent.trim() + ' • ' : '') + tariffVal + ' pts',
-            subjects: subjects
+            subjects: subjects,
+            comparisonKey: 'profile-tariff',
+            unit: 'points'
           };
         } else {
           var gradeEl = document.getElementById('finalGradeDisplay');
@@ -2189,7 +2360,9 @@
           return {
             value: numVal,
             displayValue: 'Grade ' + gradeEl.textContent.trim() + ' (' + numVal.toFixed(1) + '%)',
-            subjects: subjects
+            subjects: subjects,
+            comparisonKey: 'subject-mark',
+            unit: '%'
           };
         }
       }
@@ -2587,7 +2760,9 @@
         return {
           value: val,
           displayValue: isUni ? val.toFixed(2) + ' ECTS GPA' : val.toFixed(1) + ' Samordna Points',
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isUni ? 'ects-gpa' : 'samordna-points',
+          unit: isUni ? 'GPA' : 'points'
         };
       }
     },
@@ -3204,7 +3379,11 @@
       var raw = localStorage.getItem(STORAGE_PREFIX + toolId);
       if (!raw) return [];
       var parsed = JSON.parse(raw);
-      return Array.isArray(parsed) ? parsed : [];
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(function (item) {
+        return item && typeof item === 'object' && item.value !== '' &&
+          item.value !== null && isFinite(Number(item.value));
+      });
     } catch (e) {
       return [];
     }
@@ -3213,39 +3392,157 @@
   function saveHistory(toolId, history) {
     try {
       localStorage.setItem(STORAGE_PREFIX + toolId, JSON.stringify(history.slice(0, MAX_HISTORY_ITEMS)));
+      return true;
     } catch (e) {}
+    return false;
   }
 
   function clearHistory(toolId) {
     try {
       localStorage.removeItem(STORAGE_PREFIX + toolId);
+      return true;
     } catch (e) {}
+    return false;
+  }
+
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char];
+    });
+  }
+
+  function hasFiniteNumber(value) {
+    return value !== '' && value !== null && value !== undefined && isFinite(Number(value));
+  }
+
+  function recordDate(item) {
+    if (item && item.dateStr) return String(item.dateStr);
+    var timestamp = item && Number(item.timestamp);
+    if (!isFinite(timestamp)) return 'Date unavailable';
+    return new Date(timestamp).toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  function recordContext(item) {
+    if (!item) return '';
+    return String(item.assessment || item.academicPeriod || item.period || item.term || item.semester || item.academicYear || '');
+  }
+
+  function resultSignature(result) {
+    var subjects = Array.isArray(result.subjects) ? result.subjects.map(function (subject) {
+      subject = subject || {};
+      return [
+        String(subject.name || '').trim().toLowerCase(),
+        String(subject.grade || ''),
+        String(subject.display || ''),
+        hasFiniteNumber(subject.raw) ? Number(subject.raw) : ''
+      ];
+    }) : [];
+    return JSON.stringify([
+      Number(result.value),
+      String(result.displayValue || ''),
+      String(result.assessment || result.assessmentName || '').trim().toLowerCase(),
+      String(result.academicPeriod || result.period || result.term || result.semester || result.academicYear || '').trim().toLowerCase(),
+      subjects
+    ]);
+  }
+
+  function cleanResultContext(result, keys) {
+    for (var i = 0; i < keys.length; i++) {
+      var value = result[keys[i]];
+      if (typeof value === 'string' && value.trim()) return value.trim().slice(0, 120);
+    }
+    return '';
+  }
+
+  function comparisonKey(item, adapter) {
+    if (item && typeof item.comparisonKey === 'string' && item.comparisonKey.trim()) {
+      return item.comparisonKey.trim();
+    }
+    var display = String(item && item.displayValue || '');
+    switch (adapter.id) {
+      case 'tertiary-gpa-cgpa':
+      case 'nigerian-university-cgpa':
+      case 'zambia-university-gpa':
+      case 'form-four-gpa':
+        return '';
+      case 'ghana-university-gpa':
+        return /%\s*CWA/i.test(display) ? 'cwa' : /\bGPA\b/i.test(display) ? 'gpa' : '';
+      case 'kenya-university-gpa':
+      case 'zimbabwe-university-gpa':
+        return /%\s*WAM/i.test(display) ? 'wam' : /\bGPA\b/i.test(display) ? 'gpa' : '';
+      case 'norway-gpa':
+        return /Samordna Points/i.test(display) ? 'samordna-points' : /ECTS GPA/i.test(display) ? 'ects-gpa' : '';
+      case 'uk-a-level-grade':
+        return /\bpts\b/i.test(display) ? 'profile-tariff' : /%/.test(display) ? 'subject-mark' : '';
+      case 'sa-tvet-nated':
+        return /Trimester Average/i.test(display) ? 'trimester-average' : display ? 'single-subject' : '';
+      case 'uneb-results':
+        return /\/\s*20/.test(display) ? 'uace-points' : '';
+      default:
+        return 'default';
+    }
+  }
+
+  function comparableHistory(history, adapter, reference) {
+    if (!history.length) return [];
+    reference = reference || history[0];
+    var key = comparisonKey(reference, adapter);
+    if (!key) return [reference];
+    return history.filter(function (item) {
+      return comparisonKey(item, adapter) === key;
+    });
+  }
+
+  function recordUnit(item, adapter) {
+    if (item && typeof item.unit === 'string' && item.unit) return item.unit;
+    var display = String(item && item.displayValue || '');
+    switch (adapter.id) {
+      case 'ghana-university-gpa':
+        return /%\s*CWA/i.test(display) ? 'CWA (%)' : 'GPA';
+      case 'kenya-university-gpa':
+      case 'zimbabwe-university-gpa':
+        return /%\s*WAM/i.test(display) ? 'WAM (%)' : 'GPA';
+      case 'norway-gpa':
+        return /Samordna Points/i.test(display) ? 'points' : 'GPA';
+      case 'uk-a-level-grade':
+        return /\bpts\b/i.test(display) ? 'points' : '%';
+      case 'form-four-gpa':
+        return /GPA/i.test(display) ? 'GPA' : 'points';
+      default:
+        return adapter.unit || 'points';
+    }
+  }
+
+  function recordHigherIsBetter(item, adapter) {
+    if (item && typeof item.higherIsBetter === 'boolean') return item.higherIsBetter;
+    return comparisonKey(item, adapter) === 'uace-points' ? true : !!adapter.higherIsBetter;
   }
 
   // --- RADAR CHART SVG GENERATOR ---
   function generateRadarSvg(subjects) {
-    if (!subjects || !subjects.length) {
+    var chartItems = (subjects || []).filter(function (subject) {
+      return subject && subject.name && hasFiniteNumber(subject.norm);
+    });
+    if (chartItems.length < 3) {
       return `
-        <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;">
-          Complete a calculation to render the performance radar web.
+        <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;line-height:1.5;">
+          ${chartItems.length
+            ? 'A subject radar needs at least three real subject results. Your recorded results are shown without adding sample scores.'
+            : 'Subject details will appear after a calculation with subject results.'}
         </div>
       `;
-    }
-
-    var chartItems = subjects.slice();
-    if (chartItems.length === 2) {
-      chartItems = [
-        chartItems[0],
-        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Pass Standard' },
-        chartItems[1],
-        { name: 'Exam Sub-Min', grade: '40%', raw: 40, norm: 0.40, display: '40% Exam Hurdle' }
-      ];
-    } else if (chartItems.length === 1) {
-      chartItems = [
-        chartItems[0],
-        { name: 'Standard Pass', grade: '50%', raw: 50, norm: 0.50, display: '50% Benchmark' },
-        { name: 'Distinction', grade: '75%', raw: 75, norm: 0.75, display: '75% Distinction' }
-      ];
     }
 
     var count = chartItems.length;
@@ -3315,7 +3612,7 @@
 
       labelsHtml += `
         <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" dy="${dy}" text-anchor="${anchor}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#111827">
-          ${cleanName}<tspan fill="#ca8a04" font-weight="800">${badge}</tspan>
+          ${escapeHtml(cleanName)}<tspan fill="#ca8a04" font-weight="800">${escapeHtml(badge)}</tspan>
         </text>
       `;
     }
@@ -3331,8 +3628,162 @@
     `;
   }
 
+  function formatNumber(value) {
+    var rounded = Math.round(Number(value) * 100) / 100;
+    return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+  }
+
+  function shortRecordDate(item) {
+    var timestamp = item && Number(item.timestamp);
+    if (isFinite(timestamp)) {
+      return new Date(timestamp).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    }
+    return recordDate(item).split(',')[0].slice(0, 12);
+  }
+
+  function chronologicalHistory(history) {
+    return history.filter(function (item) {
+      return item && item.value !== '' && item.value !== null && isFinite(Number(item.value));
+    }).sort(function (a, b) {
+      var timeA = Number(a.timestamp);
+      var timeB = Number(b.timestamp);
+      return isFinite(timeA) && isFinite(timeB) ? timeA - timeB : 0;
+    });
+  }
+
+  function renderTrendSelection(adapter, chronological, index) {
+    var details = document.getElementById('afriTrendSelected');
+    var wrap = document.getElementById('afriTrendSvgWrap');
+    if (!details || !chronological.length) return;
+    index = Math.max(0, Math.min(chronological.length - 1, index));
+    var item = chronological[index];
+    var context = recordContext(item);
+    var subjects = Array.isArray(item.subjects) ? item.subjects : [];
+    var subjectMarkup = subjects.slice(0, 3).map(function (subject) {
+      return '<span>' + escapeHtml(subject.name || 'Subject') + ': ' +
+        escapeHtml(subject.display || subject.grade || '') + '</span>';
+    }).join('');
+    if (subjects.length > 3) {
+      subjectMarkup += '<span>+' + (subjects.length - 3) + ' more subjects</span>';
+    }
+    details.innerHTML =
+      '<strong>' + escapeHtml(item.displayValue || formatNumber(item.value)) + '</strong>' +
+      '<span>' + escapeHtml(recordDate(item)) + '</span>' +
+      (context ? '<span>' + escapeHtml(context) + '</span>' : '') +
+      subjectMarkup;
+    if (wrap) {
+      Array.prototype.forEach.call(wrap.querySelectorAll('.afri-trend-point'), function (point) {
+        point.classList.toggle('is-selected', Number(point.getAttribute('data-point-index')) === index);
+      });
+    }
+  }
+
+  function generateTrendSvg(history, adapter) {
+    var wrap = document.getElementById('afriTrendSvgWrap');
+    var caption = document.getElementById('afriTrendCaption');
+    if (!wrap) return;
+    var chronological = chronologicalHistory(history);
+    if (!chronological.length) {
+      wrap.innerHTML = '<p class="afri-trend-caption" style="padding:1rem 0;">Your saved results will appear here after a calculation.</p>';
+      var emptyDetails = document.getElementById('afriTrendSelected');
+      if (emptyDetails) emptyDetails.textContent = 'No results have been recorded yet.';
+      if (caption) caption.textContent = 'Each successful calculation is recorded automatically in this browser.';
+      return;
+    }
+
+    var mobile = window.innerWidth < 640;
+    var availableWidth = wrap.clientWidth || Math.max(300, window.innerWidth - 64);
+    var width = mobile ? Math.max(availableWidth, 74 + (chronological.length - 1) * 48) : 700;
+    var height = 260;
+    var left = 56;
+    var right = 20;
+    var top = 30;
+    var bottom = 42;
+    var plotWidth = width - left - right;
+    var plotHeight = height - top - bottom;
+    var values = chronological.map(function (item) { return Number(item.value); });
+    var minValue = Math.min.apply(Math, values);
+    var maxValue = Math.max.apply(Math, values);
+    var span = maxValue - minValue;
+    var padding = span > 0 ? span * 0.14 : Math.max(Math.abs(maxValue) * 0.08, 1);
+    var lower = minValue - padding;
+    var upper = maxValue + padding;
+    var points = chronological.map(function (item, index) {
+      var x = chronological.length === 1 ? left + plotWidth / 2 : left + (plotWidth * index) / (chronological.length - 1);
+      var y = top + ((upper - Number(item.value)) / (upper - lower)) * plotHeight;
+      return { x: x, y: y, item: item, index: index };
+    });
+    var grid = '';
+    for (var tick = 0; tick <= 3; tick++) {
+      var ratio = tick / 3;
+      var y = top + ratio * plotHeight;
+      var tickValue = upper - ratio * (upper - lower);
+      grid += '<line x1="' + left + '" y1="' + y.toFixed(1) + '" x2="' + (width - right) +
+        '" y2="' + y.toFixed(1) + '" stroke="#e5e7eb" stroke-width="1" />' +
+        '<text x="' + (left - 8) + '" y="' + (y + 3.5).toFixed(1) +
+        '" text-anchor="end" font-size="10" fill="#6b7280">' + escapeHtml(formatNumber(tickValue)) + '</text>';
+    }
+    var axisUnit = adapter.unit ? 'Score (' + adapter.unit + ')' : 'Score';
+    var labels = '';
+    var maxLabels = mobile ? 4 : 6;
+    var labelCount = Math.min(maxLabels, points.length);
+    var labelIndexes = {};
+    for (var labelIndex = 0; labelIndex < labelCount; labelIndex++) {
+      labelIndexes[Math.round(labelIndex * (points.length - 1) / Math.max(1, labelCount - 1))] = true;
+    }
+    points.forEach(function (point, index) {
+      if (!labelIndexes[index]) return;
+      labels += '<line x1="' + point.x.toFixed(1) + '" y1="' + (height - bottom + 1) +
+        '" x2="' + point.x.toFixed(1) + '" y2="' + (height - bottom + 5) + '" stroke="#9ca3af" />' +
+        '<text x="' + point.x.toFixed(1) + '" y="' + (height - 10) +
+        '" text-anchor="middle" font-size="10" fill="#6b7280">' + escapeHtml(shortRecordDate(point.item)) + '</text>';
+    });
+    var linePath = points.map(function (point, index) {
+      return (index ? 'L' : 'M') + point.x.toFixed(1) + ' ' + point.y.toFixed(1);
+    }).join(' ');
+    var areaPath = points.length > 1
+      ? linePath + ' L' + points[points.length - 1].x.toFixed(1) + ' ' + (height - bottom) +
+        ' L' + points[0].x.toFixed(1) + ' ' + (height - bottom) + ' Z'
+      : '';
+    var pointMarkup = points.map(function (point) {
+      var item = point.item;
+      var context = recordContext(item);
+      var spokenLabel = (item.displayValue || formatNumber(item.value)) + ', ' + recordDate(item) +
+        (context ? ', ' + context : '');
+      return '<g class="afri-trend-point' + (point.index === points.length - 1 ? ' is-selected' : '') +
+        '" data-point-index="' + point.index + '" role="button" tabindex="0" aria-label="' +
+        escapeHtml('Show result ' + spokenLabel) + '">' +
+        '<title>' + escapeHtml(spokenLabel) + '</title>' +
+        '<circle class="afri-trend-point-hit" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="17" />' +
+        '<circle class="afri-trend-point-mark" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="5.5" />' +
+        '</g>';
+    }).join('');
+    var mobileStyle = mobile ? ' style="width:' + width + 'px;max-width:none;"' : '';
+    wrap.innerHTML =
+      '<svg class="afri-trend-svg" viewBox="0 0 ' + width + ' ' + height + '"' + mobileStyle +
+      ' role="group" aria-labelledby="afriTrendSvgTitle afriTrendSvgDesc">' +
+      '<title id="afriTrendSvgTitle">Academic performance trend</title>' +
+      '<desc id="afriTrendSvgDesc">Results are shown in date order, with the latest at the right. Select a point to inspect its saved result.</desc>' +
+      '<text x="' + left + '" y="16" font-size="10" font-weight="700" fill="#6b7280">' + escapeHtml(axisUnit) + '</text>' +
+      grid +
+      '<line x1="' + left + '" y1="' + (height - bottom) + '" x2="' + (width - right) +
+      '" y2="' + (height - bottom) + '" stroke="#9ca3af" stroke-width="1" />' +
+      (areaPath ? '<path d="' + areaPath + '" fill="rgba(250,204,21,0.16)" />' : '') +
+      (points.length > 1 ? '<path d="' + linePath + '" fill="none" stroke="#ca8a04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />' : '') +
+      labels + pointMarkup + '</svg>';
+
+    if (caption) {
+      caption.textContent = chronological.length === 1
+        ? 'This first result is your starting point. A later calculation will show a trend.'
+        : mobile && width > availableWidth + 1
+          ? 'Swipe the chart horizontally to reach older results. Select a point for its date, score, and subjects.'
+          : 'Latest result appears at the right. Select a point for its date, score, and subjects.';
+    }
+    renderTrendSelection(adapter, chronological, chronological.length - 1);
+  }
+
   // --- ACADEMIC PROGRESS SECTION UI INJECTION ---
-  function injectAcademicProgressSection(adapter) {
+  function injectAcademicProgressSection(adapter, showWithRestoredHistory) {
     if (document.getElementById('afriAcademicProgress')) return;
 
     var resultsEl = document.getElementById('results');
@@ -3351,7 +3802,7 @@
           </div>
           <div>
             <h3 class="afri-prog-title">Academic Progress</h3>
-            <p class="afri-prog-subtitle">Private in-browser history and latest subject performance</p>
+            <p class="afri-prog-subtitle">Private progress history, saved automatically on this device</p>
           </div>
         </div>
         <div class="afri-prog-actions">
@@ -3364,9 +3815,19 @@
       </div>
 
       <div class="afri-prog-body">
+        <div class="afri-trend-card">
+          <div class="afri-trend-heading">
+            <span class="afri-card-label" style="margin-bottom:0;">Performance Over Time</span>
+            <p class="afri-trend-caption" id="afriTrendCaption">Latest result appears at the right. Select a point for its date and result.</p>
+          </div>
+          <div class="afri-trend-svg-wrap" id="afriTrendSvgWrap" role="region" tabindex="0" aria-label="Academic performance trend. Scroll horizontally to view older results when needed."></div>
+          <div class="afri-trend-selected" id="afriTrendSelected" aria-live="polite"></div>
+          <p class="afri-prog-save-status" id="afriProgSaveStatus" role="status" aria-live="polite">Your results are saved automatically in this browser.</p>
+        </div>
+
         <!-- Radar Chart Card -->
         <div class="afri-radar-card">
-          <span class="afri-card-label">Subject Performance Radar</span>
+              <span class="afri-card-label">Subject Performance Radar</span>
           <div class="afri-radar-svg-wrap" id="afriRadarWrap">
             <!-- Dynamic SVG injected here -->
           </div>
@@ -3393,9 +3854,10 @@
               ${icons.dot}
               <span id="afriProgTrendText">Calculating performance trend…</span>
             </div>
+            <p class="afri-subject-trend" id="afriProgSubjectTrend" hidden></p>
           </div>
 
-          <div class="afri-subject-highlights-grid">
+          <div class="afri-subject-highlights-grid" id="afriProgSubjectHighlights" hidden>
             <div class="afri-subject-highlight strongest">
               <div class="afri-highlight-icon">
                 ${icons.star}
@@ -3421,12 +3883,14 @@
       </div>
     `;
 
-    // Placement directly below the main calculator result
+    // Restored history must remain reachable when the calculator's results area is hidden.
     var resultsHead = resultsEl.querySelector('.results-head');
     var aiSec = resultsEl.querySelector('.ai-section');
     var shareBar = resultsEl.querySelector('#afriShareBar');
 
-    if (resultsHead && resultsHead.parentNode) {
+    if (showWithRestoredHistory && resultsEl.parentNode) {
+      resultsEl.insertAdjacentElement('afterend', container);
+    } else if (resultsHead && resultsHead.parentNode) {
       resultsHead.insertAdjacentElement('afterend', container);
     } else if (aiSec && aiSec.parentNode === resultsEl) {
       resultsEl.insertBefore(container, aiSec);
@@ -3442,6 +3906,22 @@
         e.preventDefault();
         openHistoryModal(adapter);
       });
+    }
+
+    var trendWrap = document.getElementById('afriTrendSvgWrap');
+    if (trendWrap) {
+      function selectTrendPoint(event) {
+        var point = event.target.closest && event.target.closest('.afri-trend-point');
+        if (!point || !trendWrap.contains(point)) return;
+        if (event.type === 'keydown') {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+        }
+        var chronological = chronologicalHistory(getHistory(adapter.id));
+        renderTrendSelection(adapter, chronological, Number(point.getAttribute('data-point-index')));
+      }
+      trendWrap.addEventListener('click', selectTrendPoint);
+      trendWrap.addEventListener('keydown', selectTrendPoint);
     }
   }
 
@@ -3547,31 +4027,42 @@
         var html = '';
         history.forEach(function (item, idx) {
           var isLatest = idx === 0;
-          var dateFormatted = item.dateStr || 'Recent';
-          var chipsHtml = (item.subjects || []).map(function (s) {
-            return '<span class="afri-history-chip">' + s.name + ': ' + (s.grade || s.display || '') + '</span>';
+          var dateFormatted = recordDate(item);
+          var subjects = Array.isArray(item.subjects) ? item.subjects : [];
+          var chipsHtml = subjects.map(function (subject) {
+            return '<span class="afri-history-chip">' + escapeHtml(subject.name || 'Subject') + ': ' +
+              escapeHtml(subject.display || subject.grade || '') + '</span>';
           }).join('');
+          var context = recordContext(item);
 
           var trendBadge = '';
           if (item.trend) {
             var trendColor = item.trend.type === 'improved' ? '#16a34a' : item.trend.type === 'declined' ? '#d97706' : '#6b7280';
-            trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + item.trend.label + '</span>';
+            trendBadge = '<span style="font-size:0.75rem;font-weight:700;color:' + trendColor + ';">' + escapeHtml(item.trend.label) + '</span>';
           }
 
           html += `
-            <div class="afri-history-item ${isLatest ? 'latest' : ''}">
-              <div class="afri-history-item-top">
+            <details class="afri-history-item ${isLatest ? 'latest' : ''}">
+              <summary class="afri-history-summary">
                 <div class="afri-history-index-wrap">
-                  <span class="afri-history-num">Attempt #${history.length - idx} ${isLatest ? '(Latest)' : ''}</span>
-                  <span class="afri-history-date">&bull; ${dateFormatted}</span>
+                  <span class="afri-history-num">Result ${history.length - idx}${isLatest ? ' · Latest' : ''}</span>
+                  <span class="afri-history-date">${escapeHtml(dateFormatted)}</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:0.5rem;">
+                <div style="display:flex;align-items:center;justify-content:flex-end;gap:0.5rem;flex-wrap:wrap;">
                   ${trendBadge}
-                  <span class="afri-history-score-badge">${item.displayValue}</span>
+                  <span class="afri-history-score-badge">${escapeHtml(item.displayValue || formatNumber(item.value))}</span>
+                  <span class="afri-history-toggle">
+                    <span class="afri-history-view-label">View details</span>
+                    <span class="afri-history-hide-label">Hide details</span>
+                  </span>
                 </div>
+              </summary>
+              <div class="afri-history-details">
+                ${context ? '<p class="afri-history-assessment">Assessment / period: ' + escapeHtml(context) + '</p>' : ''}
+                ${chipsHtml ? '<div class="afri-history-chips">' + chipsHtml + '</div>' :
+                  '<p class="afri-history-detail-empty">No subject breakdown was saved for this result.</p>'}
               </div>
-              ${chipsHtml ? '<div class="afri-history-chips">' + chipsHtml + '</div>' : ''}
-            </div>
+            </details>
           `;
         });
         listEl.innerHTML = html;
@@ -3606,15 +4097,20 @@
         } else {
           if (clearConfirmTimer) clearTimeout(clearConfirmTimer);
           clearConfirmTimer = null;
-          clearHistory(adapter.id);
+          var didClear = clearHistory(adapter.id);
           renderModalList();
           updateProgressUI(adapter);
+          setAutoSaveStatus(
+            didClear ? 'Progress history cleared from this browser.' : 'Could not clear progress history from browser storage.',
+            !didClear
+          );
 
           clearBtn.classList.remove('confirming');
-          clearBtn.style.background = '#f0fdf4';
-          clearBtn.style.color = '#16a34a';
-          clearBtn.style.borderColor = '#86efac';
-          clearBtn.innerHTML = icons.check + ' <span>History Cleared!</span>';
+          clearBtn.style.background = didClear ? '#f0fdf4' : '#fef2f2';
+          clearBtn.style.color = didClear ? '#16a34a' : '#b91c1c';
+          clearBtn.style.borderColor = didClear ? '#86efac' : '#fecaca';
+          clearBtn.innerHTML = (didClear ? icons.check : icons.alert) +
+            ' <span>' + (didClear ? 'History Cleared' : 'Could Not Clear') + '</span>';
 
           setTimeout(function () {
             resetAcademicClearBtn(clearBtn, false);
@@ -3635,14 +4131,15 @@
 
   // --- CORE PROGRESS RECORDING & UI UPDATE ---
   function computeStrengths(subjects) {
-    if (!subjects || !subjects.length) {
+    var comparableSubjects = (subjects || []).filter(function (subject) {
+      return subject && subject.name && hasFiniteNumber(subject.norm);
+    });
+    if (!comparableSubjects.length) {
       return { strongest: null, weakest: null };
     }
-    // Norm is 0.0 to 1.0 where 1.0 is always best performance
-    var sorted = subjects.slice().sort(function (a, b) {
-      var normA = a.norm !== undefined ? a.norm : 0.5;
-      var normB = b.norm !== undefined ? b.norm : 0.5;
-      return normB - normA;
+    // Only compare stored normalized values; do not infer missing subject scores.
+    var sorted = comparableSubjects.slice().sort(function (a, b) {
+      return Number(b.norm) - Number(a.norm);
     });
 
     var strongest = sorted[0];
@@ -3651,57 +4148,144 @@
     return { strongest: strongest, weakest: weakest };
   }
 
+  function performanceDelta(newValue, oldValue, adapter) {
+    return adapter.higherIsBetter ? Number(newValue) - Number(oldValue) : Number(oldValue) - Number(newValue);
+  }
+
+  function trendTolerance(adapter) {
+    return isFinite(Number(adapter.trendTolerance)) ? Math.max(0, Number(adapter.trendTolerance)) : 0.001;
+  }
+
+  function progressSummary(history, adapter) {
+    if (history.length < 2) {
+      return {
+        type: 'baseline',
+        desc: 'This is your first saved result. Another calculation will let you compare your progress.'
+      };
+    }
+    var latest = history[0];
+    var previous = history[1];
+    var first = history[history.length - 1];
+    var tolerance = trendTolerance(adapter);
+    var overallDelta = performanceDelta(latest.value, first.value, adapter);
+    var recentDelta = performanceDelta(latest.value, previous.value, adapter);
+    var type = Math.abs(overallDelta) <= tolerance ? 'neutral' : overallDelta > 0 ? 'improved' : 'declined';
+    var unit = adapter.unit || 'points';
+    var overallText;
+    if (type === 'improved') {
+      overallText = 'Improving by ' + formatNumber(Math.abs(overallDelta)) + ' ' + unit +
+        ' since your first saved result across ' + history.length + ' calculations.';
+    } else if (type === 'declined') {
+      overallText = 'Declining by ' + formatNumber(Math.abs(overallDelta)) + ' ' + unit +
+        ' since your first saved result across ' + history.length + ' calculations. Review your subject results for a place to focus.';
+    } else {
+      overallText = 'Stable since your first saved result across ' + history.length + ' calculations.';
+    }
+    var recentText = Math.abs(recentDelta) <= tolerance
+      ? ' The latest result is unchanged from the previous one.'
+      : ' The latest result ' + (recentDelta > 0 ? 'improved' : 'declined') + ' by ' +
+        formatNumber(Math.abs(recentDelta)) + ' ' + unit + ' from the previous result.';
+    return { type: type, desc: overallText + recentText };
+  }
+
+  function comparableSubjectInsight(history) {
+    if (history.length < 2) return '';
+    var latestSubjects = Array.isArray(history[0].subjects) ? history[0].subjects : [];
+    var previousSubjects = Array.isArray(history[1].subjects) ? history[1].subjects : [];
+    var previousByName = {};
+    previousSubjects.forEach(function (subject) {
+      if (subject && subject.name && hasFiniteNumber(subject.norm)) {
+        previousByName[String(subject.name).trim().toLowerCase()] = subject;
+      }
+    });
+    var comparisons = [];
+    latestSubjects.forEach(function (subject) {
+      if (!subject || !subject.name || !hasFiniteNumber(subject.norm)) return;
+      var previous = previousByName[String(subject.name).trim().toLowerCase()];
+      if (!previous) return;
+      comparisons.push({
+        subject: subject,
+        previous: previous,
+        delta: Number(subject.norm) - Number(previous.norm)
+      });
+    });
+    if (!comparisons.length) return '';
+    comparisons.sort(function (a, b) { return Math.abs(b.delta) - Math.abs(a.delta); });
+    var largest = comparisons[0];
+    if (Math.abs(largest.delta) <= 0.001) {
+      return 'Comparable subject results are unchanged between your latest two calculations.';
+    }
+    var name = largest.subject.name;
+    var before = largest.previous.display || largest.previous.grade || '';
+    var after = largest.subject.display || largest.subject.grade || '';
+    return name + (largest.delta > 0 ? ' improved' : ' declined') +
+      (before || after ? ' (' + before + ' to ' + after + ')' : '') +
+      ' between your latest two calculations.' +
+      (largest.delta < 0 ? ' Review this subject in your next assessment.' : '');
+  }
+
+  function setAutoSaveStatus(message, isError) {
+    var status = document.getElementById('afriProgSaveStatus');
+    if (!status) return;
+    status.textContent = message;
+    status.className = 'afri-prog-save-status' + (isError ? ' error' : '');
+  }
+
   function recordAndDisplay(adapter) {
-    var current = adapter.extract();
-    if (!current || isNaN(current.value)) return;
+    var current;
+    try {
+      current = adapter.extract();
+    } catch (e) {
+      return;
+    }
+    if (!current || current.value === '' || current.value === null || !isFinite(Number(current.value))) return;
+    current.value = Number(current.value);
+    current.displayValue = String(current.displayValue || formatNumber(current.value)).slice(0, 160);
+    current.subjects = Array.isArray(current.subjects) ? current.subjects.filter(function (subject) {
+      return subject && typeof subject === 'object';
+    }) : [];
+    current.assessment = cleanResultContext(current, ['assessment', 'assessmentName']);
+    current.academicPeriod = cleanResultContext(current, ['academicPeriod', 'period', 'term', 'semester', 'academicYear']);
 
     var history = getHistory(adapter.id);
     var prev = history.length > 0 ? history[0] : null;
-
-    // Avoid duplicate rapid recordings if identical inputs/result within 30 seconds
     var now = Date.now();
-    var isDuplicate = prev &&
-      Math.abs(prev.value - current.value) < 0.001 &&
-      (now - (prev.timestamp || 0)) < 30000 &&
-      JSON.stringify(prev.subjects) === JSON.stringify(current.subjects);
+    var signature = resultSignature(current);
+    var isDuplicate = history.some(function (item) {
+      return resultSignature(item) === signature;
+    });
+    var saveStatusMessage = '';
+    var saveStatusError = false;
 
     var trend = null;
     if (prev) {
-      var diff;
-      if (adapter.higherIsBetter) {
-        diff = current.value - prev.value;
-      } else {
-        // Lower aggregate = better!
-        diff = prev.value - current.value;
-      }
+      var diff = performanceDelta(current.value, prev.value, adapter);
+      var diffStr = formatNumber(Math.abs(diff));
 
-      if (diff > 0.001) {
-        var diffStr = Number.isInteger(diff) ? diff.toString() : diff.toFixed(2);
+      if (diff > trendTolerance(adapter)) {
         trend = {
           type: 'improved',
           label: '▲ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' improvement',
-          desc: 'Improved by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared to previous calculation'
+          desc: 'Improved by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared with the previous result.'
         };
-      } else if (diff < -0.001) {
-        var absDiff = Math.abs(diff);
-        var diffStr = Number.isInteger(absDiff) ? absDiff.toString() : absDiff.toFixed(2);
+      } else if (diff < -trendTolerance(adapter)) {
         trend = {
           type: 'declined',
           label: '▼ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' decline',
-          desc: 'Lower by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared to previous calculation'
+          desc: 'Performance declined by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared with the previous result.'
         };
       } else {
         trend = {
           type: 'neutral',
-          label: '— No change',
-          desc: 'Identical score to your previous calculation'
+          label: '— Stable',
+          desc: 'No meaningful change from the previous result.'
         };
       }
     } else {
       trend = {
         type: 'baseline',
         label: '● Initial baseline',
-        desc: 'Initial calculation recorded · Next attempt will show your progress trend'
+        desc: 'First result recorded automatically · Another calculation will show your progress'
       };
     }
 
@@ -3719,18 +4303,28 @@
         value: current.value,
         displayValue: current.displayValue,
         subjects: current.subjects,
+        assessment: current.assessment,
+        academicPeriod: current.academicPeriod,
         trend: trend,
         strongest: strengths.strongest ? { name: strengths.strongest.name, display: strengths.strongest.display || strengths.strongest.grade } : null,
         weakest: strengths.weakest ? { name: strengths.weakest.name, display: strengths.weakest.display || strengths.weakest.grade } : null
       };
 
       history.unshift(newRecord);
-      saveHistory(adapter.id, history);
+      if (!saveHistory(adapter.id, history)) {
+        saveStatusMessage = 'This result could not be saved in browser storage. Your calculation remains available above.';
+        saveStatusError = true;
+      } else {
+        saveStatusMessage = 'Result recorded automatically in this browser.';
+      }
+    } else {
+      saveStatusMessage = 'This result is already recorded in your history.';
     }
 
     // Ensure section exists in DOM
     injectAcademicProgressSection(adapter);
     updateProgressUI(adapter);
+    if (saveStatusMessage) setAutoSaveStatus(saveStatusMessage, saveStatusError);
   }
 
   function updateProgressUI(adapter) {
@@ -3739,49 +4333,68 @@
     if (countBadge) {
       countBadge.textContent = history.length;
     }
+    generateTrendSvg(history, adapter);
 
     if (!history.length) {
       var latestEl = document.getElementById('afriProgLatestVal');
+      var latestSub = document.getElementById('afriProgLatestSub');
       var prevEl = document.getElementById('afriProgPrevVal');
+      var prevSub = document.getElementById('afriProgPrevSub');
       var trendBanner = document.getElementById('afriProgTrendBanner');
       var radarWrap = document.getElementById('afriRadarWrap');
+      var subjectInsight = document.getElementById('afriProgSubjectTrend');
+      var highlights = document.getElementById('afriProgSubjectHighlights');
 
       if (latestEl) latestEl.textContent = '—';
+      if (latestSub) latestSub.textContent = 'Current calculation';
       if (prevEl) prevEl.textContent = '—';
+      if (prevSub) prevSub.textContent = 'No earlier entry';
       if (trendBanner) {
         trendBanner.className = 'afri-trend-banner neutral';
-        trendBanner.innerHTML = icons.dot + ' <span>Complete a calculation to record progress</span>';
+        trendBanner.innerHTML = icons.dot + ' <span></span>';
+        trendBanner.querySelector('span').textContent = 'Complete a calculation to start your progress history.';
       }
       if (radarWrap) {
-        radarWrap.innerHTML = '<div style="padding:2rem 1rem;color:#78716c;font-size:0.8125rem;">Radar chart will appear after calculation.</div>';
+        radarWrap.innerHTML = generateRadarSvg([]);
       }
+      if (subjectInsight) subjectInsight.hidden = true;
+      if (highlights) highlights.hidden = true;
       return;
     }
 
     var latest = history[0];
     var prev = history.length > 1 ? history[1] : null;
+    var subjects = Array.isArray(latest.subjects) ? latest.subjects : [];
 
     // Latest Result
     var latestEl = document.getElementById('afriProgLatestVal');
     var latestSub = document.getElementById('afriProgLatestSub');
-    if (latestEl) latestEl.textContent = latest.displayValue;
-    if (latestSub) latestSub.textContent = latest.dateStr || 'Latest entry';
+    if (latestEl) latestEl.textContent = latest.displayValue || formatNumber(latest.value);
+    if (latestSub) latestSub.textContent = recordDate(latest);
 
     // Previous Result
     var prevEl = document.getElementById('afriProgPrevVal');
     var prevSub = document.getElementById('afriProgPrevSub');
-    if (prevEl) prevEl.textContent = prev ? prev.displayValue : '—';
-    if (prevSub) prevSub.textContent = prev ? (prev.dateStr || 'Prior attempt') : 'No earlier entry';
+    if (prevEl) prevEl.textContent = prev ? (prev.displayValue || formatNumber(prev.value)) : '—';
+    if (prevSub) prevSub.textContent = prev ? recordDate(prev) : 'No earlier entry';
 
-    // Trend Banner
+    // The overall direction uses the first and latest saved results; the adjacent result comparison is also shown.
     var trendBanner = document.getElementById('afriProgTrendBanner');
-    if (trendBanner && latest.trend) {
-      var icon = latest.trend.type === 'improved' ? icons.arrowUp :
-        latest.trend.type === 'declined' ? icons.arrowDown :
-        latest.trend.type === 'neutral' ? icons.equal : icons.dot;
+    if (trendBanner) {
+      var summary = progressSummary(history, adapter);
+      var icon = summary.type === 'improved' ? icons.arrowUp :
+        summary.type === 'declined' ? icons.arrowDown :
+        summary.type === 'neutral' ? icons.equal : icons.dot;
+      trendBanner.className = 'afri-trend-banner ' + summary.type;
+      trendBanner.innerHTML = icon + ' <span></span>';
+      trendBanner.querySelector('span').textContent = summary.desc;
+    }
 
-      trendBanner.className = 'afri-trend-banner ' + latest.trend.type;
-      trendBanner.innerHTML = icon + ' <span>' + latest.trend.desc + '</span>';
+    var subjectInsight = document.getElementById('afriProgSubjectTrend');
+    var subjectInsightText = comparableSubjectInsight(history);
+    if (subjectInsight) {
+      subjectInsight.textContent = subjectInsightText;
+      subjectInsight.hidden = !subjectInsightText;
     }
 
     // Highlights
@@ -3789,8 +4402,11 @@
     var strScore = document.getElementById('afriProgStrongestScore');
     var weakName = document.getElementById('afriProgWeakestName');
     var weakScore = document.getElementById('afriProgWeakestScore');
+    var highlights = document.getElementById('afriProgSubjectHighlights');
 
-    var strengths = computeStrengths(latest.subjects);
+    var strengths = computeStrengths(subjects);
+    var canCompareSubjects = subjects.length > 1;
+    if (highlights) highlights.hidden = !canCompareSubjects;
     if (strName) strName.textContent = strengths.strongest ? strengths.strongest.name : '—';
     if (strScore) strScore.textContent = strengths.strongest ? (strengths.strongest.display || strengths.strongest.grade || 'Top mark') : '';
 
@@ -3799,8 +4415,8 @@
 
     // Radar Chart
     var radarWrap = document.getElementById('afriRadarWrap');
-    if (radarWrap && latest.subjects) {
-      radarWrap.innerHTML = generateRadarSvg(latest.subjects);
+    if (radarWrap) {
+      radarWrap.innerHTML = generateRadarSvg(subjects);
     }
   }
 
@@ -3811,10 +4427,11 @@
 
     injectStyles();
 
-    // If there is existing history and results container exists, pre-inject
+    // Keep previously saved progress visible even while the calculator result panel is hidden.
     var resultsEl = document.getElementById('results');
-    if (resultsEl) {
-      injectAcademicProgressSection(adapter);
+    var existingHistory = getHistory(adapter.id);
+    if (resultsEl && existingHistory.length) {
+      injectAcademicProgressSection(adapter, true);
       updateProgressUI(adapter);
     }
 
