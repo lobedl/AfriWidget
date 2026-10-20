@@ -1072,8 +1072,23 @@
         '  <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
         '  <span>Find My Weaknesses</span>',
         '</button>'
-      ].join('');;
-      resultsEl.appendChild(callout);
+      ].join('');
+      var shareBar = document.getElementById('afriShareBar');
+      var academicProgress = document.getElementById('afriAcademicProgress');
+      var compareCard = document.getElementById('compareEntryCard');
+
+      if (compareCard && compareCard.parentNode === resultsEl) {
+        resultsEl.insertBefore(callout, compareCard);
+      } else if (shareBar && shareBar.parentNode === resultsEl) {
+        shareBar.insertAdjacentElement('afterend', callout);
+      } else if (academicProgress && academicProgress.parentNode === resultsEl) {
+        academicProgress.insertAdjacentElement('afterend', callout);
+      } else {
+        resultsEl.appendChild(callout);
+      }
+      if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+        window.afriEnsureResultSectionsOrder();
+      }
 
       document.getElementById('launchWeaknessFromResults').addEventListener('click', function () {
         openWeaknessSection();

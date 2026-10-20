@@ -1550,19 +1550,22 @@
         '</button>'
       ].join('');
 
-      // Insert right after weaknessCalloutBanner or exam-target-panel, before afriShareBar
+      // Insert in order: results -> ai insight -> academic progress -> share button -> weaknesses -> compare
       var weaknessBanner = document.getElementById('weaknessCalloutBanner');
       var shareBar = document.getElementById('afriShareBar');
-      var examTarget = resultsEl.querySelector('.exam-target-panel');
+      var academicProgress = document.getElementById('afriAcademicProgress');
 
-      if (weaknessBanner && weaknessBanner.nextSibling) {
-        resultsEl.insertBefore(entryCard, weaknessBanner.nextSibling);
-      } else if (shareBar) {
-        resultsEl.insertBefore(entryCard, shareBar);
-      } else if (examTarget && examTarget.nextSibling) {
-        resultsEl.insertBefore(entryCard, examTarget.nextSibling);
+      if (weaknessBanner && weaknessBanner.parentNode === resultsEl) {
+        weaknessBanner.insertAdjacentElement('afterend', entryCard);
+      } else if (shareBar && shareBar.parentNode === resultsEl) {
+        shareBar.insertAdjacentElement('afterend', entryCard);
+      } else if (academicProgress && academicProgress.parentNode === resultsEl) {
+        academicProgress.insertAdjacentElement('afterend', entryCard);
       } else {
         resultsEl.appendChild(entryCard);
+      }
+      if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+        window.afriEnsureResultSectionsOrder();
       }
     } else {
       // Re-apply clean redesigned class and markup if needed
@@ -1579,6 +1582,9 @@
         '  <span class="compare-btn-label">Compare with a Friend</span>',
         '</button>'
       ].join('');
+      if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+        window.afriEnsureResultSectionsOrder();
+      }
     }
 
     // Toggle button handler

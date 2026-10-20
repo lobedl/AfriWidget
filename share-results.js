@@ -1134,12 +1134,20 @@
     `;
 
     // Health progress or Academic Progress MUST come BEFORE the share bar
+    // And Share bar MUST come BEFORE weaknesses and compare with a friend
     const healthProgressEl = document.getElementById('afriHealthProgress');
     const academicProgressEl = document.getElementById('afriAcademicProgress');
-    if (healthProgressEl && healthProgressEl.parentNode) {
-      healthProgressEl.insertAdjacentElement('afterend', bar);
-    } else if (academicProgressEl && academicProgressEl.parentNode) {
+    const weaknessBannerEl = document.getElementById('weaknessCalloutBanner');
+    const compareCardEl = document.getElementById('compareEntryCard');
+
+    if (academicProgressEl && academicProgressEl.parentNode) {
       academicProgressEl.insertAdjacentElement('afterend', bar);
+    } else if (healthProgressEl && healthProgressEl.parentNode) {
+      healthProgressEl.insertAdjacentElement('afterend', bar);
+    } else if (weaknessBannerEl && weaknessBannerEl.parentNode) {
+      weaknessBannerEl.parentNode.insertBefore(bar, weaknessBannerEl);
+    } else if (compareCardEl && compareCardEl.parentNode) {
+      compareCardEl.parentNode.insertBefore(bar, compareCardEl);
     } else if (host && (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results'))) {
       host.appendChild(bar);
     } else if (host && host.classList.contains('calc-panel')) {
@@ -1148,6 +1156,10 @@
       toc.parentNode.insertBefore(bar, toc);
     } else if (host) {
       host.appendChild(bar);
+    }
+
+    if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+      window.afriEnsureResultSectionsOrder();
     }
 
     const copyBtn = document.getElementById('afriBarCopyBtn');

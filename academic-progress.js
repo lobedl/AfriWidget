@@ -3813,12 +3813,120 @@
     renderTrendSelection(adapter, chronological, chronological.length - 1);
   }
 
+  // --- ACADEMIC RESULTS SECTION ORDER ENFORCEMENT ---
+  // Strictly enforces the requested flow:
+  // 1. results -> 2. ai insight -> 3. academy progress -> 4. share button -> 5. find my weaknesses -> 6. and now the compare
+  var isAcademicReordering = false;
+  function ensureAcademicResultsSectionOrder() {
+    if (isAcademicReordering) return;
+    var resultsEl = document.getElementById('results') || document.querySelector('.results') || document.getElementById('cfResults');
+    if (!resultsEl) return;
+
+    var aiSec = resultsEl.querySelector('.ai-section, #aiInsightSection, #aiSection, .ai-insight');
+    var academicProg = document.getElementById('afriAcademicProgress');
+    var shareBar = document.getElementById('afriShareBar');
+    var weaknessBanner = document.getElementById('weaknessCalloutBanner');
+    var compareCard = document.getElementById('compareEntryCard');
+
+    isAcademicReordering = true;
+    try {
+      // Find the last child in resultsEl that belongs to the calculator results themselves
+      var lastResultChild = null;
+      var children = Array.from(resultsEl.children);
+      for (var i = children.length - 1; i >= 0; i--) {
+        var child = children[i];
+        if (child !== aiSec && child !== academicProg && child !== shareBar && child !== weaknessBanner && child !== compareCard) {
+          lastResultChild = child;
+          break;
+        }
+      }
+
+      // 1. AI INSIGHT: Must come immediately after Results (or at top of resultsEl if no other child)
+      if (aiSec) {
+        if (lastResultChild) {
+          if (lastResultChild.nextElementSibling !== aiSec) {
+            lastResultChild.insertAdjacentElement('afterend', aiSec);
+          }
+        } else if (aiSec.parentNode !== resultsEl) {
+          resultsEl.insertBefore(aiSec, resultsEl.firstChild);
+        }
+      }
+
+      // 2. ACADEMY PROGRESS: Must come immediately after AI Insight (or after Results if no AI insight)
+      var progAnchor = (aiSec && aiSec.parentNode === resultsEl) ? aiSec : lastResultChild;
+      if (academicProg) {
+        if (progAnchor) {
+          if (progAnchor.nextElementSibling !== academicProg) {
+            progAnchor.insertAdjacentElement('afterend', academicProg);
+          }
+        } else if (academicProg.parentNode !== resultsEl) {
+          resultsEl.appendChild(academicProg);
+        }
+      }
+
+      // 3. SHARE BUTTON: Must come immediately after Academic Progress (or after previous section if missing)
+      var shareAnchor = (academicProg && academicProg.parentNode === resultsEl)
+        ? academicProg
+        : ((aiSec && aiSec.parentNode === resultsEl) ? aiSec : lastResultChild);
+      if (shareBar) {
+        if (shareAnchor) {
+          if (shareAnchor.nextElementSibling !== shareBar) {
+            shareAnchor.insertAdjacentElement('afterend', shareBar);
+          }
+        } else if (shareBar.parentNode !== resultsEl) {
+          resultsEl.appendChild(shareBar);
+        }
+      }
+
+      // 4. FIND MY WEAKNESSES: Must come immediately after Share Button (or after previous section if missing)
+      var weaknessAnchor = (shareBar && shareBar.parentNode === resultsEl)
+        ? shareBar
+        : ((academicProg && academicProg.parentNode === resultsEl)
+          ? academicProg
+          : ((aiSec && aiSec.parentNode === resultsEl) ? aiSec : lastResultChild));
+      if (weaknessBanner) {
+        if (weaknessAnchor) {
+          if (weaknessAnchor.nextElementSibling !== weaknessBanner) {
+            weaknessAnchor.insertAdjacentElement('afterend', weaknessBanner);
+          }
+        } else if (weaknessBanner.parentNode !== resultsEl) {
+          resultsEl.appendChild(weaknessBanner);
+        }
+      }
+
+      // 5. COMPARE WITH A FRIEND: Must come immediately after Weaknesses (or after previous section if missing)
+      var compareAnchor = (weaknessBanner && weaknessBanner.parentNode === resultsEl)
+        ? weaknessBanner
+        : ((shareBar && shareBar.parentNode === resultsEl)
+          ? shareBar
+          : ((academicProg && academicProg.parentNode === resultsEl)
+            ? academicProg
+            : ((aiSec && aiSec.parentNode === resultsEl) ? aiSec : lastResultChild)));
+      if (compareCard) {
+        if (compareAnchor) {
+          if (compareAnchor.nextElementSibling !== compareCard) {
+            compareAnchor.insertAdjacentElement('afterend', compareCard);
+          }
+        } else if (compareCard.parentNode !== resultsEl) {
+          resultsEl.appendChild(compareCard);
+        }
+      }
+    } finally {
+      isAcademicReordering = false;
+    }
+  }
+  window.afriEnsureResultSectionsOrder = ensureAcademicResultsSectionOrder;
+
   // --- ACADEMIC PROGRESS SECTION UI INJECTION ---
   function injectAcademicProgressSection(adapter, showWithRestoredHistory) {
-    if (document.getElementById('afriAcademicProgress')) return;
-
-    var resultsEl = document.getElementById('results');
+    var resultsEl = document.getElementById('results') || document.querySelector('.results') || document.getElementById('cfResults');
     if (!resultsEl) return;
+
+    var existing = document.getElementById('afriAcademicProgress');
+    if (existing) {
+      ensureAcademicResultsSectionOrder();
+      return;
+    }
 
     var container = document.createElement('section');
     container.id = 'afriAcademicProgress';
@@ -3914,22 +4022,26 @@
       </div>
     `;
 
-    // Restored history must remain reachable when the calculator's results area is hidden.
-    var resultsHead = resultsEl.querySelector('.results-head');
-    var aiSec = resultsEl.querySelector('.ai-section');
-    var shareBar = resultsEl.querySelector('#afriShareBar');
+    // Strictly enforce structure:
+    // results -> ai insight -> academy progress -> share button -> find my weaknesses -> compare
+    var aiSec = resultsEl.querySelector('.ai-section, #aiInsightSection, #aiSection, .ai-insight');
+    var shareBar = document.getElementById('afriShareBar');
+    var weaknessBanner = document.getElementById('weaknessCalloutBanner');
+    var compareCard = document.getElementById('compareEntryCard');
 
-    if (showWithRestoredHistory && resultsEl.parentNode) {
-      resultsEl.insertAdjacentElement('afterend', container);
-    } else if (resultsHead && resultsHead.parentNode) {
-      resultsHead.insertAdjacentElement('afterend', container);
-    } else if (aiSec && aiSec.parentNode === resultsEl) {
-      resultsEl.insertBefore(container, aiSec);
-    } else if (shareBar && shareBar.parentNode === resultsEl) {
+    if (shareBar && shareBar.parentNode === resultsEl) {
       resultsEl.insertBefore(container, shareBar);
+    } else if (weaknessBanner && weaknessBanner.parentNode === resultsEl) {
+      resultsEl.insertBefore(container, weaknessBanner);
+    } else if (compareCard && compareCard.parentNode === resultsEl) {
+      resultsEl.insertBefore(container, compareCard);
+    } else if (aiSec && aiSec.parentNode === resultsEl) {
+      aiSec.insertAdjacentElement('afterend', container);
     } else {
       resultsEl.appendChild(container);
     }
+
+    ensureAcademicResultsSectionOrder();
 
     var historyBtn = document.getElementById('afriProgHistoryBtn');
     if (historyBtn) {
@@ -4503,9 +4615,12 @@
     // Observer on results visibility or DOM change
     if (resultsEl) {
       var observer = new MutationObserver(function () {
+        if (isAcademicReordering) return;
+        ensureAcademicResultsSectionOrder();
         if (resultsEl.classList.contains('visible') || window.getComputedStyle(resultsEl).display !== 'none') {
           setTimeout(function () {
             recordAndDisplay(adapter);
+            ensureAcademicResultsSectionOrder();
           }, 90);
         }
       });
