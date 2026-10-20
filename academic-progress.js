@@ -302,6 +302,10 @@
         font-size: 0.75rem;
         line-height: 1.45;
       }
+      .afri-subject-trend[hidden],
+      .afri-subject-highlights-grid[hidden] {
+        display: none !important;
+      }
       .afri-history-summary {
         display: flex;
         align-items: center;
