@@ -11,6 +11,7 @@ The Academic Progress Engine provides private, client-side academic attempt trac
 ### Core Architecture Principles
 - **100% Client-Side Privacy**: Data is stored exclusively in `window.localStorage` under `afriwidget_academic_progress_<toolId>`. Zero accounts, zero server calls, zero database storage.
 - **Zero Friction / Automatic Recording**: The student never has to click "Save". Every successful calculation is recorded in the background. Identical saved results and subjects are deduplicated; a different assessment or period remains distinct.
+- **Comparable Results Only**: Trend lines and deltas group results by scoring mode. GPA and CGPA, grading-scale variants, CWA/WAM and GPA, and different calculator modes are never compared as if they shared one scale. Old records with an unknown mode remain in history but are not mixed into a trend.
 - **Zero Framework / Zero Tailwind CSS**: Scoped, inline-injected CSS adhering strictly to the AfriWidget brand design system (`#000000`, `#facc15`, `#ca8a04`, `#fde047`, `#fef3c7`, slate grays).
 - **Responsive & Accessible**: Uses semantic HTML5 `<section>`, ARIA dialog roles, accessible SVG titles, and responsive layouts (single-column mobile, two-column desktop).
 
@@ -18,7 +19,7 @@ The Academic Progress Engine provides private, client-side academic attempt trac
 
 ## 2. Core Components Rendered
 
-When loaded on an educational tool, the engine restores saved progress visibly even while `#results` is hidden. After a new calculation, it injects `<section id="afriAcademicProgress" class="afri-academic-progress">` below `.results-head` or before `.ai-section` / `#afriShareBar`.
+When loaded on an educational tool, the engine shows a useful first-visit empty state and restores saved progress visibly even while `#results` is hidden. After a new calculation, it updates `<section id="afriAcademicProgress" class="afri-academic-progress">` outside the hidden results area.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -50,13 +51,14 @@ When loaded on an educational tool, the engine restores saved progress visibly e
 
 ### 3. Progress Summary & Trend Banner
 - **Latest Result**: Displays `current.displayValue` and date.
-- **Previous Result**: Displays `prev.displayValue` or "No earlier entry".
+- **Previous Result**: Displays the previous comparable result or "No earlier comparable result".
 - **Trend Banner**: Compares the first and latest saved result for overall direction, and separately reports the latest change:
   - Respects `higherIsBetter`:
     - When `true` (GPA, APS, ICASS, KCSE, JAMB): positive delta = `improved` (green ▲), negative delta = `declined` (amber ▼).
     - When `false` (WASSCE, BECE aggregates where 6 is better than 24): lower score = `improved` (`prev.value - current.value`).
   - States: `improved`, `declined`, `neutral` (stable), `baseline` (first calculation).
 - A subject-level insight appears only when the same subject has comparable normalized scores in the latest two results.
+- Results from a different scoring mode stay in the full history but are excluded from the chart, summary, and subject comparison. If older records do not identify their mode safely, the engine shows them without drawing a potentially misleading comparison.
 
 ### 4. Subject Highlights Grid
 - **Strongest Subject**: Subject with highest `norm` (green card with star icon).
@@ -114,11 +116,14 @@ Every supported tool is registered in the `adapters` dictionary inside `/academi
   // Human-readable tool title
   title: 'Sample Grade Calculator',
 
-  // true if higher numbers are better (GPA, %, points); false if lower numbers are better (WASSCE/BECE aggregates)
+  // Default direction; an extracted result can override it for a dynamic calculator mode.
   higherIsBetter: true,
 
   // Optional unit string used in trend banner (e.g. 'pts', '%', 'GPA')
   unit: 'pts',
+
+  // Dynamic calculators should return a stable key so different scales/modes are not compared.
+  // They may also return higherIsBetter and unit when those differ between modes.
 
   // Extraction function: reads DOM and returns the standardized data object or null if incomplete
   extract: function () {
@@ -144,6 +149,9 @@ Every supported tool is registered in the `adapters` dictionary inside `/academi
       value: val,                      // Numeric value for mathematical delta/trend comparison
       displayValue: val + ' Pts',      // Formatted string shown in summary cards
       subjects: subjects,              // Array of normalized subjects for radar chart
+      comparisonKey: 'scale-4-gpa',    // Optional; use the same key only for comparable results
+      higherIsBetter: true,            // Optional override for a dynamic result mode
+      unit: 'GPA',                     // Optional override for a dynamic result mode
       assessment: 'Midterm',           // Optional assessment label
       academicPeriod: 'Semester 1'     // Optional term, semester, or school-year label
     };

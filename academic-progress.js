@@ -2860,7 +2860,9 @@
             return {
               value: triAvg,
               displayValue: triAvg.toFixed(1) + '% Trimester Average (' + passedCount + '/' + validCount + ' Passed)',
-              subjects: triSubjects
+              subjects: triSubjects,
+              comparisonKey: 'trimester-average',
+              unit: '%'
             };
           }
         }
@@ -2924,7 +2926,9 @@
         return {
           value: val,
           displayValue: val.toFixed(1) + '%' + (classification ? ' (' + classification + ')' : ''),
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: 'single-subject',
+          unit: '%'
         };
       }
     },
@@ -3035,7 +3039,10 @@
         return {
           value: val,
           displayValue: text + (divStr ? ' (' + divStr + ')' : ''),
-          subjects: subjects
+          subjects: subjects,
+          comparisonKey: isUace ? 'uace-points' : (foundPle ? 'ple-aggregate' : 'uce-aggregate'),
+          higherIsBetter: isUace,
+          unit: isUace ? 'UACE points' : 'aggregate'
         };
       }
     },
@@ -3436,7 +3443,12 @@
 
   function recordContext(item) {
     if (!item) return '';
-    return String(item.assessment || item.academicPeriod || item.period || item.term || item.semester || item.academicYear || '');
+    var assessment = String(item.assessment || item.assessmentName || '').trim();
+    var period = String(item.academicPeriod || item.period || item.term || item.semester || item.academicYear || '').trim();
+    if (assessment && period && assessment.toLowerCase() !== period.toLowerCase()) {
+      return assessment + ' · ' + period;
+    }
+    return assessment || period;
   }
 
   function resultSignature(result) {
@@ -3452,6 +3464,7 @@
     return JSON.stringify([
       Number(result.value),
       String(result.displayValue || ''),
+      String(result.comparisonKey || 'default'),
       String(result.assessment || result.assessmentName || '').trim().toLowerCase(),
       String(result.academicPeriod || result.period || result.term || result.semester || result.academicYear || '').trim().toLowerCase(),
       subjects
@@ -3509,6 +3522,12 @@
     if (item && typeof item.unit === 'string' && item.unit) return item.unit;
     var display = String(item && item.displayValue || '');
     switch (adapter.id) {
+      case 'tertiary-gpa-cgpa':
+        return /\bCGPA\b/i.test(display) ? 'CGPA' : 'GPA';
+      case 'nigerian-university-cgpa':
+        return 'CGPA';
+      case 'zambia-university-gpa':
+        return 'GPA';
       case 'ghana-university-gpa':
         return /%\s*CWA/i.test(display) ? 'CWA (%)' : 'GPA';
       case 'kenya-university-gpa':
@@ -3682,7 +3701,9 @@
     var wrap = document.getElementById('afriTrendSvgWrap');
     var caption = document.getElementById('afriTrendCaption');
     if (!wrap) return;
-    var chronological = chronologicalHistory(history);
+    var comparable = comparableHistory(history, adapter);
+    var excludedCount = Math.max(0, history.length - comparable.length);
+    var chronological = chronologicalHistory(comparable);
     if (!chronological.length) {
       wrap.innerHTML = '<p class="afri-trend-caption" style="padding:1rem 0;">Your saved results will appear here after a calculation.</p>';
       var emptyDetails = document.getElementById('afriTrendSelected');
@@ -3723,7 +3744,8 @@
         '<text x="' + (left - 8) + '" y="' + (y + 3.5).toFixed(1) +
         '" text-anchor="end" font-size="10" fill="#6b7280">' + escapeHtml(formatNumber(tickValue)) + '</text>';
     }
-    var axisUnit = adapter.unit ? 'Score (' + adapter.unit + ')' : 'Score';
+    var chartUnit = recordUnit(chronological[chronological.length - 1], adapter);
+    var axisUnit = chartUnit ? 'Score (' + chartUnit + ')' : 'Score';
     var labels = '';
     var maxLabels = mobile ? 4 : 6;
     var labelCount = Math.min(maxLabels, points.length);
@@ -3773,11 +3795,16 @@
       labels + pointMarkup + '</svg>';
 
     if (caption) {
+      var otherModeNote = excludedCount
+        ? ' Other saved results use a different or unrecorded scoring mode and are not compared.'
+        : '';
       caption.textContent = chronological.length === 1
-        ? 'This first result is your starting point. A later calculation will show a trend.'
-        : mobile && width > availableWidth + 1
+        ? (excludedCount
+          ? 'Only one comparable result is shown.' + otherModeNote
+          : 'This first result is your starting point. A later calculation will show a trend.')
+        : (mobile && width > availableWidth + 1
           ? 'Swipe the chart horizontally to reach older results. Select a point for its date, score, and subjects.'
-          : 'Latest result appears at the right. Select a point for its date, score, and subjects.';
+          : 'Latest result appears at the right. Select a point for its date, score, and subjects.') + otherModeNote;
     }
     renderTrendSelection(adapter, chronological, chronological.length - 1);
   }
@@ -3917,7 +3944,7 @@
           if (event.key !== 'Enter' && event.key !== ' ') return;
           event.preventDefault();
         }
-        var chronological = chronologicalHistory(getHistory(adapter.id));
+        var chronological = chronologicalHistory(comparableHistory(getHistory(adapter.id), adapter));
         renderTrendSelection(adapter, chronological, Number(point.getAttribute('data-point-index')));
       }
       trendWrap.addEventListener('click', selectTrendPoint);
@@ -4148,29 +4175,32 @@
     return { strongest: strongest, weakest: weakest };
   }
 
-  function performanceDelta(newValue, oldValue, adapter) {
-    return adapter.higherIsBetter ? Number(newValue) - Number(oldValue) : Number(oldValue) - Number(newValue);
+  function performanceDelta(newValue, oldValue, higherIsBetter) {
+    return higherIsBetter ? Number(newValue) - Number(oldValue) : Number(oldValue) - Number(newValue);
   }
 
   function trendTolerance(adapter) {
     return isFinite(Number(adapter.trendTolerance)) ? Math.max(0, Number(adapter.trendTolerance)) : 0.001;
   }
 
-  function progressSummary(history, adapter) {
+  function progressSummary(history, adapter, totalHistoryCount) {
     if (history.length < 2) {
       return {
         type: 'baseline',
-        desc: 'This is your first saved result. Another calculation will let you compare your progress.'
+        desc: totalHistoryCount > 1
+          ? 'Only one result on this scoring mode is available. Other saved results use a different or unrecorded mode and are not compared.'
+          : 'This is your first saved result. Another calculation will let you compare your progress.'
       };
     }
     var latest = history[0];
     var previous = history[1];
     var first = history[history.length - 1];
     var tolerance = trendTolerance(adapter);
-    var overallDelta = performanceDelta(latest.value, first.value, adapter);
-    var recentDelta = performanceDelta(latest.value, previous.value, adapter);
+    var higherIsBetter = recordHigherIsBetter(latest, adapter);
+    var overallDelta = performanceDelta(latest.value, first.value, higherIsBetter);
+    var recentDelta = performanceDelta(latest.value, previous.value, higherIsBetter);
     var type = Math.abs(overallDelta) <= tolerance ? 'neutral' : overallDelta > 0 ? 'improved' : 'declined';
-    var unit = adapter.unit || 'points';
+    var unit = recordUnit(latest, adapter);
     var overallText;
     if (type === 'improved') {
       overallText = 'Improving by ' + formatNumber(Math.abs(overallDelta)) + ' ' + unit +
@@ -4244,11 +4274,17 @@
     current.subjects = Array.isArray(current.subjects) ? current.subjects.filter(function (subject) {
       return subject && typeof subject === 'object';
     }) : [];
+    current.comparisonKey = String(current.comparisonKey || 'default').trim().slice(0, 80) || 'default';
+    current.unit = String(current.unit || adapter.unit || '').trim().slice(0, 40);
+    current.higherIsBetter = typeof current.higherIsBetter === 'boolean'
+      ? current.higherIsBetter
+      : !!adapter.higherIsBetter;
     current.assessment = cleanResultContext(current, ['assessment', 'assessmentName']);
     current.academicPeriod = cleanResultContext(current, ['academicPeriod', 'period', 'term', 'semester', 'academicYear']);
 
     var history = getHistory(adapter.id);
-    var prev = history.length > 0 ? history[0] : null;
+    var comparable = comparableHistory(history, adapter, current);
+    var prev = comparable.length > 0 ? comparable[0] : null;
     var now = Date.now();
     var signature = resultSignature(current);
     var isDuplicate = history.some(function (item) {
@@ -4259,33 +4295,36 @@
 
     var trend = null;
     if (prev) {
-      var diff = performanceDelta(current.value, prev.value, adapter);
+      var diff = performanceDelta(current.value, prev.value, recordHigherIsBetter(current, adapter));
       var diffStr = formatNumber(Math.abs(diff));
+      var unit = recordUnit(current, adapter);
 
       if (diff > trendTolerance(adapter)) {
         trend = {
           type: 'improved',
-          label: '▲ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' improvement',
-          desc: 'Improved by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared with the previous result.'
+          label: '▲ ' + diffStr + ' ' + (unit || 'pts') + ' improvement',
+          desc: 'Improved by ' + diffStr + ' ' + (unit || 'points') + ' compared with the previous comparable result.'
         };
       } else if (diff < -trendTolerance(adapter)) {
         trend = {
           type: 'declined',
-          label: '▼ ' + diffStr + ' ' + (adapter.unit || 'pts') + ' decline',
-          desc: 'Performance declined by ' + diffStr + ' ' + (adapter.unit || 'points') + ' compared with the previous result.'
+          label: '▼ ' + diffStr + ' ' + (unit || 'pts') + ' decline',
+          desc: 'Performance declined by ' + diffStr + ' ' + (unit || 'points') + ' compared with the previous comparable result.'
         };
       } else {
         trend = {
           type: 'neutral',
           label: '— Stable',
-          desc: 'No meaningful change from the previous result.'
+          desc: 'No meaningful change from the previous comparable result.'
         };
       }
     } else {
       trend = {
         type: 'baseline',
-        label: '● Initial baseline',
-        desc: 'First result recorded automatically · Another calculation will show your progress'
+        label: history.length ? '● New scoring-mode baseline' : '● Initial baseline',
+        desc: history.length
+          ? 'First result recorded on this scoring mode. Other saved modes are not compared.'
+          : 'First result recorded automatically · Another calculation will show your progress'
       };
     }
 
@@ -4306,6 +4345,9 @@
         assessment: current.assessment,
         academicPeriod: current.academicPeriod,
         trend: trend,
+        comparisonKey: current.comparisonKey,
+        unit: current.unit,
+        higherIsBetter: current.higherIsBetter,
         strongest: strengths.strongest ? { name: strengths.strongest.name, display: strengths.strongest.display || strengths.strongest.grade } : null,
         weakest: strengths.weakest ? { name: strengths.weakest.name, display: strengths.weakest.display || strengths.weakest.grade } : null
       };
@@ -4363,7 +4405,8 @@
     }
 
     var latest = history[0];
-    var prev = history.length > 1 ? history[1] : null;
+    var metricHistory = comparableHistory(history, adapter);
+    var prev = metricHistory.length > 1 ? metricHistory[1] : null;
     var subjects = Array.isArray(latest.subjects) ? latest.subjects : [];
 
     // Latest Result
@@ -4376,12 +4419,12 @@
     var prevEl = document.getElementById('afriProgPrevVal');
     var prevSub = document.getElementById('afriProgPrevSub');
     if (prevEl) prevEl.textContent = prev ? (prev.displayValue || formatNumber(prev.value)) : '—';
-    if (prevSub) prevSub.textContent = prev ? recordDate(prev) : 'No earlier entry';
+    if (prevSub) prevSub.textContent = prev ? 'Previous comparable result · ' + recordDate(prev) : 'No earlier comparable result';
 
     // The overall direction uses the first and latest saved results; the adjacent result comparison is also shown.
     var trendBanner = document.getElementById('afriProgTrendBanner');
     if (trendBanner) {
-      var summary = progressSummary(history, adapter);
+      var summary = progressSummary(metricHistory, adapter, history.length);
       var icon = summary.type === 'improved' ? icons.arrowUp :
         summary.type === 'declined' ? icons.arrowDown :
         summary.type === 'neutral' ? icons.equal : icons.dot;
@@ -4391,7 +4434,7 @@
     }
 
     var subjectInsight = document.getElementById('afriProgSubjectTrend');
-    var subjectInsightText = comparableSubjectInsight(history);
+    var subjectInsightText = comparableSubjectInsight(metricHistory);
     if (subjectInsight) {
       subjectInsight.textContent = subjectInsightText;
       subjectInsight.hidden = !subjectInsightText;
@@ -4427,10 +4470,9 @@
 
     injectStyles();
 
-    // Keep previously saved progress visible even while the calculator result panel is hidden.
+    // Keep progress visible outside the hidden result panel, including a useful first-visit empty state.
     var resultsEl = document.getElementById('results');
-    var existingHistory = getHistory(adapter.id);
-    if (resultsEl && existingHistory.length) {
+    if (resultsEl) {
       injectAcademicProgressSection(adapter, true);
       updateProgressUI(adapter);
     }
