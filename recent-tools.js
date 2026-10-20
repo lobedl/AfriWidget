@@ -1,7 +1,7 @@
 /**
- * AfriWidget "Continue Where You Left Off" & Progress Engine
- * 1. Tracks recently visited tools locally in the browser (localStorage: 'afriwidget_recent_tools').
- * 2. Automatically saves and restores user progress & inputs within supported tools (localStorage: 'afriwidget_progress_<url>').
+ * AfriWidget "Continue Where You Left Off" / Recent Tools Engine
+ * Tracks recently visited tools locally in the browser (localStorage: 'afriwidget_recent_tools').
+ * Displays the last tools used so users can quickly return to them.
  * Zero accounts, zero login, zero tracking scripts, 100% private.
  * Pure vanilla JavaScript (Zero Tailwind, Zero Emojis, 100% Crisp SVG Icons).
  * Matches AfriWidget Brand System (#000000, #facc15, #ca8a04, #ffffff, #e5e5e5).
@@ -12,7 +12,6 @@
   if (typeof window === 'undefined') return;
 
   var STORAGE_KEY = 'afriwidget_recent_tools';
-  var PROGRESS_PREFIX = 'afriwidget_progress_';
   var MAX_ITEMS = 6;
   var EXPIRY_MS = 30 * 24 * 60 * 60 * 1000; // 30 days expiration
 
@@ -918,10 +917,9 @@
       var cat = escapeHtml(tool.category || 'General');
       var name = escapeHtml(tool.name);
       var url = escapeHtml(tool.url);
-      var continueUrl = url + (url.indexOf('?') === -1 ? '?continue=1' : '&continue=1');
       var timeAgo = escapeHtml(formatTimeAgo(tool.lastVisited));
 
-      html += '<a href="' + continueUrl + '" class="tool-card continue-card" data-recent-url="' + url + '">' +
+      html += '<a href="' + url + '" class="tool-card continue-card" data-recent-url="' + url + '">' +
         '<div class="tool-card-icon">' +
           iconSvg +
           '<span class="tool-card-cat">' + cat + '</span>' +
@@ -973,13 +971,6 @@
       var card = e.target.closest('a.tool-card, a.app-card');
       if (!card) return;
 
-      if (card.classList.contains('continue-card')) {
-        try {
-          var targetHref = card.getAttribute('href') || '';
-          sessionStorage.setItem('afriwidget_continue_restore', normalizeUrl(targetHref));
-        } catch (err) {}
-      }
-
       var href = card.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('http') || href === '/' || isHubPage(href)) return;
 
@@ -1009,374 +1000,23 @@
   }
 
   // =========================================================================
-  // 2. AUTOMATIC USER PROGRESS & INPUTS PERSISTENCE ENGINE
+  // 2. LEGACY INPUT SNAPSHOT CLEANUP
   // =========================================================================
 
-  var saveDebounceTimer = null;
-  var isRestoringInProgress = false;
-
-  function queueAutoSave() {
-    if (isRestoringInProgress) return;
-    if (saveDebounceTimer) clearTimeout(saveDebounceTimer);
-    saveDebounceTimer = setTimeout(function () {
-      saveCurrentToolProgress();
-    }, 250);
-  }
-
-  function saveCurrentToolProgress() {
-    var path = normalizeUrl(window.location.pathname);
-    if (!path || path === '/' || isHubPage(path)) return;
-
-    var toolRoot = document.querySelector('main') || document.querySelector('.calc-panel') || document.querySelector('form') || document.body;
-    if (!toolRoot) return;
-
-    var state = {
-      url: path,
-      updatedAt: Date.now(),
-      tabs: [],
-      fields: {},
-      dynamicRows: []
-    };
-
-    var hasAnyValue = false;
-
-    // 1. Capture Active Unit Toggles and Tabs
-    var activeTabs = toolRoot.querySelectorAll('.unit-toggle button.active, [role="tab"].active, [role="tab"][aria-selected="true"], .tab-btn.active');
-    activeTabs.forEach(function (tab) {
-      if (tab.id) {
-        state.tabs.push(tab.id);
-      } else if (tab.dataset.tab) {
-        state.tabs.push('[data-tab="' + tab.dataset.tab + '"]');
-      }
-    });
-
-    // 2. Capture Dynamic Table Rows (e.g. #courseList, #subjectList, .course-row)
-    var dynamicContainers = toolRoot.querySelectorAll('#courseList, #subjectList, .dynamic-list, .courses-container, .subjects-container');
-    dynamicContainers.forEach(function (container) {
-      var rows = container.querySelectorAll('.course-row, .subject-row, .dynamic-row, .form-row');
-      var rowsData = [];
-      rows.forEach(function (row) {
-        var rowInputs = row.querySelectorAll('input, select, textarea');
-        var rowVals = [];
-        rowInputs.forEach(function (inp) {
-          var val = inp.value;
-          rowVals.push({
-            type: inp.type || inp.tagName.toLowerCase(),
-            value: val
-          });
-          if (val && String(val).trim() !== '') {
-            hasAnyValue = true;
-          }
-        });
-        if (rowVals.length > 0) {
-          rowsData.push(rowVals);
+  function purgeLegacyInputSnapshots() {
+    try {
+      var keysToRemove = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf('afriwidget_progress_') === 0) {
+          keysToRemove.push(k);
         }
+      }
+      keysToRemove.forEach(function (k) {
+        localStorage.removeItem(k);
       });
-
-      var addBtn = toolRoot.querySelector('#addRowBtn, #addCourseBtn, #addSubjectBtn, .btn-add-row, .btn-add');
-      state.dynamicRows.push({
-        containerId: container.id || '',
-        addBtnId: addBtn ? addBtn.id : '',
-        rows: rowsData
-      });
-    });
-
-    // 3. Capture Standard Form Fields
-    var inputs = toolRoot.querySelectorAll('input, select, textarea');
-    inputs.forEach(function (inp) {
-      if (inp.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
-      if (inp.type === 'button' || inp.type === 'submit' || inp.type === 'reset') return;
-      if (inp.closest('#courseList, #subjectList, .dynamic-list')) return;
-
-      var key = inp.id || (inp.name ? 'name:' + inp.name : null);
-      if (!key) return;
-
-      if (inp.type === 'radio') {
-        if (inp.checked) {
-          state.fields[key] = {
-            type: 'radio',
-            value: inp.value,
-            checked: true
-          };
-          hasAnyValue = true;
-        }
-      } else if (inp.type === 'checkbox') {
-        state.fields[key] = {
-          type: 'checkbox',
-          value: inp.value,
-          checked: inp.checked
-        };
-        if (inp.checked) hasAnyValue = true;
-      } else {
-        var val = inp.value;
-        state.fields[key] = {
-          type: inp.type || 'text',
-          value: val
-        };
-        if (val && String(val).trim() !== '') {
-          hasAnyValue = true;
-        }
-      }
-    });
-
-    var storageKey = PROGRESS_PREFIX + path;
-    if (hasAnyValue) {
-      try {
-        localStorage.setItem(storageKey, JSON.stringify(state));
-        // Keep recent tool timestamp synchronized
-        recordToolVisit({ url: path });
-      } catch (e) {
-        console.warn('AfriWidget Progress: localStorage write error', e);
-      }
-    } else {
-      try {
-        localStorage.removeItem(storageKey);
-      } catch (e) {}
-    }
-  }
-
-  function restoreCurrentToolProgress() {
-    var path = normalizeUrl(window.location.pathname);
-    if (!path || path === '/' || isHubPage(path)) return;
-
-    // Only restore previous inputs if the user pressed the tool from the "Continue Where You Left Off" section
-    var params;
-    try {
-      params = new URLSearchParams(window.location.search);
-    } catch (e) {
-      params = null;
-    }
-    var hasContinueParam = params && (params.get('continue') === '1' || params.get('resume') === '1');
-    var hasContinueSession = false;
-    try {
-      if (sessionStorage.getItem('afriwidget_continue_restore') === path) {
-        hasContinueSession = true;
-        sessionStorage.removeItem('afriwidget_continue_restore');
-      }
+      sessionStorage.removeItem('afriwidget_continue_restore');
     } catch (e) {}
-
-    if (!hasContinueParam && !hasContinueSession) {
-      // Normal direct visit / navigation - do NOT restore old inputs! Start fresh.
-      return;
-    }
-
-    // Clean up ?continue=1 from the URL bar so the URL stays pristine after other scripts have read it
-    if (hasContinueParam && window.history && typeof window.history.replaceState === 'function') {
-      setTimeout(function () {
-        try {
-          var cleanUrl = new URL(window.location.href);
-          cleanUrl.searchParams.delete('continue');
-          cleanUrl.searchParams.delete('resume');
-          var queryStr = cleanUrl.searchParams.toString();
-          window.history.replaceState({}, '', cleanUrl.pathname + (queryStr ? '?' + queryStr : '') + cleanUrl.hash);
-        } catch (e) {}
-      }, 500);
-    }
-
-    var storageKey = PROGRESS_PREFIX + path;
-    var raw;
-    try {
-      raw = localStorage.getItem(storageKey);
-    } catch (e) {
-      return;
-    }
-    if (!raw) return;
-
-    var state;
-    try {
-      state = JSON.parse(raw);
-    } catch (e) {
-      return;
-    }
-    if (!state || typeof state !== 'object') return;
-
-    var toolRoot = document.querySelector('main') || document.querySelector('.calc-panel') || document.querySelector('form') || document.body;
-    if (!toolRoot) return;
-
-    isRestoringInProgress = true;
-    var restoredAny = false;
-
-    try {
-      // 1. Restore Active Tabs or Unit Toggles first
-      if (Array.isArray(state.tabs)) {
-        state.tabs.forEach(function (tabIdentifier) {
-          var tabBtn = document.getElementById(tabIdentifier) || document.querySelector(tabIdentifier);
-          if (tabBtn && typeof tabBtn.click === 'function') {
-            if (!tabBtn.classList.contains('active') && tabBtn.getAttribute('aria-selected') !== 'true') {
-              tabBtn.click();
-              restoredAny = true;
-            }
-          }
-        });
-      }
-
-      // 2. Restore Dynamic Rows (e.g. #courseList, #subjectList)
-      if (Array.isArray(state.dynamicRows)) {
-        state.dynamicRows.forEach(function (dyn) {
-          var container = dyn.containerId ? document.getElementById(dyn.containerId) : document.querySelector('#courseList, #subjectList');
-          var addBtn = dyn.addBtnId ? document.getElementById(dyn.addBtnId) : document.querySelector('#addRowBtn, #addCourseBtn, #addSubjectBtn');
-          if (!container || !Array.isArray(dyn.rows) || dyn.rows.length === 0) return;
-
-          var existingRows = container.querySelectorAll('.course-row, .subject-row, .dynamic-row, .form-row');
-          var needed = dyn.rows.length;
-
-          // If more rows needed than current, click add button
-          if (addBtn && typeof addBtn.click === 'function') {
-            var diff = needed - existingRows.length;
-            for (var i = 0; i < diff; i++) {
-              addBtn.click();
-            }
-          }
-
-          var currentRows = container.querySelectorAll('.course-row, .subject-row, .dynamic-row, .form-row');
-          dyn.rows.forEach(function (savedRow, rIdx) {
-            if (rIdx >= currentRows.length) return;
-            var rowEl = currentRows[rIdx];
-            var rowInputs = rowEl.querySelectorAll('input, select, textarea');
-            savedRow.forEach(function (savedInp, iIdx) {
-              if (iIdx < rowInputs.length) {
-                var targetInp = rowInputs[iIdx];
-                if (savedInp.value !== undefined && savedInp.value !== null) {
-                  targetInp.value = savedInp.value;
-                  targetInp.dispatchEvent(new Event('input', { bubbles: true }));
-                  targetInp.dispatchEvent(new Event('change', { bubbles: true }));
-                  if (savedInp.value !== '') restoredAny = true;
-                }
-              }
-            });
-          });
-        });
-      }
-
-      // 3. Restore Standard Fields
-      if (state.fields && typeof state.fields === 'object') {
-        Object.keys(state.fields).forEach(function (key) {
-          var field = state.fields[key];
-          if (!field) return;
-
-          var el;
-          if (key.startsWith('name:')) {
-            var name = key.slice(5);
-            if (field.type === 'radio') {
-              el = toolRoot.querySelector('input[type="radio"][name="' + name + '"][value="' + field.value + '"]');
-            } else {
-              el = toolRoot.querySelector('[name="' + name + '"]');
-            }
-          } else {
-            el = document.getElementById(key);
-          }
-
-          if (!el) return;
-
-          if (field.type === 'radio') {
-            if (field.checked) {
-              el.checked = true;
-              el.dispatchEvent(new Event('change', { bubbles: true }));
-              restoredAny = true;
-            }
-          } else if (field.type === 'checkbox') {
-            el.checked = Boolean(field.checked);
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-            restoredAny = true;
-          } else {
-            if (field.value !== undefined && field.value !== null) {
-              el.value = field.value;
-              el.dispatchEvent(new Event('input', { bubbles: true }));
-              el.dispatchEvent(new Event('change', { bubbles: true }));
-              if (field.value !== '') restoredAny = true;
-            }
-          }
-        });
-      }
-    } catch (err) {
-      console.warn('AfriWidget Progress: restore error', err);
-    } finally {
-      isRestoringInProgress = false;
-    }
-
-    // 4. Safely auto-calculate if tool inputs are complete and valid
-    if (restoredAny) {
-      setTimeout(function () {
-        tryAutoCalculate(toolRoot);
-      }, 100);
-    }
-  }
-
-  function tryAutoCalculate(toolRoot) {
-    if (!toolRoot) return;
-    try {
-      var form = toolRoot.querySelector('form') || (toolRoot.tagName.toLowerCase() === 'form' ? toolRoot : null);
-      if (form) {
-        if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
-          return; // Incomplete inputs, do not trigger
-        }
-        var submitBtn = form.querySelector('button[type="submit"], input[type="submit"], .btn-calc');
-        if (submitBtn && typeof submitBtn.click === 'function') {
-          submitBtn.click();
-        } else {
-          form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-        }
-        return;
-      }
-
-      // Check for standalone calculation button (e.g. gpa-calculator #calcBtn)
-      var calcBtn = toolRoot.querySelector('#calcBtn, .btn-calc');
-      if (calcBtn && typeof calcBtn.click === 'function') {
-        calcBtn.click();
-      }
-    } catch (e) {}
-  }
-
-  function clearCurrentToolProgress() {
-    var path = normalizeUrl(window.location.pathname);
-    if (!path) return;
-    try {
-      localStorage.removeItem(PROGRESS_PREFIX + path);
-    } catch (e) {}
-  }
-
-  function initProgressListeners() {
-    var path = normalizeUrl(window.location.pathname);
-    if (!path || path === '/' || isHubPage(path)) return;
-
-    // Listen for inputs and changes
-    document.addEventListener('input', function (e) {
-      if (e.target.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
-      queueAutoSave();
-    }, { passive: true });
-
-    document.addEventListener('change', function (e) {
-      if (e.target.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
-      saveCurrentToolProgress();
-    }, { passive: true });
-
-    document.addEventListener('submit', function (e) {
-      if (e.target.closest('#mobileMenu, #cookieBanner, .afri-fav-drawer, .category-search-box, .site-nav')) return;
-      saveCurrentToolProgress();
-    }, { passive: true });
-
-    // Listen for button interactions (tabs, unit toggles, dynamic add/remove, clear)
-    document.addEventListener('click', function (e) {
-      var target = e.target;
-      var btn = target.closest('button, .unit-toggle button, [role="tab"], .btn-remove, .btn-add');
-      if (!btn) return;
-
-      // Handle Clear / Reset buttons
-      if (btn.id === 'clearBtn' || btn.id === 'resetBtn' || btn.type === 'reset' || btn.classList.contains('btn-clear')) {
-        clearCurrentToolProgress();
-        return;
-      }
-
-      // Handle Unit toggles / Tabs / Dynamic rows
-      if (btn.closest('.unit-toggle') || btn.getAttribute('role') === 'tab' || btn.classList.contains('tab-btn') || btn.id === 'addRowBtn' || btn.id === 'addCourseBtn' || btn.id === 'addSubjectBtn' || btn.classList.contains('btn-remove') || btn.classList.contains('course-remove')) {
-        setTimeout(function () {
-          saveCurrentToolProgress();
-        }, 60);
-      }
-    });
-
-    // Restore on load
-    restoreCurrentToolProgress();
   }
 
   // =========================================================================
@@ -1399,7 +1039,6 @@
     window.addEventListener('pageshow', function () {
       renderRecentToolsSection();
       initClearButton();
-      restoreCurrentToolProgress();
     });
 
     if (typeof document.addEventListener === 'function') {
@@ -1419,11 +1058,11 @@
   }
 
   function init() {
+    purgeLegacyInputSnapshots();
     trackCurrentPageIfTool();
     initClickTracking();
     renderRecentToolsSection();
     initClearButton();
-    initProgressListeners();
     initSync();
   }
 
@@ -1440,8 +1079,8 @@
     clear: clearAllRecentTools,
     render: renderRecentToolsSection,
     formatTimeAgo: formatTimeAgo,
-    saveProgress: saveCurrentToolProgress,
-    restoreProgress: restoreCurrentToolProgress,
-    clearProgress: clearCurrentToolProgress
+    saveProgress: function () {},
+    restoreProgress: function () {},
+    clearProgress: purgeLegacyInputSnapshots
   };
 })();
