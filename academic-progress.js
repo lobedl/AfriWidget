@@ -65,6 +65,8 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #000000;
         box-sizing: border-box;
+        overflow-x: clip;
+        max-width: 100%;
       }
       .afri-academic-progress *, .afri-academic-progress *::before, .afri-academic-progress *::after {
         box-sizing: border-box;
@@ -176,6 +178,9 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        overflow: hidden;
+        max-width: 100%;
+        box-sizing: border-box;
       }
       .afri-card-label {
         font-size: 0.6875rem;
@@ -195,9 +200,11 @@
         align-items: center;
         justify-content: center;
         margin: auto;
+        overflow: hidden;
       }
       .afri-radar-svg {
         width: 100%;
+        max-width: 100%;
         height: auto;
         display: block;
         overflow: visible;
@@ -2891,39 +2898,39 @@
 
         var subjects = [
           {
-            name: 'ICASS Mark (40%)',
+            name: 'ICASS (40%)',
             grade: icass.toFixed(1) + '%',
             raw: icass,
             norm: Math.min(1.0, Math.max(0.1, icass / 100)),
             display: icass.toFixed(1) + '% (Term Mark)'
           },
           {
-            name: 'National Exam (60%)',
+            name: 'Exam (60%)',
             grade: exam.toFixed(1) + '%',
             raw: exam,
             norm: Math.min(1.0, Math.max(0.1, exam / 100)),
             display: exam.toFixed(1) + '% (Exam Paper)'
           },
           {
-            name: 'Final Composite',
+            name: 'Composite',
             grade: val.toFixed(1) + '%',
             raw: val,
             norm: Math.min(1.0, Math.max(0.1, val / 100)),
             display: val.toFixed(1) + '% Combined'
           },
           {
-            name: 'Exam Sub-Min (40%)',
+            name: 'Sub-Min (40%)',
             grade: exam >= 40 ? '+' + (exam - 40).toFixed(1) + '%' : '-' + (40 - exam).toFixed(1) + '%',
             raw: exam,
             norm: subMinNorm,
             display: exam >= 40 ? 'Cleared (+ ' + (exam - 40).toFixed(1) + '% margin)' : 'Sub-minimum Failed'
           },
           {
-            name: 'Distinction Index',
-            grade: val >= 75 ? 'Distinction' : val.toFixed(1) + '% / 75%',
+            name: 'Distinction',
+            grade: val >= 75 ? '75%+' : val.toFixed(1) + '%',
             raw: val,
             norm: distinctionNorm,
-            display: val >= 75 ? 'Distinction Met (75%+)' : (75 - val).toFixed(1) + '% to Distinction'
+            display: val >= 75 ? 'Distinction Standard Met (75%+)' : (75 - val).toFixed(1) + '% Gap to Distinction'
           }
         ];
 
@@ -3558,6 +3565,7 @@
     var chartItems = (subjects || []).filter(function (subject) {
       return subject && subject.name && hasFiniteNumber(subject.norm);
     });
+
     if (chartItems.length < 3) {
       return `
         <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;line-height:1.5;">
@@ -3569,11 +3577,11 @@
     }
 
     var count = chartItems.length;
-    var sizeX = 340;
-    var sizeY = 310;
-    var cx = 170;
-    var cy = 155;
-    var r = 82;
+    var sizeX = 360;
+    var sizeY = 320;
+    var cx = 180;
+    var cy = 160;
+    var r = 78;
 
     // 1. Concentric web polygons
     var levels = [0.33, 0.66, 1.0];
@@ -3618,7 +3626,7 @@
     for (var i = 0; i < count; i++) {
       var s = chartItems[i];
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      var labelDist = r + 22;
+      var labelDist = r + 18;
       var lx = cx + labelDist * Math.cos(angle);
       var ly = cy + labelDist * Math.sin(angle);
 
@@ -3630,8 +3638,17 @@
       if (Math.sin(angle) < -0.65) dy = '-4';
       else if (Math.sin(angle) > 0.65) dy = '13';
 
-      var cleanName = s.name.length > 13 ? s.name.substring(0, 11) + '…' : s.name;
-      var badge = s.grade ? ' ' + s.grade : '';
+      var rawName = String(s.name || '').trim();
+      var rawGrade = String(s.grade || '').trim();
+
+      // Deduplicate distinct so it is never duplicated
+      if (/distinct/i.test(rawName) && /distinct/i.test(rawGrade)) {
+        rawGrade = rawGrade.replace(/distinct(ion)?/gi, '').trim();
+        if (!rawGrade) rawGrade = '75%+';
+      }
+
+      var cleanName = rawName.length > 13 ? rawName.substring(0, 11) + '…' : rawName;
+      var badge = rawGrade ? ' ' + rawGrade : '';
 
       labelsHtml += `
         <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" dy="${dy}" text-anchor="${anchor}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#111827">
@@ -3641,7 +3658,7 @@
     }
 
     return `
-      <svg viewBox="0 0 ${sizeX} ${sizeY}" class="afri-radar-svg" preserveAspectRatio="xMidYMid meet" aria-label="Subject performance radar chart">
+      <svg viewBox="-10 0 380 320" class="afri-radar-svg" preserveAspectRatio="xMidYMid meet" aria-label="Subject performance radar chart">
         ${gridPolygonsHtml}
         ${spokesHtml}
         ${dataPolyHtml}
