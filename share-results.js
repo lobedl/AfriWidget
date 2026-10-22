@@ -563,7 +563,132 @@
           padding: 0 !important;
         }
       }
-    `;
+    
+      /* AfriWidget Donation Card (PayPal NCP) */
+      .afri-donation-card {
+        display: block;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-left: 4px solid #ffd140;
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #000000;
+        box-sizing: border-box;
+      }
+      .afri-donation-card *, .afri-donation-card *::before, .afri-donation-card *::after {
+        box-sizing: border-box;
+      }
+      .afri-donation-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .afri-donation-card {
+          padding: 1.5rem;
+        }
+        .afri-donation-inner {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1.5rem;
+        }
+      }
+      .afri-donation-info {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+      }
+      .afri-donation-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.6875rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #ca8a04;
+        margin-bottom: 0.375rem;
+      }
+      .afri-donation-eyebrow svg {
+        width: 0.875rem;
+        height: 0.875rem;
+        flex-shrink: 0;
+      }
+      .afri-donation-title {
+        font-size: 1.125rem;
+        font-weight: 900;
+        color: #000000;
+        letter-spacing: -0.01em;
+        line-height: 1.3;
+        margin: 0 0 0.35rem 0;
+      }
+      .afri-donation-desc {
+        font-size: 0.8125rem;
+        color: #4b5563;
+        line-height: 1.55;
+        margin: 0;
+      }
+      .afri-donation-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .afri-paypal-form {
+        display: inline-grid;
+        justify-items: center;
+        align-content: start;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+      }
+      .pp-VXH3B6743NDVE {
+        text-align: center;
+        border: 1px solid #eab308;
+        border-radius: 0.375rem;
+        min-width: 11.625rem;
+        padding: 0 2rem;
+        height: 2.625rem;
+        font-weight: bold;
+        background-color: #FFD140;
+        color: #000000;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        cursor: pointer;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+        transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+      }
+      .pp-VXH3B6743NDVE:hover {
+        background-color: #fde047;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      }
+      .pp-VXH3B6743NDVE:active {
+        transform: scale(0.98);
+      }
+      .afri-card-icons {
+        height: 1.35rem;
+        max-width: 100%;
+        display: block;
+      }
+      .afri-paypal-powered {
+        font-size: 0.75rem;
+        color: #6b7280;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .afri-paypal-logo {
+        height: 0.875rem;
+        vertical-align: middle;
+        display: inline-block;
+      }
+`;
     document.head.appendChild(style);
   }
 
@@ -1184,6 +1309,77 @@
     });
   }
 
+  
+  function injectDonationCard() {
+    if (document.getElementById('afriDonationCard')) return;
+
+    const host = findResultHost();
+    const toc = document.querySelector('.toc');
+    const isHealth = isHealthTool();
+    if (!host && (!isHealth || !toc)) return;
+
+    const card = document.createElement('section');
+    card.id = 'afriDonationCard';
+    card.className = 'afri-donation-card';
+    card.setAttribute('aria-label', 'Support AfriWidget');
+    card.innerHTML = `
+      <div class="afri-donation-inner">
+        <div class="afri-donation-info">
+          <div class="afri-donation-eyebrow">
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>Support AfriWidget</span>
+          </div>
+          <h3 class="afri-donation-title">Keep AfriWidget Free &amp; Independent</h3>
+          <p class="afri-donation-desc">
+            AfriWidget provides 100% free educational calculators and everyday tools with zero accounts or subscriptions. If this tool helped you today, your contribution helps us cover server hosting, database maintenance, and continuous improvements.
+          </p>
+        </div>
+        <div class="afri-donation-action">
+          <form action="https://www.paypal.com/ncp/payment/VXH3B6743NDVE" method="post" target="_blank" class="afri-paypal-form">
+            <input class="pp-VXH3B6743NDVE" type="submit" value="Keep Us Alive" />
+            <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="Debit and Credit Cards" class="afri-card-icons" loading="lazy" />
+            <div class="afri-paypal-powered">
+              Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="afri-paypal-logo" loading="lazy" />
+            </div>
+          </form>
+        </div>
+      </div>
+    `;
+
+    const compareCardEl = document.getElementById('compareEntryCard');
+    const weaknessBannerEl = document.getElementById('weaknessCalloutBanner');
+    const shareBarEl = document.getElementById('afriShareBar');
+    const healthProgressEl = document.getElementById('afriHealthProgress');
+    const academicProgressEl = document.getElementById('afriAcademicProgress');
+
+    if (compareCardEl && compareCardEl.parentNode) {
+      compareCardEl.insertAdjacentElement('afterend', card);
+    } else if (weaknessBannerEl && weaknessBannerEl.parentNode) {
+      weaknessBannerEl.insertAdjacentElement('afterend', card);
+    } else if (shareBarEl && shareBarEl.parentNode) {
+      shareBarEl.insertAdjacentElement('afterend', card);
+    } else if (academicProgressEl && academicProgressEl.parentNode) {
+      academicProgressEl.insertAdjacentElement('afterend', card);
+    } else if (healthProgressEl && healthProgressEl.parentNode) {
+      healthProgressEl.insertAdjacentElement('afterend', card);
+    } else if (host && (host.id === 'results' || host.id === 'cfResults' || host.classList.contains('results'))) {
+      host.appendChild(card);
+    } else if (host && host.classList.contains('calc-panel')) {
+      host.insertAdjacentElement('afterend', card);
+    } else if (toc && toc.parentNode) {
+      toc.parentNode.insertBefore(card, toc);
+    } else if (host) {
+      host.appendChild(card);
+    }
+
+    if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+      window.afriEnsureResultSectionsOrder();
+    }
+  }
+  window.afriInjectDonationCard = injectDonationCard;
+
   function restoreInputs(adapterConfig) {
     if (!hasSharedInputs) return;
 
@@ -1287,7 +1483,33 @@
     injectShareStyles();
     const config = getAdapter();
     injectShareBar(config);
+    injectDonationCard();
     restoreInputs(config);
+
+    // Re-verify donation card on calculate button click or calculation submission
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-calc, button[type="submit"], #calcBtn, #calculateBtn, input[type="submit"]:not(.pp-VXH3B6743NDVE)');
+      if (btn) {
+        setTimeout(() => {
+          injectShareBar(config);
+          injectDonationCard();
+          if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+            window.afriEnsureResultSectionsOrder();
+          }
+        }, 80);
+      }
+    });
+
+    document.addEventListener('submit', (e) => {
+      if (e.target && e.target.classList.contains('afri-paypal-form')) return;
+      setTimeout(() => {
+        injectShareBar(config);
+        injectDonationCard();
+        if (typeof window.afriEnsureResultSectionsOrder === 'function') {
+          window.afriEnsureResultSectionsOrder();
+        }
+      }, 80);
+    });
   }
 
   onReady(init);

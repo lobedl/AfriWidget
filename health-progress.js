@@ -1234,9 +1234,15 @@
   function ensureHealthProgressBeforeShareBar() {
     var healthProg = document.getElementById('afriHealthProgress');
     var shareBar = document.getElementById('afriShareBar');
+    var donationCard = document.getElementById('afriDonationCard');
     if (healthProg && shareBar && healthProg.parentNode) {
       if (healthProg.nextElementSibling !== shareBar) {
         healthProg.insertAdjacentElement('afterend', shareBar);
+      }
+    }
+    if (shareBar && donationCard && shareBar.parentNode) {
+      if (shareBar.nextElementSibling !== donationCard) {
+        shareBar.insertAdjacentElement('afterend', donationCard);
       }
     }
   }

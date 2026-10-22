@@ -3844,6 +3844,7 @@
     var shareBar = document.getElementById('afriShareBar');
     var weaknessBanner = document.getElementById('weaknessCalloutBanner');
     var compareCard = document.getElementById('compareEntryCard');
+    var donationCard = document.getElementById('afriDonationCard');
 
     isAcademicReordering = true;
     try {
@@ -3852,7 +3853,7 @@
       var children = Array.from(resultsEl.children);
       for (var i = children.length - 1; i >= 0; i--) {
         var child = children[i];
-        if (child !== aiSec && child !== academicProg && child !== shareBar && child !== weaknessBanner && child !== compareCard) {
+        if (child !== aiSec && child !== academicProg && child !== shareBar && child !== weaknessBanner && child !== compareCard && child !== donationCard) {
           lastResultChild = child;
           break;
         }
@@ -3926,6 +3927,26 @@
           }
         } else if (compareCard.parentNode !== resultsEl) {
           resultsEl.appendChild(compareCard);
+        }
+      }
+
+      // 6. DONATION CARD (KEEP US ALIVE): Must come immediately after Compare With A Friend (or after previous section if missing)
+      var donationAnchor = (compareCard && compareCard.parentNode === resultsEl)
+        ? compareCard
+        : ((weaknessBanner && weaknessBanner.parentNode === resultsEl)
+          ? weaknessBanner
+          : ((shareBar && shareBar.parentNode === resultsEl)
+            ? shareBar
+            : ((academicProg && academicProg.parentNode === resultsEl)
+              ? academicProg
+              : ((aiSec && aiSec.parentNode === resultsEl) ? aiSec : lastResultChild))));
+      if (donationCard) {
+        if (donationAnchor) {
+          if (donationAnchor.nextElementSibling !== donationCard) {
+            donationAnchor.insertAdjacentElement('afterend', donationCard);
+          }
+        } else if (donationCard.parentNode !== resultsEl) {
+          resultsEl.appendChild(donationCard);
         }
       }
     } finally {
@@ -4045,6 +4066,7 @@
     var shareBar = document.getElementById('afriShareBar');
     var weaknessBanner = document.getElementById('weaknessCalloutBanner');
     var compareCard = document.getElementById('compareEntryCard');
+    var donationCard = document.getElementById('afriDonationCard');
 
     if (shareBar && shareBar.parentNode === resultsEl) {
       resultsEl.insertBefore(container, shareBar);
@@ -4633,10 +4655,16 @@
     if (resultsEl) {
       var observer = new MutationObserver(function () {
         if (isAcademicReordering) return;
+        if (typeof window.afriInjectDonationCard === 'function') {
+          window.afriInjectDonationCard();
+        }
         ensureAcademicResultsSectionOrder();
         if (resultsEl.classList.contains('visible') || window.getComputedStyle(resultsEl).display !== 'none') {
           setTimeout(function () {
             recordAndDisplay(adapter);
+            if (typeof window.afriInjectDonationCard === 'function') {
+              window.afriInjectDonationCard();
+            }
             ensureAcademicResultsSectionOrder();
           }, 90);
         }
