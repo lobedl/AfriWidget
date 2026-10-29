@@ -47,13 +47,13 @@
     style.textContent = `
       .afri-health-progress {
         display: block;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
         background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.875rem;
-        padding: 1.125rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        padding: 1.125rem 1.25rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         color: #111827;
         box-sizing: border-box;
@@ -63,15 +63,15 @@
       }
       @media (min-width: 640px) {
         .afri-health-progress {
-          padding: 1.5rem 1.625rem;
+          padding: 1.375rem 1.5rem;
         }
       }
       .afri-health-header {
         display: flex;
         flex-direction: column;
-        gap: 0.875rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #f3f4f6;
+        gap: 0.75rem;
+        padding-bottom: 0.875rem;
+        border-bottom: 1px solid #e5e7eb;
       }
       @media (min-width: 640px) {
         .afri-health-header {
@@ -83,27 +83,20 @@
       .afri-health-title-wrap {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-      }
-      .afri-health-icon-badge {
-        width: 2.375rem;
-        height: 2.375rem;
-        border-radius: 0.625rem;
-        background: #fefce8;
-        border: 1px solid #fef08a;
-        color: #ca8a04;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
+        gap: 0.625rem;
       }
       .afri-health-title {
-        font-size: 1.0625rem;
-        font-weight: 800;
+        font-size: 1rem;
+        font-weight: 700;
         letter-spacing: -0.01em;
-        color: #000000;
+        color: #111827;
         margin: 0;
-        line-height: 1.25;
+        line-height: 1.3;
+      }
+      @media (min-width: 640px) {
+        .afri-health-title {
+          font-size: 1.0625rem;
+        }
       }
       .afri-health-subtitle {
         font-size: 0.8125rem;
@@ -214,131 +207,98 @@
       .afri-health-summary-card {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 1rem;
+        justify-content: flex-start;
+        gap: 0.75rem;
       }
       .afri-health-stat-pair-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 0.625rem;
         margin-bottom: 0.75rem;
       }
-      @media (min-width: 480px) {
+      @media (min-width: 440px) {
         .afri-health-stat-pair-grid {
           grid-template-columns: 1fr 1fr;
         }
       }
       .afri-health-stat-box {
-        background: #f9fafb;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.75rem;
-        padding: 0.875rem 1rem;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.75rem 0.875rem;
       }
       .afri-health-stat-box.highlight {
-        background: #fefce8;
-        border-color: #facc15;
-        box-shadow: 0 1px 3px rgba(250, 204, 21, 0.15);
+        background: #ffffff;
+        border-color: #d1d5db;
       }
       .afri-health-stat-box-label {
         font-size: 0.6875rem;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
         color: #6b7280;
         display: block;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.2rem;
       }
       .afri-health-stat-box-val {
-        font-size: 1.35rem;
-        font-weight: 900;
-        color: #000000;
-        line-height: 1.2;
+        font-size: 1.0625rem;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.3;
         display: block;
+        font-variant-numeric: tabular-nums;
         overflow-wrap: break-word;
         word-break: normal;
       }
       .afri-health-stat-box-val.accent {
-        color: #ca8a04;
+        color: #111827;
       }
       .afri-health-stat-box-sub {
         font-size: 0.75rem;
-        color: #4b5563;
+        color: #6b7280;
         display: block;
-        margin-top: 0.25rem;
+        margin-top: 0.2rem;
         line-height: 1.35;
       }
 
       /* Trend Banner */
-      .afri-health-trend-banner {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.625rem 0.875rem;
-        border-radius: 0.5rem;
-        font-size: 0.8125rem;
-        font-weight: 700;
-        line-height: 1.4;
-      }
-      .afri-health-trend-banner.optimal {
-        background: #fefce8;
-        border: 1px solid #fef08a;
-        color: #854d0e;
-      }
-      .afri-health-trend-banner.attention {
-        background: #fffbeb;
-        border: 1px solid #fde68a;
-        color: #92400e;
-      }
-      .afri-health-trend-banner.baseline {
-        background: #f9fafb;
-        border: 1px solid #e5e5e5;
-        color: #4b5563;
-      }
+      .afri-health-trend-banner,
+      .afri-health-trend-banner.optimal,
+      .afri-health-trend-banner.attention,
+      .afri-health-trend-banner.baseline,
       .afri-health-trend-banner.active {
+        display: block;
+        padding: 0.75rem 0.875rem;
+        border-radius: 0.5rem;
         background: #fafafa;
-        border: 1px solid #e5e5e5;
-        color: #111827;
+        border: 1px solid #e5e7eb;
+        color: #1f2937;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.5;
       }
 
       /* Highlights Grid */
       .afri-health-highlights-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 0.625rem;
       }
-      @media (min-width: 540px) {
+      @media (min-width: 520px) {
         .afri-health-highlights-grid {
           grid-template-columns: 1fr 1fr;
         }
       }
-      .afri-health-highlight-card {
-        border: 1px solid #e5e5e5;
-        background: #f9fafb;
-        border-radius: 0.625rem;
+      .afri-health-highlight-card,
+      .afri-health-highlight-card.target-card,
+      .afri-health-highlight-card.focus-card {
+        border: 1px solid #e5e7eb;
+        background: #ffffff;
+        border-radius: 0.5rem;
         padding: 0.75rem 0.875rem;
         display: flex;
-        gap: 0.625rem;
-        align-items: flex-start;
-      }
-      .afri-health-highlight-card.target-card {
-        border-color: #fef08a;
-        background: #fefce8;
-      }
-      .afri-health-highlight-icon {
-        width: 1.875rem;
-        height: 1.875rem;
-        border-radius: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        background: #ffffff;
-        color: #ca8a04;
-        border: 1px solid #fef08a;
-      }
-      .afri-health-highlight-card.focus-card .afri-health-highlight-icon {
-        color: #000000;
-        border-color: #e5e5e5;
+        flex-direction: column;
+        gap: 0.15rem;
       }
       .afri-health-highlight-info {
         flex: 1;
@@ -346,25 +306,25 @@
       }
       .afri-health-highlight-tag {
         font-size: 0.6875rem;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #ca8a04;
+        letter-spacing: 0.04em;
+        color: #6b7280;
         display: block;
-        line-height: 1.2;
+        line-height: 1.25;
       }
       .afri-health-highlight-name {
         font-size: 0.875rem;
-        font-weight: 800;
-        color: #000000;
-        margin-top: 0.125rem;
+        font-weight: 700;
+        color: #111827;
+        margin-top: 0.1rem;
         display: block;
         line-height: 1.35;
       }
       .afri-health-highlight-sub {
         font-size: 0.75rem;
         color: #4b5563;
-        margin-top: 0.125rem;
+        margin-top: 0.1rem;
         display: block;
         line-height: 1.4;
       }
@@ -692,13 +652,13 @@
       }
       @media (max-width: 640px) {
         .afri-health-progress {
-          padding: 1.125rem 1rem;
-          margin-top: 1.25rem;
-          margin-bottom: 1.25rem;
+          padding: 1.125rem 1.25rem;
+          margin-top: 1.125rem;
+          margin-bottom: 1.125rem;
         }
         .afri-health-title {
-          font-size: 1.0625rem;
-          line-height: 1.25;
+          font-size: 1rem;
+          line-height: 1.3;
           letter-spacing: -0.01em;
           word-break: normal;
         }
@@ -712,23 +672,23 @@
           padding: 0.75rem 0.875rem;
         }
         .afri-health-stat-box-val {
-          font-size: 1.1875rem;
-          line-height: 1.25;
+          font-size: 1.0625rem;
+          line-height: 1.3;
           word-break: normal;
           overflow-wrap: break-word;
         }
         .afri-health-stat-box-sub {
-          font-size: 0.6875rem;
+          font-size: 0.75rem;
           line-height: 1.35;
         }
         .afri-health-trend-banner {
-          font-size: 0.75rem;
-          padding: 0.5rem 0.75rem;
-          line-height: 1.4;
+          font-size: 0.8125rem;
+          padding: 0.75rem 0.875rem;
+          line-height: 1.5;
           word-break: normal;
         }
         .afri-health-highlight-name {
-          font-size: 0.8125rem;
+          font-size: 0.875rem;
           line-height: 1.35;
           word-break: normal;
         }
@@ -1265,9 +1225,6 @@
     container.innerHTML = `
       <div class="afri-health-header">
         <div class="afri-health-title-wrap">
-          <div class="afri-health-icon-badge">
-            ${icons.vitalBadge}
-          </div>
           <div>
             <h3 class="afri-health-title">Health Progress</h3>
             <p class="afri-health-subtitle">Private in-browser biometric logs, wellness trends, and healthy targets</p>
@@ -1309,16 +1266,12 @@
             </div>
 
             <div class="afri-health-trend-banner baseline" id="afriHealthTrendBanner">
-              ${icons.dot}
               <span id="afriHealthTrendText">Baseline reading recorded</span>
             </div>
           </div>
 
           <div class="afri-health-highlights-grid">
             <div class="afri-health-highlight-card target-card">
-              <div class="afri-health-highlight-icon">
-                ${icons.target}
-              </div>
               <div class="afri-health-highlight-info">
                 <span class="afri-health-highlight-tag">Primary Healthy Target</span>
                 <span class="afri-health-highlight-name" id="afriHealthTargetName">—</span>
@@ -1327,9 +1280,6 @@
             </div>
 
             <div class="afri-health-highlight-card focus-card">
-              <div class="afri-health-highlight-icon">
-                ${icons.focus}
-              </div>
               <div class="afri-health-highlight-info">
                 <span class="afri-health-highlight-tag">Actionable Focus</span>
                 <span class="afri-health-highlight-name" id="afriHealthFocusName">—</span>
@@ -1841,7 +1791,7 @@
     if (trendBanner && trendText) {
       if (!prev) {
         trendBanner.className = 'afri-health-trend-banner baseline';
-        trendText.innerHTML = icons.check + ' Initial baseline session recorded successfully';
+        trendText.textContent = 'Initial baseline session recorded.';
       } else {
         var numLatest = typeof latest.value === 'number' ? latest.value : parseFloat(latest.value);
         var numPrev = typeof prev.value === 'number' ? prev.value : parseFloat(prev.value);
@@ -1850,17 +1800,17 @@
           var diff = numLatest - numPrev;
           if (Math.abs(diff) < 0.05) {
             trendBanner.className = 'afri-health-trend-banner optimal';
-            trendText.innerHTML = icons.trendStable + ' Biometric reading maintained stable against previous log';
+            trendText.textContent = 'Biometric reading remained stable compared with your previous log.';
           } else if (diff > 0) {
             trendBanner.className = 'afri-health-trend-banner active';
-            trendText.innerHTML = icons.trendUp + ' Biometric adjustment: +' + diff.toFixed(1) + ' from previous log';
+            trendText.textContent = 'Biometric adjustment: +' + diff.toFixed(1) + ' from your previous log.';
           } else {
             trendBanner.className = 'afri-health-trend-banner optimal';
-            trendText.innerHTML = icons.trendDown + ' Biometric adjustment: ' + diff.toFixed(1) + ' from previous log';
+            trendText.textContent = 'Biometric adjustment: ' + diff.toFixed(1) + ' from your previous log.';
           }
         } else {
           trendBanner.className = 'afri-health-trend-banner optimal';
-          trendText.innerHTML = icons.check + ' Routine measurement updated';
+          trendText.textContent = 'Routine measurement updated.';
         }
       }
     }

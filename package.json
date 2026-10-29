@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "lint": "node --check server.js generate-og-assets.js academic-progress.js health-progress.js recent-tools.js sync-dates.js",
+    "lint": "node --check server.js generate-og-assets.js academic-progress.js health-progress.js recent-tools.js sync-dates.js kuccps-weakness.js aps-weakness.js wassce-weakness.js icass-weakness.js jamb-weakness.js nated-weakness.js",
     "build": "node generate-og-assets.js",
     "sync-dates": "node sync-dates.js",
     "deploy": "npx wrangler pages deploy ."

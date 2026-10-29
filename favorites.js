@@ -758,7 +758,6 @@
         background: #000000;
         color: #ffffff;
         border: 1px solid rgba(255, 255, 255, 0.15);
-        border-left: 4px solid #facc15;
         border-radius: 0.625rem;
         padding: 0.75rem 1rem;
         display: flex;

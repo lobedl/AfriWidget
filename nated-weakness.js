@@ -395,6 +395,8 @@
   var currentAssessmentMeta = {
     mode: 'diagnostic', // 'diagnostic' | 'targeted_practice'
     focusTopic: null,
+    difficulty: 'medium',
+    userCustomizedSetup: false,
     targetWeaknessTopicIds: []
   };
 
@@ -403,8 +405,10 @@
     var isSingleMode = tabSingle ? tabSingle.classList.contains('active') : true;
 
     if (isSingleMode) {
-      var icassVal = parseFloat(document.getElementById('icassInput') ? document.getElementById('icassInput').value : '');
-      var examVal = parseFloat(document.getElementById('examInput') ? document.getElementById('examInput').value : '');
+      var icassEl = document.getElementById('icassInput');
+      var examEl = document.getElementById('examInput');
+      var icassVal = parseFloat(icassEl && icassEl.value !== '' ? icassEl.value : '');
+      var examVal = parseFloat(examEl && examEl.value !== '' ? examEl.value : '');
       var hasIcass = !isNaN(icassVal);
       var hasExam = !isNaN(examVal);
 
@@ -415,37 +419,36 @@
 
         if (!icassPass) {
           return {
-            status: 'warning',
-            title: 'ICASS Gatekeeping Risk Detected',
-            text: 'Your entered ICASS mark of ' + icassVal.toFixed(1) + '% is below DHET\'s 40% threshold for examination admission (DNQ). Focus your assessment on ICASS portfolio compliance and formative tasks.',
-            recommendedTopic: 'icass_mechanics'
+            hasInputs: true,
+            text: 'Your ICASS mark (' + icassVal.toFixed(1) + '%) is below the 40% exam entry threshold. We recommend practising ICASS Portfolio & Admission Rules first.',
+            recommendedTopic: 'icass_mechanics',
+            recommendedDifficulty: 'easy'
           };
         }
         if (!subMinPass) {
           return {
-            status: 'danger',
-            title: 'Exam Sub-minimum Risk Detected',
-            text: 'Your entered national exam mark of ' + examVal.toFixed(1) + '% breaches the mandatory 40% sub-minimum, causing an automatic fail despite your composite of ' + composite.toFixed(1) + '%. Focus on exam sub-minimum mastery.',
-            recommendedTopic: 'dhet_subminimum'
+            hasInputs: true,
+            text: 'Your exam mark (' + examVal.toFixed(1) + '%) falls below the mandatory 40% sub-minimum. We recommend practising 40% Exam Sub-minimum & Pass Rules first.',
+            recommendedTopic: 'dhet_subminimum',
+            recommendedDifficulty: 'easy'
           };
         }
         if (composite >= 80.0) {
           return {
-            status: 'success',
-            title: 'Distinction Standing Projected',
-            text: 'Your entered marks project a distinction composite of ' + composite.toFixed(1) + '%. Verify your mastery across all DHET assessment and diploma progression standards.',
-            recommendedTopic: 'all'
+            hasInputs: true,
+            text: 'Your projected final mark is ' + composite.toFixed(1) + '% (Distinction). We recommend practising N1–N6 Progression & N Diploma, or choose another topic below.',
+            recommendedTopic: 'diploma_progression',
+            recommendedDifficulty: 'difficult'
           };
         }
         return {
-          status: 'info',
-          title: 'Entered Marks Detected',
-          text: 'Calculated composite: ' + composite.toFixed(1) + '% (Pass). Take this 10-question diagnostic to identify any hidden understanding gaps in Report 191 rules before your exams.',
-          recommendedTopic: 'exam_weighting_calc'
+          hasInputs: true,
+          text: 'Your projected final mark is ' + composite.toFixed(1) + '%. We recommend practising 40:60 Composite Mark Calculation, or choose another topic below.',
+          recommendedTopic: 'exam_weighting_calc',
+          recommendedDifficulty: 'medium'
         };
       }
     } else {
-      // Trimester Mode
       var rows = document.querySelectorAll('#natedSubjectRows .subject-row');
       var subMinFails = [];
       var lowestSubject = null;
@@ -453,11 +456,11 @@
 
       rows.forEach(function (row, idx) {
         var nameInput = row.querySelector('.subject-name');
-        var icassEl = row.querySelector('.subject-icass');
-        var examEl = row.querySelector('.subject-exam');
+        var icassEl2 = row.querySelector('.subject-icass');
+        var examEl2 = row.querySelector('.subject-exam');
         var name = (nameInput && nameInput.value.trim()) || ('Subject ' + (idx + 1));
-        var iVal = icassEl ? parseFloat(icassEl.value) : NaN;
-        var eVal = examEl ? parseFloat(examEl.value) : NaN;
+        var iVal = icassEl2 ? parseFloat(icassEl2.value) : NaN;
+        var eVal = examEl2 ? parseFloat(examEl2.value) : NaN;
 
         if (!isNaN(iVal) && !isNaN(eVal)) {
           var comp = (iVal * 0.40) + (eVal * 0.60);
@@ -473,27 +476,27 @@
 
       if (subMinFails.length > 0) {
         return {
-          status: 'danger',
-          title: 'Sub-minimum Failures in Trimester Load',
-          text: 'One or more subjects (' + subMinFails.map(function(s){ return s.name; }).join(', ') + ') breach the 40% exam sub-minimum. Take this diagnostic to master sub-minimum thresholds and rewrite policies.',
-          recommendedTopic: 'dhet_subminimum'
+          hasInputs: true,
+          text: subMinFails[0].name + ' is below the 40% exam sub-minimum. We recommend practising 40% Exam Sub-minimum & Pass Rules first.',
+          recommendedTopic: 'dhet_subminimum',
+          recommendedDifficulty: 'easy'
         };
       }
       if (lowestSubject) {
         return {
-          status: 'info',
-          title: 'Trimester Subjects Evaluated',
-          text: 'Lowest projected subject: ' + lowestSubject.name + ' (' + lowestSubject.comp.toFixed(1) + '%). Test your understanding to lock in your subject credits.',
-          recommendedTopic: 'exam_weighting_calc'
+          hasInputs: true,
+          text: 'Your lowest projected subject is ' + lowestSubject.name + ' (' + lowestSubject.comp.toFixed(1) + '%). We recommend practising 40:60 Composite Mark Calculation first.',
+          recommendedTopic: 'exam_weighting_calc',
+          recommendedDifficulty: lowestSubject.comp >= 75 ? 'difficult' : 'medium'
         };
       }
     }
 
     return {
-      status: 'neutral',
-      title: 'Ready for Diagnostic',
-      text: 'Test your understanding of DHET Report 191 assessment rules, the 40% exam sub-minimum, ICASS validity windows, and National N Diploma requirements.',
-      recommendedTopic: 'all'
+      hasInputs: false,
+      text: 'Choose a NATED topic below to start a 10-question practice quiz.',
+      recommendedTopic: 'all',
+      recommendedDifficulty: null
     };
   }
 
@@ -524,9 +527,18 @@
     } catch (e) {}
   }
 
-  function generateQuestions(mode, focusTopic, targetTopicIds) {
+  function getNatedQuestionDifficulty(q) {
+    var m = String(q.id || '').match(/_(\d+)$/);
+    var num = m ? parseInt(m[1], 10) : 3;
+    if (num <= 2) return 'easy';
+    if (num <= 4) return 'medium';
+    return 'difficult';
+  }
+
+  function generateQuestions(mode, focusTopic, targetTopicIds, difficulty) {
     var pool = QUESTION_BANK.slice();
     var selected = [];
+    var targetDiff = difficulty || 'medium';
 
     // Targeted Weakness Practice Mode
     if (mode === 'targeted_practice' && targetTopicIds && targetTopicIds.length > 0) {
@@ -536,7 +548,6 @@
       weakPool.sort(function () { return 0.5 - Math.random(); });
       selected = weakPool.slice(0, 10);
 
-      // If fewer than 10 questions in weak topics, backfill
       if (selected.length < 10) {
         var remaining = pool.filter(function (q) {
           return selected.indexOf(q) === -1;
@@ -549,25 +560,160 @@
 
     // Specific Single Topic Selected
     if (focusTopic && focusTopic !== 'all' && TOPICS[focusTopic]) {
-      var topicQ = pool.filter(function (q) { return q.topicId === focusTopic; });
-      topicQ.sort(function () { return 0.5 - Math.random(); });
-      selected = topicQ.slice(0, 6);
+      var topicMatch = pool.filter(function (q) {
+        return q.topicId === focusTopic && getNatedQuestionDifficulty(q) === targetDiff;
+      });
+      var topicOther = pool.filter(function (q) {
+        return q.topicId === focusTopic && getNatedQuestionDifficulty(q) !== targetDiff;
+      });
+      topicMatch.sort(function () { return 0.5 - Math.random(); });
+      topicOther.sort(function () { return 0.5 - Math.random(); });
+      selected = topicMatch.concat(topicOther).slice(0, 6);
 
-      var others = pool.filter(function (q) { return q.topicId !== focusTopic; });
-      others.sort(function () { return 0.5 - Math.random(); });
-      return selected.concat(others.slice(0, 10 - selected.length));
+      var othersMatch = pool.filter(function (q) {
+        return q.topicId !== focusTopic && getNatedQuestionDifficulty(q) === targetDiff;
+      });
+      var othersRest = pool.filter(function (q) {
+        return q.topicId !== focusTopic && getNatedQuestionDifficulty(q) !== targetDiff;
+      });
+      othersMatch.sort(function () { return 0.5 - Math.random(); });
+      othersRest.sort(function () { return 0.5 - Math.random(); });
+      return selected.concat(othersMatch.concat(othersRest).slice(0, 10 - selected.length));
     }
 
     // Default Balanced 10-Question Diagnostic (2 questions per topic across 5 topics)
     var topicKeys = Object.keys(TOPICS);
     topicKeys.forEach(function (tKey) {
-      var tPool = pool.filter(function (q) { return q.topicId === tKey; });
-      tPool.sort(function () { return 0.5 - Math.random(); });
-      selected = selected.concat(tPool.slice(0, 2));
+      var tMatch = pool.filter(function (q) {
+        return q.topicId === tKey && getNatedQuestionDifficulty(q) === targetDiff;
+      });
+      var tOther = pool.filter(function (q) {
+        return q.topicId === tKey && getNatedQuestionDifficulty(q) !== targetDiff;
+      });
+      tMatch.sort(function () { return 0.5 - Math.random(); });
+      tOther.sort(function () { return 0.5 - Math.random(); });
+      selected = selected.concat(tMatch.concat(tOther).slice(0, 2));
     });
 
     selected.sort(function () { return 0.5 - Math.random(); });
     return selected.slice(0, 10);
+  }
+
+  function injectQuizScrollStyles() {
+    if (document.getElementById('afriNatedQuizScrollStyles')) return;
+    var style = document.createElement('style');
+    style.id = 'afriNatedQuizScrollStyles';
+    style.textContent =
+      '#weaknessAssessmentSection{scroll-margin-top:5rem;overflow-anchor:none}' +
+      '#weaknessAssessmentSection *{overflow-anchor:none}' +
+      '#wIntroView .w-intro-top-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}' +
+      '#wIntroView .w-intro-heading{font-size:1.125rem;font-weight:800;color:#000;margin:0;letter-spacing:-.01em}' +
+      '#wIntroView .w-intro-rec{font-size:.9375rem;line-height:1.5;color:#171717;background:#fafafa;border:1px solid #e5e5e5;border-radius:.5rem;padding:.75rem .875rem;margin:0 0 1rem 0}' +
+      '#wIntroView .w-intro-field{margin-bottom:.875rem}' +
+      '#wIntroView .w-intro-label{display:block;font-size:.8125rem;font-weight:700;color:#171717;margin-bottom:.35rem}' +
+      '#wIntroView .w-intro-diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}' +
+      '#wIntroView .w-intro-diff-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.5rem .5rem;background:#fff;color:#171717;border:1.5px solid #d4d4d4;border-radius:.5rem;font-size:.875rem;font-weight:700;cursor:pointer;transition:border-color .15s ease,background .15s ease,color .15s ease}' +
+      '#wIntroView .w-intro-diff-btn:hover{border-color:#000}' +
+      '#wIntroView .w-intro-diff-btn.selected{background:#000;border-color:#000;color:#facc15}' +
+      '#wIntroView .w-intro-start-btn{width:100%;min-height:48px;margin-top:.25rem;padding:.75rem 1.25rem;background:#facc15;color:#000;border:1.5px solid #facc15;border-radius:.5rem;font-size:.9375rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s ease,border-color .15s ease}' +
+      '#wIntroView .w-intro-start-btn:hover{background:#fde047;border-color:#fde047;color:#000}';
+    document.head.appendChild(style);
+  }
+
+  function getScrollY() {
+    return window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : document.documentElement.scrollTop || 0;
+  }
+
+  function setScrollYInstant(y) {
+    var htmlEl = document.documentElement;
+    var prevBehavior = htmlEl.style.scrollBehavior;
+    htmlEl.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, Math.round(y)));
+    htmlEl.style.scrollBehavior = prevBehavior;
+  }
+
+  function smoothScrollToY(y) {
+    var target = Math.max(0, Math.round(y));
+    if (Math.abs(target - getScrollY()) <= 4) return;
+    try {
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, target);
+    }
+  }
+
+  function getStickyHeaderOffset() {
+    var navInner = document.querySelector('.site-nav .nav-inner');
+    var nav = document.querySelector('.site-nav');
+    var navH = 64;
+    var el = navInner || nav;
+    if (el && typeof el.getBoundingClientRect === 'function') {
+      var h = el.getBoundingClientRect().height;
+      if (h > 0) navH = h;
+    }
+    var pad = window.innerWidth && window.innerWidth < 640 ? 12 : 16;
+    return Math.round(navH + pad);
+  }
+
+  function blurActiveQuizControl() {
+    var active = document.activeElement;
+    var sec = document.getElementById('weaknessAssessmentSection');
+    if (active && sec && sec.contains(active) && typeof active.blur === 'function') {
+      active.blur();
+    }
+  }
+
+  function scrollWeaknessSectionIntoView(targetEl) {
+    var el = targetEl || document.getElementById('weaknessAssessmentSection');
+    if (!el || typeof el.getBoundingClientRect !== 'function') return;
+    var card = el.querySelector('.weakness-card') || el;
+    var rect = card.getBoundingClientRect();
+    var targetY = getScrollY() + rect.top - getStickyHeaderOffset();
+    smoothScrollToY(targetY);
+  }
+
+  function ensureQuizQuestionVisible() {
+    var section = document.getElementById('weaknessAssessmentSection');
+    var quizView = document.getElementById('wQuizView');
+    if (!section || !quizView || quizView.style.display === 'none') return;
+
+    var card = section.querySelector('.weakness-card') || quizView;
+    var questionBox = quizView.querySelector('.w-question-box') || quizView;
+    var optionsBox = document.getElementById('wOptionsContainer') || questionBox;
+
+    var offset = getStickyHeaderOffset();
+    var viewportH = window.innerHeight || document.documentElement.clientHeight || 700;
+    var curScrollY = getScrollY();
+
+    var cardRect = card.getBoundingClientRect();
+    var quizRect = quizView.getBoundingClientRect();
+    var qBoxRect = questionBox.getBoundingClientRect();
+    var optRect = optionsBox.getBoundingClientRect();
+
+    var topClear = quizRect.top >= offset - 8;
+    var nearTop = qBoxRect.top <= Math.max(offset + 140, Math.round(viewportH * 0.34));
+    var optionsVisible = optRect.bottom <= viewportH - 16;
+
+    if (topClear && nearTop && optionsVisible) {
+      return;
+    }
+
+    var cardDocTop = curScrollY + cardRect.top;
+    var quizDocTop = curScrollY + quizRect.top;
+    var qBoxDocTop = curScrollY + qBoxRect.top;
+    var optDocBottom = curScrollY + optRect.bottom;
+
+    var targetY = cardDocTop - offset;
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = quizDocTop - offset;
+    }
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = qBoxDocTop - offset;
+    }
+
+    smoothScrollToY(targetY);
   }
 
   function initWeaknessUI() {
@@ -575,6 +721,8 @@
     if (!calcWrap) return;
 
     if (document.getElementById('weaknessAssessmentSection')) return;
+
+    injectQuizScrollStyles();
 
     // 1. Add "Find My Weaknesses" button in calculator action row
     var actionRow = document.querySelector('#natedForm .action-row') || document.querySelector('.action-row');
@@ -604,6 +752,7 @@
         '<button type="button" id="launchWeaknessFromResults" class="btn-secondary btn-find-weakness w-banner-btn">',
         '  <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
         '  <span>Find My Weaknesses</span>',
+        '</button>'
       ].join('');
       var shareBar = document.getElementById('afriShareBar');
       var academicProgress = document.getElementById('afriAcademicProgress');
@@ -637,33 +786,31 @@
       '<div class="weakness-card">',
       '  <!-- Screen 1: Diagnostic Intro & Topic Selection -->',
       '  <div id="wIntroView" class="w-view">',
-      '    <div class="w-header">',
-      '      <span class="w-eyebrow">AfriWidget Diagnostic Engine</span>',
-      '      <div class="w-header-title-row">',
-      '        <h3 class="w-title">Find My NATED Weaknesses</h3>',
-      '        <button type="button" id="wCloseIntroBtn" class="w-close-btn" aria-label="Close diagnostic">&times;</button>',
-      '      </div>',
-      '      <p class="w-subtitle">A deterministic 10-question assessment evaluating your mastery of DHET Report 191 sub-minimums, ICASS continuous assessment weighting, 1-year validity rules, and National N Diploma requirements.</p>',
+      '    <div class="w-intro-top-bar">',
+      '      <h3 class="w-intro-heading">Practice Quiz</h3>',
+      '      <button type="button" id="wCloseIntroBtn" class="w-close-btn" aria-label="Close quiz">&times;</button>',
       '    </div>',
-      '    <div id="wContextNotice" class="w-context-card"></div>',
-      '    <div class="w-topic-select-wrap">',
-      '      <label for="wTopicSelect" class="w-label">Select diagnostic focus:</label>',
+      '    <p id="wContextNotice" class="w-intro-rec"></p>',
+      '    <div class="w-intro-field">',
+      '      <label for="wTopicSelect" class="w-intro-label">Subject / Topic</label>',
       '      <select id="wTopicSelect" class="w-form-select">',
-      '        <option value="all" selected>All Topics (Comprehensive 10-Question Balanced Diagnostic)</option>',
-      '        <option value="dhet_subminimum">DHET 40% Exam Sub-minimum &amp; Subject Pass Thresholds</option>',
-      '        <option value="icass_mechanics">NATED ICASS Continuous Assessment &amp; Portfolio Composition</option>',
-      '        <option value="exam_weighting_calc">Report 191 40:60 Composite Calculation &amp; Mark Formulas</option>',
-      '        <option value="rewrite_validity_remark">ICASS 1-Year Validity, Supplementary Rewrites &amp; DHET Remarks</option>',
-      '        <option value="diploma_progression">N1-N6 Modular Progression, Experiential Training &amp; National N Diploma</option>',
+      '        <option value="all" selected>All Topics (Mixed)</option>',
+      '        <option value="dhet_subminimum">40% Exam Sub-minimum &amp; Pass Rules</option>',
+      '        <option value="icass_mechanics">ICASS Portfolio &amp; Admission Rules</option>',
+      '        <option value="exam_weighting_calc">40:60 Composite Mark Calculation</option>',
+      '        <option value="rewrite_validity_remark">ICASS Validity &amp; Rewrites</option>',
+      '        <option value="diploma_progression">N1–N6 Progression &amp; N Diploma</option>',
       '      </select>',
       '    </div>',
-      '    <div id="wHistoryPreview" class="w-history-preview"></div>',
-      '    <div class="w-btn-row">',
-      '      <button type="button" id="wStartBtn" class="btn-primary w-full-btn">',
-      '        <span>Start 10-Question Diagnostic</span>',
-      '        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>',
-      '      </button>',
+      '    <div class="w-intro-field">',
+      '      <span class="w-intro-label" id="wDiffLabel">Difficulty</span>',
+      '      <div id="wDifficultyGrid" class="w-intro-diff-grid" role="radiogroup" aria-labelledby="wDiffLabel">',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="easy" role="radio" aria-checked="false">Easy</button>',
+      '        <button type="button" class="w-intro-diff-btn selected" data-diff="medium" role="radio" aria-checked="true">Medium</button>',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="difficult" role="radio" aria-checked="false">Difficult</button>',
+      '      </div>',
       '    </div>',
+      '    <button type="button" id="wStartBtn" class="w-intro-start-btn">Start Quiz</button>',
       '  </div>',
       '  <!-- Screen 2: Active Question Assessment -->',
       '  <div id="wQuizView" class="w-view" style="display:none;">',
@@ -753,7 +900,19 @@
 
     calcWrap.appendChild(section);
     bindEvents();
-    renderHistoryPreview();
+  }
+
+  function setIntroDifficultyUI(diff) {
+    if (diff !== 'easy' && diff !== 'medium' && diff !== 'difficult') return;
+    currentAssessmentMeta.difficulty = diff;
+    var grid = document.getElementById('wDifficultyGrid');
+    if (grid) {
+      Array.prototype.forEach.call(grid.querySelectorAll('[data-diff]'), function (btn) {
+        var isSel = btn.getAttribute('data-diff') === diff;
+        btn.classList.toggle('selected', isSel);
+        btn.setAttribute('aria-checked', isSel ? 'true' : 'false');
+      });
+    }
   }
 
   function bindEvents() {
@@ -762,6 +921,20 @@
 
     var closeResultsBtn = document.getElementById('wCloseResultsBtn');
     if (closeResultsBtn) closeResultsBtn.addEventListener('click', closeWeaknessSection);
+
+    var topicSel = document.getElementById('wTopicSelect');
+    if (topicSel) {
+      topicSel.addEventListener('change', function () {
+        currentAssessmentMeta.userCustomizedSetup = true;
+      });
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('#wDifficultyGrid [data-diff]'), function (btn) {
+      btn.addEventListener('click', function () {
+        currentAssessmentMeta.userCustomizedSetup = true;
+        setIntroDifficultyUI(btn.getAttribute('data-diff'));
+      });
+    });
 
     var startBtn = document.getElementById('wStartBtn');
     if (startBtn) {
@@ -776,8 +949,10 @@
     if (prevBtn) {
       prevBtn.addEventListener('click', function () {
         if (activeQuestionIdx > 0) {
+          blurActiveQuizControl();
           activeQuestionIdx--;
           renderActiveQuestion();
+          ensureQuizQuestionVisible();
         }
       });
     }
@@ -795,8 +970,10 @@
         if (valAlert2) valAlert2.style.display = 'none';
 
         if (activeQuestionIdx < currentQuestions.length - 1) {
+          blurActiveQuizControl();
           activeQuestionIdx++;
           renderActiveQuestion();
+          ensureQuizQuestionVisible();
         }
       });
     }
@@ -812,6 +989,7 @@
         }
         var valAlert3 = document.getElementById('wQuizValidation');
         if (valAlert3) valAlert3.style.display = 'none';
+        blurActiveQuizControl();
         evaluateAssessment();
       });
     }
@@ -819,11 +997,12 @@
     var retakeBtn = document.getElementById('wRetakeBtn');
     if (retakeBtn) {
       retakeBtn.addEventListener('click', function () {
+        blurActiveQuizControl();
         switchView('wIntroView');
         updateContextNotice();
         renderHistoryPreview();
         var sec = document.getElementById('weaknessAssessmentSection');
-        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (sec) scrollWeaknessSectionIntoView(sec);
       });
     }
 
@@ -847,12 +1026,12 @@
   function openWeaknessSection() {
     var section = document.getElementById('weaknessAssessmentSection');
     if (!section) return;
+    blurActiveQuizControl();
     section.style.display = 'block';
     updateContextNotice();
-    renderHistoryPreview();
     switchView('wIntroView');
     setTimeout(function () {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollWeaknessSectionIntoView(section);
     }, 50);
   }
 
@@ -874,32 +1053,28 @@
     if (!noticeEl) return;
     var ctx = getNatedInputsContext();
 
-    var iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-    if (ctx.status === 'danger' || ctx.status === 'warning') {
-      iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
-    } else if (ctx.status === 'success') {
-      iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-    }
+    noticeEl.textContent = ctx.text;
 
-    noticeEl.className = 'w-context-card ' + ctx.status;
-    noticeEl.innerHTML = [
-      '<div class="w-context-head">',
-      iconSvg,
-      '  <strong>' + ctx.title + '</strong>',
-      '</div>',
-      '<p class="w-context-desc">' + ctx.text + '</p>'
-    ].join('');
-
-    var sel = document.getElementById('wTopicSelect');
-    if (sel && ctx.recommendedTopic && ctx.recommendedTopic !== 'all') {
-      sel.value = ctx.recommendedTopic;
+    if (!currentAssessmentMeta.userCustomizedSetup) {
+      var sel = document.getElementById('wTopicSelect');
+      if (sel && ctx.recommendedTopic) {
+        sel.value = ctx.recommendedTopic;
+      }
+      if (ctx.recommendedDifficulty) {
+        setIntroDifficultyUI(ctx.recommendedDifficulty);
+      }
     }
   }
 
   function startNewAssessment(mode, focusTopic) {
     currentAssessmentMeta.mode = mode || 'diagnostic';
     currentAssessmentMeta.focusTopic = focusTopic || 'all';
-    currentQuestions = generateQuestions(currentAssessmentMeta.mode, currentAssessmentMeta.focusTopic);
+    currentQuestions = generateQuestions(
+      currentAssessmentMeta.mode,
+      currentAssessmentMeta.focusTopic,
+      null,
+      currentAssessmentMeta.difficulty
+    );
     activeQuestionIdx = 0;
     userAnswers = {};
 
@@ -912,10 +1087,11 @@
       }
     }
 
+    blurActiveQuizControl();
     switchView('wQuizView');
     renderActiveQuestion();
     var section = document.getElementById('weaknessAssessmentSection');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (section) scrollWeaknessSectionIntoView(section);
   }
 
   function startPracticeWeaknesses() {
@@ -931,15 +1107,18 @@
     var badge = document.getElementById('wQuizBadge');
     if (badge) badge.textContent = 'Targeted Weakness Practice';
 
+    blurActiveQuizControl();
     switchView('wQuizView');
     renderActiveQuestion();
     var section = document.getElementById('weaknessAssessmentSection');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (section) scrollWeaknessSectionIntoView(section);
   }
 
   function renderActiveQuestion() {
     var q = currentQuestions[activeQuestionIdx];
     if (!q) return;
+
+    var savedScrollY = getScrollY();
 
     var topicMeta = TOPICS[q.topicId] || { name: q.topicId };
     var topicLabel = document.getElementById('wQuestionTopic');
@@ -973,12 +1152,12 @@
         ].join('');
 
         item.addEventListener('click', function () {
-          selectOption(q.id, optIdx);
+          selectOption(q.id, optIdx, false);
         });
         item.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            selectOption(q.id, optIdx);
+            selectOption(q.id, optIdx, true);
           }
         });
         optionsBox.appendChild(item);
@@ -1001,11 +1180,22 @@
 
     var valAlert = document.getElementById('wQuizValidation');
     if (valAlert) valAlert.style.display = 'none';
+
+    if (Math.abs(getScrollY() - savedScrollY) > 1) {
+      setScrollYInstant(savedScrollY);
+    }
   }
 
-  function selectOption(qId, optIdx) {
+  function selectOption(qId, optIdx, fromKeyboard) {
     userAnswers[qId] = optIdx;
     renderActiveQuestion();
+    if (fromKeyboard) {
+      var optionsBox = document.getElementById('wOptionsContainer');
+      var refreshed = optionsBox && optionsBox.children[optIdx];
+      if (refreshed && typeof refreshed.focus === 'function') {
+        refreshed.focus({ preventScroll: true });
+      }
+    }
   }
 
   function evaluateAssessment() {
@@ -1162,7 +1352,7 @@
     renderHistoryList();
 
     var section = document.getElementById('weaknessAssessmentSection');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (section) scrollWeaknessSectionIntoView(section);
   }
 
   function updateComparisonBox(currentAttempt, lastAttempt) {

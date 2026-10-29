@@ -445,6 +445,8 @@
   var currentAssessmentMeta = {
     mode: 'diagnostic',
     focusTopic: 'all',
+    difficulty: 'medium',
+    userCustomizedSetup: false,
     targetWeaknessTopicIds: []
   };
 
@@ -477,43 +479,105 @@
 
   function getJambInputsContext() {
     var jInp = document.getElementById('jambScore');
-    var jVal = jInp ? parseFloat(jInp.value) : NaN;
+    var jVal = jInp && jInp.value !== '' ? parseFloat(jInp.value) : NaN;
+    var resultsEl = document.getElementById('results');
+    var aggEl = document.getElementById('aggregateValue');
+    var aggText = aggEl ? String(aggEl.textContent || '').trim() : '';
+    var hasCalcResult = Boolean(
+      resultsEl && resultsEl.classList.contains('visible') && aggText && !isNaN(parseFloat(aggText))
+    );
 
-    if (!isNaN(jVal) && jVal >= 0 && jVal <= 400) {
-      if (jVal >= 280) {
-        return {
-          status: 'success',
-          title: 'High Competitive UTME Score Detected (' + jVal + '/400)',
-          text: 'Your UTME score puts you in contention for top-tier courses like Medicine, Law, Pharmacy, and Engineering. Test your understanding of institutional aggregate models, merit cutoffs, and catchment policies.',
-          recommendedTopic: 'aggregate_formula_models'
-        };
-      } else if (jVal >= 200) {
-        return {
-          status: 'neutral',
-          title: 'Competitive Gateway Score Detected (' + jVal + '/400)',
-          text: 'You clear general federal university cutoff benchmarks. Focus on departmental cutoffs, O\'Level sitting point values, and CAPS admission workflows.',
-          recommendedTopic: 'cutoff_marks_caps'
-        };
-      } else {
-        return {
-          status: 'warning',
-          title: 'Borderline UTME Score Detected (' + jVal + '/400)',
-          text: 'Your score is close to the minimum benchmark for state universities and polytechnics. Learn about CAPS Marketplace transfers and O\'Level point maximization.',
-          recommendedTopic: 'olevel_sitting_penalties'
-        };
+    var gradePts = { A1: 4.0, B2: 3.6, B3: 3.2, C4: 2.8, C5: 2.4, C6: 2.0 };
+    var olevelCount = 0;
+    var olevelSum = 0;
+    for (var i = 1; i <= 5; i++) {
+      var sEl = document.getElementById('sub' + i);
+      var gVal = sEl ? String(sEl.value || '').trim() : '';
+      if (gVal && gradePts[gVal]) {
+        olevelCount += 1;
+        olevelSum += gradePts[gVal];
       }
     }
 
+    var hasUtme = !isNaN(jVal) && jVal >= 0 && jVal <= 400;
+
+    if (hasCalcResult) {
+      if (olevelCount === 5 && olevelSum <= 13.0) {
+        return {
+          hasInputs: true,
+          text: 'Your composite aggregate is ' + aggText + '/70, with O\'Level grades lowering your total. We recommend practising O\'Level Credits & Sitting Rules first.',
+          recommendedTopic: 'olevel_sitting_penalties',
+          recommendedDifficulty: 'easy'
+        };
+      }
+      if (hasUtme && jVal >= 280) {
+        return {
+          hasInputs: true,
+          text: 'Your composite aggregate is ' + aggText + '/70 (UTME ' + jVal + '). We recommend practising University Aggregate Formulas, or choose another topic below.',
+          recommendedTopic: 'aggregate_formula_models',
+          recommendedDifficulty: 'difficult'
+        };
+      }
+      if (hasUtme && jVal < 200) {
+        return {
+          hasInputs: true,
+          text: 'Your composite aggregate is ' + aggText + '/70 (UTME ' + jVal + '). We recommend practising Cut-off Marks & JAMB CAPS to review transfer and screening rules.',
+          recommendedTopic: 'cutoff_marks_caps',
+          recommendedDifficulty: 'easy'
+        };
+      }
+      return {
+        hasInputs: true,
+        text: 'Your composite aggregate is ' + aggText + '/70. We recommend practising Cut-off Marks & JAMB CAPS, or choose another topic below.',
+        recommendedTopic: 'cutoff_marks_caps',
+        recommendedDifficulty: 'medium'
+      };
+    }
+
+    if (hasUtme) {
+      if (jVal >= 280) {
+        return {
+          hasInputs: true,
+          text: 'With a UTME score of ' + jVal + '/400, we recommend practising University Aggregate Formulas, or choose another topic below.',
+          recommendedTopic: 'aggregate_formula_models',
+          recommendedDifficulty: 'difficult'
+        };
+      }
+      if (jVal >= 200) {
+        return {
+          hasInputs: true,
+          text: 'With a UTME score of ' + jVal + '/400, we recommend practising Cut-off Marks & JAMB CAPS, or choose another topic below.',
+          recommendedTopic: 'cutoff_marks_caps',
+          recommendedDifficulty: 'medium'
+        };
+      }
+      return {
+        hasInputs: true,
+        text: 'Your UTME score of ' + jVal + '/400 sits near entry minimums. We recommend practising O\'Level Credits & Sitting Rules first.',
+        recommendedTopic: 'olevel_sitting_penalties',
+        recommendedDifficulty: 'easy'
+      };
+    }
+
     return {
-      status: 'neutral',
-      title: 'Comprehensive JAMB & Admission Screening Diagnostic',
-      text: 'Evaluate your command of the UTME 400 scale, composite aggregate screening formulas (50:50 / 50:30:20), JAMB CAPS transfer mechanics, and federal quota rules.',
-      recommendedTopic: 'all'
+      hasInputs: false,
+      text: 'Choose a JAMB topic below to start a 10-question practice quiz.',
+      recommendedTopic: 'all',
+      recommendedDifficulty: null
     };
   }
 
-  function selectQuestionsForAssessment(mode, focusTopic) {
+  function getJambQuestionDifficulty(q) {
+    var m = String(q.id || '').match(/_(\d+)$/);
+    var num = m ? parseInt(m[1], 10) : 3;
+    if (num <= 2) return 'easy';
+    if (num <= 4) return 'medium';
+    return 'difficult';
+  }
+
+  function selectQuestionsForAssessment(mode, focusTopic, difficulty) {
     var pool = QUESTION_BANK.slice();
+    var targetDiff = difficulty || 'medium';
 
     if (mode === 'targeted_weakness' && currentAssessmentMeta.targetWeaknessTopicIds && currentAssessmentMeta.targetWeaknessTopicIds.length > 0) {
       var weakTargetIds = currentAssessmentMeta.targetWeaknessTopicIds;
@@ -531,22 +595,159 @@
     }
 
     if (focusTopic && focusTopic !== 'all' && TOPICS[focusTopic]) {
-      var topicQ = pool.filter(function (q) { return q.topicId === focusTopic; });
-      topicQ.sort(function () { return 0.5 - Math.random(); });
-      var pickedTopic = topicQ.slice(0, 6);
-      var otherQ = pool.filter(function (q) { return q.topicId !== focusTopic; });
-      otherQ.sort(function () { return 0.5 - Math.random(); });
-      return pickedTopic.concat(otherQ.slice(0, 10 - pickedTopic.length));
+      var topicMatchDiff = pool.filter(function (q) {
+        return q.topicId === focusTopic && getJambQuestionDifficulty(q) === targetDiff;
+      });
+      var topicOtherDiff = pool.filter(function (q) {
+        return q.topicId === focusTopic && getJambQuestionDifficulty(q) !== targetDiff;
+      });
+      topicMatchDiff.sort(function () { return 0.5 - Math.random(); });
+      topicOtherDiff.sort(function () { return 0.5 - Math.random(); });
+      var pickedTopic = topicMatchDiff.concat(topicOtherDiff).slice(0, 6);
+
+      var otherMatchDiff = pool.filter(function (q) {
+        return q.topicId !== focusTopic && getJambQuestionDifficulty(q) === targetDiff;
+      });
+      var otherRest = pool.filter(function (q) {
+        return q.topicId !== focusTopic && getJambQuestionDifficulty(q) !== targetDiff;
+      });
+      otherMatchDiff.sort(function () { return 0.5 - Math.random(); });
+      otherRest.sort(function () { return 0.5 - Math.random(); });
+      var otherCombined = otherMatchDiff.concat(otherRest);
+      return pickedTopic.concat(otherCombined.slice(0, 10 - pickedTopic.length));
     }
 
     var balanced = [];
     Object.keys(TOPICS).forEach(function (tKey) {
-      var tPool = pool.filter(function (q) { return q.topicId === tKey; });
-      tPool.sort(function () { return 0.5 - Math.random(); });
-      balanced = balanced.concat(tPool.slice(0, 2));
+      var tMatch = pool.filter(function (q) {
+        return q.topicId === tKey && getJambQuestionDifficulty(q) === targetDiff;
+      });
+      var tOther = pool.filter(function (q) {
+        return q.topicId === tKey && getJambQuestionDifficulty(q) !== targetDiff;
+      });
+      tMatch.sort(function () { return 0.5 - Math.random(); });
+      tOther.sort(function () { return 0.5 - Math.random(); });
+      balanced = balanced.concat(tMatch.concat(tOther).slice(0, 2));
     });
     balanced.sort(function () { return 0.5 - Math.random(); });
     return balanced.slice(0, 10);
+  }
+
+  function injectQuizScrollStyles() {
+    if (document.getElementById('afriJambQuizScrollStyles')) return;
+    var style = document.createElement('style');
+    style.id = 'afriJambQuizScrollStyles';
+    style.textContent =
+      '#weaknessAssessmentSection{scroll-margin-top:5rem;overflow-anchor:none}' +
+      '#weaknessAssessmentSection *{overflow-anchor:none}' +
+      '#wIntroView .w-intro-top-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.75rem}' +
+      '#wIntroView .w-intro-heading{font-size:1.125rem;font-weight:800;color:#000;margin:0;letter-spacing:-.01em}' +
+      '#wIntroView .w-intro-rec{font-size:.9375rem;line-height:1.5;color:#171717;background:#fafafa;border:1px solid #e5e5e5;border-radius:.5rem;padding:.75rem .875rem;margin:0 0 1rem 0}' +
+      '#wIntroView .w-intro-field{margin-bottom:.875rem}' +
+      '#wIntroView .w-intro-label{display:block;font-size:.8125rem;font-weight:700;color:#171717;margin-bottom:.35rem}' +
+      '#wIntroView .w-intro-diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}' +
+      '#wIntroView .w-intro-diff-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.5rem .5rem;background:#fff;color:#171717;border:1.5px solid #d4d4d4;border-radius:.5rem;font-size:.875rem;font-weight:700;cursor:pointer;transition:border-color .15s ease,background .15s ease,color .15s ease}' +
+      '#wIntroView .w-intro-diff-btn:hover{border-color:#000}' +
+      '#wIntroView .w-intro-diff-btn.selected{background:#000;border-color:#000;color:#facc15}' +
+      '#wIntroView .w-intro-start-btn{width:100%;min-height:48px;margin-top:.25rem;padding:.75rem 1.25rem;background:#facc15;color:#000;border:1.5px solid #facc15;border-radius:.5rem;font-size:.9375rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s ease,border-color .15s ease}' +
+      '#wIntroView .w-intro-start-btn:hover{background:#fde047;border-color:#fde047;color:#000}';
+    document.head.appendChild(style);
+  }
+
+  function getScrollY() {
+    return window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : document.documentElement.scrollTop || 0;
+  }
+
+  function setScrollYInstant(y) {
+    var htmlEl = document.documentElement;
+    var prevBehavior = htmlEl.style.scrollBehavior;
+    htmlEl.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, Math.round(y)));
+    htmlEl.style.scrollBehavior = prevBehavior;
+  }
+
+  function smoothScrollToY(y) {
+    var target = Math.max(0, Math.round(y));
+    if (Math.abs(target - getScrollY()) <= 4) return;
+    try {
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, target);
+    }
+  }
+
+  function getStickyHeaderOffset() {
+    var navInner = document.querySelector('.site-nav .nav-inner');
+    var nav = document.querySelector('.site-nav');
+    var navH = 64;
+    var el = navInner || nav;
+    if (el && typeof el.getBoundingClientRect === 'function') {
+      var h = el.getBoundingClientRect().height;
+      if (h > 0) navH = h;
+    }
+    var pad = window.innerWidth && window.innerWidth < 640 ? 12 : 16;
+    return Math.round(navH + pad);
+  }
+
+  function blurActiveQuizControl() {
+    var active = document.activeElement;
+    var sec = document.getElementById('weaknessAssessmentSection');
+    if (active && sec && sec.contains(active) && typeof active.blur === 'function') {
+      active.blur();
+    }
+  }
+
+  function scrollWeaknessSectionIntoView(targetEl) {
+    var el = targetEl || document.getElementById('weaknessAssessmentSection');
+    if (!el || typeof el.getBoundingClientRect !== 'function') return;
+    var card = el.querySelector('.weakness-card') || el;
+    var rect = card.getBoundingClientRect();
+    var targetY = getScrollY() + rect.top - getStickyHeaderOffset();
+    smoothScrollToY(targetY);
+  }
+
+  function ensureQuizQuestionVisible() {
+    var section = document.getElementById('weaknessAssessmentSection');
+    var quizView = document.getElementById('wQuizView');
+    if (!section || !quizView || quizView.style.display === 'none') return;
+
+    var card = section.querySelector('.weakness-card') || quizView;
+    var questionBox = quizView.querySelector('.w-question-box') || quizView;
+    var optionsBox = document.getElementById('wOptionsContainer') || questionBox;
+
+    var offset = getStickyHeaderOffset();
+    var viewportH = window.innerHeight || document.documentElement.clientHeight || 700;
+    var curScrollY = getScrollY();
+
+    var cardRect = card.getBoundingClientRect();
+    var quizRect = quizView.getBoundingClientRect();
+    var qBoxRect = questionBox.getBoundingClientRect();
+    var optRect = optionsBox.getBoundingClientRect();
+
+    var topClear = quizRect.top >= offset - 8;
+    var nearTop = qBoxRect.top <= Math.max(offset + 140, Math.round(viewportH * 0.34));
+    var optionsVisible = optRect.bottom <= viewportH - 16;
+
+    if (topClear && nearTop && optionsVisible) {
+      return;
+    }
+
+    var cardDocTop = curScrollY + cardRect.top;
+    var quizDocTop = curScrollY + quizRect.top;
+    var qBoxDocTop = curScrollY + qBoxRect.top;
+    var optDocBottom = curScrollY + optRect.bottom;
+
+    var targetY = cardDocTop - offset;
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = quizDocTop - offset;
+    }
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = qBoxDocTop - offset;
+    }
+
+    smoothScrollToY(targetY);
   }
 
   function switchView(viewId) {
@@ -563,10 +764,15 @@
   function startNewAssessment(mode, topicKey) {
     currentAssessmentMeta.mode = mode || 'diagnostic';
     currentAssessmentMeta.focusTopic = topicKey || 'all';
-    currentQuestions = selectQuestionsForAssessment(currentAssessmentMeta.mode, currentAssessmentMeta.focusTopic);
+    currentQuestions = selectQuestionsForAssessment(
+      currentAssessmentMeta.mode,
+      currentAssessmentMeta.focusTopic,
+      currentAssessmentMeta.difficulty
+    );
     currentQuestionIndex = 0;
     userAnswers = {};
 
+    blurActiveQuizControl();
     switchView('wQuizView');
 
     var badgeEl = document.getElementById('wQuizBadge');
@@ -582,12 +788,14 @@
 
     renderCurrentQuestion();
     var sec = document.getElementById('weaknessAssessmentSection');
-    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (sec) scrollWeaknessSectionIntoView(sec);
   }
 
   function renderCurrentQuestion() {
     var q = currentQuestions[currentQuestionIndex];
     if (!q) return;
+
+    var savedScrollY = getScrollY();
 
     var numEl = document.getElementById('wCurrentQNum');
     if (numEl) numEl.textContent = (currentQuestionIndex + 1);
@@ -623,18 +831,26 @@
           '<span class="w-option-text">' + optText + '</span>'
         ].join('');
 
-        function pick() {
+        function pick(fromKeyboard) {
           userAnswers[q.id] = idx;
           var alertBox = document.getElementById('wQuizValidation');
           if (alertBox) alertBox.style.display = 'none';
           renderCurrentQuestion();
+          if (fromKeyboard && container) {
+            var refreshed = container.children[idx];
+            if (refreshed && typeof refreshed.focus === 'function') {
+              refreshed.focus({ preventScroll: true });
+            }
+          }
         }
 
-        optDiv.addEventListener('click', pick);
+        optDiv.addEventListener('click', function () {
+          pick(false);
+        });
         optDiv.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            pick();
+            pick(true);
           }
         });
 
@@ -654,6 +870,10 @@
 
     var valAlert = document.getElementById('wQuizValidation');
     if (valAlert) valAlert.style.display = 'none';
+
+    if (Math.abs(getScrollY() - savedScrollY) > 1) {
+      setScrollYInstant(savedScrollY);
+    }
   }
 
   function advanceQuestion() {
@@ -664,15 +884,19 @@
       return;
     }
     if (currentQuestionIndex < currentQuestions.length - 1) {
+      blurActiveQuizControl();
       currentQuestionIndex++;
       renderCurrentQuestion();
+      ensureQuizQuestionVisible();
     }
   }
 
   function retreatQuestion() {
     if (currentQuestionIndex > 0) {
+      blurActiveQuizControl();
       currentQuestionIndex--;
       renderCurrentQuestion();
+      ensureQuizQuestionVisible();
     }
   }
 
@@ -683,6 +907,7 @@
       if (valAlert) valAlert.style.display = 'block';
       return;
     }
+    blurActiveQuizControl();
     evaluateAssessment();
   }
 
@@ -850,7 +1075,7 @@
     renderHistoryPreview();
 
     var sec = document.getElementById('weaknessAssessmentSection');
-    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (sec) scrollWeaknessSectionIntoView(sec);
   }
 
   function updateComparisonBox(currentAttempt, lastAttempt) {
@@ -1030,6 +1255,8 @@
     if (!calcWrap) return;
     if (document.getElementById('weaknessAssessmentSection')) return;
 
+    injectQuizScrollStyles();
+
     var form = document.getElementById('jambForm');
     var actionRow = form ? (form.querySelector('.action-row') || form.querySelector('button[type="submit"]').parentElement) : document.querySelector('.action-row');
     if (actionRow && !document.getElementById('findWeaknessesBtn')) {
@@ -1057,6 +1284,7 @@
         '<button type="button" id="launchWeaknessFromResults" class="btn-secondary btn-find-weakness w-banner-btn">',
         '  <svg width="18" height="18" fill="none" stroke="#f59e0b" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
         '  <span>Find My Weaknesses</span>',
+        '</button>'
       ].join('');
       var shareBar = document.getElementById('afriShareBar');
       var academicProgress = document.getElementById('afriAcademicProgress');
@@ -1090,33 +1318,31 @@
       '<div class="weakness-card">',
       '  <!-- Screen 1: Diagnostic Intro & Topic Selection -->',
       '  <div id="wIntroView" class="w-view">',
-      '    <div class="w-header">',
-      '      <span class="w-eyebrow">AfriWidget Diagnostic Engine</span>',
-      '      <div class="w-header-title-row">',
-      '        <h3 class="w-title">Find My JAMB UTME Weaknesses</h3>',
-      '        <button type="button" id="wCloseIntroBtn" class="w-close-btn" aria-label="Close diagnostic">&times;</button>',
-      '      </div>',
-      '      <p class="w-subtitle">A deterministic 10-question assessment testing your command of the UTME 400 scale, composite screening formulas (50:50, 60:40), JAMB CAPS transfer mechanics, and federal quota dynamics.</p>',
+      '    <div class="w-intro-top-bar">',
+      '      <h3 class="w-intro-heading">Practice Quiz</h3>',
+      '      <button type="button" id="wCloseIntroBtn" class="w-close-btn" aria-label="Close quiz">&times;</button>',
       '    </div>',
-      '    <div id="wContextNotice" class="w-context-card"></div>',
-      '    <div class="w-topic-select-wrap">',
-      '      <label for="wTopicSelect" class="w-label">Select diagnostic focus:</label>',
+      '    <p id="wContextNotice" class="w-intro-rec"></p>',
+      '    <div class="w-intro-field">',
+      '      <label for="wTopicSelect" class="w-intro-label">Subject / Topic</label>',
       '      <select id="wTopicSelect" class="w-form-select">',
-      '        <option value="all" selected>All Topics (Comprehensive 10-Question Balanced Diagnostic)</option>',
-      '        <option value="utme_scoring_mechanics">JAMB UTME 400-Mark Scale &amp; Sectional Weighting</option>',
-      '        <option value="aggregate_formula_models">Institutional Screening &amp; Aggregate Calculation Models</option>',
-      '        <option value="cutoff_marks_caps">JAMB National Cutoff, CAPS &amp; Departmental Benchmarks</option>',
-      '        <option value="olevel_sitting_penalties">O\'Level Prerequisites, Combinations &amp; Sitting Policies</option>',
-      '        <option value="catchment_elds_quotas">Merit List, Catchment Area &amp; ELDS Quota Dynamics</option>',
+      '        <option value="all" selected>All Topics (Mixed)</option>',
+      '        <option value="utme_scoring_mechanics">UTME 400-Mark Scale</option>',
+      '        <option value="aggregate_formula_models">University Aggregate Formulas</option>',
+      '        <option value="cutoff_marks_caps">Cut-off Marks &amp; JAMB CAPS</option>',
+      '        <option value="olevel_sitting_penalties">O\'Level Credits &amp; Sitting Rules</option>',
+      '        <option value="catchment_elds_quotas">Merit, Catchment &amp; ELDS Quotas</option>',
       '      </select>',
       '    </div>',
-      '    <div id="wHistoryPreview" class="w-history-preview"></div>',
-      '    <div class="w-btn-row">',
-      '      <button type="button" id="wStartBtn" class="btn-primary w-full-btn">',
-      '        <span>Start 10-Question Diagnostic</span>',
-      '        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>',
-      '      </button>',
+      '    <div class="w-intro-field">',
+      '      <span class="w-intro-label" id="wDiffLabel">Difficulty</span>',
+      '      <div id="wDifficultyGrid" class="w-intro-diff-grid" role="radiogroup" aria-labelledby="wDiffLabel">',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="easy" role="radio" aria-checked="false">Easy</button>',
+      '        <button type="button" class="w-intro-diff-btn selected" data-diff="medium" role="radio" aria-checked="true">Medium</button>',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="difficult" role="radio" aria-checked="false">Difficult</button>',
+      '      </div>',
       '    </div>',
+      '    <button type="button" id="wStartBtn" class="w-intro-start-btn">Start Quiz</button>',
       '  </div>',
 
       '  <!-- Screen 2: Active 10-Question Assessment -->',
@@ -1211,12 +1437,38 @@
 
     calcWrap.appendChild(section);
     bindEvents();
-    renderHistoryPreview();
+  }
+
+  function setIntroDifficultyUI(diff) {
+    if (diff !== 'easy' && diff !== 'medium' && diff !== 'difficult') return;
+    currentAssessmentMeta.difficulty = diff;
+    var grid = document.getElementById('wDifficultyGrid');
+    if (grid) {
+      Array.prototype.forEach.call(grid.querySelectorAll('[data-diff]'), function (btn) {
+        var isSel = btn.getAttribute('data-diff') === diff;
+        btn.classList.toggle('selected', isSel);
+        btn.setAttribute('aria-checked', isSel ? 'true' : 'false');
+      });
+    }
   }
 
   function bindEvents() {
     var closeIntroBtn = document.getElementById('wCloseIntroBtn');
     if (closeIntroBtn) closeIntroBtn.addEventListener('click', closeWeaknessSection);
+
+    var topicSel = document.getElementById('wTopicSelect');
+    if (topicSel) {
+      topicSel.addEventListener('change', function () {
+        currentAssessmentMeta.userCustomizedSetup = true;
+      });
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('#wDifficultyGrid [data-diff]'), function (btn) {
+      btn.addEventListener('click', function () {
+        currentAssessmentMeta.userCustomizedSetup = true;
+        setIntroDifficultyUI(btn.getAttribute('data-diff'));
+      });
+    });
 
     var startBtn = document.getElementById('wStartBtn');
     if (startBtn) {
@@ -1246,10 +1498,11 @@
     var retakeBtn = document.getElementById('wRetakeBtn');
     if (retakeBtn) {
       retakeBtn.addEventListener('click', function () {
+        blurActiveQuizControl();
         switchView('wIntroView');
         updateContextNotice();
         var sec = document.getElementById('weaknessAssessmentSection');
-        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (sec) scrollWeaknessSectionIntoView(sec);
       });
     }
 
@@ -1260,11 +1513,11 @@
   function openWeaknessSection() {
     var sec = document.getElementById('weaknessAssessmentSection');
     if (sec) {
+      blurActiveQuizControl();
       sec.style.display = 'block';
       switchView('wIntroView');
       updateContextNotice();
-      renderHistoryPreview();
-      sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollWeaknessSectionIntoView(sec);
     }
   }
 
@@ -1278,25 +1531,16 @@
     if (!noticeEl) return;
     var ctx = getJambInputsContext();
 
-    var iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-    if (ctx.status === 'warning' || ctx.status === 'danger') {
-      iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>';
-    } else if (ctx.status === 'success') {
-      iconSvg = '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-    }
+    noticeEl.textContent = ctx.text;
 
-    noticeEl.className = 'w-context-card ' + ctx.status;
-    noticeEl.innerHTML = [
-      '<div class="w-context-head">',
-      iconSvg,
-      '  <strong>' + ctx.title + '</strong>',
-      '</div>',
-      '<p class="w-context-desc">' + ctx.text + '</p>'
-    ].join('');
-
-    var sel = document.getElementById('wTopicSelect');
-    if (sel && ctx.recommendedTopic && ctx.recommendedTopic !== 'all') {
-      sel.value = ctx.recommendedTopic;
+    if (!currentAssessmentMeta.userCustomizedSetup) {
+      var sel = document.getElementById('wTopicSelect');
+      if (sel && ctx.recommendedTopic) {
+        sel.value = ctx.recommendedTopic;
+      }
+      if (ctx.recommendedDifficulty) {
+        setIntroDifficultyUI(ctx.recommendedDifficulty);
+      }
     }
   }
 

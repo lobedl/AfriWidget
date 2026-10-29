@@ -24,16 +24,15 @@
     style.textContent = `
       .afri-share-bar {
         display: block;
-        margin-top: 1.25rem;
-        margin-bottom: 1.25rem;
+        margin-top: 1.125rem;
+        margin-bottom: 1.125rem;
         background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-left: 4px solid #facc15;
+        border: 1px solid #e5e7eb;
         border-radius: 0.75rem;
-        padding: 1.25rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        padding: 1.125rem 1.25rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #000000;
+        color: #111827;
         box-sizing: border-box;
       }
       .afri-share-bar *, .afri-share-bar *::before, .afri-share-bar *::after {
@@ -45,11 +44,11 @@
       .afri-share-inner {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.875rem;
       }
       @media (min-width: 640px) {
         .afri-share-bar {
-          padding: 1.5rem;
+          padding: 1.25rem 1.5rem;
         }
         .afri-share-inner {
           flex-direction: row;
@@ -62,29 +61,18 @@
         flex: 1;
         min-width: 0;
       }
-      .afri-share-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-        font-size: 0.6875rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #ca8a04;
-        margin-bottom: 0.375rem;
-      }
-      .afri-share-eyebrow svg {
-        width: 0.875rem;
-        height: 0.875rem;
-        flex-shrink: 0;
-      }
       .afri-share-title {
-        font-size: 1.125rem;
-        font-weight: 900;
-        color: #000000;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #111827;
         letter-spacing: -0.01em;
-        line-height: 1.3;
+        line-height: 1.35;
         margin: 0 0 0.25rem 0;
+      }
+      @media (min-width: 640px) {
+        .afri-share-title {
+          font-size: 1.0625rem;
+        }
       }
       .afri-share-desc {
         font-size: 0.8125rem;
@@ -95,28 +83,24 @@
       .afri-share-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.625rem;
+        gap: 0.5rem;
         align-items: center;
         flex-shrink: 0;
-        width: 100%;
-      }
-      @media (min-width: 640px) {
-        .afri-share-actions {
-          width: auto;
-        }
       }
       .afri-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        padding: 0.625rem 1.125rem;
-        font-size: 0.875rem;
+        gap: 0.45rem;
+        padding: 0 1rem;
+        height: 2.5rem;
+        min-height: 40px;
+        font-size: 0.8125rem;
         font-weight: 700;
         border-radius: 0.5rem;
         cursor: pointer;
-        min-height: 44px;
         line-height: 1;
+        white-space: nowrap;
         text-decoration: none;
         border: 1px solid transparent;
         transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
@@ -127,35 +111,28 @@
         transform: scale(0.98);
       }
       .afri-btn svg {
-        width: 1rem;
-        height: 1rem;
+        width: 0.9375rem;
+        height: 0.9375rem;
         flex-shrink: 0;
       }
       .afri-btn-primary {
         background: #facc15;
-        color: #000000;
-        border-color: #facc15;
-        flex: 1;
+        color: #111827;
+        border-color: #eab308;
       }
       .afri-btn-primary:hover {
         background: #fde047;
-        border-color: #fde047;
+        border-color: #eab308;
       }
       .afri-btn-secondary {
-        background: #000000;
-        color: #ffffff;
-        border-color: #000000;
-        flex: 1;
+        background: #ffffff;
+        color: #111827;
+        border-color: #d1d5db;
       }
       .afri-btn-secondary:hover {
-        background: #1f2937;
-        color: #fde047;
-        border-color: #1f2937;
-      }
-      @media (min-width: 640px) {
-        .afri-btn-primary, .afri-btn-secondary {
-          flex: initial;
-        }
+        background: #f9fafb;
+        color: #000000;
+        border-color: #9ca3af;
       }
 
       /* Compact Tool Header Share Button */
@@ -517,17 +494,17 @@
           overflow-wrap: anywhere !important;
           word-break: break-word !important;
         }
-        .afri-share-bar {
-          padding: 1.125rem 1rem !important;
+        .afri-share-bar, .afri-donation-card {
+          padding: 1.125rem 1.25rem !important;
           margin-top: 1.125rem !important;
           margin-bottom: 1.125rem !important;
         }
-        .afri-share-title {
-          font-size: 1.0625rem !important;
-          line-height: 1.3 !important;
+        .afri-share-title, .afri-donation-title {
+          font-size: 1rem !important;
+          line-height: 1.35 !important;
           word-break: normal !important;
         }
-        .afri-share-desc {
+        .afri-share-desc, .afri-donation-desc {
           font-size: 0.8125rem !important;
           line-height: 1.5 !important;
           word-break: normal !important;
@@ -555,7 +532,7 @@
         }
       }
       @media print {
-        .afri-share-bar, #afriShareBar, .afri-modal-overlay, .afri-toast {
+        .afri-share-bar, #afriShareBar, .afri-donation-card, #afriDonationCard, .afri-modal-overlay, .afri-toast {
           display: none !important;
           visibility: hidden !important;
           height: 0 !important;
@@ -567,16 +544,15 @@
       /* AfriWidget Donation Card (PayPal NCP) */
       .afri-donation-card {
         display: block;
-        margin-top: 1.25rem;
-        margin-bottom: 1.25rem;
+        margin-top: 1.125rem;
+        margin-bottom: 1.125rem;
         background: #ffffff;
         border: 1px solid #e5e7eb;
-        border-left: 4px solid #ffd140;
         border-radius: 0.75rem;
-        padding: 1.25rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        padding: 1.125rem 1.25rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #000000;
+        color: #111827;
         box-sizing: border-box;
       }
       .afri-donation-card *, .afri-donation-card *::before, .afri-donation-card *::after {
@@ -585,11 +561,11 @@
       .afri-donation-inner {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 0.875rem;
       }
       @media (min-width: 640px) {
         .afri-donation-card {
-          padding: 1.5rem;
+          padding: 1.25rem 1.5rem;
         }
         .afri-donation-inner {
           flex-direction: row;
@@ -603,88 +579,99 @@
         min-width: 0;
         text-align: left;
       }
-      .afri-donation-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.375rem;
-        font-size: 0.6875rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #ca8a04;
-        margin-bottom: 0.375rem;
-      }
-      .afri-donation-eyebrow svg {
-        width: 0.875rem;
-        height: 0.875rem;
-        flex-shrink: 0;
-      }
       .afri-donation-title {
-        font-size: 1.125rem;
-        font-weight: 900;
-        color: #000000;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #111827;
         letter-spacing: -0.01em;
-        line-height: 1.3;
-        margin: 0 0 0.35rem 0;
+        line-height: 1.35;
+        margin: 0 0 0.25rem 0;
+      }
+      @media (min-width: 640px) {
+        .afri-donation-title {
+          font-size: 1.0625rem;
+        }
       }
       .afri-donation-desc {
         font-size: 0.8125rem;
         color: #4b5563;
-        line-height: 1.55;
+        line-height: 1.5;
         margin: 0;
       }
       .afri-donation-action {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-shrink: 0;
       }
+      @media (min-width: 640px) {
+        .afri-donation-action {
+          justify-content: flex-end;
+        }
+      }
       .afri-paypal-form {
-        display: inline-grid;
-        justify-items: center;
-        align-content: start;
-        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
         margin: 0;
         padding: 0;
       }
+      @media (min-width: 640px) {
+        .afri-paypal-form {
+          align-items: flex-end;
+        }
+      }
       .pp-VXH3B6743NDVE {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         border: 1px solid #eab308;
-        border-radius: 0.375rem;
-        min-width: 11.625rem;
-        padding: 0 2rem;
-        height: 2.625rem;
-        font-weight: bold;
-        background-color: #FFD140;
-        color: #000000;
+        border-radius: 0.5rem;
+        min-width: 0;
+        width: auto;
+        padding: 0 1.125rem;
+        height: 2.5rem;
+        min-height: 40px;
+        font-weight: 700;
+        background-color: #facc15;
+        color: #111827;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-size: 1rem;
-        line-height: 1.25rem;
+        font-size: 0.8125rem;
+        line-height: 1;
         cursor: pointer;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.06);
-        transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+        white-space: nowrap;
+        transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
       }
       .pp-VXH3B6743NDVE:hover {
         background-color: #fde047;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        border-color: #eab308;
       }
       .pp-VXH3B6743NDVE:active {
         transform: scale(0.98);
       }
+      .afri-paypal-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
       .afri-card-icons {
-        height: 1.35rem;
+        height: 1.0625rem;
         max-width: 100%;
         display: block;
       }
       .afri-paypal-powered {
-        font-size: 0.75rem;
+        font-size: 0.6875rem;
         color: #6b7280;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: 0.25rem;
+        line-height: 1;
       }
       .afri-paypal-logo {
-        height: 0.875rem;
+        height: 0.75rem;
         vertical-align: middle;
         display: inline-block;
       }
@@ -1234,12 +1221,6 @@
     bar.innerHTML = `
       <div class="afri-share-inner">
         <div class="afri-share-info">
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.375rem;">
-            <div style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              ${icons.brandLogo}
-            </div>
-            <span class="afri-share-eyebrow" style="margin-bottom:0;">Share Calculation</span>
-          </div>
           <h3 class="afri-share-title">Save or Share Your Result</h3>
           <p class="afri-share-desc">
             Send this completed calculation to mentors, family, or save a permanent bookmark link.
@@ -1325,12 +1306,6 @@
     card.innerHTML = `
       <div class="afri-donation-inner">
         <div class="afri-donation-info">
-          <div class="afri-donation-eyebrow">
-            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-            </svg>
-            <span>Support AfriWidget</span>
-          </div>
           <h3 class="afri-donation-title">Keep AfriWidget Free &amp; Independent</h3>
           <p class="afri-donation-desc">
             AfriWidget provides 100% free educational calculators and everyday tools with zero accounts or subscriptions. If this tool helped you today, your contribution helps us cover server hosting, database maintenance, and continuous improvements.
@@ -1339,9 +1314,11 @@
         <div class="afri-donation-action">
           <form action="https://www.paypal.com/ncp/payment/VXH3B6743NDVE" method="post" target="_blank" class="afri-paypal-form">
             <input class="pp-VXH3B6743NDVE" type="submit" value="Keep Us Alive" />
-            <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="Debit and Credit Cards" class="afri-card-icons" loading="lazy" />
-            <div class="afri-paypal-powered">
-              Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="afri-paypal-logo" loading="lazy" />
+            <div class="afri-paypal-meta">
+              <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="Debit and Credit Cards" class="afri-card-icons" loading="lazy" />
+              <div class="afri-paypal-powered">
+                Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="PayPal" class="afri-paypal-logo" loading="lazy" />
+              </div>
             </div>
           </form>
         </div>

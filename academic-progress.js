@@ -31,6 +31,41 @@
     return path.toLowerCase();
   }
 
+  function cleanSubjectLabel(raw) {
+    var str = String(raw || '').trim();
+    if (!str) return '';
+    var prefixed = str.match(/^Subject\s*\d+\s*:\s*(.+)$/i);
+    if (prefixed && prefixed[1].trim()) {
+      return prefixed[1].trim();
+    }
+    return str;
+  }
+
+  function formatSubjectDisplayName(rawName) {
+    var str = String(rawName || '').trim();
+    if (!str) return 'Subject';
+    var m = str.match(/^Subject\s*(\d+)\s*:\s*(.*)$/i);
+    if (m) {
+      var idx = m[1];
+      var rest = (m[2] || '').trim();
+      var wasTruncated = /[…]$|\.{2,}$/.test(rest);
+      if (wasTruncated || !rest) {
+        var lblEl = typeof document !== 'undefined' ? document.getElementById('lblSub' + idx) : null;
+        if (lblEl && lblEl.textContent) {
+          var liveClean = cleanSubjectLabel(lblEl.textContent);
+          var prefix = rest.replace(/[…]+$|\.{2,}$/, '').trim().toLowerCase();
+          if (liveClean && (!prefix || liveClean.toLowerCase().indexOf(prefix) === 0)) {
+            return liveClean;
+          }
+        }
+        var stripped = rest.replace(/[…]+$|\.{2,}$/, '').trim();
+        return stripped.length > 2 ? stripped : ('Subject ' + idx);
+      }
+      return rest;
+    }
+    return str;
+  }
+
   // Pure vanilla SVG icons (AfriWidget brand style)
   var icons = {
     cap: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
@@ -55,15 +90,15 @@
     style.textContent = `
       .afri-academic-progress {
         display: block;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
         background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.875rem;
-        padding: 1.25rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        padding: 1.125rem 1.25rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        color: #000000;
+        color: #111827;
         box-sizing: border-box;
         overflow-x: clip;
         max-width: 100%;
@@ -73,15 +108,15 @@
       }
       @media (min-width: 640px) {
         .afri-academic-progress {
-          padding: 1.625rem;
+          padding: 1.375rem 1.5rem;
         }
       }
       .afri-prog-header {
         display: flex;
         flex-direction: column;
-        gap: 0.875rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #f3f4f6;
+        gap: 0.75rem;
+        padding-bottom: 0.875rem;
+        border-bottom: 1px solid #e5e7eb;
       }
       @media (min-width: 640px) {
         .afri-prog-header {
@@ -92,33 +127,27 @@
       }
       .afri-prog-title-wrap {
         display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      .afri-prog-icon-badge {
-        width: 2.375rem;
-        height: 2.375rem;
-        border-radius: 0.625rem;
-        background: #fef3c7;
-        color: #ca8a04;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
+        flex-direction: column;
+        gap: 0.15rem;
       }
       .afri-prog-title {
-        font-size: 1.125rem;
-        font-weight: 900;
+        font-size: 1rem;
+        font-weight: 700;
         letter-spacing: -0.01em;
-        color: #000000;
+        color: #111827;
         margin: 0;
-        line-height: 1.25;
+        line-height: 1.3;
+      }
+      @media (min-width: 640px) {
+        .afri-prog-title {
+          font-size: 1.0625rem;
+        }
       }
       .afri-prog-subtitle {
         font-size: 0.8125rem;
         color: #6b7280;
-        margin: 0.125rem 0 0;
-        line-height: 1.4;
+        margin: 0;
+        line-height: 1.45;
       }
       .afri-prog-actions {
         display: flex;
@@ -128,51 +157,55 @@
       .afri-prog-btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.45rem;
-        background: #f9fafb;
+        background: #ffffff;
         color: #111827;
-        border: 1px solid #e5e5e5;
+        border: 1px solid #d1d5db;
         border-radius: 0.5rem;
-        padding: 0.5rem 0.875rem;
+        height: 2.5rem;
+        min-height: 40px;
+        padding: 0 0.875rem;
         font-size: 0.8125rem;
-        font-weight: 700;
+        font-weight: 600;
         cursor: pointer;
-        transition: background 0.15s, border-color 0.15s, color 0.15s;
-        min-height: 38px;
+        transition: background 0.15s, border-color 0.15s;
         text-decoration: none;
+        width: auto;
       }
       .afri-prog-btn:hover {
-        background: #fefce8;
-        border-color: #facc15;
-        color: #000000;
+        background: #f9fafb;
+        border-color: #9ca3af;
       }
       .afri-prog-badge-count {
-        background: #000000;
-        color: #fde047;
-        border-radius: 9999px;
-        padding: 0.125rem 0.45rem;
+        background: #f3f4f6;
+        color: #111827;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.375rem;
+        padding: 0.125rem 0.4rem;
         font-size: 0.6875rem;
-        font-weight: 800;
+        font-weight: 700;
         line-height: 1;
+        font-variant-numeric: tabular-nums;
       }
       .afri-prog-body {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.25rem;
-        margin-top: 1.25rem;
+        gap: 1rem;
+        margin-top: 1rem;
         min-width: 0;
       }
       @media (min-width: 768px) {
         .afri-prog-body {
           grid-template-columns: 1.05fr 1fr;
-          align-items: stretch;
-          gap: 1.5rem;
+          align-items: start;
+          gap: 1.125rem;
         }
       }
       .afri-radar-card {
-        background: #fafaf9;
-        border: 1px solid #e7e5e4;
-        border-radius: 0.75rem;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.625rem;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -184,13 +217,14 @@
       }
       .afri-card-label {
         font-size: 0.6875rem;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #78716c;
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+        margin-bottom: 0.625rem;
         width: 100%;
         text-align: left;
+        display: block;
       }
       .afri-radar-svg-wrap {
         width: 100%;
@@ -214,8 +248,8 @@
         min-width: 0;
         overflow: hidden;
         background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.75rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.625rem;
         padding: 1rem;
       }
       .afri-trend-heading {
@@ -301,13 +335,14 @@
         color: #b91c1c;
       }
       .afri-subject-trend {
-        margin: 0 0 0.875rem;
-        padding: 0.625rem 0.75rem;
-        border-left: 3px solid #facc15;
-        background: #fffbeb;
-        color: #4b5563;
-        font-size: 0.75rem;
-        line-height: 1.45;
+        margin: 0 0 0.75rem;
+        padding: 0.75rem 0.875rem;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        color: #374151;
+        font-size: 0.8125rem;
+        line-height: 1.5;
       }
       .afri-subject-trend[hidden],
       .afri-subject-highlights-grid[hidden] {
@@ -368,92 +403,88 @@
       }
       .afri-summary-card {
         background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.75rem;
-        padding: 1.125rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.625rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 0.75rem;
       }
       .afri-stat-pair-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-        margin-bottom: 0.875rem;
+        grid-template-columns: 1fr;
+        gap: 0.625rem;
+        margin-bottom: 0.75rem;
+      }
+      @media (min-width: 440px) {
+        .afri-stat-pair-grid {
+          grid-template-columns: 1fr 1fr;
+        }
       }
       .afri-stat-box {
-        background: #f9fafb;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.625rem;
-        padding: 0.75rem;
-        text-align: center;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.75rem 0.875rem;
+        text-align: left;
       }
       .afri-stat-box.highlight {
-        background: #fefce8;
-        border-color: #fef08a;
+        background: #ffffff;
+        border-color: #d1d5db;
       }
       .afri-stat-box-label {
         font-size: 0.6875rem;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.04em;
         color: #6b7280;
         display: block;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.2rem;
       }
       .afri-stat-box.highlight .afri-stat-box-label {
-        color: #854d0e;
+        color: #6b7280;
       }
       .afri-stat-box-val {
-        font-size: 1.375rem;
-        font-weight: 900;
-        color: #000000;
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: #111827;
         display: block;
-        line-height: 1.15;
+        line-height: 1.3;
+        font-variant-numeric: tabular-nums;
       }
       .afri-stat-box-val.accent {
-        color: #000000;
+        color: #111827;
       }
       .afri-stat-box-sub {
-        font-size: 0.6875rem;
-        color: #9ca3af;
+        font-size: 0.75rem;
+        color: #6b7280;
         display: block;
-        margin-top: 0.25rem;
-        line-height: 1.3;
+        margin-top: 0.2rem;
+        line-height: 1.35;
       }
       .afri-stat-box.highlight .afri-stat-box-sub {
-        color: #a16207;
+        color: #6b7280;
       }
       .afri-trend-banner {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.625rem 0.875rem;
+        display: block;
+        padding: 0.75rem 0.875rem;
         border-radius: 0.5rem;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        color: #1f2937;
         font-size: 0.8125rem;
-        font-weight: 700;
-        margin-bottom: 0.875rem;
-        line-height: 1.4;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
       }
-      .afri-trend-banner.improved {
-        background: #f0fdf4;
-        border: 1px solid #bbf7d0;
-        color: #166534;
-      }
-      .afri-trend-banner.declined {
-        background: #fffbeb;
-        border: 1px solid #fde68a;
-        color: #92400e;
-      }
-      .afri-trend-banner.neutral {
-        background: #f3f4f6;
-        border: 1px solid #e5e5e5;
-        color: #374151;
-      }
+      .afri-trend-banner.improved,
+      .afri-trend-banner.declined,
+      .afri-trend-banner.neutral,
       .afri-trend-banner.baseline {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        color: #334155;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        color: #1f2937;
       }
       .afri-subject-highlights-grid {
         display: grid;
@@ -465,73 +496,45 @@
           grid-template-columns: 1fr 1fr;
         }
       }
-      .afri-subject-highlight {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.625rem;
-        border-radius: 0.5rem;
-        padding: 0.6875rem 0.75rem;
-      }
-      .afri-subject-highlight.strongest {
-        background: #f0fdf4;
-        border: 1px solid #dcfce7;
-        border-left: 3px solid #16a34a;
-      }
+      .afri-subject-highlight,
+      .afri-subject-highlight.strongest,
       .afri-subject-highlight.weakest {
-        background: #fffbeb;
-        border: 1px solid #fef3c7;
-        border-left: 3px solid #d97706;
-      }
-      .afri-highlight-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 0.375rem;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-top: 0.125rem;
-      }
-      .afri-subject-highlight.strongest .afri-highlight-icon {
-        background: #dcfce7;
-        color: #15803d;
-      }
-      .afri-subject-highlight.weakest .afri-highlight-icon {
-        background: #fef3c7;
-        color: #b45309;
+        flex-direction: column;
+        gap: 0.15rem;
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.75rem 0.875rem;
       }
       .afri-highlight-info {
         display: flex;
         flex-direction: column;
         min-width: 0;
       }
-      .afri-highlight-tag {
-        font-size: 0.625rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.125rem;
-      }
-      .afri-subject-highlight.strongest .afri-highlight-tag {
-        color: #166534;
-      }
+      .afri-highlight-tag,
+      .afri-subject-highlight.strongest .afri-highlight-tag,
       .afri-subject-highlight.weakest .afri-highlight-tag {
-        color: #92400e;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #6b7280;
+        margin-bottom: 0.1rem;
       }
       .afri-highlight-name {
-        font-size: 0.8125rem;
-        font-weight: 800;
-        color: #000000;
-        line-height: 1.3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: break-word;
       }
       .afri-highlight-score {
-        font-size: 0.6875rem;
-        font-weight: 600;
-        color: #6b7280;
-        margin-top: 0.125rem;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: #4b5563;
+        margin-top: 0.1rem;
       }
 
       /* Modal Styling */
@@ -629,8 +632,8 @@
         gap: 0.5rem;
       }
       .afri-history-item.latest {
-        border-color: #facc15;
-        background: #fefce8;
+        border-color: #d1d5db;
+        background: #ffffff;
       }
       .afri-history-item-top {
         display: flex;
@@ -1046,7 +1049,7 @@
             var p = parseInt(sel.value, 10);
             if (!isNaN(p)) {
               subjects.push({
-                name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+                name: cleanSubjectLabel(name),
                 grade: gradeLetters[p] || (p + ' pts'),
                 raw: p,
                 norm: Math.max(0.12, p / 12),
@@ -1154,7 +1157,7 @@
             var sc = parseFloat(el.value);
             if (!isNaN(sc)) {
               subjects.push({
-                name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+                name: cleanSubjectLabel(name),
                 grade: Math.round(sc) + '/100',
                 raw: sc,
                 norm: Math.max(0.12, sc / 100),
@@ -1225,7 +1228,7 @@
             var pts = ptsMap[grade];
             var credText = (!isNaN(credits) && credits > 0) ? (' (' + credits + ' CU)') : '';
             subjects.push({
-              name: rawName.length > 15 ? rawName.substring(0, 13) + '…' : rawName,
+              name: cleanSubjectLabel(rawName),
               grade: grade,
               raw: pts,
               norm: Math.max(0.12, Math.min(1.0, pts / maxScale)),
@@ -1267,7 +1270,7 @@
                     mark >= 60 ? 'C4' : mark >= 55 ? 'C5' : mark >= 50 ? 'C6' :
                     mark >= 45 ? 'D7' : mark >= 40 ? 'E8' : 'F9';
             subjects.push({
-              name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+              name: cleanSubjectLabel(name),
               grade: g,
               raw: mark,
               norm: Math.max(0.12, mark / 100),
@@ -1312,7 +1315,7 @@
           if (grade && map[grade] !== undefined) {
             var pts = map[grade];
             subjects.push({
-              name: name.length > 14 ? name.substring(0, 12) + '…' : name,
+              name: cleanSubjectLabel(name),
               grade: grade,
               raw: pts,
               norm: Math.max(0.12, pts / maxScale),
@@ -1392,7 +1395,7 @@
             var g = gradeSel.value;
             var pts = ptsMap[g];
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pts,
               norm: Math.max(0.12, pts / 5),
@@ -1429,7 +1432,7 @@
             var g = parseInt(gSel.value, 10);
             if (!isNaN(g) && g >= 1 && g <= 9) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: 'Grade ' + g,
                 raw: g,
                 norm: Math.max(0.12, (10 - g) / 9),
@@ -1520,7 +1523,7 @@
             var g = gSel.value;
             var pts = ptsMap[g];
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pts,
               norm: Math.max(0.12, pts / 6),
@@ -1595,7 +1598,7 @@
             var lvl = finalMark >= 80 ? 7 : finalMark >= 70 ? 6 : finalMark >= 60 ? 5 :
                       finalMark >= 50 ? 4 : finalMark >= 40 ? 3 : finalMark >= 30 ? 2 : 1;
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: 'L' + lvl,
               raw: finalMark,
               norm: Math.max(0.12, finalMark / 100),
@@ -1638,7 +1641,7 @@
             var g = gSel.value;
             var pts = ptsMap[g];
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pts,
               norm: Math.max(0.12, pts / 5),
@@ -1699,7 +1702,7 @@
               var mark = parseFloat(gradeInp.value);
               if (!isNaN(mark) && mark >= 0 && mark <= 100) {
                 subjects.push({
-                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                  name: cleanSubjectLabel(sName),
                   grade: Math.round(mark) + '%',
                   raw: mark,
                   norm: Math.max(0.12, mark / 100),
@@ -1711,7 +1714,7 @@
               if (gpaMap[g] !== undefined) {
                 var pts = gpaMap[g];
                 subjects.push({
-                  name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                  name: cleanSubjectLabel(sName),
                   grade: g,
                   raw: pts,
                   norm: Math.max(0.12, pts / 4.0),
@@ -1777,7 +1780,7 @@
           if (gradeSel && gradeSel.value && olevelPts[gradeSel.value] !== undefined) {
             var g = gradeSel.value;
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: olevelPts[g] * 100,
               norm: olevelPts[g],
@@ -1818,7 +1821,7 @@
             var mark = parseFloat(gradeInp.value);
             if (!isNaN(mark) && mark >= 0 && mark <= 100) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: Math.round(mark) + '%',
                 raw: mark,
                 norm: Math.max(0.12, mark / 100),
@@ -1830,7 +1833,7 @@
             var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' - ')[0] : (gp.toFixed(1) + ' pts');
             if (!isNaN(gp) && gp >= 0) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: optText,
                 raw: gp,
                 norm: Math.max(0.12, gp / 4.0),
@@ -1872,7 +1875,7 @@
             var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
             if (!isNaN(gp) && gp >= 0) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: optText,
                 raw: gp,
                 norm: Math.max(0.12, gp / 5.0),
@@ -1912,7 +1915,7 @@
             var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
             if (!isNaN(gp) && gp >= 0) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: optText,
                 raw: gp,
                 norm: Math.max(0.12, gp / 5.0),
@@ -1955,7 +1958,7 @@
             var optText = gradeSel.options[gradeSel.selectedIndex] ? gradeSel.options[gradeSel.selectedIndex].text.split(' ')[0] : (gp.toFixed(1) + ' pts');
             if (!isNaN(gp) && gp >= 0) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: optText,
                 raw: gp,
                 norm: Math.max(0.12, gp / maxScale),
@@ -1997,7 +2000,7 @@
             var mark = parseFloat(markInp.value);
             if (!isNaN(mark) && mark >= 0 && mark <= 100) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: Math.round(mark) + '%',
                 raw: mark,
                 norm: Math.max(0.12, mark / 100),
@@ -2044,7 +2047,7 @@
             var g = gradeSel.value;
             var pt = ptsMap[g];
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pt,
               norm: Math.max(0.12, (6 - pt) / 5),
@@ -2155,7 +2158,7 @@
           if (!isNaN(i) && !isNaN(p) && !isNaN(x)) {
             var finalMark = Math.round(i * 0.25 + p * 0.25 + x * 0.50);
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: finalMark + '%',
               raw: finalMark,
               norm: Math.max(0.12, finalMark / 100),
@@ -2194,7 +2197,7 @@
             var g = gradeSel.value.toUpperCase();
             var pts = gpaMap[g] !== undefined ? gpaMap[g] : 0;
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pts,
               norm: Math.max(0.12, pts / 4.0),
@@ -2235,7 +2238,7 @@
             var mark = parseFloat(markInp.value);
             if (!isNaN(mark) && mark >= 0 && mark <= 100) {
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: Math.round(mark) + '%',
                 raw: mark,
                 norm: Math.max(0.12, mark / 100),
@@ -2278,7 +2281,7 @@
             var num = parseFloat(g);
             var pts = !isNaN(num) ? num : (g.toUpperCase() === 'U' ? 0 : 0);
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: 'Grade ' + g,
               raw: pts,
               norm: Math.max(0.12, pts / 9.0),
@@ -2323,7 +2326,7 @@
             if (g) {
               var pts = TARIFF_MAP[g] || 0;
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: g,
                 raw: pts,
                 norm: Math.max(0.15, pts / 56.0),
@@ -2359,7 +2362,7 @@
             if (!isNaN(sVal) && mVal > 0) {
               var ratio = Math.min(1.0, Math.max(0, sVal / mVal));
               subjects.push({
-                name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: Math.round(ratio * 100) + '%',
                 raw: ratio * 100,
                 norm: Math.max(0.12, ratio),
@@ -2404,7 +2407,7 @@
 
           if (gName) {
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: gName,
               raw: pts,
               norm: Math.max(0.15, Math.min(1.0, pts / 56.0)),
@@ -2454,7 +2457,7 @@
               normVal = letterMap[gVal.toUpperCase()] / 4.0;
             }
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: gVal,
               raw: normVal * 4.0,
               norm: Math.max(0.12, Math.min(1.0, normVal)),
@@ -2495,7 +2498,7 @@
           if (!isNaN(sVal)) {
             var normVal = Math.min(1.0, Math.max(0.12, sVal / 50.0));
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: sVal.toFixed(1),
               raw: sVal,
               norm: normVal,
@@ -2714,7 +2717,7 @@
           if (!isNaN(cr) && g) {
             var pts = gradeWeights[g] || 0;
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g + ' (' + cr + 'cr)',
               raw: pts,
               norm: Math.max(0.12, pts / 4.0),
@@ -2759,7 +2762,7 @@
           if (g && letterMap[g] !== undefined) {
             var pts = letterMap[g];
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g,
               raw: pts,
               norm: Math.max(0.12, pts / 5.0),
@@ -2804,7 +2807,7 @@
 
           if (!isNaN(g) && g >= 1.0 && g <= 6.0) {
             subjects.push({
-              name: sName.length > 14 ? sName.substring(0, 12) + '…' : sName,
+              name: cleanSubjectLabel(sName),
               grade: g.toFixed(1),
               raw: g,
               norm: Math.max(0.12, (g - 1.0) / 5.0),
@@ -2855,7 +2858,7 @@
 
               var badge = isDist ? 'Distinction' : (isPass ? 'Pass' : (eMet ? 'Fail' : 'Sub-min Fail'));
               triSubjects.push({
-                name: sName.length > 13 ? sName.substring(0, 11) + '…' : sName,
+                name: cleanSubjectLabel(sName),
                 grade: sComp.toFixed(1) + '%',
                 raw: sComp,
                 norm: Math.min(1.0, Math.max(0.1, sComp / 100)),
@@ -3037,7 +3040,7 @@
               var label = labelEl ? labelEl.textContent.trim() : sel.id;
               var pt = parseFloat(sel.value) || 0;
               subjects.push({
-                name: label.length > 20 ? label.substring(0, 18) + '…' : label,
+                name: cleanSubjectLabel(label),
                 grade: String(sel.value),
                 raw: pt,
                 norm: isUace ? Math.min(1.0, Math.max(0.1, pt / 6)) : Math.max(0.1, (10 - pt) / 9),
@@ -3638,7 +3641,7 @@
       if (Math.sin(angle) < -0.65) dy = '-4';
       else if (Math.sin(angle) > 0.65) dy = '13';
 
-      var rawName = String(s.name || '').trim();
+      var rawName = formatSubjectDisplayName(s.name || '');
       var rawGrade = String(s.grade || '').trim();
 
       // Deduplicate distinct so it is never duplicated
@@ -3647,7 +3650,7 @@
         if (!rawGrade) rawGrade = '75%+';
       }
 
-      var cleanName = rawName.length > 13 ? rawName.substring(0, 11) + '…' : rawName;
+      var cleanName = rawName.length > 14 ? rawName.substring(0, 12) + '…' : rawName;
       var badge = rawGrade ? ' ' + rawGrade : '';
 
       labelsHtml += `
@@ -3700,7 +3703,7 @@
     var context = recordContext(item);
     var subjects = Array.isArray(item.subjects) ? item.subjects : [];
     var subjectMarkup = subjects.slice(0, 3).map(function (subject) {
-      return '<span>' + escapeHtml(subject.name || 'Subject') + ': ' +
+      return '<span>' + escapeHtml(formatSubjectDisplayName(subject.name)) + ': ' +
         escapeHtml(subject.display || subject.grade || '') + '</span>';
     }).join('');
     if (subjects.length > 3) {
@@ -3974,17 +3977,11 @@
     container.innerHTML = `
       <div class="afri-prog-header">
         <div class="afri-prog-title-wrap">
-          <div class="afri-prog-icon-badge">
-            ${icons.cap}
-          </div>
-          <div>
-            <h3 class="afri-prog-title">Academic Progress</h3>
-            <p class="afri-prog-subtitle">Private progress history, saved automatically on this device</p>
-          </div>
+          <h3 class="afri-prog-title">Academic Progress</h3>
+          <p class="afri-prog-subtitle">Private progress history, saved automatically on this device</p>
         </div>
         <div class="afri-prog-actions">
           <button type="button" class="afri-prog-btn" id="afriProgHistoryBtn" aria-label="View calculation history">
-            ${icons.history}
             <span>View History</span>
             <span class="afri-prog-badge-count" id="afriProgHistoryBadge">0</span>
           </button>
@@ -4004,7 +4001,7 @@
 
         <!-- Radar Chart Card -->
         <div class="afri-radar-card">
-              <span class="afri-card-label">Subject Performance Radar</span>
+          <span class="afri-card-label">Subject Performance Radar</span>
           <div class="afri-radar-svg-wrap" id="afriRadarWrap">
             <!-- Dynamic SVG injected here -->
           </div>
@@ -4028,7 +4025,6 @@
             </div>
 
             <div class="afri-trend-banner baseline" id="afriProgTrendBanner">
-              ${icons.dot}
               <span id="afriProgTrendText">Calculating performance trend…</span>
             </div>
             <p class="afri-subject-trend" id="afriProgSubjectTrend" hidden></p>
@@ -4036,9 +4032,6 @@
 
           <div class="afri-subject-highlights-grid" id="afriProgSubjectHighlights" hidden>
             <div class="afri-subject-highlight strongest">
-              <div class="afri-highlight-icon">
-                ${icons.star}
-              </div>
               <div class="afri-highlight-info">
                 <span class="afri-highlight-tag">Strongest Subject</span>
                 <span class="afri-highlight-name" id="afriProgStrongestName">—</span>
@@ -4046,9 +4039,6 @@
               </div>
             </div>
             <div class="afri-subject-highlight weakest">
-              <div class="afri-highlight-icon">
-                ${icons.target}
-              </div>
               <div class="afri-highlight-info">
                 <span class="afri-highlight-tag">Focus Area (Lowest)</span>
                 <span class="afri-highlight-name" id="afriProgWeakestName">—</span>
@@ -4212,7 +4202,7 @@
           var dateFormatted = recordDate(item);
           var subjects = Array.isArray(item.subjects) ? item.subjects : [];
           var chipsHtml = subjects.map(function (subject) {
-            return '<span class="afri-history-chip">' + escapeHtml(subject.name || 'Subject') + ': ' +
+            return '<span class="afri-history-chip">' + escapeHtml(formatSubjectDisplayName(subject.name)) + ': ' +
               escapeHtml(subject.display || subject.grade || '') + '</span>';
           }).join('');
           var context = recordContext(item);
@@ -4380,13 +4370,18 @@
     var previousByName = {};
     previousSubjects.forEach(function (subject) {
       if (subject && subject.name && hasFiniteNumber(subject.norm)) {
-        previousByName[String(subject.name).trim().toLowerCase()] = subject;
+        var normKey = formatSubjectDisplayName(subject.name).toLowerCase();
+        var rawKey = String(subject.name).trim().toLowerCase();
+        previousByName[normKey] = subject;
+        previousByName[rawKey] = subject;
       }
     });
     var comparisons = [];
     latestSubjects.forEach(function (subject) {
       if (!subject || !subject.name || !hasFiniteNumber(subject.norm)) return;
-      var previous = previousByName[String(subject.name).trim().toLowerCase()];
+      var normKey = formatSubjectDisplayName(subject.name).toLowerCase();
+      var rawKey = String(subject.name).trim().toLowerCase();
+      var previous = previousByName[normKey] || previousByName[rawKey];
       if (!previous) return;
       comparisons.push({
         subject: subject,
@@ -4400,11 +4395,14 @@
     if (Math.abs(largest.delta) <= 0.001) {
       return 'Comparable subject results are unchanged between your latest two calculations.';
     }
-    var name = largest.subject.name;
+    var name = formatSubjectDisplayName(largest.subject.name);
     var before = largest.previous.display || largest.previous.grade || '';
     var after = largest.subject.display || largest.subject.grade || '';
+    var changeClause = (before && after)
+      ? ' from ' + before + ' to ' + after
+      : (after ? ' (' + after + ')' : '');
     return name + (largest.delta > 0 ? ' improved' : ' declined') +
-      (before || after ? ' (' + before + ' to ' + after + ')' : '') +
+      changeClause +
       ' between your latest two calculations.' +
       (largest.delta < 0 ? ' Review this subject in your next assessment.' : '');
   }
@@ -4548,8 +4546,7 @@
       if (prevSub) prevSub.textContent = 'No earlier entry';
       if (trendBanner) {
         trendBanner.className = 'afri-trend-banner neutral';
-        trendBanner.innerHTML = icons.dot + ' <span></span>';
-        trendBanner.querySelector('span').textContent = 'Complete a calculation to start your progress history.';
+        trendBanner.textContent = 'Complete a calculation to start your progress history.';
       }
       if (radarWrap) {
         radarWrap.innerHTML = generateRadarSvg([]);
@@ -4574,18 +4571,14 @@
     var prevEl = document.getElementById('afriProgPrevVal');
     var prevSub = document.getElementById('afriProgPrevSub');
     if (prevEl) prevEl.textContent = prev ? (prev.displayValue || formatNumber(prev.value)) : '—';
-    if (prevSub) prevSub.textContent = prev ? 'Previous comparable result · ' + recordDate(prev) : 'No earlier comparable result';
+    if (prevSub) prevSub.textContent = prev ? recordDate(prev) : 'No earlier comparable result';
 
     // The overall direction uses the first and latest saved results; the adjacent result comparison is also shown.
     var trendBanner = document.getElementById('afriProgTrendBanner');
     if (trendBanner) {
       var summary = progressSummary(metricHistory, adapter, history.length);
-      var icon = summary.type === 'improved' ? icons.arrowUp :
-        summary.type === 'declined' ? icons.arrowDown :
-        summary.type === 'neutral' ? icons.equal : icons.dot;
       trendBanner.className = 'afri-trend-banner ' + summary.type;
-      trendBanner.innerHTML = icon + ' <span></span>';
-      trendBanner.querySelector('span').textContent = summary.desc;
+      trendBanner.textContent = summary.desc;
     }
 
     var subjectInsight = document.getElementById('afriProgSubjectTrend');
@@ -4605,10 +4598,10 @@
     var strengths = computeStrengths(subjects);
     var canCompareSubjects = subjects.length > 1;
     if (highlights) highlights.hidden = !canCompareSubjects;
-    if (strName) strName.textContent = strengths.strongest ? strengths.strongest.name : '—';
+    if (strName) strName.textContent = strengths.strongest ? formatSubjectDisplayName(strengths.strongest.name) : '—';
     if (strScore) strScore.textContent = strengths.strongest ? (strengths.strongest.display || strengths.strongest.grade || 'Top mark') : '';
 
-    if (weakName) weakName.textContent = strengths.weakest ? strengths.weakest.name : '—';
+    if (weakName) weakName.textContent = strengths.weakest ? formatSubjectDisplayName(strengths.weakest.name) : '—';
     if (weakScore) weakScore.textContent = strengths.weakest ? (strengths.weakest.display || strengths.weakest.grade || 'Focus mark') : '';
 
     // Radar Chart

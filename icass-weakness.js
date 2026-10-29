@@ -2529,22 +2529,36 @@
     startedAt: null
   };
 
+  var selectedIntroDifficulty = 'medium';
+  var userCustomizedIntroSetup = false;
+
   // Helper: Retrieve ICASS calculator context if marks were entered
   function getIcassInputsContext() {
     try {
       if (typeof window.getIcassCalculation === 'function') {
         var calc = window.getIcassCalculation();
         if (calc && typeof calc.icassAverage === 'number') {
+          var lowestTask = null;
+          if (Array.isArray(calc.tasks)) {
+            calc.tasks.forEach(function (t) {
+              var sVal = typeof t.score === 'number' ? t.score : (typeof t.mark === 'number' ? t.mark : null);
+              if (t && sVal !== null && (!lowestTask || sVal < lowestTask.score)) {
+                lowestTask = { name: t.name || 'Task', score: sVal };
+              }
+            });
+          }
           return {
             calculatedScore: calc.icassAverage,
             band: calc.band,
             eligible: calc.eligible,
+            mode: calc.mode || null,
+            lowestTask: lowestTask,
             hasInputs: true
           };
         }
       }
     } catch (e) {}
-    return { calculatedScore: null, band: null, eligible: null, hasInputs: false };
+    return { calculatedScore: null, band: null, eligible: null, mode: null, lowestTask: null, hasInputs: false };
   }
 
   // Helper: LocalStorage History
@@ -2760,6 +2774,21 @@
     var styleEl = document.createElement('style');
     styleEl.id = 'tvetQuizStyles';
     styleEl.textContent = [
+      '#wIntroView .w-intro-top-bar { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .75rem; }',
+      '#wIntroView .w-intro-heading { font-size: 1.125rem; font-weight: 800; color: #000; margin: 0; letter-spacing: -.01em; }',
+      '#wIntroView .w-intro-close { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: .5rem; border: 1px solid #e5e5e5; background: #fff; color: #171717; font-size: 1.375rem; line-height: 1; cursor: pointer; transition: border-color .15s ease, background .15s ease; }',
+      '#wIntroView .w-intro-close:hover { border-color: #000; background: #fafafa; }',
+      '#wIntroView .w-intro-rec { font-size: .9375rem; line-height: 1.5; color: #171717; background: #fafafa; border: 1px solid #e5e5e5; border-radius: .5rem; padding: .75rem .875rem; margin: 0 0 1rem 0; }',
+      '#wIntroView .w-intro-field { margin-bottom: .875rem; }',
+      '#wIntroView .w-intro-row-two { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .875rem; }',
+      '@media (max-width: 479px) { #wIntroView .w-intro-row-two { grid-template-columns: 1fr; } }',
+      '#wIntroView .w-intro-label { display: block; font-size: .8125rem; font-weight: 700; color: #171717; margin-bottom: .35rem; }',
+      '#wIntroView .w-intro-diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }',
+      '#wIntroView .w-intro-diff-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: .5rem .5rem; background: #fff; color: #171717; border: 1.5px solid #d4d4d4; border-radius: .5rem; font-size: .875rem; font-weight: 700; cursor: pointer; transition: border-color .15s ease, background .15s ease, color .15s ease; }',
+      '#wIntroView .w-intro-diff-btn:hover { border-color: #000; }',
+      '#wIntroView .w-intro-diff-btn.selected { background: #000; border-color: #000; color: #facc15; }',
+      '#wIntroView .w-intro-start-btn { width: 100%; min-height: 48px; margin-top: .25rem; padding: .75rem 1.25rem; background: #facc15; color: #000; border: 1.5px solid #facc15; border-radius: .5rem; font-size: .9375rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background .15s ease, border-color .15s ease; }',
+      '#wIntroView .w-intro-start-btn:hover { background: #fde047; border-color: #fde047; color: #000; }',
       '.w-select-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }',
       '@media (min-width: 640px) { .w-select-grid { grid-template-columns: 1fr 1fr 1fr; } }',
       '.w-option-item.correct { border-color: #16a34a !important; background-color: #f0fdf4 !important; }',
@@ -2767,10 +2796,10 @@
       '.w-option-item.incorrect { border-color: #dc2626 !important; background-color: #fef2f2 !important; }',
       '.w-option-item.incorrect .w-option-letter { background-color: #dc2626 !important; color: #fff !important; }',
       '.w-option-item.locked { cursor: default; }',
-      '.w-feedback-card { margin-top: 1.25rem; border-radius: .75rem; padding: 1.25rem 1.5rem; border: 1px solid #e5e7eb; background: #fff; animation: wFadeIn .2s ease; }',
+      '.w-feedback-card { margin-top: 1.125rem; border-radius: .75rem; padding: 1.125rem 1.25rem; border: 1px solid #e5e7eb; background: #fafafa; animation: wFadeIn .2s ease; }',
       '@keyframes wFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }',
-      '.w-feedback-card.correct { border-left: 5px solid #16a34a; background: #f0fdf4; }',
-      '.w-feedback-card.incorrect { border-left: 5px solid #dc2626; background: #fff; }',
+      '.w-feedback-card.correct { border-color: #bbf7d0; background: #f9fafb; }',
+      '.w-feedback-card.incorrect { border-color: #e5e7eb; background: #fafafa; }',
       '.w-feedback-status { display: inline-flex; align-items: center; gap: .4rem; font-size: .8125rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .6rem; }',
       '.w-feedback-status.correct { color: #166534; }',
       '.w-feedback-status.incorrect { color: #991b1b; }',
@@ -2790,7 +2819,9 @@
       '@media (min-width: 640px) { .w-history-item { flex-direction: row; align-items: center; justify-content: space-between; } }',
       '.w-hist-title { font-size: .875rem; font-weight: 700; color: #111827; }',
       '.w-hist-meta { font-size: .75rem; color: #6b7280; }',
-      '.w-hist-score { font-size: 1.125rem; font-weight: 800; color: #000; }'
+      '.w-hist-score { font-size: 1.125rem; font-weight: 800; color: #000; }',
+      '#weaknessAssessmentSection { scroll-margin-top: 5rem; overflow-anchor: none; }',
+      '#weaknessAssessmentSection * { overflow-anchor: none; }'
     ].join('\n');
     document.head.appendChild(styleEl);
 
@@ -2805,44 +2836,34 @@
       '<div class="weakness-card">',
       '  <!-- Screen 1: Daily Subject Quiz Intro & Selection -->',
       '  <div id="wIntroView" class="w-view">',
-      '    <div class="w-header">',
-      '      <span class="w-eyebrow">AfriWidget TVET Academic Engine</span>',
-      '      <h2 class="w-title">Find My Subject Weaknesses</h2>',
-      '      <p class="w-subtitle">A daily subject-based learning quiz for South African TVET students. Select your programme, qualification level, and subject to generate 10 curriculum-aligned questions testing academic understanding, practical application, and problem solving.</p>',
+      '    <div class="w-intro-top-bar">',
+      '      <h2 class="w-intro-heading">Practice Quiz</h2>',
+      '      <button type="button" id="wCloseIntroBtn" class="w-intro-close" aria-label="Close quiz">&times;</button>',
       '    </div>',
-      '    <div id="wContextNotice" class="w-context-notice"></div>',
-      '    <div class="w-select-grid">',
-      '      <div class="w-field-group">',
-      '        <label class="w-field-label" for="wProgrammeSelect">TVET Programme Track:</label>',
-      '        <select id="wProgrammeSelect" class="form-input w-select">',
-      '          <option value="nated_eng">Engineering Studies (NATED N1–N6)</option>',
-      '          <option value="nated_bus">Business &amp; Management (NATED N4–N6)</option>',
-      '          <option value="ncv_it">IT &amp; Computer Science (NC(V) L2–L4)</option>',
-      '        </select>',
-      '      </div>',
-      '      <div class="w-field-group">',
-      '        <label class="w-field-label" for="wSubjectSelect">TVET Subject:</label>',
+      '    <p id="wContextNotice" class="w-intro-rec"></p>',
+      '    <div class="w-intro-row-two">',
+      '      <div>',
+      '        <label class="w-intro-label" for="wSubjectSelect">Subject</label>',
       '        <select id="wSubjectSelect" class="form-input w-select"></select>',
       '      </div>',
-      '      <div class="w-field-group">',
-      '        <label class="w-field-label" for="wDifficultySelect">Difficulty Level:</label>',
-      '        <select id="wDifficultySelect" class="form-input w-select">',
-      '          <option value="easy">Easy (Definitions &amp; Core Formulas)</option>',
-      '          <option value="medium" selected>Medium (Applied Problem Solving)</option>',
-      '          <option value="difficult">Difficult (Advanced Analysis)</option>',
+      '      <div>',
+      '        <label class="w-intro-label" for="wProgrammeSelect">Programme</label>',
+      '        <select id="wProgrammeSelect" class="form-input w-select">',
+      '          <option value="nated_eng">Engineering (NATED N1–N6)</option>',
+      '          <option value="nated_bus">Business (NATED N4–N6)</option>',
+      '          <option value="ncv_it">IT &amp; CS (NC(V) L2–L4)</option>',
       '        </select>',
       '      </div>',
       '    </div>',
-      '    <div class="w-intro-meta">',
-      '      <div class="w-intro-badge"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Exactly 10 Curriculum Questions</div>',
-      '      <div class="w-intro-badge"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Immediate Step-by-Step Explanations</div>',
-      '      <div class="w-intro-badge"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Weakness Diagnostics &amp; Study Tips</div>',
+      '    <div class="w-intro-field">',
+      '      <span class="w-intro-label" id="wDiffLabel">Difficulty</span>',
+      '      <div id="wDifficultyGrid" class="w-intro-diff-grid" role="radiogroup" aria-labelledby="wDiffLabel">',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="easy" role="radio" aria-checked="false">Easy</button>',
+      '        <button type="button" class="w-intro-diff-btn selected" data-diff="medium" role="radio" aria-checked="true">Medium</button>',
+      '        <button type="button" class="w-intro-diff-btn" data-diff="difficult" role="radio" aria-checked="false">Difficult</button>',
+      '      </div>',
       '    </div>',
-      '    <div class="w-btn-row">',
-      '      <button type="button" id="wStartBtn" class="btn-primary w-full-btn">Start Daily Quiz (10 Questions)</button>',
-      '      <button type="button" id="wCloseIntroBtn" class="btn-secondary">Close</button>',
-      '    </div>',
-      '    <div id="wHistoryPreview" class="w-history-preview" style="margin-top:1.5rem;"></div>',
+      '    <button type="button" id="wStartBtn" class="w-intro-start-btn">Start Quiz</button>',
       '  </div>',
 
       '  <!-- Screen 2: Active 10-Question Test with Immediate Learning Feedback -->',
@@ -2963,6 +2984,114 @@
     populateSubjectDropdown();
   }
 
+  function getScrollY() {
+    return window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : document.documentElement.scrollTop || 0;
+  }
+
+  function setScrollYInstant(y) {
+    var htmlEl = document.documentElement;
+    var prevBehavior = htmlEl.style.scrollBehavior;
+    htmlEl.style.scrollBehavior = 'auto';
+    window.scrollTo(0, Math.max(0, Math.round(y)));
+    htmlEl.style.scrollBehavior = prevBehavior;
+  }
+
+  function smoothScrollToY(y) {
+    var target = Math.max(0, Math.round(y));
+    if (Math.abs(target - getScrollY()) <= 4) return;
+    try {
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, target);
+    }
+  }
+
+  function getStickyHeaderOffset() {
+    var navInner = document.querySelector('.site-nav .nav-inner');
+    var nav = document.querySelector('.site-nav');
+    var navH = 64;
+    var el = navInner || nav;
+    if (el && typeof el.getBoundingClientRect === 'function') {
+      var h = el.getBoundingClientRect().height;
+      if (h > 0) navH = h;
+    }
+    var pad = window.innerWidth && window.innerWidth < 640 ? 12 : 16;
+    return Math.round(navH + pad);
+  }
+
+  function blurActiveQuizControl() {
+    var active = document.activeElement;
+    var sec = document.getElementById('weaknessAssessmentSection');
+    if (active && sec && sec.contains(active) && typeof active.blur === 'function') {
+      active.blur();
+    }
+  }
+
+  function scrollWeaknessSectionIntoView(targetEl) {
+    var el = targetEl || document.getElementById('weaknessAssessmentSection');
+    if (!el || typeof el.getBoundingClientRect !== 'function') return;
+    var card = el.querySelector('.weakness-card') || el;
+    var rect = card.getBoundingClientRect();
+    var targetY = getScrollY() + rect.top - getStickyHeaderOffset();
+    smoothScrollToY(targetY);
+  }
+
+  function ensureQuizQuestionVisible() {
+    var section = document.getElementById('weaknessAssessmentSection');
+    var quizView = document.getElementById('wQuizView');
+    if (!section || !quizView || quizView.style.display === 'none') return;
+
+    var card = section.querySelector('.weakness-card') || quizView;
+    var questionBox = quizView.querySelector('.w-question-box') || quizView;
+    var optionsBox = document.getElementById('wOptionsContainer') || questionBox;
+
+    var offset = getStickyHeaderOffset();
+    var viewportH = window.innerHeight || document.documentElement.clientHeight || 700;
+    var curScrollY = getScrollY();
+
+    var cardRect = card.getBoundingClientRect();
+    var quizRect = quizView.getBoundingClientRect();
+    var qBoxRect = questionBox.getBoundingClientRect();
+    var optRect = optionsBox.getBoundingClientRect();
+
+    var topClear = quizRect.top >= offset - 8;
+    var nearTop = qBoxRect.top <= Math.max(offset + 140, Math.round(viewportH * 0.34));
+    var optionsVisible = optRect.bottom <= viewportH - 16;
+
+    if (topClear && nearTop && optionsVisible) {
+      return;
+    }
+
+    var cardDocTop = curScrollY + cardRect.top;
+    var quizDocTop = curScrollY + quizRect.top;
+    var qBoxDocTop = curScrollY + qBoxRect.top;
+    var optDocBottom = curScrollY + optRect.bottom;
+
+    var targetY = cardDocTop - offset;
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = quizDocTop - offset;
+    }
+    if (optDocBottom - targetY > viewportH - 12) {
+      targetY = qBoxDocTop - offset;
+    }
+
+    smoothScrollToY(targetY);
+  }
+
+  function revealFeedbackIfNeeded(feedbackEl) {
+    if (!feedbackEl || feedbackEl.style.display === 'none') return;
+    var viewportH = window.innerHeight || document.documentElement.clientHeight || 700;
+    var rect = feedbackEl.getBoundingClientRect();
+    if (rect.top > viewportH - 80) {
+      var nudge = Math.min(rect.top - (viewportH - 140), 140);
+      if (nudge > 8) {
+        smoothScrollToY(getScrollY() + nudge);
+      }
+    }
+  }
+
   function populateSubjectDropdown() {
     var progSelect = document.getElementById('wProgrammeSelect');
     var subjSelect = document.getElementById('wSubjectSelect');
@@ -2985,21 +3114,48 @@
     }
   }
 
+  function setIntroDifficultyUI(diff) {
+    if (diff !== 'easy' && diff !== 'medium' && diff !== 'difficult') return;
+    selectedIntroDifficulty = diff;
+    var grid = document.getElementById('wDifficultyGrid');
+    if (grid) {
+      Array.prototype.forEach.call(grid.querySelectorAll('[data-diff]'), function (btn) {
+        var isSel = btn.getAttribute('data-diff') === diff;
+        btn.classList.toggle('selected', isSel);
+        btn.setAttribute('aria-checked', isSel ? 'true' : 'false');
+      });
+    }
+  }
+
   function bindEvents() {
     var progSelect = document.getElementById('wProgrammeSelect');
     if (progSelect) {
       progSelect.addEventListener('change', function () {
+        userCustomizedIntroSetup = true;
         populateSubjectDropdown();
       });
     }
+
+    var subjSelect = document.getElementById('wSubjectSelect');
+    if (subjSelect) {
+      subjSelect.addEventListener('change', function () {
+        userCustomizedIntroSetup = true;
+      });
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('#wDifficultyGrid [data-diff]'), function (btn) {
+      btn.addEventListener('click', function () {
+        userCustomizedIntroSetup = true;
+        setIntroDifficultyUI(btn.getAttribute('data-diff'));
+      });
+    });
 
     var startBtn = document.getElementById('wStartBtn');
     if (startBtn) {
       startBtn.addEventListener('click', function () {
         var progId = document.getElementById('wProgrammeSelect').value;
         var subjId = document.getElementById('wSubjectSelect').value;
-        var diff = document.getElementById('wDifficultySelect').value;
-        startNewQuizSession(progId, subjId, diff, 'daily_quiz', []);
+        startNewQuizSession(progId, subjId, selectedIntroDifficulty, 'daily_quiz', []);
       });
     }
 
@@ -3014,8 +3170,10 @@
     if (prevBtn) {
       prevBtn.addEventListener('click', function () {
         if (currentSession.currentIndex > 0) {
+          blurActiveQuizControl();
           currentSession.currentIndex--;
           renderActiveQuestion();
+          ensureQuizQuestionVisible();
         }
       });
     }
@@ -3031,8 +3189,10 @@
     if (nextBtn) {
       nextBtn.addEventListener('click', function () {
         if (currentSession.currentIndex < currentSession.questions.length - 1) {
+          blurActiveQuizControl();
           currentSession.currentIndex++;
           renderActiveQuestion();
+          ensureQuizQuestionVisible();
         }
       });
     }
@@ -3040,6 +3200,7 @@
     var submitBtn = document.getElementById('wSubmitBtn');
     if (submitBtn) {
       submitBtn.addEventListener('click', function () {
+        blurActiveQuizControl();
         evaluateQuizResults();
       });
     }
@@ -3067,9 +3228,11 @@
     var changeSubjectBtn = document.getElementById('wChangeSubjectBtn');
     if (changeSubjectBtn) {
       changeSubjectBtn.addEventListener('click', function () {
+        blurActiveQuizControl();
         switchView('wIntroView');
         updateContextNotice();
         renderHistoryPreview();
+        scrollWeaknessSectionIntoView();
       });
     }
 
@@ -3099,11 +3262,10 @@
 
     section.style.display = 'block';
     updateContextNotice();
-    renderHistoryPreview();
     switchView('wIntroView');
 
     setTimeout(function () {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollWeaknessSectionIntoView(section);
     }, 50);
   }
 
@@ -3126,25 +3288,26 @@
 
     var ctx = getIcassInputsContext();
     if (ctx.calculatedScore !== null) {
-      var bandDesc = ctx.calculatedScore >= 75 ? 'Distinction band' :
-                     ctx.calculatedScore >= 65 ? 'Credit band' :
-                     ctx.calculatedScore >= 50 ? 'Pass band' :
-                     ctx.calculatedScore >= 40 ? 'Borderline exam entry' : 'Sub-minimum risk (DNQ)';
+      if (!userCustomizedIntroSetup) {
+        var recDiff = ctx.calculatedScore < 50 ? 'easy' : (ctx.calculatedScore < 75 ? 'medium' : 'difficult');
+        setIntroDifficultyUI(recDiff);
+      }
 
-      noticeEl.innerHTML = [
-        '<div class="w-notice-box">',
-        '  <span class="w-notice-title">Calculated ICASS Context Detected:</span>',
-        '  <p>Current calculated ICASS average: <strong>' + ctx.calculatedScore.toFixed(2) + '%</strong> (' + bandDesc + '). Use this daily quiz to strengthen your academic subject knowledge before writing your final external DHET examination.</p>',
-        '</div>'
-      ].join('');
+      var subjSelect = document.getElementById('wSubjectSelect');
+      var activeSubjId = subjSelect && subjSelect.value ? subjSelect.value : 'math';
+      var activeSubjName = SUBJECTS[activeSubjId] ? SUBJECTS[activeSubjId].name : 'Mathematics (N1–N3)';
+
+      var bandDesc = ctx.calculatedScore >= 75 ? 'Distinction' :
+                     ctx.calculatedScore >= 65 ? 'Credit' :
+                     ctx.calculatedScore >= 50 ? 'Pass' :
+                     ctx.calculatedScore >= 40 ? 'Borderline' : 'Below 40% sub-minimum';
+
+      var lowNote = ctx.lowestTask ? ', with ' + ctx.lowestTask.name + ' (' + ctx.lowestTask.score + '%) as your lowest task' : '';
+      var msg = 'Your ICASS average is ' + ctx.calculatedScore.toFixed(1) + '% (' + bandDesc + ')' + lowNote + '. Practise ' + activeSubjName + ' or choose your subject below.';
+      noticeEl.textContent = msg;
       noticeEl.style.display = 'block';
     } else {
-      noticeEl.innerHTML = [
-        '<div class="w-notice-box">',
-        '  <span class="w-notice-title">Curriculum-Aligned TVET Learning:</span>',
-        '  <p>Select your programme track, subject, and difficulty level below. Each daily session generates exactly 10 questions covering authentic syllabus topics with immediate step-by-step learning feedback.</p>',
-        '</div>'
-      ].join('');
+      noticeEl.textContent = 'Choose a TVET subject below to start a 10-question practice quiz.';
       noticeEl.style.display = 'block';
     }
   }
@@ -3172,11 +3335,12 @@
     document.getElementById('wQuizBadge').textContent = badgeText;
     document.getElementById('wDifficultyBadge').textContent = difficulty.toUpperCase();
 
+    blurActiveQuizControl();
     switchView('wQuizView');
     renderActiveQuestion();
 
     var section = document.getElementById('weaknessAssessmentSection');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (section) scrollWeaknessSectionIntoView(section);
   }
 
   function startWeaknessPracticeSession() {
@@ -3197,6 +3361,8 @@
   function renderActiveQuestion() {
     var q = currentSession.questions[currentSession.currentIndex];
     if (!q) return;
+
+    var savedScrollY = getScrollY();
 
     var subjMeta = SUBJECTS[q.subject] || { topics: {} };
     var topicMeta = subjMeta.topics[q.topicId] || { name: 'Curriculum Topic' };
@@ -3238,7 +3404,7 @@
         '<span class="w-option-text">' + optText + '</span>'
       ].join('');
 
-      function handleSelect() {
+      function handleSelect(fromKeyboard) {
         if (isConfirmed) return;
         currentSession.userAnswers[q.id] = {
           selectedIndex: oIdx,
@@ -3246,13 +3412,21 @@
         };
         document.getElementById('wQuizValidation').style.display = 'none';
         renderActiveQuestion();
+        if (fromKeyboard && optionsBox) {
+          var refreshed = optionsBox.children[oIdx];
+          if (refreshed && typeof refreshed.focus === 'function') {
+            refreshed.focus({ preventScroll: true });
+          }
+        }
       }
 
-      optBtn.addEventListener('click', handleSelect);
+      optBtn.addEventListener('click', function () {
+        handleSelect(false);
+      });
       optBtn.addEventListener('keydown', function (e) {
         if (e.key === ' ' || e.key === 'Enter') {
           e.preventDefault();
-          handleSelect();
+          handleSelect(true);
         }
       });
 
@@ -3312,6 +3486,10 @@
         submitBtn.style.display = 'none';
       }
     }
+
+    if (Math.abs(getScrollY() - savedScrollY) > 1) {
+      setScrollYInstant(savedScrollY);
+    }
   }
 
   function confirmActiveAnswer() {
@@ -3324,16 +3502,11 @@
       return;
     }
 
+    blurActiveQuizControl();
     document.getElementById('wQuizValidation').style.display = 'none';
     answerState.confirmed = true;
     renderActiveQuestion();
-
-    setTimeout(function () {
-      var feedbackBox = document.getElementById('wFeedbackContainer');
-      if (feedbackBox) {
-        feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }, 50);
+    revealFeedbackIfNeeded(document.getElementById('wFeedbackContainer'));
   }
 
   function evaluateQuizResults() {
@@ -3524,7 +3697,7 @@
     renderHistoryList();
 
     var section = document.getElementById('weaknessAssessmentSection');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (section) scrollWeaknessSectionIntoView(section);
   }
 
   function updateComparisonBox(currentAttempt) {
@@ -3641,7 +3814,7 @@
 
     var last = history[0];
     previewEl.innerHTML = [
-      '<div class="w-notice-box" style="border-left-color: #0284c7;">',
+      '<div class="w-notice-box">',
       '  <span class="w-notice-title">Recent Quiz Activity:</span>',
       '  <p>Last attempt: <strong>' + (last.subjectName || last.subjectId) + '</strong> (' + (last.difficulty ? last.difficulty.toUpperCase() : 'STANDARD') + ') &bull; <strong>' + last.score + '/' + last.total + ' (' + last.percentage + '%)</strong> on ' + last.dateFormatted + '.</p>',
       '</div>'
