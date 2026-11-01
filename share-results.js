@@ -12,9 +12,10 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
-  const page = location.pathname.split('/').pop().replace(/\.html$/, '') || 'home';
+  const page = location.pathname.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '') || 'home';
   const params = new URLSearchParams(location.search);
-  const hasSharedInputs = Array.from(params.keys()).some(k => k !== 'shared');
+  const IGNORED_QUERY_RE = /^(?:shared|cmp|compare|f_[a-z0-9_]+|utm_[a-z0-9_]+|fbclid|gclid|msclkid|twclid|mc_cid|mc_eid|_ga|_gl|ref)$/i;
+  const hasSharedInputs = Array.from(params.keys()).some(k => !IGNORED_QUERY_RE.test(k));
 
   // Inject Self-Contained AfriWidget CSS (Brand styling, zero Tailwind, zero external dependencies)
   function injectShareStyles() {
@@ -694,309 +695,443 @@
     email: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
   };
 
-  // Dedicated Tool Adapters (for complex multi-row and non-standard forms)
-  const adapters = {
-    'jamb-utme-aggregate-calculator': {
-      fields: () => [$('#jambScore'), ...$$('.jamb-grade')],
-      calculate: () => $('#jambCalculate')?.click()
-    },
-    'tertiary-gpa-cgpa-calculator': {
-      fields: () => [$('#gpaScale'), ...$$('.course-row input, .course-row select')].filter(Boolean),
-      restore(values) {
-        const rows = values.filter(item => item.key.startsWith('course'));
-        const scaleEl = $('#gpaScale');
-        if (scaleEl) {
-          scaleEl.value = values.find(item => item.key === 'scale')?.value || scaleEl.value;
-        }
-        if (!rows.length) return;
-        const grouped = {};
-        rows.forEach(item => {
-          const match = item.key.match(/^course(\d+)(Name|Credits|Grade)$/);
-          if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
-        });
-        const add = $('#addCourse');
-        Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
-          const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
-          if (!row) return;
-          const nameEl = $('.course-name', row);
-          const credEl = $('.credit-input', row);
-          const gradeEl = $('.grade-select', row);
-          if (nameEl) nameEl.value = grouped[number].Name || '';
-          if (credEl) credEl.value = grouped[number].Credits || '';
-          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
-        });
-      },
-      calculate: () => $('#gpaCalculate')?.click()
-    },
-    'gpa-calculator': {
-      fields: () => $$('.course-row input, .course-row select'),
-      restore(values) {
-        const rows = values.filter(item => item.key.startsWith('course'));
-        if (!rows.length) return;
-        const grouped = {};
-        rows.forEach(item => {
-          const match = item.key.match(/^course(\d+)(Name|Grade|Credits)$/);
-          if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
-        });
-        const add = $('#addRowBtn');
-        Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
-          const row = $$('.course-row')[index] || (add ? (add.click(), $$('.course-row').at(-1)) : null);
-          if (!row) return;
-          const nameEl = $('.course-name', row);
-          const credEl = $('.credit-input', row);
-          const gradeEl = $('.grade-select', row);
-          if (nameEl) nameEl.value = grouped[number].Name || '';
-          if (credEl) credEl.value = grouped[number].Credits || '';
-          if (gradeEl) gradeEl.value = grouped[number].Grade || '';
-        });
-      },
-      calculate: () => $('#calcBtn')?.click()
-    },
-    'south-african-aps-calculator': {
-      fields: () => [...$$('.aps-main'), $('#includeLifeOrientation'), $('#apsLifeOrientation')],
-      calculate: () => $('#apsCalculate')?.click()
-    },
-    'kcse-kuccps-cluster-calculator': {
-      fields: () => $$('.kcse-grade'),
-      calculate: () => $('#kcseCalculate')?.click()
-    },
-    'university-cutoff-eligibility-checker': {
-      fields: () => [$('#eligibilitySystem'), $('#eligibilityScore'), $('#eligibilityInstitution'), $('#eligibilityCourse')],
-      calculate: () => $('#eligibilityCalculate')?.click(),
-      restore() {
-        const system = params.get('eligibilitySystem');
-        if (system && $('#eligibilitySystem')) {
-          $('#eligibilitySystem').value = system;
-          $('#eligibilitySystem').dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        const institution = params.get('eligibilityInstitution');
-        if (institution && $('#eligibilityInstitution')) {
-          $('#eligibilityInstitution').value = institution;
-          $('#eligibilityInstitution').dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        const course = params.get('eligibilityCourse');
-        if (course && $('#eligibilityCourse')) $('#eligibilityCourse').value = course;
-      }
-    },
-    'percentage-calculator': {
-      fields: () => $$('#ofForm input, #isForm input, #changeForm input'),
-      calculate: () => ['ofForm', 'isForm', 'changeForm'].forEach(id => document.getElementById(id)?.requestSubmit())
-    },
-    'age-calculator': {
-      fields: () => [$('#birthDate')],
-      calculate: () => $('#ageBtn')?.click()
-    },
-    'unit-converter': {
-      fields: () => [$('#category'), $('#amount'), $('#fromUnit'), $('#toUnit')],
-      restore() {
-        const category = params.get('category');
-        if (category && $('#category')) {
-          $('#category').value = category;
-          $('#category').dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      },
-      calculate: () => $('#convertBtn')?.click()
-    },
-    'wassce-aggregate-calculator': {
-      fields: () => $$('.grade-input'),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'bece-aggregate-calculator': {
-      fields: () => $$('.grade-input'),
-      calculate: () => $('#calculateBtn')?.click()
-    },
-    'olevel-subject-combination-checker': {
-      fields: () => [$('#olevelCourse')],
-      calculate: () => $('#olevelCourse')?.dispatchEvent(new Event('change', { bubbles: true }))
-    },
-    'kcse-eligibility-tier-checker': {
-      fields: () => [$('#kcseMeanGrade')],
-      calculate: () => $('#kcseMeanGrade')?.dispatchEvent(new Event('change', { bubbles: true }))
-    },
-    'south-african-tvet-nated-calculator': {
-      fields: () => [$('#natedIcass'), $('#natedExam')],
-      calculate: () => $('#natedCalculate')?.click()
-    },
-    'bece-cssps-placement-estimator': {
-      fields: () => [$('#becePlacementAggregate'), $('#beceSchoolCategory')],
-      calculate: () => $('#becePlacementCalculate')?.click()
-    },
-    'tvet-ncv-pass-calculator': {
-      fields: () => [$('#ncvLevel'), ...$$('.ncv-input')],
-      calculate: () => $('#ncvCalculate')?.click()
-    },
-    'tvet-exam-target-mark-calculator': {
-      fields: () => [$('#streamSelect'), $('#targetIcass'), $('#targetIsat'), $('#customTarget')],
-      calculate: () => $('#targetCalculate')?.click()
-    },
-    'nsfas-tvet-allowance-calculator': {
-      fields: () => [$('#nsfasInstType'), $('#nsfasLivingType'), $('#nsfasMonths')],
-      calculate: () => $('#nsfasCalculate')?.click()
-    },
-    'matric-sba-exam-calculator': {
-      fields: () => $$('.matric-input'),
-      calculate: () => $('#matricCalculate')?.click()
-    },
-    'atar-calculator': {
-      fields: () => [$('#adjustmentScheme'), $('#customAdjInput'), ...$$('.subject-score-input, .subject-units-select, .subject-state-select')],
-      calculate: () => $('#calculateAtarBtn')?.click()
-    },
-    'hecs-help-repayment-calculator': {
-      fields: () => [$('#repaymentIncome'), $('#hecsDebtBalance'), $('#indexationRate'), $('#voluntaryRepayment'), $('#incomeFrequency')],
-      calculate: () => $('#calculateHecsBtn')?.click()
-    },
-    'australia-scholarship-finder': {
-      fields: () => [$('#userState'), $('#userStudyArea'), $('#userDegreeLevel'), $('#userAtarScore'), $('#userStudyMode'), $('#userCitizenship'), $('#equityFinancial'), $('#equityRural'), $('#equityIndigenous'), $('#equityFirstGen'), $('#equityDisability'), $('#meritLeadership')],
-      calculate: () => $('#filterScholarshipsBtn')?.click()
-    },
-    'university-course-finder': {
-      fields: () => [$('#filterState'), $('#filterArea'), $('#filterDegreeLevel'), $('#filterMaxAtar'), $('#filterInstitutionType'), $('#courseSearchInput')],
-      calculate: () => $('#applyFiltersBtn')?.click()
-    },
-    'igcse-alevel-gpa-converter': {
-      fields: () => $$('.igcse-row input, .igcse-row select'),
-      restore(values) {
-        const rows = values.filter(item => item.key.startsWith('subject'));
-        if (!rows.length) return;
-        const grouped = {};
-        rows.forEach(item => {
-          const match = item.key.match(/^subject(\d+)(Name|Level|Grade)$/);
-          if (match) (grouped[match[1]] ||= {})[match[2]] = item.value;
-        });
-        const add = $('#addIgcseSubject');
-        Object.keys(grouped).sort((a, b) => Number(a) - Number(b)).forEach((number, index) => {
-          const row = $$('.igcse-row')[index] || (add ? (add.click(), $$('.igcse-row').at(-1)) : null);
-          if (!row) return;
-          const subEl = $('.igcse-subject', row);
-          const lvlEl = $('.igcse-level', row);
-          const grdEl = $('.igcse-grade', row);
-          if (subEl) subEl.value = grouped[number].Name || '';
-          if (lvlEl) lvlEl.value = grouped[number].Level || '';
-          if (grdEl) grdEl.value = grouped[number].Grade || '';
-        });
-      },
-      calculate: () => $$('.igcse-row input, .igcse-row select').forEach(field => field.dispatchEvent(new Event('input', { bubbles: true })))
-    },
-    'canada-gpa-calculator': {
-      fields: () => [$('#priorCgpaInput'), $('#priorCreditsInput'), ...$$('.course-row input, .course-row select')],
-      calculate: () => $('#calculateGpaBtn')?.click()
-    },
-    'canada-university-admission-chance-calculator': {
-      fields: () => [$('#targetUniversity'), $('#targetProgram'), $('#suppTier'), $('#adjFactor'), ...$$('.subj-input')],
-      calculate: () => $('#calcAdmissionsBtn')?.click()
-    },
-    'canada-student-loan-repayment-calculator': {
-      fields: () => [$('#totalLoanBalance'), $('#provincialProgram'), $('#repaymentTerm'), $('#extraMonthlyPayment'), $('#annualGrossIncome'), $('#familySize')],
-      calculate: () => $('#calcLoanBtn')?.click()
-    },
-    'document-converter': {
-      fields: () => [$('#textInput'), $('#targetSelect')],
-      restore(values) {
-        values.forEach(({ key, value }) => {
-          if (key === 'textInput' || key === 'text') {
-            const ta = $('#textInput');
-            if (ta) {
-              ta.value = value;
-              ta.dispatchEvent(new Event('input', { bubbles: true }));
-            }
-          } else if (key === 'targetSelect' || key === 'format') {
-            const sel = $('#targetSelect');
-            if (sel) {
-              sel.value = value;
-              sel.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-          }
-        });
-      },
-      calculate: () => {
-        const ta = $('#textInput');
-        const btn = $('#convertBtn');
-        if (ta && ta.value.trim() && btn && !btn.disabled) {
-          btn.click();
-        }
-      }
-    }
+  // Excluded chrome, result, ad, donation, and friend-comparison containers
+  const EXCLUDED_SELECTOR = [
+    '.afri-paypal-form',
+    '#afriDonationCard',
+    '#afriShareBar',
+    '#afriwidgetShareModal',
+    '#compareEntryCard',
+    '#compareWorkspaceSection',
+    '.compare-card',
+    '#weaknessCalloutBanner',
+    '#afriAcademicProgress',
+    '#afriHealthProgress',
+    '.ai-section',
+    '#results',
+    '#cfResults',
+    '#resultsCard',
+    '.results'
+  ].join(', ');
+
+  const TAB_BTN_SELECTOR = [
+    '[role="tab"]',
+    '.mode-tab',
+    '.source-tab',
+    '.btn-mode',
+    '.mode-btn',
+    '.tab-btn',
+    '#unitMetric',
+    '#unitImperial',
+    '#typeInvoice',
+    '#typeReceipt'
+  ].join(', ');
+
+  // Verified dynamic row list configurations across all multi-row calculators & planners
+  const DYNAMIC_CONTAINERS = {
+    'atar-calculator': [
+      { prefix: 'r', container: '#subjectList', row: '.course-row', addBtn: '#addSubjectBtn', removeBtn: '.btn-remove' }
+    ],
+    'canada-gpa-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'canada-student-loan-repayment-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'canada-study-planner': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'debt-payoff-calculator': [
+      { prefix: 'r', container: '#debtList', row: '.debt-row', addBtn: '#addDebtBtn', removeBtn: '.btn-remove' }
+    ],
+    'ghana-university-gpa-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'gpa-calculator': [
+      { prefix: 'gpa', container: '#courseList', row: '.course-row', addBtn: '#addRowBtn', removeBtn: '.btn-remove' }
+    ],
+    'igcse-alevel-gpa-converter': [
+      { prefix: 'r', container: '#subjectRows', row: '.subject-row', addBtn: '#addRowBtn', removeBtn: '.btn-remove' }
+    ],
+    'invoice-receipt-generator': [
+      { prefix: 'r', container: '#itemsList', row: '.item-row', addBtn: '#addItemBtn', removeBtn: '.item-remove, .btn-remove' }
+    ],
+    'kenya-university-gpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'new-zealand-ncea-credits-calculator': [
+      { prefix: 'r', container: '#nceaRowsContainer', row: '.ncea-row', addBtn: '#addRowBtn', removeBtn: '.btn-remove' }
+    ],
+    'nigerian-university-cgpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' },
+      { prefix: 'r2', container: '#semesterContainer', row: '.semester-row', addBtn: '#addSemesterBtn', removeBtn: '.btn-remove' }
+    ],
+    'norway-gpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'startup-cost-calculator': [
+      { prefix: 'r', container: '#oneTimeList', row: '.cost-row', addBtn: '#addOneTimeBtn', removeBtn: '.cost-row-remove, .btn-remove' },
+      { prefix: 'r2', container: '#monthlyList', row: '.cost-row', addBtn: '#addMonthlyBtn', removeBtn: '.cost-row-remove, .btn-remove' }
+    ],
+    'switzerland-grade-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'tanzania-university-gpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' },
+      { prefix: 'r2', container: '#coursesContainer2', row: '.course-row', addBtn: '#addCourseBtn2', removeBtn: '.btn-remove' }
+    ],
+    'tertiary-gpa-cgpa-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'ucas-points-calculator': [
+      { prefix: 'r', container: '#qualList', row: '.qual-row', addBtn: '#addALevel', removeBtn: '.qual-remove, .btn-remove' }
+    ],
+    'uganda-university-cgpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' },
+      { prefix: 'r2', container: '#coursesContainer2', row: '.course-row', addBtn: '#addCourseBtn2', removeBtn: '.btn-remove' }
+    ],
+    'uk-a-level-grade-calculator': [
+      { prefix: 'r', container: '#componentList', row: '.comp-row', addBtn: '#addComponentBtn', removeBtn: '.btn-remove' },
+      { prefix: 'r2', container: '#subjectProfileList', row: '.prof-row', addBtn: '#addProfileSubjectBtn', removeBtn: '.btn-remove' }
+    ],
+    'uk-degree-classification-calculator': [
+      { prefix: 'r', container: '#y2ModulesContainer', row: '.mod-row', addBtn: '#addY2ModuleBtn', removeBtn: '.mod-remove, .btn-remove' },
+      { prefix: 'r2', container: '#y3ModulesContainer', row: '.mod-row', addBtn: '#addY3ModuleBtn', removeBtn: '.mod-remove, .btn-remove' }
+    ],
+    'uk-gcse-grade-calculator': [
+      { prefix: 'r', container: '#subjectRowsContainer', row: '.gcse-row', addBtn: '#addSubjectRowBtn', removeBtn: '.btn-remove' },
+      { prefix: 'r2', container: '#compRowsContainer', row: '.comp-row', addBtn: '#addCompRowBtn', removeBtn: '.btn-remove' }
+    ],
+    'zambia-university-gpa-calculator': [
+      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ],
+    'zimbabwe-university-gpa-calculator': [
+      { prefix: 'r', container: '#coursesContainer', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
+    ]
   };
 
-  // Universal fallback adapter for all 100+ standard form & calculator tools
-  function standardAdapter() {
-    const form = $('form') || $('.calc-panel');
-    if (!form) return null;
-    return {
-      fields: () => $$('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea', form),
-      calculate: () => {
-        const btn = form.querySelector('.btn-calc, button[type="submit"], #calcBtn, #calculateBtn, input[type="submit"]') || form.querySelector('button');
-        if (btn) {
-          btn.click();
-        } else if (form.tagName === 'FORM' && typeof form.requestSubmit === 'function') {
-          try {
-            form.requestSubmit();
-          } catch {
-            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-          }
-        }
+  // Track last clicked action button on multi-action tools (e.g. Encode vs Decode, Format vs Minify)
+  let lastActionBtnId = '';
+  let lastCaseAction = '';
+  let lastCleanAction = '';
+
+  function setupActionTrackers() {
+    document.addEventListener('click', (e) => {
+      const actionBtn = e.target.closest('#encodeBtn, #decodeBtn, #formatBtn, #minifyBtn');
+      if (actionBtn && actionBtn.id) {
+        lastActionBtnId = actionBtn.id;
       }
-    };
-  }
-
-  function getAdapter() {
-    return adapters[page] || standardAdapter();
-  }
-
-  function fieldKey(field, index) {
-    if (field.id) return field.id;
-    if (field.name) return field.name;
-    const label = field.getAttribute('aria-label');
-    if (label) return `f_${label.toLowerCase().replace(/[^a-z0-9]+/g, '_')}`;
-    return `f_${index}`;
-  }
-
-  function getValues(adapterConfig) {
-    if (page === 'igcse-alevel-gpa-converter') {
-      return $$('.igcse-row').flatMap((row, index) => [
-        { key: `subject${index + 1}Name`, value: $('.igcse-subject', row)?.value || '' },
-        { key: `subject${index + 1}Level`, value: $('.igcse-level', row)?.value || '' },
-        { key: `subject${index + 1}Grade`, value: $('.igcse-grade', row)?.value || '' }
-      ]).filter(item => item.value !== '');
-    }
-    if (page === 'gpa-calculator') {
-      return $$('.course-row').flatMap((row, index) => [
-        { key: `course${index + 1}Name`, value: $('.course-name', row)?.value || '' },
-        { key: `course${index + 1}Grade`, value: $('.grade-select', row)?.value || '' },
-        { key: `course${index + 1}Credits`, value: $('.credit-input', row)?.value || '' }
-      ]).filter(item => item.value !== '');
-    }
-    if (page === 'tertiary-gpa-cgpa-calculator') {
-      const rows = $$('.course-row');
-      return [
-        { key: 'scale', value: $('#gpaScale')?.value || '' },
-        ...rows.flatMap((row, index) => [
-          { key: `course${index + 1}Name`, value: $('.course-name', row)?.value || '' },
-          { key: `course${index + 1}Credits`, value: $('.credit-input', row)?.value || '' },
-          { key: `course${index + 1}Grade`, value: $('.grade-select', row)?.value || '' }
-        ]).filter(item => item.value !== '')
-      ];
-    }
-
-    const fields = adapterConfig?.fields?.() || [];
-    const values = [];
-    fields.forEach((field, index) => {
-      if (!field) return;
-      if (field.type === 'radio' && !field.checked) return;
-      const key = fieldKey(field, index);
-      if (field.type === 'checkbox') {
-        values.push({ key, value: field.checked ? '1' : '0' });
-      } else if (field.value !== undefined && field.value !== '') {
-        values.push({ key, value: field.value });
+      const caseBtn = e.target.closest('.btn-case[data-action]');
+      if (caseBtn) {
+        lastCaseAction = caseBtn.dataset.action || '';
+      }
+      const cleanBtn = e.target.closest('.btn-clean[data-clean]');
+      if (cleanBtn) {
+        lastCleanAction = cleanBtn.dataset.clean || '';
       }
     });
+  }
+
+  function getCalcRoot() {
+    return $('.calc-wrap') || $('.calc-panel') || $('main') || document.body;
+  }
+
+  function isElementVisible(el) {
+    let cur = el;
+    while (cur && cur !== document.body && cur !== document.documentElement) {
+      if (cur.hidden || cur.classList?.contains('hidden') || cur.classList?.contains('field-hidden')) {
+        return false;
+      }
+      if (cur.getAttribute?.('aria-hidden') === 'true') {
+        return false;
+      }
+      const inlineStyle = cur.getAttribute?.('style') || '';
+      if (/display\s*:\s*none/i.test(inlineStyle)) {
+        return false;
+      }
+      try {
+        if (window.getComputedStyle(cur).display === 'none') {
+          return false;
+        }
+      } catch {
+        // Ignore computed style errors on detached elements
+      }
+      cur = cur.parentElement;
+    }
+    return true;
+  }
+
+  function isEditableField(el) {
+    if (!el || el.disabled || el.readOnly) return false;
+    const tag = el.tagName.toLowerCase();
+    if (tag !== 'input' && tag !== 'select' && tag !== 'textarea') return false;
+    if (tag === 'input') {
+      const type = (el.getAttribute('type') || 'text').toLowerCase();
+      if (['hidden', 'submit', 'button', 'reset', 'file', 'image'].includes(type)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function isInsideDynamicContainer(el) {
+    if (page === 'form-four-gpa-calculator' && el.closest('#subjectList')) {
+      return true;
+    }
+    const cfgs = DYNAMIC_CONTAINERS[page] || [];
+    for (let i = 0; i < cfgs.length; i++) {
+      if (el.closest(cfgs[i].container)) return true;
+    }
+    return false;
+  }
+
+  function getTabButtons() {
+    const root = getCalcRoot();
+    return $$(TAB_BTN_SELECTOR, root).filter(btn => !btn.closest(EXCLUDED_SELECTOR));
+  }
+
+  function getTabId(btn, idx) {
+    return btn.id || btn.dataset.mode || btn.dataset.tab || btn.dataset.type || `t${idx}`;
+  }
+
+  // Deterministic static field list in DOM order (outside dynamic row containers and excluded chrome)
+  function getStaticFieldDescriptors() {
+    const root = getCalcRoot();
+    const rawFields = $$('input, select, textarea', root).filter(el => {
+      if (!isEditableField(el)) return false;
+      if (el.closest(EXCLUDED_SELECTOR)) return false;
+      if (isInsideDynamicContainer(el)) return false;
+      if (page === 'form-four-gpa-calculator' && el.id === 'extraSubjectSelect') return false;
+      if (page === 'job-application-tracker' && (el.id === 'searchInput' || el.id === 'statusFilter')) return false;
+      return true;
+    });
+
+    const idCounts = {};
+    const nameCounts = {};
+    rawFields.forEach(el => {
+      if (el.id) idCounts[el.id] = (idCounts[el.id] || 0) + 1;
+      if (el.name && el.type !== 'radio') nameCounts[el.name] = (nameCounts[el.name] || 0) + 1;
+    });
+
+    let unkeyedCounter = 0;
+    return rawFields.map(el => {
+      let key = '';
+      if (el.type === 'radio' && el.name) {
+        key = el.name;
+      } else if (el.id && idCounts[el.id] === 1) {
+        key = el.id;
+      } else if (el.name && nameCounts[el.name] === 1) {
+        key = el.name;
+      } else {
+        key = `_u${unkeyedCounter++}`;
+      }
+      return { el, key };
+    });
+  }
+
+  function dispatchFieldEvents(el) {
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  function setFieldValue(el, rawValue) {
+    if (!el) return;
+    if (el.type === 'checkbox') {
+      const next = rawValue === '1' || rawValue === 'true';
+      if (el.checked !== next) {
+        el.checked = next;
+        dispatchFieldEvents(el);
+      }
+    } else if (el.type === 'radio') {
+      if (el.value === rawValue && !el.checked) {
+        el.checked = true;
+        dispatchFieldEvents(el);
+      }
+    } else {
+      const strVal = String(rawValue);
+      if (el.value !== strVal) {
+        el.value = strVal;
+        dispatchFieldEvents(el);
+      }
+    }
+  }
+
+  function encodeUtf8Base64Url(str) {
+    const bytes = new TextEncoder().encode(str);
+    let bin = '';
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  function decodeUtf8Base64Url(b64) {
+    const padded = b64.replace(/-/g, '+').replace(/_/g, '/');
+    const bin = atob(padded);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  function getValues() {
+    const values = [];
+
+    // 1. Active tab / mode buttons
+    const tabBtns = getTabButtons();
+    if (tabBtns.length > 0) {
+      const activeTabs = tabBtns
+        .map((btn, idx) => ({ btn, id: getTabId(btn, idx) }))
+        .filter(({ btn }) => btn.classList.contains('active') || btn.getAttribute('aria-selected') === 'true')
+        .map(({ id }) => id);
+      if (activeTabs.length > 0) {
+        values.push({ key: '_tab', value: activeTabs.join(',') });
+      }
+    }
+
+    // 2. Multi-action button state (Encode/Decode, Format/Minify, Text Case/Cleanup)
+    if (lastActionBtnId) {
+      values.push({ key: '_act', value: lastActionBtnId });
+    }
+    if (page === 'text-case-converter-cleanup') {
+      const activeCase = $('.btn-case.active')?.dataset?.action || lastCaseAction;
+      const activeClean = $('.btn-clean.active')?.dataset?.clean || lastCleanAction;
+      if (activeCase) values.push({ key: '_case', value: activeCase });
+      if (activeClean) values.push({ key: '_clean', value: activeClean });
+    }
+
+    // 3. Static fields (only emit visible fields when page has tabs/modes so hidden tabs don't pollute URL)
+    const hasTabs = tabBtns.length > 0;
+    const descriptors = getStaticFieldDescriptors();
+    const emittedRadioGroups = new Set();
+
+    descriptors.forEach(({ el, key }) => {
+      if (hasTabs && !isElementVisible(el)) return;
+      if (page === 'job-application-tracker' && !$('#trackerForm')?.classList.contains('open')) return;
+
+      if (el.type === 'radio') {
+        if (!el.checked || emittedRadioGroups.has(key)) return;
+        emittedRadioGroups.add(key);
+        values.push({ key, value: el.value });
+      } else if (el.type === 'checkbox') {
+        values.push({ key, value: el.checked ? '1' : '0' });
+      } else if (el.value !== undefined && String(el.value).trim() !== '') {
+        values.push({ key, value: el.value });
+      }
+    });
+
+    // 4. Dynamic row containers
+    const dynConfigs = DYNAMIC_CONTAINERS[page] || [];
+    dynConfigs.forEach(cfg => {
+      const containerEl = $(cfg.container);
+      if (!containerEl) return;
+      if (hasTabs && !isElementVisible(containerEl)) return;
+
+      const rows = $$(cfg.row, containerEl);
+      if (!rows.length) return;
+
+      if (cfg.prefix === 'gpa') {
+        // Preserve course1Name / course1Grade / course1Credits for academic-compare.js compatibility
+        let hasAnyRowVal = false;
+        const gpaVals = [];
+        rows.forEach((row, rIdx) => {
+          const rowFields = $$('input, select, textarea', row).filter(isEditableField);
+          const nameVal = rowFields[0]?.value || '';
+          const gradeVal = rowFields[1]?.value || '';
+          const credVal = rowFields[2]?.value || '';
+          if (nameVal || gradeVal || credVal) hasAnyRowVal = true;
+          if (nameVal !== '') gpaVals.push({ key: `course${rIdx + 1}Name`, value: nameVal });
+          if (gradeVal !== '') gpaVals.push({ key: `course${rIdx + 1}Grade`, value: gradeVal });
+          if (credVal !== '') gpaVals.push({ key: `course${rIdx + 1}Credits`, value: credVal });
+        });
+        if (hasAnyRowVal) {
+          values.push({ key: '_rc_gpa', value: String(rows.length) });
+          values.push(...gpaVals);
+        }
+        return;
+      }
+
+      const rowEntries = [];
+      let hasNonEmpty = false;
+      rows.forEach((row, rIdx) => {
+        const rowFields = $$('input, select, textarea', row).filter(isEditableField);
+        rowFields.forEach((f, cIdx) => {
+          const k = `${cfg.prefix}${rIdx}_${cIdx}`;
+          if (f.type === 'checkbox') {
+            if (f.checked) hasNonEmpty = true;
+            rowEntries.push({ key: k, value: f.checked ? '1' : '0' });
+          } else if (f.value !== undefined && f.value !== '') {
+            hasNonEmpty = true;
+            rowEntries.push({ key: k, value: f.value });
+          }
+        });
+      });
+
+      if (hasNonEmpty) {
+        values.push({ key: `_rc_${cfg.prefix}`, value: String(rows.length) });
+        values.push(...rowEntries);
+      }
+    });
+
+    // 5. Special tool: Form Four GPA Calculator (subject rows use data-subject + removable extra electives)
+    if (page === 'form-four-gpa-calculator') {
+      const rows = $$('#subjectList .subject-row');
+      const extras = [];
+      const gradePairs = [];
+      rows.forEach((row, idx) => {
+        const subj = row.dataset.subject || '';
+        const isRemovable = !!row.querySelector('.btn-remove');
+        if (isRemovable && subj) extras.push(subj);
+        const g = row.querySelector('.subject-grade')?.value || '';
+        if (g) gradePairs.push({ key: `ff_${idx}`, value: g });
+      });
+      if (extras.length > 0) {
+        values.push({ key: '_ffExtra', value: extras.join('|') });
+      }
+      values.push(...gradePairs);
+    }
+
+    // 6. Special tool: Online Shop Scam Checker (.scam-check checkboxes live inside #results)
+    if (page === 'online-shop-scam-checker') {
+      const checkedIndices = [];
+      $$('.scam-check').forEach((cb, idx) => {
+        if (cb.checked) checkedIndices.push(idx);
+      });
+      if (checkedIndices.length > 0) {
+        values.push({ key: '_checks', value: checkedIndices.join(',') });
+      }
+    }
+
+    // 7. Special tool: Job Application Tracker (serialize saved localStorage jobs if present)
+    if (page === 'job-application-tracker') {
+      try {
+        const raw = localStorage.getItem('afriwidgetJobsV1');
+        const jobs = raw ? JSON.parse(raw) : [];
+        if (Array.isArray(jobs) && jobs.length > 0) {
+          const compact = jobs.slice(0, 20).map(j => ({
+            id: j.id,
+            company: j.company,
+            title: j.title,
+            location: j.location || '',
+            salary: j.salary || '',
+            url: j.url || '',
+            appliedDate: j.appliedDate || '',
+            status: j.status || 'applied',
+            interviewDate: j.interviewDate || '',
+            followUpDate: j.followUpDate || '',
+            notes: (j.notes || '').slice(0, 160)
+          }));
+          values.push({ key: '_jobs', value: encodeUtf8Base64Url(JSON.stringify(compact)) });
+        }
+      } catch {
+        // Ignore storage read issues
+      }
+    }
+
     return values;
   }
 
-  function getShareUrl(adapterConfig) {
+  function getShareUrl() {
     const url = new URL(location.href.split('?')[0]);
     url.search = '';
-    const vals = getValues(adapterConfig);
+    const vals = getValues();
     vals.forEach(({ key, value }) => {
       url.searchParams.set(key, value);
     });
@@ -1004,6 +1139,16 @@
       url.searchParams.set('shared', '1');
     }
     return url.toString();
+  }
+
+  function getVisibleResultSummary() {
+    const host = $('#results') || $('#cfResults') || $('#resultsCard') || $('.results');
+    if (!host || !isElementVisible(host)) return '';
+    const big = host.querySelector('[class*="-big"], .results-title, #resultHeadline, .bmi-number');
+    if (!big) return '';
+    const text = (big.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!text || text === '—' || text === '-' || text === '0') return '';
+    return text.slice(0, 80);
   }
 
   window.showAfriToast = showToast;
@@ -1072,9 +1217,13 @@
       });
     }
 
-    const title = document.title.replace(/\s*[|—-]\s*AfriWidget.*$/i, '').trim();
+    const title = document.title.replace(/\s*[|—–-]\s*AfriWidget.*$/i, '').trim();
+    const summary = getVisibleResultSummary();
+    const rawShareMsg = summary
+      ? `My ${title} result on AfriWidget: ${summary} — `
+      : `Check out this calculation on AfriWidget (${title}): `;
     const encodedUrl = encodeURIComponent(url);
-    const shareText = encodeURIComponent(`Check out this calculation on AfriWidget (${title}): `);
+    const shareText = encodeURIComponent(rawShareMsg);
 
     overlay.innerHTML = `
       <div class="afri-modal-card" role="dialog" aria-modal="true" aria-labelledby="afriShareModalTitle">
@@ -1099,7 +1248,7 @@
         <div class="afri-copy-box">
           <label for="afriShareLinkInput" class="afri-copy-label">Direct Shareable Link</label>
           <div class="afri-copy-box-row">
-            <input id="afriShareLinkInput" type="text" readonly value="${url}" class="afri-copy-input" spellcheck="false" />
+            <input id="afriShareLinkInput" type="text" readonly class="afri-copy-input" spellcheck="false" />
             <button id="afriModalCopyBtn" type="button" class="afri-copy-btn">
               ${icons.copy}
               <span>Copy</span>
@@ -1143,7 +1292,10 @@
     closeBtn?.addEventListener('click', () => overlay.classList.remove('afri-modal-open'));
 
     const input = overlay.querySelector('#afriShareLinkInput');
-    input?.addEventListener('click', () => input.select());
+    if (input) {
+      input.value = url;
+      input.addEventListener('click', () => input.select());
+    }
 
     const copyBtn = overlay.querySelector('#afriModalCopyBtn');
     copyBtn?.addEventListener('click', () => {
@@ -1155,15 +1307,19 @@
     });
   }
 
-  function handleShareClick(adapterConfig, triggerButton) {
-    const url = getShareUrl(adapterConfig);
+  function handleShareClick() {
+    const url = getShareUrl();
     const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-    const title = document.title.replace(/\s*[|—-]\s*AfriWidget.*$/i, '').trim();
+    const title = document.title.replace(/\s*[|—–-]\s*AfriWidget.*$/i, '').trim();
+    const summary = getVisibleResultSummary();
+    const shareText = summary
+      ? `My ${title} result on AfriWidget: ${summary}`
+      : `Check out my calculation on AfriWidget (${title}):`;
 
     if (isMobile && navigator.share) {
       navigator.share({
         title: `${title} – AfriWidget`,
-        text: `Check out my calculation on AfriWidget (${title}):`,
+        text: shareText,
         url: url
       }).catch(err => {
         if (err?.name !== 'AbortError') {
@@ -1201,14 +1357,14 @@
       'ovulation-cycle-calculator',
       'water-intake-calculator'
     ];
-    const currentSlug = location.pathname.split('/').pop().replace(/\.html$/, '');
+    const currentSlug = location.pathname.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '');
     if (healthSlugs.includes(currentSlug)) return true;
     if (document.getElementById('afriHealthProgress')) return true;
     if (document.querySelector('script[src*="health-progress.js"]')) return true;
     return false;
   }
 
-  function injectShareBar(adapterConfig) {
+  function injectShareBar() {
     if (document.getElementById('afriShareBar')) return;
     const host = findResultHost();
     const toc = document.querySelector('.toc');
@@ -1271,26 +1427,25 @@
     const copyBtn = document.getElementById('afriBarCopyBtn');
     copyBtn?.addEventListener('click', (e) => {
       e.preventDefault();
-      const url = getShareUrl(adapterConfig);
+      const url = getShareUrl();
       copyToClipboard(url, copyBtn);
     });
 
     const modalBtn = document.getElementById('afriBarModalBtn');
     modalBtn?.addEventListener('click', (e) => {
       e.preventDefault();
-      handleShareClick(adapterConfig, modalBtn);
+      handleShareClick();
     });
 
     // Also support any inline share buttons marked with data-share-btn or .share-btn
     $$('[data-share-btn], .share-btn, #shareBtn, #shareResultsBtn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        handleShareClick(adapterConfig, btn);
+        handleShareClick();
       });
     });
   }
 
-  
   function injectDonationCard() {
     if (document.getElementById('afriDonationCard')) return;
 
@@ -1357,55 +1512,340 @@
   }
   window.afriInjectDonationCard = injectDonationCard;
 
-  function restoreInputs(adapterConfig) {
-    if (!hasSharedInputs) return;
+  function reconcileRowCount(containerEl, rowSelector, addBtnSelector, removeBtnSelector, targetCount) {
+    if (!containerEl || !isFinite(targetCount) || targetCount < 1) return;
+    const capped = Math.min(40, Math.max(1, targetCount));
+    const addBtn = addBtnSelector ? $(addBtnSelector) : null;
 
-    const values = Array.from(params.entries())
-      .filter(([key]) => key !== 'shared')
-      .map(([key, value]) => ({ key, value }));
+    let guard = 0;
+    while ($$(rowSelector, containerEl).length < capped && addBtn && guard < 45) {
+      const before = $$(rowSelector, containerEl).length;
+      addBtn.click();
+      if ($$(rowSelector, containerEl).length <= before) break;
+      guard++;
+    }
 
-    if (adapterConfig && typeof adapterConfig.restore === 'function') {
-      adapterConfig.restore(values);
-    } else {
-      const form = $('form') || $('.calc-panel');
-      if (form) {
-        // Handle unit toggle if imperial values exist
-        if (params.has('weightLbs') || params.has('heightFeet')) {
-          $('#unitImperial')?.click();
+    guard = 0;
+    while ($$(rowSelector, containerEl).length > capped && $$(rowSelector, containerEl).length > 1 && guard < 45) {
+      const rows = $$(rowSelector, containerEl);
+      const before = rows.length;
+      const lastRow = rows[rows.length - 1];
+      const remBtn = removeBtnSelector ? $(removeBtnSelector, lastRow) : null;
+      if (remBtn) {
+        remBtn.click();
+      } else {
+        break;
+      }
+      if ($$(rowSelector, containerEl).length >= before) break;
+      guard++;
+    }
+  }
+
+  function triggerCalculation() {
+    // Skip auto-submit on file-required tools when no file is present
+    if (page === 'exif-remover' || page === 'image-resizer-webp-converter') {
+      return;
+    }
+    if (page === 'document-converter') {
+      const ta = $('#textInput');
+      const btn = $('#convertBtn');
+      if (ta && ta.value.trim() && btn && !btn.disabled) {
+        btn.click();
+      }
+      return;
+    }
+    if (page === 'job-application-tracker') {
+      if (params.has('fCompany') && params.has('fTitle')) {
+        const f = $('#trackerForm');
+        if (f && f.classList.contains('open')) {
+          if (typeof f.requestSubmit === 'function') f.requestSubmit();
+          else f.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
         }
+      }
+      return;
+    }
 
-        values.forEach(({ key, value }) => {
-          let el = document.getElementById(key) || form.querySelector(`[name="${CSS.escape(key)}"]`);
-          if (!el) {
-            const radios = form.querySelectorAll(`input[type="radio"][name="${CSS.escape(key)}"]`);
-            radios.forEach(r => {
-              if (r.value === value) {
-                r.checked = true;
-                r.dispatchEvent(new Event('change', { bubbles: true }));
-              }
-            });
-            return;
-          }
-
-          if (el.type === 'checkbox') {
-            el.checked = value === '1' || value === 'true';
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-          } else if (el.type === 'radio') {
-            el.checked = el.value === value;
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-          } else {
-            el.value = value;
-            el.dispatchEvent(new Event('input', { bubbles: true }));
-            el.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-        });
+    // Explicit multi-action button restore
+    const actId = params.get('_act');
+    if (actId) {
+      const actBtn = document.getElementById(actId);
+      if (actBtn && !actBtn.disabled) {
+        actBtn.click();
+        return;
       }
     }
 
-    // Trigger calculation
+    if (page === 'text-case-converter-cleanup') {
+      const esc = (v) => (typeof CSS !== 'undefined' && typeof CSS.escape === 'function') ? CSS.escape(v) : v;
+      const caseAct = params.get('_case');
+      const cleanAct = params.get('_clean');
+      if (caseAct) $(`.btn-case[data-action="${esc(caseAct)}"]`)?.click();
+      if (cleanAct) $(`.btn-clean[data-clean="${esc(cleanAct)}"]`)?.click();
+      const runBtn = $('#runBtn');
+      if (runBtn && !caseAct && !cleanAct) runBtn.click();
+      return;
+    }
+
+    const root = getCalcRoot();
+
+    // Prefer active/visible <form> inside calculator root
+    const visibleForms = $$('form', root).filter(f => !f.closest(EXCLUDED_SELECTOR) && isElementVisible(f));
+    if (visibleForms.length > 0) {
+      const targetForm = visibleForms[0];
+      const submitBtn = $$('.btn-calc, button[type="submit"], input[type="submit"], .btn-primary', targetForm)
+        .find(b => !b.disabled && isElementVisible(b));
+      if (submitBtn) {
+        submitBtn.click();
+        return;
+      }
+      if (typeof targetForm.requestSubmit === 'function') {
+        try {
+          targetForm.requestSubmit();
+          return;
+        } catch {
+          // Fall through to synthetic submit event
+        }
+      }
+      targetForm.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+      return;
+    }
+
+    // No-<form> tools: click primary calculation/action button inside visible calculator panel
+    const calcBtn = $$(
+      '#calcBtn, #calculateBtn, #convertBtn, #checkBtn, #runBtn, #encodeBtn, #formatBtn, #minifyBtn, .btn-calc, .btn-primary',
+      root
+    ).find(b => !b.closest(EXCLUDED_SELECTOR) && !b.disabled && isElementVisible(b));
+    if (calcBtn) {
+      calcBtn.click();
+    }
+  }
+
+  function restoreInputs() {
+    // Ignore Compare-with-a-Friend URLs (?compare=1 / ?cmp=... / ?f_v0=...) handled by icass-compare.js & academic-compare.js
+    if (!hasSharedInputs || params.has('cmp') || params.has('compare')) return;
+
+    let didMatchParam = params.get('shared') === '1';
+
+    // 1. Restore active tab / mode buttons first
+    const tabParam = params.get('_tab');
+    if (tabParam) {
+      const desiredIds = new Set(tabParam.split(',').filter(Boolean));
+      const tabBtns = getTabButtons();
+      tabBtns.forEach((btn, idx) => {
+        const id = getTabId(btn, idx);
+        if (desiredIds.has(id)) {
+          didMatchParam = true;
+          const alreadyActive = btn.classList.contains('active') || btn.getAttribute('aria-selected') === 'true';
+          if (!alreadyActive) btn.click();
+        }
+      });
+    } else if (params.has('weightLbs') || params.has('heightFeet')) {
+      didMatchParam = true;
+      $('#unitImperial')?.click();
+    } else if (page === 'document-converter' && (params.has('textInput') || params.has('text'))) {
+      didMatchParam = true;
+      $('#modeTextBtn')?.click();
+    }
+
+    if (params.has('_act') || params.has('_case') || params.has('_clean')) {
+      didMatchParam = true;
+    }
+
+    // Reveal optional toggle panels when their inputs are present in URL
+    if (page === 'switzerland-grade-calculator' && (params.has('priorGpa') || params.has('priorEcts'))) {
+      didMatchParam = true;
+      const priorBlock = $('#priorBlock');
+      if (priorBlock && priorBlock.classList.contains('hidden')) {
+        $('#priorToggle')?.click();
+      }
+    }
+    if (page === 'job-application-tracker' && params.has('fCompany') && !$('#trackerForm')?.classList.contains('open')) {
+      didMatchParam = true;
+      $('#addBtn')?.click();
+    }
+
+    // Legacy parameter alias support for older shared links
+    if (page === 'tertiary-gpa-cgpa-calculator' && params.has('scale') && !params.has('scaleSelect')) {
+      params.set('scaleSelect', params.get('scale'));
+    }
+
+    // 2. Restore static <select>, checkbox, and radio controls FIRST in DOM order (unlocks cascading dropdowns & conditional sections)
+    const staticDescriptors = getStaticFieldDescriptors();
+    staticDescriptors.forEach(({ el, key }) => {
+      const tag = el.tagName.toLowerCase();
+      if (tag === 'select' || el.type === 'checkbox' || el.type === 'radio') {
+        if (params.has(key)) {
+          didMatchParam = true;
+          setFieldValue(el, params.get(key));
+        }
+      }
+    });
+
+    // Re-query static descriptors in case a cascading select / toggle unlocked or updated options, then set all static fields
+    getStaticFieldDescriptors().forEach(({ el, key }) => {
+      if (params.has(key)) {
+        didMatchParam = true;
+        setFieldValue(el, params.get(key));
+      }
+    });
+
+    // 3. Reconcile and populate Dynamic Row Containers
+    const dynConfigs = DYNAMIC_CONTAINERS[page] || [];
+    dynConfigs.forEach(cfg => {
+      const containerEl = $(cfg.container);
+      if (!containerEl) return;
+
+      if (cfg.prefix === 'gpa') {
+        let maxCourse = parseInt(params.get('_rc_gpa') || '0', 10) || 0;
+        params.forEach((_, k) => {
+          const m = k.match(/^course(\d+)(?:Name|Grade|Credits)$/);
+          if (m) maxCourse = Math.max(maxCourse, parseInt(m[1], 10));
+        });
+        if (maxCourse > 0) {
+          didMatchParam = true;
+          reconcileRowCount(containerEl, cfg.row, cfg.addBtn, cfg.removeBtn, maxCourse);
+          for (let rIdx = 0; rIdx < maxCourse; rIdx++) {
+            const row = $$(cfg.row, containerEl)[rIdx];
+            if (!row) continue;
+            const rowFields = $$('input, select, textarea', row).filter(isEditableField);
+            const nKey = `course${rIdx + 1}Name`;
+            const gKey = `course${rIdx + 1}Grade`;
+            const cKey = `course${rIdx + 1}Credits`;
+            if (params.has(nKey) && rowFields[0]) setFieldValue(rowFields[0], params.get(nKey));
+            if (params.has(gKey) && rowFields[1]) setFieldValue(rowFields[1], params.get(gKey));
+            if (params.has(cKey) && rowFields[2]) setFieldValue(rowFields[2], params.get(cKey));
+          }
+        }
+        return;
+      }
+
+      // Also support legacy course1Name / subject1Name keys on tertiary-gpa-cgpa & igcse-alevel-gpa-converter
+      let targetCount = parseInt(params.get(`_rc_${cfg.prefix}`) || '0', 10) || 0;
+      const prefixRe = new RegExp(`^${cfg.prefix}(\\d+)_(\\d+)$`);
+      params.forEach((_, k) => {
+        const m = k.match(prefixRe);
+        if (m) targetCount = Math.max(targetCount, parseInt(m[1], 10) + 1);
+      });
+
+      if (targetCount > 0) {
+        didMatchParam = true;
+        reconcileRowCount(containerEl, cfg.row, cfg.addBtn, cfg.removeBtn, targetCount);
+        for (let rIdx = 0; rIdx < targetCount; rIdx++) {
+          const row = $$(cfg.row, containerEl)[rIdx];
+          if (!row) continue;
+          const rowFields = $$('input, select, textarea', row).filter(isEditableField);
+          rowFields.forEach((_, cIdx) => {
+            // Re-query live row & field on each column in case setting col 0 re-rendered row options (e.g. UCAS .q-type -> .q-grade)
+            const liveRow = $$(cfg.row, containerEl)[rIdx];
+            if (!liveRow) return;
+            const liveFields = $$('input, select, textarea', liveRow).filter(isEditableField);
+            const k = `${cfg.prefix}${rIdx}_${cIdx}`;
+            if (params.has(k) && liveFields[cIdx]) {
+              setFieldValue(liveFields[cIdx], params.get(k));
+            }
+          });
+        }
+      } else if (page === 'igcse-alevel-gpa-converter' || page === 'tertiary-gpa-cgpa-calculator') {
+        // Legacy subject1Name / course1Name fallback
+        const legacyRe = page === 'igcse-alevel-gpa-converter'
+          ? /^subject(\d+)(Name|Level|Grade)$/
+          : /^course(\d+)(Name|Grade|Credits)$/;
+        let legacyMax = 0;
+        params.forEach((_, k) => {
+          const m = k.match(legacyRe);
+          if (m) legacyMax = Math.max(legacyMax, parseInt(m[1], 10));
+        });
+        if (legacyMax > 0) {
+          didMatchParam = true;
+          reconcileRowCount(containerEl, cfg.row, cfg.addBtn, cfg.removeBtn, legacyMax);
+          for (let rIdx = 0; rIdx < legacyMax; rIdx++) {
+            const row = $$(cfg.row, containerEl)[rIdx];
+            if (!row) continue;
+            const rowFields = $$('input, select, textarea', row).filter(isEditableField);
+            if (page === 'igcse-alevel-gpa-converter') {
+              if (params.has(`subject${rIdx + 1}Name`) && rowFields[0]) setFieldValue(rowFields[0], params.get(`subject${rIdx + 1}Name`));
+              if (params.has(`subject${rIdx + 1}Level`) && rowFields[1]) setFieldValue(rowFields[1], params.get(`subject${rIdx + 1}Level`));
+              if (params.has(`subject${rIdx + 1}Grade`) && rowFields[2]) setFieldValue(rowFields[2], params.get(`subject${rIdx + 1}Grade`));
+            } else {
+              if (params.has(`course${rIdx + 1}Name`) && rowFields[0]) setFieldValue(rowFields[0], params.get(`course${rIdx + 1}Name`));
+              if (params.has(`course${rIdx + 1}Grade`) && rowFields[1]) setFieldValue(rowFields[1], params.get(`course${rIdx + 1}Grade`));
+              if (params.has(`course${rIdx + 1}Credits`) && rowFields[2]) setFieldValue(rowFields[2], params.get(`course${rIdx + 1}Credits`));
+            }
+          }
+        }
+      }
+    });
+
+    // 4. Special restore: Form Four GPA Calculator
+    if (page === 'form-four-gpa-calculator') {
+      const extraStr = params.get('_ffExtra');
+      if (extraStr) {
+        didMatchParam = true;
+        const extraSel = $('#extraSubjectSelect');
+        const addBtn = $('#addSubjectBtn');
+        if (extraSel && addBtn) {
+          extraStr.split('|').filter(Boolean).forEach(subjName => {
+            extraSel.value = subjName;
+            addBtn.click();
+          });
+        }
+      }
+      $$('#subjectList .subject-row').forEach((row, idx) => {
+        const gKey = `ff_${idx}`;
+        if (params.has(gKey)) {
+          didMatchParam = true;
+          const gSel = row.querySelector('.subject-grade');
+          if (gSel) setFieldValue(gSel, params.get(gKey));
+        }
+      });
+    }
+
+    // 5. Special restore: Job Application Tracker (_jobs payload)
+    if (page === 'job-application-tracker' && params.has('_jobs')) {
+      didMatchParam = true;
+      try {
+        const decoded = JSON.parse(decodeUtf8Base64Url(params.get('_jobs')));
+        if (Array.isArray(decoded) && decoded.length > 0) {
+          const existingRaw = localStorage.getItem('afriwidgetJobsV1');
+          const existing = existingRaw ? JSON.parse(existingRaw) : [];
+          const existingIds = new Set(Array.isArray(existing) ? existing.map(j => j.id) : []);
+          const toImport = decoded.filter(j => j && j.company && j.title && (!j.id || !existingIds.has(j.id)));
+          if (toImport.length > 0) {
+            const importInput = $('#importFile');
+            if (importInput && typeof DataTransfer !== 'undefined' && typeof File !== 'undefined') {
+              const dt = new DataTransfer();
+              dt.items.add(new File([JSON.stringify(toImport)], 'shared-jobs.json', { type: 'application/json' }));
+              importInput.files = dt.files;
+              importInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          }
+        }
+      } catch {
+        // Ignore malformed shared jobs payload
+      }
+    }
+
+    if (page === 'online-shop-scam-checker' && params.has('_checks')) {
+      didMatchParam = true;
+    }
+
+    if (!didMatchParam) return;
+
+    // 6. Trigger calculation & post-calculation restores
     setTimeout(() => {
       try {
-        adapterConfig?.calculate?.();
+        triggerCalculation();
+        if (page === 'online-shop-scam-checker' && params.has('_checks')) {
+          const wanted = new Set(params.get('_checks').split(',').map(s => parseInt(s, 10)));
+          const boxes = $$('.scam-check');
+          boxes.forEach((cb, idx) => {
+            const next = wanted.has(idx);
+            if (cb.checked !== next) {
+              cb.checked = next;
+              dispatchFieldEvents(cb);
+            }
+          });
+        }
       } catch (err) {
         console.warn('Share auto-calculate notice:', err);
       }
@@ -1458,17 +1898,17 @@
     ensurePwaMetaTags();
     ensureRecentTools();
     injectShareStyles();
-    const config = getAdapter();
-    injectShareBar(config);
+    setupActionTrackers();
+    injectShareBar();
     injectDonationCard();
-    restoreInputs(config);
+    restoreInputs();
 
     // Re-verify donation card on calculate button click or calculation submission
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.btn-calc, button[type="submit"], #calcBtn, #calculateBtn, input[type="submit"]:not(.pp-VXH3B6743NDVE)');
       if (btn) {
         setTimeout(() => {
-          injectShareBar(config);
+          injectShareBar();
           injectDonationCard();
           if (typeof window.afriEnsureResultSectionsOrder === 'function') {
             window.afriEnsureResultSectionsOrder();
@@ -1480,7 +1920,7 @@
     document.addEventListener('submit', (e) => {
       if (e.target && e.target.classList.contains('afri-paypal-form')) return;
       setTimeout(() => {
-        injectShareBar(config);
+        injectShareBar();
         injectDonationCard();
         if (typeof window.afriEnsureResultSectionsOrder === 'function') {
           window.afriEnsureResultSectionsOrder();

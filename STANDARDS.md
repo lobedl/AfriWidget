@@ -55,7 +55,7 @@ Every page must include:
 - Open Graph tags: og:title, og:description, og:url, og:type, og:image
 - Twitter Card tags: twitter:card, twitter:title, twitter:description
 - Google Analytics GA4: `G-6V491CW7H0`
-- AdSense (lazy-loaded): `ca-pub-2239061398283474`
+- AdSense (`<head>` script): `ca-pub-2239061398283474`
 - JSON-LD block containing:
   - WebApplication schema
   - BreadcrumbList schema

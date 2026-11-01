@@ -6434,7 +6434,6 @@
     }
 
     // 2. Add result-card callout banner inside #results AFTER .breakdown-panel
-    // (preserving #afriResultAd immediately after .results-head)
     const resultsBox = document.getElementById('results');
     if (resultsBox && !document.getElementById('weaknessCalloutBanner')) {
       const banner = document.createElement('div');
