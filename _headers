@@ -45,6 +45,10 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
 
+/*.webp
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
 /og-image.*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
