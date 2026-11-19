@@ -17,6 +17,328 @@
   const IGNORED_QUERY_RE = /^(?:shared|cmp|compare|f_[a-z0-9_]+|utm_[a-z0-9_]+|fbclid|gclid|msclkid|twclid|mc_cid|mc_eid|_ga|_gl|ref)$/i;
   const hasSharedInputs = Array.from(params.keys()).some(k => !IGNORED_QUERY_RE.test(k));
 
+  // =========================================================================
+  // AfriWidget GA4 Custom Event Tracking Engine (Measurement ID: G-6V491CW7H0)
+  // Zero PII, zero calculator inputs sent, zero duplicate counting.
+  // =========================================================================
+  const GA_MEASUREMENT_ID = 'G-6V491CW7H0';
+  const GA_NON_TOOL_PAGES = new Set([
+    '', 'home', 'index', 'education', 'finance', 'health', 'productivity',
+    'business', 'use-cases', 'about', 'contact', 'faq', 'privacy-policy',
+    'terms', 'cookie-policy', 'adsense-disclaimer', '404'
+  ]);
+
+  // Verified 126-tool canonical directory (name + category)
+  const GA_TOOL_META = {
+    "acsee-points-calculator":{"n":"ACSEE Points Calculator","c":"Education"},
+    "ai-business-name-generator":{"n":"AI Business Name Generator","c":"Business"},
+    "ai-gig-description-generator":{"n":"AI Gig Description Generator","c":"Business"},
+    "ai-paraphrasing-tool":{"n":"AI Paraphrasing Tool","c":"Productivity"},
+    "ai-product-description-generator":{"n":"AI Product Description Generator","c":"Business"},
+    "ai-text-summarizer":{"n":"AI Text Summarizer","c":"Productivity"},
+    "atar-calculator":{"n":"ATAR Calculator Australia","c":"Education"},
+    "australia-scholarship-finder":{"n":"Australia Scholarship Finder","c":"Education"},
+    "base64-encoder-decoder":{"n":"Base64 Encoder and Decoder","c":"Productivity"},
+    "bece-aggregate-calculator":{"n":"BECE Aggregate Calculator","c":"Education"},
+    "bece-cssps-placement-estimator":{"n":"BECE CSSPS Placement Estimator","c":"Education"},
+    "bmi-calculator":{"n":"BMI, BMR & TDEE Calculator","c":"Health"},
+    "body-fat-calculator":{"n":"Body Fat Calculator","c":"Health"},
+    "break-even-calculator":{"n":"Break-Even Point Calculator","c":"Finance"},
+    "calorie-burn-calculator":{"n":"Calorie Burn Calculator","c":"Health"},
+    "canada-gpa-calculator":{"n":"Canada GPA Calculator","c":"Education"},
+    "canada-student-loan-repayment-calculator":{"n":"Canada Student Loan Repayment Calculator","c":"Education"},
+    "canada-study-planner":{"n":"Canada Study Planner","c":"Education"},
+    "canada-university-admission-chance-calculator":{"n":"Canada University Admission Chance Calculator","c":"Education"},
+    "compound-interest":{"n":"Compound Interest Calculator","c":"Finance"},
+    "currency-converter":{"n":"Currency Converter","c":"Finance"},
+    "daily-calorie-needs-calculator":{"n":"Daily Calorie Needs Calculator","c":"Health"},
+    "data-file-unit-converter":{"n":"Data Size & File Unit Converter","c":"Productivity"},
+    "debt-payoff-calculator":{"n":"Debt Payoff Calculator","c":"Finance"},
+    "document-converter":{"n":"Document Converter","c":"Productivity"},
+    "exif-remover":{"n":"Metadata & EXIF Remover","c":"Productivity"},
+    "form-four-gpa-calculator":{"n":"Form Four GPA Calculator","c":"Education"},
+    "freelance-rate-calculator":{"n":"Freelance Hourly Rate Calculator","c":"Finance"},
+    "germany-abitur-grade-calculator":{"n":"Germany Abitur Grade Calculator","c":"Education"},
+    "germany-gpa-converter":{"n":"Germany GPA Converter","c":"Education"},
+    "ghana-nursing-training-admission-calculator":{"n":"Ghana Nursing Training Admission Calculator","c":"Education"},
+    "ghana-university-gpa-calculator":{"n":"Ghana University GPA & CWA Calculator","c":"Education"},
+    "gpa-calculator":{"n":"College & University GPA Calculator","c":"Education"},
+    "healthy-weight-range-calculator":{"n":"Healthy Weight Range Calculator","c":"Health"},
+    "hecs-help-repayment-calculator":{"n":"HECS-HELP Repayment Calculator","c":"Education"},
+    "hourly-to-salary":{"n":"Hourly to Salary Converter","c":"Finance"},
+    "html-minifier":{"n":"HTML Minifier","c":"Productivity"},
+    "hydration-reminder-calculator":{"n":"Hydration Reminder Calculator","c":"Health"},
+    "icass-calculator":{"n":"ICASS Calculator","c":"Education"},
+    "ideal-weight-calculator":{"n":"Ideal Weight Calculator","c":"Health"},
+    "igcse-alevel-gpa-converter":{"n":"IGCSE & A-Level GPA Converter","c":"Education"},
+    "image-resizer-webp-converter":{"n":"Image Resizer & WebP Converter","c":"Productivity"},
+    "invoice-receipt-generator":{"n":"Invoice & Receipt Generator","c":"Productivity"},
+    "jamb-admission-chance-checker":{"n":"JAMB Admission Chance Checker","c":"Education"},
+    "jamb-score-calculator":{"n":"JAMB Score Calculator","c":"Education"},
+    "jamb-utme-aggregate-calculator":{"n":"JAMB UTME Aggregate Calculator","c":"Education"},
+    "job-application-tracker":{"n":"Job Application Tracker","c":"Productivity"},
+    "job-scam-checker":{"n":"Job Scam Checker","c":"Productivity"},
+    "json-formatter-validator":{"n":"JSON Formatter & Validator","c":"Productivity"},
+    "kcpe-performance-calculator":{"n":"KCPE Performance Calculator","c":"Education"},
+    "kcse-eligibility-tier-checker":{"n":"KCSE Eligibility Tier Checker","c":"Education"},
+    "kcse-grade-calculator":{"n":"KCSE Grade Calculator","c":"Education"},
+    "kcse-kuccps-cluster-calculator":{"n":"KCSE KUCCPS Cluster Calculator","c":"Education"},
+    "kenya-university-gpa-calculator":{"n":"Kenya University GPA Calculator","c":"Education"},
+    "keyword-density-checker":{"n":"Keyword Density Checker","c":"Productivity"},
+    "kuccps-cluster-points-calculator":{"n":"KUCCPS Cluster Points Calculator","c":"Education"},
+    "loan-calculator":{"n":"Loan Calculator","c":"Finance"},
+    "markdown-to-html-converter":{"n":"Markdown to HTML Converter","c":"Productivity"},
+    "matric-sba-exam-calculator":{"n":"Matric SBA + Exam Calculator","c":"Education"},
+    "meta-pixel-checker":{"n":"Meta Title & Description Pixel Checker","c":"Productivity"},
+    "mortgage-calculator":{"n":"Mortgage Calculator","c":"Finance"},
+    "new-zealand-ncea-credits-calculator":{"n":"NCEA Credits & Rank Score Calculator","c":"Education"},
+    "new-zealand-study-planner":{"n":"New Zealand Study Planner","c":"Education"},
+    "nigerian-university-cgpa-calculator":{"n":"Nigerian University CGPA Calculator","c":"Education"},
+    "norway-gpa-calculator":{"n":"Norway GPA Calculator","c":"Education"},
+    "nsfas-eligibility-checker":{"n":"NSFAS Eligibility Checker","c":"Education"},
+    "nsfas-tvet-allowance-calculator":{"n":"NSFAS TVET Allowance Calculator","c":"Education"},
+    "olevel-subject-combination-checker":{"n":"WAEC & NECO Subject Combination Checker","c":"Education"},
+    "online-shop-scam-checker":{"n":"Online Shop Scam Checker","c":"Productivity"},
+    "ovulation-cycle-calculator":{"n":"Ovulation & Cycle Calculator","c":"Health"},
+    "password-generator":{"n":"Secure Password Generator","c":"Productivity"},
+    "paye-calculator":{"n":"PAYE & Net Salary Calculator","c":"Finance"},
+    "paypal-fee-calculator":{"n":"PayPal Fee Calculator","c":"Finance"},
+    "percentage-calculator":{"n":"Percentage Calculator","c":"Finance"},
+    "ple-aggregate-calculator":{"n":"PLE Aggregate Calculator","c":"Education"},
+    "post-utme-aggregate-calculator":{"n":"Post-UTME Aggregate Calculator","c":"Education"},
+    "pricing-calculator":{"n":"Pricing Calculator","c":"Finance"},
+    "profit-margin-calculator":{"n":"Profit Margin Calculator","c":"Finance"},
+    "qr-code-generator":{"n":"QR Code Generator","c":"Productivity"},
+    "reading-time-speech-estimator":{"n":"Reading Time & Speech Duration Estimator","c":"Productivity"},
+    "rent-affordability":{"n":"Rent Affordability Calculator","c":"Finance"},
+    "robots-txt-generator":{"n":"Robots.txt Generator","c":"Productivity"},
+    "roi-calculator":{"n":"ROI Calculator","c":"Finance"},
+    "savings-calculator":{"n":"Savings Calculator","c":"Finance"},
+    "seo-meta-generator":{"n":"SEO Meta Tag Generator","c":"Productivity"},
+    "south-africa-study-planner":{"n":"South Africa Study Planner","c":"Education"},
+    "south-african-aps-calculator":{"n":"South African APS Calculator","c":"Education"},
+    "south-african-tvet-nated-calculator":{"n":"TVET NATED Pass Calculator","c":"Education"},
+    "south-african-university-admission-calculator":{"n":"South African University Admission Calculator","c":"Education"},
+    "startup-cost-calculator":{"n":"Startup Cost Calculator","c":"Finance"},
+    "student-loan-repayment-calculator":{"n":"Student Loan Repayment Calculator","c":"Finance"},
+    "switzerland-grade-calculator":{"n":"Switzerland Grade Calculator","c":"Education"},
+    "switzerland-university-cost-calculator":{"n":"Switzerland University Cost Calculator","c":"Education"},
+    "tanzania-heslb-loan-calculator":{"n":"Tanzania HESLB Loan Calculator","c":"Education"},
+    "tanzania-university-admission-calculator":{"n":"Tanzania University Admission Calculator","c":"Education"},
+    "tanzania-university-gpa-calculator":{"n":"Tanzania University GPA Calculator","c":"Education"},
+    "tertiary-gpa-cgpa-calculator":{"n":"Tertiary GPA & CGPA Calculator","c":"Education"},
+    "text-case-converter-cleanup":{"n":"Text Case Converter & Cleanup Tool","c":"Productivity"},
+    "tvet-exam-target-mark-calculator":{"n":"TVET Exam Target Mark Calculator","c":"Education"},
+    "tvet-ncv-pass-calculator":{"n":"TVET NC(V) Pass Calculator","c":"Education"},
+    "uace-points-calculator":{"n":"UACE Points Calculator","c":"Education"},
+    "ucas-points-calculator":{"n":"UCAS Points Calculator","c":"Education"},
+    "uce-grade-calculator":{"n":"UCE Grade Calculator","c":"Education"},
+    "uganda-university-admission-calculator":{"n":"Uganda University Admission Calculator","c":"Education"},
+    "uganda-university-cgpa-calculator":{"n":"Uganda University CGPA Calculator","c":"Education"},
+    "uk-a-level-grade-calculator":{"n":"A-Level Grade Calculator","c":"Education"},
+    "uk-degree-classification-calculator":{"n":"UK Degree Classification Calculator","c":"Education"},
+    "uk-gcse-grade-calculator":{"n":"UK GCSE Grade Calculator","c":"Education"},
+    "uk-student-loan-finance-calculator":{"n":"UK Student Loan Calculator","c":"Education"},
+    "uneb-results-estimator":{"n":"UNEB Results Estimator","c":"Education"},
+    "unit-converter":{"n":"Unit Converter","c":"Productivity"},
+    "university-course-finder":{"n":"Australian University Course Finder","c":"Education"},
+    "university-cutoff-eligibility-checker":{"n":"University Cut-Off & Eligibility Checker","c":"Education"},
+    "waec-grade-calculator":{"n":"WAEC Grade Calculator","c":"Education"},
+    "wassce-aggregate-calculator":{"n":"WASSCE Aggregate Calculator","c":"Education"},
+    "water-intake-calculator":{"n":"Daily Water Intake Calculator","c":"Health"},
+    "whatsapp-direct-link-qr-generator":{"n":"WhatsApp Direct Link & QR Code Generator","c":"Productivity"},
+    "xml-sitemap-builder":{"n":"XML Sitemap Generator","c":"Productivity"},
+    "zambia-grade-12-points-calculator":{"n":"ECZ Grade 12 Points Calculator","c":"Education"},
+    "zambia-university-admission-calculator":{"n":"Zambia University Admission Calculator","c":"Education"},
+    "zambia-university-gpa-calculator":{"n":"Zambia University GPA Calculator","c":"Education"},
+    "zimbabwe-study-timetable-generator":{"n":"Zimbabwe Study Timetable Generator","c":"Education"},
+    "zimbabwe-university-entry-points-calculator":{"n":"Zimbabwe University Entry Points Calculator","c":"Education"},
+    "zimbabwe-university-gpa-calculator":{"n":"Zimbabwe University GPA Calculator","c":"Education"},
+    "zimsec-alevel-points-calculator":{"n":"ZIMSEC A-Level Points Calculator","c":"Education"},
+    "zimsec-olevel-points-calculator":{"n":"ZIMSEC O-Level Points Calculator","c":"Education"}
+  };
+
+  let gaToolOpenFired = false;
+  let gaIsRestoringSharedCalc = false;
+  let gaModalShareTrackedForOpen = false;
+  let gaLastShareEventTs = 0;
+  let gaAiInFlightCount = 0;
+  let gaActiveAttempt = null;
+  let gaAttemptSeq = 0;
+  let gaLastClickTriggerTs = 0;
+  let gaLastClickTriggerBtn = null;
+  let gaLastClickTriggerForm = null;
+  let gaLastNonCalcClickTs = 0;
+  let gaResultObserver = null;
+  let gaCalcListenersBound = false;
+
+  function isGaToolPage() {
+    if (!page || GA_NON_TOOL_PAGES.has(page)) return false;
+    return Boolean(GA_TOOL_META[page] || document.querySelector('.calc-panel, .calc-wrap'));
+  }
+
+  function getGaToolMeta() {
+    const entry = GA_TOOL_META[page];
+    let toolName = entry ? entry.n : '';
+    let toolCategory = entry ? entry.c : '';
+
+    if (!toolName) {
+      const h1 = document.querySelector('h1');
+      if (h1) {
+        const clone = h1.cloneNode(true);
+        clone.querySelectorAll('.seo-title-accent, svg, button').forEach(el => el.remove());
+        toolName = (clone.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+      if (!toolName) {
+        toolName = (document.title || page).split(/\s*[–—|-]\s*/)[0].trim() || page;
+      }
+    }
+
+    if (!toolCategory) {
+      const bcLinks = document.querySelectorAll('.breadcrumbs a, .breadcrumb a');
+      for (let i = 0; i < bcLinks.length; i++) {
+        const href = (bcLinks[i].getAttribute('href') || '').toLowerCase();
+        const m = href.match(/\/?(education|finance|health|productivity|business)(?:\.html)?$/);
+        if (m) {
+          toolCategory = m[1].charAt(0).toUpperCase() + m[1].slice(1);
+          break;
+        }
+      }
+      if (!toolCategory) {
+        const catEl = document.querySelector('.calc-panel-cat');
+        toolCategory = catEl ? catEl.textContent.trim() : 'General';
+      }
+    }
+
+    return {
+      tool_name: String(toolName).slice(0, 100),
+      tool_category: String(toolCategory).slice(0, 60),
+      tool_slug: String(page).slice(0, 100)
+    };
+  }
+
+  function trackGaEvent(eventName, extraParams) {
+    if (!isGaToolPage()) return;
+    try {
+      if (typeof window.gtag !== 'function') {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+      }
+      const meta = getGaToolMeta();
+      const payload = Object.assign({
+        tool_name: meta.tool_name,
+        tool_category: meta.tool_category,
+        tool_slug: meta.tool_slug,
+        page_location: window.location.origin + window.location.pathname,
+        send_to: GA_MEASUREMENT_ID
+      }, extraParams || {});
+      window.gtag('event', eventName, payload);
+    } catch {
+      // Never allow analytics to affect tool functionality
+    }
+  }
+
+  function trackGaToolOpen() {
+    if (gaToolOpenFired || !isGaToolPage()) return;
+    gaToolOpenFired = true;
+    trackGaEvent('tool_open');
+  }
+
+  function trackGaShareClick(method) {
+    const now = Date.now();
+    if (now - gaLastShareEventTs < 250) return;
+    gaLastShareEventTs = now;
+    trackGaEvent('share_click', method ? { share_method: String(method).slice(0, 40) } : undefined);
+  }
+
+  function installGaAlertObserver() {
+    if (typeof window.alert !== 'function' || window.alert.__afriGaAlertWrapped) return;
+    const origAlert = window.alert;
+    const wrappedAlert = function () {
+      if (gaActiveAttempt && !gaActiveAttempt.completed) {
+        gaActiveAttempt.aborted = true;
+        gaActiveAttempt = null;
+      }
+      return origAlert.apply(this, arguments);
+    };
+    wrappedAlert.__afriGaAlertWrapped = true;
+    window.alert = wrappedAlert;
+  }
+
+  function installGaFetchObserver() {
+    if (typeof window.fetch !== 'function' || window.fetch.__afriGaFetchWrapped) return;
+    const origFetch = window.fetch;
+    const wrappedFetch = function (input) {
+      let urlStr = '';
+      try {
+        if (typeof input === 'string') urlStr = input;
+        else if (input && typeof input.url === 'string') urlStr = input.url;
+      } catch {}
+
+      if (!/\/api\/ai-insight(?:$|[?#])/i.test(urlStr)) {
+        return origFetch.apply(this, arguments);
+      }
+
+      if (isGaToolPage()) {
+        gaAiInFlightCount++;
+        trackGaEvent('ai_request');
+      }
+
+      let settled = false;
+      const finishSuccess = () => {
+        if (settled) return;
+        settled = true;
+        gaAiInFlightCount = Math.max(0, gaAiInFlightCount - 1);
+        trackGaEvent('ai_response_success');
+      };
+      const finishError = (errType) => {
+        if (settled) return;
+        settled = true;
+        gaAiInFlightCount = Math.max(0, gaAiInFlightCount - 1);
+        trackGaEvent('ai_response_error', { error_type: String(errType || 'request_failed').slice(0, 40) });
+      };
+
+      try {
+        const promise = origFetch.apply(this, arguments);
+        if (!promise || typeof promise.then !== 'function') {
+          return promise;
+        }
+        promise.then((res) => {
+          if (!res || !res.ok) {
+            finishError(res ? ('http_' + res.status) : 'invalid_response');
+            return;
+          }
+          try {
+            res.clone().json().then((data) => {
+              const text = data && (data.insight || data.text || data.message || data.result);
+              if (typeof text === 'string' && text.trim().length > 0) {
+                finishSuccess();
+              } else {
+                finishError('empty_response');
+              }
+            }).catch(() => {
+              finishError('invalid_json');
+            });
+          } catch {
+            finishSuccess();
+          }
+        }, (err) => {
+          const name = (err && err.name === 'AbortError') ? 'aborted' : 'network_error';
+          finishError(name);
+        });
+        return promise;
+      } catch (syncErr) {
+        finishError('fetch_throw');
+        throw syncErr;
+      }
+    };
+    wrappedFetch.__afriGaFetchWrapped = true;
+    window.fetch = wrappedFetch;
+  }
+
+  installGaAlertObserver();
+  installGaFetchObserver();
+
   // Inject Self-Contained AfriWidget CSS (Brand styling, zero Tailwind, zero external dependencies)
   function injectShareStyles() {
     if (document.getElementById('afriwidget-share-styles')) return;
@@ -1299,7 +1621,21 @@
 
     const copyBtn = overlay.querySelector('#afriModalCopyBtn');
     copyBtn?.addEventListener('click', () => {
+      if (!gaModalShareTrackedForOpen) {
+        gaModalShareTrackedForOpen = true;
+        trackGaShareClick('modal_copy');
+      }
       copyToClipboard(url, copyBtn);
+    });
+
+    overlay.querySelectorAll('.afri-social-item').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!gaModalShareTrackedForOpen) {
+          gaModalShareTrackedForOpen = true;
+          const label = (link.textContent || 'social').trim().toLowerCase().replace(/\s+/g, '_');
+          trackGaShareClick(label);
+        }
+      });
     });
 
     requestAnimationFrame(() => {
@@ -1317,16 +1653,20 @@
       : `Check out my calculation on AfriWidget (${title}):`;
 
     if (isMobile && navigator.share) {
+      trackGaShareClick('native_share');
       navigator.share({
         title: `${title} – AfriWidget`,
         text: shareText,
         url: url
       }).catch(err => {
         if (err?.name !== 'AbortError') {
+          gaModalShareTrackedForOpen = true;
           openShareModal(url);
         }
       });
     } else {
+      trackGaShareClick('share_modal');
+      gaModalShareTrackedForOpen = true;
       openShareModal(url);
     }
   }
@@ -1427,6 +1767,7 @@
     const copyBtn = document.getElementById('afriBarCopyBtn');
     copyBtn?.addEventListener('click', (e) => {
       e.preventDefault();
+      trackGaShareClick('copy_link');
       const url = getShareUrl();
       copyToClipboard(url, copyBtn);
     });
@@ -1833,6 +2174,7 @@
 
     // 6. Trigger calculation & post-calculation restores
     setTimeout(() => {
+      gaIsRestoringSharedCalc = true;
       try {
         triggerCalculation();
         if (page === 'online-shop-scam-checker' && params.has('_checks')) {
@@ -1848,6 +2190,8 @@
         }
       } catch (err) {
         console.warn('Share auto-calculate notice:', err);
+      } finally {
+        gaIsRestoringSharedCalc = false;
       }
       showToast('Calculation restored');
     }, 150);
@@ -1894,6 +2238,241 @@
     }
   }
 
+  function findGaResultHost() {
+    return $('#results') ||
+      $('#cfResults') ||
+      $('#resultCard') ||
+      $('#resultsCard') ||
+      $('#eligibilityCard') ||
+      $('#jobList') ||
+      $('.results');
+  }
+
+  function isGaResultHostVisible(host) {
+    if (!host) return false;
+    if (host.id === 'jobList') return true;
+    if (host.classList.contains('visible')) return true;
+    return isElementVisible(host);
+  }
+
+  function getGaHostSignature(host) {
+    if (!host) return '';
+    return (host.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 300);
+  }
+
+  function getGaStatusElement() {
+    return document.getElementById('actionStatus') ||
+      document.getElementById('qrStatus') ||
+      document.getElementById('status') ||
+      document.getElementById('outputStatus');
+  }
+
+  function gaLooksLikeValidationError(msg) {
+    if (!msg) return false;
+    return /^(?:please\b|add at least\b|paste\b|enter\b|choose\b|select\b|upload\b|keep at least\b|nothing to\b|invalid\b|unable to\b|could not\b|failed\b|error\b|mark one\b|calculate first\b|no valid\b|check the\b|target profit must\b|waist must\b)/i.test(msg.trim());
+  }
+
+  function gaHasErrorState(host) {
+    if (!host) return false;
+    const outBody = host.querySelector('#outputBody');
+    if (outBody && outBody.classList.contains('error')) return true;
+    return false;
+  }
+
+  function isGaCalculateTriggerElement(el) {
+    if (!el || el.nodeType !== 1) return false;
+    if (el.closest('header, footer, nav, #cookieBanner, .toc, .faq-list, .related-tools')) return false;
+    if (el.closest(EXCLUDED_SELECTOR)) return false;
+    if (el.id === 'aiBtn' || el.closest('#aiBtn')) return false;
+    if (el.matches('.pp-VXH3B6743NDVE')) return false;
+    const idLower = (el.id || '').toLowerCase();
+    if (/^(reset|clear|copy|download|print|export|add|remove|sample|preset|cancel|close)/.test(idLower) ||
+        (/(?:reset|clear|copy|download|print|export)$/.test(idLower) && idLower !== 'prodbtn' && idLower !== 'stripbtn')) {
+      return false;
+    }
+    if (el.matches(TAB_BTN_SELECTOR)) return false;
+    if (el.matches('#addRowBtn, #addCourseBtn, #addCourseBtn2, #addSubjectBtn, #addSemesterBtn, #addItemBtn, #addDebtBtn, #addOneTimeBtn, #addMonthlyBtn, #addComponentBtn, #addProfileSubjectBtn, #addY2ModuleBtn, #addY3ModuleBtn, #addSubjectRowBtn, #addCompRowBtn, #addALevel, #addBtec, #addTLevel, #addEPQ, #addOther, .btn-remove, .qual-remove, .cost-row-remove, .mod-remove, .item-remove, #cfReset, #cfOpenCompare, #cfClearCompare, #cfCloseCompare, #useAsInputBtn, #changeToneBtn, #addBtn, #closeFormBtn, #cancelBtn, #modeFileBtn, #modeTextBtn, #ucasAlertClose, #importBtn, #exportBtn, #pdfBtn')) {
+      return false;
+    }
+    return el.matches('button[type="submit"], input[type="submit"], .btn-calc, #calcBtn, #calculateBtn, #convertBtn, #stripBtn, #resizeBtn, #checkBtn, #runBtn, #encodeBtn, #decodeBtn, #formatBtn, #minifyBtn, #generateBtn, #paraBtn, #prodBtn, #sumBtn, #findScholarshipsBtn, .btn-case[data-action], .btn-clean[data-clean]');
+  }
+
+  function ensureGaResultObserver(host) {
+    if (!host || typeof MutationObserver === 'undefined') return;
+    if (gaResultObserver && gaResultObserver.__observedHost === host) return;
+    if (gaResultObserver) {
+      gaResultObserver.disconnect();
+    }
+    const observer = new MutationObserver(() => {
+      if (!gaActiveAttempt || gaActiveAttempt.completed || gaActiveAttempt.aborted) return;
+      gaActiveAttempt.domMutated = true;
+      scheduleGaAttemptEvaluation(gaActiveAttempt, 50);
+    });
+    observer.observe(host, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    });
+    observer.__observedHost = host;
+    gaResultObserver = observer;
+  }
+
+  function scheduleGaAttemptEvaluation(attempt, delayMs) {
+    if (!attempt || attempt.completed || attempt.aborted) return;
+    clearTimeout(attempt.evalTimer);
+    attempt.evalTimer = setTimeout(() => {
+      evaluateGaAttempt(attempt);
+    }, delayMs);
+  }
+
+  function evaluateGaAttempt(attempt) {
+    if (!attempt || attempt.completed || attempt.aborted || attempt !== gaActiveAttempt) return;
+
+    const host = attempt.host || findGaResultHost();
+    const statusEl = getGaStatusElement();
+    const afterStatus = statusEl ? statusEl.textContent.trim() : '';
+    const nowVisible = host ? isGaResultHostVisible(host) : false;
+    const newlyVisible = !attempt.wasVisible && nowVisible;
+
+    if (afterStatus && gaLooksLikeValidationError(afterStatus) && !newlyVisible && !attempt.domMutated) {
+      attempt.aborted = true;
+      gaActiveAttempt = null;
+      return;
+    }
+
+    if (gaHasErrorState(host)) {
+      attempt.aborted = true;
+      gaActiveAttempt = null;
+      return;
+    }
+
+    // If an AI insight/generation request is still in flight, wait until it settles (up to max timeout)
+    if (gaAiInFlightCount > attempt.aiCountAtStart) {
+      if (Date.now() - attempt.startedAt < 20000) {
+        scheduleGaAttemptEvaluation(attempt, 180);
+      } else {
+        attempt.aborted = true;
+        gaActiveAttempt = null;
+      }
+      return;
+    }
+
+    const afterSig = host ? getGaHostSignature(host) : '';
+    const isAsyncTool = (
+      page.indexOf('ai-') === 0 ||
+      page === 'document-converter' ||
+      page === 'exif-remover' ||
+      page === 'image-resizer-webp-converter'
+    );
+
+    const passed = (
+      newlyVisible ||
+      (attempt.domMutated && nowVisible) ||
+      (afterSig !== attempt.beforeSig && nowVisible) ||
+      (page === 'job-application-tracker' && attempt.domMutated) ||
+      (!isAsyncTool && attempt.wasVisible && nowVisible && attempt.formSubmitted && !attempt.aborted && !gaLooksLikeValidationError(afterStatus))
+    );
+
+    if (passed) {
+      attempt.completed = true;
+      gaActiveAttempt = null;
+      trackGaEvent('calculation_completed');
+      return;
+    }
+
+    // For async file/AI tools, keep window open cleanly until result finishes or timeout expires
+    if (isAsyncTool && (Date.now() - attempt.startedAt < 15000)) {
+      scheduleGaAttemptEvaluation(attempt, 220);
+      return;
+    }
+
+    attempt.aborted = true;
+    gaActiveAttempt = null;
+  }
+
+  function startGaCalcAttempt(formOrNull, fromSubmit) {
+    if (gaActiveAttempt && !gaActiveAttempt.completed) {
+      clearTimeout(gaActiveAttempt.evalTimer);
+    }
+    const host = findGaResultHost();
+    if (host) ensureGaResultObserver(host);
+    const statusEl = getGaStatusElement();
+    const attempt = {
+      id: ++gaAttemptSeq,
+      startedAt: Date.now(),
+      host: host,
+      wasVisible: host ? isGaResultHostVisible(host) : false,
+      beforeSig: host ? getGaHostSignature(host) : '',
+      beforeStatus: statusEl ? statusEl.textContent.trim() : '',
+      aiCountAtStart: gaAiInFlightCount,
+      formSubmitted: Boolean(fromSubmit),
+      domMutated: false,
+      completed: false,
+      aborted: false,
+      evalTimer: null
+    };
+    gaActiveAttempt = attempt;
+    trackGaEvent('calculate_click');
+    scheduleGaAttemptEvaluation(attempt, 90);
+    return attempt;
+  }
+
+  function initGa4CalculateTracking() {
+    if (gaCalcListenersBound || !isGaToolPage()) return;
+    gaCalcListenersBound = true;
+
+    const initialHost = findGaResultHost();
+    if (initialHost) ensureGaResultObserver(initialHost);
+
+    document.addEventListener('click', (e) => {
+      if (gaIsRestoringSharedCalc) return;
+      const btn = e.target.closest('button, input[type="submit"]');
+      if (!btn) return;
+
+      if (!isGaCalculateTriggerElement(btn)) {
+        gaLastNonCalcClickTs = Date.now();
+        return;
+      }
+
+      const now = Date.now();
+      if (btn === gaLastClickTriggerBtn && (now - gaLastClickTriggerTs) < 300) {
+        return;
+      }
+      gaLastClickTriggerBtn = btn;
+      gaLastClickTriggerTs = now;
+      gaLastClickTriggerForm = btn.form || null;
+
+      startGaCalcAttempt(btn.form || null, false);
+    }, true);
+
+    document.addEventListener('submit', (e) => {
+      if (gaIsRestoringSharedCalc) return;
+      const form = e.target;
+      if (!form || form.classList.contains('afri-paypal-form')) return;
+
+      const now = Date.now();
+      if (now - gaLastNonCalcClickTs < 50) return;
+
+      if (gaActiveAttempt && !gaActiveAttempt.completed && !gaActiveAttempt.aborted &&
+          gaLastClickTriggerForm === form && (now - gaLastClickTriggerTs) < 350) {
+        gaActiveAttempt.formSubmitted = true;
+        return;
+      }
+
+      startGaCalcAttempt(form, true);
+    }, true);
+
+    document.addEventListener('invalid', () => {
+      if (gaActiveAttempt && !gaActiveAttempt.completed && (Date.now() - gaActiveAttempt.startedAt) < 150) {
+        clearTimeout(gaActiveAttempt.evalTimer);
+        gaActiveAttempt.aborted = true;
+        gaActiveAttempt = null;
+      }
+    }, true);
+  }
+
   function init() {
     ensurePwaMetaTags();
     ensureRecentTools();
@@ -1901,6 +2480,8 @@
     setupActionTrackers();
     injectShareBar();
     injectDonationCard();
+    trackGaToolOpen();
+    initGa4CalculateTracking();
     restoreInputs();
 
     // Re-verify donation card on calculate button click or calculation submission
