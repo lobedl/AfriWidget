@@ -251,6 +251,28 @@
     trackGaEvent('share_click', method ? { share_method: String(method).slice(0, 40) } : undefined);
   }
 
+  function safeOverrideWindowMethod(prop, wrapperFn) {
+    try {
+      const desc = Object.getOwnPropertyDescriptor(window, prop);
+      if (!desc || desc.configurable) {
+        Object.defineProperty(window, prop, {
+          value: wrapperFn,
+          configurable: true,
+          writable: true,
+          enumerable: true
+        });
+        return window[prop] === wrapperFn;
+      }
+      if (desc.writable) {
+        window[prop] = wrapperFn;
+        return window[prop] === wrapperFn;
+      }
+    } catch {
+      // Property is read-only / non-configurable on this host Window
+    }
+    return false;
+  }
+
   function installGaAlertObserver() {
     if (typeof window.alert !== 'function' || window.alert.__afriGaAlertWrapped) return;
     const origAlert = window.alert;
@@ -262,7 +284,56 @@
       return origAlert.apply(this, arguments);
     };
     wrappedAlert.__afriGaAlertWrapped = true;
-    window.alert = wrappedAlert;
+    safeOverrideWindowMethod('alert', wrappedAlert);
+  }
+
+  let gaFetchWrappedActive = false;
+
+  function installGaAiDomFallbackObserver() {
+    if (typeof document === 'undefined' || typeof MutationObserver === 'undefined') return;
+    let pendingAiClick = false;
+    let pendingTimer = null;
+
+    const settle = (ok, errType) => {
+      if (!pendingAiClick) return;
+      pendingAiClick = false;
+      clearTimeout(pendingTimer);
+      gaAiInFlightCount = Math.max(0, gaAiInFlightCount - 1);
+      if (ok) {
+        trackGaEvent('ai_response_success');
+      } else {
+        trackGaEvent('ai_response_error', { error_type: errType || 'request_failed' });
+      }
+    };
+
+    document.addEventListener('click', (e) => {
+      if (!isGaToolPage()) return;
+      const trigger = e.target.closest('#aiBtn, #paraBtn, #prodBtn, #sumBtn');
+      if (!trigger) return;
+      if (trigger.id !== 'aiBtn' && !/\/ai-/.test(window.location.pathname)) return;
+      if (pendingAiClick) return;
+      pendingAiClick = true;
+      gaAiInFlightCount++;
+      trackGaEvent('ai_request');
+      clearTimeout(pendingTimer);
+      pendingTimer = setTimeout(() => settle(false, 'timeout'), 25000);
+    }, true);
+
+    onReady(() => {
+      const target = document.getElementById('aiOutput') || document.getElementById('outputBody') || document.getElementById('aiOutputBody');
+      if (!target) return;
+      const obs = new MutationObserver(() => {
+        if (!pendingAiClick) return;
+        const txt = (target.textContent || '').trim();
+        if (!txt) return;
+        if (target.classList.contains('error') || /could not reach the ai|unavailable|try again/i.test(txt)) {
+          settle(false, 'dom_error');
+        } else if (target.classList.contains('visible') || txt.length > 15) {
+          settle(true);
+        }
+      });
+      obs.observe(target, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class'] });
+    });
   }
 
   function installGaFetchObserver() {
@@ -276,7 +347,7 @@
       } catch {}
 
       if (!/\/api\/ai-insight(?:$|[?#])/i.test(urlStr)) {
-        return origFetch.apply(this, arguments);
+        return origFetch.apply(window, arguments);
       }
 
       if (isGaToolPage()) {
@@ -299,7 +370,7 @@
       };
 
       try {
-        const promise = origFetch.apply(this, arguments);
+        const promise = origFetch.apply(window, arguments);
         if (!promise || typeof promise.then !== 'function') {
           return promise;
         }
@@ -333,7 +404,10 @@
       }
     };
     wrappedFetch.__afriGaFetchWrapped = true;
-    window.fetch = wrappedFetch;
+    gaFetchWrappedActive = safeOverrideWindowMethod('fetch', wrappedFetch);
+    if (!gaFetchWrappedActive) {
+      installGaAiDomFallbackObserver();
+    }
   }
 
   installGaAlertObserver();
