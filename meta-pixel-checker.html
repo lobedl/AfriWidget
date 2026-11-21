@@ -6,6 +6,7 @@
   <title>SERP Pixel Checker – Title &amp; Meta Preview – AfriWidget</title>
   <meta name="description" content="Measure Google desktop and mobile SERP pixel widths for titles and meta descriptions. Avoid snippet truncation and preview real-time search displays." />
   <link rel="canonical" href="https://afriwidget.com/meta-pixel-checker">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -95,7 +96,7 @@
       "headline": "Meta Title & Description Pixel Width Guide: Proportional Typography, Desktop vs. Mobile SERP Geometry, and Title Rewrite Prevention",
       "description": "Practical reference guide explaining how Google measures SERP snippets in pixels rather than characters, glyph advance-width budgets, desktop vs. mobile truncation zones, Google title-link rewrite triggers, and pre-publish metadata QA.",
       "datePublished": "2026-10-05",
-      "dateModified":"2026-10-27",
+      "dateModified":"2026-11-20",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://afriwidget.com/meta-pixel-checker"
@@ -562,6 +563,7 @@
           <a href="/finance">Finance</a>
           <a href="/health">Health</a>
           <a href="/productivity" class="active">Productivity</a>
+          <a href="/business">Business</a>
           <a href="/use-cases">Use Cases</a>
           <div class="nav-dropdown">
             <button type="button" aria-haspopup="true" aria-expanded="false">
@@ -591,6 +593,7 @@
       <a href="/finance">Finance</a>
       <a href="/health">Health</a>
       <a href="/productivity" class="active">Productivity</a>
+      <a href="/business">Business</a>
       <a href="/use-cases">Use Cases</a>
       <div class="mobile-menu-divider">
         <div class="mobile-menu-label">Legal &amp; Info</div>
@@ -633,7 +636,7 @@
         <span class="seo-eyebrow">SEO and Webmaster Tool</span>
         <h1 class="seo-title">Meta Title &amp; Description Pixel Checker <span class="seo-title-accent">Measure SERP Snippet Width Before Google Truncates It</span></h1>
         <p class="seo-subtitle">Type a proposed title and meta description, see the approximate pixel width at desktop search font sizes, and preview a Google-style result. Everything runs in your browser and nothing is stored.</p>
-        <div class="seo-meta">Last Updated: <span>27 October 2026</span> &middot; Reviewed by AfriWidget Editorial Team</div>
+        <div class="seo-meta">Last Updated: <span>20 November 2026</span> &middot; Reviewed by AfriWidget Editorial Team</div>
       </div>
     </header>
 
@@ -965,7 +968,7 @@
           <li><strong>Local &amp; regional service pages:</strong> <code>[Core Service] in [City / Region] – [Credential or Turnaround]</code>. Front-loading both the service noun and the city within the first 360 pixels ensures mobile searchers confirm geographic relevance on line one before scanning competitors.</li>
           <li><strong>Educational, tax, &amp; regulatory guides:</strong> <code>[Topic or Statute]: [Year] Rules, Thresholds &amp; Worked Examples</code>. Pair this with a dated-safe description (&le;840px) that states the exact effective period or threshold in sentence one and adds a compliance-appropriate scope note where needed.</li>
         </ul>
-        <p>If you are drafting metadata for a batch of new pages from scratch, you can generate structured first drafts in our <a href="/seo-meta-generator">SEO Meta Generator</a> and check social card overrides separately in the <a href="/open-graph-preview">Open Graph Preview</a> tool before fine-tuning pixel widths here.</p>
+        <p>If you are drafting metadata for a batch of new pages from scratch, you can generate structured first drafts and Open Graph social tags in our <a href="/seo-meta-generator">SEO Meta Generator</a> before fine-tuning pixel widths here.</p>
 
         <h2 id="s6">Why Google rewrites title links—and HTML controls that prevent it</h2>
         <p>Since Google overhauled its title-link generation system in August 2021, industry studies across millions of SERPs consistently observe that Google modifies or replaces roughly <strong>55% to 61%</strong> of publisher-supplied <code>&lt;title&gt;</code> tags. Importantly, Google still reads your HTML <code>&lt;title&gt;</code> element for relevance signals even when it displays modified link text on the results page—and the overwhelming majority of rewrites are triggered by six predictable authoring patterns you can fix before publishing.</p>
@@ -1018,7 +1021,7 @@
           <li><strong>Step 1 — Draft the primary entity and search intent in the first five words:</strong> Identify the exact problem, tool, or topic the visitor typed into search, and place it at character position 1 of your title. Check your body copy in the <a href="/keyword-density-checker">Keyword Density Checker</a> to confirm your primary phrase appears naturally without mechanical repetition.</li>
           <li><strong>Step 2 — Paste title, description, and URL into this pixel checker:</strong> Verify that your title lands between <strong>420px and 580px</strong> (leaving at least a 20px safety margin below 600px) and that your meta description lands between <strong>760px and 920px</strong> (or <strong>&le;845px</strong> if your page outputs a visible publication date).</li>
           <li><strong>Step 3 — Audit the mobile cut-points (380px title / 680px description):</strong> Read only the first five to seven words of your title (~380px) and the first sentence of your description (~680px, or ~120 characters). Confirm that a smartphone user would still understand the page's exact topic and primary benefit even if everything after sentence one were clipped.</li>
-          <li><strong>Step 4 — Align your visible <code>&lt;h1&gt;</code>, URL slug, and JSON-LD headline:</strong> Ensure your page's visible <code>&lt;h1&gt;</code> shares the same core noun phrase as your <code>&lt;title&gt;</code> (without needing to repeat the brand suffix), format a clean hyphenated path with the <a href="/url-slug-generator">URL Slug Generator</a>, and verify that <code>Article</code> or <code>WebApplication</code> JSON-LD metadata matches the live page.</li>
+          <li><strong>Step 4 — Align your visible <code>&lt;h1&gt;</code>, URL slug, and JSON-LD headline:</strong> Ensure your page's visible <code>&lt;h1&gt;</code> shares the same core noun phrase as your <code>&lt;title&gt;</code> (without needing to repeat the brand suffix), format a clean hyphenated path with the <a href="/text-case-converter-cleanup">Text Case &amp; URL Slug Converter</a>, and verify that <code>Article</code> or <code>WebApplication</code> JSON-LD metadata matches the live page.</li>
           <li><strong>Step 5 — Benchmark post-publish impressions vs. CTR in Google Search Console:</strong> Wait 21 to 28 days after indexing, filter the Search Console Performance report to pages ranking in positions 2 through 8 with high impressions but below-average CTR, and test a sharper value proposition or updated numeric specificity using this checker.</li>
         </ol>
 
@@ -1065,7 +1068,7 @@
           <li><strong>Front-loading your company name on every inner URL:</strong> Starting 200 articles with your brand name wastes the highest-attention 120 to 180 pixels on every result and makes browser tabs indistinguishable when a user opens three of your pages side by side.</li>
           <li><strong>Stuffing comma-separated keyword lists into the meta description:</strong> Searchers read descriptions to verify that a page solves their specific problem. Robotic keyword chains lower trust and prompt Google to ignore the meta tag in favour of random body sentences.</li>
           <li><strong>Duplicating the same fallback meta description across paginated or tool URLs:</strong> Identical sitewide fallback descriptions signal low editorial care; Google Search Central explicitly advises leaving a meta description blank rather than duplicating an inaccurate boilerplate string across dozens of unrelated pages, though a tailored two-sentence summary per URL is always superior.</li>
-          <li><strong>Forgetting to update title years when refreshing body content:</strong> Updating a tax table or curriculum guide for the current year while leaving an older year inside <code>&lt;title&gt;</code> depresses click-through rates immediately and triggers title-link rewrites. You can check body word counts and revision scope alongside metadata in our <a href="/word-character-counter">Word &amp; Character Counter</a> and <a href="/reading-time-speech-estimator">Reading Time &amp; Speech Estimator</a>.</li>
+          <li><strong>Forgetting to update title years when refreshing body content:</strong> Updating a tax table or curriculum guide for the current year while leaving an older year inside <code>&lt;title&gt;</code> depresses click-through rates immediately and triggers title-link rewrites. You can check body word counts, keyword balance, and revision scope alongside metadata in our <a href="/keyword-density-checker">Keyword Density Checker</a> and <a href="/reading-time-speech-estimator">Reading Time &amp; Speech Estimator</a>.</li>
         </ul>
 
         <h2 id="s10">Tool limitations, rendering differences, and scope notice</h2>
@@ -1168,10 +1171,10 @@
             <p class="tool-card-desc">Count keywords and phrases in a page or article and check density.</p>
             <span class="tool-card-cta">Open tool</span>
           </a>
-          <a href="/open-graph-preview" class="tool-card">
-            <span class="tool-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></span>
-            <h3 class="tool-card-title">Open Graph Preview</h3>
-            <p class="tool-card-desc">Preview og:title, og:description, and social link cards before sharing.</p>
+          <a href="/reading-time-speech-estimator" class="tool-card">
+            <span class="tool-card-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+            <h3 class="tool-card-title">Reading Time &amp; Word Counter</h3>
+            <p class="tool-card-desc">Count words, characters, and estimated reading or speaking duration in seconds.</p>
             <span class="tool-card-cta">Open tool</span>
           </a>
           <a href="/robots-txt-generator" class="tool-card">
