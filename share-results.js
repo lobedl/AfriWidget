@@ -1131,9 +1131,6 @@
     'canada-gpa-calculator': [
       { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
     ],
-    'canada-student-loan-repayment-calculator': [
-      { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
-    ],
     'canada-study-planner': [
       { prefix: 'r', container: '#courseList', row: '.course-row', addBtn: '#addCourseBtn', removeBtn: '.btn-remove' }
     ],
