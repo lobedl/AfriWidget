@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /ws/
 Disallow: /.netlify/
 Disallow: /_headers
 Disallow: /_redirects

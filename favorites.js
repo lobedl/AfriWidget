@@ -15,7 +15,7 @@
     starOutline: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
     starFilled: `<svg viewBox="0 0 24 24" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
     starFilledDark: `<svg viewBox="0 0 24 24" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-    brandWidget: `<svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/></svg>`,
+    brandWidget: `<img src="/assets/afriwidget-icon.png" alt="" width="28" height="28" style="width:28px;height:28px;display:block;border-radius:50%;flex-shrink:0;" aria-hidden="true" />`,
     close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`,
     trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>`,
     arrowRight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`,
@@ -139,22 +139,23 @@
         display: inline-flex;
         align-items: center;
         gap: 0.375rem;
-        background: transparent;
-        color: #cbd5e1;
-        font-size: 0.875rem;
+        background: #F7F7F5;
+        color: #111111;
+        font-size: 0.8125rem;
         font-weight: 600;
-        padding: 0.375rem 0.625rem;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.425rem 0.65rem;
+        border: 1px solid #E5E7EB;
         border-radius: 0.5rem;
         cursor: pointer;
         transition: all 0.15s ease;
         line-height: 1;
         font-family: inherit;
+        white-space: nowrap;
       }
       .nav-fav-btn:hover {
-        color: #fde047;
-        border-color: rgba(250, 204, 21, 0.4);
-        background: rgba(255, 255, 255, 0.05);
+        color: #111111;
+        border-color: #F5B900;
+        background: #FFFDF2;
       }
       .nav-fav-btn svg {
         width: 1rem;
@@ -168,8 +169,8 @@
         min-width: 1.125rem;
         height: 1.125rem;
         padding: 0 0.3rem;
-        background: #facc15;
-        color: #000000;
+        background: #F5B900;
+        color: #111111;
         font-size: 0.6875rem;
         font-weight: 800;
         border-radius: 9999px;
@@ -182,11 +183,12 @@
         display: flex !important;
         align-items: center;
         justify-content: space-between;
-        padding: 0.625rem 0.5rem !important;
-        font-size: 0.875rem !important;
+        padding: 0.65rem 0.75rem !important;
+        margin: 0.25rem 0;
+        font-size: 0.9375rem !important;
         font-weight: 600 !important;
-        color: #fde047 !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        color: #111111 !important;
+        border-bottom: 1px solid #E5E7EB !important;
       }
       .mobile-fav-link-left {
         display: inline-flex;

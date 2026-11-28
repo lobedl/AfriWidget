@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "lint": "node --check server.js share-results.js generate-og-assets.js academic-progress.js health-progress.js recent-tools.js sync-dates.js kuccps-weakness.js aps-weakness.js wassce-weakness.js icass-weakness.js jamb-weakness.js nated-weakness.js icass-compare.js academic-compare.js",
+    "lint": "node --check server.js lib/discussion-server.js functions/api/discussion/ice-config.js discussion/discussion.js share-results.js generate-og-assets.js academic-progress.js health-progress.js recent-tools.js sync-dates.js kuccps-weakness.js aps-weakness.js wassce-weakness.js icass-weakness.js jamb-weakness.js nated-weakness.js icass-compare.js academic-compare.js assets/edu-design-system.js",
     "build": "node generate-og-assets.js",
     "sync-dates": "node sync-dates.js",
     "deploy": "npx wrangler pages deploy ."
@@ -18,7 +18,8 @@
     "express": "^4.21.2",
     "qrcode": "^1.5.4",
     "resend": "^6.19.0",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "ws": "^8.23.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.4",

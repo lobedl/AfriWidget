@@ -25,6 +25,14 @@
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
 
+/discussion/*
+  Permissions-Policy: camera=(), microphone=(self), geolocation=()
+
+/discussion/room/*
+  X-Robots-Tag: noindex, nofollow
+  Permissions-Policy: camera=(), microphone=(self), geolocation=()
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+
 /_headers
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0

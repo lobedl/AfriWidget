@@ -1,4 +1,5 @@
 import express from 'express';
+import http from 'http';
 import compression from 'compression';
 import path from 'path';
 import fs from 'fs';
@@ -6,6 +7,7 @@ import { fileURLToPath } from 'url';
 import { handler as groqHandler } from './netlify/functions/groq-proxy.js';
 import { handler as sendEmailHandler } from './netlify/functions/send-email.js';
 import { onRequestPost as aiInsightPost, onRequestOptions as aiInsightOptions } from './functions/api/ai-insight.js';
+import { attachDiscussionServer, getIceConfig } from './lib/discussion-server.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,19 +18,67 @@ const PORT = 3000;
 app.use(compression());
 app.use(express.json());
 
-// Set X-Robots-Tag on non-indexable system directories and endpoints
+// Set X-Robots-Tag on non-indexable system directories, APIs, and private/temporary discussion sessions
 app.use((req, res, next) => {
   const p = req.path;
   if (
     p.startsWith('/api/') ||
     p.startsWith('/.netlify/') ||
+    p.startsWith('/ws/') ||
     p === '/_headers' ||
     p === '/_redirects' ||
     p === '/_routes.json'
   ) {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   }
+  if (p.startsWith('/discussion')) {
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(self), geolocation=()');
+    const hasSessionQuery = Boolean(
+      req.query && (req.query.room || req.query.invite || req.query.session || req.query.mode === 'private')
+    );
+    if (p.startsWith('/discussion/room/') || hasSessionQuery) {
+      res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    }
+  }
   next();
+});
+
+// Discussion ICE / TURN configuration endpoint (reads STUN/TURN/WS env safely)
+app.get('/api/discussion/ice-config', (req, res) => {
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.json(getIceConfig());
+});
+
+// Canonical trailing-slash normalization for /discussion/* (exact path check avoids Express trailing-slash loop)
+const discussionPageRoutes = [
+  { base: '/discussion', dir: 'discussion' },
+  { base: '/discussion/public-room', dir: 'discussion/public-room' },
+  { base: '/discussion/random-connect', dir: 'discussion/random-connect' },
+  { base: '/discussion/rooms', dir: 'discussion/rooms' }
+];
+
+for (const route of discussionPageRoutes) {
+  const canonicalPath = `${route.base}/`;
+  app.get([route.base, `${canonicalPath}index.html`], (req, res, next) => {
+    if (req.path === canonicalPath) {
+      return next();
+    }
+    const idx = req.originalUrl.indexOf('?');
+    const qs = idx !== -1 ? req.originalUrl.slice(idx) : '';
+    return res.redirect(301, `${canonicalPath}${qs}`);
+  });
+
+  app.get(canonicalPath, (req, res) => {
+    res.sendFile(path.join(__dirname, route.dir, 'index.html'));
+  });
+}
+
+app.get('/discussion/room/:roomId', (req, res) => {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+  res.sendFile(path.join(__dirname, 'discussion', 'rooms', 'index.html'));
 });
 
 // Handle Netlify function calls locally
@@ -170,6 +220,9 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+const server = http.createServer(app);
+attachDiscussionServer(server);
+
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`AfriWidget server running on http://0.0.0.0:${PORT}`);
 });

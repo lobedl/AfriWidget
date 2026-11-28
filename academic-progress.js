@@ -3569,22 +3569,34 @@
       return subject && subject.name && hasFiniteNumber(subject.norm);
     });
 
+    if (!chartItems.length) {
+      return '';
+    }
+
+    // Clean horizontal bar visualization when fewer than 3 subjects are entered
     if (chartItems.length < 3) {
-      return `
-        <div style="padding:1.5rem 1rem;color:#78716c;font-size:0.8125rem;line-height:1.5;">
-          ${chartItems.length
-            ? 'A subject radar needs at least three real subject results. Your recorded results are shown without adding sample scores.'
-            : 'Subject details will appear after a calculation with subject results.'}
-        </div>
-      `;
+      return '<div class="afri-subject-bars" style="width:100%;display:flex;flex-direction:column;gap:0.75rem;">' +
+        chartItems.map(function (s) {
+          var pct = Math.round(Math.max(8, Math.min(100, (s.norm !== undefined ? s.norm : 0.5) * 100)));
+          var rawName = formatSubjectDisplayName(s.name || '');
+          var rawGrade = String(s.display || s.grade || '').trim();
+          return '<div style="display:flex;flex-direction:column;gap:0.3rem;">' +
+            '<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:0.8125rem;">' +
+              '<span style="font-weight:700;color:#0B1220;">' + escapeHtml(rawName) + '</span>' +
+              '<span style="font-weight:800;color:#B45309;font-variant-numeric:tabular-nums;">' + escapeHtml(rawGrade) + '</span>' +
+            '</div>' +
+            '<div style="height:8px;width:100%;background:#F1F5F9;border-radius:9999px;overflow:hidden;">' +
+              '<div style="height:100%;width:' + pct + '%;background:#FFD500;border-radius:9999px;"></div>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>';
     }
 
     var count = chartItems.length;
-    var sizeX = 360;
-    var sizeY = 320;
-    var cx = 180;
-    var cy = 160;
-    var r = 78;
+    var cx = 185;
+    var cy = 152;
+    var r = 74;
 
     // 1. Concentric web polygons
     var levels = [0.33, 0.66, 1.0];
@@ -3598,7 +3610,7 @@
         pts.push(x.toFixed(1) + ',' + y.toFixed(1));
       }
       var isOuter = lvl === 1.0;
-      gridPolygonsHtml += '<polygon points="' + pts.join(' ') + '" fill="' + (isOuter ? '#ffffff' : 'none') + '" stroke="' + (isOuter ? '#d1d5db' : '#e5e7eb') + '" stroke-width="' + (isOuter ? '1.5' : '1') + '" ' + (isOuter ? '' : 'stroke-dasharray="3,3"') + ' />';
+      gridPolygonsHtml += '<polygon points="' + pts.join(' ') + '" fill="none" stroke="' + (isOuter ? '#CBD5E1' : '#E2E8F0') + '" stroke-width="' + (isOuter ? '1.35' : '1') + '" />';
     });
 
     // 2. Radial spokes
@@ -3607,7 +3619,7 @@
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
       var x = cx + r * Math.cos(angle);
       var y = cy + r * Math.sin(angle);
-      spokesHtml += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="#e5e7eb" stroke-width="1" />';
+      spokesHtml += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="#CBD5E1" stroke-width="1" />';
     }
 
     // 3. Performance data polygon
@@ -3615,60 +3627,51 @@
     var pointCircles = [];
     for (var i = 0; i < count; i++) {
       var s = chartItems[i];
-      var norm = Math.max(0.12, Math.min(1.0, s.norm !== undefined ? s.norm : 0.5));
+      var norm = Math.max(0.14, Math.min(1.0, s.norm !== undefined ? s.norm : 0.5));
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
       var px = cx + r * norm * Math.cos(angle);
       var py = cy + r * norm * Math.sin(angle);
       dataPts.push(px.toFixed(1) + ',' + py.toFixed(1));
-      pointCircles.push('<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="3.5" fill="#000000" stroke="#facc15" stroke-width="2" />');
+      pointCircles.push('<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="3.6" fill="#0B1220" />');
     }
-    var dataPolyHtml = '<polygon points="' + dataPts.join(' ') + '" fill="rgba(250, 204, 21, 0.42)" stroke="#ca8a04" stroke-width="2.5" stroke-linejoin="round" />';
+    var dataPolyHtml = '<polygon points="' + dataPts.join(' ') + '" fill="rgba(255, 213, 0, 0.34)" stroke="#EAB308" stroke-width="2.25" stroke-linejoin="round" />';
 
-    // 4. Perimeter labels
+    // 4. Perimeter labels (Subject on line 1, (Grade) on line 2)
     var labelsHtml = '';
     for (var i = 0; i < count; i++) {
       var s = chartItems[i];
       var angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      var labelDist = r + 18;
+      var labelDist = r + 17;
       var lx = cx + labelDist * Math.cos(angle);
       var ly = cy + labelDist * Math.sin(angle);
 
       var anchor = 'middle';
-      if (Math.cos(angle) > 0.28) anchor = 'start';
-      else if (Math.cos(angle) < -0.28) anchor = 'end';
+      if (Math.cos(angle) > 0.25) anchor = 'start';
+      else if (Math.cos(angle) < -0.25) anchor = 'end';
 
-      var dy = '4';
-      if (Math.sin(angle) < -0.65) dy = '-4';
-      else if (Math.sin(angle) > 0.65) dy = '13';
+      var baseOffset = 0;
+      if (Math.sin(angle) < -0.65) baseOffset = -12;
+      else if (Math.sin(angle) > 0.65) baseOffset = 10;
 
       var rawName = formatSubjectDisplayName(s.name || '');
       var rawGrade = String(s.grade || '').trim();
-
-      // Deduplicate distinct so it is never duplicated
       if (/distinct/i.test(rawName) && /distinct/i.test(rawGrade)) {
-        rawGrade = rawGrade.replace(/distinct(ion)?/gi, '').trim();
-        if (!rawGrade) rawGrade = '75%+';
+        rawGrade = rawGrade.replace(/distinct(ion)?/gi, '').trim() || '75%+';
       }
 
-      var cleanName = rawName.length > 14 ? rawName.substring(0, 12) + '…' : rawName;
-      var badge = rawGrade ? ' ' + rawGrade : '';
+      var cleanName = rawName.length > 13 ? rawName.substring(0, 11) + '…' : rawName;
+      var gradeTag = rawGrade ? '(' + rawGrade + ')' : '';
 
-      labelsHtml += `
-        <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" dy="${dy}" text-anchor="${anchor}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#111827">
-          ${escapeHtml(cleanName)}<tspan fill="#ca8a04" font-weight="800">${escapeHtml(badge)}</tspan>
-        </text>
-      `;
+      labelsHtml +=
+        '<text x="' + lx.toFixed(1) + '" y="' + (ly + baseOffset).toFixed(1) + '" text-anchor="' + anchor + '" font-family="DM Sans, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0B1220">' +
+          '<tspan x="' + lx.toFixed(1) + '" dy="0">' + escapeHtml(cleanName) + '</tspan>' +
+          (gradeTag ? '<tspan x="' + lx.toFixed(1) + '" dy="13" fill="#B45309" font-weight="700" font-size="10.5">' + escapeHtml(gradeTag) + '</tspan>' : '') +
+        '</text>';
     }
 
-    return `
-      <svg viewBox="-10 0 380 320" class="afri-radar-svg" preserveAspectRatio="xMidYMid meet" aria-label="Subject performance radar chart">
-        ${gridPolygonsHtml}
-        ${spokesHtml}
-        ${dataPolyHtml}
-        ${pointCircles.join('')}
-        ${labelsHtml}
-      </svg>
-    `;
+    return '<svg viewBox="-12 0 394 312" class="afri-radar-svg" preserveAspectRatio="xMidYMid meet" aria-label="Subject performance radar chart">' +
+      gridPolygonsHtml + spokesHtml + dataPolyHtml + pointCircles.join('') + labelsHtml +
+    '</svg>';
   }
 
   function formatNumber(value) {
@@ -3694,10 +3697,37 @@
     });
   }
 
+  function updateTrendCallout(wrap, points, index) {
+    if (!wrap || !points || !points.length) return;
+    var pt = points[Math.max(0, Math.min(points.length - 1, index))];
+    var callout = wrap.querySelector('#afriTrendPillCallout');
+    if (!callout) return;
+    var valText = pt.item.displayValue || formatNumber(pt.item.value);
+    var labelStr = valText.length > 8 ? valText.slice(0, 8) : valText;
+    var pillW = Math.max(38, labelStr.length * 8.5 + 16);
+    var pillH = 24;
+    var px = Math.max(pillW / 2 + 4, Math.min(400 - pillW / 2, pt.x));
+    var py = Math.max(4, pt.y - pillH - 12);
+    callout.setAttribute('transform', 'translate(' + px.toFixed(1) + ',' + py.toFixed(1) + ')');
+    var rect = callout.querySelector('rect');
+    var tri = callout.querySelector('polygon');
+    var txt = callout.querySelector('text');
+    if (rect) {
+      rect.setAttribute('x', (-pillW / 2).toFixed(1));
+      rect.setAttribute('width', pillW.toFixed(1));
+    }
+    if (tri) {
+      tri.setAttribute('points', '-4,' + pillH + ' 4,' + pillH + ' 0,' + (pillH + 5));
+    }
+    if (txt) {
+      txt.textContent = labelStr;
+    }
+  }
+
   function renderTrendSelection(adapter, chronological, index) {
     var details = document.getElementById('afriTrendSelected');
     var wrap = document.getElementById('afriTrendSvgWrap');
-    if (!details || !chronological.length) return;
+    if (!chronological.length) return;
     index = Math.max(0, Math.min(chronological.length - 1, index));
     var item = chronological[index];
     var context = recordContext(item);
@@ -3709,15 +3739,21 @@
     if (subjects.length > 3) {
       subjectMarkup += '<span>+' + (subjects.length - 3) + ' more subjects</span>';
     }
-    details.innerHTML =
-      '<strong>' + escapeHtml(item.displayValue || formatNumber(item.value)) + '</strong>' +
-      '<span>' + escapeHtml(recordDate(item)) + '</span>' +
-      (context ? '<span>' + escapeHtml(context) + '</span>' : '') +
-      subjectMarkup;
+    if (details) {
+      details.innerHTML =
+        '<strong>' + escapeHtml(item.displayValue || formatNumber(item.value)) + '</strong>' +
+        '<span>' + escapeHtml(recordDate(item)) + '</span>' +
+        (context ? '<span>' + escapeHtml(context) + '</span>' : '') +
+        subjectMarkup;
+    }
     if (wrap) {
       Array.prototype.forEach.call(wrap.querySelectorAll('.afri-trend-point'), function (point) {
-        point.classList.toggle('is-selected', Number(point.getAttribute('data-point-index')) === index);
+        var isSel = Number(point.getAttribute('data-point-index')) === index;
+        point.classList.toggle('is-selected', isSel);
       });
+      if (wrap._afriTrendPoints) {
+        updateTrendCallout(wrap, wrap._afriTrendPoints, index);
+      }
     }
   }
 
@@ -3738,40 +3774,43 @@
 
     var mobile = window.innerWidth < 640;
     var availableWidth = wrap.clientWidth || Math.max(300, window.innerWidth - 64);
-    var width = mobile ? Math.max(availableWidth, 74 + (chronological.length - 1) * 48) : 700;
-    var height = 260;
-    var left = 56;
-    var right = 20;
-    var top = 30;
-    var bottom = 42;
+    var width = chronological.length > 5 && mobile ? Math.max(availableWidth, 74 + (chronological.length - 1) * 52) : 420;
+    var height = 190;
+    var left = 40;
+    var right = 18;
+    var top = 38;
+    var bottom = 34;
     var plotWidth = width - left - right;
     var plotHeight = height - top - bottom;
     var values = chronological.map(function (item) { return Number(item.value); });
     var minValue = Math.min.apply(Math, values);
     var maxValue = Math.max.apply(Math, values);
     var span = maxValue - minValue;
-    var padding = span > 0 ? span * 0.14 : Math.max(Math.abs(maxValue) * 0.08, 1);
+    var padding = span > 0 ? span * 0.22 : Math.max(Math.abs(maxValue) * 0.14, 5);
     var lower = minValue - padding;
     var upper = maxValue + padding;
+    if (minValue >= 0 && lower < 0) lower = 0;
+
     var points = chronological.map(function (item, index) {
-      var x = chronological.length === 1 ? left + plotWidth / 2 : left + (plotWidth * index) / (chronological.length - 1);
+      var x = chronological.length === 1 ? left + plotWidth * 0.5 : left + (plotWidth * index) / (chronological.length - 1);
       var y = top + ((upper - Number(item.value)) / (upper - lower)) * plotHeight;
       return { x: x, y: y, item: item, index: index };
     });
+    wrap._afriTrendPoints = points;
+
     var grid = '';
-    for (var tick = 0; tick <= 3; tick++) {
-      var ratio = tick / 3;
+    for (var tick = 0; tick <= 2; tick++) {
+      var ratio = tick / 2;
       var y = top + ratio * plotHeight;
       var tickValue = upper - ratio * (upper - lower);
       grid += '<line x1="' + left + '" y1="' + y.toFixed(1) + '" x2="' + (width - right) +
-        '" y2="' + y.toFixed(1) + '" stroke="#e5e7eb" stroke-width="1" />' +
+        '" y2="' + y.toFixed(1) + '" stroke="#E5E7EB" stroke-width="1" />' +
         '<text x="' + (left - 8) + '" y="' + (y + 3.5).toFixed(1) +
-        '" text-anchor="end" font-size="10" fill="#6b7280">' + escapeHtml(formatNumber(tickValue)) + '</text>';
+        '" text-anchor="end" font-size="11" font-weight="600" fill="#64748B" font-family="DM Sans, sans-serif">' + escapeHtml(formatNumber(tickValue)) + '</text>';
     }
-    var chartUnit = recordUnit(chronological[chronological.length - 1], adapter);
-    var axisUnit = chartUnit ? 'Score (' + chartUnit + ')' : 'Score';
+
     var labels = '';
-    var maxLabels = mobile ? 4 : 6;
+    var maxLabels = mobile ? 4 : 5;
     var labelCount = Math.min(maxLabels, points.length);
     var labelIndexes = {};
     for (var labelIndex = 0; labelIndex < labelCount; labelIndex++) {
@@ -3779,18 +3818,26 @@
     }
     points.forEach(function (point, index) {
       if (!labelIndexes[index]) return;
-      labels += '<line x1="' + point.x.toFixed(1) + '" y1="' + (height - bottom + 1) +
-        '" x2="' + point.x.toFixed(1) + '" y2="' + (height - bottom + 5) + '" stroke="#9ca3af" />' +
-        '<text x="' + point.x.toFixed(1) + '" y="' + (height - 10) +
-        '" text-anchor="middle" font-size="10" fill="#6b7280">' + escapeHtml(shortRecordDate(point.item)) + '</text>';
+      labels += '<text x="' + point.x.toFixed(1) + '" y="' + (height - 10) +
+        '" text-anchor="middle" font-size="11" font-weight="600" fill="#475569" font-family="DM Sans, sans-serif">' + escapeHtml(shortRecordDate(point.item)) + '</text>';
     });
-    var linePath = points.map(function (point, index) {
-      return (index ? 'L' : 'M') + point.x.toFixed(1) + ' ' + point.y.toFixed(1);
-    }).join(' ');
-    var areaPath = points.length > 1
-      ? linePath + ' L' + points[points.length - 1].x.toFixed(1) + ' ' + (height - bottom) +
-        ' L' + points[0].x.toFixed(1) + ' ' + (height - bottom) + ' Z'
-      : '';
+
+    var linePath;
+    var areaPath;
+    if (points.length === 1) {
+      var py = points[0].y;
+      var yLeft = Math.min(height - bottom - 2, py + 4);
+      var yRight = Math.max(top + 2, py - 6);
+      linePath = 'M' + left + ' ' + yLeft.toFixed(1) + ' Q' + points[0].x.toFixed(1) + ' ' + py.toFixed(1) + ' ' + (width - right) + ' ' + yRight.toFixed(1);
+      areaPath = linePath + ' L' + (width - right) + ' ' + (height - bottom) + ' L' + left + ' ' + (height - bottom) + ' Z';
+    } else {
+      linePath = points.map(function (point, index) {
+        return (index ? 'L' : 'M') + point.x.toFixed(1) + ' ' + point.y.toFixed(1);
+      }).join(' ');
+      areaPath = linePath + ' L' + points[points.length - 1].x.toFixed(1) + ' ' + (height - bottom) +
+        ' L' + points[0].x.toFixed(1) + ' ' + (height - bottom) + ' Z';
+    }
+
     var pointMarkup = points.map(function (point) {
       var item = point.item;
       var context = recordContext(item);
@@ -3801,34 +3848,43 @@
         escapeHtml('Show result ' + spokenLabel) + '">' +
         '<title>' + escapeHtml(spokenLabel) + '</title>' +
         '<circle class="afri-trend-point-hit" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="17" />' +
-        '<circle class="afri-trend-point-mark" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="5.5" />' +
+        '<circle class="afri-trend-point-mark" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="5" fill="#FFD500" stroke="#0B1220" stroke-width="2" />' +
         '</g>';
     }).join('');
-    var mobileStyle = mobile ? ' style="width:' + width + 'px;max-width:none;"' : '';
+
+    var calloutMarkup =
+      '<g id="afriTrendPillCallout" pointer-events="none">' +
+        '<rect x="-22" y="0" width="44" height="24" rx="6" fill="#0B1220" />' +
+        '<polygon points="-4,24 4,24 0,29" fill="#0B1220" />' +
+        '<text x="0" y="16" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif"></text>' +
+      '</g>';
+
+    var mobileStyle = (mobile && width > availableWidth) ? ' style="width:' + width + 'px;max-width:none;"' : '';
     wrap.innerHTML =
       '<svg class="afri-trend-svg" viewBox="0 0 ' + width + ' ' + height + '"' + mobileStyle +
       ' role="group" aria-labelledby="afriTrendSvgTitle afriTrendSvgDesc">' +
+      '<defs><linearGradient id="afriTrendAreaGrad" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="#FFD500" stop-opacity="0.32" />' +
+        '<stop offset="100%" stop-color="#FFD500" stop-opacity="0.03" />' +
+      '</linearGradient></defs>' +
       '<title id="afriTrendSvgTitle">Academic performance trend</title>' +
       '<desc id="afriTrendSvgDesc">Results are shown in date order, with the latest at the right. Select a point to inspect its saved result.</desc>' +
-      '<text x="' + left + '" y="16" font-size="10" font-weight="700" fill="#6b7280">' + escapeHtml(axisUnit) + '</text>' +
       grid +
       '<line x1="' + left + '" y1="' + (height - bottom) + '" x2="' + (width - right) +
-      '" y2="' + (height - bottom) + '" stroke="#9ca3af" stroke-width="1" />' +
-      (areaPath ? '<path d="' + areaPath + '" fill="rgba(250,204,21,0.16)" />' : '') +
-      (points.length > 1 ? '<path d="' + linePath + '" fill="none" stroke="#ca8a04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />' : '') +
-      labels + pointMarkup + '</svg>';
+      '" y2="' + (height - bottom) + '" stroke="#CBD5E1" stroke-width="1" />' +
+      (areaPath ? '<path d="' + areaPath + '" fill="url(#afriTrendAreaGrad)" />' : '') +
+      '<path d="' + linePath + '" fill="none" stroke="#EAB308" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />' +
+      labels + pointMarkup + calloutMarkup + '</svg>';
 
     if (caption) {
       var otherModeNote = excludedCount
-        ? ' Other saved results use a different or unrecorded scoring mode and are not compared.'
+        ? ' Other saved results use a different scoring mode and are not compared.'
         : '';
       caption.textContent = chronological.length === 1
         ? (excludedCount
           ? 'Only one comparable result is shown.' + otherModeNote
-          : 'This first result is your starting point. A later calculation will show a trend.')
-        : (mobile && width > availableWidth + 1
-          ? 'Swipe the chart horizontally to reach older results. Select a point for its date, score, and subjects.'
-          : 'Latest result appears at the right. Select a point for its date, score, and subjects.') + otherModeNote;
+          : 'This result is your baseline. Subsequent calculations track your trend here.')
+        : 'Select any point to view its date, score, and subjects.' + otherModeNote;
     }
     renderTrendSelection(adapter, chronological, chronological.length - 1);
   }
@@ -3839,6 +3895,12 @@
   var isAcademicReordering = false;
   function ensureAcademicResultsSectionOrder() {
     if (isAcademicReordering) return;
+    if (document.body && document.body.classList.contains('edu-ds')) {
+      if (typeof window.afriEduSyncLayout === 'function') {
+        window.afriEduSyncLayout();
+      }
+      return;
+    }
     var resultsEl = document.getElementById('results') || document.querySelector('.results') || document.getElementById('cfResults');
     if (!resultsEl) return;
 
@@ -3989,16 +4051,6 @@
       </div>
 
       <div class="afri-prog-body">
-        <div class="afri-trend-card">
-          <div class="afri-trend-heading">
-            <span class="afri-card-label" style="margin-bottom:0;">Performance Over Time</span>
-            <p class="afri-trend-caption" id="afriTrendCaption">Latest result appears at the right. Select a point for its date and result.</p>
-          </div>
-          <div class="afri-trend-svg-wrap" id="afriTrendSvgWrap" role="region" tabindex="0" aria-label="Academic performance trend. Scroll horizontally to view older results when needed."></div>
-          <div class="afri-trend-selected" id="afriTrendSelected" aria-live="polite"></div>
-          <p class="afri-prog-save-status" id="afriProgSaveStatus" role="status" aria-live="polite">Your results are saved automatically in this browser.</p>
-        </div>
-
         <!-- Radar Chart Card -->
         <div class="afri-radar-card">
           <span class="afri-card-label">Subject Performance Radar</span>
@@ -4609,6 +4661,27 @@
     if (radarWrap) {
       radarWrap.innerHTML = generateRadarSvg(subjects);
     }
+
+    // Publish structured state for unified design system
+    window.afriAcademicLatestSummary = {
+      adapterId: adapter.id,
+      higherIsBetter: recordHigherIsBetter(latest, adapter),
+      historyCount: history.length,
+      subjectCount: subjects.length,
+      trendSummary: summary ? summary.desc : '',
+      subjectInsight: subjectInsightText || '',
+      strongest: strengths.strongest ? {
+        name: formatSubjectDisplayName(strengths.strongest.name),
+        score: strengths.strongest.display || strengths.strongest.grade || ''
+      } : null,
+      weakest: strengths.weakest ? {
+        name: formatSubjectDisplayName(strengths.weakest.name),
+        score: strengths.weakest.display || strengths.weakest.grade || ''
+      } : null
+    };
+    try {
+      window.dispatchEvent(new CustomEvent('afri:progress-updated', { detail: window.afriAcademicLatestSummary }));
+    } catch (e) {}
   }
 
   // --- INITIALIZATION & OBSERVERS ---

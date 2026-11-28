@@ -1078,7 +1078,7 @@
 
   // Pure SVG Icons (No Emojis)
   const icons = {
-    brandLogo: `<svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 4L20.5 14L30 18L20.5 22L18 32L15.5 22L6 18L15.5 14Z" fill="#FACC15"/><circle cx="28" cy="9" r="2.5" fill="#CA8A04"/><circle cx="9" cy="11" r="1.5" fill="#FACC15" opacity="0.7"/></svg>`,
+    brandLogo: `<img src="/assets/afriwidget-icon.png" alt="AfriWidget" width="32" height="32" style="width:32px;height:32px;display:block;border-radius:50%;object-fit:contain;" />`,
     share: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>`,
     copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
     check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`,
@@ -1624,10 +1624,8 @@
           ${icons.close}
         </button>
         <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;padding-right:2.5rem;">
-          <div style="width:42px;height:42px;border-radius:0.5rem;background:#000000;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <div style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;">
-              ${icons.brandLogo}
-            </div>
+          <div style="width:38px;height:38px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            ${icons.brandLogo}
           </div>
           <div>
             <span class="afri-modal-eyebrow" style="margin-bottom:0.125rem;">AfriWidget • Free Tools</span>

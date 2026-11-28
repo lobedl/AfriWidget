@@ -12,11 +12,17 @@ fs.writeFileSync("dist/og-image.png", buf);
 const copyFiles = [
   "favicon.ico", "favicon.svg", "favicon-16.png", "favicon-32.png",
   "favicon-180.png", "favicon-192.png", "favicon-512.png", "manifest.json",
-  "favorites.js", "share-results.js"
+  "favorites.js", "share-results.js",
+  "assets/afriwidget-logo.png", "assets/afriwidget-icon.png",
+  "assets/hero-calculator.jpg",
+  "assets/edu-design-system.css", "assets/edu-design-system.js",
+  "assets/site-header.css"
 ];
 copyFiles.forEach(f => {
   if (fs.existsSync(f)) {
-    fs.copyFileSync(f, path.join("dist", f));
+    const dest = path.join("dist", f);
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(f, dest);
   }
 });
 console.log("Wrote pristine binary og-image files from base64.");

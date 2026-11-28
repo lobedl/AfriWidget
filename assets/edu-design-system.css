@@ -1,0 +1,1155 @@
+/* AfriWidget Unified Educational Calculators Design System */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+  --edu-canvas: #F8FAFC;
+  --edu-surface: #FFFFFF;
+  --edu-surface-subtle: #F8FAFC;
+  --edu-ink: #0B1220;
+  --edu-ink-muted: #475569;
+  --edu-ink-subtle: #64748B;
+  --edu-border: #E5E7EB;
+  --edu-border-strong: #CBD5E1;
+  --edu-yellow: #FFD500;
+  --edu-yellow-hover: #F2C800;
+  --edu-yellow-soft: #FEF9E2;
+  --edu-yellow-pill: #FEF3C7;
+  --edu-yellow-border: #FDE047;
+  --edu-yellow-ink: #854D0E;
+  --edu-radius-lg: 1rem;
+  --edu-radius-md: 0.75rem;
+  --edu-radius-sm: 0.5rem;
+  --edu-shadow: 0 1px 2px rgba(11, 18, 32, 0.04), 0 4px 16px rgba(11, 18, 32, 0.04);
+}
+
+body.edu-ds {
+  background: var(--edu-canvas);
+  color: var(--edu-ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.edu-ds h1,
+body.edu-ds h2,
+body.edu-ds h3,
+body.edu-ds h4,
+body.edu-ds .edu-display,
+body.edu-ds .aggregate-big,
+body.edu-ds .mean-big,
+body.edu-ds .points-big,
+body.edu-ds .aps-big,
+body.edu-ds .chance-big,
+body.edu-ds .total-big,
+body.edu-ds .wcp-big,
+body.edu-ds .big,
+body.edu-ds .stat-value {
+  font-family: 'Plus Jakarta Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.edu-ds .container-narrow {
+  max-width: 960px;
+}
+
+/* Header / Intro */
+body.edu-ds .seo-header {
+  background: var(--edu-surface);
+  border-bottom: 1px solid var(--edu-border);
+  padding: 2rem 0 1.5rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .seo-header {
+    padding: 2.5rem 0 1.75rem;
+  }
+}
+body.edu-ds .seo-eyebrow {
+  color: #B45309;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 0.6875rem;
+  margin-bottom: 0.5rem;
+}
+body.edu-ds .seo-title {
+  color: var(--edu-ink);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  font-size: clamp(1.625rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  margin-bottom: 0.625rem;
+}
+body.edu-ds .seo-title-accent {
+  color: #B45309;
+  margin-top: 0.25rem;
+  font-size: 0.86em;
+  font-weight: 700;
+}
+body.edu-ds .seo-subtitle {
+  color: var(--edu-ink-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 42rem;
+  margin: 0 auto 0.75rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .seo-subtitle {
+    font-size: 1rem;
+  }
+}
+body.edu-ds .seo-meta {
+  color: var(--edu-ink-subtle);
+  font-size: 0.75rem;
+}
+body.edu-ds .seo-meta span {
+  color: var(--edu-ink);
+  font-weight: 700;
+}
+
+/* Workspace Canvas */
+body.edu-ds .calc-wrap {
+  background: var(--edu-canvas);
+  padding: 1.5rem 0 2.75rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .calc-wrap {
+    padding: 2rem 0 3.25rem;
+  }
+}
+
+/* Input Panel */
+body.edu-ds .calc-panel {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+  padding: 1.25rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .calc-panel {
+    padding: 1.75rem 2rem;
+  }
+}
+body.edu-ds .calc-panel-title {
+  color: var(--edu-ink);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+body.edu-ds .calc-panel-sub {
+  color: var(--edu-ink-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+/* Scale strips */
+body.edu-ds .scale-panel,
+body.edu-ds .scale-strip {
+  background: var(--edu-surface-subtle);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+body.edu-ds .scale-strip {
+  padding: 0.5rem;
+}
+body.edu-ds .scale-cell {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-sm);
+}
+body.edu-ds .scale-grade {
+  color: var(--edu-ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+body.edu-ds .scale-pt {
+  color: var(--edu-ink-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Inputs, Selects, Labels */
+body.edu-ds .form-label,
+body.edu-ds .field-label,
+body.edu-ds label {
+  color: var(--edu-ink);
+  font-weight: 700;
+}
+body.edu-ds .form-hint,
+body.edu-ds .field-hint,
+body.edu-ds .helper-text {
+  color: var(--edu-ink-subtle);
+}
+body.edu-ds .calc-panel input[type="text"],
+body.edu-ds .calc-panel input[type="number"],
+body.edu-ds .calc-panel input[type="search"],
+body.edu-ds .calc-panel select,
+body.edu-ds .calc-panel textarea,
+body.edu-ds .form-input,
+body.edu-ds .form-select {
+  min-height: 46px;
+  background-color: var(--edu-surface);
+  border: 1px solid var(--edu-border-strong);
+  border-radius: 0.625rem;
+  color: var(--edu-ink);
+  font-size: 0.9375rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+@media (max-width: 639px) {
+  body.edu-ds .calc-panel input[type="text"],
+  body.edu-ds .calc-panel input[type="number"],
+  body.edu-ds .calc-panel select,
+  body.edu-ds .form-input,
+  body.edu-ds .form-select {
+    font-size: 16px;
+  }
+}
+body.edu-ds .calc-panel input:focus,
+body.edu-ds .calc-panel select:focus,
+body.edu-ds .calc-panel textarea:focus,
+body.edu-ds .form-input:focus,
+body.edu-ds .form-select:focus {
+  outline: none;
+  border-color: var(--edu-ink);
+  box-shadow: 0 0 0 3px rgba(255, 213, 0, 0.42);
+}
+
+/* Mode tabs / segmented selectors inside inputs */
+body.edu-ds .mode-tabs,
+body.edu-ds .tab-row,
+body.edu-ds .scale-tabs {
+  background: #F1F5F9;
+  border: 1px solid var(--edu-border);
+  border-radius: 0.625rem;
+  padding: 0.25rem;
+}
+body.edu-ds .mode-tab,
+body.edu-ds .tab-btn,
+body.edu-ds .scale-tab {
+  border-radius: 0.4375rem;
+  min-height: 40px;
+  font-weight: 700;
+  color: var(--edu-ink-muted);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+body.edu-ds .mode-tab.active,
+body.edu-ds .tab-btn.active,
+body.edu-ds .scale-tab.active {
+  background: var(--edu-surface);
+  color: var(--edu-ink);
+  box-shadow: 0 1px 2px rgba(11, 18, 32, 0.08);
+}
+
+/* Form Action Buttons */
+body.edu-ds .action-row {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+body.edu-ds .btn-primary,
+body.edu-ds button[type="submit"].btn-primary {
+  background: var(--edu-yellow);
+  color: var(--edu-ink);
+  border: 1px solid #EAB308;
+  border-radius: 0.625rem;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 1px 2px rgba(11, 18, 32, 0.06);
+}
+body.edu-ds .btn-primary:hover,
+body.edu-ds button[type="submit"].btn-primary:hover {
+  background: var(--edu-yellow-hover);
+}
+body.edu-ds .btn-primary:active {
+  transform: translateY(1px);
+}
+body.edu-ds .btn-secondary,
+body.edu-ds .btn-add,
+body.edu-ds #resetBtn,
+body.edu-ds #sampleBtn {
+  background: var(--edu-surface);
+  color: var(--edu-ink);
+  border: 1px solid var(--edu-border-strong);
+  border-radius: 0.625rem;
+  min-height: 44px;
+  padding: 0.625rem 1.125rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+body.edu-ds .btn-secondary:hover,
+body.edu-ds .btn-add:hover,
+body.edu-ds #resetBtn:hover,
+body.edu-ds #sampleBtn:hover {
+  background: var(--edu-surface-subtle);
+  border-color: #94A3B8;
+}
+body.edu-ds .btn-remove,
+body.edu-ds .qual-remove,
+body.edu-ds .mod-remove {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 0.5rem;
+}
+@media (max-width: 520px) {
+  body.edu-ds .action-row .btn-primary {
+    flex: 1 1 100%;
+  }
+  body.edu-ds .action-row .btn-secondary,
+  body.edu-ds .action-row #resetBtn,
+  body.edu-ds .action-row #sampleBtn {
+    flex: 1 1 auto;
+  }
+}
+
+/* =========================================================
+   RESULTS EXPERIENCE — CONTINUOUS UNIFIED FLOW
+   ========================================================= */
+body.edu-ds #results.visible {
+  display: block;
+  margin-top: 1.75rem;
+}
+
+/* Top Back Bar */
+body.edu-ds .edu-back-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+}
+body.edu-ds .edu-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.375rem 0.25rem;
+  min-height: 36px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--edu-ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+body.edu-ds .edu-back-btn:hover {
+  color: #B45309;
+  transform: translateX(-2px);
+}
+body.edu-ds .edu-back-btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Card 1: Hero Result + Result Breakdown Split Card */
+body.edu-ds #results .results-head {
+  background: var(--edu-surface) !important;
+  color: var(--edu-ink) !important;
+  border: 1px solid var(--edu-border) !important;
+  border-radius: var(--edu-radius-lg) !important;
+  box-shadow: var(--edu-shadow) !important;
+  padding: 1.375rem 1.25rem !important;
+  margin-bottom: 1.125rem !important;
+}
+@media (min-width: 640px) {
+  body.edu-ds #results .results-head {
+    padding: 1.75rem 2rem !important;
+  }
+}
+
+body.edu-ds #results .results-head.edu-hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+@media (min-width: 768px) {
+  body.edu-ds #results .results-head.edu-hero-split {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+body.edu-ds #results .results-head .results-head-row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 0.5rem !important;
+  padding: 0.25rem 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+body.edu-ds .edu-result-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3125rem 0.875rem;
+  background: var(--edu-yellow);
+  color: var(--edu-ink);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+body.edu-ds #results .results-head .results-eyebrow {
+  color: var(--edu-ink) !important;
+  text-transform: none !important;
+  letter-spacing: -0.015em !important;
+  font-size: 1.0625rem !important;
+  font-weight: 700 !important;
+  margin: 0.25rem 0 0 !important;
+  -webkit-text-fill-color: var(--edu-ink) !important;
+}
+
+body.edu-ds #results .results-head .results-title {
+  color: var(--edu-ink) !important;
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+body.edu-ds #results .results-head .aggregate-big,
+body.edu-ds #results .results-head .mean-big,
+body.edu-ds #results .results-head .points-big,
+body.edu-ds #results .results-head .aps-big,
+body.edu-ds #results .results-head .chance-big,
+body.edu-ds #results .results-head .total-big,
+body.edu-ds #results .results-head .wcp-big,
+body.edu-ds #results .results-head .big,
+body.edu-ds #results .results-head .edu-hero-score,
+body.edu-ds #results .results-head .results-head-row > .stat-value {
+  color: var(--edu-ink) !important;
+  -webkit-text-fill-color: var(--edu-ink) !important;
+  font-size: clamp(2.85rem, 7vw, 4.25rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.03em !important;
+  font-variant-numeric: tabular-nums !important;
+  margin: 0.125rem 0 !important;
+}
+
+body.edu-ds #results .results-head .edu-hero-score.is-text-value,
+body.edu-ds #results .results-head .aggregate-big.is-text-value,
+body.edu-ds #results .results-head .mean-big.is-text-value,
+body.edu-ds #results .results-head .results-head-row > .stat-value.is-text-value {
+  font-size: clamp(1.5rem, 3.6vw, 2.25rem) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+}
+
+body.edu-ds .edu-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+  padding: 0.4375rem 0.95rem;
+  border-radius: 9999px;
+  background: var(--edu-yellow-pill);
+  border: 1px solid #FDE68A;
+  color: var(--edu-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 100%;
+}
+body.edu-ds .edu-status-pill.is-strong {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+body.edu-ds .edu-status-pill.is-caution {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #991B1B;
+}
+body.edu-ds .edu-status-pill svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+body.edu-ds .edu-status-pill[hidden] {
+  display: none !important;
+}
+
+/* Hide legacy dark gpa-badge when mirrored into status pill */
+body.edu-ds #results .results-head .gpa-badge.edu-mirrored {
+  display: none !important;
+}
+
+body.edu-ds #results .results-head .aggregate-note,
+body.edu-ds #results .results-head .mean-note,
+body.edu-ds #results .results-head .points-note,
+body.edu-ds #results .results-head .aps-note,
+body.edu-ds #results .results-head .chance-note,
+body.edu-ds #results .results-head .total-note,
+body.edu-ds #results .results-head .wcp-note,
+body.edu-ds #results .results-head .results-head-row > p {
+  color: var(--edu-ink-subtle) !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.45 !important;
+  max-width: 21rem !important;
+  margin: 0.35rem auto 0 !important;
+}
+
+/* Hero Right Column: Result Breakdown */
+body.edu-ds .edu-breakdown-col {
+  border-top: 1px solid var(--edu-border);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+@media (min-width: 768px) {
+  body.edu-ds .edu-breakdown-col {
+    border-top: none;
+    border-left: 1px solid var(--edu-border);
+    padding-top: 0;
+    padding-left: 2rem;
+  }
+}
+body.edu-ds .edu-breakdown-heading {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+  letter-spacing: -0.015em;
+  margin: 0 0 0.375rem;
+}
+
+body.edu-ds #results .results-head .stat-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.edu-ds #results .results-head .stat-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--edu-border) !important;
+  border-radius: 0 !important;
+  padding: 0.875rem 0 !important;
+  box-shadow: none !important;
+}
+body.edu-ds #results .results-head .stat-card.edu-last-visible,
+body.edu-ds #results .results-head .stat-card:last-child {
+  border-bottom: none !important;
+}
+body.edu-ds #results .results-head .stat-card.edu-promoted-to-hero {
+  display: none !important;
+}
+body.edu-ds .edu-stat-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+body.edu-ds #results .results-head .stat-label {
+  color: var(--edu-ink) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: -0.005em !important;
+  margin: 0 !important;
+}
+body.edu-ds #results .results-head .stat-sub {
+  color: var(--edu-ink-subtle) !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+body.edu-ds #results .results-head .stat-value {
+  color: var(--edu-ink) !important;
+  -webkit-text-fill-color: var(--edu-ink) !important;
+  font-size: 1.375rem !important;
+  font-weight: 800 !important;
+  font-variant-numeric: tabular-nums !important;
+  text-align: right !important;
+  flex-shrink: 0 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+@media (min-width: 640px) {
+  body.edu-ds #results .results-head .stat-value {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Progress bar inside hero breakdown (e.g. UCAS target bar) */
+body.edu-ds #results .results-head .progress-wrap {
+  margin-top: 0.875rem !important;
+  padding-top: 0.875rem !important;
+  border-top: 1px solid var(--edu-border);
+  background: transparent !important;
+}
+body.edu-ds #results .results-head .progress-labels {
+  color: var(--edu-ink-muted) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+}
+body.edu-ds #results .results-head .progress-bar {
+  background: #F1F5F9 !important;
+}
+body.edu-ds #results .results-head .progress-fill {
+  background: var(--edu-yellow) !important;
+}
+
+/* Detailed Breakdown / Benchmark / Exam Target / Pathway / Timetable Panels */
+body.edu-ds #results .breakdown-panel,
+body.edu-ds #results .bench-panel,
+body.edu-ds #results .exam-target-panel,
+body.edu-ds #results .tri-result-table-wrap,
+body.edu-ds #results .tier-panel,
+body.edu-ds #results .audit-panel,
+body.edu-ds #results .cutoff-panel,
+body.edu-ds #results .reasons-panel,
+body.edu-ds #results .combo-panel,
+body.edu-ds #results .timetable-panel,
+body.edu-ds #results .blueprint-panel,
+body.edu-ds #results .schedule-panel,
+body.edu-ds #results .data-table-wrap {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+  padding: 1.25rem;
+  margin-top: 1.125rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds #results .breakdown-panel,
+  body.edu-ds #results .bench-panel,
+  body.edu-ds #results .exam-target-panel,
+  body.edu-ds #results .tri-result-table-wrap,
+  body.edu-ds #results .tier-panel,
+  body.edu-ds #results .audit-panel,
+  body.edu-ds #results .cutoff-panel,
+  body.edu-ds #results .reasons-panel,
+  body.edu-ds #results .combo-panel,
+  body.edu-ds #results .timetable-panel,
+  body.edu-ds #results .blueprint-panel,
+  body.edu-ds #results .schedule-panel,
+  body.edu-ds #results .data-table-wrap {
+    padding: 1.5rem 1.75rem;
+  }
+}
+body.edu-ds #results .breakdown-title,
+body.edu-ds #results .bench-title,
+body.edu-ds #results .exam-target-title,
+body.edu-ds #results .tier-title,
+body.edu-ds #results .audit-panel h3,
+body.edu-ds #results .cutoff-panel h3,
+body.edu-ds #results .reasons-panel h3,
+body.edu-ds #results .combo-panel h3,
+body.edu-ds #results .timetable-head h3 {
+  color: var(--edu-ink);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+body.edu-ds #results .breakdown-row,
+body.edu-ds #results .bench-row {
+  border-bottom: 1px solid var(--edu-border);
+}
+body.edu-ds #results .breakdown-points,
+body.edu-ds #results .breakdown-value,
+body.edu-ds #results .bench-value,
+body.edu-ds #results .exam-target-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--edu-ink);
+}
+
+/* Card 2: Performance Summary + Trend Card */
+body.edu-ds .edu-summary-card {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+  padding: 1.375rem 1.25rem;
+  margin-top: 1.125rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .edu-summary-card {
+    padding: 1.5rem 1.75rem;
+  }
+}
+body.edu-ds .edu-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  body.edu-ds .edu-summary-grid.has-trend {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 1.75rem;
+  }
+}
+body.edu-ds .edu-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+  letter-spacing: -0.015em;
+  margin: 0 0 0.625rem;
+}
+body.edu-ds .edu-heading-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #D97706;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+body.edu-ds .edu-summary-copy {
+  color: var(--edu-ink-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+body.edu-ds .edu-summary-copy .interpret-box,
+body.edu-ds .edu-summary-copy .tier-box {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+body.edu-ds .edu-summary-copy .interpret-label,
+body.edu-ds .edu-summary-copy .tier-label {
+  display: none !important;
+}
+body.edu-ds .edu-summary-copy .interpret-text,
+body.edu-ds .edu-summary-copy .tier-text {
+  color: var(--edu-ink-muted) !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+body.edu-ds .edu-summary-delta {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--edu-border);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--edu-ink);
+  line-height: 1.5;
+}
+body.edu-ds .edu-summary-delta[hidden] {
+  display: none !important;
+}
+body.edu-ds .edu-trend-col {
+  min-width: 0;
+}
+body.edu-ds .edu-trend-col .afri-trend-svg-wrap {
+  background: var(--edu-surface);
+  overflow-x: auto;
+}
+body.edu-ds .edu-trend-col .afri-trend-selected {
+  font-size: 0.75rem;
+  color: var(--edu-ink-subtle);
+  border-top: 1px solid var(--edu-border);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+body.edu-ds .edu-trend-col .afri-trend-caption {
+  font-size: 0.75rem;
+  color: var(--edu-ink-subtle);
+  margin-top: 0.25rem;
+}
+
+/* Card 3: Subject Performance + Key Insight Card */
+body.edu-ds .edu-analysis-card {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+  padding: 1.375rem 1.25rem;
+  margin-top: 1.125rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .edu-analysis-card {
+    padding: 1.5rem 1.75rem;
+  }
+}
+body.edu-ds .edu-analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  body.edu-ds .edu-analysis-grid.has-subjects {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
+body.edu-ds .edu-subject-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+body.edu-ds .edu-subject-col .afri-radar-svg-wrap {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  aspect-ratio: auto;
+}
+body.edu-ds .edu-insight-box {
+  background: var(--edu-yellow-soft);
+  border: 1px solid var(--edu-yellow-border);
+  border-radius: 0.875rem;
+  padding: 1.125rem 1.25rem;
+}
+body.edu-ds .edu-insight-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+body.edu-ds .edu-insight-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background: var(--edu-yellow);
+  color: var(--edu-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+body.edu-ds .edu-insight-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+body.edu-ds .edu-insight-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+  margin: 0;
+}
+body.edu-ds .edu-insight-text {
+  font-size: 0.9375rem;
+  color: #1E293B;
+  line-height: 1.6;
+  margin: 0;
+}
+body.edu-ds .edu-insight-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  padding-top: 0.625rem;
+  border-top: 1px solid rgba(234, 179, 8, 0.35);
+  font-size: 0.8125rem;
+  color: #334155;
+}
+body.edu-ds .edu-insight-meta strong {
+  color: var(--edu-ink);
+}
+
+/* Compact AI Section inside Insight column */
+body.edu-ds .edu-insight-col .ai-section {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid var(--edu-border) !important;
+  border-radius: 0 !important;
+  padding: 0.875rem 0 0 !important;
+  margin: 0.875rem 0 0 !important;
+  box-shadow: none !important;
+}
+body.edu-ds .edu-insight-col.no-key-insight .ai-section {
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+body.edu-ds .edu-suppressed,
+body.edu-ds [hidden] {
+  display: none !important;
+}
+body.edu-ds .edu-insight-col .ai-heading {
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  color: var(--edu-ink) !important;
+  margin-bottom: 0.25rem !important;
+}
+body.edu-ds .edu-insight-col .ai-desc {
+  font-size: 0.75rem !important;
+  color: var(--edu-ink-subtle) !important;
+  margin-bottom: 0.625rem !important;
+  line-height: 1.45 !important;
+}
+body.edu-ds .edu-insight-col .ai-btn {
+  background: var(--edu-surface) !important;
+  color: var(--edu-ink) !important;
+  border: 1px solid var(--edu-border-strong) !important;
+  border-radius: 0.5rem !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.875rem !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+}
+body.edu-ds .edu-insight-col .ai-btn:hover {
+  background: var(--edu-surface-subtle) !important;
+  border-color: var(--edu-ink) !important;
+}
+body.edu-ds .edu-insight-col .ai-output {
+  margin-top: 0.75rem;
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: 0.625rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--edu-ink);
+}
+
+/* Hide redundant standalone wrappers once hydrated into unified cards */
+body.edu-ds.edu-hydrated #afriAcademicProgress.edu-absorbed,
+body.edu-ds.edu-hydrated #afriShareBar.edu-absorbed,
+body.edu-ds.edu-hydrated #weaknessCalloutBanner.edu-absorbed,
+body.edu-ds.edu-hydrated #compareEntryCard.edu-absorbed {
+  display: none !important;
+}
+
+/* Card 4: Your Next Steps 2x2 Action Hub */
+body.edu-ds .edu-next-steps-card {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+  padding: 1.375rem 1.25rem;
+  margin-top: 1.125rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .edu-next-steps-card {
+    padding: 1.5rem 1.75rem;
+  }
+}
+body.edu-ds .edu-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+@media (min-width: 640px) {
+  body.edu-ds .edu-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem;
+  }
+}
+body.edu-ds .edu-step-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  min-height: 64px;
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+body.edu-ds .edu-step-btn:hover {
+  border-color: #EAB308;
+  background: #FFFEF5;
+  box-shadow: 0 2px 6px rgba(11, 18, 32, 0.05);
+}
+body.edu-ds .edu-step-btn:focus-visible {
+  outline: 2px solid var(--edu-ink);
+  outline-offset: 2px;
+}
+body.edu-ds .edu-step-left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+}
+body.edu-ds .edu-step-icon {
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 9999px;
+  background: var(--edu-yellow-pill);
+  color: var(--edu-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+body.edu-ds .edu-step-icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+body.edu-ds .edu-step-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+body.edu-ds .edu-step-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+  line-height: 1.25;
+}
+body.edu-ds .edu-step-sub {
+  font-size: 0.8125rem;
+  color: var(--edu-ink-subtle);
+  line-height: 1.35;
+}
+body.edu-ds .edu-step-chevron {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: #64748B;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+body.edu-ds .edu-step-btn:hover .edu-step-chevron {
+  color: var(--edu-ink);
+  transform: translateX(2px);
+}
+
+/* Card 5: Compact Support Card (#afriDonationCard) */
+body.edu-ds #afriDonationCard.afri-donation-card {
+  background: var(--edu-surface) !important;
+  border: 1px solid var(--edu-border) !important;
+  border-radius: var(--edu-radius-lg) !important;
+  box-shadow: var(--edu-shadow) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin-top: 1.125rem !important;
+}
+body.edu-ds #afriDonationCard .afri-donation-title {
+  color: var(--edu-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  margin: 0 0 0.25rem !important;
+}
+body.edu-ds #afriDonationCard .afri-donation-desc {
+  color: var(--edu-ink-muted) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+body.edu-ds #afriDonationCard .pp-VXH3B6743NDVE {
+  background: var(--edu-yellow) !important;
+  color: var(--edu-ink) !important;
+  border: 1px solid #EAB308 !important;
+  border-radius: 0.625rem !important;
+  font-weight: 800 !important;
+  font-size: 0.875rem !important;
+  min-height: 44px !important;
+  padding: 0.625rem 1.25rem !important;
+  background-image: none !important;
+}
+body.edu-ds #afriDonationCard .pp-VXH3B6743NDVE:hover {
+  background: var(--edu-yellow-hover) !important;
+}
+
+/* Interactive Secondary Workspaces (Compare & Weakness Quiz & History Modal) */
+body.edu-ds .compare-workspace-wrap .compare-card,
+body.edu-ds #weaknessAssessmentSection .weakness-card {
+  border-radius: var(--edu-radius-lg) !important;
+  border-color: var(--edu-border) !important;
+  box-shadow: var(--edu-shadow) !important;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+body.edu-ds #weaknessAssessmentSection .w-btn-primary,
+body.edu-ds .compare-workspace-wrap .compare-btn-primary {
+  background: var(--edu-yellow) !important;
+  color: var(--edu-ink) !important;
+  border: 1px solid #EAB308 !important;
+  border-radius: 0.625rem !important;
+  font-weight: 800 !important;
+}
+body.edu-ds .afri-btn-modal-done {
+  background: var(--edu-yellow);
+  color: var(--edu-ink);
+  border-radius: 0.5rem;
+}
+body.edu-ds .afri-btn-modal-done:hover {
+  background: var(--edu-yellow-hover);
+}
+
+/* Long-Form Content & FAQ Sections below Calculator */
+body.edu-ds .content-section {
+  background: var(--edu-surface);
+  border-top: 1px solid var(--edu-border);
+}
+body.edu-ds .content-block h2 {
+  color: var(--edu-ink);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+body.edu-ds .faq-section {
+  background: var(--edu-canvas);
+  border-top: 1px solid var(--edu-border);
+}
+body.edu-ds .faq-item {
+  background: var(--edu-surface);
+  border-color: var(--edu-border);
+}
+
+/* Education Hub Page (education.html) */
+body.edu-ds .category-search-section {
+  background: var(--edu-canvas);
+  border-bottom: 1px solid var(--edu-border);
+}
+body.edu-ds .category-search-box {
+  background: var(--edu-surface);
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  box-shadow: var(--edu-shadow);
+}
+body.edu-ds .tool-card {
+  border: 1px solid var(--edu-border);
+  border-radius: var(--edu-radius-md);
+}
+body.edu-ds .tool-card:hover {
+  border-color: #EAB308;
+}
+
+/* Print Cleanliness */
+@media print {
+  body.edu-ds {
+    background: #FFFFFF !important;
+  }
+  body.edu-ds .edu-back-bar,
+  body.edu-ds .edu-next-steps-card,
+  body.edu-ds .ai-section,
+  body.edu-ds #afriDonationCard {
+    display: none !important;
+  }
+  body.edu-ds #results .results-head,
+  body.edu-ds .edu-summary-card,
+  body.edu-ds .edu-analysis-card {
+    box-shadow: none !important;
+    border-color: #D1D5DB !important;
+  }
+}

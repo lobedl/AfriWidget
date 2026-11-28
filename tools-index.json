@@ -3126,5 +3126,73 @@
       "form 5 eligibility",
       "olevel"
     ]
+  },
+  {
+    "slug": "discussion",
+    "name": "AfriWidget Discussion – Connect · Talk · Share",
+    "shortName": "Connect · Talk · Share",
+    "description": "Free browser voice and text chat rooms with no registration or downloads. Enter the Public Lounge, try Random Connect 1-on-1, or launch Custom Rooms.",
+    "category": "Discussion",
+    "url": "/discussion/",
+    "keywords": [
+      "discussion",
+      "connect",
+      "talk",
+      "share",
+      "voice chat",
+      "text chat",
+      "chat rooms",
+      "study group",
+      "public lounge",
+      "random connect",
+      "custom rooms"
+    ]
+  },
+  {
+    "slug": "discussion-public-room",
+    "name": "Public Lounge – 24/7 Voice & Text Room",
+    "shortName": "Public Lounge",
+    "description": "Drop into the open AfriWidget community room anytime for browser-based voice and text conversations without registration.",
+    "category": "Discussion",
+    "url": "/discussion/public-room/",
+    "keywords": [
+      "public lounge",
+      "public room",
+      "open chat",
+      "connect talk share",
+      "voice chat",
+      "discussion"
+    ]
+  },
+  {
+    "slug": "discussion-random-connect",
+    "name": "Random Connect – 1-on-1 Live Voice & Text",
+    "shortName": "Random Connect",
+    "description": "Match instantly with someone online for private 1-on-1 voice and text conversations in your browser.",
+    "category": "Discussion",
+    "url": "/discussion/random-connect/",
+    "keywords": [
+      "random connect",
+      "1-on-1 chat",
+      "voice match",
+      "connect talk share",
+      "discussion"
+    ]
+  },
+  {
+    "slug": "discussion-rooms",
+    "name": "Custom Rooms – Group & Study Voice Rooms",
+    "shortName": "Custom Rooms",
+    "description": "Host or join public topic rooms and invite-only group voice rooms with moderation controls for study partners and teams.",
+    "category": "Discussion",
+    "url": "/discussion/rooms/",
+    "keywords": [
+      "custom rooms",
+      "group rooms",
+      "study rooms",
+      "private invite room",
+      "connect talk share",
+      "discussion"
+    ]
   }
 ]
